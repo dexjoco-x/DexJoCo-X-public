@@ -8,6 +8,10 @@ DexJoCo-X provides 2,100 demonstrations and a common simulation evaluation inter
 
 The code and dataset repositories are currently private. This release contains the simulator and required assets, dataset download and conversion tools, Native/FAAS interfaces, and a π₀.₅ inference example. It does not include model training implementations, model or codec weights, or glove mappings. DexLatent evaluation requires a compatible codec supplied by the user.
 
+All robot models, task objects, meshes, and textures required by the seven-hand, six-task environments are bundled in this repository and included in the wheel packaging configuration. No separate simulation asset download from DexJoCo, UniDex, or manufacturer repositories is required. Demonstrations are downloaded from this project's Hugging Face dataset. Bundled assets retain their original provenance and applicable license terms.
+
+Bundled assets and all 42 environments were checked from an installed wheel; see [the bundled asset validation](docs/BUNDLED_ASSET_VALIDATION.md).
+
 ## Install
 
 Use Python 3.11. From the repository root:

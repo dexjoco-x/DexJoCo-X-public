@@ -1,0 +1,237 @@
+{
+  "date": "2026-10-02",
+  "wheel": "dexjoco_x-0.1.0-py3-none-any.whl",
+  "wheel_bytes": 102380632,
+  "wheel_sha256": "b620a99ac5e5cde450f50ca56e0d2c51275c00e573a48fca74f4bb185c41c3a1",
+  "loaded_from_installed_wheel": true,
+  "source_import_path_disabled": true,
+  "simulation_assets_checked": 801,
+  "simulation_asset_bytes": 252047145,
+  "missing_assets": [],
+  "changed_assets": [],
+  "upstream_license_and_provenance_files_checked": 18,
+  "license_record_errors": [],
+  "private_weight_or_glove_code_entries": [],
+  "environment_cells_passed": 42,
+  "checks": [
+    "installed_wheel_import",
+    "asset_sha256",
+    "license_record_bytes",
+    "42_environment_reset_and_physics_step"
+  ],
+  "cells": [
+    {
+      "task": "pick_bucket",
+      "hand": "allegro",
+      "passed": true
+    },
+    {
+      "task": "pick_bucket",
+      "hand": "leap",
+      "passed": true
+    },
+    {
+      "task": "pick_bucket",
+      "hand": "xhand",
+      "passed": true
+    },
+    {
+      "task": "pick_bucket",
+      "hand": "inspire",
+      "passed": true
+    },
+    {
+      "task": "pick_bucket",
+      "hand": "wuji",
+      "passed": true
+    },
+    {
+      "task": "pick_bucket",
+      "hand": "sharpa_wave",
+      "passed": true
+    },
+    {
+      "task": "pick_bucket",
+      "hand": "linkerhand_l20",
+      "passed": true
+    },
+    {
+      "task": "hammer_nail",
+      "hand": "allegro",
+      "passed": true
+    },
+    {
+      "task": "hammer_nail",
+      "hand": "leap",
+      "passed": true
+    },
+    {
+      "task": "hammer_nail",
+      "hand": "xhand",
+      "passed": true
+    },
+    {
+      "task": "hammer_nail",
+      "hand": "inspire",
+      "passed": true
+    },
+    {
+      "task": "hammer_nail",
+      "hand": "wuji",
+      "passed": true
+    },
+    {
+      "task": "hammer_nail",
+      "hand": "sharpa_wave",
+      "passed": true
+    },
+    {
+      "task": "hammer_nail",
+      "hand": "linkerhand_l20",
+      "passed": true
+    },
+    {
+      "task": "single_hand_hanoi",
+      "hand": "allegro",
+      "passed": true
+    },
+    {
+      "task": "single_hand_hanoi",
+      "hand": "leap",
+      "passed": true
+    },
+    {
+      "task": "single_hand_hanoi",
+      "hand": "xhand",
+      "passed": true
+    },
+    {
+      "task": "single_hand_hanoi",
+      "hand": "inspire",
+      "passed": true
+    },
+    {
+      "task": "single_hand_hanoi",
+      "hand": "wuji",
+      "passed": true
+    },
+    {
+      "task": "single_hand_hanoi",
+      "hand": "sharpa_wave",
+      "passed": true
+    },
+    {
+      "task": "single_hand_hanoi",
+      "hand": "linkerhand_l20",
+      "passed": true
+    },
+    {
+      "task": "bimanual_microwave_cook",
+      "hand": "allegro",
+      "passed": true
+    },
+    {
+      "task": "bimanual_microwave_cook",
+      "hand": "leap",
+      "passed": true
+    },
+    {
+      "task": "bimanual_microwave_cook",
+      "hand": "xhand",
+      "passed": true
+    },
+    {
+      "task": "bimanual_microwave_cook",
+      "hand": "inspire",
+      "passed": true
+    },
+    {
+      "task": "bimanual_microwave_cook",
+      "hand": "wuji",
+      "passed": true
+    },
+    {
+      "task": "bimanual_microwave_cook",
+      "hand": "sharpa_wave",
+      "passed": true
+    },
+    {
+      "task": "bimanual_microwave_cook",
+      "hand": "linkerhand_l20",
+      "passed": true
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "allegro",
+      "passed": true
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "leap",
+      "passed": true
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "passed": true
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "inspire",
+      "passed": true
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "wuji",
+      "passed": true
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "sharpa_wave",
+      "passed": true
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "linkerhand_l20",
+      "passed": true
+    },
+    {
+      "task": "bimanual_photograph",
+      "hand": "allegro",
+      "passed": true
+    },
+    {
+      "task": "bimanual_photograph",
+      "hand": "leap",
+      "passed": true
+    },
+    {
+      "task": "bimanual_photograph",
+      "hand": "xhand",
+      "passed": true
+    },
+    {
+      "task": "bimanual_photograph",
+      "hand": "inspire",
+      "passed": true
+    },
+    {
+      "task": "bimanual_photograph",
+      "hand": "wuji",
+      "passed": true
+    },
+    {
+      "task": "bimanual_photograph",
+      "hand": "sharpa_wave",
+      "passed": true
+    },
+    {
+      "task": "bimanual_photograph",
+      "hand": "linkerhand_l20",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": true,
+  "changes_license_clearance_status": false
+}

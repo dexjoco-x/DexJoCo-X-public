@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check or install user-supplied frozen assets; never download or publish assets."""
+"""Verify bundled frozen assets; also support local backup and restore."""
 from __future__ import annotations
 
 import argparse

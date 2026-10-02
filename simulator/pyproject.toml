@@ -23,6 +23,16 @@ exclude = [
 [tool.hatch.build.targets.wheel.force-include]
 "scripts/import_xhand.py" = "scripts/import_xhand.py"
 "scripts/import_linkerhand_l20.py" = "scripts/import_linkerhand_l20.py"
+"dexjoco/sim/envs/xmls" = "dexjoco/sim/envs/xmls"
+"teleoperation/sharpa_wave/sharpa-urdf-usd-xml" = "teleoperation/sharpa_wave/sharpa-urdf-usd-xml"
+"teleoperation/inspire/assets" = "teleoperation/inspire/assets"
+"teleoperation/inspire/README.md" = "teleoperation/inspire/README.md"
+"teleoperation/wuji/assets" = "teleoperation/wuji/assets"
+"teleoperation/wuji/README.md" = "teleoperation/wuji/README.md"
+"../licenses/third_party" = "dexjoco_x_licenses/third_party"
+"../LICENSE" = "dexjoco_x_licenses/LICENSE"
+"../LICENSE_SCOPE.md" = "dexjoco_x_licenses/LICENSE_SCOPE.md"
+"../THIRD_PARTY_NOTICES.md" = "dexjoco_x_licenses/THIRD_PARTY_NOTICES.md"
 
 [project]
 name = "dexjoco-x"

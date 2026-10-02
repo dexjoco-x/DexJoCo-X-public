@@ -34,5 +34,14 @@
   "hf_original_data_history_preserved_privately": true,
   "hf_canonical_dataset": "darenrenjian/DexJoCo-X",
   "hf_private_archive": "darenrenjian/DexJoCo-X-private-archive-20261002",
-  "hf_download_revision": "9f48e1404168227a22586af0cffb8371dbb7e1f1"
+  "hf_download_revision": "9f48e1404168227a22586af0cffb8371dbb7e1f1",
+  "asset_distribution": {
+    "mode": "bundled_in_project_repository_and_wheel",
+    "chosen_by_project_owner": true,
+    "choice_updated_date": "2026-10-02",
+    "requires_separate_upstream_simulation_asset_download": false,
+    "preserves_frozen_asset_files": true,
+    "preserves_upstream_license_and_provenance_records": true,
+    "changes_upstream_permission_status": false
+  }
 }
