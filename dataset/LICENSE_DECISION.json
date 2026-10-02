@@ -1,0 +1,21 @@
+{
+  "selected_date": "2026-10-03",
+  "selected_by_project_owner": true,
+  "original_dataset_contribution_license": "CC-BY-NC-SA-4.0",
+  "scope_document": "dataset/LICENSE_SCOPE.md",
+  "standard_legal_code": {
+    "file": "CC-BY-NC-SA-4.0.txt",
+    "source": "https://raw.githubusercontent.com/creativecommons/cc-legal-tools-data/a0dac18d1a773b4cdb7d8dd5d9bf4efab7901030/legacy/legalcode/by-nc-sa_4.0.txt",
+    "official_repository_revision": "a0dac18d1a773b4cdb7d8dd5d9bf4efab7901030",
+    "bytes": 20850,
+    "sha256": "e66c269d4819aaab34b49ef5220c4ddab6756f21bb5180761a4eb8561f2b7bbd"
+  },
+  "third_party_assets_relicensed": false,
+  "unconfirmed_third_party_permissions_cleared": false,
+  "source_code_license_changed": false,
+  "paper_license_changed": false,
+  "repository_visibility_changed": false,
+  "hf_card_license": "other",
+  "hf_card_license_name": "dexjoco-x-scoped-data-license",
+  "hf_card_scope_reason": "Original contributions use CC BY-NC-SA 4.0; third-party material retains its separate terms."
+}

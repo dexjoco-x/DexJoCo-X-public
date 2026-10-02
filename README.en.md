@@ -89,4 +89,4 @@ Bimanual tasks: `bimanual_microwave_cook`, `bimanual_photograph`, `bimanual_unlo
 
 Independent installation, task download, data conversion, all 42 environment combinations, and a real checkpoint integration run are documented in [the validation record](docs/DATASET_EVAL_RELEASE_VALIDATION.md). The real checkpoint run verifies the inference pipeline; it is not a new benchmark success-rate measurement.
 
-Original project code is covered by [MIT](LICENSE), within [the stated scope](LICENSE_SCOPE.md). Third-party code and model assets retain their own terms; see [the notices](THIRD_PARTY_NOTICES.md) and [license status](LICENSE_STATUS.md). The final license for original demonstration data remains to be selected separately.
+Original project code is covered by [MIT](LICENSE), within [the stated scope](LICENSE_SCOPE.md). Original dataset contributions use **CC BY-NC-SA 4.0** within [the data license scope](dataset/LICENSE_SCOPE.md). Third-party code, assets, and third-party rights in rendered appearances retain their own terms; see [the notices](THIRD_PARTY_NOTICES.md) and [license status](LICENSE_STATUS.md).

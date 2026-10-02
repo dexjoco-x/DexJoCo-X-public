@@ -78,4 +78,4 @@ LinkerHand 的历史内部键保持兼容，模型源几何来自官方 L25，�
 
 ## 来源与许可
 
-原创代码采用 [MIT](LICENSE)，适用范围见 [LICENSE_SCOPE.md](LICENSE_SCOPE.md)。第三方代码和模型资产保留各自许可及来源，不统一重新授权为 MIT。完整示范数据的许可另行确认；第三方资产的已记录条款与未确认范围见 [来源说明](THIRD_PARTY_NOTICES.md)、[当前许可状态](LICENSE_STATUS.md)。
+原创代码采用 [MIT](LICENSE)，适用范围见 [LICENSE_SCOPE.md](LICENSE_SCOPE.md)。原创示范数据贡献采用 **CC BY-NC-SA 4.0**，许可范围、署名及完整条款见 [数据许可](dataset/LICENSE_SCOPE.md)。第三方代码和模型资产保留各自许可及来源，不统一重新授权为 MIT 或数据许可；已记录条款与未确认范围见 [来源说明](THIRD_PARTY_NOTICES.md)、[当前许可状态](LICENSE_STATUS.md)。

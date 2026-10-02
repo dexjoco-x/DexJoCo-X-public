@@ -29,3 +29,9 @@ python -m pip install -c requirements/constraints-python311.txt \
 系统图形库与其他 Python 依赖仍按 [快速上手](QUICKSTART.md) 安装。上述安装不需要从其他项目下载机器人模型或任务素材。完整示范数据通过本项目的 Hugging Face 下载入口提供。
 
 wheel SHA-256：`b620a99ac5e5cde450f50ca56e0d2c51275c00e573a48fca74f4bb185c41c3a1`。
+
+## 2026 年 10 月 3 日许可补充版本
+
+原创数据贡献已选择 CC BY-NC-SA 4.0，安装包新增数据许可范围和标准全文，并同步更新许可说明。新版大小 102,388,711 字节，SHA-256 为 `dfdc398b37c4409bd902d20f35fc759d53cd85835406d5580a182f5077057b71`。原安装包继续保留。
+
+新版与上述已通过 42 个环境验收的版本对比，947 个运行文件逐字节一致；801 个必要资产的 SHA-256 全部一致，第三方许可及来源记录完整保留。仅更新许可文件，不重复测量策略成功率。检查结果见 [许可应用记录](DATASET_LICENSE_APPLICATION.json)。

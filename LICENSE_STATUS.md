@@ -1,6 +1,6 @@
 # 当前许可状态
 
-**当前状态（2026-10-02）：评测代码和数据集保持私有，公开发布暂停。代码及验证结果保留。** 历史发布决定记录在 [发布记录](docs/PUBLIC_RELEASE_DECISION.json)。
+**当前状态（2026-10-03）：评测代码和数据集保持私有，公开发布暂停。代码及验证结果保留。** 历史发布决定记录在 [发布记录](docs/PUBLIC_RELEASE_DECISION.json)。
 
 项目原创代码采用 MIT，范围见 `LICENSE_SCOPE.md`。第三方文件保留原许可，公开发布不改变其权利归属。
 
@@ -13,6 +13,6 @@
 | DexJoCo 来源资产，许可范围未确认 | 225 | 已匹配固定上游版本和文件内容，不推定资产受上游代码 MIT 许可覆盖 |
 | UniDex 来源资产，许可范围未确认 | 57 | 已匹配固定上游版本和文件内容，不以 README 的 MIT 徽章替代缺失的完整许可说明 |
 
-尚未取得覆盖这 282 个未确认资产的新许可证据。完整来源与许可记录见 [第三方说明](THIRD_PARTY_NOTICES.md)，处理选择见 [资产发布方案](docs/ASSET_PUBLICATION_OPTIONS.md)。示范数据的最终许可证也尚未指定；论文的 CC BY 4.0 不自动覆盖数据集。
+尚未取得覆盖这 282 个未确认资产的新许可证据。完整来源与许可记录见 [第三方说明](THIRD_PARTY_NOTICES.md)，处理选择见 [资产发布方案](docs/ASSET_PUBLICATION_OPTIONS.md)。2026-10-03 已选择原创数据贡献采用 CC BY-NC-SA 4.0，范围及完整条款见 [数据许可](dataset/LICENSE_SCOPE.md)。此选择不改变第三方资产条款或未确认状态；论文继续采用 CC BY 4.0。
 
 `python tools/asset_release_report.py` 检查文件完整性并生成状态；`--require-ready` 仍会因未确认条款返回失败。文件运行完整性与许可核验完整性是独立字段。

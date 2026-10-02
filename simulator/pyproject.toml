@@ -33,6 +33,8 @@ exclude = [
 "../LICENSE" = "dexjoco_x_licenses/LICENSE"
 "../LICENSE_SCOPE.md" = "dexjoco_x_licenses/LICENSE_SCOPE.md"
 "../THIRD_PARTY_NOTICES.md" = "dexjoco_x_licenses/THIRD_PARTY_NOTICES.md"
+"../dataset/LICENSE_SCOPE.md" = "dexjoco_x_licenses/dataset/LICENSE_SCOPE.md"
+"../dataset/CC-BY-NC-SA-4.0.txt" = "dexjoco_x_licenses/dataset/CC-BY-NC-SA-4.0.txt"
 
 [project]
 name = "dexjoco-x"

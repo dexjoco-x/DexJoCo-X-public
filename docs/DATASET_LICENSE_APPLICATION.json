@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-03",
+  "original_dataset_contribution_license": "CC-BY-NC-SA-4.0",
+  "selected_by_project_owner": true,
+  "third_party_assets_relicensed": false,
+  "new_upstream_permissions_obtained": false,
+  "data_hash_entries_preserved": 11523,
+  "changed_existing_checksum_entries": [
+    "README.md"
+  ],
+  "new_checksum_entries": [
+    "CC-BY-NC-SA-4.0.txt",
+    "DATASET_LICENSE_SCOPE.md",
+    "LICENSE"
+  ],
+  "legal_text_sha256": "e66c269d4819aaab34b49ef5220c4ddab6756f21bb5180761a4eb8561f2b7bbd",
+  "six_task_archives_unchanged": true,
+  "frozen_data_download_revision": "9f48e1404168227a22586af0cffb8371dbb7e1f1",
+  "code_mit_license_unchanged": true,
+  "code_and_data_repository_visibility": "PRIVATE",
+  "task_archives_checked": 6,
+  "metadata_revision_before": "b43c88750c5a72fbfdd3f1233b80219faabe61cd",
+  "wheel": {
+    "filename": "dexjoco_x-0.1.0-py3-none-any.whl",
+    "bytes": 102388711,
+    "sha256": "dfdc398b37c4409bd902d20f35fc759d53cd85835406d5580a182f5077057b71",
+    "assets_checked": 801,
+    "runtime_entries_compared": 947,
+    "runtime_entries_changed": [],
+    "prior_runtime_validation_wheel_sha256": "b620a99ac5e5cde450f50ca56e0d2c51275c00e573a48fca74f4bb185c41c3a1",
+    "prior_42_environment_validation_reused_for_identical_runtime": true,
+    "standard_data_legal_code_and_scope_included": true,
+    "upstream_license_and_provenance_records_checked": 18,
+    "private_weight_or_glove_code_entries": []
+  },
+  "metadata_revision_after": "d5b6149c7334deb47efd2c8f48b0d2b7d6f99cc6",
+  "remote_metadata_files_verified": [
+    "README.md",
+    "LICENSE",
+    "DATASET_LICENSE_SCOPE.md",
+    "CC-BY-NC-SA-4.0.txt",
+    "SHA256SUMS"
+  ],
+  "remote_metadata_files_identical_to_local": true,
+  "remote_dataset_still_private": true,
+  "local_markdown_links_checked": 78,
+  "broken_links": [],
+  "passed": true
+}

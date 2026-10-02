@@ -43,5 +43,13 @@
     "preserves_frozen_asset_files": true,
     "preserves_upstream_license_and_provenance_records": true,
     "changes_upstream_permission_status": false
+  },
+  "dataset_license": {
+    "selected_date": "2026-10-03",
+    "chosen_by_project_owner": true,
+    "original_contributions": "CC-BY-NC-SA-4.0",
+    "third_party_material_terms_preserved": true,
+    "new_upstream_permissions_obtained": false,
+    "changes_publication_paused_status": false
   }
 }
