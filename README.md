@@ -1,6 +1,10 @@
 # DexJoCo-X
 
+[English](README.en.md) · [项目网站](https://darenrenjian.github.io/DexJoCo-X-website/) · [论文 PDF](https://darenrenjian.github.io/DexJoCo-X-website/assets/paper.pdf)
+
 DexJoCo-X 提供七种代表性灵巧手、六个任务的训练数据与统一仿真评测环境，共 42 个手–任务组合、2,100 条示范，每个组合 50 条。
+
+论文 **DexJoCo-X: Benchmarking Action Representations for Multi-Hand Dexterous Manipulation** 已于 2026 年 10 月 2 日提交 arXiv，正式论文编号待公布。作者依次为 Xiangwei Jiang、Yao Mu、Lixin Duan、Wen Li。引用信息见 [CITATION.cff](CITATION.cff)。
 
 本候选包含仿真与必要模型资产、数据清单及下载/转换工具、Native / FAAS / DexLatent 评测接口，以及使用自有权重的 π0.5 推理示例。模型训练实现、训练补丁、策略与编码器权重、手套映射和旧 Git 历史均不包含在此版本中。完整视频和张量单独存放在 Hugging Face 数据仓库；代码及数据目前仍保持私有。
 

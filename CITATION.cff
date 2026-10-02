@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "Please cite the DexJoCo-X paper when using this benchmark. The arXiv identifier will be added after announcement."
+type: software
+title: "DexJoCo-X: Dataset and Evaluation Environment"
+version: 0.1.0
+authors:
+  - family-names: Jiang
+    given-names: Xiangwei
+  - family-names: Mu
+    given-names: Yao
+  - family-names: Duan
+    given-names: Lixin
+  - family-names: Li
+    given-names: Wen
+repository-code: "https://github.com/darenrenjian/DexJoCo-X-public"
+url: "https://darenrenjian.github.io/DexJoCo-X-website/"
+preferred-citation:
+  type: article
+  title: "DexJoCo-X: Benchmarking Action Representations for Multi-Hand Dexterous Manipulation"
+  authors:
+    - family-names: Jiang
+      given-names: Xiangwei
+    - family-names: Mu
+      given-names: Yao
+    - family-names: Duan
+      given-names: Lixin
+    - family-names: Li
+      given-names: Wen
+  year: 2026
+  url: "https://darenrenjian.github.io/DexJoCo-X-website/assets/paper.pdf"
