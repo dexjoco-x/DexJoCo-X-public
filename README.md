@@ -6,6 +6,8 @@ DexJoCo-X 提供七种代表性灵巧手、六个任务的训练数据与统一�
 
 ## 安装与环境检查
 
+第一次使用请从 [完整快速上手](docs/QUICKSTART.md) 开始，依次安装、下载单任务、查看示范并接入自己的策略。
+
 使用 Python 3.11，在仓库根目录安装：
 
 ```bash
@@ -60,6 +62,7 @@ LinkerHand 的历史内部键保持兼容，模型源几何来自官方 L25，�
 ## 使用指南
 
 - [数据下载与转换](dataset/DOWNLOAD.md)、[数据字段](dataset/README.md)、[数据卡](docs/DATASET_CARD.md)。
+- [读取原始示范](examples/read_demo.py)：输出未归一化的 `arm40_v1` 状态、动作块、掩码与 RGB。
 - [仿真环境](simulator/README.md)和[评测协议](evaluation/README.md)。
 - [π0.5 推理示例](examples/pi05/README.md)：RLinf 推理后端，支持单臂 32 维和 Ego-π 左右交替排列。
 - [场景扩增工具](collection/README.md)：以已有机器人示范为输入，不提供手套录制工具。

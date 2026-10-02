@@ -758,5 +758,32 @@
     "previous_history_backed_up_locally": true,
     "obsolete_tag_removed": "v0.1.0",
     "complete_work_repository_preserved": true
+  },
+  "usability_followup": {
+    "date": "2026-10-02",
+    "quickstart_included": true,
+    "physical_demo_reader_included": true,
+    "demo_reader_hands_checked": 7,
+    "demo_tail_padding_checked": true,
+    "physical_action_values_match_raw": true,
+    "ego_tokens_left_then_right_checked": true,
+    "pi05_interface_unit_tests_passed": 7,
+    "hf_clean_data_files": 11525,
+    "hf_remote_lfs_sha256_checks": 7356,
+    "hf_remote_git_blob_checks": 4169,
+    "hf_original_history_preserved_privately": true,
+    "hf_canonical_repository": "darenrenjian/DexJoCo-X",
+    "hf_archive_repository": "darenrenjian/DexJoCo-X-private-archive-20261002",
+    "hf_download_revision": "9f48e1404168227a22586af0cffb8371dbb7e1f1",
+    "hf_training_source_included": false,
+    "hf_weights_included": false,
+    "repository_visibility_changed": false,
+    "hf_new_download_passed": true,
+    "hf_new_download_episodes": 350,
+    "hf_new_download_files": 1754,
+    "hf_new_native_conversion_frames": 103845,
+    "hf_new_native_conversion_passed": true,
+    "hf_clean_historical_commits_checked": 43,
+    "hf_old_private_revisions_unreachable": true
   }
 }

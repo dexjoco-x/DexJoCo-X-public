@@ -33,7 +33,7 @@ python tools/dataset_packages.py download --tasks hammer_nail \
 
 同时下载多个任务可写 `--tasks hammer_nail pick_bucket`；完整下载使用 `--tasks all`。工具只下载选定任务及必要元数据，完成后逐文件核对 SHA-256。默认归档缓存位于 `DATA_ROOT` 的同级目录 `<DATA_ROOT名称>_archives/task_packages/v1.0/`，也可用 `--archives-root /path/to/cache` 指定缓存根目录。归档会保留以便重用，完整下载并解压约需 16.5 GB，转换缓存另计。可通过 `--workers` 调整下载并行数。
 
-TAR 下载绑定版本为 `478663e1c09a21b2e6e28fa0cbee910523cf73b0`，原始文件下载绑定版本为 `338ca1daf91c74d995ab1b8bd55a2c2d802076a5`，均不会随远端 `main` 更新而改变数据。查看预计文件数与大小：
+TAR 与原始文件下载均绑定干净数据仓库版本 `9f48e1404168227a22586af0cffb8371dbb7e1f1`，不会随远端 `main` 更新而改变数据。2026-10-02 数据入口已迁移至独立历史，原始示范和任务包的哈希不变；旧历史与权重保留在私有归档中，不作为数据下载入口。查看预计文件数与大小：
 
 ```bash
 python tools/dataset_packages.py list

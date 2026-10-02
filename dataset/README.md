@@ -12,6 +12,8 @@
 
 ## 转换视图
 
+仅查看或接入原始物理字段时，无需先转换。运行 `python -m examples.read_demo --data-root "$DATA_ROOT" --task hammer_nail --hand allegro`，或在自己的接口中调用 `examples.read_demo.read_demo`。它把腕部状态四元数转换为 rotvec，输出未归一化的 80 维 `arm40_v1` 状态、带掩码的动作块与 RGB；见 [快速上手](../docs/QUICKSTART.md)。
+
 ```bash
 python dataset/tools/prepare_server.py "$DATA_ROOT"
 python dataset/tools/prepare_benchmark7_repr.py "$DATA_ROOT" --representation faas \

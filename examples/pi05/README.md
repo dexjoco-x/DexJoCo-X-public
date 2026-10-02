@@ -40,6 +40,8 @@ pip install -r examples/pi05/requirements.txt
 
 这些必须是该 checkpoint 使用的统计量。数据转换后 Parquet 中的预归一化数值不能再当作物理值输入此接口；现有 Native 转换统计量采用的裁剪方式也不能直接冒充这里的 Ego-π 统计量。训练数据字段和转换方式见 [数据指南](../../dataset/DOWNLOAD.md)。
 
+直接读取原始示范的 `arm40_v1` 物理字段，并查看 25 步到 50 个左右交替 token 的排列，见 [快速上手中的数据读取示例](../../docs/QUICKSTART.md)。该例子不进行模型训练，也不替 checkpoint 自动生成统计量。
+
 在仓库根目录运行，例如一个使用 Sharpa Wave 的六任务模型：
 
 ```bash

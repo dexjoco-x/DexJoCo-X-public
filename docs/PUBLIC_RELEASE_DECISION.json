@@ -29,5 +29,10 @@
     "previous_history_backed_up_locally": true,
     "obsolete_tag_removed": "v0.1.0",
     "complete_work_repository_preserved": true
-  }
+  },
+  "hf_data_history_isolated": true,
+  "hf_original_data_history_preserved_privately": true,
+  "hf_canonical_dataset": "darenrenjian/DexJoCo-X",
+  "hf_private_archive": "darenrenjian/DexJoCo-X-private-archive-20261002",
+  "hf_download_revision": "9f48e1404168227a22586af0cffb8371dbb7e1f1"
 }

@@ -11,7 +11,7 @@
   "huggingface": {
     "repo_id": "darenrenjian/DexJoCo-X",
     "repo_type": "dataset",
-    "revision": "338ca1daf91c74d995ab1b8bd55a2c2d802076a5",
+    "revision": "9f48e1404168227a22586af0cffb8371dbb7e1f1",
     "visibility_last_checked": "private"
   },
   "archives_uploaded_to_hub": true,
@@ -57775,7 +57775,7 @@
     "repo_id": "darenrenjian/DexJoCo-X",
     "repo_type": "dataset",
     "path_prefix": "task_packages/v1.0/",
-    "revision": "478663e1c09a21b2e6e28fa0cbee910523cf73b0",
+    "revision": "9f48e1404168227a22586af0cffb8371dbb7e1f1",
     "visibility_last_checked": "private"
   }
 }

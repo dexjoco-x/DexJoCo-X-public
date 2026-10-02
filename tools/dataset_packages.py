@@ -17,7 +17,7 @@ DEFAULT_INDEX = ROOT / 'dataset/PACKAGES.json'
 HANDS = {'allegro', 'inspire', 'leap', 'linkerhand_l20', 'sharpa_wave', 'wuji', 'xhand'}
 TASKS = ('hammer_nail', 'pick_bucket', 'single_hand_hanoi', 'bimanual_microwave_cook',
          'bimanual_photograph', 'bimanual_unlock_ipad')
-REVISION = '338ca1daf91c74d995ab1b8bd55a2c2d802076a5'
+REVISION = '9f48e1404168227a22586af0cffb8371dbb7e1f1'
 
 
 def read(path):
