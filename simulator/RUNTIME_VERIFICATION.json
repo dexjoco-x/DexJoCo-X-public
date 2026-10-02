@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "evaluation_manifest_digest": "71156fbee909d54c689b7e141d7c6d02db2ca3ee38dbf0bfb9b51e20557794e5",
+  "evaluation_files_verified": 1421,
+  "evaluation_repetitions": 3,
+  "episodes_per_hand_task_pair": 150,
+  "action_horizon": 30,
+  "execution_horizon": 8,
+  "rpc_checks": 6,
+  "simulator_files_checksummed": 7662,
+  "symlinks": 0,
+  "xhand_microwave_mount_revision": "xhand_left_mount_rx180_v1",
+  "public_metadata_paths_sanitized": true,
+  "portability_smoke_cells": 42
+}

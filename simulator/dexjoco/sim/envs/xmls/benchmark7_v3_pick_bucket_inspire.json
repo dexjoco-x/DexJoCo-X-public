@@ -1,0 +1,453 @@
+{
+  "version": "benchmark7_v3",
+  "task": "pick_bucket",
+  "hand": "inspire",
+  "status": "candidate_not_task_validated",
+  "reference": "repo://simulator/dexjoco/sim/envs/xmls/cross_embodiment_v1_pick_bucket_inspire.xml",
+  "reference_sha256": "1d48df586ed2ad5b884f84bc7bfc770d5d4eca2f2fbf1e534e3c41e40f19e858",
+  "xml_sha256": "906ed2808db51183d7cada8e1b6c8686d56713305df8e617b847344a148013c0",
+  "sides": {
+    "right": {
+      "joint_names": [
+        "benchhand_right_native_inspire_thumb_proximal_yaw_joint",
+        "benchhand_right_native_inspire_thumb_proximal_pitch_joint",
+        "benchhand_right_native_inspire_index_proximal_joint",
+        "benchhand_right_native_inspire_middle_proximal_joint",
+        "benchhand_right_native_inspire_ring_proximal_joint",
+        "benchhand_right_native_inspire_pinky_proximal_joint"
+      ],
+      "state_joint_names": [
+        "benchhand_right_native_inspire_thumb_proximal_yaw_joint",
+        "benchhand_right_native_inspire_thumb_proximal_pitch_joint",
+        "benchhand_right_native_inspire_thumb_intermediate_joint",
+        "benchhand_right_native_inspire_thumb_distal_joint",
+        "benchhand_right_native_inspire_index_proximal_joint",
+        "benchhand_right_native_inspire_index_intermediate_joint",
+        "benchhand_right_native_inspire_middle_proximal_joint",
+        "benchhand_right_native_inspire_middle_intermediate_joint",
+        "benchhand_right_native_inspire_ring_proximal_joint",
+        "benchhand_right_native_inspire_ring_intermediate_joint",
+        "benchhand_right_native_inspire_pinky_proximal_joint",
+        "benchhand_right_native_inspire_pinky_intermediate_joint"
+      ],
+      "kinematic_joint_names": [
+        "benchhand_right_native_inspire_thumb_proximal_yaw_joint",
+        "benchhand_right_native_inspire_thumb_proximal_pitch_joint",
+        "benchhand_right_native_inspire_index_proximal_joint",
+        "benchhand_right_native_inspire_middle_proximal_joint",
+        "benchhand_right_native_inspire_ring_proximal_joint",
+        "benchhand_right_native_inspire_pinky_proximal_joint"
+      ],
+      "transmissions": [
+        [
+          [
+            "benchhand_right_native_inspire_thumb_proximal_yaw_joint",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_inspire_thumb_proximal_pitch_joint",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_inspire_index_proximal_joint",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_inspire_middle_proximal_joint",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_inspire_ring_proximal_joint",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_inspire_pinky_proximal_joint",
+            1.0
+          ]
+        ]
+      ],
+      "actuator_names": [
+        "benchhand_right_native_inspire_thumb_proximal_yaw_joint_ctrl",
+        "benchhand_right_native_inspire_thumb_proximal_pitch_joint_ctrl",
+        "benchhand_right_native_inspire_index_proximal_joint_ctrl",
+        "benchhand_right_native_inspire_middle_proximal_joint_ctrl",
+        "benchhand_right_native_inspire_ring_proximal_joint_ctrl",
+        "benchhand_right_native_inspire_pinky_proximal_joint_ctrl"
+      ],
+      "home": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "joint_ranges": [
+        [
+          0.0,
+          1.308
+        ],
+        [
+          0.0,
+          0.6
+        ],
+        [
+          0.0,
+          1.47
+        ],
+        [
+          0.0,
+          1.47
+        ],
+        [
+          0.0,
+          1.47
+        ],
+        [
+          0.0,
+          1.47
+        ]
+      ],
+      "actuator_ranges": [
+        [
+          0.0,
+          1.308
+        ],
+        [
+          0.0,
+          0.6
+        ],
+        [
+          0.0,
+          1.47
+        ],
+        [
+          0.0,
+          1.47
+        ],
+        [
+          0.0,
+          1.47
+        ],
+        [
+          0.0,
+          1.47
+        ]
+      ],
+      "independent_commands": 6,
+      "actuators": 6,
+      "state_joints": 12,
+      "command_semantics": "actuator joint/tendon position targets; proxy joint_names used only for reset"
+    }
+  },
+  "surface_friction_policy": {
+    "id": "source_first_surface_friction_v1",
+    "scope": "surface friction only; not uniform whole-hand physics",
+    "source_review": {
+      "basis": "fallback_no_matched_surface_calibration",
+      "files": [
+        "teleoperation/inspire/README.md",
+        "teleoperation/inspire/assets/right/main_mujoco.urdf",
+        "teleoperation/inspire/tools/generate_panda_inspire_xml.py"
+      ],
+      "urls": [],
+      "note": "Surface calibration not specified in the imported URDF/generator. Existing surface default retained.",
+      "files_sha256": {
+        "teleoperation/inspire/README.md": "c85534694c02bfbda01b54cdd895acaa6982f254ff3b3d6a0cb54710f5ccbafd",
+        "teleoperation/inspire/assets/right/main_mujoco.urdf": "7afb370ea222d50f6c45ce28bc41601be612b7896ba21043cc243312235e7cf1",
+        "teleoperation/inspire/tools/generate_panda_inspire_xml.py": "62448a1ae31f17e3cd013e1ed3ea00e8703ba494ccfbe71342546b63d5e9e202"
+      }
+    },
+    "geoms": {
+      "benchhand_right_inspire_wrist_adapter_collision": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_no_matched_surface_calibration",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_inspire_base_link_collision": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_no_matched_surface_calibration",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_inspire_thumb_proximal_base:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_no_matched_surface_calibration",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_inspire_thumb_proximal:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_no_matched_surface_calibration",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_inspire_thumb_intermediate:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_no_matched_surface_calibration",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_inspire_thumb_distal:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_no_matched_surface_calibration",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_inspire_index_proximal:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_no_matched_surface_calibration",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_inspire_index_intermediate:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_no_matched_surface_calibration",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_inspire_middle_proximal:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_no_matched_surface_calibration",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_inspire_middle_intermediate:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_no_matched_surface_calibration",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_inspire_ring_proximal:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_no_matched_surface_calibration",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_inspire_ring_intermediate:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_no_matched_surface_calibration",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_inspire_pinky_proximal:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_no_matched_surface_calibration",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_inspire_pinky_intermediate:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_no_matched_surface_calibration",
+          "measured": false
+        }
+      }
+    },
+    "measured_surface_evidence_found": false,
+    "preserved": "Every compiled array other than hand geom_friction, including joint frictionloss and elastomer solref.",
+    "limitations": [
+      "Fallback surface parameters are not material measurements.",
+      "Existing geometric/postprocessing approximations have not been certified or removed.",
+      "Other contact solver parameters are retained, not newly calibrated in this revision."
+    ],
+    "sha256": "d5a495aeff2e1a801898e6250a848cdffadd8d935bb03da423a4a9d54aa568c4"
+  },
+  "parent_model": {
+    "path": "repo://simulator/dexjoco/sim/envs/xmls/benchmark7_v1_pick_bucket_inspire.xml",
+    "xml_sha256": "6011a99ea04f6be2168338f4e3d03cf67271ccf013ab64a5b1ec56ba45de2487",
+    "metadata_sha256": "4a20fb8b2bee2c0a5a417d064ccce23abcfa67a03e4dfd09f8284983a3257277"
+  },
+  "revision_check": {
+    "changed_arrays": [],
+    "changed_hand_geoms": 0,
+    "inherited_nonfinite_arrays": {
+      "mesh_polynormal": {
+        "count": 858,
+        "locations_sha256": "f02ea5c239008514672e2ada7509a37091791eb2aea79da09602ea0bf8b4d320"
+      }
+    },
+    "nonhand_sha256": "dee6e055b6837234e7d797b3ca37a2277603cb53331edcdb45412682a5347c43"
+  },
+  "geometry_revision": {
+    "id": "wuji_native_collision_only_v1",
+    "removed_geoms": {},
+    "source_files": {},
+    "parent": {
+      "path": "repo://simulator/dexjoco/sim/envs/xmls/benchmark7_v2_pick_bucket_inspire.xml",
+      "xml_sha256": "ce0c8d1090a9e057e65f691942eb547add2101e5eec866da687d2be303484d45",
+      "metadata_sha256": "cd1da2cd2f92b56c04c47d38ba9c844527552782bf1f4f630b00f5d22d374781"
+    },
+    "scope": "Remove local Wuji supplemental grasp geoms only. Keep native mesh collisions and wrist adapter.",
+    "limitations": [
+      "Matched local URDF, not independently certified hardware geometry.",
+      "Inherited inertia floors, drives, solver settings and source imperfections unchanged.",
+      "Friction policy source notes describe the imported parent; this record describes current geometry."
+    ],
+    "sha256": "b98ef2b4ff08adc446f7ec064e70910f9081fb469d77023777eb666c713e6e65"
+  }
+}

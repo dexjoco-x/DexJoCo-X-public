@@ -1,0 +1,65 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["dexjoco", "teleoperation"]
+exclude = [
+    "dexjoco/sim/envs/xmls/**",
+    "teleoperation/**",
+    "teleoperation/**/*.py",
+    "teleoperation/**/retarget/**",
+    "teleoperation/**/configs/**",
+    "teleoperation/**/bridge/**",
+    "teleoperation/rokoko/**",
+    "teleoperation/vive_bridge/**",
+    "teleoperation/GeoRT/**",
+    "teleoperation/mujoco_menagerie/**",
+    "teleoperation/oymotion/**",
+    "teleoperation/shadow_hand_e3m5/**",
+    "teleoperation/unidex_mimic/**",
+]
+
+[tool.hatch.build.targets.wheel.force-include]
+"scripts/import_xhand.py" = "scripts/import_xhand.py"
+"scripts/import_linkerhand_l20.py" = "scripts/import_linkerhand_l20.py"
+
+[project]
+name = "dexjoco-x"
+version = "0.1.0"
+description = "DexJoCo-X seven-hand six-task benchmark and toolkit"
+readme = "README.md"
+requires-python = ">=3.10, <3.12"
+keywords = ["embodied AI", "benchmark", "toolkit"]
+classifiers = [
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "absl-py",
+    "av",
+    "dm-robotics-transformations",
+    "glfw",
+    "gymnasium==1.0.0",
+    "mujoco==3.4.0",
+    "numcodecs>=0.10,<0.16",
+    "numpy==1.26.4",
+    "scipy",
+    "zarr<3",
+    "opencv-python",
+    "tqdm",
+    "imageio[ffmpeg]",
+    "pyyaml",
+    "tyro"
+]
+
+[project.optional-dependencies]
+autocollect-llm = ["jsonschema>=4.18,<5", "Pillow>=9"]
+benchmark = ["websockets>=11,<16", "msgpack>=1,<2"]
+dataset = ["pandas>=2,<3", "pyarrow>=14"]
+download = ["huggingface-hub>=1,<3"]
+dexlatent = ["torch>=2.4"]
+asset-audit = ["trimesh>=4,<5", "Pillow>=9"]
+
+[project.urls]
+Homepage = "https://github.com/darenrenjian/DexJoCo-X-public"

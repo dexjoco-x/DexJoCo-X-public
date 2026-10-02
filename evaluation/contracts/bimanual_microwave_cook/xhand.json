@@ -1,0 +1,211 @@
+{
+  "joint_names": {
+    "right": [
+      "benchhand_right_native_xhand_right_hand_thumb_bend_joint",
+      "benchhand_right_native_xhand_right_hand_thumb_rota_joint1",
+      "benchhand_right_native_xhand_right_hand_thumb_rota_joint2",
+      "benchhand_right_native_xhand_right_hand_index_bend_joint",
+      "benchhand_right_native_xhand_right_hand_index_joint1",
+      "benchhand_right_native_xhand_right_hand_index_joint2",
+      "benchhand_right_native_xhand_right_hand_mid_joint1",
+      "benchhand_right_native_xhand_right_hand_mid_joint2",
+      "benchhand_right_native_xhand_right_hand_ring_joint1",
+      "benchhand_right_native_xhand_right_hand_ring_joint2",
+      "benchhand_right_native_xhand_right_hand_pinky_joint1",
+      "benchhand_right_native_xhand_right_hand_pinky_joint2"
+    ],
+    "left": [
+      "benchhand_left_native_xhand_left_hand_thumb_bend_joint",
+      "benchhand_left_native_xhand_left_hand_thumb_rota_joint1",
+      "benchhand_left_native_xhand_left_hand_thumb_rota_joint2",
+      "benchhand_left_native_xhand_left_hand_index_bend_joint",
+      "benchhand_left_native_xhand_left_hand_index_joint1",
+      "benchhand_left_native_xhand_left_hand_index_joint2",
+      "benchhand_left_native_xhand_left_hand_mid_joint1",
+      "benchhand_left_native_xhand_left_hand_mid_joint2",
+      "benchhand_left_native_xhand_left_hand_ring_joint1",
+      "benchhand_left_native_xhand_left_hand_ring_joint2",
+      "benchhand_left_native_xhand_left_hand_pinky_joint1",
+      "benchhand_left_native_xhand_left_hand_pinky_joint2"
+    ]
+  },
+  "actuator_names": {
+    "right": [
+      "benchhand_right_native_xhand_right_hand_thumb_bend_joint_ctrl",
+      "benchhand_right_native_xhand_right_hand_thumb_rota_joint1_ctrl",
+      "benchhand_right_native_xhand_right_hand_thumb_rota_joint2_ctrl",
+      "benchhand_right_native_xhand_right_hand_index_bend_joint_ctrl",
+      "benchhand_right_native_xhand_right_hand_index_joint1_ctrl",
+      "benchhand_right_native_xhand_right_hand_index_joint2_ctrl",
+      "benchhand_right_native_xhand_right_hand_mid_joint1_ctrl",
+      "benchhand_right_native_xhand_right_hand_mid_joint2_ctrl",
+      "benchhand_right_native_xhand_right_hand_ring_joint1_ctrl",
+      "benchhand_right_native_xhand_right_hand_ring_joint2_ctrl",
+      "benchhand_right_native_xhand_right_hand_pinky_joint1_ctrl",
+      "benchhand_right_native_xhand_right_hand_pinky_joint2_ctrl"
+    ],
+    "left": [
+      "benchhand_left_native_xhand_left_hand_thumb_bend_joint_ctrl",
+      "benchhand_left_native_xhand_left_hand_thumb_rota_joint1_ctrl",
+      "benchhand_left_native_xhand_left_hand_thumb_rota_joint2_ctrl",
+      "benchhand_left_native_xhand_left_hand_index_bend_joint_ctrl",
+      "benchhand_left_native_xhand_left_hand_index_joint1_ctrl",
+      "benchhand_left_native_xhand_left_hand_index_joint2_ctrl",
+      "benchhand_left_native_xhand_left_hand_mid_joint1_ctrl",
+      "benchhand_left_native_xhand_left_hand_mid_joint2_ctrl",
+      "benchhand_left_native_xhand_left_hand_ring_joint1_ctrl",
+      "benchhand_left_native_xhand_left_hand_ring_joint2_ctrl",
+      "benchhand_left_native_xhand_left_hand_pinky_joint1_ctrl",
+      "benchhand_left_native_xhand_left_hand_pinky_joint2_ctrl"
+    ]
+  },
+  "instruction": "Put the food in the microwave, close its door, and press start.",
+  "control_dt": 0.05,
+  "wrist_camera_rig": {
+    "name": "dexjoco_official_allegro60_hanoi_front_v1",
+    "position_tcp": [
+      -0.14,
+      -0.03,
+      0.04
+    ],
+    "vertical_fov_deg": 60.0,
+    "reference_tcp_site_quat_wxyz": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "reference_attachment_quat_single_wxyz": [
+      -0.353553,
+      0.612372,
+      -0.612372,
+      0.352553
+    ],
+    "reference_attachment_quat_dual_wxyz": [
+      -0.353553,
+      0.612372,
+      -0.612372,
+      0.353553
+    ],
+    "hanoi_main_camera": "front",
+    "cross_hand_mapping": "same attachment_site/TCP extrinsics",
+    "real_world_calibrated": false
+  },
+  "camera_profile": "dexjoco_official_allegro60_hanoi_front_v1",
+  "cameras": {
+    "front": {
+      "camera_name": "back",
+      "body": "world",
+      "position_body_m": [
+        -1.3,
+        0.0,
+        2.2
+      ],
+      "quaternion_body_wxyz": [
+        0.6532814294902178,
+        0.27059817790077156,
+        -0.27059817790077156,
+        -0.6532814294902178
+      ],
+      "vertical_fov_deg": 45.0
+    },
+    "wrist_right": {
+      "camera_name": "handcam_rgb_right",
+      "body": "attachment_right",
+      "position_body_m": [
+        0.14,
+        0.03,
+        0.04
+      ],
+      "quaternion_body_wxyz": [
+        -0.353553286310042,
+        0.6123724959037347,
+        -0.6123724959037345,
+        0.353553286310042
+      ],
+      "vertical_fov_deg": 60.0,
+      "position_tcp_m": [
+        -0.14,
+        -0.03,
+        0.04
+      ],
+      "rotation_tcp": [
+        [
+          -1.6653345369377348e-16,
+          0.500000294957478,
+          -0.8660252334905927
+        ],
+        [
+          1.0000000000000004,
+          1.6653345369377348e-16,
+          -5.551115123125783e-17
+        ],
+        [
+          5.551115123125783e-17,
+          -0.8660252334905927,
+          -0.500000294957478
+        ]
+      ]
+    },
+    "wrist_left": {
+      "camera_name": "handcam_rgb_left",
+      "body": "attachment_left",
+      "position_body_m": [
+        0.14,
+        0.03,
+        0.04
+      ],
+      "quaternion_body_wxyz": [
+        -0.353553286310042,
+        0.6123724959037347,
+        -0.6123724959037345,
+        0.353553286310042
+      ],
+      "vertical_fov_deg": 60.0,
+      "position_tcp_m": [
+        -0.14,
+        -0.03,
+        0.04
+      ],
+      "rotation_tcp": [
+        [
+          -1.6653345369377348e-16,
+          0.500000294957478,
+          -0.8660252334905927
+        ],
+        [
+          1.0000000000000004,
+          1.6653345369377348e-16,
+          -5.551115123125783e-17
+        ],
+        [
+          5.551115123125783e-17,
+          -0.8660252334905927,
+          -0.500000294957478
+        ]
+      ]
+    }
+  },
+  "image_preprocessing": {
+    "size": [
+      256,
+      256
+    ],
+    "fps": 20,
+    "rotation_degrees": 0,
+    "vertical_flip": false,
+    "observation_timing": "pre-action"
+  },
+  "model_revision": "xhand_left_mount_rx180_v1",
+  "model_xml_sha256": "b49d61e79c3d275336ed191233a491728dbfb3f144349d6351475a6d790b2001",
+  "model_manifest_sha256": "929f7c998bd346c246c27da0b0e4011768a50751c7b4ce0a758e9f6ca51ff32b",
+  "evaluation_requires_matching_mount": true,
+  "success_policy": {
+    "id": "microwave_first_native_success_v1",
+    "required_success_steps": 1,
+    "terminate_on_first_success": true,
+    "observation": "post_control_step_50ms",
+    "completion": "native food-inside AND door-closed AND start-button-contact",
+    "additional_hold_s": 0.0
+  }
+}

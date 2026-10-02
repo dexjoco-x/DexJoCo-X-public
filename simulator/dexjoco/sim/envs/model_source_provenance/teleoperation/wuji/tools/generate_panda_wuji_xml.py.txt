@@ -1,0 +1,616 @@
+from __future__ import annotations
+
+import argparse
+import shutil
+import xml.etree.ElementTree as ET
+from pathlib import Path
+
+import mujoco
+
+
+_RAW_JOINT_NAMES = tuple(f"F{finger}J{joint}" for finger in range(1, 6) for joint in range(1, 5))
+_XML_DIR = Path("dexjoco/dexjoco/sim/envs/xmls")
+_BIMANUAL_INCLUDE_TEMPLATE = """<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="{model_name}">
+  <include file="{right_xml}" />
+  <include file="{left_xml}" />
+</mujoco>
+"""
+_ARENA_REPLACEMENTS = {
+    "arena_arm_hand_bimanual_assembly_sharpa_wave.xml": (
+        "arena_arm_hand_bimanual_assembly_wuji.xml",
+        "Arena_Wuji_Bimanual_Assembly",
+    ),
+    "arena_arm_hand_bimanual_hanoi_sharpa_wave.xml": (
+        "arena_arm_hand_bimanual_hanoi_wuji.xml",
+        "Arena_Wuji_Bimanual_Hanoi",
+    ),
+    "arena_arm_hand_microwave_cook_sharpa_wave.xml": (
+        "arena_arm_hand_microwave_cook_wuji.xml",
+        "Arena_Wuji_Microwave",
+    ),
+    "arena_arm_hand_bimanual_photograph_sharpa_wave.xml": (
+        "arena_arm_hand_bimanual_photograph_wuji.xml",
+        "Arena_Wuji_Bimanual_Photograph",
+    ),
+    "arena_arm_hand_ipad_sharpa_wave.xml": (
+        "arena_arm_hand_ipad_wuji.xml",
+        "Arena_Wuji_iPad",
+    ),
+}
+_NAME_ATTRS = (
+    "name",
+    "class",
+    "childclass",
+    "mesh",
+    "material",
+    "texture",
+    "joint",
+    "joint1",
+    "joint2",
+    "site",
+    "objname",
+    "body1",
+    "body2",
+    "geom1",
+    "geom2",
+)
+_RIGHT_WUJI_GRASP_PATCH = {
+    "index_pos": "-0.141917 0.0294339 0.0241299",
+    "middle_pos": "-0.139544 0.00746146 0.0195403",
+    "web_fromto": "-0.096 0.025 0.034 -0.137 0.029 0.025",
+    "thumb_tip_fromto": "-0.008 0.0008 0.0002 -0.034 0.0012 0.0002",
+    "finger_tip_pos": "-0.0185 0.00105 0",
+}
+_LEFT_WUJI_GRASP_PATCH = {
+    "index_pos": "-0.141917 -0.029434 0.0241299",
+    "middle_pos": "-0.139544 -0.0074615 0.01954",
+    "web_fromto": "-0.096 -0.025 0.034 -0.137 -0.029 0.025",
+    "thumb_tip_fromto": "0.008 -0.0008 -0.0002 0.034 -0.0012 -0.0002",
+    "finger_tip_pos": "0.0185 -0.00105 0",
+}
+_WUJI_MATERIALS = {
+    "wuji_graphite_shell": {
+        "rgba": "0.018 0.02 0.02 1",
+        "specular": "0.16",
+        "shininess": "0.16",
+        "reflectance": "0.015",
+    },
+    "wuji_satin_metal": {
+        "rgba": "0.62 0.64 0.64 1",
+        "specular": "0.48",
+        "shininess": "0.30",
+        "reflectance": "0.055",
+    },
+    "wuji_soft_tip": {
+        "rgba": "0.82 0.84 0.84 1",
+        "specular": "0.08",
+        "shininess": "0.08",
+        "reflectance": "0.005",
+    },
+}
+_WUJI_SOFT_TIP_MESHES = {
+    "wuji_fingertip_thumb",
+    "wuji_fingertip_index",
+    "wuji_fingertip_middle",
+    "wuji_fingertip_ring",
+    "wuji_fingertip_pinky",
+}
+_WUJI_ACTUATOR_GAIN = "120"
+_WUJI_ACTUATOR_FORCE_RANGE = "-120 120"
+_WUJI_JOINT_DAMPING = "8"
+
+
+def _wuji_visual_material(mesh_name: str) -> str | None:
+    if mesh_name == "wuji_base_link":
+        return "wuji_graphite_shell"
+    if mesh_name in _WUJI_SOFT_TIP_MESHES:
+        return "wuji_soft_tip"
+    if mesh_name.startswith("wuji_"):
+        return "wuji_satin_metal"
+    return None
+
+
+def _find_named(root: ET.Element, tag: str, name: str) -> ET.Element | None:
+    return root.find(f".//{tag}[@name='{name}']")
+
+
+def _ensure_child_geom(parent: ET.Element, name: str, attrs: dict[str, str]) -> None:
+    geom = parent.find(f"./geom[@name='{name}']")
+    if geom is not None:
+        geom.attrib.clear()
+        geom.set("name", name)
+        geom.attrib.update(attrs)
+        return
+    ET.SubElement(parent, "geom", {"name": name, **attrs})
+
+
+def _insert_after_child(parent: ET.Element, after_child: ET.Element, child: ET.Element) -> None:
+    children = list(parent)
+    try:
+        idx = children.index(after_child)
+    except ValueError:
+        parent.append(child)
+        return
+    parent.insert(idx + 1, child)
+
+
+def _ensure_web_geom(frame: ET.Element, name: str, attrs: dict[str, str]) -> None:
+    if frame.find(f"./geom[@name='{name}']") is not None:
+        return
+    geom = ET.Element("geom", {"name": name, **attrs})
+    base = frame.find("./geom[@mesh='wuji_base_link']")
+    if base is None:
+        frame.append(geom)
+    else:
+        _insert_after_child(frame, base, geom)
+
+
+def _apply_wuji_grasp_postprocess(output: Path, side: str) -> None:
+    patch = _RIGHT_WUJI_GRASP_PATCH if side == "right" else _LEFT_WUJI_GRASP_PATCH
+    tree = ET.parse(output)
+    root = tree.getroot()
+
+    index = _find_named(root, "body", "wuji_MCP_joint_index")
+    middle = _find_named(root, "body", "wuji_MCP_joint_middle")
+    if index is not None:
+        index.set("pos", patch["index_pos"])
+    if middle is not None:
+        middle.set("pos", patch["middle_pos"])
+
+    common_pad_attrs = {
+        "type": "capsule",
+        "rgba": "0.05 0.05 0.05 0.18",
+        "friction": "2.2 0.03 0.003",
+        "solref": "0.004 1",
+        "solimp": "0.9 0.95 0.001",
+        "group": "3",
+    }
+    thumb = _find_named(root, "body", "wuji_IP_thumb")
+    if thumb is not None:
+        _ensure_child_geom(
+            thumb,
+            "wuji_thumb_fingertip_pad",
+            {
+                **common_pad_attrs,
+                "fromto": patch["thumb_tip_fromto"],
+                "size": "0.0095",
+                "rgba": "0.05 0.05 0.05 0.20",
+                "friction": "2.4 0.035 0.003",
+            },
+        )
+    for finger_name, size, friction in (
+        ("index", "0.0076", "2.2 0.03 0.003"),
+        ("middle", "0.0076", "2.0 0.03 0.003"),
+    ):
+        tip = _find_named(root, "body", f"wuji_tipmount_{finger_name}")
+        if tip is not None:
+            _ensure_child_geom(
+                tip,
+                f"wuji_{finger_name}_fingertip_pad",
+                {
+                    **common_pad_attrs,
+                    "type": "sphere",
+                    "pos": patch["finger_tip_pos"],
+                    "size": size,
+                    "friction": friction,
+                },
+            )
+
+    frame = _find_named(root, "frame", "wuji_mount_frame")
+    if frame is not None:
+        _ensure_web_geom(
+            frame,
+            "wuji_thumb_index_web_pad",
+            {
+                "type": "capsule",
+                "fromto": patch["web_fromto"],
+                "size": "0.0065",
+                "rgba": "0.05 0.05 0.05 0.16",
+                "friction": "2.0 0.03 0.003",
+                "solref": "0.004 1",
+                "solimp": "0.9 0.95 0.001",
+                "contype": "2",
+                "conaffinity": "4",
+                "group": "3",
+            },
+        )
+
+    tree.write(output, encoding="utf-8", xml_declaration=False)
+
+
+def _apply_wuji_visual_postprocess(output: Path) -> None:
+    tree = ET.parse(output)
+    root = tree.getroot()
+    asset = root.find("./asset")
+    if asset is None:
+        asset = ET.SubElement(root, "asset")
+
+    for name, attrs in _WUJI_MATERIALS.items():
+        material = asset.find(f"./material[@name='{name}']")
+        if material is None:
+            material = ET.SubElement(asset, "material", {"name": name})
+        for attr_name, attr_value in attrs.items():
+            material.set(attr_name, attr_value)
+
+    for geom in root.findall(".//geom[@mesh]"):
+        material = _wuji_visual_material(geom.attrib.get("mesh", ""))
+        if material is None:
+            continue
+        geom.set("material", material)
+        geom.attrib.pop("rgba", None)
+
+    tree.write(output, encoding="utf-8", xml_declaration=False)
+
+
+def build_argparser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Generate a Panda-mounted Wuji XML from the validated DexJoCo "
+            "Panda+LEAP wrist scaffold and the local UniDex Wuji right-hand URDF."
+        )
+    )
+    parser.add_argument(
+        "--panda_template",
+        type=Path,
+        default=Path("dexjoco/dexjoco/sim/envs/xmls/panda_leap_right.xml"),
+    )
+    parser.add_argument(
+        "--wuji_urdf",
+        type=Path,
+        default=Path("teleoperation/wuji/assets/right/main.urdf"),
+    )
+    parser.add_argument(
+        "--fixed_urdf",
+        type=Path,
+        default=Path("teleoperation/wuji/assets/right/main_mujoco.urdf"),
+    )
+    parser.add_argument(
+        "--hand_xml",
+        type=Path,
+        default=Path("teleoperation/wuji/assets/right/wuji_right.xml"),
+    )
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=Path("dexjoco/dexjoco/sim/envs/xmls/panda_wuji_right.xml"),
+    )
+    parser.add_argument(
+        "--left_wuji_urdf",
+        type=Path,
+        default=Path("teleoperation/wuji/assets/left/main.urdf"),
+    )
+    parser.add_argument(
+        "--left_fixed_urdf",
+        type=Path,
+        default=Path("teleoperation/wuji/assets/left/main_mujoco.urdf"),
+    )
+    parser.add_argument(
+        "--left_hand_xml",
+        type=Path,
+        default=Path("teleoperation/wuji/assets/left/wuji_left.xml"),
+    )
+    parser.add_argument(
+        "--left_output",
+        type=Path,
+        default=Path("dexjoco/dexjoco/sim/envs/xmls/panda_wuji_left.xml"),
+    )
+    parser.add_argument("--xml_dir", type=Path, default=_XML_DIR)
+    parser.add_argument(
+        "--skip_bimanual",
+        action="store_true",
+        help="Only regenerate the single-arm XML named by --output.",
+    )
+    return parser
+
+
+def _delete_if_exists(spec: mujoco.MjSpec, collection: str, name: str) -> None:
+    try:
+        elem = getattr(spec, collection)(name)
+    except Exception:
+        return
+    if elem is not None:
+        spec.delete(elem)
+
+
+def _remove_leap_from_template(spec: mujoco.MjSpec) -> None:
+    for body_name in ("leap_attachment", "leap_palm"):
+        _delete_if_exists(spec, "body", body_name)
+    for actuator_name in tuple(f"leap/a{i}" for i in range(16)):
+        _delete_if_exists(spec, "actuator", actuator_name)
+
+
+def _make_mujoco_urdf(raw_urdf: Path, fixed_urdf: Path) -> None:
+    tree = ET.parse(raw_urdf)
+    root = tree.getroot()
+
+    # MuJoCo resolves relative mesh paths slightly differently from ROS URDF.
+    # Its URDF loader strips mesh directories and looks for basenames next to
+    # the URDF, so keep a flat MuJoCo compile cache in the same directory.
+    for mesh in root.findall(".//mesh"):
+        filename = mesh.attrib.get("filename")
+        if filename and not filename.startswith("/"):
+            src = raw_urdf.parent / filename
+            dst = fixed_urdf.parent / Path(filename).name
+            if src.exists() and src.resolve() != dst.resolve():
+                shutil.copy2(src, dst)
+            mesh.set("filename", Path(filename).name)
+
+    for link in root.findall("link"):
+        inertial = link.find("inertial")
+        if inertial is None:
+            continue
+        mass = inertial.find("mass")
+        inertia = inertial.find("inertia")
+        if mass is not None:
+            value = max(float(mass.attrib.get("value", "0")), 1e-4)
+            mass.set("value", f"{value:.8g}")
+        if inertia is not None:
+            for key in ("ixx", "iyy", "izz"):
+                value = max(float(inertia.attrib.get(key, "0")), 1e-8)
+                inertia.set(key, f"{value:.8g}")
+            for key in ("ixy", "ixz", "iyz"):
+                value = float(inertia.attrib.get(key, "0"))
+                inertia.set(key, f"{value:.8g}")
+
+    fixed_urdf.parent.mkdir(parents=True, exist_ok=True)
+    tree.write(fixed_urdf, encoding="utf-8", xml_declaration=True)
+
+
+def _prefix_hand_xml_names(xml_path: Path) -> None:
+    tree = ET.parse(xml_path)
+    root = tree.getroot()
+
+    for elem in root.iter():
+        if "name" in elem.attrib:
+            elem.set("name", f"wuji_{elem.attrib['name']}")
+        if "joint" in elem.attrib:
+            elem.set("joint", f"wuji_{elem.attrib['joint']}")
+        if "body1" in elem.attrib:
+            elem.set("body1", f"wuji_{elem.attrib['body1']}")
+        if "body2" in elem.attrib:
+            elem.set("body2", f"wuji_{elem.attrib['body2']}")
+        if "mesh" in elem.attrib:
+            elem.set("mesh", f"wuji_{elem.attrib['mesh']}")
+        if "material" in elem.attrib:
+            elem.set("material", f"wuji_{elem.attrib['material']}")
+
+    tree.write(xml_path, encoding="utf-8", xml_declaration=False)
+
+
+def _add_position_actuators(xml_path: Path) -> None:
+    tree = ET.parse(xml_path)
+    root = tree.getroot()
+
+    for joint in root.findall(".//joint"):
+        if joint.attrib.get("name", "").startswith("wuji_"):
+            joint.set("actuatorfrcrange", _WUJI_ACTUATOR_FORCE_RANGE)
+            joint.set("damping", _WUJI_JOINT_DAMPING)
+
+    actuator = root.find("actuator")
+    if actuator is None:
+        actuator = ET.SubElement(root, "actuator")
+    for raw_name in _RAW_JOINT_NAMES:
+        name = f"wuji_{raw_name}"
+        existing = actuator.find(f".//*[@name='{name}_ctrl']")
+        if existing is not None:
+            existing.tag = "general"
+            existing.attrib.pop("kp", None)
+            existing.set("forcerange", _WUJI_ACTUATOR_FORCE_RANGE)
+            existing.set("biastype", "affine")
+            existing.set("gainprm", _WUJI_ACTUATOR_GAIN)
+            existing.set("biasprm", f"0 -{_WUJI_ACTUATOR_GAIN}")
+            continue
+        ET.SubElement(
+            actuator,
+            "general",
+            {
+                "name": f"{name}_ctrl",
+                "joint": name,
+                "forcerange": _WUJI_ACTUATOR_FORCE_RANGE,
+                "biastype": "affine",
+                "gainprm": _WUJI_ACTUATOR_GAIN,
+                "biasprm": f"0 -{_WUJI_ACTUATOR_GAIN}",
+            },
+        )
+    tree.write(xml_path, encoding="utf-8", xml_declaration=False)
+
+
+def _fix_wuji_mesh_paths(output: Path, side: str) -> None:
+    wuji_asset_prefix = f"../../../../../teleoperation/wuji/assets/{side}"
+    tree = ET.parse(output)
+    root = tree.getroot()
+    for mesh in root.findall(".//mesh"):
+        name = mesh.attrib.get("name", "")
+        file_name = mesh.attrib.get("file", "")
+        if name.startswith("/wuji_"):
+            mesh.set("name", name[1:])
+        if name.startswith("wuji_") or name.startswith("/wuji_"):
+            if file_name.endswith(".STL") and "/" not in file_name:
+                mesh.set("file", f"{wuji_asset_prefix}/{file_name}")
+    for elem in root.iter():
+        for attr_name, attr_value in list(elem.attrib.items()):
+            if isinstance(attr_value, str) and attr_value.startswith("/wuji_"):
+                elem.set(attr_name, attr_value[1:])
+    tree.write(output, encoding="utf-8", xml_declaration=False)
+
+
+def _suffix(value: str, side: str) -> str:
+    if not value or value.endswith(f"_{side}"):
+        return value
+    return f"{value}_{side}"
+
+
+def _suffix_tree(root: ET.Element, side: str) -> None:
+    for elem in root.iter():
+        for attr in _NAME_ATTRS:
+            value = elem.attrib.get(attr)
+            if value is not None:
+                elem.set(attr, _suffix(value, side))
+
+
+def _set_bimanual_base_position(root: ET.Element, side: str, microwave: bool) -> None:
+    base = root.find("./worldbody/body")
+    if base is None:
+        raise RuntimeError("Expected the first worldbody body to be the Panda base.")
+    x = -1.05 if microwave else -0.8
+    y = -0.4 if side == "right" else 0.4
+    base.set("pos", f"{x:g} {y:g} 0.924")
+
+
+def _write_xml(tree: ET.ElementTree, path: Path) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    ET.indent(tree.getroot(), space="  ")
+    tree.write(path, encoding="utf-8", xml_declaration=True)
+
+
+def _compile_wuji_hand(fixed_urdf: Path, hand_xml: Path) -> None:
+    model = mujoco.MjModel.from_xml_path(fixed_urdf.as_posix())
+    hand_xml.parent.mkdir(parents=True, exist_ok=True)
+    mujoco.mj_saveLastXML(hand_xml.as_posix(), model)
+    _prefix_hand_xml_names(hand_xml)
+    _add_position_actuators(hand_xml)
+    mujoco.MjModel.from_xml_path(hand_xml.as_posix())
+
+
+def generate(
+    panda_template: Path,
+    wuji_urdf: Path,
+    fixed_urdf: Path,
+    hand_xml: Path,
+    output: Path,
+    side: str = "right",
+) -> None:
+    _make_mujoco_urdf(wuji_urdf, fixed_urdf)
+    _compile_wuji_hand(fixed_urdf, hand_xml)
+
+    panda_spec = mujoco.MjSpec.from_file(panda_template.as_posix())
+    wuji_spec = mujoco.MjSpec.from_file(hand_xml.as_posix())
+    _remove_leap_from_template(panda_spec)
+
+    attachment = panda_spec.body("attachment")
+    frame = attachment.add_frame(
+        name="wuji_mount_frame",
+        # First-pass wrist convention: keep the hand compact near the Panda flange.
+        # Tune this mount after visual inspection in the recorder.
+        pos=[-0.05, 0.0, 0.03],
+        quat=[0.707, 0.0, -0.707, 0.0],
+    )
+    attachment.add_geom(
+        name="wuji_wrist_adapter_visual",
+        type=mujoco.mjtGeom.mjGEOM_BOX,
+        pos=[-0.025, 0.0, 0.015],
+        size=[0.03, 0.03, 0.02],
+        rgba=[0.22, 0.22, 0.22, 1.0],
+        contype=0,
+        conaffinity=0,
+        group=1,
+    )
+
+    panda_spec.attach(wuji_spec, frame=frame)
+    panda_spec.compile()
+
+    output.parent.mkdir(parents=True, exist_ok=True)
+    panda_spec.to_file(output.as_posix())
+    _fix_wuji_mesh_paths(output, side=side)
+    _apply_wuji_grasp_postprocess(output, side=side)
+    _apply_wuji_visual_postprocess(output)
+    mujoco.MjModel.from_xml_path(output.as_posix())
+    print(f"[generate_panda_wuji_xml] wrote {output}")
+
+
+def _generate_bimanual_side_xml(
+    single_xml: Path,
+    output: Path,
+    side: str,
+    microwave: bool,
+) -> None:
+    tree = ET.parse(single_xml)
+    root = tree.getroot()
+    model_prefix = "panda_wuji_bimanual_microwave" if microwave else "panda_wuji_bimanual"
+    root.set("model", f"{model_prefix}_{side}")
+    _suffix_tree(root, side)
+    _set_bimanual_base_position(root, side, microwave=microwave)
+    _write_xml(tree, output)
+    mujoco.MjModel.from_xml_path(output.as_posix())
+    print(f"[generate_panda_wuji_xml] wrote {output}")
+
+
+def generate_bimanual_xmls(
+    right_single_xml: Path,
+    left_single_xml: Path,
+    xml_dir: Path,
+) -> None:
+    variants = (
+        (False, "panda_wuji_bimanual"),
+        (True, "panda_wuji_bimanual_microwave"),
+    )
+    for microwave, base_name in variants:
+        _generate_bimanual_side_xml(
+            right_single_xml,
+            xml_dir / f"{base_name}_right.xml",
+            side="right",
+            microwave=microwave,
+        )
+        _generate_bimanual_side_xml(
+            left_single_xml,
+            xml_dir / f"{base_name}_left.xml",
+            side="left",
+            microwave=microwave,
+        )
+
+        include_path = xml_dir / f"{base_name}.xml"
+        include_path.write_text(
+            _BIMANUAL_INCLUDE_TEMPLATE.format(
+                model_name=base_name,
+                right_xml=f"{base_name}_right.xml",
+                left_xml=f"{base_name}_left.xml",
+            ),
+            encoding="utf-8",
+        )
+        mujoco.MjModel.from_xml_path(include_path.as_posix())
+        print(f"[generate_panda_wuji_xml] wrote {include_path}")
+
+
+def generate_arena_xmls(xml_dir: Path) -> None:
+    for src_name, (dst_name, model_name) in _ARENA_REPLACEMENTS.items():
+        text = (xml_dir / src_name).read_text(encoding="utf-8")
+        text = text.replace("panda_sharpa_bimanual_microwave.xml", "panda_wuji_bimanual_microwave.xml")
+        text = text.replace("panda_sharpa_bimanual.xml", "panda_wuji_bimanual.xml")
+        text = text.replace('model="Arena_Sharpa_Bimanual_Assembly"', f'model="{model_name}"')
+        text = text.replace('model="Arena_Sharpa_Bimanual_Hanoi"', f'model="{model_name}"')
+        text = text.replace('model="Arena_Sharpa_Microwave"', f'model="{model_name}"')
+        text = text.replace('model="Arena_Sharpa_Bimanual_Photograph"', f'model="{model_name}"')
+        text = text.replace('model="Arena_Sharpa_iPad"', f'model="{model_name}"')
+        out_path = xml_dir / dst_name
+        out_path.write_text(text, encoding="utf-8")
+        mujoco.MjModel.from_xml_path(out_path.as_posix())
+        print(f"[generate_panda_wuji_xml] wrote {out_path}")
+
+
+def main() -> int:
+    args = build_argparser().parse_args()
+    generate(
+        panda_template=args.panda_template,
+        wuji_urdf=args.wuji_urdf,
+        fixed_urdf=args.fixed_urdf,
+        hand_xml=args.hand_xml,
+        output=args.output,
+        side="right",
+    )
+    if not args.skip_bimanual:
+        generate(
+            panda_template=args.panda_template,
+            wuji_urdf=args.left_wuji_urdf,
+            fixed_urdf=args.left_fixed_urdf,
+            hand_xml=args.left_hand_xml,
+            output=args.left_output,
+            side="left",
+        )
+        generate_bimanual_xmls(args.output, args.left_output, args.xml_dir)
+        generate_arena_xmls(args.xml_dir)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

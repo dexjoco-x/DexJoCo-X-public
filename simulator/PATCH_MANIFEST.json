@@ -1,0 +1,15 @@
+{
+  "release": "DexJoCo-X_simulator_runtime_v9_candidate_20261001",
+  "parent": "release://parent/simulator",
+  "mount_revision": "xhand_left_mount_rx180_v1",
+  "corrected_model": "dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_microwave_cook_xhand.xml",
+  "corrected_xml_sha256": "b49d61e79c3d275336ed191233a491728dbfb3f144349d6351475a6d790b2001",
+  "corrected_metadata_sha256": "3f48818676dcad0160b5f3d0821bb79c9f75c97bacc91c2cb035e2bb4d8631fa",
+  "source_collection_release_sha256": "ea8e107fa7ecc2eed75d6b9ec37e4ee1b0ef6e4a28b242a511b50bfe57d7dec9",
+  "symlinks": 0,
+  "bundled_dependencies": [
+    "teleoperation (from matching evaluation package)",
+    "scripts (source-review files from matching evaluation package)"
+  ],
+  "standalone_root_resolution_fixed": true
+}

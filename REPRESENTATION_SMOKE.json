@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "task": "bimanual_microwave_cook",
+  "hand": "xhand",
+  "representations": [
+    {
+      "representation": "native",
+      "passed": true,
+      "action_roundtrip_max_abs": 0.0,
+      "physics_step_finite": true
+    },
+    {
+      "representation": "faas",
+      "passed": true,
+      "action_roundtrip_max_abs": 0.0,
+      "physics_step_finite": true
+    }
+  ]
+}

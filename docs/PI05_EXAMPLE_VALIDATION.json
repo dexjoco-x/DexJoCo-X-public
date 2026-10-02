@@ -1,0 +1,366 @@
+{
+  "date": "2026-10-02",
+  "passed": true,
+  "policy_family": "pi0.5",
+  "backend": "RLinf",
+  "token_layout": "ego_interleave32",
+  "upstream_commit": "e1d1bac185fc8d2718c25df9ae8a9089893c46c2",
+  "upstream_model_source_unmodified": true,
+  "model_weights_published": false,
+  "project_training_code_required": false,
+  "native_interfaces": {
+    "passed": true,
+    "checks": [
+      {
+        "hand": "allegro",
+        "task": "bimanual_microwave_cook",
+        "passed": true,
+        "active_state": 44,
+        "active_actions": 44
+      },
+      {
+        "hand": "inspire",
+        "task": "bimanual_microwave_cook",
+        "passed": true,
+        "active_state": 36,
+        "active_actions": 24
+      },
+      {
+        "hand": "leap",
+        "task": "bimanual_microwave_cook",
+        "passed": true,
+        "active_state": 44,
+        "active_actions": 44
+      },
+      {
+        "hand": "linkerhand_l20",
+        "task": "bimanual_microwave_cook",
+        "passed": true,
+        "active_state": 54,
+        "active_actions": 44
+      },
+      {
+        "hand": "sharpa_wave",
+        "task": "bimanual_microwave_cook",
+        "passed": true,
+        "active_state": 56,
+        "active_actions": 56
+      },
+      {
+        "hand": "wuji",
+        "task": "bimanual_microwave_cook",
+        "passed": true,
+        "active_state": 52,
+        "active_actions": 52
+      },
+      {
+        "hand": "xhand",
+        "task": "bimanual_microwave_cook",
+        "passed": true,
+        "active_state": 36,
+        "active_actions": 36
+      },
+      {
+        "hand": "allegro",
+        "task": "bimanual_photograph",
+        "passed": true,
+        "active_state": 44,
+        "active_actions": 44
+      },
+      {
+        "hand": "inspire",
+        "task": "bimanual_photograph",
+        "passed": true,
+        "active_state": 36,
+        "active_actions": 24
+      },
+      {
+        "hand": "leap",
+        "task": "bimanual_photograph",
+        "passed": true,
+        "active_state": 44,
+        "active_actions": 44
+      },
+      {
+        "hand": "linkerhand_l20",
+        "task": "bimanual_photograph",
+        "passed": true,
+        "active_state": 54,
+        "active_actions": 44
+      },
+      {
+        "hand": "sharpa_wave",
+        "task": "bimanual_photograph",
+        "passed": true,
+        "active_state": 56,
+        "active_actions": 56
+      },
+      {
+        "hand": "wuji",
+        "task": "bimanual_photograph",
+        "passed": true,
+        "active_state": 52,
+        "active_actions": 52
+      },
+      {
+        "hand": "xhand",
+        "task": "bimanual_photograph",
+        "passed": true,
+        "active_state": 36,
+        "active_actions": 36
+      },
+      {
+        "hand": "allegro",
+        "task": "bimanual_unlock_ipad",
+        "passed": true,
+        "active_state": 44,
+        "active_actions": 44
+      },
+      {
+        "hand": "inspire",
+        "task": "bimanual_unlock_ipad",
+        "passed": true,
+        "active_state": 36,
+        "active_actions": 24
+      },
+      {
+        "hand": "leap",
+        "task": "bimanual_unlock_ipad",
+        "passed": true,
+        "active_state": 44,
+        "active_actions": 44
+      },
+      {
+        "hand": "linkerhand_l20",
+        "task": "bimanual_unlock_ipad",
+        "passed": true,
+        "active_state": 54,
+        "active_actions": 44
+      },
+      {
+        "hand": "sharpa_wave",
+        "task": "bimanual_unlock_ipad",
+        "passed": true,
+        "active_state": 56,
+        "active_actions": 56
+      },
+      {
+        "hand": "wuji",
+        "task": "bimanual_unlock_ipad",
+        "passed": true,
+        "active_state": 52,
+        "active_actions": 52
+      },
+      {
+        "hand": "xhand",
+        "task": "bimanual_unlock_ipad",
+        "passed": true,
+        "active_state": 36,
+        "active_actions": 36
+      },
+      {
+        "hand": "allegro",
+        "task": "hammer_nail",
+        "passed": true,
+        "active_state": 22,
+        "active_actions": 22
+      },
+      {
+        "hand": "inspire",
+        "task": "hammer_nail",
+        "passed": true,
+        "active_state": 18,
+        "active_actions": 12
+      },
+      {
+        "hand": "leap",
+        "task": "hammer_nail",
+        "passed": true,
+        "active_state": 22,
+        "active_actions": 22
+      },
+      {
+        "hand": "linkerhand_l20",
+        "task": "hammer_nail",
+        "passed": true,
+        "active_state": 27,
+        "active_actions": 22
+      },
+      {
+        "hand": "sharpa_wave",
+        "task": "hammer_nail",
+        "passed": true,
+        "active_state": 28,
+        "active_actions": 28
+      },
+      {
+        "hand": "wuji",
+        "task": "hammer_nail",
+        "passed": true,
+        "active_state": 26,
+        "active_actions": 26
+      },
+      {
+        "hand": "xhand",
+        "task": "hammer_nail",
+        "passed": true,
+        "active_state": 18,
+        "active_actions": 18
+      },
+      {
+        "hand": "allegro",
+        "task": "pick_bucket",
+        "passed": true,
+        "active_state": 22,
+        "active_actions": 22
+      },
+      {
+        "hand": "inspire",
+        "task": "pick_bucket",
+        "passed": true,
+        "active_state": 18,
+        "active_actions": 12
+      },
+      {
+        "hand": "leap",
+        "task": "pick_bucket",
+        "passed": true,
+        "active_state": 22,
+        "active_actions": 22
+      },
+      {
+        "hand": "linkerhand_l20",
+        "task": "pick_bucket",
+        "passed": true,
+        "active_state": 27,
+        "active_actions": 22
+      },
+      {
+        "hand": "sharpa_wave",
+        "task": "pick_bucket",
+        "passed": true,
+        "active_state": 28,
+        "active_actions": 28
+      },
+      {
+        "hand": "wuji",
+        "task": "pick_bucket",
+        "passed": true,
+        "active_state": 26,
+        "active_actions": 26
+      },
+      {
+        "hand": "xhand",
+        "task": "pick_bucket",
+        "passed": true,
+        "active_state": 18,
+        "active_actions": 18
+      },
+      {
+        "hand": "allegro",
+        "task": "single_hand_hanoi",
+        "passed": true,
+        "active_state": 22,
+        "active_actions": 22
+      },
+      {
+        "hand": "inspire",
+        "task": "single_hand_hanoi",
+        "passed": true,
+        "active_state": 18,
+        "active_actions": 12
+      },
+      {
+        "hand": "leap",
+        "task": "single_hand_hanoi",
+        "passed": true,
+        "active_state": 22,
+        "active_actions": 22
+      },
+      {
+        "hand": "linkerhand_l20",
+        "task": "single_hand_hanoi",
+        "passed": true,
+        "active_state": 27,
+        "active_actions": 22
+      },
+      {
+        "hand": "sharpa_wave",
+        "task": "single_hand_hanoi",
+        "passed": true,
+        "active_state": 28,
+        "active_actions": 28
+      },
+      {
+        "hand": "wuji",
+        "task": "single_hand_hanoi",
+        "passed": true,
+        "active_state": 26,
+        "active_actions": 26
+      },
+      {
+        "hand": "xhand",
+        "task": "single_hand_hanoi",
+        "passed": true,
+        "active_state": 18,
+        "active_actions": 18
+      }
+    ]
+  },
+  "unit_tests_passed": 7,
+  "checkpoint_contract_cli_tested": true,
+  "real_checkpoint_forward_tested": true,
+  "rpc": {
+    "passed": true,
+    "repeated_noise_max_abs_diff": 0.0,
+    "changed_noise_max_abs_diff": 0.34420743584632874,
+    "metadata": {
+      "schema": "benchmark7_eval80_h25_async_v2",
+      "layout": "arm40_v1",
+      "representation": "native",
+      "action_dim": 80,
+      "action_horizon": 25,
+      "action_units": "physical_unnormalized",
+      "explicit_flow_noise": true,
+      "policy_kind": "pi05_rlinf",
+      "token_layout": "ego_interleave32",
+      "trained_hands": [
+        "sharpa_wave"
+      ],
+      "trained_tasks": [
+        "hammer_nail"
+      ],
+      "diagnostic_only": true,
+      "checkpoint_sha256": "2448257ec7377d99683b48bf5deaf9019ba2cd54990901498552653f41f21f91",
+      "contract_sha256": "6331f68f1ac366295088d407c211945e7f918206783a8ad6a9948742c3580759",
+      "upstream_commit": "e1d1bac185fc8d2718c25df9ae8a9089893c46c2"
+    },
+    "finite_physical_action_chunk": true,
+    "inactive_action_coordinates_zero": true
+  },
+  "diagnostic_rollout": {
+    "hand": "sharpa_wave",
+    "task": "hammer_nail",
+    "action_horizon": 25,
+    "execution_horizon": 8,
+    "steps": 16,
+    "diagnostic_only": true,
+    "success": false
+  },
+  "standalone_without_training_directory": {
+    "passed": true,
+    "steps": 16,
+    "action_horizon": 25,
+    "execution_horizon": 8,
+    "diagnostic_only": true,
+    "checkpoint_sha256": "2448257ec7377d99683b48bf5deaf9019ba2cd54990901498552653f41f21f91"
+  },
+  "diagnostic_policy_rejected_by_formal_evaluator": true,
+  "formal_success_rate_measured": false,
+  "single_right32_actual_checkpoint_forward_tested": false,
+  "limitations": [
+    "Real model rollout covers Sharpa Wave hammer_nail; 42 combinations cover interface masks, not full model rollouts.",
+    "Single-arm mode passes interface checks; no dedicated single-arm checkpoint was evaluated.",
+    "This server takes RLinf-compatible full model weights, not unconverted OpenPI checkpoints."
+  ]
+}

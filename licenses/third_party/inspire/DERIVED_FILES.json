@@ -1,0 +1,1698 @@
+{
+  "repository": "https://github.com/dexsuite/dex-urdf",
+  "commit": "f5e7132f22108164577fea4c25ef99b5cc0e1900",
+  "license_text": "licenses/third_party/inspire/CC-BY-NC-SA-4.0.txt",
+  "upstream_notice": "licenses/third_party/inspire/UPSTREAM_NOTICE.txt",
+  "notice_sha256": {
+    "licenses/third_party/inspire/CC-BY-NC-SA-4.0.txt": "e66c269d4819aaab34b49ef5220c4ddab6756f21bb5180761a4eb8561f2b7bbd",
+    "licenses/third_party/inspire/UPSTREAM_NOTICE.txt": "85d27de711aaad343c2c8b9be4712391a4ed3e5c7b3d2cd14c8af399b91a923c"
+  },
+  "files": [
+    {
+      "path": "simulator/teleoperation/inspire/assets/right/meshes__visual__right_base_link.obj",
+      "sha256": "59c13e90d537ed9eff84d6e702930d7ac299e322af1a2532bfe5ddc9ad08cec0",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "base_link",
+        "sha256": "5e4523c936818785318829a5ae64831994d7a85814e53d6461c0ee9212ca6750",
+        "upstream_git_blob": "fb4cc62ea7e749c2ab69373bc13d02dc0bbf6081",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_base_link.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_base_link.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.396777745618294e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 26570,
+        "target_triangles": 26570,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null
+      },
+      "modifications": "Converted upstream GLB scene to OBJ; geometry preserved within documented tolerance."
+    },
+    {
+      "path": "simulator/teleoperation/inspire/assets/left_mirrored/meshes__visual__left_mirrored_base_link.obj",
+      "sha256": "6a92e33a817b2fe8a789677edeef764e0c649da98161c5b7db5e3a50a7ec42b7",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "base_link",
+        "sha256": "5e4523c936818785318829a5ae64831994d7a85814e53d6461c0ee9212ca6750",
+        "upstream_git_blob": "fb4cc62ea7e749c2ab69373bc13d02dc0bbf6081",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_base_link.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_base_link.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.396777745618294e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 26570,
+        "target_triangles": 26570,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y"
+      },
+      "modifications": "Converted upstream right GLB to OBJ; mirrored Y coordinates and normals and reversed face winding for the left hand."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/base_link_0.obj",
+      "sha256": "0e249fdb12769d2cc109e0636241ff6c95d7137f7bbec8538c4839cfb9e52ddb",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "base_link",
+        "sha256": "5e4523c936818785318829a5ae64831994d7a85814e53d6461c0ee9212ca6750",
+        "upstream_git_blob": "fb4cc62ea7e749c2ab69373bc13d02dc0bbf6081",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_base_link.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_base_link.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.396777745618294e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 26570,
+        "target_triangles": 26570,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null,
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/base_link_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/base_link_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/base_link_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/base_link_1.obj",
+      "sha256": "fc1f91b1d4d7bb0016fbf9362995ad0155d36fe84f4f6305ec58d24cc8cd4401",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "base_link",
+        "sha256": "5e4523c936818785318829a5ae64831994d7a85814e53d6461c0ee9212ca6750",
+        "upstream_git_blob": "fb4cc62ea7e749c2ab69373bc13d02dc0bbf6081",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_base_link.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_base_link.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.396777745618294e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 26570,
+        "target_triangles": 26570,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null,
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/base_link_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/base_link_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/base_link_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/base_link_2.obj",
+      "sha256": "311fcec36f4dd65e25d0301a37098f3e315262f58e1d4012afaa82fb355d77ec",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "base_link",
+        "sha256": "5e4523c936818785318829a5ae64831994d7a85814e53d6461c0ee9212ca6750",
+        "upstream_git_blob": "fb4cc62ea7e749c2ab69373bc13d02dc0bbf6081",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_base_link.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_base_link.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.396777745618294e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 26570,
+        "target_triangles": 26570,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null,
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/base_link_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/base_link_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/base_link_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/base_link_0.obj",
+      "sha256": "cbb9e0ec03505781a3410e37ce51bc2663dae5d05387c590933b43f6b0b2f9f6",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "base_link",
+        "sha256": "5e4523c936818785318829a5ae64831994d7a85814e53d6461c0ee9212ca6750",
+        "upstream_git_blob": "fb4cc62ea7e749c2ab69373bc13d02dc0bbf6081",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_base_link.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_base_link.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.396777745618294e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 26570,
+        "target_triangles": 26570,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y",
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/base_link_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/base_link_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/base_link_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/base_link_1.obj",
+      "sha256": "89d7059c87e3b055c9e9c2cdf90d5a0c49003d8b53378647a0b5d05b1eb0668f",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "base_link",
+        "sha256": "5e4523c936818785318829a5ae64831994d7a85814e53d6461c0ee9212ca6750",
+        "upstream_git_blob": "fb4cc62ea7e749c2ab69373bc13d02dc0bbf6081",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_base_link.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_base_link.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.396777745618294e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 26570,
+        "target_triangles": 26570,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y",
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/base_link_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/base_link_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/base_link_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/base_link_2.obj",
+      "sha256": "4c849075932f50d56c0bf7efe1769b2b0595c0a6c94b35c5173a380993cd9fb2",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "base_link",
+        "sha256": "5e4523c936818785318829a5ae64831994d7a85814e53d6461c0ee9212ca6750",
+        "upstream_git_blob": "fb4cc62ea7e749c2ab69373bc13d02dc0bbf6081",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_base_link.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_base_link.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.396777745618294e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 26570,
+        "target_triangles": 26570,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y",
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/base_link_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/base_link_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/base_link_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/teleoperation/inspire/assets/right/meshes__visual__right_index_intermediate.obj",
+      "sha256": "6b790a5191ebe4e13bd01d44a1eafa7ceef4c22e9d105a92a4cd537aff27ca9b",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "index_intermediate",
+        "sha256": "55f2041dd7674ba95d3fca88dbfdd721bf6f4c4b17d8ae56733ca040a6ee0584",
+        "upstream_git_blob": "6cfa3f699111bf452825c1443f17d736cf55ff75",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_index_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_index_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.495878121720464e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 5752,
+        "target_triangles": 5752,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null
+      },
+      "modifications": "Converted upstream GLB scene to OBJ; geometry preserved within documented tolerance."
+    },
+    {
+      "path": "simulator/teleoperation/inspire/assets/left_mirrored/meshes__visual__left_mirrored_index_intermediate.obj",
+      "sha256": "cfa3753375cee5fbb0adc5fd2874b62ec5d0e11a8e559f62ce26beb4ff2bad9a",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "index_intermediate",
+        "sha256": "55f2041dd7674ba95d3fca88dbfdd721bf6f4c4b17d8ae56733ca040a6ee0584",
+        "upstream_git_blob": "6cfa3f699111bf452825c1443f17d736cf55ff75",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_index_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_index_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.495878121720464e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 5752,
+        "target_triangles": 5752,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y"
+      },
+      "modifications": "Converted upstream right GLB to OBJ; mirrored Y coordinates and normals and reversed face winding for the left hand."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/index_intermediate_0.obj",
+      "sha256": "3356db5ae99768ec5775bf2d86f4dd109e31777b04549c42c74a1e468823dd7c",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "index_intermediate",
+        "sha256": "55f2041dd7674ba95d3fca88dbfdd721bf6f4c4b17d8ae56733ca040a6ee0584",
+        "upstream_git_blob": "6cfa3f699111bf452825c1443f17d736cf55ff75",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_index_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_index_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.495878121720464e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 5752,
+        "target_triangles": 5752,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null,
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/index_intermediate_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/index_intermediate_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/index_intermediate_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/index_intermediate_1.obj",
+      "sha256": "bfc54f07f290662d8a38f39acbffdaa3d4255dd8e00eb3134d9765162ed8a88e",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "index_intermediate",
+        "sha256": "55f2041dd7674ba95d3fca88dbfdd721bf6f4c4b17d8ae56733ca040a6ee0584",
+        "upstream_git_blob": "6cfa3f699111bf452825c1443f17d736cf55ff75",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_index_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_index_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.495878121720464e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 5752,
+        "target_triangles": 5752,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null,
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/index_intermediate_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/index_intermediate_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/index_intermediate_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/index_intermediate_2.obj",
+      "sha256": "5c3ae620fe709d519bd888fd9f40b8b8ae78b4499031c6ee5f3201d8c0221991",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "index_intermediate",
+        "sha256": "55f2041dd7674ba95d3fca88dbfdd721bf6f4c4b17d8ae56733ca040a6ee0584",
+        "upstream_git_blob": "6cfa3f699111bf452825c1443f17d736cf55ff75",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_index_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_index_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.495878121720464e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 5752,
+        "target_triangles": 5752,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null,
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/index_intermediate_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/index_intermediate_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/index_intermediate_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/index_intermediate_0.obj",
+      "sha256": "0ad0f10051b463a9b6d3162d1c1f3d90e7dc07b9e97ed98b1f8a76e0e268f7e4",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "index_intermediate",
+        "sha256": "55f2041dd7674ba95d3fca88dbfdd721bf6f4c4b17d8ae56733ca040a6ee0584",
+        "upstream_git_blob": "6cfa3f699111bf452825c1443f17d736cf55ff75",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_index_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_index_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.495878121720464e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 5752,
+        "target_triangles": 5752,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y",
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/index_intermediate_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/index_intermediate_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/index_intermediate_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/index_intermediate_1.obj",
+      "sha256": "faa1f769c1e917c73511514ccccfb76e223a2327faa316c3c779e607044c776a",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "index_intermediate",
+        "sha256": "55f2041dd7674ba95d3fca88dbfdd721bf6f4c4b17d8ae56733ca040a6ee0584",
+        "upstream_git_blob": "6cfa3f699111bf452825c1443f17d736cf55ff75",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_index_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_index_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.495878121720464e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 5752,
+        "target_triangles": 5752,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y",
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/index_intermediate_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/index_intermediate_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/index_intermediate_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/index_intermediate_2.obj",
+      "sha256": "14867fa812d56971f10fdf1d1b4be6faac7f8a415fbaf0efbad5d8c1400e70d8",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "index_intermediate",
+        "sha256": "55f2041dd7674ba95d3fca88dbfdd721bf6f4c4b17d8ae56733ca040a6ee0584",
+        "upstream_git_blob": "6cfa3f699111bf452825c1443f17d736cf55ff75",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_index_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_index_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.495878121720464e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 5752,
+        "target_triangles": 5752,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y",
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/index_intermediate_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/index_intermediate_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/index_intermediate_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/teleoperation/inspire/assets/right/meshes__visual__right_index_proximal.obj",
+      "sha256": "ce6266aa1f2a072814a76da403eccb3bde87458a1d0a53657be9e34f38686ce0",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "index_proximal",
+        "sha256": "aa989ff69ebf066dabef421ed9062d34a4588162aa1569c717a3262a99a031ba",
+        "upstream_git_blob": "03d29bb740c8889dfadd32c89c7b1a5b5ce97c6d",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_index_proximal.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_index_proximal.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.258979636270541e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 7375,
+        "target_triangles": 7375,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null
+      },
+      "modifications": "Converted upstream GLB scene to OBJ; geometry preserved within documented tolerance."
+    },
+    {
+      "path": "simulator/teleoperation/inspire/assets/left_mirrored/meshes__visual__left_mirrored_index_proximal.obj",
+      "sha256": "fec018bf0c7fed6f7eba87ad266c0df82e3f80ae4a018ed9029b7b5a6c6021c9",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "index_proximal",
+        "sha256": "aa989ff69ebf066dabef421ed9062d34a4588162aa1569c717a3262a99a031ba",
+        "upstream_git_blob": "03d29bb740c8889dfadd32c89c7b1a5b5ce97c6d",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_index_proximal.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_index_proximal.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.258979636270541e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 7375,
+        "target_triangles": 7375,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y"
+      },
+      "modifications": "Converted upstream right GLB to OBJ; mirrored Y coordinates and normals and reversed face winding for the left hand."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/index_proximal_0.obj",
+      "sha256": "547ee9561e61041d8b71554581d0bfffac4bb90a47485d2d4344170812086312",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "index_proximal",
+        "sha256": "aa989ff69ebf066dabef421ed9062d34a4588162aa1569c717a3262a99a031ba",
+        "upstream_git_blob": "03d29bb740c8889dfadd32c89c7b1a5b5ce97c6d",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_index_proximal.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_index_proximal.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.258979636270541e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 7375,
+        "target_triangles": 7375,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null,
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/index_proximal_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/index_proximal_1.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/index_proximal_1.obj",
+      "sha256": "eb9c14d1600cb764916ba5952b094a0cb3130cb7b63922942f199d52293caadc",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "index_proximal",
+        "sha256": "aa989ff69ebf066dabef421ed9062d34a4588162aa1569c717a3262a99a031ba",
+        "upstream_git_blob": "03d29bb740c8889dfadd32c89c7b1a5b5ce97c6d",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_index_proximal.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_index_proximal.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.258979636270541e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 7375,
+        "target_triangles": 7375,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null,
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/index_proximal_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/index_proximal_1.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/index_proximal_0.obj",
+      "sha256": "4a1c2f0befeb87d599bda3190f3942e581e9394814106f9f5442d401d7ebe471",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "index_proximal",
+        "sha256": "aa989ff69ebf066dabef421ed9062d34a4588162aa1569c717a3262a99a031ba",
+        "upstream_git_blob": "03d29bb740c8889dfadd32c89c7b1a5b5ce97c6d",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_index_proximal.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_index_proximal.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.258979636270541e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 7375,
+        "target_triangles": 7375,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y",
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/index_proximal_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/index_proximal_1.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/index_proximal_1.obj",
+      "sha256": "a12fd47e2c34c929d52f6ade9d512ac443adc3558526900c53a32307eea98e39",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "index_proximal",
+        "sha256": "aa989ff69ebf066dabef421ed9062d34a4588162aa1569c717a3262a99a031ba",
+        "upstream_git_blob": "03d29bb740c8889dfadd32c89c7b1a5b5ce97c6d",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_index_proximal.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_index_proximal.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.258979636270541e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 7375,
+        "target_triangles": 7375,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y",
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/index_proximal_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/index_proximal_1.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/teleoperation/inspire/assets/right/meshes__visual__right_middle_intermediate.obj",
+      "sha256": "7e547a09f1e12b67840a88859668bd5f38d35cb8299e8444cfff1bb8773157f7",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "middle_intermediate",
+        "sha256": "57ae7d1525270ac4edef4f9ff1b98898e3943e39d3ccc4ab068831fd54349636",
+        "upstream_git_blob": "111a1f40beb61bf15b93dc589bae2c4ab2f31041",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_middle_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_middle_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.222151413737208e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 4772,
+        "target_triangles": 4772,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null
+      },
+      "modifications": "Converted upstream GLB scene to OBJ; geometry preserved within documented tolerance."
+    },
+    {
+      "path": "simulator/teleoperation/inspire/assets/left_mirrored/meshes__visual__left_mirrored_middle_intermediate.obj",
+      "sha256": "a94a13e2cda48488d2930acbaf6430bc5ab2ea19fc279719aa2ccea4c7a2f081",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "middle_intermediate",
+        "sha256": "57ae7d1525270ac4edef4f9ff1b98898e3943e39d3ccc4ab068831fd54349636",
+        "upstream_git_blob": "111a1f40beb61bf15b93dc589bae2c4ab2f31041",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_middle_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_middle_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.222151413737208e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 4772,
+        "target_triangles": 4772,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y"
+      },
+      "modifications": "Converted upstream right GLB to OBJ; mirrored Y coordinates and normals and reversed face winding for the left hand."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/middle_intermediate_0.obj",
+      "sha256": "a390639398729184a4909e8f97dafec8d07204648b0842d2b5a581f5b4fd234e",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "middle_intermediate",
+        "sha256": "57ae7d1525270ac4edef4f9ff1b98898e3943e39d3ccc4ab068831fd54349636",
+        "upstream_git_blob": "111a1f40beb61bf15b93dc589bae2c4ab2f31041",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_middle_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_middle_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.222151413737208e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 4772,
+        "target_triangles": 4772,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null,
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/middle_intermediate_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/middle_intermediate_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/middle_intermediate_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/middle_intermediate_1.obj",
+      "sha256": "6a574a09c6737c42816f00a7a65d36db80ce2f635b8b67bc572c3f8970afb16f",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "middle_intermediate",
+        "sha256": "57ae7d1525270ac4edef4f9ff1b98898e3943e39d3ccc4ab068831fd54349636",
+        "upstream_git_blob": "111a1f40beb61bf15b93dc589bae2c4ab2f31041",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_middle_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_middle_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.222151413737208e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 4772,
+        "target_triangles": 4772,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null,
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/middle_intermediate_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/middle_intermediate_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/middle_intermediate_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/middle_intermediate_2.obj",
+      "sha256": "bfc3f74834739a1f31363823ac9d3690e10833cb963966c324990d3c3897a186",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "middle_intermediate",
+        "sha256": "57ae7d1525270ac4edef4f9ff1b98898e3943e39d3ccc4ab068831fd54349636",
+        "upstream_git_blob": "111a1f40beb61bf15b93dc589bae2c4ab2f31041",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_middle_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_middle_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.222151413737208e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 4772,
+        "target_triangles": 4772,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null,
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/middle_intermediate_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/middle_intermediate_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/middle_intermediate_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/middle_intermediate_0.obj",
+      "sha256": "b4427b1504ad4756cbd3e833d38667bec98fc140d3833450b2e8bd374afb0c16",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "middle_intermediate",
+        "sha256": "57ae7d1525270ac4edef4f9ff1b98898e3943e39d3ccc4ab068831fd54349636",
+        "upstream_git_blob": "111a1f40beb61bf15b93dc589bae2c4ab2f31041",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_middle_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_middle_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.222151413737208e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 4772,
+        "target_triangles": 4772,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y",
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/middle_intermediate_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/middle_intermediate_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/middle_intermediate_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/middle_intermediate_1.obj",
+      "sha256": "5faf4889e26b7641604b68b366dc48b0f4a645cd8deb713e56edb90f0e92cf57",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "middle_intermediate",
+        "sha256": "57ae7d1525270ac4edef4f9ff1b98898e3943e39d3ccc4ab068831fd54349636",
+        "upstream_git_blob": "111a1f40beb61bf15b93dc589bae2c4ab2f31041",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_middle_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_middle_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.222151413737208e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 4772,
+        "target_triangles": 4772,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y",
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/middle_intermediate_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/middle_intermediate_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/middle_intermediate_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/middle_intermediate_2.obj",
+      "sha256": "126ac87a4990cde72b73e328dcf3bd6d425dec51ffa4a45581da7c3ea74d5ab4",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "middle_intermediate",
+        "sha256": "57ae7d1525270ac4edef4f9ff1b98898e3943e39d3ccc4ab068831fd54349636",
+        "upstream_git_blob": "111a1f40beb61bf15b93dc589bae2c4ab2f31041",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_middle_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_middle_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.222151413737208e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 4772,
+        "target_triangles": 4772,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y",
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/middle_intermediate_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/middle_intermediate_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/middle_intermediate_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/teleoperation/inspire/assets/right/meshes__visual__right_pinky_intermediate.obj",
+      "sha256": "d81ba3e8e4ca8cbd37ab4812eb3c868cedac93b23f5a9b27746adba066d73749",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "pinky_intermediate",
+        "sha256": "6b49449acc77fc66f78eaa2025e608b8eae94f22c1cc3e6b6663c960035675e3",
+        "upstream_git_blob": "717917a7a84246c5d039f448cdb6f94a4c2af1a1",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_pinky_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_pinky_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.3699199665612e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 7041,
+        "target_triangles": 7041,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null
+      },
+      "modifications": "Converted upstream GLB scene to OBJ; geometry preserved within documented tolerance."
+    },
+    {
+      "path": "simulator/teleoperation/inspire/assets/left_mirrored/meshes__visual__left_mirrored_pinky_intermediate.obj",
+      "sha256": "a0c15988ce23046c67517151257ce55033ea4230f959362e5a027555c02ffacf",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "pinky_intermediate",
+        "sha256": "6b49449acc77fc66f78eaa2025e608b8eae94f22c1cc3e6b6663c960035675e3",
+        "upstream_git_blob": "717917a7a84246c5d039f448cdb6f94a4c2af1a1",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_pinky_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_pinky_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.3699199665612e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 7041,
+        "target_triangles": 7041,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y"
+      },
+      "modifications": "Converted upstream right GLB to OBJ; mirrored Y coordinates and normals and reversed face winding for the left hand."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/pinky_intermediate_0.obj",
+      "sha256": "049eb9bdfc16b6eb2c7a8b316b775d21502c0f8f30b62ce12e50b51d1f0c6462",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "pinky_intermediate",
+        "sha256": "6b49449acc77fc66f78eaa2025e608b8eae94f22c1cc3e6b6663c960035675e3",
+        "upstream_git_blob": "717917a7a84246c5d039f448cdb6f94a4c2af1a1",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_pinky_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_pinky_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.3699199665612e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 7041,
+        "target_triangles": 7041,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null,
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/pinky_intermediate_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/pinky_intermediate_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/pinky_intermediate_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/pinky_intermediate_1.obj",
+      "sha256": "304917b557d39fe38e85c2b8905b2caa5681883b0f3cc0f9cd3ec45c38bab9fa",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "pinky_intermediate",
+        "sha256": "6b49449acc77fc66f78eaa2025e608b8eae94f22c1cc3e6b6663c960035675e3",
+        "upstream_git_blob": "717917a7a84246c5d039f448cdb6f94a4c2af1a1",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_pinky_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_pinky_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.3699199665612e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 7041,
+        "target_triangles": 7041,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null,
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/pinky_intermediate_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/pinky_intermediate_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/pinky_intermediate_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/pinky_intermediate_2.obj",
+      "sha256": "e5dd24c3373cf4e7cfb0b6720f749f73edf86184aa1e6cc99d8ce54ee05a6190",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "pinky_intermediate",
+        "sha256": "6b49449acc77fc66f78eaa2025e608b8eae94f22c1cc3e6b6663c960035675e3",
+        "upstream_git_blob": "717917a7a84246c5d039f448cdb6f94a4c2af1a1",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_pinky_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_pinky_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.3699199665612e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 7041,
+        "target_triangles": 7041,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null,
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/pinky_intermediate_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/pinky_intermediate_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/pinky_intermediate_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/pinky_intermediate_0.obj",
+      "sha256": "a7e3173f98825cca9e3a6314c1af9110ff7e605c93ba6a7bcae2cf9a89362ae3",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "pinky_intermediate",
+        "sha256": "6b49449acc77fc66f78eaa2025e608b8eae94f22c1cc3e6b6663c960035675e3",
+        "upstream_git_blob": "717917a7a84246c5d039f448cdb6f94a4c2af1a1",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_pinky_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_pinky_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.3699199665612e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 7041,
+        "target_triangles": 7041,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y",
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/pinky_intermediate_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/pinky_intermediate_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/pinky_intermediate_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/pinky_intermediate_1.obj",
+      "sha256": "9d73353d35c9b3ac8eb4ea836ff3569aba8901bdaadbc1f7413f047af47924ce",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "pinky_intermediate",
+        "sha256": "6b49449acc77fc66f78eaa2025e608b8eae94f22c1cc3e6b6663c960035675e3",
+        "upstream_git_blob": "717917a7a84246c5d039f448cdb6f94a4c2af1a1",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_pinky_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_pinky_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.3699199665612e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 7041,
+        "target_triangles": 7041,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y",
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/pinky_intermediate_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/pinky_intermediate_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/pinky_intermediate_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/pinky_intermediate_2.obj",
+      "sha256": "242297875de17bc79dd17d45b96a481275c8413c54463031aada406ddb2df9cf",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "pinky_intermediate",
+        "sha256": "6b49449acc77fc66f78eaa2025e608b8eae94f22c1cc3e6b6663c960035675e3",
+        "upstream_git_blob": "717917a7a84246c5d039f448cdb6f94a4c2af1a1",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_pinky_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_pinky_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.3699199665612e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 7041,
+        "target_triangles": 7041,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y",
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/pinky_intermediate_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/pinky_intermediate_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/pinky_intermediate_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/teleoperation/inspire/assets/right/meshes__visual__right_thumb_distal.obj",
+      "sha256": "f6dc27fa9f3b194b6d65c1b9b239f5ebcb1c79843be901b2653b5667ba1d10cf",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "thumb_distal",
+        "sha256": "eb4f5ac8fc524c0c70d06f98dd897307a0a340fa74091d3345c981d2a8f23cf8",
+        "upstream_git_blob": "bc50aaa665d963ebfb0ac111ab52a5a611e1ce85",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_thumb_distal.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_thumb_distal.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 7.921657577011206e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 1524,
+        "target_triangles": 1524,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null
+      },
+      "modifications": "Converted upstream GLB scene to OBJ; geometry preserved within documented tolerance."
+    },
+    {
+      "path": "simulator/teleoperation/inspire/assets/left_mirrored/meshes__visual__left_mirrored_thumb_distal.obj",
+      "sha256": "c5e41c4caa89b56aafe6e628cea8b0becb169eebe9b9512760bf530851d28584",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "thumb_distal",
+        "sha256": "eb4f5ac8fc524c0c70d06f98dd897307a0a340fa74091d3345c981d2a8f23cf8",
+        "upstream_git_blob": "bc50aaa665d963ebfb0ac111ab52a5a611e1ce85",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_thumb_distal.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_thumb_distal.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 7.921657577011206e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 1524,
+        "target_triangles": 1524,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y"
+      },
+      "modifications": "Converted upstream right GLB to OBJ; mirrored Y coordinates and normals and reversed face winding for the left hand."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/thumb_distal_0.obj",
+      "sha256": "54edcd1952b36edca3f976d0660de4de12095d3bff521515694f6cbb06e46f7f",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "thumb_distal",
+        "sha256": "eb4f5ac8fc524c0c70d06f98dd897307a0a340fa74091d3345c981d2a8f23cf8",
+        "upstream_git_blob": "bc50aaa665d963ebfb0ac111ab52a5a611e1ce85",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_thumb_distal.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_thumb_distal.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 7.921657577011206e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 1524,
+        "target_triangles": 1524,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null,
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/thumb_distal_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/thumb_distal_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/thumb_distal_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/thumb_distal_1.obj",
+      "sha256": "dbaee600dd1ab88400809b1d1dc87db906fd63a148b6c965c37e1593275de5f0",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "thumb_distal",
+        "sha256": "eb4f5ac8fc524c0c70d06f98dd897307a0a340fa74091d3345c981d2a8f23cf8",
+        "upstream_git_blob": "bc50aaa665d963ebfb0ac111ab52a5a611e1ce85",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_thumb_distal.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_thumb_distal.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 7.921657577011206e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 1524,
+        "target_triangles": 1524,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null,
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/thumb_distal_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/thumb_distal_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/thumb_distal_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/thumb_distal_2.obj",
+      "sha256": "af7087fa013ee4015cbdcff2e45c7b06fa3618572bf5a11837e88dbba686fd56",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "thumb_distal",
+        "sha256": "eb4f5ac8fc524c0c70d06f98dd897307a0a340fa74091d3345c981d2a8f23cf8",
+        "upstream_git_blob": "bc50aaa665d963ebfb0ac111ab52a5a611e1ce85",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_thumb_distal.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_thumb_distal.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 7.921657577011206e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 1524,
+        "target_triangles": 1524,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null,
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/thumb_distal_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/thumb_distal_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/thumb_distal_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/thumb_distal_0.obj",
+      "sha256": "469e9734a000a7d9a7e846b6ac81bff2b59f6a4d7379e162f050c4360f5b5eff",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "thumb_distal",
+        "sha256": "eb4f5ac8fc524c0c70d06f98dd897307a0a340fa74091d3345c981d2a8f23cf8",
+        "upstream_git_blob": "bc50aaa665d963ebfb0ac111ab52a5a611e1ce85",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_thumb_distal.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_thumb_distal.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 7.921657577011206e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 1524,
+        "target_triangles": 1524,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y",
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/thumb_distal_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/thumb_distal_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/thumb_distal_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/thumb_distal_1.obj",
+      "sha256": "924b17f271c3e8390d4c45673e50a29a6982ada35ad6c2a2f75982fc6e8769ff",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "thumb_distal",
+        "sha256": "eb4f5ac8fc524c0c70d06f98dd897307a0a340fa74091d3345c981d2a8f23cf8",
+        "upstream_git_blob": "bc50aaa665d963ebfb0ac111ab52a5a611e1ce85",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_thumb_distal.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_thumb_distal.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 7.921657577011206e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 1524,
+        "target_triangles": 1524,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y",
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/thumb_distal_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/thumb_distal_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/thumb_distal_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/thumb_distal_2.obj",
+      "sha256": "991198aa504fa528a514799532d6e3b1be16cbbe5fcb5504d17810dc8a328705",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "thumb_distal",
+        "sha256": "eb4f5ac8fc524c0c70d06f98dd897307a0a340fa74091d3345c981d2a8f23cf8",
+        "upstream_git_blob": "bc50aaa665d963ebfb0ac111ab52a5a611e1ce85",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_thumb_distal.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_thumb_distal.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 7.921657577011206e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 1524,
+        "target_triangles": 1524,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y",
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/thumb_distal_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/thumb_distal_1.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/thumb_distal_2.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/teleoperation/inspire/assets/right/meshes__visual__right_thumb_intermediate.obj",
+      "sha256": "34677d9c34c317ed180cfed09bf4eaa1431aca4977f1a9b4c8224689fd5a84c5",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "thumb_intermediate",
+        "sha256": "1e9df1f663633b73c918479c2b27bd7c586a90a7c9273f10b00e87030197c228",
+        "upstream_git_blob": "c8378896435ccb98abc07e53c4951280c3d56e07",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_thumb_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_thumb_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.17746297418005e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 2996,
+        "target_triangles": 2996,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null
+      },
+      "modifications": "Converted upstream GLB scene to OBJ; geometry preserved within documented tolerance."
+    },
+    {
+      "path": "simulator/teleoperation/inspire/assets/left_mirrored/meshes__visual__left_mirrored_thumb_intermediate.obj",
+      "sha256": "228e9ce92bf61d033d3554432c5b7ca023431ffdece9752eb10cff1ea7aa91e7",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "thumb_intermediate",
+        "sha256": "1e9df1f663633b73c918479c2b27bd7c586a90a7c9273f10b00e87030197c228",
+        "upstream_git_blob": "c8378896435ccb98abc07e53c4951280c3d56e07",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_thumb_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_thumb_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.17746297418005e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 2996,
+        "target_triangles": 2996,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y"
+      },
+      "modifications": "Converted upstream right GLB to OBJ; mirrored Y coordinates and normals and reversed face winding for the left hand."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/thumb_intermediate_0.obj",
+      "sha256": "ae4fe0964dd7e44b5963a51492ed0750dcb85f78efe323309d126c0269a1d236",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "thumb_intermediate",
+        "sha256": "1e9df1f663633b73c918479c2b27bd7c586a90a7c9273f10b00e87030197c228",
+        "upstream_git_blob": "c8378896435ccb98abc07e53c4951280c3d56e07",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_thumb_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_thumb_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.17746297418005e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 2996,
+        "target_triangles": 2996,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null,
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/thumb_intermediate_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/thumb_intermediate_1.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/thumb_intermediate_1.obj",
+      "sha256": "cdff74cd3037488ab2c44e045054a2de8a5370f64f79ef3ecee8488e5740d5d7",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "thumb_intermediate",
+        "sha256": "1e9df1f663633b73c918479c2b27bd7c586a90a7c9273f10b00e87030197c228",
+        "upstream_git_blob": "c8378896435ccb98abc07e53c4951280c3d56e07",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_thumb_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_thumb_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.17746297418005e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 2996,
+        "target_triangles": 2996,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null,
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/thumb_intermediate_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/thumb_intermediate_1.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/thumb_intermediate_0.obj",
+      "sha256": "10f072b14524528af03c470af1c3a4aba6015a39e84d3418b54734041b2bb964",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "thumb_intermediate",
+        "sha256": "1e9df1f663633b73c918479c2b27bd7c586a90a7c9273f10b00e87030197c228",
+        "upstream_git_blob": "c8378896435ccb98abc07e53c4951280c3d56e07",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_thumb_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_thumb_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.17746297418005e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 2996,
+        "target_triangles": 2996,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y",
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/thumb_intermediate_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/thumb_intermediate_1.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/thumb_intermediate_1.obj",
+      "sha256": "44c0daf9f77a24a37929319bacd063f1e8fdf720b735aef0aa7858204979b642",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "thumb_intermediate",
+        "sha256": "1e9df1f663633b73c918479c2b27bd7c586a90a7c9273f10b00e87030197c228",
+        "upstream_git_blob": "c8378896435ccb98abc07e53c4951280c3d56e07",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_thumb_intermediate.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_thumb_intermediate.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.17746297418005e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 2996,
+        "target_triangles": 2996,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y",
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/thumb_intermediate_0.obj",
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/thumb_intermediate_1.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/teleoperation/inspire/assets/right/meshes__visual__right_thumb_proximal.obj",
+      "sha256": "dfcf8e12ecf340f917979f78fdeff5cbef0d2bbafc621dcaf6b01ed6c842fc06",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "thumb_proximal",
+        "sha256": "c3b9fdd15bcea183e0f05fa261cb7da93ba4d905e7fa04906c7776c9d3975d5a",
+        "upstream_git_blob": "6f3b6b303224e1968ce21fa779b58b4ebadcc600",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_thumb_proximal.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_thumb_proximal.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.154069314775928e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 1604,
+        "target_triangles": 1604,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null
+      },
+      "modifications": "Converted upstream GLB scene to OBJ; geometry preserved within documented tolerance."
+    },
+    {
+      "path": "simulator/teleoperation/inspire/assets/left_mirrored/meshes__visual__left_mirrored_thumb_proximal.obj",
+      "sha256": "abf520673a318d19781caf4e5edf8db74c9a5e2118de01e57644783313947d0a",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "thumb_proximal",
+        "sha256": "c3b9fdd15bcea183e0f05fa261cb7da93ba4d905e7fa04906c7776c9d3975d5a",
+        "upstream_git_blob": "6f3b6b303224e1968ce21fa779b58b4ebadcc600",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_thumb_proximal.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_thumb_proximal.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.154069314775928e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 1604,
+        "target_triangles": 1604,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y"
+      },
+      "modifications": "Converted upstream right GLB to OBJ; mirrored Y coordinates and normals and reversed face winding for the left hand."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/thumb_proximal_0.obj",
+      "sha256": "ec1cd811315ebe4bb0c13f01973b58efc53c76f2c51983415e40b053df805e14",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "thumb_proximal",
+        "sha256": "c3b9fdd15bcea183e0f05fa261cb7da93ba4d905e7fa04906c7776c9d3975d5a",
+        "upstream_git_blob": "6f3b6b303224e1968ce21fa779b58b4ebadcc600",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_thumb_proximal.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_thumb_proximal.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.154069314775928e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 1604,
+        "target_triangles": 1604,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null,
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/thumb_proximal_0.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/thumb_proximal_0.obj",
+      "sha256": "fbe5cc41711d10a91cfc0b0b82b4106867aa39a6346cffa02671fab6973b91d3",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "thumb_proximal",
+        "sha256": "c3b9fdd15bcea183e0f05fa261cb7da93ba4d905e7fa04906c7776c9d3975d5a",
+        "upstream_git_blob": "6f3b6b303224e1968ce21fa779b58b4ebadcc600",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_thumb_proximal.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_thumb_proximal.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 8.154069314775928e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 1604,
+        "target_triangles": 1604,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y",
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/thumb_proximal_0.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/teleoperation/inspire/assets/right/meshes__visual__right_thumb_proximal_base.obj",
+      "sha256": "6a20fb6433e6c33f14be2f100e0a360484315c9afd0c38d393d3f1093315182d",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "thumb_proximal_base",
+        "sha256": "3e1143d3fc366a169e795be8003892f7e5d7cd5b7b322ac55b39089aca5c9f81",
+        "upstream_git_blob": "a56e8c63115c4a3baabaedb3f02b5b80c1469143",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_thumb_proximal_base.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_thumb_proximal_base.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 7.983421252823946e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 1240,
+        "target_triangles": 1240,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null
+      },
+      "modifications": "Converted upstream GLB scene to OBJ; geometry preserved within documented tolerance."
+    },
+    {
+      "path": "simulator/teleoperation/inspire/assets/left_mirrored/meshes__visual__left_mirrored_thumb_proximal_base.obj",
+      "sha256": "7921d134ff1159d86df78fbc586626d3a28d32f54b1554ed2960cfc7dcfa6818",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "thumb_proximal_base",
+        "sha256": "3e1143d3fc366a169e795be8003892f7e5d7cd5b7b322ac55b39089aca5c9f81",
+        "upstream_git_blob": "a56e8c63115c4a3baabaedb3f02b5b80c1469143",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_thumb_proximal_base.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_thumb_proximal_base.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 7.983421252823946e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 1240,
+        "target_triangles": 1240,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y"
+      },
+      "modifications": "Converted upstream right GLB to OBJ; mirrored Y coordinates and normals and reversed face winding for the left hand."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/thumb_proximal_base_0.obj",
+      "sha256": "5632a1b8fbf27c2ced16ad0f561eedc67c8b217edb3d5cf02fd35e41a21e70a6",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "thumb_proximal_base",
+        "sha256": "3e1143d3fc366a169e795be8003892f7e5d7cd5b7b322ac55b39089aca5c9f81",
+        "upstream_git_blob": "a56e8c63115c4a3baabaedb3f02b5b80c1469143",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_thumb_proximal_base.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_thumb_proximal_base.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 7.983421252823946e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 1240,
+        "target_triangles": 1240,
+        "tolerance_m": 2e-08,
+        "mirror_axis": null,
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/right/thumb_proximal_base_0.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/thumb_proximal_base_0.obj",
+      "sha256": "4fb7d397ccabd2f04da1ab08c12363c55bbc875bd1aa2fe5ab9fccdfd00fc329",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "stem": "thumb_proximal_base",
+        "sha256": "3e1143d3fc366a169e795be8003892f7e5d7cd5b7b322ac55b39089aca5c9f81",
+        "upstream_git_blob": "a56e8c63115c4a3baabaedb3f02b5b80c1469143",
+        "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_thumb_proximal_base.glb",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_thumb_proximal_base.glb"
+      },
+      "geometry_verification": {
+        "max_bidirectional_vertex_error_m": 7.983421252823946e-09,
+        "triangle_multiset_equal": true,
+        "source_triangles": 1240,
+        "target_triangles": 1240,
+        "tolerance_m": 2e-08,
+        "mirror_axis": "Y",
+        "verified_as_union": [
+          "simulator/dexjoco/sim/envs/xmls/benchmark6_assets/inspire/left/thumb_proximal_base_0.obj"
+        ]
+      },
+      "modifications": "Split converted GLB into material-specific OBJ parts; preserved colors in model metadata; left parts additionally mirror Y with reversed winding."
+    },
+    {
+      "path": "simulator/teleoperation/inspire/assets/left_mirrored/meshes__collision__left_mirrored_index_intermediate.obj",
+      "sha256": "2b98946f9c479eaa067ba0e3dbb8c287d8cb4d51d45f026009dd9a2bbbe28b00",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "path": "simulator/teleoperation/inspire/assets/right/meshes__collision__right_index_intermediate.obj",
+        "sha256": "dd53ff65ae730edafd9ff80a90615c50576a0dd0acd228b2c0bdb03271fed417",
+        "upstream_git_blob": "59d39d064685efa1a6dce7300aec162457e8767c",
+        "upstream_path": "robots/hands/inspire_hand/meshes/collision/right_index_intermediate.obj",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/collision/right_index_intermediate.obj",
+        "license": "CC-BY-NC-SA-4.0",
+        "decision": "noncommercial-redistribution",
+        "modifications": "Renamed/repackaged; file content unchanged."
+      },
+      "geometry_verification": {
+        "exact_mirror_recipe": true,
+        "mirror_axis": "Y"
+      },
+      "modifications": "Mirrored the upstream right collision OBJ in Y; mirrored normals and reversed face winding."
+    },
+    {
+      "path": "simulator/teleoperation/inspire/assets/left_mirrored/meshes__collision__left_mirrored_index_proximal.obj",
+      "sha256": "74c9eef5336e22457d08bbec11c7b2b61a29ce16ace414fa88367cbdbf5a5a83",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "path": "simulator/teleoperation/inspire/assets/right/meshes__collision__right_index_proximal.obj",
+        "sha256": "b03fd612bc35f229d7d567801165f2bfa241a8fc3ed6ef00e8c8fd4e143f222d",
+        "upstream_git_blob": "1ad56d5c8e08c8602df3a772e8931217dc3a5276",
+        "upstream_path": "robots/hands/inspire_hand/meshes/collision/right_index_proximal.obj",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/collision/right_index_proximal.obj",
+        "license": "CC-BY-NC-SA-4.0",
+        "decision": "noncommercial-redistribution",
+        "modifications": "Renamed/repackaged; file content unchanged."
+      },
+      "geometry_verification": {
+        "exact_mirror_recipe": true,
+        "mirror_axis": "Y"
+      },
+      "modifications": "Mirrored the upstream right collision OBJ in Y; mirrored normals and reversed face winding."
+    },
+    {
+      "path": "simulator/teleoperation/inspire/assets/left_mirrored/meshes__collision__left_mirrored_middle_intermediate.obj",
+      "sha256": "2a8c21ef91f618b491f3ad50819bb6717398779664bca759d79c5c86c60f2987",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "path": "simulator/teleoperation/inspire/assets/right/meshes__collision__right_middle_intermediate.obj",
+        "sha256": "cdd6b0035d17b2ae8ca908b743ab85da74aa0415b30ea911bd4c5be376a91ca0",
+        "upstream_git_blob": "1fc7c931f7ca849c1e08746eb3fb79f329424b65",
+        "upstream_path": "robots/hands/inspire_hand/meshes/collision/right_middle_intermediate.obj",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/collision/right_middle_intermediate.obj",
+        "license": "CC-BY-NC-SA-4.0",
+        "decision": "noncommercial-redistribution",
+        "modifications": "Renamed/repackaged; file content unchanged."
+      },
+      "geometry_verification": {
+        "exact_mirror_recipe": true,
+        "mirror_axis": "Y"
+      },
+      "modifications": "Mirrored the upstream right collision OBJ in Y; mirrored normals and reversed face winding."
+    },
+    {
+      "path": "simulator/teleoperation/inspire/assets/left_mirrored/meshes__collision__left_mirrored_pinky_intermediate.obj",
+      "sha256": "165185064418b25b24d59dc624594239b00558ecaa5782477d7f542fa396a853",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "path": "simulator/teleoperation/inspire/assets/right/meshes__collision__right_pinky_intermediate.obj",
+        "sha256": "34f210b27d682ac50aaed9632b8cc6d09fddb6c08fa7d0d25428eeaa2b3441be",
+        "upstream_git_blob": "6455ea1ca806bc55a7df8cc230ab6e07dc148da3",
+        "upstream_path": "robots/hands/inspire_hand/meshes/collision/right_pinky_intermediate.obj",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/collision/right_pinky_intermediate.obj",
+        "license": "CC-BY-NC-SA-4.0",
+        "decision": "noncommercial-redistribution",
+        "modifications": "Renamed/repackaged; file content unchanged."
+      },
+      "geometry_verification": {
+        "exact_mirror_recipe": true,
+        "mirror_axis": "Y"
+      },
+      "modifications": "Mirrored the upstream right collision OBJ in Y; mirrored normals and reversed face winding."
+    },
+    {
+      "path": "simulator/teleoperation/inspire/assets/left_mirrored/meshes__collision__left_mirrored_thumb_distal.obj",
+      "sha256": "699819d12f9345ee1fde2074b2bce6913d6b5e03b41a544e71257196d812281a",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "path": "simulator/teleoperation/inspire/assets/right/meshes__collision__right_thumb_distal.obj",
+        "sha256": "45fda90356a618728e33db7f5077b591b3aa778ada8395e5ee2d68080ab16a3d",
+        "upstream_git_blob": "7be3292576be5df15b98fc2704811759657809e0",
+        "upstream_path": "robots/hands/inspire_hand/meshes/collision/right_thumb_distal.obj",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/collision/right_thumb_distal.obj",
+        "license": "CC-BY-NC-SA-4.0",
+        "decision": "noncommercial-redistribution",
+        "modifications": "Renamed/repackaged; file content unchanged."
+      },
+      "geometry_verification": {
+        "exact_mirror_recipe": true,
+        "mirror_axis": "Y"
+      },
+      "modifications": "Mirrored the upstream right collision OBJ in Y; mirrored normals and reversed face winding."
+    },
+    {
+      "path": "simulator/teleoperation/inspire/assets/left_mirrored/meshes__collision__left_mirrored_thumb_intermediate.obj",
+      "sha256": "a17090122252bc99d75f8c118140b91bf6c086ae10b506969a297ce540acf9cb",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "path": "simulator/teleoperation/inspire/assets/right/meshes__collision__right_thumb_intermediate.obj",
+        "sha256": "c8779b10337cca5477abc35f3287f6f5d07fbe58933a43738ebd1d1e297c560d",
+        "upstream_git_blob": "f5119973ddcf5cf4a4513eab63716442cc6202d1",
+        "upstream_path": "robots/hands/inspire_hand/meshes/collision/right_thumb_intermediate.obj",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/collision/right_thumb_intermediate.obj",
+        "license": "CC-BY-NC-SA-4.0",
+        "decision": "noncommercial-redistribution",
+        "modifications": "Renamed/repackaged; file content unchanged."
+      },
+      "geometry_verification": {
+        "exact_mirror_recipe": true,
+        "mirror_axis": "Y"
+      },
+      "modifications": "Mirrored the upstream right collision OBJ in Y; mirrored normals and reversed face winding."
+    },
+    {
+      "path": "simulator/teleoperation/inspire/assets/left_mirrored/meshes__collision__left_mirrored_thumb_proximal.obj",
+      "sha256": "1fca903e8ebf18b89595895704803cc2a9f10e57faa7286fdaeb7f846c511325",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "path": "simulator/teleoperation/inspire/assets/right/meshes__collision__right_thumb_proximal.obj",
+        "sha256": "e58d05f48e5a5bb72b14fe16e516e5c6d779da9722d58704765c5ca715bbfa10",
+        "upstream_git_blob": "7042d8956256e8d24e1558bcad9d727fbb03e7c7",
+        "upstream_path": "robots/hands/inspire_hand/meshes/collision/right_thumb_proximal.obj",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/collision/right_thumb_proximal.obj",
+        "license": "CC-BY-NC-SA-4.0",
+        "decision": "noncommercial-redistribution",
+        "modifications": "Renamed/repackaged; file content unchanged."
+      },
+      "geometry_verification": {
+        "exact_mirror_recipe": true,
+        "mirror_axis": "Y"
+      },
+      "modifications": "Mirrored the upstream right collision OBJ in Y; mirrored normals and reversed face winding."
+    },
+    {
+      "path": "simulator/teleoperation/inspire/assets/left_mirrored/meshes__collision__left_mirrored_thumb_proximal_base.obj",
+      "sha256": "366700e73024578a57400070f7a1a30dbaa9f5abaf080360d02a25557685ffcc",
+      "license": "CC-BY-NC-SA-4.0",
+      "decision": "noncommercial-redistribution",
+      "source_evidence": {
+        "path": "simulator/teleoperation/inspire/assets/right/meshes__collision__right_thumb_proximal_base.obj",
+        "sha256": "058319b2f7fb81b67e34f442171c7672a9b953652e80f263edb4b12968ddb2f5",
+        "upstream_git_blob": "3bd643fd68e9f1f98c8d8873a1d38136dcaa2752",
+        "upstream_path": "robots/hands/inspire_hand/meshes/collision/right_thumb_proximal_base.obj",
+        "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/collision/right_thumb_proximal_base.obj",
+        "license": "CC-BY-NC-SA-4.0",
+        "decision": "noncommercial-redistribution",
+        "modifications": "Renamed/repackaged; file content unchanged."
+      },
+      "geometry_verification": {
+        "exact_mirror_recipe": true,
+        "mirror_axis": "Y"
+      },
+      "modifications": "Mirrored the upstream right collision OBJ in Y; mirrored normals and reversed face winding."
+    }
+  ],
+  "verification": "Exact original upstream blobs; bidirectional geometry and complete triangle multiset comparison; exact mirror recipe.",
+  "verification_tool": "tools/verify_inspire_derivatives.py",
+  "verification_tool_sha256": "312ebf6ab6e4b2198eee6c9994fdefb5738e4e6995c2dff697f8b312bc0f16fd",
+  "coverage": "Only listed 68 derived meshes; does not assign license to the entire Inspire directory or URDF chain."
+}

@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "episodes": 2100,
+  "hand_task_pairs": 42,
+  "episodes_per_pair": [
+    50
+  ],
+  "splits": {
+    "train": 2100
+  },
+  "frames": 946156,
+  "corrected_xhand_microwave_episodes": 50,
+  "referenced_files_verified": 9450,
+  "release_files_checksummed": 34984,
+  "prepared_groups": 42,
+  "prepared_representation_groups": {
+    "native": 42,
+    "faas": 42,
+    "dexlatent": 42
+  },
+  "prepared_representation_content_audit_passed": true,
+  "adapter_checks_passed": true,
+  "symlinks": 0,
+  "base_v8_manifest_hashes_unchanged": true
+}

@@ -1,0 +1,1672 @@
+<mujoco model="benchmark7_v3_bimanual_unlock_ipad_sharpa_wave">
+  <compiler angle="radian" />
+
+  <option noslip_tolerance="0" noslip_iterations="5" />
+
+  <visual>
+    <global azimuth="160" elevation="-20" offwidth="2048" offheight="2048" />
+    <quality offsamples="8" />
+    <headlight ambient="0.5 0.5 0.5" />
+  </visual>
+
+  <statistic extent="0.8" center="0.3 0 0.4" />
+
+  <default>
+    <default class="panda_right">
+      <joint range="-2.8973 2.8973" armature="0.1" damping="1" />
+      <site size="0.001 0.005 0.005" group="4" rgba="0.5 0.5 0.5 0.3" />
+      <default class="panda/visual_right">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" />
+      </default>
+      <default class="panda/collision_right">
+        <geom type="mesh" group="3" />
+      </default>
+    </default>
+    <default class="2f85_right">
+      <mesh scale="0.001 0.001 0.001" />
+      <site group="4" rgba="0.9 0.9 0.9 1" />
+      <general biastype="affine" />
+      <default class="driver_right">
+        <joint solreflimit="0.005" solimplimit="0.95 0.99" range="0 0.8" armature="0.005" damping="0.1" />
+      </default>
+      <default class="follower_right">
+        <joint solreflimit="0.005" solimplimit="0.95 0.99" range="-0.872664 0.872664" />
+      </default>
+      <default class="spring_link_right">
+        <joint springref="2.62" stiffness="0.05" range="-0.296706 0.8" damping="0.00125" />
+      </default>
+      <default class="coupler_right">
+        <joint solreflimit="0.005" solimplimit="0.95 0.99" range="-1.57 0" />
+      </default>
+      <default class="2f85/visual_right">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" />
+      </default>
+      <default class="2f85/collision_right">
+        <geom type="mesh" group="3" />
+        <default class="pad_box1_right">
+          <geom size="0.011 0.004 0.009375" type="box" priority="1" friction="0.7" solref="0.004" solimp="0.95 0.99" rgba="0.55 0.55 0.55 1" />
+        </default>
+        <default class="pad_box2_right">
+          <geom size="0.011 0.004 0.009375" type="box" priority="1" friction="0.6" solref="0.004" solimp="0.95 0.99" rgba="0.45 0.45 0.45 1" />
+        </default>
+      </default>
+    </default>
+    <default class="allegro_right">
+      <joint damping="0.1" />
+      <geom density="800" />
+      <general biastype="affine" gainprm="2" biasprm="0 -2" />
+      <default class="visual_right">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" material="black_right" />
+        <default class="palm_visual_right">
+          <geom mesh="base_link_right" />
+        </default>
+        <default class="base_visual_right">
+          <geom mesh="link_0.0_right" />
+        </default>
+        <default class="proximal_visual_right">
+          <geom mesh="link_1.0_right" />
+        </default>
+        <default class="medial_visual_right">
+          <geom mesh="link_2.0_right" />
+        </default>
+        <default class="distal_visual_right">
+          <geom mesh="link_3.0_right" />
+        </default>
+        <default class="fingertip_visual_right">
+          <geom material="white_right" mesh="link_3.0_tip_right" />
+        </default>
+        <default class="thumbtip_visual_right">
+          <geom material="white_right" mesh="link_15.0_tip_right" />
+        </default>
+      </default>
+      <default class="collision_right">
+        <geom type="box" group="3" />
+        <default class="palm_collision_right">
+          <geom size="0.0204 0.0565 0.0475" />
+        </default>
+        <default class="base_collision_right">
+          <geom size="0.0098 0.01375 0.0082" />
+          <default class="thumb_base_collision_right">
+            <geom size="0.0179 0.017 0.02275" />
+          </default>
+        </default>
+        <default class="proximal_collision_right">
+          <geom size="0.0098 0.01375 0.027" />
+          <default class="thumb_proximal_collision_right">
+            <geom size="0.0098 0.01375 0.00885" />
+          </default>
+        </default>
+        <default class="medial_collision_right">
+          <geom size="0.0098 0.01375 0.0192" />
+          <default class="thumb_medial_collision_right">
+            <geom size="0.0098 0.01375 0.0257" />
+          </default>
+        </default>
+        <default class="distal_collision_right">
+          <geom size="0.0098 0.01375 0.008" />
+          <default class="thumb_distal_collision_right">
+            <geom size="0.0098 0.01375 0.0157" />
+          </default>
+        </default>
+        <default class="fingertip_collision_right">
+          <geom size="0.012 0.01 0" type="capsule" />
+          <default class="thumbtip_collision_right">
+            <geom size="0.012 0.008 0" />
+          </default>
+        </default>
+      </default>
+      <default class="base_right">
+        <joint range="-0.47 0.47" />
+        <general ctrlrange="-0.47 0.47" />
+      </default>
+      <default class="proximal_right">
+        <joint range="-0.196 1.61" />
+        <general ctrlrange="-0.196 1.61" />
+      </default>
+      <default class="medial_right">
+        <joint range="-0.174 1.709" />
+        <general ctrlrange="-0.174 1.709" />
+      </default>
+      <default class="distal_right">
+        <joint range="-0.227 1.618" />
+        <general ctrlrange="-0.227 1.618" />
+      </default>
+      <default class="thumb_base_right">
+        <joint range="0.263 1.396" />
+        <general ctrlrange="0.263 1.396" />
+      </default>
+      <default class="thumb_proximal_right">
+        <joint range="-0.105 1.163" />
+        <general ctrlrange="-0.105 1.163" />
+      </default>
+      <default class="thumb_medial_right">
+        <joint range="-0.189 1.644" />
+        <general ctrlrange="-0.189 1.644" />
+      </default>
+      <default class="thumb_distal_right">
+        <joint range="-0.162 1.719" />
+        <general ctrlrange="-0.162 1.719" />
+      </default>
+    </default>
+    <default class="/main_right" />
+    <default class="panda_left">
+      <joint range="-2.8973 2.8973" armature="0.1" damping="1" />
+      <site size="0.001 0.005 0.005" group="4" rgba="0.5 0.5 0.5 0.3" />
+      <default class="panda/visual_left">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" />
+      </default>
+      <default class="panda/collision_left">
+        <geom type="mesh" group="3" />
+      </default>
+    </default>
+    <default class="2f85_left">
+      <mesh scale="0.001 0.001 0.001" />
+      <site group="4" rgba="0.9 0.9 0.9 1" />
+      <general biastype="affine" />
+      <default class="driver_left">
+        <joint solreflimit="0.005" solimplimit="0.95 0.99" range="0 0.8" armature="0.005" damping="0.1" />
+      </default>
+      <default class="follower_left">
+        <joint solreflimit="0.005" solimplimit="0.95 0.99" range="-0.872664 0.872664" />
+      </default>
+      <default class="spring_link_left">
+        <joint springref="2.62" stiffness="0.05" range="-0.296706 0.8" damping="0.00125" />
+      </default>
+      <default class="coupler_left">
+        <joint solreflimit="0.005" solimplimit="0.95 0.99" range="-1.57 0" />
+      </default>
+      <default class="2f85/visual_left">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" />
+      </default>
+      <default class="2f85/collision_left">
+        <geom type="mesh" group="3" />
+        <default class="pad_box1_left">
+          <geom size="0.011 0.004 0.009375" type="box" priority="1" friction="0.7" solref="0.004" solimp="0.95 0.99" rgba="0.55 0.55 0.55 1" />
+        </default>
+        <default class="pad_box2_left">
+          <geom size="0.011 0.004 0.009375" type="box" priority="1" friction="0.6" solref="0.004" solimp="0.95 0.99" rgba="0.45 0.45 0.45 1" />
+        </default>
+      </default>
+    </default>
+    <default class="allegro_right_left">
+      <joint damping="0.1" />
+      <geom density="800" />
+      <general biastype="affine" gainprm="2" biasprm="0 -2" />
+      <default class="visual_left">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" material="black_left" />
+        <default class="palm_visual_left">
+          <geom mesh="base_link_left" />
+        </default>
+        <default class="base_visual_left">
+          <geom mesh="link_0.0_left" />
+        </default>
+        <default class="proximal_visual_left">
+          <geom mesh="link_1.0_left" />
+        </default>
+        <default class="medial_visual_left">
+          <geom mesh="link_2.0_left" />
+        </default>
+        <default class="distal_visual_left">
+          <geom mesh="link_3.0_left" />
+        </default>
+        <default class="fingertip_visual_left">
+          <geom material="white_left" mesh="link_3.0_tip_left" />
+        </default>
+        <default class="thumbtip_visual_left">
+          <geom material="white_left" mesh="link_15.0_tip_left" />
+        </default>
+      </default>
+      <default class="collision_left">
+        <geom type="box" group="3" />
+        <default class="palm_collision_left">
+          <geom size="0.0204 0.0565 0.0475" />
+        </default>
+        <default class="base_collision_left">
+          <geom size="0.0098 0.01375 0.0082" />
+          <default class="thumb_base_collision_left">
+            <geom size="0.0179 0.017 0.02275" />
+          </default>
+        </default>
+        <default class="proximal_collision_left">
+          <geom size="0.0098 0.01375 0.027" />
+          <default class="thumb_proximal_collision_left">
+            <geom size="0.0098 0.01375 0.00885" />
+          </default>
+        </default>
+        <default class="medial_collision_left">
+          <geom size="0.0098 0.01375 0.0192" />
+          <default class="thumb_medial_collision_left">
+            <geom size="0.0098 0.01375 0.0257" />
+          </default>
+        </default>
+        <default class="distal_collision_left">
+          <geom size="0.0098 0.01375 0.008" />
+          <default class="thumb_distal_collision_left">
+            <geom size="0.0098 0.01375 0.0157" />
+          </default>
+        </default>
+        <default class="fingertip_collision_left">
+          <geom size="0.012 0.01 0" type="capsule" />
+          <default class="thumbtip_collision_left">
+            <geom size="0.012 0.008 0" />
+          </default>
+        </default>
+      </default>
+      <default class="base_left">
+        <joint range="-0.47 0.47" />
+        <general ctrlrange="-0.47 0.47" />
+      </default>
+      <default class="proximal_left">
+        <joint range="-0.196 1.61" />
+        <general ctrlrange="-0.196 1.61" />
+      </default>
+      <default class="medial_left">
+        <joint range="-0.174 1.709" />
+        <general ctrlrange="-0.174 1.709" />
+      </default>
+      <default class="distal_left">
+        <joint range="-0.227 1.618" />
+        <general ctrlrange="-0.227 1.618" />
+      </default>
+      <default class="thumb_base_left">
+        <joint range="0.263 1.396" />
+        <general ctrlrange="0.263 1.396" />
+      </default>
+      <default class="thumb_proximal_left">
+        <joint range="-0.105 1.163" />
+        <general ctrlrange="-0.105 1.163" />
+      </default>
+      <default class="thumb_medial_left">
+        <joint range="-0.189 1.644" />
+        <general ctrlrange="-0.189 1.644" />
+      </default>
+      <default class="thumb_distal_left">
+        <joint range="-0.162 1.719" />
+        <general ctrlrange="-0.162 1.719" />
+      </default>
+    </default>
+    <default class="/main_left" />
+    <default class="ipad_visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" density="0" />
+    </default>
+    <default class="ipad_collision">
+      <geom type="box" group="3" />
+    </default>
+    <default class="benchhand_right_main">
+      <default class="benchhand_right_native_main">
+        <default class="benchhand_right_native_panda">
+          <joint range="-2.8973 2.8973" armature="0.1" damping="1" />
+          <site size="0.001 0.005 0.005" group="4" rgba="0.5 0.5 0.5 0.3" />
+          <default class="benchhand_right_native_panda/visual">
+            <geom type="mesh" contype="0" conaffinity="0" group="2" />
+          </default>
+          <default class="benchhand_right_native_panda/collision">
+            <geom type="mesh" group="3" />
+          </default>
+        </default>
+        <default class="benchhand_right_native_CMC_joint">
+          <joint armature="0.0032" damping="4.2e-05" frictionloss="0.132" />
+        </default>
+        <default class="benchhand_right_native_PCMC_joint">
+          <joint armature="0.00012" damping="4.2e-05" frictionloss="0.012" />
+        </default>
+        <default class="benchhand_right_native_MCP_joint">
+          <joint armature="0.00265" damping="2.38e-05" frictionloss="0.07456" />
+        </default>
+        <default class="benchhand_right_native_PIP_joint">
+          <joint armature="0.0006" damping="4.06e-06" frictionloss="0.01276" />
+        </default>
+        <default class="benchhand_right_native_DIP_joint">
+          <joint armature="0.00042" damping="1.21e-06" frictionloss="0.00378738" />
+        </default>
+        <default class="benchhand_right_native_elastomer_geom">
+          <geom friction="3.2 0.12 0.02" solref="0.06 0.9" solimp="0.96 0.995" />
+        </default>
+      </default>
+    </default>
+    <default class="benchhand_left_main">
+      <default class="benchhand_left_native_main">
+        <default class="benchhand_left_native_panda">
+          <joint range="-2.8973 2.8973" armature="0.1" damping="1" />
+          <site size="0.001 0.005 0.005" group="4" rgba="0.5 0.5 0.5 0.3" />
+          <default class="benchhand_left_native_panda/visual">
+            <geom type="mesh" contype="0" conaffinity="0" group="2" />
+          </default>
+          <default class="benchhand_left_native_panda/collision">
+            <geom type="mesh" group="3" />
+          </default>
+        </default>
+        <default class="benchhand_left_native_CMC_joint">
+          <joint armature="0.0032" damping="4.2e-05" frictionloss="0.132" />
+        </default>
+        <default class="benchhand_left_native_PCMC_joint">
+          <joint armature="0.00012" damping="4.2e-05" frictionloss="0.012" />
+        </default>
+        <default class="benchhand_left_native_MCP_joint">
+          <joint armature="0.00265" damping="2.38e-05" frictionloss="0.07456" />
+        </default>
+        <default class="benchhand_left_native_PIP_joint">
+          <joint armature="0.0006" damping="4.06e-06" frictionloss="0.01276" />
+        </default>
+        <default class="benchhand_left_native_DIP_joint">
+          <joint armature="0.00042" damping="1.21e-06" frictionloss="0.00378738" />
+        </default>
+        <default class="benchhand_left_native_elastomer_geom">
+          <geom friction="3.2 0.12 0.02" solref="0.06 0.9" solimp="0.96 0.995" />
+        </default>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" colorspace="linear" name="screen_unlocked_tex" file="ipad/screen_unlocked.png" />
+    <texture type="2d" colorspace="sRGB" name="digit_0_tex" file="ipad/number/ipad_digit_0_off.png" />
+    <texture type="2d" colorspace="sRGB" name="digit_1_tex" file="ipad/number/ipad_digit_1_off.png" />
+    <texture type="2d" colorspace="sRGB" name="digit_2_tex" file="ipad/number/ipad_digit_2_off.png" />
+    <texture type="2d" colorspace="sRGB" name="digit_3_tex" file="ipad/number/ipad_digit_3_off.png" />
+    <texture type="2d" colorspace="sRGB" name="digit_4_tex" file="ipad/number/ipad_digit_4_off.png" />
+    <texture type="2d" colorspace="sRGB" name="digit_5_tex" file="ipad/number/ipad_digit_5_off.png" />
+    <texture type="2d" colorspace="sRGB" name="digit_6_tex" file="ipad/number/ipad_digit_6_off.png" />
+    <texture type="2d" colorspace="sRGB" name="digit_7_tex" file="ipad/number/ipad_digit_7_off.png" />
+    <texture type="2d" colorspace="sRGB" name="digit_8_tex" file="ipad/number/ipad_digit_8_off.png" />
+    <texture type="2d" colorspace="sRGB" name="digit_9_tex" file="ipad/number/ipad_digit_9_off.png" />
+    <texture type="2d" colorspace="sRGB" name="digit_0_on_tex" file="ipad/number/ipad_digit_0_on.png" />
+    <texture type="2d" colorspace="sRGB" name="digit_1_on_tex" file="ipad/number/ipad_digit_1_on.png" />
+    <texture type="2d" colorspace="sRGB" name="digit_2_on_tex" file="ipad/number/ipad_digit_2_on.png" />
+    <texture type="2d" colorspace="sRGB" name="digit_3_on_tex" file="ipad/number/ipad_digit_3_on.png" />
+    <texture type="2d" colorspace="sRGB" name="digit_4_on_tex" file="ipad/number/ipad_digit_4_on.png" />
+    <texture type="2d" colorspace="sRGB" name="digit_5_on_tex" file="ipad/number/ipad_digit_5_on.png" />
+    <texture type="2d" colorspace="sRGB" name="digit_6_on_tex" file="ipad/number/ipad_digit_6_on.png" />
+    <texture type="2d" colorspace="sRGB" name="digit_7_on_tex" file="ipad/number/ipad_digit_7_on.png" />
+    <texture type="2d" colorspace="sRGB" name="digit_8_on_tex" file="ipad/number/ipad_digit_8_on.png" />
+    <texture type="2d" colorspace="sRGB" name="digit_9_on_tex" file="ipad/number/ipad_digit_9_on.png" />
+    <texture type="skybox" colorspace="auto" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="32" height="192" />
+    <texture type="2d" colorspace="auto" name="grid" builtin="checker" rgb1="0.1 0.2 0.3" rgb2="0.2 0.3 0.4" width="512" height="512" />
+    <texture type="skybox" colorspace="auto" builtin="gradient" rgb1="0.9 0.9 1" rgb2="0.2 0.3 0.4" width="256" height="1536" />
+    <texture type="2d" colorspace="sRGB" name="texplane" file="table_arena/textures/light-gray-floor-tile.png" />
+    <texture type="cube" colorspace="linear" name="tex-steel-brushed" file="table_arena/textures/steel-brushed.png" />
+    <texture type="2d" colorspace="linear" name="tex-light-gray-plaster" file="table_arena/textures/light-gray-plaster.png" />
+    <texture type="cube" colorspace="auto" name="textable" builtin="flat" rgb1="0.5 0.5 0.5" width="512" height="3072" />
+    <texture type="2d" colorspace="linear" name="tex-bamboo" file="table_arena/textures/desktop_random_textures/bamboo.png" />
+    <texture type="2d" colorspace="linear" name="tex-blue-wood" file="table_arena/textures/desktop_random_textures/blue-wood.png" />
+    <texture type="2d" colorspace="linear" name="tex-brass-ambra" file="table_arena/textures/desktop_random_textures/brass-ambra.png" />
+    <texture type="2d" colorspace="linear" name="tex-ceramic" file="table_arena/textures/desktop_random_textures/ceramic.png" />
+    <texture type="2d" colorspace="linear" name="tex-cream-plaster" file="table_arena/textures/desktop_random_textures/cream-plaster.png" />
+    <texture type="2d" colorspace="linear" name="tex-dark_wood_planks_2" file="table_arena/textures/desktop_random_textures/dark_wood_planks_2.png" />
+    <texture type="2d" colorspace="linear" name="tex-dark-wood" file="table_arena/textures/desktop_random_textures/dark-wood.png" />
+    <texture type="2d" colorspace="linear" name="tex-gray-plaster" file="table_arena/textures/desktop_random_textures/gray-plaster.png" />
+    <texture type="2d" colorspace="linear" name="tex-gray_wood_planks" file="table_arena/textures/desktop_random_textures/gray_wood_planks.png" />
+    <texture type="2d" colorspace="linear" name="tex-light-wood" file="table_arena/textures/desktop_random_textures/light-wood.png" />
+    <texture type="2d" colorspace="linear" name="tex-metal" file="table_arena/textures/desktop_random_textures/metal.png" />
+    <texture type="2d" colorspace="linear" name="tex-pink-plaster" file="table_arena/textures/desktop_random_textures/pink-plaster.png" />
+    <texture type="2d" colorspace="linear" name="tex-red-wood" file="table_arena/textures/desktop_random_textures/red-wood.png" />
+    <texture type="2d" colorspace="linear" name="tex-steel-scratched" file="table_arena/textures/desktop_random_textures/steel-scratched.png" />
+    <texture type="2d" colorspace="sRGB" name="tex-walnut_wood_grain" file="table_arena/textures/desktop_random_textures/walnut_wood_grain.png" />
+    <texture type="2d" colorspace="sRGB" name="tex-warm_wood_grain_2" file="table_arena/textures/desktop_random_textures/warm_wood_grain_2.png" />
+    <texture type="2d" colorspace="linear" name="tex-white-plaster" file="table_arena/textures/desktop_random_textures/white-plaster.png" />
+    <texture type="2d" colorspace="linear" name="tex-wood_grain_1" file="table_arena/textures/desktop_random_textures/wood_grain_1.png" />
+    <texture type="2d" colorspace="linear" name="tex-yellow-plaster" file="table_arena/textures/desktop_random_textures/yellow-plaster.png" />
+    <material name="white_right" />
+    <material name="off_white_right" rgba="0.901961 0.921569 0.929412 1" />
+    <material name="dark_grey_right" rgba="0.25 0.25 0.25 1" />
+    <material name="green_right" rgba="0 1 0 1" />
+    <material name="light_blue_right" rgba="0.039216 0.541176 0.780392 1" />
+    <material name="metal_right" rgba="0.58 0.58 0.58 1" />
+    <material name="silicone_right" rgba="0.1882 0.1882 0.1882 1" />
+    <material name="gray_right" rgba="0.4627 0.4627 0.4627 1" />
+    <material name="black_right" rgba="0.149 0.149 0.149 1" />
+    <material name="allegro_black_right" rgba="0.2 0.2 0.2 1" />
+    <material name="allegro_white_right" rgba="0.9 0.9 0.9 1" />
+    <material name="inspire_matte_gray_right" specular="0.02" shininess="0.04" rgba="0.5 0.5 0.5 1" />
+    <material name="white_left" />
+    <material name="off_white_left" rgba="0.901961 0.921569 0.929412 1" />
+    <material name="dark_grey_left" rgba="0.25 0.25 0.25 1" />
+    <material name="green_left" rgba="0 1 0 1" />
+    <material name="light_blue_left" rgba="0.039216 0.541176 0.780392 1" />
+    <material name="metal_left" rgba="0.58 0.58 0.58 1" />
+    <material name="silicone_left" rgba="0.1882 0.1882 0.1882 1" />
+    <material name="gray_left" rgba="0.4627 0.4627 0.4627 1" />
+    <material name="black_left" rgba="0.149 0.149 0.149 1" />
+    <material name="allegro_black_left" rgba="0.2 0.2 0.2 1" />
+    <material name="allegro_white_left" rgba="0.9 0.9 0.9 1" />
+    <material name="inspire_matte_gray_left" specular="0.02" shininess="0.04" rgba="0.5 0.5 0.5 1" />
+    <material name="mat_screen_unlocked" texture="screen_unlocked_tex" />
+    <material name="Material_black" texuniform="true" specular="0.1" shininess="0.1" rgba="0.2 0.2 0.2 1" />
+    <material name="Material_white" texuniform="true" specular="0.8" shininess="0.9" />
+    <material name="Material_grey" texuniform="true" specular="0.2" shininess="0.2" rgba="0.7 0.7 0.7 1" />
+    <material name="mat_digit_0" texture="digit_0_tex" specular="0.1" shininess="0.1" />
+    <material name="mat_digit_1" texture="digit_1_tex" specular="0.1" shininess="0.1" />
+    <material name="mat_digit_2" texture="digit_2_tex" specular="0.1" shininess="0.1" />
+    <material name="mat_digit_3" texture="digit_3_tex" specular="0.1" shininess="0.1" />
+    <material name="mat_digit_4" texture="digit_4_tex" specular="0.1" shininess="0.1" />
+    <material name="mat_digit_5" texture="digit_5_tex" specular="0.1" shininess="0.1" />
+    <material name="mat_digit_6" texture="digit_6_tex" specular="0.1" shininess="0.1" />
+    <material name="mat_digit_7" texture="digit_7_tex" specular="0.1" shininess="0.1" />
+    <material name="mat_digit_8" texture="digit_8_tex" specular="0.1" shininess="0.1" />
+    <material name="mat_digit_9" texture="digit_9_tex" specular="0.1" shininess="0.1" />
+    <material name="mat_digit_0_light" texture="digit_0_on_tex" specular="0.1" shininess="0.1" />
+    <material name="mat_digit_1_light" texture="digit_1_on_tex" specular="0.1" shininess="0.1" />
+    <material name="mat_digit_2_light" texture="digit_2_on_tex" specular="0.1" shininess="0.1" />
+    <material name="mat_digit_3_light" texture="digit_3_on_tex" specular="0.1" shininess="0.1" />
+    <material name="mat_digit_4_light" texture="digit_4_on_tex" specular="0.1" shininess="0.1" />
+    <material name="mat_digit_5_light" texture="digit_5_on_tex" specular="0.1" shininess="0.1" />
+    <material name="mat_digit_6_light" texture="digit_6_on_tex" specular="0.1" shininess="0.1" />
+    <material name="mat_digit_7_light" texture="digit_7_on_tex" specular="0.1" shininess="0.1" />
+    <material name="mat_digit_8_light" texture="digit_8_on_tex" specular="0.1" shininess="0.1" />
+    <material name="mat_digit_9_light" texture="digit_9_on_tex" specular="0.1" shininess="0.1" />
+    <material name="grid" texture="grid" texuniform="true" texrepeat="2 2" />
+    <material name="floorplane" texture="texplane" texuniform="true" texrepeat="2 2" specular="0" shininess="0" reflectance="0.01" />
+    <material name="table_legs_metal" texture="tex-steel-brushed" shininess="0.8" reflectance="0.8" />
+    <material name="walls_mat" texture="tex-light-gray-plaster" texuniform="true" texrepeat="3 3" specular="0.1" shininess="0.1" />
+    <material name="table_mat" texture="textable" />
+    <material name="table_bamboo" texture="tex-bamboo" specular="0.2" shininess="0" />
+    <material name="table_blue-wood" texture="tex-blue-wood" specular="0.2" shininess="0" />
+    <material name="table_brass-ambra" texture="tex-brass-ambra" specular="0.2" shininess="0" />
+    <material name="table_ceramic" texture="tex-ceramic" specular="0.2" shininess="0" />
+    <material name="table_cream-plaster" texture="tex-cream-plaster" specular="0.2" shininess="0" />
+    <material name="table_dark_wood_planks_2" texture="tex-dark_wood_planks_2" specular="0.2" shininess="0" />
+    <material name="table_dark-wood" texture="tex-dark-wood" specular="0.2" shininess="0" />
+    <material name="table_gray-plaster" texture="tex-gray-plaster" specular="0.2" shininess="0" />
+    <material name="table_gray_wood_planks" texture="tex-gray_wood_planks" specular="0.2" shininess="0" />
+    <material name="table_light-wood" texture="tex-light-wood" specular="0.2" shininess="0" />
+    <material name="table_metal" texture="tex-metal" specular="0.2" shininess="0" />
+    <material name="table_pink-plaster" texture="tex-pink-plaster" specular="0.2" shininess="0" />
+    <material name="table_red-wood" texture="tex-red-wood" specular="0.2" shininess="0" />
+    <material name="table_steel-scratched" texture="tex-steel-scratched" specular="0.2" shininess="0" />
+    <material name="table_walnut_wood_grain" texture="tex-walnut_wood_grain" specular="0.2" shininess="0" />
+    <material name="table_warm_wood_grain_2" texture="tex-warm_wood_grain_2" specular="0.2" shininess="0" />
+    <material name="table_white-plaster" texture="tex-white-plaster" specular="0.2" shininess="0" />
+    <material name="table_wood_grain_1" texture="tex-wood_grain_1" specular="0.2" shininess="0" />
+    <material name="table_yellow-plaster" texture="tex-yellow-plaster" specular="0.2" shininess="0" />
+    <material name="benchhand_right_native_white" />
+    <material name="benchhand_right_native_off_white" rgba="0.901961 0.921569 0.929412 1" />
+    <material name="benchhand_right_native_dark_grey" rgba="0.25 0.25 0.25 1" />
+    <material name="benchhand_right_native_green" rgba="0 1 0 1" />
+    <material name="benchhand_right_native_light_blue" rgba="0.039216 0.541176 0.780392 1" />
+    <material name="benchhand_right_native_metal" rgba="0.58 0.58 0.58 1" />
+    <material name="benchhand_right_native_silicone" rgba="0.1882 0.1882 0.1882 1" />
+    <material name="benchhand_right_native_gray" rgba="0.4627 0.4627 0.4627 1" />
+    <material name="benchhand_right_native_black" rgba="0.149 0.149 0.149 1" />
+    <material name="benchhand_right_native_sharpa_shell" specular="0.05" shininess="0.02" rgba="0.36 0.38 0.41 1" />
+    <material name="benchhand_right_native_sharpa_joint_metal" specular="0.75" shininess="0.65" rgba="0.6 0.62 0.66 1" />
+    <material name="benchhand_right_native_sharpa_elastomer" specular="0.15" shininess="0.08" rgba="0.18 0.2 0.22 1" />
+    <material name="benchhand_right_native_sharpa_black" specular="0.3" shininess="0.25" rgba="0.02 0.02 0.025 1" />
+    <material name="benchhand_right_native_sharpa_led" emission="0.4" rgba="0.45 0.85 1 1" />
+    <material name="benchhand_left_native_white" />
+    <material name="benchhand_left_native_off_white" rgba="0.901961 0.921569 0.929412 1" />
+    <material name="benchhand_left_native_dark_grey" rgba="0.25 0.25 0.25 1" />
+    <material name="benchhand_left_native_green" rgba="0 1 0 1" />
+    <material name="benchhand_left_native_light_blue" rgba="0.039216 0.541176 0.780392 1" />
+    <material name="benchhand_left_native_metal" rgba="0.58 0.58 0.58 1" />
+    <material name="benchhand_left_native_silicone" rgba="0.1882 0.1882 0.1882 1" />
+    <material name="benchhand_left_native_gray" rgba="0.4627 0.4627 0.4627 1" />
+    <material name="benchhand_left_native_black" rgba="0.149 0.149 0.149 1" />
+    <material name="benchhand_left_native_sharpa_shell" specular="0.05" shininess="0.02" rgba="0.36 0.38 0.41 1" />
+    <material name="benchhand_left_native_sharpa_joint_metal" specular="0.75" shininess="0.65" rgba="0.6 0.62 0.66 1" />
+    <material name="benchhand_left_native_sharpa_elastomer" specular="0.15" shininess="0.08" rgba="0.18 0.2 0.22 1" />
+    <material name="benchhand_left_native_sharpa_black" specular="0.3" shininess="0.25" rgba="0.02 0.02 0.025 1" />
+    <material name="benchhand_left_native_sharpa_led" emission="0.4" rgba="0.45 0.85 1 1" />
+    <mesh name="link0_c_right" content_type="model/stl" file="franka_emika_panda/assets/link0.stl" />
+    <mesh name="link1_c_right" content_type="model/stl" file="franka_emika_panda/assets/link1.stl" />
+    <mesh name="link2_c_right" content_type="model/stl" file="franka_emika_panda/assets/link2.stl" />
+    <mesh name="link3_c_right" content_type="model/stl" file="franka_emika_panda/assets/link3.stl" />
+    <mesh name="link4_c_right" content_type="model/stl" file="franka_emika_panda/assets/link4.stl" />
+    <mesh name="link5_c0_right" content_type="model/obj" file="franka_emika_panda/assets/link5_collision_0.obj" />
+    <mesh name="link5_c1_right" content_type="model/obj" file="franka_emika_panda/assets/link5_collision_1.obj" />
+    <mesh name="link5_c2_right" content_type="model/obj" file="franka_emika_panda/assets/link5_collision_2.obj" />
+    <mesh name="link6_c_right" content_type="model/stl" file="franka_emika_panda/assets/link6.stl" />
+    <mesh name="link7_c_right" content_type="model/stl" file="franka_emika_panda/assets/link7.stl" />
+    <mesh name="link0_0_right" content_type="model/obj" file="franka_emika_panda/assets/link0_0.obj" />
+    <mesh name="link0_1_right" content_type="model/obj" file="franka_emika_panda/assets/link0_1.obj" />
+    <mesh name="link0_2_right" content_type="model/obj" file="franka_emika_panda/assets/link0_2.obj" />
+    <mesh name="link0_3_right" content_type="model/obj" file="franka_emika_panda/assets/link0_3.obj" />
+    <mesh name="link0_4_right" content_type="model/obj" file="franka_emika_panda/assets/link0_4.obj" />
+    <mesh name="link0_5_right" content_type="model/obj" file="franka_emika_panda/assets/link0_5.obj" />
+    <mesh name="link0_7_right" content_type="model/obj" file="franka_emika_panda/assets/link0_7.obj" />
+    <mesh name="link0_8_right" content_type="model/obj" file="franka_emika_panda/assets/link0_8.obj" />
+    <mesh name="link0_9_right" content_type="model/obj" file="franka_emika_panda/assets/link0_9.obj" />
+    <mesh name="link0_10_right" content_type="model/obj" file="franka_emika_panda/assets/link0_10.obj" />
+    <mesh name="link0_11_right" content_type="model/obj" file="franka_emika_panda/assets/link0_11.obj" />
+    <mesh name="link1_right" content_type="model/obj" file="franka_emika_panda/assets/link1.obj" />
+    <mesh name="link2_right" content_type="model/obj" file="franka_emika_panda/assets/link2.obj" />
+    <mesh name="link3_0_right" content_type="model/obj" file="franka_emika_panda/assets/link3_0.obj" />
+    <mesh name="link3_1_right" content_type="model/obj" file="franka_emika_panda/assets/link3_1.obj" />
+    <mesh name="link3_2_right" content_type="model/obj" file="franka_emika_panda/assets/link3_2.obj" />
+    <mesh name="link3_3_right" content_type="model/obj" file="franka_emika_panda/assets/link3_3.obj" />
+    <mesh name="link4_0_right" content_type="model/obj" file="franka_emika_panda/assets/link4_0.obj" />
+    <mesh name="link4_1_right" content_type="model/obj" file="franka_emika_panda/assets/link4_1.obj" />
+    <mesh name="link4_2_right" content_type="model/obj" file="franka_emika_panda/assets/link4_2.obj" />
+    <mesh name="link4_3_right" content_type="model/obj" file="franka_emika_panda/assets/link4_3.obj" />
+    <mesh name="link5_0_right" content_type="model/obj" file="franka_emika_panda/assets/link5_0.obj" />
+    <mesh name="link5_1_right" content_type="model/obj" file="franka_emika_panda/assets/link5_1.obj" />
+    <mesh name="link5_2_right" content_type="model/obj" file="franka_emika_panda/assets/link5_2.obj" />
+    <mesh name="link6_0_right" content_type="model/obj" file="franka_emika_panda/assets/link6_0.obj" />
+    <mesh name="link6_1_right" content_type="model/obj" file="franka_emika_panda/assets/link6_1.obj" />
+    <mesh name="link6_2_right" content_type="model/obj" file="franka_emika_panda/assets/link6_2.obj" />
+    <mesh name="link6_3_right" content_type="model/obj" file="franka_emika_panda/assets/link6_3.obj" />
+    <mesh name="link6_4_right" content_type="model/obj" file="franka_emika_panda/assets/link6_4.obj" />
+    <mesh name="link6_5_right" content_type="model/obj" file="franka_emika_panda/assets/link6_5.obj" />
+    <mesh name="link6_6_right" content_type="model/obj" file="franka_emika_panda/assets/link6_6.obj" />
+    <mesh name="link6_7_right" content_type="model/obj" file="franka_emika_panda/assets/link6_7.obj" />
+    <mesh name="link6_8_right" content_type="model/obj" file="franka_emika_panda/assets/link6_8.obj" />
+    <mesh name="link6_9_right" content_type="model/obj" file="franka_emika_panda/assets/link6_9.obj" />
+    <mesh name="link6_10_right" content_type="model/obj" file="franka_emika_panda/assets/link6_10.obj" />
+    <mesh name="link6_11_right" content_type="model/obj" file="franka_emika_panda/assets/link6_11.obj" />
+    <mesh name="link6_12_right" content_type="model/obj" file="franka_emika_panda/assets/link6_12.obj" />
+    <mesh name="link6_13_right" content_type="model/obj" file="franka_emika_panda/assets/link6_13.obj" />
+    <mesh name="link6_14_right" content_type="model/obj" file="franka_emika_panda/assets/link6_14.obj" />
+    <mesh name="link6_15_right" content_type="model/obj" file="franka_emika_panda/assets/link6_15.obj" />
+    <mesh name="link6_16_right" content_type="model/obj" file="franka_emika_panda/assets/link6_16.obj" />
+    <mesh name="link7_0_right" content_type="model/obj" file="franka_emika_panda/assets/link7_0.obj" />
+    <mesh name="link7_1_right" content_type="model/obj" file="franka_emika_panda/assets/link7_1.obj" />
+    <mesh name="link7_2_right" content_type="model/obj" file="franka_emika_panda/assets/link7_2.obj" />
+    <mesh name="link7_3_right" content_type="model/obj" file="franka_emika_panda/assets/link7_3.obj" />
+    <mesh name="link7_4_right" content_type="model/obj" file="franka_emika_panda/assets/link7_4.obj" />
+    <mesh name="link7_5_right" content_type="model/obj" file="franka_emika_panda/assets/link7_5.obj" />
+    <mesh name="link7_6_right" content_type="model/obj" file="franka_emika_panda/assets/link7_6.obj" />
+    <mesh name="link7_7_right" content_type="model/obj" file="franka_emika_panda/assets/link7_7.obj" />
+    <mesh name="base_link_right" content_type="model/stl" file="wonik_allegro/assets/base_link.stl" />
+    <mesh name="link_0.0_right" content_type="model/stl" file="wonik_allegro/assets/link_0.0.stl" />
+    <mesh name="link_1.0_right" content_type="model/stl" file="wonik_allegro/assets/link_1.0.stl" />
+    <mesh name="link_2.0_right" content_type="model/stl" file="wonik_allegro/assets/link_2.0.stl" />
+    <mesh name="link_3.0_right" content_type="model/stl" file="wonik_allegro/assets/link_3.0.stl" />
+    <mesh name="link_3.0_tip_right" content_type="model/stl" file="wonik_allegro/assets/link_3.0_tip.stl" />
+    <mesh name="link_12.0_right" content_type="model/stl" file="wonik_allegro/assets/link_12.0_right.stl" />
+    <mesh name="link_13.0_right" content_type="model/stl" file="wonik_allegro/assets/link_13.0.stl" />
+    <mesh name="link_14.0_right" content_type="model/stl" file="wonik_allegro/assets/link_14.0.stl" />
+    <mesh name="link_15.0_right" content_type="model/stl" file="wonik_allegro/assets/link_15.0.stl" />
+    <mesh name="link_15.0_tip_right" content_type="model/stl" file="wonik_allegro/assets/link_15.0_tip.stl" />
+    <mesh name="leap_palm_lower_right" content_type="model/stl" file="leap_hand/right/palm_lower.stl" />
+    <mesh name="leap_mcp_joint_right" content_type="model/stl" file="leap_hand/right/mcp_joint.stl" />
+    <mesh name="leap_pip_right" content_type="model/stl" file="leap_hand/right/pip.stl" />
+    <mesh name="leap_dip_right" content_type="model/stl" file="leap_hand/right/dip.stl" />
+    <mesh name="leap_fingertip_right" content_type="model/stl" file="leap_hand/right/fingertip.stl" />
+    <mesh name="leap_thumb_pip_right" content_type="model/stl" file="leap_hand/right/thumb_pip.stl" />
+    <mesh name="leap_thumb_dip_right" content_type="model/stl" file="leap_hand/right/thumb_dip.stl" />
+    <mesh name="leap_thumb_fingertip_right" content_type="model/stl" file="leap_hand/right/thumb_fingertip.stl" />
+    <mesh name="pedestal_right" content_type="model/stl" file="rethink_mount/pedestal.stl" />
+    <mesh name="inspire_meshes__visual__right_base_link_right" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__visual__right_base_link.obj" />
+    <mesh name="inspire_meshes__visual__right_thumb_proximal_base_right" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__visual__right_thumb_proximal_base.obj" />
+    <mesh name="inspire_meshes__collision__right_thumb_proximal_base_right" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__collision__right_thumb_proximal_base.obj" />
+    <mesh name="inspire_meshes__visual__right_thumb_proximal_right" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__visual__right_thumb_proximal.obj" />
+    <mesh name="inspire_meshes__collision__right_thumb_proximal_right" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__collision__right_thumb_proximal.obj" />
+    <mesh name="inspire_meshes__visual__right_thumb_intermediate_right" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__visual__right_thumb_intermediate.obj" />
+    <mesh name="inspire_meshes__collision__right_thumb_intermediate_right" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__collision__right_thumb_intermediate.obj" />
+    <mesh name="inspire_meshes__visual__right_thumb_distal_right" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__visual__right_thumb_distal.obj" />
+    <mesh name="inspire_meshes__collision__right_thumb_distal_right" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__collision__right_thumb_distal.obj" />
+    <mesh name="inspire_meshes__visual__right_index_proximal_right" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__visual__right_index_proximal.obj" />
+    <mesh name="inspire_meshes__collision__right_index_proximal_right" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__collision__right_index_proximal.obj" />
+    <mesh name="inspire_meshes__visual__right_index_intermediate_right" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__visual__right_index_intermediate.obj" />
+    <mesh name="inspire_meshes__collision__right_index_intermediate_right" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__collision__right_index_intermediate.obj" />
+    <mesh name="inspire_meshes__visual__right_middle_intermediate_right" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__visual__right_middle_intermediate.obj" />
+    <mesh name="inspire_meshes__collision__right_middle_intermediate_right" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__collision__right_middle_intermediate.obj" />
+    <mesh name="inspire_meshes__visual__right_pinky_intermediate_right" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__visual__right_pinky_intermediate.obj" />
+    <mesh name="inspire_meshes__collision__right_pinky_intermediate_right" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__collision__right_pinky_intermediate.obj" />
+    <mesh name="link0_c_left" content_type="model/stl" file="franka_emika_panda/assets/link0.stl" />
+    <mesh name="link1_c_left" content_type="model/stl" file="franka_emika_panda/assets/link1.stl" />
+    <mesh name="link2_c_left" content_type="model/stl" file="franka_emika_panda/assets/link2.stl" />
+    <mesh name="link3_c_left" content_type="model/stl" file="franka_emika_panda/assets/link3.stl" />
+    <mesh name="link4_c_left" content_type="model/stl" file="franka_emika_panda/assets/link4.stl" />
+    <mesh name="link5_c0_left" content_type="model/obj" file="franka_emika_panda/assets/link5_collision_0.obj" />
+    <mesh name="link5_c1_left" content_type="model/obj" file="franka_emika_panda/assets/link5_collision_1.obj" />
+    <mesh name="link5_c2_left" content_type="model/obj" file="franka_emika_panda/assets/link5_collision_2.obj" />
+    <mesh name="link6_c_left" content_type="model/stl" file="franka_emika_panda/assets/link6.stl" />
+    <mesh name="link7_c_left" content_type="model/stl" file="franka_emika_panda/assets/link7.stl" />
+    <mesh name="link0_0_left" content_type="model/obj" file="franka_emika_panda/assets/link0_0.obj" />
+    <mesh name="link0_1_left" content_type="model/obj" file="franka_emika_panda/assets/link0_1.obj" />
+    <mesh name="link0_2_left" content_type="model/obj" file="franka_emika_panda/assets/link0_2.obj" />
+    <mesh name="link0_3_left" content_type="model/obj" file="franka_emika_panda/assets/link0_3.obj" />
+    <mesh name="link0_4_left" content_type="model/obj" file="franka_emika_panda/assets/link0_4.obj" />
+    <mesh name="link0_5_left" content_type="model/obj" file="franka_emika_panda/assets/link0_5.obj" />
+    <mesh name="link0_7_left" content_type="model/obj" file="franka_emika_panda/assets/link0_7.obj" />
+    <mesh name="link0_8_left" content_type="model/obj" file="franka_emika_panda/assets/link0_8.obj" />
+    <mesh name="link0_9_left" content_type="model/obj" file="franka_emika_panda/assets/link0_9.obj" />
+    <mesh name="link0_10_left" content_type="model/obj" file="franka_emika_panda/assets/link0_10.obj" />
+    <mesh name="link0_11_left" content_type="model/obj" file="franka_emika_panda/assets/link0_11.obj" />
+    <mesh name="link1_left" content_type="model/obj" file="franka_emika_panda/assets/link1.obj" />
+    <mesh name="link2_left" content_type="model/obj" file="franka_emika_panda/assets/link2.obj" />
+    <mesh name="link3_0_left" content_type="model/obj" file="franka_emika_panda/assets/link3_0.obj" />
+    <mesh name="link3_1_left" content_type="model/obj" file="franka_emika_panda/assets/link3_1.obj" />
+    <mesh name="link3_2_left" content_type="model/obj" file="franka_emika_panda/assets/link3_2.obj" />
+    <mesh name="link3_3_left" content_type="model/obj" file="franka_emika_panda/assets/link3_3.obj" />
+    <mesh name="link4_0_left" content_type="model/obj" file="franka_emika_panda/assets/link4_0.obj" />
+    <mesh name="link4_1_left" content_type="model/obj" file="franka_emika_panda/assets/link4_1.obj" />
+    <mesh name="link4_2_left" content_type="model/obj" file="franka_emika_panda/assets/link4_2.obj" />
+    <mesh name="link4_3_left" content_type="model/obj" file="franka_emika_panda/assets/link4_3.obj" />
+    <mesh name="link5_0_left" content_type="model/obj" file="franka_emika_panda/assets/link5_0.obj" />
+    <mesh name="link5_1_left" content_type="model/obj" file="franka_emika_panda/assets/link5_1.obj" />
+    <mesh name="link5_2_left" content_type="model/obj" file="franka_emika_panda/assets/link5_2.obj" />
+    <mesh name="link6_0_left" content_type="model/obj" file="franka_emika_panda/assets/link6_0.obj" />
+    <mesh name="link6_1_left" content_type="model/obj" file="franka_emika_panda/assets/link6_1.obj" />
+    <mesh name="link6_2_left" content_type="model/obj" file="franka_emika_panda/assets/link6_2.obj" />
+    <mesh name="link6_3_left" content_type="model/obj" file="franka_emika_panda/assets/link6_3.obj" />
+    <mesh name="link6_4_left" content_type="model/obj" file="franka_emika_panda/assets/link6_4.obj" />
+    <mesh name="link6_5_left" content_type="model/obj" file="franka_emika_panda/assets/link6_5.obj" />
+    <mesh name="link6_6_left" content_type="model/obj" file="franka_emika_panda/assets/link6_6.obj" />
+    <mesh name="link6_7_left" content_type="model/obj" file="franka_emika_panda/assets/link6_7.obj" />
+    <mesh name="link6_8_left" content_type="model/obj" file="franka_emika_panda/assets/link6_8.obj" />
+    <mesh name="link6_9_left" content_type="model/obj" file="franka_emika_panda/assets/link6_9.obj" />
+    <mesh name="link6_10_left" content_type="model/obj" file="franka_emika_panda/assets/link6_10.obj" />
+    <mesh name="link6_11_left" content_type="model/obj" file="franka_emika_panda/assets/link6_11.obj" />
+    <mesh name="link6_12_left" content_type="model/obj" file="franka_emika_panda/assets/link6_12.obj" />
+    <mesh name="link6_13_left" content_type="model/obj" file="franka_emika_panda/assets/link6_13.obj" />
+    <mesh name="link6_14_left" content_type="model/obj" file="franka_emika_panda/assets/link6_14.obj" />
+    <mesh name="link6_15_left" content_type="model/obj" file="franka_emika_panda/assets/link6_15.obj" />
+    <mesh name="link6_16_left" content_type="model/obj" file="franka_emika_panda/assets/link6_16.obj" />
+    <mesh name="link7_0_left" content_type="model/obj" file="franka_emika_panda/assets/link7_0.obj" />
+    <mesh name="link7_1_left" content_type="model/obj" file="franka_emika_panda/assets/link7_1.obj" />
+    <mesh name="link7_2_left" content_type="model/obj" file="franka_emika_panda/assets/link7_2.obj" />
+    <mesh name="link7_3_left" content_type="model/obj" file="franka_emika_panda/assets/link7_3.obj" />
+    <mesh name="link7_4_left" content_type="model/obj" file="franka_emika_panda/assets/link7_4.obj" />
+    <mesh name="link7_5_left" content_type="model/obj" file="franka_emika_panda/assets/link7_5.obj" />
+    <mesh name="link7_6_left" content_type="model/obj" file="franka_emika_panda/assets/link7_6.obj" />
+    <mesh name="link7_7_left" content_type="model/obj" file="franka_emika_panda/assets/link7_7.obj" />
+    <mesh name="base_link_left" content_type="model/stl" file="wonik_allegro/assets/base_link.stl" />
+    <mesh name="link_0.0_left" content_type="model/stl" file="wonik_allegro/assets/link_0.0.stl" />
+    <mesh name="link_1.0_left" content_type="model/stl" file="wonik_allegro/assets/link_1.0.stl" />
+    <mesh name="link_2.0_left" content_type="model/stl" file="wonik_allegro/assets/link_2.0.stl" />
+    <mesh name="link_3.0_left" content_type="model/stl" file="wonik_allegro/assets/link_3.0.stl" />
+    <mesh name="link_3.0_tip_left" content_type="model/stl" file="wonik_allegro/assets/link_3.0_tip.stl" />
+    <mesh name="link_12.0_right_left" content_type="model/stl" file="wonik_allegro/assets/link_12.0_right.stl" />
+    <mesh name="link_13.0_left" content_type="model/stl" file="wonik_allegro/assets/link_13.0.stl" />
+    <mesh name="link_14.0_left" content_type="model/stl" file="wonik_allegro/assets/link_14.0.stl" />
+    <mesh name="link_15.0_left" content_type="model/stl" file="wonik_allegro/assets/link_15.0.stl" />
+    <mesh name="link_15.0_tip_left" content_type="model/stl" file="wonik_allegro/assets/link_15.0_tip.stl" />
+    <mesh name="leap_palm_lower_left" content_type="model/stl" file="leap_hand/right/palm_lower.stl" />
+    <mesh name="leap_mcp_joint_left" content_type="model/stl" file="leap_hand/right/mcp_joint.stl" />
+    <mesh name="leap_pip_left" content_type="model/stl" file="leap_hand/right/pip.stl" />
+    <mesh name="leap_dip_left" content_type="model/stl" file="leap_hand/right/dip.stl" />
+    <mesh name="leap_fingertip_left" content_type="model/stl" file="leap_hand/right/fingertip.stl" />
+    <mesh name="leap_thumb_pip_left" content_type="model/stl" file="leap_hand/right/thumb_pip.stl" />
+    <mesh name="leap_thumb_dip_left" content_type="model/stl" file="leap_hand/right/thumb_dip.stl" />
+    <mesh name="leap_thumb_fingertip_left" content_type="model/stl" file="leap_hand/right/thumb_fingertip.stl" />
+    <mesh name="pedestal_left" content_type="model/stl" file="rethink_mount/pedestal.stl" />
+    <mesh name="inspire_meshes__visual__left_mirrored_base_link_left" content_type="model/obj" file="../../../../teleoperation/inspire/assets/left_mirrored/meshes__visual__left_mirrored_base_link.obj" />
+    <mesh name="inspire_meshes__visual__left_mirrored_thumb_proximal_base_left" content_type="model/obj" file="../../../../teleoperation/inspire/assets/left_mirrored/meshes__visual__left_mirrored_thumb_proximal_base.obj" />
+    <mesh name="inspire_meshes__collision__left_mirrored_thumb_proximal_base_left" content_type="model/obj" file="../../../../teleoperation/inspire/assets/left_mirrored/meshes__collision__left_mirrored_thumb_proximal_base.obj" />
+    <mesh name="inspire_meshes__visual__left_mirrored_thumb_proximal_left" content_type="model/obj" file="../../../../teleoperation/inspire/assets/left_mirrored/meshes__visual__left_mirrored_thumb_proximal.obj" />
+    <mesh name="inspire_meshes__collision__left_mirrored_thumb_proximal_left" content_type="model/obj" file="../../../../teleoperation/inspire/assets/left_mirrored/meshes__collision__left_mirrored_thumb_proximal.obj" />
+    <mesh name="inspire_meshes__visual__left_mirrored_thumb_intermediate_left" content_type="model/obj" file="../../../../teleoperation/inspire/assets/left_mirrored/meshes__visual__left_mirrored_thumb_intermediate.obj" />
+    <mesh name="inspire_meshes__collision__left_mirrored_thumb_intermediate_left" content_type="model/obj" file="../../../../teleoperation/inspire/assets/left_mirrored/meshes__collision__left_mirrored_thumb_intermediate.obj" />
+    <mesh name="inspire_meshes__visual__left_mirrored_thumb_distal_left" content_type="model/obj" file="../../../../teleoperation/inspire/assets/left_mirrored/meshes__visual__left_mirrored_thumb_distal.obj" />
+    <mesh name="inspire_meshes__collision__left_mirrored_thumb_distal_left" content_type="model/obj" file="../../../../teleoperation/inspire/assets/left_mirrored/meshes__collision__left_mirrored_thumb_distal.obj" />
+    <mesh name="inspire_meshes__visual__left_mirrored_index_proximal_left" content_type="model/obj" file="../../../../teleoperation/inspire/assets/left_mirrored/meshes__visual__left_mirrored_index_proximal.obj" />
+    <mesh name="inspire_meshes__collision__left_mirrored_index_proximal_left" content_type="model/obj" file="../../../../teleoperation/inspire/assets/left_mirrored/meshes__collision__left_mirrored_index_proximal.obj" />
+    <mesh name="inspire_meshes__visual__left_mirrored_index_intermediate_left" content_type="model/obj" file="../../../../teleoperation/inspire/assets/left_mirrored/meshes__visual__left_mirrored_index_intermediate.obj" />
+    <mesh name="inspire_meshes__collision__left_mirrored_index_intermediate_left" content_type="model/obj" file="../../../../teleoperation/inspire/assets/left_mirrored/meshes__collision__left_mirrored_index_intermediate.obj" />
+    <mesh name="inspire_meshes__visual__left_mirrored_middle_intermediate_left" content_type="model/obj" file="../../../../teleoperation/inspire/assets/left_mirrored/meshes__visual__left_mirrored_middle_intermediate.obj" />
+    <mesh name="inspire_meshes__collision__left_mirrored_middle_intermediate_left" content_type="model/obj" file="../../../../teleoperation/inspire/assets/left_mirrored/meshes__collision__left_mirrored_middle_intermediate.obj" />
+    <mesh name="inspire_meshes__visual__left_mirrored_pinky_intermediate_left" content_type="model/obj" file="../../../../teleoperation/inspire/assets/left_mirrored/meshes__visual__left_mirrored_pinky_intermediate.obj" />
+    <mesh name="inspire_meshes__collision__left_mirrored_pinky_intermediate_left" content_type="model/obj" file="../../../../teleoperation/inspire/assets/left_mirrored/meshes__collision__left_mirrored_pinky_intermediate.obj" />
+    <mesh name="ipad_mesh" content_type="model/obj" file="ipad/ipad_thin_2.obj" scale="0.4 0.4 0.4" />
+    <mesh name="benchhand_right_native_link0_c" file="franka_emika_panda/assets/link0.stl" />
+    <mesh name="benchhand_right_native_link1_c" file="franka_emika_panda/assets/link1.stl" />
+    <mesh name="benchhand_right_native_link2_c" file="franka_emika_panda/assets/link2.stl" />
+    <mesh name="benchhand_right_native_link3_c" file="franka_emika_panda/assets/link3.stl" />
+    <mesh name="benchhand_right_native_link4_c" file="franka_emika_panda/assets/link4.stl" />
+    <mesh name="benchhand_right_native_link5_c0" file="franka_emika_panda/assets/link5_collision_0.obj" />
+    <mesh name="benchhand_right_native_link5_c1" file="franka_emika_panda/assets/link5_collision_1.obj" />
+    <mesh name="benchhand_right_native_link5_c2" file="franka_emika_panda/assets/link5_collision_2.obj" />
+    <mesh name="benchhand_right_native_link6_c" file="franka_emika_panda/assets/link6.stl" />
+    <mesh name="benchhand_right_native_link7_c" file="franka_emika_panda/assets/link7.stl" />
+    <mesh name="benchhand_right_native_link0_0" file="franka_emika_panda/assets/link0_0.obj" />
+    <mesh name="benchhand_right_native_link0_1" file="franka_emika_panda/assets/link0_1.obj" />
+    <mesh name="benchhand_right_native_link0_2" file="franka_emika_panda/assets/link0_2.obj" />
+    <mesh name="benchhand_right_native_link0_3" file="franka_emika_panda/assets/link0_3.obj" />
+    <mesh name="benchhand_right_native_link0_4" file="franka_emika_panda/assets/link0_4.obj" />
+    <mesh name="benchhand_right_native_link0_5" file="franka_emika_panda/assets/link0_5.obj" />
+    <mesh name="benchhand_right_native_link0_7" file="franka_emika_panda/assets/link0_7.obj" />
+    <mesh name="benchhand_right_native_link0_8" file="franka_emika_panda/assets/link0_8.obj" />
+    <mesh name="benchhand_right_native_link0_9" file="franka_emika_panda/assets/link0_9.obj" />
+    <mesh name="benchhand_right_native_link0_10" file="franka_emika_panda/assets/link0_10.obj" />
+    <mesh name="benchhand_right_native_link0_11" file="franka_emika_panda/assets/link0_11.obj" />
+    <mesh name="benchhand_right_native_link1" file="franka_emika_panda/assets/link1.obj" />
+    <mesh name="benchhand_right_native_link2" file="franka_emika_panda/assets/link2.obj" />
+    <mesh name="benchhand_right_native_link3_0" file="franka_emika_panda/assets/link3_0.obj" />
+    <mesh name="benchhand_right_native_link3_1" file="franka_emika_panda/assets/link3_1.obj" />
+    <mesh name="benchhand_right_native_link3_2" file="franka_emika_panda/assets/link3_2.obj" />
+    <mesh name="benchhand_right_native_link3_3" file="franka_emika_panda/assets/link3_3.obj" />
+    <mesh name="benchhand_right_native_link4_0" file="franka_emika_panda/assets/link4_0.obj" />
+    <mesh name="benchhand_right_native_link4_1" file="franka_emika_panda/assets/link4_1.obj" />
+    <mesh name="benchhand_right_native_link4_2" file="franka_emika_panda/assets/link4_2.obj" />
+    <mesh name="benchhand_right_native_link4_3" file="franka_emika_panda/assets/link4_3.obj" />
+    <mesh name="benchhand_right_native_link5_0" file="franka_emika_panda/assets/link5_0.obj" />
+    <mesh name="benchhand_right_native_link5_1" file="franka_emika_panda/assets/link5_1.obj" />
+    <mesh name="benchhand_right_native_link5_2" file="franka_emika_panda/assets/link5_2.obj" />
+    <mesh name="benchhand_right_native_link6_0" file="franka_emika_panda/assets/link6_0.obj" />
+    <mesh name="benchhand_right_native_link6_1" file="franka_emika_panda/assets/link6_1.obj" />
+    <mesh name="benchhand_right_native_link6_2" file="franka_emika_panda/assets/link6_2.obj" />
+    <mesh name="benchhand_right_native_link6_3" file="franka_emika_panda/assets/link6_3.obj" />
+    <mesh name="benchhand_right_native_link6_4" file="franka_emika_panda/assets/link6_4.obj" />
+    <mesh name="benchhand_right_native_link6_5" file="franka_emika_panda/assets/link6_5.obj" />
+    <mesh name="benchhand_right_native_link6_6" file="franka_emika_panda/assets/link6_6.obj" />
+    <mesh name="benchhand_right_native_link6_7" file="franka_emika_panda/assets/link6_7.obj" />
+    <mesh name="benchhand_right_native_link6_8" file="franka_emika_panda/assets/link6_8.obj" />
+    <mesh name="benchhand_right_native_link6_9" file="franka_emika_panda/assets/link6_9.obj" />
+    <mesh name="benchhand_right_native_link6_10" file="franka_emika_panda/assets/link6_10.obj" />
+    <mesh name="benchhand_right_native_link6_11" file="franka_emika_panda/assets/link6_11.obj" />
+    <mesh name="benchhand_right_native_link6_12" file="franka_emika_panda/assets/link6_12.obj" />
+    <mesh name="benchhand_right_native_link6_13" file="franka_emika_panda/assets/link6_13.obj" />
+    <mesh name="benchhand_right_native_link6_14" file="franka_emika_panda/assets/link6_14.obj" />
+    <mesh name="benchhand_right_native_link6_15" file="franka_emika_panda/assets/link6_15.obj" />
+    <mesh name="benchhand_right_native_link6_16" file="franka_emika_panda/assets/link6_16.obj" />
+    <mesh name="benchhand_right_native_link7_0" file="franka_emika_panda/assets/link7_0.obj" />
+    <mesh name="benchhand_right_native_link7_1" file="franka_emika_panda/assets/link7_1.obj" />
+    <mesh name="benchhand_right_native_link7_2" file="franka_emika_panda/assets/link7_2.obj" />
+    <mesh name="benchhand_right_native_link7_3" file="franka_emika_panda/assets/link7_3.obj" />
+    <mesh name="benchhand_right_native_link7_4" file="franka_emika_panda/assets/link7_4.obj" />
+    <mesh name="benchhand_right_native_link7_5" file="franka_emika_panda/assets/link7_5.obj" />
+    <mesh name="benchhand_right_native_link7_6" file="franka_emika_panda/assets/link7_6.obj" />
+    <mesh name="benchhand_right_native_link7_7" file="franka_emika_panda/assets/link7_7.obj" />
+    <mesh name="benchhand_right_native_pedestal" file="rethink_mount/pedestal.stl" />
+    <mesh name="benchhand_right_native_flange" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/right_sharpa_wave/meshes/flange_B.STL" />
+    <mesh name="benchhand_right_native_wrist" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/right_sharpa_wave/meshes/wrist_B.STL" />
+    <mesh name="benchhand_right_native_wrist_collision" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/right_sharpa_wave/meshes/wrist_collision.STL" />
+    <mesh name="benchhand_right_native_right_hand_C_MC_visual" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/right_sharpa_wave/meshes/right_hand_C_MC_visual_.STL" />
+    <mesh name="benchhand_right_native_right_hand_C_MC" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/right_sharpa_wave/meshes/right_hand_C_MC.STL" />
+    <mesh name="benchhand_right_native_right_thumb_CMC_VL_visual" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/right_sharpa_wave/meshes/right_thumb_CMC_VL_visual.STL" />
+    <mesh name="benchhand_right_native_right_thumb_MC_visual" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/right_sharpa_wave/meshes/right_thumb_MC_visual.STL" />
+    <mesh name="benchhand_right_native_right_thumb_MC" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/right_sharpa_wave/meshes/right_thumb_MC.STL" />
+    <mesh name="benchhand_right_native_right_thumb_MCP_VL_visual" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/right_sharpa_wave/meshes/right_thumb_MCP_VL_visual.STL" />
+    <mesh name="benchhand_right_native_right_thumb_PP_visual" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/right_sharpa_wave/meshes/right_thumb_PP_visual.STL" />
+    <mesh name="benchhand_right_native_right_thumb_PP" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/right_sharpa_wave/meshes/right_thumb_PP.STL" />
+    <mesh name="benchhand_right_native_right_thumb_DP_visual" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/right_sharpa_wave/meshes/DP_Visual_HB1_TH.STL" />
+    <mesh name="benchhand_right_native_right_thumb_DP" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/right_sharpa_wave/meshes/DP_HB1_TH.STL" />
+    <mesh name="benchhand_right_native_thumb_elastomer" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/right_sharpa_wave/meshes/elastomer_HB1_TH.STL" />
+    <mesh name="benchhand_right_native_right_MCP_VL_visual" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/right_sharpa_wave/meshes/right_MCP_VL_visual.STL" />
+    <mesh name="benchhand_right_native_MCP_VL" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/right_sharpa_wave/meshes/MCP_VL.STL" />
+    <mesh name="benchhand_right_native_right_PP_visual" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/right_sharpa_wave/meshes/right_PP_visual.STL" />
+    <mesh name="benchhand_right_native_right_PP" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/right_sharpa_wave/meshes/right_PP.STL" />
+    <mesh name="benchhand_right_native_right_MP_visual" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/right_sharpa_wave/meshes/right_MP_visual.STL" />
+    <mesh name="benchhand_right_native_right_MP" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/right_sharpa_wave/meshes/right_MP.STL" />
+    <mesh name="benchhand_right_native_right_DP_visual" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/right_sharpa_wave/meshes/DP_visual_HB1_4F.STL" />
+    <mesh name="benchhand_right_native_right_DP" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/right_sharpa_wave/meshes/DP_HB1_4F.STL" />
+    <mesh name="benchhand_right_native_elastomer" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/right_sharpa_wave/meshes/elastomer_HB1_4F.STL" />
+    <mesh name="benchhand_right_native_right_pinky_MC_visual" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/right_sharpa_wave/meshes/right_pinky_MC_visual.STL" />
+    <mesh name="benchhand_right_native_right_pinky_MC" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/right_sharpa_wave/meshes/right_pinky_MC.STL" />
+    <mesh name="benchhand_left_native_link0_c" file="franka_emika_panda/assets/link0.stl" />
+    <mesh name="benchhand_left_native_link1_c" file="franka_emika_panda/assets/link1.stl" />
+    <mesh name="benchhand_left_native_link2_c" file="franka_emika_panda/assets/link2.stl" />
+    <mesh name="benchhand_left_native_link3_c" file="franka_emika_panda/assets/link3.stl" />
+    <mesh name="benchhand_left_native_link4_c" file="franka_emika_panda/assets/link4.stl" />
+    <mesh name="benchhand_left_native_link5_c0" file="franka_emika_panda/assets/link5_collision_0.obj" />
+    <mesh name="benchhand_left_native_link5_c1" file="franka_emika_panda/assets/link5_collision_1.obj" />
+    <mesh name="benchhand_left_native_link5_c2" file="franka_emika_panda/assets/link5_collision_2.obj" />
+    <mesh name="benchhand_left_native_link6_c" file="franka_emika_panda/assets/link6.stl" />
+    <mesh name="benchhand_left_native_link7_c" file="franka_emika_panda/assets/link7.stl" />
+    <mesh name="benchhand_left_native_link0_0" file="franka_emika_panda/assets/link0_0.obj" />
+    <mesh name="benchhand_left_native_link0_1" file="franka_emika_panda/assets/link0_1.obj" />
+    <mesh name="benchhand_left_native_link0_2" file="franka_emika_panda/assets/link0_2.obj" />
+    <mesh name="benchhand_left_native_link0_3" file="franka_emika_panda/assets/link0_3.obj" />
+    <mesh name="benchhand_left_native_link0_4" file="franka_emika_panda/assets/link0_4.obj" />
+    <mesh name="benchhand_left_native_link0_5" file="franka_emika_panda/assets/link0_5.obj" />
+    <mesh name="benchhand_left_native_link0_7" file="franka_emika_panda/assets/link0_7.obj" />
+    <mesh name="benchhand_left_native_link0_8" file="franka_emika_panda/assets/link0_8.obj" />
+    <mesh name="benchhand_left_native_link0_9" file="franka_emika_panda/assets/link0_9.obj" />
+    <mesh name="benchhand_left_native_link0_10" file="franka_emika_panda/assets/link0_10.obj" />
+    <mesh name="benchhand_left_native_link0_11" file="franka_emika_panda/assets/link0_11.obj" />
+    <mesh name="benchhand_left_native_link1" file="franka_emika_panda/assets/link1.obj" />
+    <mesh name="benchhand_left_native_link2" file="franka_emika_panda/assets/link2.obj" />
+    <mesh name="benchhand_left_native_link3_0" file="franka_emika_panda/assets/link3_0.obj" />
+    <mesh name="benchhand_left_native_link3_1" file="franka_emika_panda/assets/link3_1.obj" />
+    <mesh name="benchhand_left_native_link3_2" file="franka_emika_panda/assets/link3_2.obj" />
+    <mesh name="benchhand_left_native_link3_3" file="franka_emika_panda/assets/link3_3.obj" />
+    <mesh name="benchhand_left_native_link4_0" file="franka_emika_panda/assets/link4_0.obj" />
+    <mesh name="benchhand_left_native_link4_1" file="franka_emika_panda/assets/link4_1.obj" />
+    <mesh name="benchhand_left_native_link4_2" file="franka_emika_panda/assets/link4_2.obj" />
+    <mesh name="benchhand_left_native_link4_3" file="franka_emika_panda/assets/link4_3.obj" />
+    <mesh name="benchhand_left_native_link5_0" file="franka_emika_panda/assets/link5_0.obj" />
+    <mesh name="benchhand_left_native_link5_1" file="franka_emika_panda/assets/link5_1.obj" />
+    <mesh name="benchhand_left_native_link5_2" file="franka_emika_panda/assets/link5_2.obj" />
+    <mesh name="benchhand_left_native_link6_0" file="franka_emika_panda/assets/link6_0.obj" />
+    <mesh name="benchhand_left_native_link6_1" file="franka_emika_panda/assets/link6_1.obj" />
+    <mesh name="benchhand_left_native_link6_2" file="franka_emika_panda/assets/link6_2.obj" />
+    <mesh name="benchhand_left_native_link6_3" file="franka_emika_panda/assets/link6_3.obj" />
+    <mesh name="benchhand_left_native_link6_4" file="franka_emika_panda/assets/link6_4.obj" />
+    <mesh name="benchhand_left_native_link6_5" file="franka_emika_panda/assets/link6_5.obj" />
+    <mesh name="benchhand_left_native_link6_6" file="franka_emika_panda/assets/link6_6.obj" />
+    <mesh name="benchhand_left_native_link6_7" file="franka_emika_panda/assets/link6_7.obj" />
+    <mesh name="benchhand_left_native_link6_8" file="franka_emika_panda/assets/link6_8.obj" />
+    <mesh name="benchhand_left_native_link6_9" file="franka_emika_panda/assets/link6_9.obj" />
+    <mesh name="benchhand_left_native_link6_10" file="franka_emika_panda/assets/link6_10.obj" />
+    <mesh name="benchhand_left_native_link6_11" file="franka_emika_panda/assets/link6_11.obj" />
+    <mesh name="benchhand_left_native_link6_12" file="franka_emika_panda/assets/link6_12.obj" />
+    <mesh name="benchhand_left_native_link6_13" file="franka_emika_panda/assets/link6_13.obj" />
+    <mesh name="benchhand_left_native_link6_14" file="franka_emika_panda/assets/link6_14.obj" />
+    <mesh name="benchhand_left_native_link6_15" file="franka_emika_panda/assets/link6_15.obj" />
+    <mesh name="benchhand_left_native_link6_16" file="franka_emika_panda/assets/link6_16.obj" />
+    <mesh name="benchhand_left_native_link7_0" file="franka_emika_panda/assets/link7_0.obj" />
+    <mesh name="benchhand_left_native_link7_1" file="franka_emika_panda/assets/link7_1.obj" />
+    <mesh name="benchhand_left_native_link7_2" file="franka_emika_panda/assets/link7_2.obj" />
+    <mesh name="benchhand_left_native_link7_3" file="franka_emika_panda/assets/link7_3.obj" />
+    <mesh name="benchhand_left_native_link7_4" file="franka_emika_panda/assets/link7_4.obj" />
+    <mesh name="benchhand_left_native_link7_5" file="franka_emika_panda/assets/link7_5.obj" />
+    <mesh name="benchhand_left_native_link7_6" file="franka_emika_panda/assets/link7_6.obj" />
+    <mesh name="benchhand_left_native_link7_7" file="franka_emika_panda/assets/link7_7.obj" />
+    <mesh name="benchhand_left_native_pedestal" file="rethink_mount/pedestal.stl" />
+    <mesh name="benchhand_left_native_flange" content_type="model/stl" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/left_sharpa_wave/meshes/flange_B.STL" />
+    <mesh name="benchhand_left_native_wrist" content_type="model/stl" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/left_sharpa_wave/meshes/wrist_B.STL" />
+    <mesh name="benchhand_left_native_wrist_collision" content_type="model/stl" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/left_sharpa_wave/meshes/wrist_collision.STL" />
+    <mesh name="benchhand_left_native_left_hand_C_MC_visual" content_type="model/stl" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/left_sharpa_wave/meshes/left_hand_C_MC_visual_.STL" />
+    <mesh name="benchhand_left_native_left_hand_C_MC" content_type="model/stl" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/left_sharpa_wave/meshes/left_hand_C_MC.STL" />
+    <mesh name="benchhand_left_native_left_thumb_CMC_VL_visual" content_type="model/stl" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/left_sharpa_wave/meshes/left_thumb_CMC_VL.STL" />
+    <mesh name="benchhand_left_native_left_thumb_MC_visual" content_type="model/stl" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/left_sharpa_wave/meshes/left_thumb_MC_visual.STL" />
+    <mesh name="benchhand_left_native_left_thumb_MC" content_type="model/stl" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/left_sharpa_wave/meshes/left_thumb_MC.STL" />
+    <mesh name="benchhand_left_native_left_thumb_MCP_VL_visual" content_type="model/stl" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/left_sharpa_wave/meshes/left_thumb_MCP_VL_visual.STL" />
+    <mesh name="benchhand_left_native_left_thumb_PP_visual" content_type="model/stl" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/left_sharpa_wave/meshes/left_thumb_PP_visual.STL" />
+    <mesh name="benchhand_left_native_left_thumb_PP" content_type="model/stl" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/left_sharpa_wave/meshes/left_thumb_PP.STL" />
+    <mesh name="benchhand_left_native_left_thumb_DP_visual" content_type="model/stl" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/left_sharpa_wave/meshes/DP_Visual_HB1_TH.STL" />
+    <mesh name="benchhand_left_native_left_thumb_DP" content_type="model/stl" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/left_sharpa_wave/meshes/DP_HB1_TH.STL" />
+    <mesh name="benchhand_left_native_thumb_elastomer" content_type="model/stl" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/left_sharpa_wave/meshes/elastomer_HB1_TH.STL" />
+    <mesh name="benchhand_left_native_left_MCP_VL_visual" content_type="model/stl" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/left_sharpa_wave/meshes/left_MCP_VL_visual.STL" />
+    <mesh name="benchhand_left_native_MCP_VL" content_type="model/stl" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/left_sharpa_wave/meshes/MCP_VL.STL" />
+    <mesh name="benchhand_left_native_left_PP_visual" content_type="model/stl" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/left_sharpa_wave/meshes/left_PP_visual.STL" />
+    <mesh name="benchhand_left_native_left_PP" content_type="model/stl" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/left_sharpa_wave/meshes/left_PP.STL" />
+    <mesh name="benchhand_left_native_left_MP_visual" content_type="model/stl" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/left_sharpa_wave/meshes/left_MP_visual.STL" />
+    <mesh name="benchhand_left_native_left_MP" content_type="model/stl" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/left_sharpa_wave/meshes/left_MP.STL" />
+    <mesh name="benchhand_left_native_left_DP_visual" content_type="model/stl" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/left_sharpa_wave/meshes/DP_visual_HB1_4F.STL" />
+    <mesh name="benchhand_left_native_left_DP" content_type="model/stl" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/left_sharpa_wave/meshes/DP_HB1_4F.STL" />
+    <mesh name="benchhand_left_native_elastomer" content_type="model/stl" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/left_sharpa_wave/meshes/elastomer_HB1_4F.STL" />
+    <mesh name="benchhand_left_native_left_pinky_MC_visual" content_type="model/stl" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/left_sharpa_wave/meshes/left_pinky_MC_visual.STL" />
+    <mesh name="benchhand_left_native_left_pinky_MC" content_type="model/stl" file="../../../../teleoperation/sharpa_wave/sharpa-urdf-usd-xml/wave_01/left_sharpa_wave/meshes/left_pinky_MC.STL" />
+  </asset>
+
+  <worldbody>
+    <geom name="floor" size="3 3 0.01" type="plane" material="floorplane" />
+    <geom name="wall_leftcorner_visual" size="1.06 1.5 0.01" pos="-1.25 2.25 1.5" quat="0.653281 0.653281 0.270598 0.270598" type="box" contype="0" conaffinity="0" group="1" material="walls_mat" />
+    <geom name="wall_rightcorner_visual" size="1.06 1.5 0.01" pos="-1.25 -2.25 1.5" quat="0.653281 0.653281 -0.270598 -0.270598" type="box" contype="0" conaffinity="0" group="1" material="walls_mat" />
+    <geom name="wall_left_visual" size="1.75 1.5 0.01" pos="1.25 3 1.5" quat="0.707107 0.707107 0 0" type="box" contype="0" conaffinity="0" group="1" material="walls_mat" />
+    <geom name="wall_right_visual" size="1.75 1.5 0.01" pos="1.25 -3 1.5" quat="0.707107 -0.707107 0 0" type="box" contype="0" conaffinity="0" group="1" material="walls_mat" />
+    <geom name="wall_rear_visual" size="1.5 1.5 0.01" pos="-2 0 1.5" quat="0.5 0.5 0.5 0.5" type="box" contype="0" conaffinity="0" group="1" material="walls_mat" />
+    <geom name="wall_front_visual" size="3 1.5 0.01" pos="3 0 1.5" quat="0.5 0.5 -0.5 -0.5" type="box" contype="0" conaffinity="0" group="1" material="walls_mat" />
+    <camera name="back" pos="-1.3 0 2.2" quat="0.653281 0.270598 -0.270598 -0.653281" />
+    <camera name="left" pos="-1 0.8 2" quat="-0.353554 -0.146446 0.353554 0.853553" />
+    <camera name="right" pos="-1 -0.8 2" quat="0.853553 0.353554 -0.146446 -0.353554" />
+    <light pos="0 0 3" dir="0 0 -1" diffuse="1 1 1" />
+    <body name="base_right" pos="-0.8 -0.4 0.924">
+      <body name="controller_box_right">
+        <inertial pos="-0.325 0 -0.38" mass="46.64" diaginertia="1.71363 1.27988 0.809981" />
+        <geom name="controller_box_col_right" size="0.11 0.2 0.265" pos="-0.325 0 -0.38" type="box" group="3" />
+      </body>
+      <body name="pedestal_feet_right">
+        <inertial pos="-0.1225 0 -0.758" mass="167.09" diaginertia="8.16095 9.59375 15.0785" />
+        <geom name="pedestal_feet_col_right" size="0.385 0.35 0.155" pos="-0.1225 0 -0.758" type="box" group="3" />
+      </body>
+      <body name="torso_right">
+        <inertial pos="0 0 0" mass="0.0001" diaginertia="1e-08 1e-08 1e-08" />
+        <geom name="torso_vis_right" size="0.05 0.05 0.05" pos="0 0 -0.05" type="box" contype="0" conaffinity="0" group="1" rgba="0.2 0.2 0.2 1" />
+      </body>
+      <body name="pedestal_right">
+        <inertial pos="0 0 0" quat="0.659267 -0.259505 -0.260945 0.655692" mass="60.864" diaginertia="6.0869 5.81635 4.20915" />
+        <geom name="pedestal_vis_right" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.2 0.2 0.2 1" mesh="pedestal_right" />
+        <geom name="pedestal_col_right" size="0.18 0.31" pos="-0.02 0 -0.29" type="cylinder" group="3" rgba="0.2 0.2 0.2 1" />
+      </body>
+      <body name="link0_right" childclass="panda_right" pos="0.05 0 0">
+        <inertial pos="-0.041018 -0.00014 0.049974" quat="0.00630474 0.751245 0.00741774 0.659952" mass="0.629769" diaginertia="0.00430465 0.00387984 0.00313051" />
+        <geom class="panda/visual_right" material="off_white_right" mesh="link0_0_right" />
+        <geom class="panda/visual_right" material="dark_grey_right" mesh="link0_1_right" />
+        <geom class="panda/visual_right" material="off_white_right" mesh="link0_2_right" />
+        <geom class="panda/visual_right" material="dark_grey_right" mesh="link0_3_right" />
+        <geom class="panda/visual_right" material="off_white_right" mesh="link0_4_right" />
+        <geom class="panda/visual_right" material="dark_grey_right" mesh="link0_5_right" />
+        <geom class="panda/visual_right" material="white_right" mesh="link0_7_right" />
+        <geom class="panda/visual_right" material="white_right" mesh="link0_8_right" />
+        <geom class="panda/visual_right" material="dark_grey_right" mesh="link0_9_right" />
+        <geom class="panda/visual_right" material="off_white_right" mesh="link0_10_right" />
+        <geom class="panda/visual_right" material="white_right" mesh="link0_11_right" />
+        <geom class="panda/collision_right" mesh="link0_c_right" />
+        <body name="link1_right" pos="0 0 0.333">
+          <inertial pos="0.003875 0.002081 -0.04762" quat="0.711549 0.00634377 -0.0131124 0.702485" mass="4.97068" diaginertia="0.707137 0.703435 0.00852456" />
+          <joint name="joint1_right" pos="0 0 0" axis="0 0 1" />
+          <geom class="panda/visual_right" material="white_right" mesh="link1_right" />
+          <geom class="panda/collision_right" mesh="link1_c_right" />
+          <site name="joint1_right" pos="0 0 0" />
+          <body name="link2_right" quat="0.707107 -0.707107 0 0">
+            <inertial pos="-0.003141 -0.02872 0.003495" quat="-0.168175 0.828366 -0.122878 0.520027" mass="0.646926" diaginertia="0.0310326 0.0283001 0.00273425" />
+            <joint name="joint2_right" pos="0 0 0" axis="0 0 1" range="-1.7628 1.7628" />
+            <geom class="panda/visual_right" material="white_right" mesh="link2_right" />
+            <geom class="panda/collision_right" mesh="link2_c_right" />
+            <site name="joint2_right" pos="0 0 0" />
+            <body name="link3_right" pos="0 -0.316 0" quat="0.707107 0.707107 0 0">
+              <inertial pos="0.027518 0.039252 -0.066502" quat="0.662769 -0.00678331 0.252053 0.705096" mass="3.2286" diaginertia="0.0415014 0.0414793 0.00124635" />
+              <joint name="joint3_right" pos="0 0 0" axis="0 0 1" />
+              <geom class="panda/visual_right" material="white_right" mesh="link3_0_right" />
+              <geom class="panda/visual_right" material="white_right" mesh="link3_1_right" />
+              <geom class="panda/visual_right" material="white_right" mesh="link3_2_right" />
+              <geom class="panda/visual_right" material="dark_grey_right" mesh="link3_3_right" />
+              <geom class="panda/collision_right" mesh="link3_c_right" />
+              <site name="joint3_right" pos="0 0 0" />
+              <body name="link4_right" pos="0.0825 0 0" quat="0.707107 0.707107 0 0">
+                <inertial pos="-0.05317 0.104419 0.027454" quat="0.65058 0.529822 -0.0962034 0.535518" mass="3.5879" diaginertia="0.0349596 0.0281483 0.0106201" />
+                <joint name="joint4_right" pos="0 0 0" axis="0 0 1" range="-3.0718 -0.0698" />
+                <geom class="panda/visual_right" material="white_right" mesh="link4_0_right" />
+                <geom class="panda/visual_right" material="white_right" mesh="link4_1_right" />
+                <geom class="panda/visual_right" material="dark_grey_right" mesh="link4_2_right" />
+                <geom class="panda/visual_right" material="white_right" mesh="link4_3_right" />
+                <geom class="panda/collision_right" mesh="link4_c_right" />
+                <site name="joint4_right" pos="0 0 0" />
+                <body name="link5_right" pos="-0.0825 0.384 0" quat="0.707107 -0.707107 0 0">
+                  <inertial pos="-0.011953 0.041065 -0.038437" quat="0.987313 -0.0121954 0.0719187 -0.141037" mass="1.22595" diaginertia="0.0367625 0.0288531 0.00803437" />
+                  <joint name="joint5_right" pos="0 0 0" axis="0 0 1" />
+                  <geom class="panda/visual_right" material="dark_grey_right" mesh="link5_0_right" />
+                  <geom class="panda/visual_right" material="white_right" mesh="link5_1_right" />
+                  <geom class="panda/visual_right" material="white_right" mesh="link5_2_right" />
+                  <geom class="panda/collision_right" mesh="link5_c0_right" />
+                  <geom class="panda/collision_right" mesh="link5_c1_right" />
+                  <geom class="panda/collision_right" mesh="link5_c2_right" />
+                  <site name="joint5_right" pos="0 0 0" />
+                  <body name="link6_right" quat="0.707107 0.707107 0 0">
+                    <inertial pos="0.060149 -0.014117 -0.010517" quat="0.101075 0.59332 0.0287227 0.798079" mass="1.66656" diaginertia="0.00584276 0.00431037 0.00159787" />
+                    <joint name="joint6_right" pos="0 0 0" axis="0 0 1" range="-0.0175 3.7525" />
+                    <geom class="panda/visual_right" material="off_white_right" mesh="link6_0_right" />
+                    <geom class="panda/visual_right" material="white_right" mesh="link6_1_right" />
+                    <geom class="panda/visual_right" material="dark_grey_right" mesh="link6_2_right" />
+                    <geom class="panda/visual_right" material="white_right" mesh="link6_3_right" />
+                    <geom class="panda/visual_right" material="white_right" mesh="link6_4_right" />
+                    <geom class="panda/visual_right" material="white_right" mesh="link6_5_right" />
+                    <geom class="panda/visual_right" material="white_right" mesh="link6_6_right" />
+                    <geom class="panda/visual_right" material="light_blue_right" mesh="link6_7_right" />
+                    <geom class="panda/visual_right" material="light_blue_right" mesh="link6_8_right" />
+                    <geom class="panda/visual_right" material="dark_grey_right" mesh="link6_9_right" />
+                    <geom class="panda/visual_right" material="dark_grey_right" mesh="link6_10_right" />
+                    <geom class="panda/visual_right" material="white_right" mesh="link6_11_right" />
+                    <geom class="panda/visual_right" material="green_right" mesh="link6_12_right" />
+                    <geom class="panda/visual_right" material="white_right" mesh="link6_13_right" />
+                    <geom class="panda/visual_right" material="dark_grey_right" mesh="link6_14_right" />
+                    <geom class="panda/visual_right" material="dark_grey_right" mesh="link6_15_right" />
+                    <geom class="panda/visual_right" material="white_right" mesh="link6_16_right" />
+                    <geom class="panda/collision_right" mesh="link6_c_right" />
+                    <site name="joint6_right" pos="0 0 0" />
+                    <body name="link7_right" pos="0.088 0 0" quat="0.707107 0.707107 0 0">
+                      <inertial pos="0.010517 -0.004252 0.061597" quat="0.992939 -0.0762041 0.0733595 -0.0537067" mass="0.735522" diaginertia="0.0127345 0.0101055 0.00451803" />
+                      <joint name="joint7_right" pos="0 0 0" axis="0 0 1" />
+                      <geom class="panda/visual_right" material="white_right" mesh="link7_0_right" />
+                      <geom class="panda/visual_right" material="dark_grey_right" mesh="link7_1_right" />
+                      <geom class="panda/visual_right" material="dark_grey_right" mesh="link7_2_right" />
+                      <geom class="panda/visual_right" material="dark_grey_right" mesh="link7_3_right" />
+                      <geom class="panda/visual_right" material="dark_grey_right" mesh="link7_4_right" />
+                      <geom class="panda/visual_right" material="dark_grey_right" mesh="link7_5_right" />
+                      <geom class="panda/visual_right" material="dark_grey_right" mesh="link7_6_right" />
+                      <geom class="panda/visual_right" material="white_right" mesh="link7_7_right" />
+                      <geom class="panda/collision_right" mesh="link7_c_right" />
+                      <site name="joint7_right" pos="0 0 0" />
+                      <body name="attachment_right" pos="0 0 0.107" quat="0.382683 0 0 0.92388">
+                        <site name="attachment_site_right" pos="0 0 0" quat="0 0 0 1" />
+                        <camera name="handcam_rgb_right" pos="0.14 0.03 0.04" quat="-0.353678 0.612589 -0.612589 0.352678" fovy="60" />
+                        <frame name="inspire_mount_frame_right" childclass="panda_right" />
+                        <body name="benchhand_right_mount" childclass="benchhand_right_native_panda">
+                          <body name="benchhand_right_native_sharpa_attachment" pos="0.01 0 0.023" quat="0.707107 0 -0.707107 0">
+                            <geom name="benchhand_right_native_sharpa_wrist_adapter_visual" size="0.024 0.024 0.02" pos="0 0 0.016" type="box" contype="0" conaffinity="0" group="1" material="benchhand_right_native_sharpa_black" />
+                            <geom name="benchhand_right_sharpa_wrist_adapter_collision" size="0.024 0.024 0.02" pos="0 0 0.016" type="box" group="3" density="0" friction="1 0.0050000000000000001 0.0001" />
+                            <body name="benchhand_right_native_right_hand_C_MC" pos="0 0 0.02">
+                              <inertial pos="-0.00216 0.00536 0.04011" quat="0.713832 -0.0659364 0.0757239 0.693082" mass="0.6506" diaginertia="0.000814964 0.000674257 0.00027314" />
+                              <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_joint_metal" mesh="benchhand_right_native_flange" />
+                              <geom name="benchhand_right_native_wrist_visual" pos="0 0 0.0005" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_shell" mesh="benchhand_right_native_wrist" />
+                              <geom name="benchhand_right_native_wrist" pos="0 0 0.0005" quat="1 0 0 0" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_right_native_wrist_collision" friction="1 0.0050000000000000001 0.0001" />
+                              <geom name="benchhand_right_native_right_hand_C_MC_visual" pos="0 0 0.0295" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_shell" mesh="benchhand_right_native_right_hand_C_MC_visual" />
+                              <geom name="benchhand_right_native_right_hand_C_MC" pos="0 0 0.0295" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_right_native_right_hand_C_MC" friction="1 0.0050000000000000001 0.0001" />
+                              <body name="benchhand_right_native_right_thumb_CMC_VL" pos="0.01 0.026 0.0509" quat="-2.59734e-06 0.707105 0.707108 -2.59735e-06">
+                                <inertial pos="-0.00065 0.0002 0" quat="0.434754 0.557664 -0.434754 0.557664" mass="0.0025" diaginertia="2.6e-07 2.12661e-07 1.34339e-07" />
+                                <joint name="benchhand_right_native_right_thumb_CMC_FE" class="benchhand_right_native_CMC_joint" pos="0 0 0" axis="0 0 1" range="-0.1745 1.9199" />
+                                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_joint_metal" mesh="benchhand_right_native_right_thumb_CMC_VL_visual" />
+                                <body name="benchhand_right_native_right_thumb_MC" pos="0 -0.005 0" quat="0.65328 -0.653282 0.270598 0.270599">
+                                  <inertial pos="0.03643 -0.01024 0.00517" quat="-0.151259 0.696943 -0.154462 0.683763" mass="0.13587" diaginertia="4.69153e-05 4.29066e-05 1.92101e-05" />
+                                  <joint name="benchhand_right_native_right_thumb_CMC_AA" class="benchhand_right_native_CMC_joint" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" />
+                                  <geom name="benchhand_right_native_right_thumb_MC_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_shell" mesh="benchhand_right_native_right_thumb_MC_visual" />
+                                  <geom name="benchhand_right_native_right_thumb_MC" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_right_native_right_thumb_MC" friction="1 0.0050000000000000001 0.0001" />
+                                  <body name="benchhand_right_native_right_thumb_MCP_VL" pos="0.065 -0.006 0.010392" quat="0.965926 0.25882 0 0">
+                                    <inertial pos="-1.29e-09 -1.1e-10 0" quat="0.515163 0.484363 -0.515163 0.484363" mass="0.0025" diaginertia="2.6e-07 2.12661e-07 1.34339e-07" />
+                                    <joint name="benchhand_right_native_right_thumb_MCP_FE" class="benchhand_right_native_MCP_joint" pos="0 0 0" axis="0 0 1" range="-0.5236 1.3963" />
+                                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_joint_metal" mesh="benchhand_right_native_right_thumb_MCP_VL_visual" />
+                                    <body name="benchhand_right_native_right_thumb_PP" quat="0.707105 -0.707108 0 0">
+                                      <inertial pos="0.021256 -0.00095 -0.00092" quat="0.44358 0.511613 0.483631 0.554609" mass="0.03078" diaginertia="6.08344e-06 5.91207e-06 1.22148e-06" />
+                                      <joint name="benchhand_right_native_right_thumb_MCP_AA" class="benchhand_right_native_MCP_joint" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" />
+                                      <geom name="benchhand_right_native_right_thumb_PP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_shell" mesh="benchhand_right_native_right_thumb_PP_visual" />
+                                      <geom name="benchhand_right_native_right_thumb_PP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_right_native_right_thumb_PP" friction="1 0.0050000000000000001 0.0001" />
+                                      <body name="benchhand_right_native_right_thumb_DP" pos="0.039 0 0" quat="0.707105 0.707108 0 0">
+                                        <inertial pos="0.00821817 -0.00177722 -0.000997218" quat="-0.255985 0.713848 -0.187441 0.624306" mass="0.007981" diaginertia="1.0905e-06 1.04136e-06 2.95182e-07" />
+                                        <joint name="benchhand_right_native_right_thumb_IP" class="benchhand_right_native_PIP_joint" pos="0 0 0" axis="0 0 1" range="0 1.7453" />
+                                        <geom name="benchhand_right_native_right_thumb_DP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_joint_metal" mesh="benchhand_right_native_right_thumb_DP_visual" />
+                                        <geom name="benchhand_right_native_right_thumb_DP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_right_native_right_thumb_DP" friction="1 0.0050000000000000001 0.0001" />
+                                        <geom name="benchhand_right_native_right_thumb_elastomer_visual" quat="0.499998 0.5 -0.5 0.500002" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_elastomer" mesh="benchhand_right_native_thumb_elastomer" />
+                                        <geom name="benchhand_right_native_right_thumb_elastomer" class="benchhand_right_native_elastomer_geom" quat="0.499998 0.5 -0.5 0.500002" type="mesh" group="3" rgba="0.2 1 0.2 1" mesh="benchhand_right_native_thumb_elastomer" friction="1 0.0050000000000000001 0.0001" />
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                              <body name="benchhand_right_native_right_index_MCP_VL" pos="0.001 0.0303 0.1254" quat="0.499998 -0.500002 -0.5 -0.5">
+                                <inertial pos="-0.0092 0.0013 0" quat="0.519686 0.479506 -0.519686 0.479506" mass="0.00221" diaginertia="2.23e-07 1.77435e-07 1.09965e-07" />
+                                <joint name="benchhand_right_native_right_index_MCP_FE" class="benchhand_right_native_MCP_joint" pos="0 0 0" axis="0 0 1" range="-0.174533 1.5708" />
+                                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_joint_metal" mesh="benchhand_right_native_right_MCP_VL_visual" />
+                                <geom type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_right_native_MCP_VL" friction="1 0.0050000000000000001 0.0001" />
+                                <body name="benchhand_right_native_right_index_PP" quat="0.707105 -0.707108 0 0">
+                                  <inertial pos="0.027 0.00055 0.00068" quat="0.512565 0.504813 0.502719 0.479286" mass="0.04741" diaginertia="1.14061e-05 1.10467e-05 2.15425e-06" />
+                                  <joint name="benchhand_right_native_right_index_MCP_AA" class="benchhand_right_native_MCP_joint" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" />
+                                  <geom name="benchhand_right_native_right_index_PP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_shell" mesh="benchhand_right_native_right_PP_visual" />
+                                  <geom name="benchhand_right_native_right_index_PP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_right_native_right_PP" friction="1 0.0050000000000000001 0.0001" />
+                                  <body name="benchhand_right_native_right_index_MP" pos="0.047 0 0" quat="0.707105 0.707108 0 0">
+                                    <inertial pos="0.01212 -0.00116 0.00058" quat="-0.0266408 0.732558 -0.0189273 0.67992" mass="0.01824" diaginertia="2.00683e-06 1.9229e-06 5.68878e-07" />
+                                    <joint name="benchhand_right_native_right_index_PIP" class="benchhand_right_native_PIP_joint" pos="0 0 0" axis="0 0 1" range="0 1.7453" />
+                                    <geom name="benchhand_right_native_right_index_MP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_shell" mesh="benchhand_right_native_right_MP_visual" />
+                                    <geom name="benchhand_right_native_right_index_MP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_right_native_right_MP" friction="1 0.0050000000000000001 0.0001" />
+                                    <body name="benchhand_right_native_right_index_DP" pos="0.0315 0 0">
+                                      <inertial pos="0.0124885 -0.00257289 -0.000107611" quat="-0.0492916 0.716628 -0.0583643 0.693259" mass="0.004651" diaginertia="3.15336e-07 3.09757e-07 1.34861e-07" />
+                                      <joint name="benchhand_right_native_right_index_DIP" class="benchhand_right_native_DIP_joint" pos="0 0 0" axis="0 0 1" range="0 1.3963" />
+                                      <geom name="benchhand_right_native_right_index_DP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_joint_metal" mesh="benchhand_right_native_right_DP_visual" />
+                                      <geom name="benchhand_right_native_right_index_DP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_right_native_right_DP" friction="1 0.0050000000000000001 0.0001" />
+                                      <geom name="benchhand_right_native_right_index_elastomer_visual" quat="0.499998 0.5 -0.5 0.500002" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_elastomer" mesh="benchhand_right_native_elastomer" />
+                                      <geom name="benchhand_right_native_right_index_elastomer" class="benchhand_right_native_elastomer_geom" quat="0.499998 0.5 -0.5 0.500002" type="mesh" group="3" rgba="0.2 1 0.2 1" mesh="benchhand_right_native_elastomer" friction="1 0.0050000000000000001 0.0001" />
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                              <body name="benchhand_right_native_right_middle_MCP_VL" pos="0 0.01 0.1284" quat="0.499998 -0.500002 -0.5 -0.5">
+                                <inertial pos="-0.0092 0.0013 0" quat="0.519686 0.479506 -0.519686 0.479506" mass="0.00221" diaginertia="2.23e-07 1.77435e-07 1.09965e-07" />
+                                <joint name="benchhand_right_native_right_middle_MCP_FE" class="benchhand_right_native_MCP_joint" pos="0 0 0" axis="0 0 1" range="-0.174533 1.5708" />
+                                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_joint_metal" mesh="benchhand_right_native_right_MCP_VL_visual" />
+                                <geom type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_right_native_MCP_VL" friction="1 0.0050000000000000001 0.0001" />
+                                <body name="benchhand_right_native_right_middle_PP" quat="0.707105 -0.707108 0 0">
+                                  <inertial pos="0.027 0.00055 0.00068" quat="0.512565 0.504813 0.502719 0.479286" mass="0.04741" diaginertia="1.14061e-05 1.10467e-05 2.15425e-06" />
+                                  <joint name="benchhand_right_native_right_middle_MCP_AA" class="benchhand_right_native_MCP_joint" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" />
+                                  <geom name="benchhand_right_native_right_middle_PP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_shell" mesh="benchhand_right_native_right_PP_visual" />
+                                  <geom name="benchhand_right_native_right_middle_PP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_right_native_right_PP" friction="1 0.0050000000000000001 0.0001" />
+                                  <body name="benchhand_right_native_right_middle_MP" pos="0.047 0 0" quat="0.707105 0.707108 0 0">
+                                    <inertial pos="0.01212 -0.00116 0.00058" quat="-0.0266408 0.732558 -0.0189273 0.67992" mass="0.01824" diaginertia="2.00683e-06 1.9229e-06 5.68878e-07" />
+                                    <joint name="benchhand_right_native_right_middle_PIP" class="benchhand_right_native_PIP_joint" pos="0 0 0" axis="0 0 1" range="0 1.7453" />
+                                    <geom name="benchhand_right_native_right_middle_MP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_shell" mesh="benchhand_right_native_right_MP_visual" />
+                                    <geom name="benchhand_right_native_right_middle_MP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_right_native_right_MP" friction="1 0.0050000000000000001 0.0001" />
+                                    <body name="benchhand_right_native_right_middle_DP" pos="0.0315 0 0">
+                                      <inertial pos="0.0124885 -0.00257289 -0.000107611" quat="-0.0492916 0.716628 -0.0583643 0.693259" mass="0.004651" diaginertia="3.15336e-07 3.09757e-07 1.34861e-07" />
+                                      <joint name="benchhand_right_native_right_middle_DIP" class="benchhand_right_native_DIP_joint" pos="0 0 0" axis="0 0 1" range="0 1.3963" />
+                                      <geom name="benchhand_right_native_right_middle_DP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_joint_metal" mesh="benchhand_right_native_right_DP_visual" />
+                                      <geom name="benchhand_right_native_right_middle_DP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_right_native_right_DP" friction="1 0.0050000000000000001 0.0001" />
+                                      <geom name="benchhand_right_native_right_middle_elastomer_visual" quat="0.5 0.5 -0.5 0.5" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_elastomer" mesh="benchhand_right_native_elastomer" />
+                                      <geom name="benchhand_right_native_right_middle_elastomer" class="benchhand_right_native_elastomer_geom" quat="0.5 0.5 -0.5 0.5" type="mesh" group="3" rgba="0.2 1 0.2 1" mesh="benchhand_right_native_elastomer" friction="1 0.0050000000000000001 0.0001" />
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                              <body name="benchhand_right_native_right_ring_MCP_VL" pos="0.0015 -0.0103 0.1224" quat="0.499998 -0.500002 -0.5 -0.5">
+                                <inertial pos="-0.0092 0.0013 0" quat="0.519686 0.479506 -0.519686 0.479506" mass="0.00221" diaginertia="2.23e-07 1.77435e-07 1.09965e-07" />
+                                <joint name="benchhand_right_native_right_ring_MCP_FE" class="benchhand_right_native_MCP_joint" pos="0 0 0" axis="0 0 1" range="-0.174533 1.5708" />
+                                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_joint_metal" mesh="benchhand_right_native_right_MCP_VL_visual" />
+                                <geom type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_right_native_MCP_VL" friction="1 0.0050000000000000001 0.0001" />
+                                <body name="benchhand_right_native_right_ring_PP" quat="0.707105 -0.707108 0 0">
+                                  <inertial pos="0.027 0.00055 0.00068" quat="0.512565 0.504813 0.502719 0.479286" mass="0.04741" diaginertia="1.14061e-05 1.10467e-05 2.15425e-06" />
+                                  <joint name="benchhand_right_native_right_ring_MCP_AA" class="benchhand_right_native_MCP_joint" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" />
+                                  <geom name="benchhand_right_native_right_ring_PP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_shell" mesh="benchhand_right_native_right_PP_visual" />
+                                  <geom name="benchhand_right_native_right_ring_PP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_right_native_right_PP" friction="1 0.0050000000000000001 0.0001" />
+                                  <body name="benchhand_right_native_right_ring_MP" pos="0.047 0 0" quat="0.707105 0.707108 0 0">
+                                    <inertial pos="0.01212 -0.00116 0.00058" quat="-0.0266408 0.732558 -0.0189273 0.67992" mass="0.01824" diaginertia="2.00683e-06 1.9229e-06 5.68878e-07" />
+                                    <joint name="benchhand_right_native_right_ring_PIP" class="benchhand_right_native_PIP_joint" pos="0 0 0" axis="0 0 1" range="0 1.7453" />
+                                    <geom name="benchhand_right_native_right_ring_MP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_shell" mesh="benchhand_right_native_right_MP_visual" />
+                                    <geom name="benchhand_right_native_right_ring_MP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_right_native_right_MP" friction="1 0.0050000000000000001 0.0001" />
+                                    <body name="benchhand_right_native_right_ring_DP" pos="0.0315 0 0">
+                                      <inertial pos="0.0124885 -0.00257289 -0.000107611" quat="-0.0492916 0.716628 -0.0583643 0.693259" mass="0.004651" diaginertia="3.15336e-07 3.09757e-07 1.34861e-07" />
+                                      <joint name="benchhand_right_native_right_ring_DIP" class="benchhand_right_native_DIP_joint" pos="0 0 0" axis="0 0 1" range="0 1.3963" />
+                                      <geom name="benchhand_right_native_right_ring_DP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_joint_metal" mesh="benchhand_right_native_right_DP_visual" />
+                                      <geom name="benchhand_right_native_right_ring_DP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_right_native_right_DP" friction="1 0.0050000000000000001 0.0001" />
+                                      <geom name="benchhand_right_native_right_ring_elastomer_visual" quat="0.499998 0.5 -0.5 0.500002" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_elastomer" mesh="benchhand_right_native_elastomer" />
+                                      <geom name="benchhand_right_native_right_ring_elastomer" class="benchhand_right_native_elastomer_geom" quat="0.499998 0.5 -0.5 0.500002" type="mesh" group="3" rgba="0.2 1 0.2 1" mesh="benchhand_right_native_elastomer" friction="1 0.0050000000000000001 0.0001" />
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                              <body name="benchhand_right_native_right_pinky_MC" pos="0.01136 -0.0263 0.1164" quat="-3.67321e-06 0 0 1">
+                                <inertial pos="0.0107985 0.00598801 -0.0335125" quat="0.706956 -0.000832392 -0.0268047 0.706749" mass="0.12541" diaginertia="4.47765e-05 3.72569e-05 1.69876e-05" />
+                                <joint name="benchhand_right_native_right_pinky_CMC" class="benchhand_right_native_PCMC_joint" pos="0 0 0" axis="0 0 1" range="0 0.2618" />
+                                <geom name="benchhand_right_native_right_pinky_MC_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_joint_metal" mesh="benchhand_right_native_right_pinky_MC_visual" />
+                                <geom name="benchhand_right_native_right_pinky_MC" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_right_native_right_pinky_MC" friction="1 0.0050000000000000001 0.0001" />
+                                <body name="benchhand_right_native_right_pinky_MCP_VL" pos="0.00836 0.0048 0" quat="0.499998 0.5 -0.5 0.500002">
+                                  <inertial pos="-0.0092 0.0013 0" quat="0.519686 0.479506 -0.519686 0.479506" mass="0.00221" diaginertia="2.23e-07 1.77435e-07 1.09965e-07" />
+                                  <joint name="benchhand_right_native_right_pinky_MCP_FE" class="benchhand_right_native_MCP_joint" pos="0 0 0" axis="0 0 1" range="-0.174533 1.5708" />
+                                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_joint_metal" mesh="benchhand_right_native_right_MCP_VL_visual" />
+                                  <geom type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_right_native_MCP_VL" friction="1 0.0050000000000000001 0.0001" />
+                                  <body name="benchhand_right_native_right_pinky_PP" quat="0.707105 -0.707108 0 0">
+                                    <inertial pos="0.027 0.00055 0.00068" quat="0.512565 0.504813 0.502719 0.479286" mass="0.04741" diaginertia="1.14061e-05 1.10467e-05 2.15425e-06" />
+                                    <joint name="benchhand_right_native_right_pinky_MCP_AA" class="benchhand_right_native_MCP_joint" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" />
+                                    <geom name="benchhand_right_native_right_pinky_PP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_shell" mesh="benchhand_right_native_right_PP_visual" />
+                                    <geom name="benchhand_right_native_right_pinky_PP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_right_native_right_PP" friction="1 0.0050000000000000001 0.0001" />
+                                    <body name="benchhand_right_native_right_pinky_MP" pos="0.047 0 0" quat="0.707105 0.707108 0 0">
+                                      <inertial pos="0.01212 -0.00116 0.00058" quat="-0.0266408 0.732558 -0.0189273 0.67992" mass="0.01824" diaginertia="2.00683e-06 1.9229e-06 5.68878e-07" />
+                                      <joint name="benchhand_right_native_right_pinky_PIP" class="benchhand_right_native_PIP_joint" pos="0 0 0" axis="0 0 1" range="0 1.7453" />
+                                      <geom name="benchhand_right_native_right_pinky_MP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_shell" mesh="benchhand_right_native_right_MP_visual" />
+                                      <geom name="benchhand_right_native_right_pinky_MP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_right_native_right_MP" friction="1 0.0050000000000000001 0.0001" />
+                                      <body name="benchhand_right_native_right_pinky_DP" pos="0.0315 0 0">
+                                        <inertial pos="0.0124885 -0.00257289 -0.000107611" quat="-0.0492916 0.716628 -0.0583643 0.693259" mass="0.004651" diaginertia="3.15336e-07 3.09757e-07 1.34861e-07" />
+                                        <joint name="benchhand_right_native_right_pinky_DIP" class="benchhand_right_native_DIP_joint" pos="0 0 0" axis="0 0 1" range="0 1.3963" />
+                                        <geom name="benchhand_right_native_right_pinky_DP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_joint_metal" mesh="benchhand_right_native_right_DP_visual" />
+                                        <geom name="benchhand_right_native_right_pinky_DP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_right_native_right_DP" friction="1 0.0050000000000000001 0.0001" />
+                                        <geom name="benchhand_right_native_right_pinky_elastomer_visual" quat="0.499998 0.5 -0.5 0.500002" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_right_native_sharpa_elastomer" mesh="benchhand_right_native_elastomer" />
+                                        <geom name="benchhand_right_native_right_pinky_elastomer" class="benchhand_right_native_elastomer_geom" quat="0.499998 0.5 -0.5 0.500002" type="mesh" group="3" rgba="0.1 1 0.2 1" mesh="benchhand_right_native_elastomer" friction="1 0.0050000000000000001 0.0001" />
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <body name="base_left" pos="-0.8 0.4 0.924">
+      <body name="controller_box_left">
+        <inertial pos="-0.325 0 -0.38" mass="46.64" diaginertia="1.71363 1.27988 0.809981" />
+        <geom name="controller_box_col_left" size="0.11 0.2 0.265" pos="-0.325 0 -0.38" type="box" group="3" />
+      </body>
+      <body name="pedestal_feet_left">
+        <inertial pos="-0.1225 0 -0.758" mass="167.09" diaginertia="8.16095 9.59375 15.0785" />
+        <geom name="pedestal_feet_col_left" size="0.385 0.35 0.155" pos="-0.1225 0 -0.758" type="box" group="3" />
+      </body>
+      <body name="torso_left">
+        <inertial pos="0 0 0" mass="0.0001" diaginertia="1e-08 1e-08 1e-08" />
+        <geom name="torso_vis_left" size="0.05 0.05 0.05" pos="0 0 -0.05" type="box" contype="0" conaffinity="0" group="1" rgba="0.2 0.2 0.2 1" />
+      </body>
+      <body name="pedestal_left">
+        <inertial pos="0 0 0" quat="0.659267 -0.259505 -0.260945 0.655692" mass="60.864" diaginertia="6.0869 5.81635 4.20915" />
+        <geom name="pedestal_vis_left" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.2 0.2 0.2 1" mesh="pedestal_left" />
+        <geom name="pedestal_col_left" size="0.18 0.31" pos="-0.02 0 -0.29" type="cylinder" group="3" rgba="0.2 0.2 0.2 1" />
+      </body>
+      <body name="link0_left" childclass="panda_left" pos="0.05 0 0">
+        <inertial pos="-0.041018 -0.00014 0.049974" quat="0.00630474 0.751245 0.00741774 0.659952" mass="0.629769" diaginertia="0.00430465 0.00387984 0.00313051" />
+        <geom class="panda/visual_left" material="off_white_left" mesh="link0_0_left" />
+        <geom class="panda/visual_left" material="dark_grey_left" mesh="link0_1_left" />
+        <geom class="panda/visual_left" material="off_white_left" mesh="link0_2_left" />
+        <geom class="panda/visual_left" material="dark_grey_left" mesh="link0_3_left" />
+        <geom class="panda/visual_left" material="off_white_left" mesh="link0_4_left" />
+        <geom class="panda/visual_left" material="dark_grey_left" mesh="link0_5_left" />
+        <geom class="panda/visual_left" material="white_left" mesh="link0_7_left" />
+        <geom class="panda/visual_left" material="white_left" mesh="link0_8_left" />
+        <geom class="panda/visual_left" material="dark_grey_left" mesh="link0_9_left" />
+        <geom class="panda/visual_left" material="off_white_left" mesh="link0_10_left" />
+        <geom class="panda/visual_left" material="white_left" mesh="link0_11_left" />
+        <geom class="panda/collision_left" mesh="link0_c_left" />
+        <body name="link1_left" pos="0 0 0.333">
+          <inertial pos="0.003875 0.002081 -0.04762" quat="0.711549 0.00634377 -0.0131124 0.702485" mass="4.97068" diaginertia="0.707137 0.703435 0.00852456" />
+          <joint name="joint1_left" pos="0 0 0" axis="0 0 1" />
+          <geom class="panda/visual_left" material="white_left" mesh="link1_left" />
+          <geom class="panda/collision_left" mesh="link1_c_left" />
+          <site name="joint1_left" pos="0 0 0" />
+          <body name="link2_left" quat="0.707107 -0.707107 0 0">
+            <inertial pos="-0.003141 -0.02872 0.003495" quat="-0.168175 0.828366 -0.122878 0.520027" mass="0.646926" diaginertia="0.0310326 0.0283001 0.00273425" />
+            <joint name="joint2_left" pos="0 0 0" axis="0 0 1" range="-1.7628 1.7628" />
+            <geom class="panda/visual_left" material="white_left" mesh="link2_left" />
+            <geom class="panda/collision_left" mesh="link2_c_left" />
+            <site name="joint2_left" pos="0 0 0" />
+            <body name="link3_left" pos="0 -0.316 0" quat="0.707107 0.707107 0 0">
+              <inertial pos="0.027518 0.039252 -0.066502" quat="0.662769 -0.00678331 0.252053 0.705096" mass="3.2286" diaginertia="0.0415014 0.0414793 0.00124635" />
+              <joint name="joint3_left" pos="0 0 0" axis="0 0 1" />
+              <geom class="panda/visual_left" material="white_left" mesh="link3_0_left" />
+              <geom class="panda/visual_left" material="white_left" mesh="link3_1_left" />
+              <geom class="panda/visual_left" material="white_left" mesh="link3_2_left" />
+              <geom class="panda/visual_left" material="dark_grey_left" mesh="link3_3_left" />
+              <geom class="panda/collision_left" mesh="link3_c_left" />
+              <site name="joint3_left" pos="0 0 0" />
+              <body name="link4_left" pos="0.0825 0 0" quat="0.707107 0.707107 0 0">
+                <inertial pos="-0.05317 0.104419 0.027454" quat="0.65058 0.529822 -0.0962034 0.535518" mass="3.5879" diaginertia="0.0349596 0.0281483 0.0106201" />
+                <joint name="joint4_left" pos="0 0 0" axis="0 0 1" range="-3.0718 -0.0698" />
+                <geom class="panda/visual_left" material="white_left" mesh="link4_0_left" />
+                <geom class="panda/visual_left" material="white_left" mesh="link4_1_left" />
+                <geom class="panda/visual_left" material="dark_grey_left" mesh="link4_2_left" />
+                <geom class="panda/visual_left" material="white_left" mesh="link4_3_left" />
+                <geom class="panda/collision_left" mesh="link4_c_left" />
+                <site name="joint4_left" pos="0 0 0" />
+                <body name="link5_left" pos="-0.0825 0.384 0" quat="0.707107 -0.707107 0 0">
+                  <inertial pos="-0.011953 0.041065 -0.038437" quat="0.987313 -0.0121954 0.0719187 -0.141037" mass="1.22595" diaginertia="0.0367625 0.0288531 0.00803437" />
+                  <joint name="joint5_left" pos="0 0 0" axis="0 0 1" />
+                  <geom class="panda/visual_left" material="dark_grey_left" mesh="link5_0_left" />
+                  <geom class="panda/visual_left" material="white_left" mesh="link5_1_left" />
+                  <geom class="panda/visual_left" material="white_left" mesh="link5_2_left" />
+                  <geom class="panda/collision_left" mesh="link5_c0_left" />
+                  <geom class="panda/collision_left" mesh="link5_c1_left" />
+                  <geom class="panda/collision_left" mesh="link5_c2_left" />
+                  <site name="joint5_left" pos="0 0 0" />
+                  <body name="link6_left" quat="0.707107 0.707107 0 0">
+                    <inertial pos="0.060149 -0.014117 -0.010517" quat="0.101075 0.59332 0.0287227 0.798079" mass="1.66656" diaginertia="0.00584276 0.00431037 0.00159787" />
+                    <joint name="joint6_left" pos="0 0 0" axis="0 0 1" range="-0.0175 3.7525" />
+                    <geom class="panda/visual_left" material="off_white_left" mesh="link6_0_left" />
+                    <geom class="panda/visual_left" material="white_left" mesh="link6_1_left" />
+                    <geom class="panda/visual_left" material="dark_grey_left" mesh="link6_2_left" />
+                    <geom class="panda/visual_left" material="white_left" mesh="link6_3_left" />
+                    <geom class="panda/visual_left" material="white_left" mesh="link6_4_left" />
+                    <geom class="panda/visual_left" material="white_left" mesh="link6_5_left" />
+                    <geom class="panda/visual_left" material="white_left" mesh="link6_6_left" />
+                    <geom class="panda/visual_left" material="light_blue_left" mesh="link6_7_left" />
+                    <geom class="panda/visual_left" material="light_blue_left" mesh="link6_8_left" />
+                    <geom class="panda/visual_left" material="dark_grey_left" mesh="link6_9_left" />
+                    <geom class="panda/visual_left" material="dark_grey_left" mesh="link6_10_left" />
+                    <geom class="panda/visual_left" material="white_left" mesh="link6_11_left" />
+                    <geom class="panda/visual_left" material="green_left" mesh="link6_12_left" />
+                    <geom class="panda/visual_left" material="white_left" mesh="link6_13_left" />
+                    <geom class="panda/visual_left" material="dark_grey_left" mesh="link6_14_left" />
+                    <geom class="panda/visual_left" material="dark_grey_left" mesh="link6_15_left" />
+                    <geom class="panda/visual_left" material="white_left" mesh="link6_16_left" />
+                    <geom class="panda/collision_left" mesh="link6_c_left" />
+                    <site name="joint6_left" pos="0 0 0" />
+                    <body name="link7_left" pos="0.088 0 0" quat="0.707107 0.707107 0 0">
+                      <inertial pos="0.010517 -0.004252 0.061597" quat="0.992939 -0.0762041 0.0733595 -0.0537067" mass="0.735522" diaginertia="0.0127345 0.0101055 0.00451803" />
+                      <joint name="joint7_left" pos="0 0 0" axis="0 0 1" />
+                      <geom class="panda/visual_left" material="white_left" mesh="link7_0_left" />
+                      <geom class="panda/visual_left" material="dark_grey_left" mesh="link7_1_left" />
+                      <geom class="panda/visual_left" material="dark_grey_left" mesh="link7_2_left" />
+                      <geom class="panda/visual_left" material="dark_grey_left" mesh="link7_3_left" />
+                      <geom class="panda/visual_left" material="dark_grey_left" mesh="link7_4_left" />
+                      <geom class="panda/visual_left" material="dark_grey_left" mesh="link7_5_left" />
+                      <geom class="panda/visual_left" material="dark_grey_left" mesh="link7_6_left" />
+                      <geom class="panda/visual_left" material="white_left" mesh="link7_7_left" />
+                      <geom class="panda/collision_left" mesh="link7_c_left" />
+                      <site name="joint7_left" pos="0 0 0" />
+                      <body name="attachment_left" pos="0 0 0.107" quat="0.382683 0 0 0.92388">
+                        <site name="attachment_site_left" pos="0 0 0" quat="0 0 0 1" />
+                        <camera name="handcam_rgb_left" pos="0.14 0.03 0.04" quat="-0.353678 0.612589 -0.612589 0.352678" fovy="60" />
+                        <frame name="inspire_mount_frame_left" childclass="panda_left" />
+                        <body name="benchhand_left_mount" childclass="benchhand_left_native_panda">
+                          <body name="benchhand_left_native_sharpa_attachment" pos="0.01 0 0.023" quat="0.707107 0 -0.707107 0">
+                            <geom name="benchhand_left_native_sharpa_wrist_adapter_visual" size="0.024 0.024 0.02" pos="0 0 0.016" type="box" contype="0" conaffinity="0" group="1" material="benchhand_left_native_sharpa_black" />
+                            <geom name="benchhand_left_sharpa_wrist_adapter_collision" size="0.024 0.024 0.02" pos="0 0 0.016" type="box" group="3" density="0" friction="1 0.0050000000000000001 0.0001" />
+                            <body name="benchhand_left_native_left_hand_C_MC" pos="0 0 0.02">
+                              <inertial pos="-0.00216 -0.00536 0.04011" quat="0.693082 0.0757241 -0.0659362 0.713831" mass="0.6506" diaginertia="0.000814964 0.000674248 0.00027314" />
+                              <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_joint_metal" mesh="benchhand_left_native_flange" />
+                              <geom name="benchhand_left_native_wrist_visual" pos="0 0 0.0005" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_shell" mesh="benchhand_left_native_wrist" />
+                              <geom name="benchhand_left_native_wrist" pos="0 0 0.0005" quat="1 0 0 0" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_left_native_wrist_collision" friction="1 0.0050000000000000001 0.0001" />
+                              <geom name="benchhand_left_native_left_hand_C_MC_visual" pos="0 0 0.0295" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_shell" mesh="benchhand_left_native_left_hand_C_MC_visual" />
+                              <geom name="benchhand_left_native_left_hand_C_MC" pos="0 0 0.0295" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_left_native_left_hand_C_MC" friction="1 0.0050000000000000001 0.0001" />
+                              <body name="benchhand_left_native_left_thumb_CMC_VL" pos="0.01 -0.026 0.0509" quat="0.707105 0 0 -0.707108">
+                                <inertial pos="-0.00065 -0.0002 0" quat="0.557664 0.434754 -0.557664 0.434754" mass="0.0025" diaginertia="2.6e-07 2.12661e-07 1.34339e-07" />
+                                <joint name="benchhand_left_native_left_thumb_CMC_FE" class="benchhand_left_native_CMC_joint" pos="0 0 0" axis="0 0 1" range="-0.1745 1.9199" />
+                                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_joint_metal" mesh="benchhand_left_native_left_thumb_CMC_VL_visual" />
+                                <body name="benchhand_left_native_left_thumb_MC" pos="0 -0.005 0" quat="0.65328 0.653282 -0.270598 0.270599">
+                                  <inertial pos="0.03643 -0.01024 -0.00517" quat="0.154462 0.683763 0.151259 0.696943" mass="0.13587" diaginertia="4.69153e-05 4.29066e-05 1.92101e-05" />
+                                  <joint name="benchhand_left_native_left_thumb_CMC_AA" class="benchhand_left_native_CMC_joint" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" />
+                                  <geom name="benchhand_left_native_left_thumb_MC_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_shell" mesh="benchhand_left_native_left_thumb_MC_visual" />
+                                  <geom name="benchhand_left_native_left_thumb_MC" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_left_native_left_thumb_MC" friction="1 0.0050000000000000001 0.0001" />
+                                  <body name="benchhand_left_native_left_thumb_MCP_VL" pos="0.065 -0.006 -0.010392" quat="0.965926 -0.25882 0 0">
+                                    <inertial pos="-1.29e-09 1.1e-10 0" quat="0.484363 0.515163 -0.484363 0.515163" mass="0.0025" diaginertia="2.6e-07 2.12661e-07 1.34339e-07" />
+                                    <joint name="benchhand_left_native_left_thumb_MCP_FE" class="benchhand_left_native_MCP_joint" pos="0 0 0" axis="0 0 1" range="-0.5236 1.3963" />
+                                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_joint_metal" mesh="benchhand_left_native_left_thumb_MCP_VL_visual" />
+                                    <body name="benchhand_left_native_left_thumb_PP" quat="0.707105 0.707108 0 0">
+                                      <inertial pos="0.021256 -0.00095 0.00092" quat="0.511613 0.44358 0.554609 0.483631" mass="0.03078" diaginertia="6.08344e-06 5.91207e-06 1.22148e-06" />
+                                      <joint name="benchhand_left_native_left_thumb_MCP_AA" class="benchhand_left_native_MCP_joint" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" />
+                                      <geom name="benchhand_left_native_left_thumb_PP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_shell" mesh="benchhand_left_native_left_thumb_PP_visual" />
+                                      <geom name="benchhand_left_native_left_thumb_PP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_left_native_left_thumb_PP" friction="1 0.0050000000000000001 0.0001" />
+                                      <body name="benchhand_left_native_left_thumb_DP" pos="0.039 0 0" quat="0.707105 -0.707108 0 0">
+                                        <inertial pos="0.00823857 -0.00178179 -0.00099978" quat="-0.255976 0.71385 -0.187437 0.62431" mass="0.009981" diaginertia="1.09052e-06 1.04137e-06 2.95184e-07" />
+                                        <joint name="benchhand_left_native_left_thumb_IP" class="benchhand_left_native_PIP_joint" pos="0 0 0" axis="0 0 1" range="0 1.7453" />
+                                        <geom name="benchhand_left_native_left_thumb_DP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_joint_metal" mesh="benchhand_left_native_left_thumb_DP_visual" />
+                                        <geom name="benchhand_left_native_left_thumb_DP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_left_native_left_thumb_DP" friction="1 0.0050000000000000001 0.0001" />
+                                        <geom name="benchhand_left_native_left_thumb_elastomer_visual" quat="0.5 0.5 -0.5 0.5" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_elastomer" mesh="benchhand_left_native_thumb_elastomer" />
+                                        <geom name="benchhand_left_native_left_thumb_elastomer" class="benchhand_left_native_elastomer_geom" quat="0.5 0.5 -0.5 0.5" type="mesh" group="3" rgba="0.2 1 0.2 1" mesh="benchhand_left_native_thumb_elastomer" friction="1 0.0050000000000000001 0.0001" />
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                              <body name="benchhand_left_native_left_index_MCP_VL" pos="0.001 -0.0303 0.1254" quat="0.499998 -0.500002 -0.5 -0.5">
+                                <inertial pos="-0.0092 -0.0013 0" quat="0.479506 0.519686 -0.479506 0.519686" mass="0.00221" diaginertia="2.23e-07 1.77435e-07 1.09965e-07" />
+                                <joint name="benchhand_left_native_left_index_MCP_FE" class="benchhand_left_native_MCP_joint" pos="0 0 0" axis="0 0 1" range="-0.174533 1.5708" />
+                                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_joint_metal" mesh="benchhand_left_native_left_MCP_VL_visual" />
+                                <geom type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_left_native_MCP_VL" friction="1 0.0050000000000000001 0.0001" />
+                                <body name="benchhand_left_native_left_index_PP" quat="0.707105 0.707108 0 0">
+                                  <inertial pos="0.027 -0.00055 -0.00068" quat="0.502719 0.479286 0.512565 0.504813" mass="0.04741" diaginertia="1.14061e-05 1.10467e-05 2.15425e-06" />
+                                  <joint name="benchhand_left_native_left_index_MCP_AA" class="benchhand_left_native_MCP_joint" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" />
+                                  <geom name="benchhand_left_native_left_index_PP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_shell" mesh="benchhand_left_native_left_PP_visual" />
+                                  <geom name="benchhand_left_native_left_index_PP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_left_native_left_PP" friction="1 0.0050000000000000001 0.0001" />
+                                  <body name="benchhand_left_native_left_index_MP" pos="0.047 0 0" quat="0.707105 -0.707108 0 0">
+                                    <inertial pos="0.01212 -0.00116 0.00058" quat="-0.0266408 0.732558 -0.0189273 0.67992" mass="0.01824" diaginertia="2.00683e-06 1.9229e-06 5.68878e-07" />
+                                    <joint name="benchhand_left_native_left_index_PIP" class="benchhand_left_native_PIP_joint" pos="0 0 0" axis="0 0 1" range="0 1.7453" />
+                                    <geom name="benchhand_left_native_left_index_MP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_shell" mesh="benchhand_left_native_left_MP_visual" />
+                                    <geom name="benchhand_left_native_left_index_MP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_left_native_left_MP" friction="1 0.0050000000000000001 0.0001" />
+                                    <body name="benchhand_left_native_left_index_DP" pos="0.0315 0 0">
+                                      <inertial pos="0.0124885 -0.00257289 -0.000107611" quat="-0.0492916 0.716628 -0.0583643 0.693259" mass="0.004651" diaginertia="3.15336e-07 3.09757e-07 1.34861e-07" />
+                                      <joint name="benchhand_left_native_left_index_DIP" class="benchhand_left_native_DIP_joint" pos="0 0 0" axis="0 0 1" range="0 1.3963" />
+                                      <geom name="benchhand_left_native_left_index_DP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_joint_metal" mesh="benchhand_left_native_left_DP_visual" />
+                                      <geom name="benchhand_left_native_left_index_DP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_left_native_left_DP" friction="1 0.0050000000000000001 0.0001" />
+                                      <geom name="benchhand_left_native_left_index_elastomer_visual" quat="0.5 0.5 -0.5 0.5" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_elastomer" mesh="benchhand_left_native_elastomer" />
+                                      <geom name="benchhand_left_native_left_index_elastomer" class="benchhand_left_native_elastomer_geom" quat="0.5 0.5 -0.5 0.5" type="mesh" group="3" rgba="0.2 1 0.2 1" mesh="benchhand_left_native_elastomer" friction="1 0.0050000000000000001 0.0001" />
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                              <body name="benchhand_left_native_left_middle_MCP_VL" pos="0 -0.01 0.1284" quat="0.499998 -0.500002 -0.5 -0.5">
+                                <inertial pos="-0.0092 -0.0013 0" quat="0.479506 0.519686 -0.479506 0.519686" mass="0.00221" diaginertia="2.23e-07 1.77435e-07 1.09965e-07" />
+                                <joint name="benchhand_left_native_left_middle_MCP_FE" class="benchhand_left_native_MCP_joint" pos="0 0 0" axis="0 0 1" range="-0.174533 1.5708" />
+                                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_joint_metal" mesh="benchhand_left_native_left_MCP_VL_visual" />
+                                <geom type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_left_native_MCP_VL" friction="1 0.0050000000000000001 0.0001" />
+                                <body name="benchhand_left_native_left_middle_PP" quat="0.707105 0.707108 0 0">
+                                  <inertial pos="0.027 -0.00055 -0.00068" quat="0.502719 0.479286 0.512565 0.504813" mass="0.04741" diaginertia="1.14061e-05 1.10467e-05 2.15425e-06" />
+                                  <joint name="benchhand_left_native_left_middle_MCP_AA" class="benchhand_left_native_MCP_joint" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" />
+                                  <geom name="benchhand_left_native_left_middle_PP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_shell" mesh="benchhand_left_native_left_PP_visual" />
+                                  <geom name="benchhand_left_native_left_middle_PP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_left_native_left_PP" friction="1 0.0050000000000000001 0.0001" />
+                                  <body name="benchhand_left_native_left_middle_MP" pos="0.047 0 0" quat="0.707105 -0.707108 0 0">
+                                    <inertial pos="0.01212 -0.00116 0.00058" quat="-0.0266408 0.732558 -0.0189273 0.67992" mass="0.01824" diaginertia="2.00683e-06 1.9229e-06 5.68878e-07" />
+                                    <joint name="benchhand_left_native_left_middle_PIP" class="benchhand_left_native_PIP_joint" pos="0 0 0" axis="0 0 1" range="0 1.7453" />
+                                    <geom name="benchhand_left_native_left_middle_MP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_shell" mesh="benchhand_left_native_left_MP_visual" />
+                                    <geom name="benchhand_left_native_left_middle_MP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_left_native_left_MP" friction="1 0.0050000000000000001 0.0001" />
+                                    <body name="benchhand_left_native_left_middle_DP" pos="0.0315 0 0">
+                                      <inertial pos="0.0124885 -0.00257289 -0.000107611" quat="-0.0492916 0.716628 -0.0583643 0.693259" mass="0.004651" diaginertia="3.15336e-07 3.09757e-07 1.34861e-07" />
+                                      <joint name="benchhand_left_native_left_middle_DIP" class="benchhand_left_native_DIP_joint" pos="0 0 0" axis="0 0 1" range="0 1.3963" />
+                                      <geom name="benchhand_left_native_left_middle_DP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_joint_metal" mesh="benchhand_left_native_left_DP_visual" />
+                                      <geom name="benchhand_left_native_left_middle_DP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_left_native_left_DP" friction="1 0.0050000000000000001 0.0001" />
+                                      <geom name="benchhand_left_native_left_middle_elastomer_visual" quat="0.5 0.5 -0.5 0.5" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_elastomer" mesh="benchhand_left_native_elastomer" />
+                                      <geom name="benchhand_left_native_left_middle_elastomer" class="benchhand_left_native_elastomer_geom" quat="0.5 0.5 -0.5 0.5" type="mesh" group="3" rgba="0.2 1 0.2 1" mesh="benchhand_left_native_elastomer" friction="1 0.0050000000000000001 0.0001" />
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                              <body name="benchhand_left_native_left_ring_MCP_VL" pos="0.0015 0.0103 0.1224" quat="0.499998 -0.500002 -0.5 -0.5">
+                                <inertial pos="-0.0092 -0.0013 0" quat="0.479506 0.519686 -0.479506 0.519686" mass="0.00221" diaginertia="2.23e-07 1.77435e-07 1.09965e-07" />
+                                <joint name="benchhand_left_native_left_ring_MCP_FE" class="benchhand_left_native_MCP_joint" pos="0 0 0" axis="0 0 1" range="-0.174533 1.5708" />
+                                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_joint_metal" mesh="benchhand_left_native_left_MCP_VL_visual" />
+                                <geom type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_left_native_MCP_VL" friction="1 0.0050000000000000001 0.0001" />
+                                <body name="benchhand_left_native_left_ring_PP" quat="0.707105 0.707108 0 0">
+                                  <inertial pos="0.027 -0.00055 -0.00068" quat="0.502719 0.479286 0.512565 0.504813" mass="0.04741" diaginertia="1.14061e-05 1.10467e-05 2.15425e-06" />
+                                  <joint name="benchhand_left_native_left_ring_MCP_AA" class="benchhand_left_native_MCP_joint" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" />
+                                  <geom name="benchhand_left_native_left_ring_PP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_shell" mesh="benchhand_left_native_left_PP_visual" />
+                                  <geom name="benchhand_left_native_left_ring_PP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_left_native_left_PP" friction="1 0.0050000000000000001 0.0001" />
+                                  <body name="benchhand_left_native_left_ring_MP" pos="0.047 0 0" quat="0.707105 -0.707108 0 0">
+                                    <inertial pos="0.01212 -0.00116 0.00058" quat="-0.0266408 0.732558 -0.0189273 0.67992" mass="0.01824" diaginertia="2.00683e-06 1.9229e-06 5.68878e-07" />
+                                    <joint name="benchhand_left_native_left_ring_PIP" class="benchhand_left_native_PIP_joint" pos="0 0 0" axis="0 0 1" range="0 1.7453" />
+                                    <geom name="benchhand_left_native_left_ring_MP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_shell" mesh="benchhand_left_native_left_MP_visual" />
+                                    <geom name="benchhand_left_native_left_ring_MP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_left_native_left_MP" friction="1 0.0050000000000000001 0.0001" />
+                                    <body name="benchhand_left_native_left_ring_DP" pos="0.0315 0 0">
+                                      <inertial pos="0.0124885 -0.00257289 -0.000107611" quat="-0.0492916 0.716628 -0.0583643 0.693259" mass="0.004651" diaginertia="3.15336e-07 3.09757e-07 1.34861e-07" />
+                                      <joint name="benchhand_left_native_left_ring_DIP" class="benchhand_left_native_DIP_joint" pos="0 0 0" axis="0 0 1" range="0 1.3963" />
+                                      <geom name="benchhand_left_native_left_ring_DP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_joint_metal" mesh="benchhand_left_native_left_DP_visual" />
+                                      <geom name="benchhand_left_native_left_ring_DP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_left_native_left_DP" friction="1 0.0050000000000000001 0.0001" />
+                                      <geom name="benchhand_left_native_left_ring_elastomer_visual" quat="0.499998 0.5 -0.5 0.500002" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_elastomer" mesh="benchhand_left_native_elastomer" />
+                                      <geom name="benchhand_left_native_left_ring_elastomer" class="benchhand_left_native_elastomer_geom" quat="0.499998 0.5 -0.5 0.500002" type="mesh" group="3" rgba="0.2 1 0.2 1" mesh="benchhand_left_native_elastomer" friction="1 0.0050000000000000001 0.0001" />
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                              <body name="benchhand_left_native_left_pinky_MC" pos="0.01136 0.0263 0.1164" quat="1.34924e-11 3.67321e-06 -1 -3.67321e-06">
+                                <inertial pos="0.0107985 0.00598801 -0.0335125" quat="0.706956 0.000832392 0.0268047 0.706749" mass="0.12541" diaginertia="4.47765e-05 3.72569e-05 1.69876e-05" />
+                                <joint name="benchhand_left_native_left_pinky_CMC" class="benchhand_left_native_PCMC_joint" pos="0 0 0" axis="0 0 1" range="0 0.2618" />
+                                <geom name="benchhand_left_native_left_pinky_MC_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_joint_metal" mesh="benchhand_left_native_left_pinky_MC_visual" />
+                                <geom name="benchhand_left_native_left_pinky_MC" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_left_native_left_pinky_MC" friction="1 0.0050000000000000001 0.0001" />
+                                <body name="benchhand_left_native_left_pinky_MCP_VL" pos="0.00836 0.0048 0" quat="0.499998 -0.5 0.5 0.500002">
+                                  <inertial pos="-0.0092 -0.0013 0" quat="0.479506 0.519686 -0.479506 0.519686" mass="0.00221" diaginertia="2.23e-07 1.77435e-07 1.09965e-07" />
+                                  <joint name="benchhand_left_native_left_pinky_MCP_FE" class="benchhand_left_native_MCP_joint" pos="0 0 0" axis="0 0 1" range="-0.174533 1.5708" />
+                                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_joint_metal" mesh="benchhand_left_native_left_MCP_VL_visual" />
+                                  <geom type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_left_native_MCP_VL" friction="1 0.0050000000000000001 0.0001" />
+                                  <body name="benchhand_left_native_left_pinky_PP" quat="0.707105 0.707108 0 0">
+                                    <inertial pos="0.027 -0.00055 -0.00068" quat="0.502719 0.479286 0.512565 0.504813" mass="0.04741" diaginertia="1.14061e-05 1.10467e-05 2.15425e-06" />
+                                    <joint name="benchhand_left_native_left_pinky_MCP_AA" class="benchhand_left_native_MCP_joint" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" />
+                                    <geom name="benchhand_left_native_left_pinky_PP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_shell" mesh="benchhand_left_native_left_PP_visual" />
+                                    <geom name="benchhand_left_native_left_pinky_PP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_left_native_left_PP" friction="1 0.0050000000000000001 0.0001" />
+                                    <body name="benchhand_left_native_left_pinky_MP" pos="0.047 0 0" quat="0.707105 -0.707108 0 0">
+                                      <inertial pos="0.01212 -0.00116 0.00058" quat="-0.0266408 0.732558 -0.0189273 0.67992" mass="0.01824" diaginertia="2.00683e-06 1.9229e-06 5.68878e-07" />
+                                      <joint name="benchhand_left_native_left_pinky_PIP" class="benchhand_left_native_PIP_joint" pos="0 0 0" axis="0 0 1" range="0 1.7453" />
+                                      <geom name="benchhand_left_native_left_pinky_MP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_shell" mesh="benchhand_left_native_left_MP_visual" />
+                                      <geom name="benchhand_left_native_left_pinky_MP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_left_native_left_MP" friction="1 0.0050000000000000001 0.0001" />
+                                      <body name="benchhand_left_native_left_pinky_DP" pos="0.0315 0 0">
+                                        <inertial pos="0.0124885 -0.00257289 -0.000107611" quat="-0.0492916 0.716628 -0.0583643 0.693259" mass="0.004651" diaginertia="3.15336e-07 3.09757e-07 1.34861e-07" />
+                                        <joint name="benchhand_left_native_left_pinky_DIP" class="benchhand_left_native_DIP_joint" pos="0 0 0" axis="0 0 1" range="0 1.3963" />
+                                        <geom name="benchhand_left_native_left_pinky_DP_visual" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_joint_metal" mesh="benchhand_left_native_left_DP_visual" />
+                                        <geom name="benchhand_left_native_left_pinky_DP" type="mesh" group="3" rgba="0.79216 0.81961 0.93333 1" mesh="benchhand_left_native_left_DP" friction="1 0.0050000000000000001 0.0001" />
+                                        <geom name="benchhand_left_native_left_pinky_elastomer_visual" quat="0.5 0.5 -0.5 0.5" type="mesh" contype="0" conaffinity="0" group="1" density="0" material="benchhand_left_native_sharpa_elastomer" mesh="benchhand_left_native_elastomer" />
+                                        <geom name="benchhand_left_native_left_pinky_elastomer" class="benchhand_left_native_elastomer_geom" quat="0.5 0.5 -0.5 0.5" type="mesh" group="3" rgba="0.1 1 0.2 1" mesh="benchhand_left_native_elastomer" friction="1 0.0050000000000000001 0.0001" />
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <body name="ipad_body" pos="-0.17 0.2 1.06" quat="0 -0.5 0 0.866025">
+      <joint name="ipad_freejoint" type="free" />
+      <geom class="ipad_visual" material="Material_grey" mesh="ipad_mesh" />
+      <geom name="ipad_collision_ll" class="ipad_collision" size="0.067383 0.103706 0.014285" pos="-0.067171 0.103706 -0.001296" mass="0.1" rgba="0.8 0.8 0.8 0.9" />
+      <geom name="ipad_collision_lr" class="ipad_collision" size="0.067383 0.103706 0.014285" pos="0.067595 0.103706 -0.001296" mass="0.02" rgba="0.8 0.8 0.8 0.5" />
+      <geom name="ipad_collision_ul" class="ipad_collision" size="0.067383 0.103706 0.014285" pos="-0.067171 0.311119 -0.001296" mass="0.01" rgba="0.8 0.8 0.8 0.2" />
+      <geom name="ipad_collision_ur" class="ipad_collision" size="0.067383 0.103706 0.014285" pos="0.067595 0.311119 -0.001296" mass="0.02" rgba="0.8 0.8 0.8 0.5" />
+      <geom name="ipad_screen" size="0.122 0.175 0.001" pos="0 0.22 0.012" type="box" contype="0" conaffinity="0" group="1" material="Material_black" />
+      <body name="buttons_root" pos="0 0.25 0.02295">
+        <body name="btn_1" pos="-0.07 0.07 -0.01">
+          <geom name="btn1_cyl" size="0.024 0.0001" type="cylinder" mass="0.0001" material="mat_digit_1" />
+        </body>
+        <body name="btn_2" pos="0 0.07 -0.01">
+          <geom name="btn2_cyl" size="0.024 0.0001" type="cylinder" mass="0.0001" material="mat_digit_2" />
+        </body>
+        <body name="btn_3" pos="0.07 0.07 -0.01">
+          <geom name="btn3_cyl" size="0.024 0.0001" type="cylinder" mass="0.0001" material="mat_digit_3" />
+        </body>
+        <body name="btn_4" pos="-0.07 0 -0.01">
+          <geom name="btn4_cyl" size="0.024 0.0001" type="cylinder" mass="0.0001" material="mat_digit_4" />
+        </body>
+        <body name="btn_5" pos="0 0 -0.01">
+          <geom name="btn5_cyl" size="0.024 0.0001" type="cylinder" mass="0.0001" material="mat_digit_5" />
+        </body>
+        <body name="btn_6" pos="0.07 0 -0.01">
+          <geom name="btn6_cyl" size="0.024 0.0001" type="cylinder" mass="0.0001" material="mat_digit_6" />
+        </body>
+        <body name="btn_7" pos="-0.07 -0.07 -0.01">
+          <geom name="btn7_cyl" size="0.024 0.0001" type="cylinder" mass="0.0001" material="mat_digit_7" />
+        </body>
+        <body name="btn_8" pos="0 -0.07 -0.01">
+          <geom name="btn8_cyl" size="0.024 0.0001" type="cylinder" mass="0.0001" material="mat_digit_8" />
+        </body>
+        <body name="btn_9" pos="0.07 -0.07 -0.01">
+          <geom name="btn9_cyl" size="0.024 0.0001" type="cylinder" mass="0.0001" material="mat_digit_9" />
+        </body>
+        <body name="btn_0" pos="0 -0.14 -0.01">
+          <geom name="btn0_cyl" size="0.024 0.0001" type="cylinder" mass="0.0001" material="mat_digit_0" />
+        </body>
+      </body>
+    </body>
+    <body name="ipad_stand" pos="-0.21 0 0.92">
+      <geom name="stand_base" size="0.09 0.06 0.01" pos="0 0 0.01" quat="0.707107 0 0 0.707107" type="box" group="1" friction="2 0.01 0.001" rgba="0.2 0.2 0.2 1" />
+      <geom name="stand_ramp" size="0.07 0.09 0.004" pos="0.025 0 0.0733" quat="0.866025 0 -0.5 0" type="box" group="1" friction="2 0.01 0.001" rgba="0.25 0.25 0.25 1" />
+      <geom name="stand_back" size="0.09 0.01 0.04" pos="0.05 0 0.06" quat="0.707107 0 0 0.707107" type="box" group="1" friction="2 0.01 0.001" rgba="0.2 0.2 0.2 1" />
+      <geom name="stand_base_collision" size="0.09 0.06 0.014" pos="0 0 0.01" quat="0.707107 0 0 0.707107" type="box" group="3" friction="2.5 0.02 0.001" mass="0" rgba="0.05 0.45 1 0.18" />
+      <geom name="stand_ramp_collision" size="0.07 0.09 0.01" pos="0.025 0 0.0733" quat="0.866025 0 -0.5 0" type="box" group="3" friction="2.5 0.02 0.001" mass="0" rgba="0.05 0.45 1 0.18" />
+      <geom name="stand_back_collision" size="0.09 0.012 0.045" pos="0.05 0 0.06" quat="0.707107 0 0 0.707107" type="box" group="3" friction="2.5 0.02 0.001" mass="0" rgba="0.05 0.45 1 0.18" />
+    </body>
+    <body name="table" pos="-0.15 0 0">
+      <geom name="table_collision" size="0.4 0.8 0.03" pos="0 0 0.89" type="box" group="3" />
+      <geom name="table_visual" size="0.4 0.8 0.03" pos="0 0 0.89" type="box" contype="0" conaffinity="0" group="1" material="table_ceramic" />
+      <geom name="table_leg_1" size="0.04 0.43" pos="0.32 0.72 0.43" type="cylinder" contype="0" conaffinity="0" group="1" material="table_legs_metal" />
+      <geom name="table_leg_2" size="0.04 0.43" pos="0.32 -0.72 0.43" type="cylinder" contype="0" conaffinity="0" group="1" material="table_legs_metal" />
+      <geom name="table_leg_3" size="0.04 0.43" pos="-0.32 0.72 0.43" type="cylinder" contype="0" conaffinity="0" group="1" material="table_legs_metal" />
+      <geom name="table_leg_4" size="0.04 0.43" pos="-0.32 -0.72 0.43" type="cylinder" contype="0" conaffinity="0" group="1" material="table_legs_metal" />
+      <site name="table_top" pos="0 0 0.92" size="0.002" rgba="0 0 0 0" />
+    </body>
+    <body name="target_right" pos="0.15 0 0.5" quat="0 1 0 0" mocap="true">
+      <geom name="target_right" size="0.03 0.03 0.03" type="box" contype="0" conaffinity="0" rgba="0.6 0.3 0.3 0" />
+    </body>
+    <body name="target_left" pos="0.15 0 0.5" quat="0 1 0 0" mocap="true">
+      <geom name="target_left" size="0.03 0.03 0.03" type="box" contype="0" conaffinity="0" rgba="0.6 0.3 0.3 0" />
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude body1="benchhand_right_native_right_hand_C_MC" body2="benchhand_right_native_right_thumb_CMC_VL" />
+    <exclude body1="benchhand_right_native_right_hand_C_MC" body2="benchhand_right_native_right_thumb_MC" />
+    <exclude body1="benchhand_right_native_right_hand_C_MC" body2="benchhand_right_native_right_index_MCP_VL" />
+    <exclude body1="benchhand_right_native_right_hand_C_MC" body2="benchhand_right_native_right_index_PP" />
+    <exclude body1="benchhand_right_native_right_hand_C_MC" body2="benchhand_right_native_right_middle_MCP_VL" />
+    <exclude body1="benchhand_right_native_right_hand_C_MC" body2="benchhand_right_native_right_middle_PP" />
+    <exclude body1="benchhand_right_native_right_hand_C_MC" body2="benchhand_right_native_right_ring_MCP_VL" />
+    <exclude body1="benchhand_right_native_right_hand_C_MC" body2="benchhand_right_native_right_ring_PP" />
+    <exclude body1="benchhand_right_native_right_hand_C_MC" body2="benchhand_right_native_right_pinky_MC" />
+    <exclude body1="benchhand_right_native_right_thumb_MC" body2="benchhand_right_native_right_thumb_MCP_VL" />
+    <exclude body1="benchhand_right_native_right_thumb_MC" body2="benchhand_right_native_right_thumb_PP" />
+    <exclude body1="benchhand_right_native_right_thumb_MCP_VL" body2="benchhand_right_native_right_thumb_PP" />
+    <exclude body1="benchhand_right_native_right_thumb_PP" body2="benchhand_right_native_right_thumb_DP" />
+    <exclude body1="benchhand_right_native_right_index_MCP_VL" body2="benchhand_right_native_right_index_PP" />
+    <exclude body1="benchhand_right_native_right_index_PP" body2="benchhand_right_native_right_index_MP" />
+    <exclude body1="benchhand_right_native_right_index_MP" body2="benchhand_right_native_right_index_DP" />
+    <exclude body1="benchhand_right_native_right_middle_MCP_VL" body2="benchhand_right_native_right_middle_PP" />
+    <exclude body1="benchhand_right_native_right_middle_PP" body2="benchhand_right_native_right_middle_MP" />
+    <exclude body1="benchhand_right_native_right_middle_MP" body2="benchhand_right_native_right_middle_DP" />
+    <exclude body1="benchhand_right_native_right_ring_MCP_VL" body2="benchhand_right_native_right_ring_PP" />
+    <exclude body1="benchhand_right_native_right_ring_PP" body2="benchhand_right_native_right_ring_MP" />
+    <exclude body1="benchhand_right_native_right_ring_MP" body2="benchhand_right_native_right_ring_DP" />
+    <exclude body1="benchhand_right_native_right_pinky_MC" body2="benchhand_right_native_right_pinky_MCP_VL" />
+    <exclude body1="benchhand_right_native_right_pinky_MC" body2="benchhand_right_native_right_pinky_PP" />
+    <exclude body1="benchhand_right_native_right_pinky_MCP_VL" body2="benchhand_right_native_right_pinky_PP" />
+    <exclude body1="benchhand_right_native_right_pinky_PP" body2="benchhand_right_native_right_pinky_MP" />
+    <exclude body1="benchhand_right_native_right_pinky_MP" body2="benchhand_right_native_right_pinky_DP" />
+    <exclude body1="benchhand_left_native_left_hand_C_MC" body2="benchhand_left_native_left_thumb_CMC_VL" />
+    <exclude body1="benchhand_left_native_left_hand_C_MC" body2="benchhand_left_native_left_thumb_MC" />
+    <exclude body1="benchhand_left_native_left_hand_C_MC" body2="benchhand_left_native_left_index_MCP_VL" />
+    <exclude body1="benchhand_left_native_left_hand_C_MC" body2="benchhand_left_native_left_index_PP" />
+    <exclude body1="benchhand_left_native_left_hand_C_MC" body2="benchhand_left_native_left_middle_MCP_VL" />
+    <exclude body1="benchhand_left_native_left_hand_C_MC" body2="benchhand_left_native_left_middle_PP" />
+    <exclude body1="benchhand_left_native_left_hand_C_MC" body2="benchhand_left_native_left_ring_MCP_VL" />
+    <exclude body1="benchhand_left_native_left_hand_C_MC" body2="benchhand_left_native_left_ring_PP" />
+    <exclude body1="benchhand_left_native_left_hand_C_MC" body2="benchhand_left_native_left_pinky_MC" />
+    <exclude body1="benchhand_left_native_left_thumb_MC" body2="benchhand_left_native_left_thumb_MCP_VL" />
+    <exclude body1="benchhand_left_native_left_thumb_MC" body2="benchhand_left_native_left_thumb_PP" />
+    <exclude body1="benchhand_left_native_left_thumb_MCP_VL" body2="benchhand_left_native_left_thumb_PP" />
+    <exclude body1="benchhand_left_native_left_thumb_PP" body2="benchhand_left_native_left_thumb_DP" />
+    <exclude body1="benchhand_left_native_left_index_MCP_VL" body2="benchhand_left_native_left_index_PP" />
+    <exclude body1="benchhand_left_native_left_index_PP" body2="benchhand_left_native_left_index_MP" />
+    <exclude body1="benchhand_left_native_left_index_MP" body2="benchhand_left_native_left_index_DP" />
+    <exclude body1="benchhand_left_native_left_middle_MCP_VL" body2="benchhand_left_native_left_middle_PP" />
+    <exclude body1="benchhand_left_native_left_middle_PP" body2="benchhand_left_native_left_middle_MP" />
+    <exclude body1="benchhand_left_native_left_middle_MP" body2="benchhand_left_native_left_middle_DP" />
+    <exclude body1="benchhand_left_native_left_ring_MCP_VL" body2="benchhand_left_native_left_ring_PP" />
+    <exclude body1="benchhand_left_native_left_ring_PP" body2="benchhand_left_native_left_ring_MP" />
+    <exclude body1="benchhand_left_native_left_ring_MP" body2="benchhand_left_native_left_ring_DP" />
+    <exclude body1="benchhand_left_native_left_pinky_MC" body2="benchhand_left_native_left_pinky_MCP_VL" />
+    <exclude body1="benchhand_left_native_left_pinky_MC" body2="benchhand_left_native_left_pinky_PP" />
+    <exclude body1="benchhand_left_native_left_pinky_MCP_VL" body2="benchhand_left_native_left_pinky_PP" />
+    <exclude body1="benchhand_left_native_left_pinky_PP" body2="benchhand_left_native_left_pinky_MP" />
+    <exclude body1="benchhand_left_native_left_pinky_MP" body2="benchhand_left_native_left_pinky_DP" />
+  </contact>
+
+  <actuator>
+    <general name="actuator1_right" class="panda_right" joint="joint1_right" ctrlrange="-87 87" />
+    <general name="actuator2_right" class="panda_right" joint="joint2_right" ctrlrange="-87 87" />
+    <general name="actuator3_right" class="panda_right" joint="joint3_right" ctrlrange="-87 87" />
+    <general name="actuator4_right" class="panda_right" joint="joint4_right" ctrlrange="-87 87" />
+    <general name="actuator5_right" class="panda_right" joint="joint5_right" ctrlrange="-12 12" />
+    <general name="actuator6_right" class="panda_right" joint="joint6_right" ctrlrange="-12 12" />
+    <general name="actuator7_right" class="panda_right" joint="joint7_right" ctrlrange="-12 12" />
+    <general name="actuator1_left" class="panda_left" joint="joint1_left" ctrlrange="-87 87" />
+    <general name="actuator2_left" class="panda_left" joint="joint2_left" ctrlrange="-87 87" />
+    <general name="actuator3_left" class="panda_left" joint="joint3_left" ctrlrange="-87 87" />
+    <general name="actuator4_left" class="panda_left" joint="joint4_left" ctrlrange="-87 87" />
+    <general name="actuator5_left" class="panda_left" joint="joint5_left" ctrlrange="-12 12" />
+    <general name="actuator6_left" class="panda_left" joint="joint6_left" ctrlrange="-12 12" />
+    <general name="actuator7_left" class="panda_left" joint="joint7_left" ctrlrange="-12 12" />
+    <general name="benchhand_right_native_right_thumb_CMC_FE_ctrl" joint="benchhand_right_native_right_thumb_CMC_FE" ctrlrange="-0.1745 1.9199" biastype="affine" gainprm="6.95" biasprm="0 -6.95 0.9" />
+    <general name="benchhand_right_native_right_thumb_CMC_AA_ctrl" joint="benchhand_right_native_right_thumb_CMC_AA" ctrlrange="-0.3491 0.3491" biastype="affine" gainprm="13.2" biasprm="0 -13.2 0.9" />
+    <general name="benchhand_right_native_right_thumb_MCP_FE_ctrl" joint="benchhand_right_native_right_thumb_MCP_FE" ctrlrange="-0.5236 1.3963" biastype="affine" gainprm="6" biasprm="0 -6 0.9" />
+    <general name="benchhand_right_native_right_thumb_MCP_AA_ctrl" joint="benchhand_right_native_right_thumb_MCP_AA" ctrlrange="-0.3491 0.3491" biastype="affine" gainprm="6.62" biasprm="0 -6.62 0.9" />
+    <general name="benchhand_right_native_right_thumb_IP_ctrl" joint="benchhand_right_native_right_thumb_IP" ctrlrange="0 1.7453" biastype="affine" gainprm="3" biasprm="0 -3 0.9" />
+    <general name="benchhand_right_native_right_index_MCP_FE_ctrl" joint="benchhand_right_native_right_index_MCP_FE" ctrlrange="-0.174533 1.5708" biastype="affine" gainprm="6" biasprm="0 -6 0.9" />
+    <general name="benchhand_right_native_right_index_MCP_AA_ctrl" joint="benchhand_right_native_right_index_MCP_AA" ctrlrange="-0.3491 0.3491" biastype="affine" gainprm="6.62" biasprm="0 -6.62 0.9" />
+    <general name="benchhand_right_native_right_index_PIP_ctrl" joint="benchhand_right_native_right_index_PIP" ctrlrange="0 1.7453" biastype="affine" gainprm="3" biasprm="0 -3 0.9" />
+    <general name="benchhand_right_native_right_index_DIP_ctrl" joint="benchhand_right_native_right_index_DIP" ctrlrange="0 1.3963" biastype="affine" gainprm="3" biasprm="0 -3 0.9" />
+    <general name="benchhand_right_native_right_middle_MCP_FE_ctrl" joint="benchhand_right_native_right_middle_MCP_FE" ctrlrange="-0.174533 1.5708" biastype="affine" gainprm="6" biasprm="0 -6 0.9" />
+    <general name="benchhand_right_native_right_middle_MCP_AA_ctrl" joint="benchhand_right_native_right_middle_MCP_AA" ctrlrange="-0.3491 0.3491" biastype="affine" gainprm="6.62" biasprm="0 -6.62 0.9" />
+    <general name="benchhand_right_native_right_middle_PIP_ctrl" joint="benchhand_right_native_right_middle_PIP" ctrlrange="0 1.7453" biastype="affine" gainprm="3" biasprm="0 -3 0.9" />
+    <general name="benchhand_right_native_right_middle_DIP_ctrl" joint="benchhand_right_native_right_middle_DIP" ctrlrange="0 1.3963" biastype="affine" gainprm="3" biasprm="0 -3 0.9" />
+    <general name="benchhand_right_native_right_ring_MCP_FE_ctrl" joint="benchhand_right_native_right_ring_MCP_FE" ctrlrange="-0.174533 1.5708" biastype="affine" gainprm="6" biasprm="0 -6 0.9" />
+    <general name="benchhand_right_native_right_ring_MCP_AA_ctrl" joint="benchhand_right_native_right_ring_MCP_AA" ctrlrange="-0.3491 0.3491" biastype="affine" gainprm="6.62" biasprm="0 -6.62 0.9" />
+    <general name="benchhand_right_native_right_ring_PIP_ctrl" joint="benchhand_right_native_right_ring_PIP" ctrlrange="0 1.7453" biastype="affine" gainprm="3" biasprm="0 -3 0.9" />
+    <general name="benchhand_right_native_right_ring_DIP_ctrl" joint="benchhand_right_native_right_ring_DIP" ctrlrange="0 1.3963" biastype="affine" gainprm="3" biasprm="0 -3 0.9" />
+    <general name="benchhand_right_native_right_pinky_CMC_ctrl" joint="benchhand_right_native_right_pinky_CMC" ctrlrange="0 0.2618" biastype="affine" gainprm="4" biasprm="0 -4 0.9" />
+    <general name="benchhand_right_native_right_pinky_MCP_FE_ctrl" joint="benchhand_right_native_right_pinky_MCP_FE" ctrlrange="-0.174533 1.5708" biastype="affine" gainprm="6" biasprm="0 -6 0.9" />
+    <general name="benchhand_right_native_right_pinky_MCP_AA_ctrl" joint="benchhand_right_native_right_pinky_MCP_AA" ctrlrange="-0.3491 0.3491" biastype="affine" gainprm="6.62" biasprm="0 -6.62 0.9" />
+    <general name="benchhand_right_native_right_pinky_PIP_ctrl" joint="benchhand_right_native_right_pinky_PIP" ctrlrange="0 1.7453" biastype="affine" gainprm="3" biasprm="0 -3 0.9" />
+    <general name="benchhand_right_native_right_pinky_DIP_ctrl" joint="benchhand_right_native_right_pinky_DIP" ctrlrange="0 1.3963" biastype="affine" gainprm="3" biasprm="0 -3 0.9" />
+    <general name="benchhand_left_native_left_thumb_CMC_FE_ctrl" joint="benchhand_left_native_left_thumb_CMC_FE" ctrlrange="-0.1745 1.9199" biastype="affine" gainprm="6.95" biasprm="0 -6.95 0.9" />
+    <general name="benchhand_left_native_left_thumb_CMC_AA_ctrl" joint="benchhand_left_native_left_thumb_CMC_AA" ctrlrange="-0.3491 0.3491" biastype="affine" gainprm="13.2" biasprm="0 -13.2 0.9" />
+    <general name="benchhand_left_native_left_thumb_MCP_FE_ctrl" joint="benchhand_left_native_left_thumb_MCP_FE" ctrlrange="-0.5236 1.3963" biastype="affine" gainprm="6" biasprm="0 -6 0.9" />
+    <general name="benchhand_left_native_left_thumb_MCP_AA_ctrl" joint="benchhand_left_native_left_thumb_MCP_AA" ctrlrange="-0.3491 0.3491" biastype="affine" gainprm="6.62" biasprm="0 -6.62 0.9" />
+    <general name="benchhand_left_native_left_thumb_IP_ctrl" joint="benchhand_left_native_left_thumb_IP" ctrlrange="0 1.7453" biastype="affine" gainprm="3" biasprm="0 -3 0.9" />
+    <general name="benchhand_left_native_left_index_MCP_FE_ctrl" joint="benchhand_left_native_left_index_MCP_FE" ctrlrange="-0.174533 1.5708" biastype="affine" gainprm="6" biasprm="0 -6 0.9" />
+    <general name="benchhand_left_native_left_index_MCP_AA_ctrl" joint="benchhand_left_native_left_index_MCP_AA" ctrlrange="-0.3491 0.3491" biastype="affine" gainprm="6.62" biasprm="0 -6.62 0.9" />
+    <general name="benchhand_left_native_left_index_PIP_ctrl" joint="benchhand_left_native_left_index_PIP" ctrlrange="0 1.7453" biastype="affine" gainprm="3" biasprm="0 -3 0.9" />
+    <general name="benchhand_left_native_left_index_DIP_ctrl" joint="benchhand_left_native_left_index_DIP" ctrlrange="0 1.3963" biastype="affine" gainprm="3" biasprm="0 -3 0.9" />
+    <general name="benchhand_left_native_left_middle_MCP_FE_ctrl" joint="benchhand_left_native_left_middle_MCP_FE" ctrlrange="-0.174533 1.5708" biastype="affine" gainprm="6" biasprm="0 -6 0.9" />
+    <general name="benchhand_left_native_left_middle_MCP_AA_ctrl" joint="benchhand_left_native_left_middle_MCP_AA" ctrlrange="-0.3491 0.3491" biastype="affine" gainprm="6.62" biasprm="0 -6.62 0.9" />
+    <general name="benchhand_left_native_left_middle_PIP_ctrl" joint="benchhand_left_native_left_middle_PIP" ctrlrange="0 1.7453" biastype="affine" gainprm="3" biasprm="0 -3 0.9" />
+    <general name="benchhand_left_native_left_middle_DIP_ctrl" joint="benchhand_left_native_left_middle_DIP" ctrlrange="0 1.3963" biastype="affine" gainprm="3" biasprm="0 -3 0.9" />
+    <general name="benchhand_left_native_left_ring_MCP_FE_ctrl" joint="benchhand_left_native_left_ring_MCP_FE" ctrlrange="-0.174533 1.5708" biastype="affine" gainprm="6" biasprm="0 -6 0.9" />
+    <general name="benchhand_left_native_left_ring_MCP_AA_ctrl" joint="benchhand_left_native_left_ring_MCP_AA" ctrlrange="-0.3491 0.3491" biastype="affine" gainprm="6.62" biasprm="0 -6.62 0.9" />
+    <general name="benchhand_left_native_left_ring_PIP_ctrl" joint="benchhand_left_native_left_ring_PIP" ctrlrange="0 1.7453" biastype="affine" gainprm="3" biasprm="0 -3 0.9" />
+    <general name="benchhand_left_native_left_ring_DIP_ctrl" joint="benchhand_left_native_left_ring_DIP" ctrlrange="0 1.3963" biastype="affine" gainprm="3" biasprm="0 -3 0.9" />
+    <general name="benchhand_left_native_left_pinky_CMC_ctrl" joint="benchhand_left_native_left_pinky_CMC" ctrlrange="0 0.2618" biastype="affine" gainprm="4" biasprm="0 -4 0.9" />
+    <general name="benchhand_left_native_left_pinky_MCP_FE_ctrl" joint="benchhand_left_native_left_pinky_MCP_FE" ctrlrange="-0.174533 1.5708" biastype="affine" gainprm="6" biasprm="0 -6 0.9" />
+    <general name="benchhand_left_native_left_pinky_MCP_AA_ctrl" joint="benchhand_left_native_left_pinky_MCP_AA" ctrlrange="-0.3491 0.3491" biastype="affine" gainprm="6.62" biasprm="0 -6.62 0.9" />
+    <general name="benchhand_left_native_left_pinky_PIP_ctrl" joint="benchhand_left_native_left_pinky_PIP" ctrlrange="0 1.7453" biastype="affine" gainprm="3" biasprm="0 -3 0.9" />
+    <general name="benchhand_left_native_left_pinky_DIP_ctrl" joint="benchhand_left_native_left_pinky_DIP" ctrlrange="0 1.3963" biastype="affine" gainprm="3" biasprm="0 -3 0.9" />
+  </actuator>
+
+  <sensor>
+    <jointpos joint="joint1_right" name="panda/joint1_pos_right" />
+    <jointpos joint="joint2_right" name="panda/joint2_pos_right" />
+    <jointpos joint="joint3_right" name="panda/joint3_pos_right" />
+    <jointpos joint="joint4_right" name="panda/joint4_pos_right" />
+    <jointpos joint="joint5_right" name="panda/joint5_pos_right" />
+    <jointpos joint="joint6_right" name="panda/joint6_pos_right" />
+    <jointpos joint="joint7_right" name="panda/joint7_pos_right" />
+    <jointvel joint="joint1_right" name="panda/joint1_vel_right" />
+    <jointvel joint="joint2_right" name="panda/joint2_vel_right" />
+    <jointvel joint="joint3_right" name="panda/joint3_vel_right" />
+    <jointvel joint="joint4_right" name="panda/joint4_vel_right" />
+    <jointvel joint="joint5_right" name="panda/joint5_vel_right" />
+    <jointvel joint="joint6_right" name="panda/joint6_vel_right" />
+    <jointvel joint="joint7_right" name="panda/joint7_vel_right" />
+    <torque site="joint1_right" name="panda/joint1_torque_right" />
+    <torque site="joint2_right" name="panda/joint2_torque_right" />
+    <torque site="joint3_right" name="panda/joint3_torque_right" />
+    <torque site="joint4_right" name="panda/joint4_torque_right" />
+    <torque site="joint5_right" name="panda/joint5_torque_right" />
+    <torque site="joint6_right" name="panda/joint6_torque_right" />
+    <torque site="joint7_right" name="panda/joint7_torque_right" />
+    <force site="attachment_site_right" name="panda/wrist_force_right" />
+    <framepos objtype="site" objname="attachment_site_right" name="franka/flange_pos_right" />
+    <framequat objtype="site" objname="attachment_site_right" name="franka/flange_quat_right" />
+    <framelinvel objtype="site" objname="attachment_site_right" name="franka/flange_vel_right" />
+    <jointpos joint="joint1_left" name="panda/joint1_pos_left" />
+    <jointpos joint="joint2_left" name="panda/joint2_pos_left" />
+    <jointpos joint="joint3_left" name="panda/joint3_pos_left" />
+    <jointpos joint="joint4_left" name="panda/joint4_pos_left" />
+    <jointpos joint="joint5_left" name="panda/joint5_pos_left" />
+    <jointpos joint="joint6_left" name="panda/joint6_pos_left" />
+    <jointpos joint="joint7_left" name="panda/joint7_pos_left" />
+    <jointvel joint="joint1_left" name="panda/joint1_vel_left" />
+    <jointvel joint="joint2_left" name="panda/joint2_vel_left" />
+    <jointvel joint="joint3_left" name="panda/joint3_vel_left" />
+    <jointvel joint="joint4_left" name="panda/joint4_vel_left" />
+    <jointvel joint="joint5_left" name="panda/joint5_vel_left" />
+    <jointvel joint="joint6_left" name="panda/joint6_vel_left" />
+    <jointvel joint="joint7_left" name="panda/joint7_vel_left" />
+    <torque site="joint1_left" name="panda/joint1_torque_left" />
+    <torque site="joint2_left" name="panda/joint2_torque_left" />
+    <torque site="joint3_left" name="panda/joint3_torque_left" />
+    <torque site="joint4_left" name="panda/joint4_torque_left" />
+    <torque site="joint5_left" name="panda/joint5_torque_left" />
+    <torque site="joint6_left" name="panda/joint6_torque_left" />
+    <torque site="joint7_left" name="panda/joint7_torque_left" />
+    <force site="attachment_site_left" name="panda/wrist_force_left" />
+    <framepos objtype="site" objname="attachment_site_left" name="franka/flange_pos_left" />
+    <framequat objtype="site" objname="attachment_site_left" name="franka/flange_quat_left" />
+    <framelinvel objtype="site" objname="attachment_site_left" name="franka/flange_vel_left" />
+  </sensor>
+</mujoco>

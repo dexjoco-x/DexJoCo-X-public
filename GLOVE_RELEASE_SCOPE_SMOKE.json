@@ -1,0 +1,11 @@
+{
+  "wheel_sha256": "0e209af81979174793893bf3a5e06559c472787ca5beff60653093635039932a",
+  "glove_mapping_files": 0,
+  "out_of_scope_files": 0,
+  "passed": true,
+  "installed_wheel_cells": 42,
+  "installed_source_interfaces": 8,
+  "hardware_glove_capture_public": false,
+  "automatic_expansion_source_target_fk": true,
+  "live_capture_interfaces_rejected": 50
+}

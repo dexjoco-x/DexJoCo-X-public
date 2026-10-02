@@ -1,0 +1,36 @@
+{
+  "release": "DexJoCo-X_dataset_v9_candidate_20261001",
+  "tasks": [
+    "bimanual_microwave_cook",
+    "bimanual_photograph",
+    "bimanual_unlock_ipad",
+    "hammer_nail",
+    "pick_bucket",
+    "single_hand_hanoi"
+  ],
+  "episodes": 2100,
+  "frames": 946156,
+  "splits": {
+    "train": 2100
+  },
+  "views": [
+    "front",
+    "wrist_right",
+    "wrist_left_if_present"
+  ],
+  "camera_profile": "dexjoco_official_allegro60_hanoi_front_v1",
+  "manifest_sha256": {
+    "bimanual_microwave_cook.json": "7f2a57ac3a454dc0fe916f78658cdb08fb9d13c0a373fe765c7c6b6257e692c0",
+    "bimanual_photograph.json": "ebc04d9d71c59c8b7462be5b58f317a77d44d649337765e84b12c72f97ab1990",
+    "bimanual_unlock_ipad.json": "a35ee52621fe097be64895f0432c250e4e669cb63483e77d126b3d14a0337af7",
+    "hammer_nail.json": "076b5915baf582303bfaf2ffc7cb4f704d4f2c8c8b65bfc4449ad01537c336a5",
+    "pick_bucket.json": "566bff80f1f321772748ef87fb4741db54305ae2b83cb3bf88855a359b86d558",
+    "single_hand_hanoi.json": "95de01b7ccf42793e9e5361c02d9dd64f3473c2c06f703b5b8a8595f748392bf"
+  },
+  "model_training_started_by_this_release": false,
+  "replaced_episodes": 200,
+  "retained_episodes": 1900,
+  "parent_release": "20260911_ipad_manual_v8",
+  "corrected_xhand_microwave_episodes": 50,
+  "xhand_microwave_mount_revision": "xhand_left_mount_rx180_v1"
+}

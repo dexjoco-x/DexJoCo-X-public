@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "origin": "Generated within this project on 2026-07-05 from a text-only Pillow recipe; exact pixel reproduction verified on 2026-10-01. No chat history is distributed.",
+  "project_asset_license": "MIT",
+  "font": "DejaVuSans-Bold.ttf",
+  "font_sha256": "aa2ebed70cf6a389400a49feeb976c785de411f387d0cff998472590760cc2b6",
+  "font_license_url": "https://dejavu-fonts.github.io/License.html",
+  "font_binary_distributed": false,
+  "verification_tool": "tools/verify_project_texture.py",
+  "verification_tool_sha256": "9f7db0654f52100875b3564c26d01aa1cdd7f3bea827873ba104346238e15dcd",
+  "notice_sha256": {
+    "licenses/third_party/dejavu/NOTICE.txt": "8cb8ba9d2f0a4ac9b508eba3f0bfdf1ce81fd19681df0ac30e42af2804c52680",
+    "LICENSE": "4aa0fb184e17a4df94fda249247e08fb8200533bda3a02e951e4679b7ff032bd"
+  },
+  "files": [
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/photograph/logo-DIG-inspire.png",
+      "sha256": "17d94cee93540a66e9f5e1bd8e1339342780f8f8acd69ffbccda62962fafebdd",
+      "pixel_sha256": "3cf7b2383784f3ce11e1829b44d35db5fe607d150073073e40fce1b689ea594e",
+      "pixel_shape": [
+        4000,
+        4000,
+        3
+      ],
+      "status": "documented-license",
+      "modifications": "None to the current frozen asset."
+    }
+  ]
+}

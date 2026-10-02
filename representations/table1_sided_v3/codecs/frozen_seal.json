@@ -1,0 +1,8 @@
+{
+  "status": "frozen",
+  "selected_step": 10000,
+  "selected_sha256": "73b1c80497a493835e58ace3e3abe509906d63916a4c263f5191d585a38bbd7b",
+  "source_checkpoint_sha256": "100af4cb06d752a1b41472fcc0057506609330c90e91b3945b4112e4b44729ad",
+  "validation_sha256": "e013dbf0559fff3e540fd7d3ed76c7ef4f060266e4b1ef513b03d0a4abe09d16",
+  "test_split_used": false
+}

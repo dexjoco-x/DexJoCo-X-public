@@ -1,0 +1,1 @@
+Only frozen simulator model assets are provided in this directory. No glove mappings, calibration code or live-input bridges are distributed. See the repository THIRD_PARTY_NOTICES.md and LICENSE_SCOPE.md.

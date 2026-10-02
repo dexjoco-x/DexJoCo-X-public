@@ -1,0 +1,1910 @@
+{
+  "version": "benchmark7_v3",
+  "task": "bimanual_photograph",
+  "hand": "wuji",
+  "status": "candidate_not_task_validated",
+  "reference": "repo://simulator/dexjoco/sim/envs/xmls/cross_embodiment_v1_bimanual_photograph_inspire.xml",
+  "reference_sha256": "5dbb96e67cbe13c9a27c0213a3620d05f00d4f018ef4836143ea479da0eec5df",
+  "xml_sha256": "71b19848d1ca7668bba3688118299ff21bad1a5fe2104d807fb63b045ce1b22b",
+  "sides": {
+    "right": {
+      "joint_names": [
+        "benchhand_right_native_wuji_F1J1",
+        "benchhand_right_native_wuji_F1J2",
+        "benchhand_right_native_wuji_F1J3",
+        "benchhand_right_native_wuji_F1J4",
+        "benchhand_right_native_wuji_F2J1",
+        "benchhand_right_native_wuji_F2J2",
+        "benchhand_right_native_wuji_F2J3",
+        "benchhand_right_native_wuji_F2J4",
+        "benchhand_right_native_wuji_F3J1",
+        "benchhand_right_native_wuji_F3J2",
+        "benchhand_right_native_wuji_F3J3",
+        "benchhand_right_native_wuji_F3J4",
+        "benchhand_right_native_wuji_F4J1",
+        "benchhand_right_native_wuji_F4J2",
+        "benchhand_right_native_wuji_F4J3",
+        "benchhand_right_native_wuji_F4J4",
+        "benchhand_right_native_wuji_F5J1",
+        "benchhand_right_native_wuji_F5J2",
+        "benchhand_right_native_wuji_F5J3",
+        "benchhand_right_native_wuji_F5J4"
+      ],
+      "state_joint_names": [
+        "benchhand_right_native_wuji_F1J1",
+        "benchhand_right_native_wuji_F1J2",
+        "benchhand_right_native_wuji_F1J3",
+        "benchhand_right_native_wuji_F1J4",
+        "benchhand_right_native_wuji_F2J1",
+        "benchhand_right_native_wuji_F2J2",
+        "benchhand_right_native_wuji_F2J3",
+        "benchhand_right_native_wuji_F2J4",
+        "benchhand_right_native_wuji_F3J1",
+        "benchhand_right_native_wuji_F3J2",
+        "benchhand_right_native_wuji_F3J3",
+        "benchhand_right_native_wuji_F3J4",
+        "benchhand_right_native_wuji_F4J1",
+        "benchhand_right_native_wuji_F4J2",
+        "benchhand_right_native_wuji_F4J3",
+        "benchhand_right_native_wuji_F4J4",
+        "benchhand_right_native_wuji_F5J1",
+        "benchhand_right_native_wuji_F5J2",
+        "benchhand_right_native_wuji_F5J3",
+        "benchhand_right_native_wuji_F5J4"
+      ],
+      "kinematic_joint_names": [
+        "benchhand_right_native_wuji_F1J1",
+        "benchhand_right_native_wuji_F1J2",
+        "benchhand_right_native_wuji_F1J3",
+        "benchhand_right_native_wuji_F1J4",
+        "benchhand_right_native_wuji_F2J1",
+        "benchhand_right_native_wuji_F2J2",
+        "benchhand_right_native_wuji_F2J3",
+        "benchhand_right_native_wuji_F2J4",
+        "benchhand_right_native_wuji_F3J1",
+        "benchhand_right_native_wuji_F3J2",
+        "benchhand_right_native_wuji_F3J3",
+        "benchhand_right_native_wuji_F3J4",
+        "benchhand_right_native_wuji_F4J1",
+        "benchhand_right_native_wuji_F4J2",
+        "benchhand_right_native_wuji_F4J3",
+        "benchhand_right_native_wuji_F4J4",
+        "benchhand_right_native_wuji_F5J1",
+        "benchhand_right_native_wuji_F5J2",
+        "benchhand_right_native_wuji_F5J3",
+        "benchhand_right_native_wuji_F5J4"
+      ],
+      "transmissions": [
+        [
+          [
+            "benchhand_right_native_wuji_F1J1",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_wuji_F1J2",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_wuji_F1J3",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_wuji_F1J4",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_wuji_F2J1",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_wuji_F2J2",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_wuji_F2J3",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_wuji_F2J4",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_wuji_F3J1",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_wuji_F3J2",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_wuji_F3J3",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_wuji_F3J4",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_wuji_F4J1",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_wuji_F4J2",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_wuji_F4J3",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_wuji_F4J4",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_wuji_F5J1",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_wuji_F5J2",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_wuji_F5J3",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_wuji_F5J4",
+            1.0
+          ]
+        ]
+      ],
+      "actuator_names": [
+        "benchhand_right_native_wuji_F1J1_ctrl",
+        "benchhand_right_native_wuji_F1J2_ctrl",
+        "benchhand_right_native_wuji_F1J3_ctrl",
+        "benchhand_right_native_wuji_F1J4_ctrl",
+        "benchhand_right_native_wuji_F2J1_ctrl",
+        "benchhand_right_native_wuji_F2J2_ctrl",
+        "benchhand_right_native_wuji_F2J3_ctrl",
+        "benchhand_right_native_wuji_F2J4_ctrl",
+        "benchhand_right_native_wuji_F3J1_ctrl",
+        "benchhand_right_native_wuji_F3J2_ctrl",
+        "benchhand_right_native_wuji_F3J3_ctrl",
+        "benchhand_right_native_wuji_F3J4_ctrl",
+        "benchhand_right_native_wuji_F4J1_ctrl",
+        "benchhand_right_native_wuji_F4J2_ctrl",
+        "benchhand_right_native_wuji_F4J3_ctrl",
+        "benchhand_right_native_wuji_F4J4_ctrl",
+        "benchhand_right_native_wuji_F5J1_ctrl",
+        "benchhand_right_native_wuji_F5J2_ctrl",
+        "benchhand_right_native_wuji_F5J3_ctrl",
+        "benchhand_right_native_wuji_F5J4_ctrl"
+      ],
+      "home": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.18,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.14,
+        0.0,
+        0.0,
+        0.0,
+        0.2,
+        0.0,
+        0.0
+      ],
+      "joint_ranges": [
+        [
+          -0.0448,
+          1.6508
+        ],
+        [
+          -0.1659,
+          0.9339
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          -1.63595,
+          0.0
+        ],
+        [
+          -0.495,
+          0.495
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          -1.63595,
+          0.0
+        ],
+        [
+          -0.495,
+          0.495
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          -1.63595,
+          0.0
+        ],
+        [
+          -0.495,
+          0.495
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          -1.63595,
+          0.0
+        ],
+        [
+          -0.495,
+          0.495
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          0.0,
+          1.6272
+        ]
+      ],
+      "actuator_ranges": [
+        [
+          -0.0448,
+          1.6508
+        ],
+        [
+          -0.1659,
+          0.9339
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          -1.63595,
+          0.0
+        ],
+        [
+          -0.495,
+          0.495
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          -1.63595,
+          0.0
+        ],
+        [
+          -0.495,
+          0.495
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          -1.63595,
+          0.0
+        ],
+        [
+          -0.495,
+          0.495
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          -1.63595,
+          0.0
+        ],
+        [
+          -0.495,
+          0.495
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          0.0,
+          1.6272
+        ]
+      ],
+      "independent_commands": 20,
+      "actuators": 20,
+      "state_joints": 20,
+      "command_semantics": "actuator joint/tendon position targets; proxy joint_names used only for reset"
+    },
+    "left": {
+      "joint_names": [
+        "benchhand_left_native_wuji_F1J1",
+        "benchhand_left_native_wuji_F1J2",
+        "benchhand_left_native_wuji_F1J3",
+        "benchhand_left_native_wuji_F1J4",
+        "benchhand_left_native_wuji_F2J1",
+        "benchhand_left_native_wuji_F2J2",
+        "benchhand_left_native_wuji_F2J3",
+        "benchhand_left_native_wuji_F2J4",
+        "benchhand_left_native_wuji_F3J1",
+        "benchhand_left_native_wuji_F3J2",
+        "benchhand_left_native_wuji_F3J3",
+        "benchhand_left_native_wuji_F3J4",
+        "benchhand_left_native_wuji_F4J1",
+        "benchhand_left_native_wuji_F4J2",
+        "benchhand_left_native_wuji_F4J3",
+        "benchhand_left_native_wuji_F4J4",
+        "benchhand_left_native_wuji_F5J1",
+        "benchhand_left_native_wuji_F5J2",
+        "benchhand_left_native_wuji_F5J3",
+        "benchhand_left_native_wuji_F5J4"
+      ],
+      "state_joint_names": [
+        "benchhand_left_native_wuji_F1J1",
+        "benchhand_left_native_wuji_F1J2",
+        "benchhand_left_native_wuji_F1J3",
+        "benchhand_left_native_wuji_F1J4",
+        "benchhand_left_native_wuji_F2J1",
+        "benchhand_left_native_wuji_F2J2",
+        "benchhand_left_native_wuji_F2J3",
+        "benchhand_left_native_wuji_F2J4",
+        "benchhand_left_native_wuji_F3J1",
+        "benchhand_left_native_wuji_F3J2",
+        "benchhand_left_native_wuji_F3J3",
+        "benchhand_left_native_wuji_F3J4",
+        "benchhand_left_native_wuji_F4J1",
+        "benchhand_left_native_wuji_F4J2",
+        "benchhand_left_native_wuji_F4J3",
+        "benchhand_left_native_wuji_F4J4",
+        "benchhand_left_native_wuji_F5J1",
+        "benchhand_left_native_wuji_F5J2",
+        "benchhand_left_native_wuji_F5J3",
+        "benchhand_left_native_wuji_F5J4"
+      ],
+      "kinematic_joint_names": [
+        "benchhand_left_native_wuji_F1J1",
+        "benchhand_left_native_wuji_F1J2",
+        "benchhand_left_native_wuji_F1J3",
+        "benchhand_left_native_wuji_F1J4",
+        "benchhand_left_native_wuji_F2J1",
+        "benchhand_left_native_wuji_F2J2",
+        "benchhand_left_native_wuji_F2J3",
+        "benchhand_left_native_wuji_F2J4",
+        "benchhand_left_native_wuji_F3J1",
+        "benchhand_left_native_wuji_F3J2",
+        "benchhand_left_native_wuji_F3J3",
+        "benchhand_left_native_wuji_F3J4",
+        "benchhand_left_native_wuji_F4J1",
+        "benchhand_left_native_wuji_F4J2",
+        "benchhand_left_native_wuji_F4J3",
+        "benchhand_left_native_wuji_F4J4",
+        "benchhand_left_native_wuji_F5J1",
+        "benchhand_left_native_wuji_F5J2",
+        "benchhand_left_native_wuji_F5J3",
+        "benchhand_left_native_wuji_F5J4"
+      ],
+      "transmissions": [
+        [
+          [
+            "benchhand_left_native_wuji_F1J1",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_left_native_wuji_F1J2",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_left_native_wuji_F1J3",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_left_native_wuji_F1J4",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_left_native_wuji_F2J1",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_left_native_wuji_F2J2",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_left_native_wuji_F2J3",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_left_native_wuji_F2J4",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_left_native_wuji_F3J1",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_left_native_wuji_F3J2",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_left_native_wuji_F3J3",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_left_native_wuji_F3J4",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_left_native_wuji_F4J1",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_left_native_wuji_F4J2",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_left_native_wuji_F4J3",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_left_native_wuji_F4J4",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_left_native_wuji_F5J1",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_left_native_wuji_F5J2",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_left_native_wuji_F5J3",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_left_native_wuji_F5J4",
+            1.0
+          ]
+        ]
+      ],
+      "actuator_names": [
+        "benchhand_left_native_wuji_F1J1_ctrl",
+        "benchhand_left_native_wuji_F1J2_ctrl",
+        "benchhand_left_native_wuji_F1J3_ctrl",
+        "benchhand_left_native_wuji_F1J4_ctrl",
+        "benchhand_left_native_wuji_F2J1_ctrl",
+        "benchhand_left_native_wuji_F2J2_ctrl",
+        "benchhand_left_native_wuji_F2J3_ctrl",
+        "benchhand_left_native_wuji_F2J4_ctrl",
+        "benchhand_left_native_wuji_F3J1_ctrl",
+        "benchhand_left_native_wuji_F3J2_ctrl",
+        "benchhand_left_native_wuji_F3J3_ctrl",
+        "benchhand_left_native_wuji_F3J4_ctrl",
+        "benchhand_left_native_wuji_F4J1_ctrl",
+        "benchhand_left_native_wuji_F4J2_ctrl",
+        "benchhand_left_native_wuji_F4J3_ctrl",
+        "benchhand_left_native_wuji_F4J4_ctrl",
+        "benchhand_left_native_wuji_F5J1_ctrl",
+        "benchhand_left_native_wuji_F5J2_ctrl",
+        "benchhand_left_native_wuji_F5J3_ctrl",
+        "benchhand_left_native_wuji_F5J4_ctrl"
+      ],
+      "home": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.18,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.14,
+        0.0,
+        0.0,
+        0.0,
+        0.2,
+        0.0,
+        0.0
+      ],
+      "joint_ranges": [
+        [
+          -0.0448,
+          1.6508
+        ],
+        [
+          -0.1659,
+          0.9339
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          -1.63595,
+          0.0
+        ],
+        [
+          -0.495,
+          0.495
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          -1.63595,
+          0.0
+        ],
+        [
+          -0.495,
+          0.495
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          -1.63595,
+          0.0
+        ],
+        [
+          -0.495,
+          0.495
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          -1.63595,
+          0.0
+        ],
+        [
+          -0.495,
+          0.495
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          0.0,
+          1.6272
+        ]
+      ],
+      "actuator_ranges": [
+        [
+          -0.0448,
+          1.6508
+        ],
+        [
+          -0.1659,
+          0.9339
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          -1.63595,
+          0.0
+        ],
+        [
+          -0.495,
+          0.495
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          -1.63595,
+          0.0
+        ],
+        [
+          -0.495,
+          0.495
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          -1.63595,
+          0.0
+        ],
+        [
+          -0.495,
+          0.495
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          -1.63595,
+          0.0
+        ],
+        [
+          -0.495,
+          0.495
+        ],
+        [
+          0.0,
+          1.6272
+        ],
+        [
+          0.0,
+          1.6272
+        ]
+      ],
+      "independent_commands": 20,
+      "actuators": 20,
+      "state_joints": 20,
+      "command_semantics": "actuator joint/tendon position targets; proxy joint_names used only for reset"
+    }
+  },
+  "surface_friction_policy": {
+    "id": "source_first_surface_friction_v1",
+    "scope": "surface friction only; not uniform whole-hand physics",
+    "source_review": {
+      "basis": "fallback_local_grasp_patch",
+      "files": [
+        "teleoperation/wuji/README.md",
+        "teleoperation/wuji/assets/right/main_mujoco.urdf",
+        "teleoperation/wuji/assets/left/main_mujoco.urdf",
+        "teleoperation/wuji/tools/generate_panda_wuji_xml.py"
+      ],
+      "urls": [
+        "https://github.com/wuji-technology/wuji-description"
+      ],
+      "note": "2.0/2.2/2.4 surfaces are set in local grasp postprocessing, not substantiated as calibrated surface values. Geometry patches are separately unresolved and unchanged.",
+      "files_sha256": {
+        "teleoperation/wuji/README.md": "abd6c6afdad67999d969e160044651018f5ba2c194a031372bc433138e60eb4b",
+        "teleoperation/wuji/assets/right/main_mujoco.urdf": "eb2d212bb0fb39c571cf0dfa694dce85c16f3e79c537bc9f0a21b8a2e6e75527",
+        "teleoperation/wuji/assets/left/main_mujoco.urdf": "5da421b46b27acd670885d5e8a2f3227bb9005a933c62b8277e211354879babe",
+        "teleoperation/wuji/tools/generate_panda_wuji_xml.py": "03898c843242cc1864424e35269d07138c4e1ad1f028a2dba0595f667c348149"
+      }
+    },
+    "geoms": {
+      "benchhand_right_wuji_wrist_adapter_collision": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_right_mount:geom:2": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_wuji_CMC_joint:geom:0": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_wuji_CMC_2rd:geom:0": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_wuji_MCP_thumb:geom:0": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_wuji_IP_thumb:geom:0": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_wuji_IP_thumb:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_wuji_MCP_joint_index:geom:0": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_wuji_PIPMCP_2rd_index:geom:0": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_wuji_DIP_index:geom:0": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_wuji_tipmount_index:geom:0": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_wuji_tipmount_index:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_wuji_MCP_joint_middle:geom:0": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_wuji_PIPMCP_2rd_middle:geom:0": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_wuji_DIP_middle:geom:0": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_wuji_tipmount_middle:geom:0": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_wuji_tipmount_middle:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_wuji_MCP_joint_ring:geom:0": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_wuji_PIPMCP_2rd_ring:geom:0": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_wuji_DIP_ring:geom:0": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_wuji_tipmount_ring:geom:0": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_wuji_tipmount_ring:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_wuji_MCP_joint_pinky:geom:0": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_wuji_PIPMCP_2rd_pinky:geom:0": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_wuji_DIP_pinky:geom:0": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_wuji_tipmount_pinky:geom:0": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_wuji_tipmount_pinky:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_wuji_wrist_adapter_collision": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_mount:geom:2": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_native_wuji_CMC_joint:geom:0": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_native_wuji_CMC_2rd:geom:0": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_native_wuji_MCP_thumb:geom:0": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_native_wuji_IP_thumb:geom:0": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_native_wuji_IP_thumb:geom:1": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_native_wuji_MCP_joint_index:geom:0": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_native_wuji_PIPMCP_2rd_index:geom:0": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_native_wuji_DIP_index:geom:0": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_native_wuji_tipmount_index:geom:0": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_native_wuji_tipmount_index:geom:1": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_native_wuji_MCP_joint_middle:geom:0": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_native_wuji_PIPMCP_2rd_middle:geom:0": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_native_wuji_DIP_middle:geom:0": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_native_wuji_tipmount_middle:geom:0": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_native_wuji_tipmount_middle:geom:1": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_native_wuji_MCP_joint_ring:geom:0": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_native_wuji_PIPMCP_2rd_ring:geom:0": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_native_wuji_DIP_ring:geom:0": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_native_wuji_tipmount_ring:geom:0": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_native_wuji_tipmount_ring:geom:1": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_native_wuji_MCP_joint_pinky:geom:0": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_native_wuji_PIPMCP_2rd_pinky:geom:0": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_native_wuji_DIP_pinky:geom:0": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_native_wuji_tipmount_pinky:geom:0": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      },
+      "benchhand_left_native_wuji_tipmount_pinky:geom:1": {
+        "side": "left",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "fallback_local_grasp_patch",
+          "measured": false
+        }
+      }
+    },
+    "measured_surface_evidence_found": false,
+    "preserved": "Every compiled array other than hand geom_friction, including joint frictionloss and elastomer solref.",
+    "limitations": [
+      "Fallback surface parameters are not material measurements.",
+      "Existing geometric/postprocessing approximations have not been certified or removed.",
+      "Other contact solver parameters are retained, not newly calibrated in this revision."
+    ],
+    "sha256": "7d22b661f9346f1850d4f3e6a199f4e5f10219ab42b3aec8d6afb00cebddb6ed"
+  },
+  "parent_model": {
+    "path": "repo://simulator/dexjoco/sim/envs/xmls/benchmark7_v1_bimanual_photograph_wuji.xml",
+    "xml_sha256": "c8ac427750e31a89349fd16d41030ffcab51d1a24529c407a426faa984bfaebd",
+    "metadata_sha256": "3af1866249964d610b1812ea4d6fedd9d99ba05fd80b98d6e1a49191300d3486"
+  },
+  "revision_check": {
+    "changed_arrays": [
+      "geom_friction"
+    ],
+    "changed_hand_geoms": 10,
+    "inherited_nonfinite_arrays": {
+      "mesh_polynormal": {
+        "count": 1014,
+        "locations_sha256": "9e90bf5fa89a9416bc10eb063bab7b4463bdf2cc1dbb6a3f5673f64cacc26ee1"
+      }
+    },
+    "nonhand_sha256": "1cd9ce91b81784883f7cb5418a1163e69e0dbee8548fd3c35238d11483b8c2c1"
+  },
+  "geometry_revision": {
+    "id": "wuji_native_collision_only_v1",
+    "removed_geoms": {
+      "benchhand_right_native_wuji_thumb_index_web_pad": {
+        "name": "benchhand_right_native_wuji_thumb_index_web_pad",
+        "size": "0.0065 0.0210832",
+        "pos": "-0.1165 0.027 0.0295",
+        "quat": "0.778922 0.0608934 0.624157 0",
+        "type": "capsule",
+        "contype": "2",
+        "conaffinity": "4",
+        "group": "3",
+        "friction": "1 0.0050000000000000001 0.0001",
+        "solref": "0.004",
+        "rgba": "0.05 0.05 0.05 0.16"
+      },
+      "benchhand_right_native_wuji_thumb_fingertip_pad": {
+        "name": "benchhand_right_native_wuji_thumb_fingertip_pad",
+        "size": "0.0095 0.0130015",
+        "pos": "-0.021 0.001 0.0002",
+        "quat": "0.707107 0.0108773 0.707023 0",
+        "type": "capsule",
+        "group": "3",
+        "friction": "1 0.0050000000000000001 0.0001",
+        "solref": "0.004",
+        "rgba": "0.05 0.05 0.05 0.2"
+      },
+      "benchhand_right_native_wuji_index_fingertip_pad": {
+        "name": "benchhand_right_native_wuji_index_fingertip_pad",
+        "size": "0.0076",
+        "pos": "-0.0185 0.00105 0",
+        "group": "3",
+        "friction": "1 0.0050000000000000001 0.0001",
+        "solref": "0.004",
+        "rgba": "0.05 0.05 0.05 0.18"
+      },
+      "benchhand_right_native_wuji_middle_fingertip_pad": {
+        "name": "benchhand_right_native_wuji_middle_fingertip_pad",
+        "size": "0.0076",
+        "pos": "-0.0185 0.00105 0",
+        "group": "3",
+        "friction": "1 0.0050000000000000001 0.0001",
+        "solref": "0.004",
+        "rgba": "0.05 0.05 0.05 0.18"
+      },
+      "benchhand_right_native_wuji_ring_fingertip_pad": {
+        "name": "benchhand_right_native_wuji_ring_fingertip_pad",
+        "size": "0.0076",
+        "pos": "-0.0185 0.00104 0",
+        "group": "3",
+        "friction": "1 0.0050000000000000001 0.0001",
+        "solref": "0.004",
+        "rgba": "0.05 0.05 0.05 0.18"
+      },
+      "benchhand_right_native_wuji_pinky_fingertip_pad": {
+        "name": "benchhand_right_native_wuji_pinky_fingertip_pad",
+        "size": "0.0076",
+        "pos": "-0.0185 0.00105 0",
+        "group": "3",
+        "friction": "1 0.0050000000000000001 0.0001",
+        "solref": "0.004",
+        "rgba": "0.05 0.05 0.05 0.18"
+      },
+      "benchhand_left_native_wuji_thumb_index_web_pad": {
+        "name": "benchhand_left_native_wuji_thumb_index_web_pad",
+        "size": "0.0065 0.0210832",
+        "pos": "-0.1165 -0.027 0.0295",
+        "quat": "0.778922 -0.0608934 0.624157 0",
+        "type": "capsule",
+        "contype": "2",
+        "conaffinity": "4",
+        "group": "3",
+        "friction": "1 0.0050000000000000001 0.0001",
+        "solref": "0.004",
+        "rgba": "0.05 0.05 0.05 0.16"
+      },
+      "benchhand_left_native_wuji_thumb_fingertip_pad": {
+        "name": "benchhand_left_native_wuji_thumb_fingertip_pad",
+        "size": "0.0095 0.0130015",
+        "pos": "0.021 -0.001 -0.0002",
+        "quat": "0.707107 -0.0108773 -0.707023 0",
+        "type": "capsule",
+        "group": "3",
+        "friction": "1 0.0050000000000000001 0.0001",
+        "solref": "0.004",
+        "rgba": "0.05 0.05 0.05 0.2"
+      },
+      "benchhand_left_native_wuji_index_fingertip_pad": {
+        "name": "benchhand_left_native_wuji_index_fingertip_pad",
+        "size": "0.0076",
+        "pos": "0.0185 -0.00105 0",
+        "group": "3",
+        "friction": "1 0.0050000000000000001 0.0001",
+        "solref": "0.004",
+        "rgba": "0.05 0.05 0.05 0.18"
+      },
+      "benchhand_left_native_wuji_middle_fingertip_pad": {
+        "name": "benchhand_left_native_wuji_middle_fingertip_pad",
+        "size": "0.0076",
+        "pos": "0.0185 -0.00105 0",
+        "group": "3",
+        "friction": "1 0.0050000000000000001 0.0001",
+        "solref": "0.004",
+        "rgba": "0.05 0.05 0.05 0.18"
+      }
+    },
+    "source_files": {
+      "teleoperation/wuji/assets/right/main.urdf": "ffa48725d9c9b586f4b2001cd2e599d141d41c20a2442264b8cc7d96ff363d9d",
+      "teleoperation/wuji/assets/right/main_mujoco.urdf": "eb2d212bb0fb39c571cf0dfa694dce85c16f3e79c537bc9f0a21b8a2e6e75527",
+      "teleoperation/wuji/assets/left/main.urdf": "02ed49c2c6c7f5775031e3ca75bf24446485c77303830ebacabc83ce8adc810e",
+      "teleoperation/wuji/assets/left/main_mujoco.urdf": "5da421b46b27acd670885d5e8a2f3227bb9005a933c62b8277e211354879babe",
+      "teleoperation/wuji/tools/generate_panda_wuji_xml.py": "03898c843242cc1864424e35269d07138c4e1ad1f028a2dba0595f667c348149"
+    },
+    "parent": {
+      "path": "repo://simulator/dexjoco/sim/envs/xmls/benchmark7_v2_bimanual_photograph_wuji.xml",
+      "xml_sha256": "27a4d69b434c998a41516cd19c6681539feebb950a25d61d4f0be71f26c664c5",
+      "metadata_sha256": "f52c4edbd8758c4261c83a3a6d7e6989ab72b9731e9c294225c4660aa1b666b6"
+    },
+    "scope": "Remove local Wuji supplemental grasp geoms only. Keep native mesh collisions and wrist adapter.",
+    "limitations": [
+      "Matched local URDF, not independently certified hardware geometry.",
+      "Inherited inertia floors, drives, solver settings and source imperfections unchanged.",
+      "Friction policy source notes describe the imported parent; this record describes current geometry."
+    ],
+    "sha256": "03f88de867fce15bbae24f4508a787d6c2c3d890de24b4fb79c1f95e8c7a162d"
+  }
+}

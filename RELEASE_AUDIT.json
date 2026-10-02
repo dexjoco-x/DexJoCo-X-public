@@ -1,0 +1,25 @@
+{
+  "passed_static_checks": true,
+  "files": 1110,
+  "runtime_asset_integrity": {
+    "passed": true,
+    "checked": 801,
+    "missing": [],
+    "changed": []
+  },
+  "model_training_implementation_included": false,
+  "glove_mappings_public": false,
+  "weights_public": false,
+  "complete_demonstrations_in_git": false,
+  "third_party_license_review_complete": false,
+  "asset_license_counts": {
+    "noncommercial-redistribution": 76,
+    "source-or-license-unresolved": 282,
+    "documented-license": 303
+  },
+  "new_upstream_permissions_obtained": false,
+  "publication_requested_by_project_owner": false,
+  "current_visibility": "PRIVATE",
+  "publication_paused_by_project_owner": true,
+  "errors": []
+}

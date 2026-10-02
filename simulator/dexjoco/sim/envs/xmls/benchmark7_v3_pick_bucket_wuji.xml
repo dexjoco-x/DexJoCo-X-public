@@ -1,0 +1,963 @@
+<mujoco model="benchmark7_v3_pick_bucket_wuji">
+  <compiler angle="radian" />
+
+  <option noslip_tolerance="0" noslip_iterations="5" />
+
+  <visual>
+    <global azimuth="160" elevation="-20" offwidth="2048" offheight="2048" />
+    <quality offsamples="8" />
+    <headlight ambient="0.5 0.5 0.5" />
+  </visual>
+
+  <statistic extent="0.8" center="0.3 0 0.4" />
+
+  <default>
+    <default class="panda">
+      <joint range="-2.8973 2.8973" armature="0.1" damping="1" />
+      <site size="0.001 0.005 0.005" group="4" rgba="0.5 0.5 0.5 0.3" />
+      <default class="panda/visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" />
+      </default>
+      <default class="panda/collision">
+        <geom type="mesh" group="3" />
+      </default>
+    </default>
+    <default class="2f85">
+      <mesh scale="0.001 0.001 0.001" />
+      <site group="4" rgba="0.9 0.9 0.9 1" />
+      <general biastype="affine" />
+      <default class="driver">
+        <joint solreflimit="0.005" solimplimit="0.95 0.99" range="0 0.8" armature="0.005" damping="0.1" />
+      </default>
+      <default class="follower">
+        <joint solreflimit="0.005" solimplimit="0.95 0.99" range="-0.872664 0.872664" />
+      </default>
+      <default class="spring_link">
+        <joint springref="2.62" stiffness="0.05" range="-0.296706 0.8" damping="0.00125" />
+      </default>
+      <default class="coupler">
+        <joint solreflimit="0.005" solimplimit="0.95 0.99" range="-1.57 0" />
+      </default>
+      <default class="2f85/visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" />
+      </default>
+      <default class="2f85/collision">
+        <geom type="mesh" group="3" />
+        <default class="pad_box1">
+          <geom size="0.011 0.004 0.009375" type="box" priority="1" friction="0.7" solref="0.004" solimp="0.95 0.99" rgba="0.55 0.55 0.55 1" />
+        </default>
+        <default class="pad_box2">
+          <geom size="0.011 0.004 0.009375" type="box" priority="1" friction="0.6" solref="0.004" solimp="0.95 0.99" rgba="0.45 0.45 0.45 1" />
+        </default>
+      </default>
+    </default>
+    <default class="allegro_right">
+      <joint damping="0.1" />
+      <geom density="800" />
+      <general biastype="affine" gainprm="2" biasprm="0 -2" />
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" material="black" />
+        <default class="palm_visual">
+          <geom mesh="base_link" />
+        </default>
+        <default class="base_visual">
+          <geom mesh="link_0.0" />
+        </default>
+        <default class="proximal_visual">
+          <geom mesh="link_1.0" />
+        </default>
+        <default class="medial_visual">
+          <geom mesh="link_2.0" />
+        </default>
+        <default class="distal_visual">
+          <geom mesh="link_3.0" />
+        </default>
+        <default class="fingertip_visual">
+          <geom material="white" mesh="link_3.0_tip" />
+        </default>
+        <default class="thumbtip_visual">
+          <geom material="white" mesh="link_15.0_tip" />
+        </default>
+      </default>
+      <default class="collision">
+        <geom type="box" group="3" />
+        <default class="palm_collision">
+          <geom size="0.0204 0.0565 0.0475" />
+        </default>
+        <default class="base_collision">
+          <geom size="0.0098 0.01375 0.0082" />
+          <default class="thumb_base_collision">
+            <geom size="0.0179 0.017 0.02275" />
+          </default>
+        </default>
+        <default class="proximal_collision">
+          <geom size="0.0098 0.01375 0.027" />
+          <default class="thumb_proximal_collision">
+            <geom size="0.0098 0.01375 0.00885" />
+          </default>
+        </default>
+        <default class="medial_collision">
+          <geom size="0.0098 0.01375 0.0192" />
+          <default class="thumb_medial_collision">
+            <geom size="0.0098 0.01375 0.0257" />
+          </default>
+        </default>
+        <default class="distal_collision">
+          <geom size="0.0098 0.01375 0.008" />
+          <default class="thumb_distal_collision">
+            <geom size="0.0098 0.01375 0.0157" />
+          </default>
+        </default>
+        <default class="fingertip_collision">
+          <geom size="0.012 0.01 0" type="capsule" />
+          <default class="thumbtip_collision">
+            <geom size="0.012 0.008 0" />
+          </default>
+        </default>
+      </default>
+      <default class="base">
+        <joint range="-0.47 0.47" />
+        <general ctrlrange="-0.47 0.47" />
+      </default>
+      <default class="proximal">
+        <joint range="-0.196 1.61" />
+        <general ctrlrange="-0.196 1.61" />
+      </default>
+      <default class="medial">
+        <joint range="-0.174 1.709" />
+        <general ctrlrange="-0.174 1.709" />
+      </default>
+      <default class="distal">
+        <joint range="-0.227 1.618" />
+        <general ctrlrange="-0.227 1.618" />
+      </default>
+      <default class="thumb_base">
+        <joint range="0.263 1.396" />
+        <general ctrlrange="0.263 1.396" />
+      </default>
+      <default class="thumb_proximal">
+        <joint range="-0.105 1.163" />
+        <general ctrlrange="-0.105 1.163" />
+      </default>
+      <default class="thumb_medial">
+        <joint range="-0.189 1.644" />
+        <general ctrlrange="-0.189 1.644" />
+      </default>
+      <default class="thumb_distal">
+        <joint range="-0.162 1.719" />
+        <general ctrlrange="-0.162 1.719" />
+      </default>
+    </default>
+    <default class="/main" />
+    <default class="bucket">
+      <mesh scale="0.25 0.25 0.25" />
+      <joint limited="true" armature="0.01" damping="0.01" frictionloss="0.01" />
+
+      <equality solref="0.001 2" />
+      <general ctrllimited="true" />
+      <default class="bucket/visual">
+        <geom contype="0" conaffinity="0" condim="1" group="2" />
+      </default>
+      <default class="bucket/collision">
+        <geom group="3" solref="0.001 2" />
+      </default>
+    </default>
+    <default class="benchhand_right_main">
+      <default class="benchhand_right_native_main">
+        <default class="benchhand_right_native_panda">
+          <joint range="-2.8973 2.8973" armature="0.1" damping="1" />
+          <site size="0.001 0.005 0.005" group="4" rgba="0.5 0.5 0.5 0.3" />
+          <default class="benchhand_right_native_panda/visual">
+            <geom type="mesh" contype="0" conaffinity="0" group="2" />
+          </default>
+          <default class="benchhand_right_native_panda/collision">
+            <geom type="mesh" group="3" />
+          </default>
+        </default>
+        <default class="benchhand_right_native_2f85">
+          <mesh scale="0.001 0.001 0.001" />
+          <site group="4" rgba="0.9 0.9 0.9 1" />
+          <general biastype="affine" />
+          <default class="benchhand_right_native_driver">
+            <joint solreflimit="0.005" solimplimit="0.95 0.99" range="0 0.8" armature="0.005" damping="0.1" />
+          </default>
+          <default class="benchhand_right_native_follower">
+            <joint solreflimit="0.005" solimplimit="0.95 0.99" range="-0.872664 0.872664" />
+          </default>
+          <default class="benchhand_right_native_spring_link">
+            <joint springref="2.62" stiffness="0.05" range="-0.296706 0.8" damping="0.00125" />
+          </default>
+          <default class="benchhand_right_native_coupler">
+            <joint solreflimit="0.005" solimplimit="0.95 0.99" range="-1.57 0" />
+          </default>
+          <default class="benchhand_right_native_2f85/visual">
+            <geom type="mesh" contype="0" conaffinity="0" group="2" />
+          </default>
+          <default class="benchhand_right_native_2f85/collision">
+            <geom type="mesh" group="3" />
+            <default class="benchhand_right_native_pad_box1">
+              <geom size="0.011 0.004 0.009375" type="box" priority="1" friction="0.7" solref="0.004" solimp="0.95 0.99" rgba="0.55 0.55 0.55 1" />
+            </default>
+            <default class="benchhand_right_native_pad_box2">
+              <geom size="0.011 0.004 0.009375" type="box" priority="1" friction="0.6" solref="0.004" solimp="0.95 0.99" rgba="0.45 0.45 0.45 1" />
+            </default>
+          </default>
+        </default>
+        <default class="benchhand_right_native_allegro_right">
+          <joint damping="0.1" />
+          <geom density="800" />
+          <general biastype="affine" gainprm="2" biasprm="0 -2" />
+          <default class="benchhand_right_native_visual">
+            <geom type="mesh" contype="0" conaffinity="0" group="2" material="black" />
+            <default class="benchhand_right_native_palm_visual">
+              <geom mesh="base_link" />
+            </default>
+            <default class="benchhand_right_native_base_visual">
+              <geom mesh="link_0.0" />
+            </default>
+            <default class="benchhand_right_native_proximal_visual">
+              <geom mesh="link_1.0" />
+            </default>
+            <default class="benchhand_right_native_medial_visual">
+              <geom mesh="link_2.0" />
+            </default>
+            <default class="benchhand_right_native_distal_visual">
+              <geom mesh="link_3.0" />
+            </default>
+            <default class="benchhand_right_native_fingertip_visual">
+              <geom material="white" mesh="link_3.0_tip" />
+            </default>
+            <default class="benchhand_right_native_thumbtip_visual">
+              <geom material="white" mesh="link_15.0_tip" />
+            </default>
+          </default>
+          <default class="benchhand_right_native_collision">
+            <geom type="box" group="3" />
+            <default class="benchhand_right_native_palm_collision">
+              <geom size="0.0204 0.0565 0.0475" />
+            </default>
+            <default class="benchhand_right_native_base_collision">
+              <geom size="0.0098 0.01375 0.0082" />
+              <default class="benchhand_right_native_thumb_base_collision">
+                <geom size="0.0179 0.017 0.02275" />
+              </default>
+            </default>
+            <default class="benchhand_right_native_proximal_collision">
+              <geom size="0.0098 0.01375 0.027" />
+              <default class="benchhand_right_native_thumb_proximal_collision">
+                <geom size="0.0098 0.01375 0.00885" />
+              </default>
+            </default>
+            <default class="benchhand_right_native_medial_collision">
+              <geom size="0.0098 0.01375 0.0192" />
+              <default class="benchhand_right_native_thumb_medial_collision">
+                <geom size="0.0098 0.01375 0.0257" />
+              </default>
+            </default>
+            <default class="benchhand_right_native_distal_collision">
+              <geom size="0.0098 0.01375 0.008" />
+              <default class="benchhand_right_native_thumb_distal_collision">
+                <geom size="0.0098 0.01375 0.0157" />
+              </default>
+            </default>
+            <default class="benchhand_right_native_fingertip_collision">
+              <geom size="0.012 0.01 0" type="capsule" />
+              <default class="benchhand_right_native_thumbtip_collision">
+                <geom size="0.012 0.008 0" />
+              </default>
+            </default>
+          </default>
+          <default class="benchhand_right_native_base">
+            <joint range="-0.47 0.47" />
+            <general ctrlrange="-0.47 0.47" />
+          </default>
+          <default class="benchhand_right_native_proximal">
+            <joint range="-0.196 1.61" />
+            <general ctrlrange="-0.196 1.61" />
+          </default>
+          <default class="benchhand_right_native_medial">
+            <joint range="-0.174 1.709" />
+            <general ctrlrange="-0.174 1.709" />
+          </default>
+          <default class="benchhand_right_native_distal">
+            <joint range="-0.227 1.618" />
+            <general ctrlrange="-0.227 1.618" />
+          </default>
+          <default class="benchhand_right_native_thumb_base">
+            <joint range="0.263 1.396" />
+            <general ctrlrange="0.263 1.396" />
+          </default>
+          <default class="benchhand_right_native_thumb_proximal">
+            <joint range="-0.105 1.163" />
+            <general ctrlrange="-0.105 1.163" />
+          </default>
+          <default class="benchhand_right_native_thumb_medial">
+            <joint range="-0.189 1.644" />
+            <general ctrlrange="-0.189 1.644" />
+          </default>
+          <default class="benchhand_right_native_thumb_distal">
+            <joint range="-0.162 1.719" />
+            <general ctrlrange="-0.162 1.719" />
+          </default>
+        </default>
+        <default class="benchhand_right_native_/main" />
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" colorspace="linear" name="image0" file="boxed_food_0/visual/image0.png" />
+    <texture type="skybox" colorspace="auto" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="32" height="192" />
+    <texture type="2d" colorspace="auto" name="grid" builtin="checker" rgb1="0.1 0.2 0.3" rgb2="0.2 0.3 0.4" width="512" height="512" />
+    <texture type="skybox" colorspace="auto" builtin="gradient" rgb1="0.9 0.9 1" rgb2="0.2 0.3 0.4" width="256" height="1536" />
+    <texture type="2d" colorspace="sRGB" name="texplane" file="table_arena/textures/light-gray-floor-tile.png" />
+    <texture type="cube" colorspace="linear" name="tex-steel-brushed" file="table_arena/textures/steel-brushed.png" />
+    <texture type="2d" colorspace="linear" name="tex-light-gray-plaster" file="table_arena/textures/light-gray-plaster.png" />
+    <texture type="cube" colorspace="auto" name="textable" builtin="flat" rgb1="0.5 0.5 0.5" width="512" height="3072" />
+    <texture type="2d" colorspace="linear" name="tex-bamboo" file="table_arena/textures/desktop_random_textures/bamboo.png" />
+    <texture type="2d" colorspace="linear" name="tex-blue-wood" file="table_arena/textures/desktop_random_textures/blue-wood.png" />
+    <texture type="2d" colorspace="linear" name="tex-brass-ambra" file="table_arena/textures/desktop_random_textures/brass-ambra.png" />
+    <texture type="2d" colorspace="linear" name="tex-ceramic" file="table_arena/textures/desktop_random_textures/ceramic.png" />
+    <texture type="2d" colorspace="linear" name="tex-cream-plaster" file="table_arena/textures/desktop_random_textures/cream-plaster.png" />
+    <texture type="2d" colorspace="linear" name="tex-dark_wood_planks_2" file="table_arena/textures/desktop_random_textures/dark_wood_planks_2.png" />
+    <texture type="2d" colorspace="linear" name="tex-dark-wood" file="table_arena/textures/desktop_random_textures/dark-wood.png" />
+    <texture type="2d" colorspace="linear" name="tex-gray-plaster" file="table_arena/textures/desktop_random_textures/gray-plaster.png" />
+    <texture type="2d" colorspace="linear" name="tex-gray_wood_planks" file="table_arena/textures/desktop_random_textures/gray_wood_planks.png" />
+    <texture type="2d" colorspace="linear" name="tex-light-wood" file="table_arena/textures/desktop_random_textures/light-wood.png" />
+    <texture type="2d" colorspace="linear" name="tex-metal" file="table_arena/textures/desktop_random_textures/metal.png" />
+    <texture type="2d" colorspace="linear" name="tex-pink-plaster" file="table_arena/textures/desktop_random_textures/pink-plaster.png" />
+    <texture type="2d" colorspace="linear" name="tex-red-wood" file="table_arena/textures/desktop_random_textures/red-wood.png" />
+    <texture type="2d" colorspace="linear" name="tex-steel-scratched" file="table_arena/textures/desktop_random_textures/steel-scratched.png" />
+    <texture type="2d" colorspace="sRGB" name="tex-walnut_wood_grain" file="table_arena/textures/desktop_random_textures/walnut_wood_grain.png" />
+    <texture type="2d" colorspace="sRGB" name="tex-warm_wood_grain_2" file="table_arena/textures/desktop_random_textures/warm_wood_grain_2.png" />
+    <texture type="2d" colorspace="linear" name="tex-white-plaster" file="table_arena/textures/desktop_random_textures/white-plaster.png" />
+    <texture type="2d" colorspace="linear" name="tex-wood_grain_1" file="table_arena/textures/desktop_random_textures/wood_grain_1.png" />
+    <texture type="2d" colorspace="linear" name="tex-yellow-plaster" file="table_arena/textures/desktop_random_textures/yellow-plaster.png" />
+    <material name="white" />
+    <material name="off_white" rgba="0.901961 0.921569 0.929412 1" />
+    <material name="dark_grey" rgba="0.25 0.25 0.25 1" />
+    <material name="green" rgba="0 1 0 1" />
+    <material name="light_blue" rgba="0.039216 0.541176 0.780392 1" />
+    <material name="metal" rgba="0.58 0.58 0.58 1" />
+    <material name="silicone" rgba="0.1882 0.1882 0.1882 1" />
+    <material name="gray" rgba="0.4627 0.4627 0.4627 1" />
+    <material name="black" rgba="0.149 0.149 0.149 1" />
+    <material name="allegro_black" rgba="0.2 0.2 0.2 1" />
+    <material name="allegro_white" rgba="0.9 0.9 0.9 1" />
+    <material name="inspire_matte_gray" specular="0.02" shininess="0.04" rgba="0.5 0.5 0.5 1" />
+    <material name="bucket_original-5_material_0_0" specular="0.0666667" shininess="0.03" rgba="1 0 0 1" />
+    <material name="bucket_original-1_1_material_0_0" specular="0.0666667" shininess="0.03" rgba="1 0 0 1" />
+    <material name="bucket_original-1_0_material_1_0" specular="0.0666667" shininess="0.03" rgba="0 0 0 1" />
+    <material name="bucket_original-4_material_0_0" specular="0.0666667" shininess="0.03" rgba="1 0 0 1" />
+    <material name="bucket_original-3_material_0_0" specular="0.0666667" shininess="0.03" rgba="1 0 0 1" />
+    <material name="auto" texture="image0" shininess="1" />
+    <material name="grid" texture="grid" texuniform="true" texrepeat="2 2" />
+    <material name="floorplane" texture="texplane" texuniform="true" texrepeat="2 2" specular="0" shininess="0" reflectance="0.01" />
+    <material name="table_legs_metal" texture="tex-steel-brushed" shininess="0.8" reflectance="0.8" />
+    <material name="walls_mat" texture="tex-light-gray-plaster" texuniform="true" texrepeat="3 3" specular="0.1" shininess="0.1" />
+    <material name="table_mat" texture="textable" />
+    <material name="table_bamboo" texture="tex-bamboo" specular="0.2" shininess="0" />
+    <material name="table_blue-wood" texture="tex-blue-wood" specular="0.2" shininess="0" />
+    <material name="table_brass-ambra" texture="tex-brass-ambra" specular="0.2" shininess="0" />
+    <material name="table_ceramic" texture="tex-ceramic" specular="0.2" shininess="0" />
+    <material name="table_cream-plaster" texture="tex-cream-plaster" specular="0.2" shininess="0" />
+    <material name="table_dark_wood_planks_2" texture="tex-dark_wood_planks_2" specular="0.2" shininess="0" />
+    <material name="table_dark-wood" texture="tex-dark-wood" specular="0.2" shininess="0" />
+    <material name="table_gray-plaster" texture="tex-gray-plaster" specular="0.2" shininess="0" />
+    <material name="table_gray_wood_planks" texture="tex-gray_wood_planks" specular="0.2" shininess="0" />
+    <material name="table_light-wood" texture="tex-light-wood" specular="0.2" shininess="0" />
+    <material name="table_metal" texture="tex-metal" specular="0.2" shininess="0" />
+    <material name="table_pink-plaster" texture="tex-pink-plaster" specular="0.2" shininess="0" />
+    <material name="table_red-wood" texture="tex-red-wood" specular="0.2" shininess="0" />
+    <material name="table_steel-scratched" texture="tex-steel-scratched" specular="0.2" shininess="0" />
+    <material name="table_walnut_wood_grain" texture="tex-walnut_wood_grain" specular="0.2" shininess="0" />
+    <material name="table_warm_wood_grain_2" texture="tex-warm_wood_grain_2" specular="0.2" shininess="0" />
+    <material name="table_white-plaster" texture="tex-white-plaster" specular="0.2" shininess="0" />
+    <material name="table_wood_grain_1" texture="tex-wood_grain_1" specular="0.2" shininess="0" />
+    <material name="table_yellow-plaster" texture="tex-yellow-plaster" specular="0.2" shininess="0" />
+    <material name="benchhand_right_native_white" />
+    <material name="benchhand_right_native_off_white" rgba="0.901961 0.921569 0.929412 1" />
+    <material name="benchhand_right_native_dark_grey" rgba="0.25 0.25 0.25 1" />
+    <material name="benchhand_right_native_green" rgba="0 1 0 1" />
+    <material name="benchhand_right_native_light_blue" rgba="0.039216 0.541176 0.780392 1" />
+    <material name="benchhand_right_native_metal" rgba="0.58 0.58 0.58 1" />
+    <material name="benchhand_right_native_silicone" rgba="0.1882 0.1882 0.1882 1" />
+    <material name="benchhand_right_native_gray" rgba="0.4627 0.4627 0.4627 1" />
+    <material name="benchhand_right_native_black" rgba="0.149 0.149 0.149 1" />
+    <material name="benchhand_right_native_allegro_black" rgba="0.2 0.2 0.2 1" />
+    <material name="benchhand_right_native_allegro_white" rgba="0.9 0.9 0.9 1" />
+    <material name="benchhand_right_native_wuji_graphite_shell" specular="0.16" shininess="0.16" reflectance="0.015" rgba="0.018 0.02 0.02 1" />
+    <material name="benchhand_right_native_wuji_satin_metal" specular="0.48" shininess="0.3" reflectance="0.055" rgba="0.62 0.64 0.64 1" />
+    <material name="benchhand_right_native_wuji_soft_tip" specular="0.08" shininess="0.08" reflectance="0.005" rgba="0.82 0.84 0.84 1" />
+    <mesh name="link0_c" content_type="model/stl" file="franka_emika_panda/assets/link0.stl" />
+    <mesh name="link1_c" content_type="model/stl" file="franka_emika_panda/assets/link1.stl" />
+    <mesh name="link2_c" content_type="model/stl" file="franka_emika_panda/assets/link2.stl" />
+    <mesh name="link3_c" content_type="model/stl" file="franka_emika_panda/assets/link3.stl" />
+    <mesh name="link4_c" content_type="model/stl" file="franka_emika_panda/assets/link4.stl" />
+    <mesh name="link5_c0" content_type="model/obj" file="franka_emika_panda/assets/link5_collision_0.obj" />
+    <mesh name="link5_c1" content_type="model/obj" file="franka_emika_panda/assets/link5_collision_1.obj" />
+    <mesh name="link5_c2" content_type="model/obj" file="franka_emika_panda/assets/link5_collision_2.obj" />
+    <mesh name="link6_c" content_type="model/stl" file="franka_emika_panda/assets/link6.stl" />
+    <mesh name="link7_c" content_type="model/stl" file="franka_emika_panda/assets/link7.stl" />
+    <mesh name="link0_0" content_type="model/obj" file="franka_emika_panda/assets/link0_0.obj" />
+    <mesh name="link0_1" content_type="model/obj" file="franka_emika_panda/assets/link0_1.obj" />
+    <mesh name="link0_2" content_type="model/obj" file="franka_emika_panda/assets/link0_2.obj" />
+    <mesh name="link0_3" content_type="model/obj" file="franka_emika_panda/assets/link0_3.obj" />
+    <mesh name="link0_4" content_type="model/obj" file="franka_emika_panda/assets/link0_4.obj" />
+    <mesh name="link0_5" content_type="model/obj" file="franka_emika_panda/assets/link0_5.obj" />
+    <mesh name="link0_7" content_type="model/obj" file="franka_emika_panda/assets/link0_7.obj" />
+    <mesh name="link0_8" content_type="model/obj" file="franka_emika_panda/assets/link0_8.obj" />
+    <mesh name="link0_9" content_type="model/obj" file="franka_emika_panda/assets/link0_9.obj" />
+    <mesh name="link0_10" content_type="model/obj" file="franka_emika_panda/assets/link0_10.obj" />
+    <mesh name="link0_11" content_type="model/obj" file="franka_emika_panda/assets/link0_11.obj" />
+    <mesh name="link1" content_type="model/obj" file="franka_emika_panda/assets/link1.obj" />
+    <mesh name="link2" content_type="model/obj" file="franka_emika_panda/assets/link2.obj" />
+    <mesh name="link3_0" content_type="model/obj" file="franka_emika_panda/assets/link3_0.obj" />
+    <mesh name="link3_1" content_type="model/obj" file="franka_emika_panda/assets/link3_1.obj" />
+    <mesh name="link3_2" content_type="model/obj" file="franka_emika_panda/assets/link3_2.obj" />
+    <mesh name="link3_3" content_type="model/obj" file="franka_emika_panda/assets/link3_3.obj" />
+    <mesh name="link4_0" content_type="model/obj" file="franka_emika_panda/assets/link4_0.obj" />
+    <mesh name="link4_1" content_type="model/obj" file="franka_emika_panda/assets/link4_1.obj" />
+    <mesh name="link4_2" content_type="model/obj" file="franka_emika_panda/assets/link4_2.obj" />
+    <mesh name="link4_3" content_type="model/obj" file="franka_emika_panda/assets/link4_3.obj" />
+    <mesh name="link5_0" content_type="model/obj" file="franka_emika_panda/assets/link5_0.obj" />
+    <mesh name="link5_1" content_type="model/obj" file="franka_emika_panda/assets/link5_1.obj" />
+    <mesh name="link5_2" content_type="model/obj" file="franka_emika_panda/assets/link5_2.obj" />
+    <mesh name="link6_0" content_type="model/obj" file="franka_emika_panda/assets/link6_0.obj" />
+    <mesh name="link6_1" content_type="model/obj" file="franka_emika_panda/assets/link6_1.obj" />
+    <mesh name="link6_2" content_type="model/obj" file="franka_emika_panda/assets/link6_2.obj" />
+    <mesh name="link6_3" content_type="model/obj" file="franka_emika_panda/assets/link6_3.obj" />
+    <mesh name="link6_4" content_type="model/obj" file="franka_emika_panda/assets/link6_4.obj" />
+    <mesh name="link6_5" content_type="model/obj" file="franka_emika_panda/assets/link6_5.obj" />
+    <mesh name="link6_6" content_type="model/obj" file="franka_emika_panda/assets/link6_6.obj" />
+    <mesh name="link6_7" content_type="model/obj" file="franka_emika_panda/assets/link6_7.obj" />
+    <mesh name="link6_8" content_type="model/obj" file="franka_emika_panda/assets/link6_8.obj" />
+    <mesh name="link6_9" content_type="model/obj" file="franka_emika_panda/assets/link6_9.obj" />
+    <mesh name="link6_10" content_type="model/obj" file="franka_emika_panda/assets/link6_10.obj" />
+    <mesh name="link6_11" content_type="model/obj" file="franka_emika_panda/assets/link6_11.obj" />
+    <mesh name="link6_12" content_type="model/obj" file="franka_emika_panda/assets/link6_12.obj" />
+    <mesh name="link6_13" content_type="model/obj" file="franka_emika_panda/assets/link6_13.obj" />
+    <mesh name="link6_14" content_type="model/obj" file="franka_emika_panda/assets/link6_14.obj" />
+    <mesh name="link6_15" content_type="model/obj" file="franka_emika_panda/assets/link6_15.obj" />
+    <mesh name="link6_16" content_type="model/obj" file="franka_emika_panda/assets/link6_16.obj" />
+    <mesh name="link7_0" content_type="model/obj" file="franka_emika_panda/assets/link7_0.obj" />
+    <mesh name="link7_1" content_type="model/obj" file="franka_emika_panda/assets/link7_1.obj" />
+    <mesh name="link7_2" content_type="model/obj" file="franka_emika_panda/assets/link7_2.obj" />
+    <mesh name="link7_3" content_type="model/obj" file="franka_emika_panda/assets/link7_3.obj" />
+    <mesh name="link7_4" content_type="model/obj" file="franka_emika_panda/assets/link7_4.obj" />
+    <mesh name="link7_5" content_type="model/obj" file="franka_emika_panda/assets/link7_5.obj" />
+    <mesh name="link7_6" content_type="model/obj" file="franka_emika_panda/assets/link7_6.obj" />
+    <mesh name="link7_7" content_type="model/obj" file="franka_emika_panda/assets/link7_7.obj" />
+    <mesh name="base_link" content_type="model/stl" file="wonik_allegro/assets/base_link.stl" />
+    <mesh name="link_0.0" content_type="model/stl" file="wonik_allegro/assets/link_0.0.stl" />
+    <mesh name="link_1.0" content_type="model/stl" file="wonik_allegro/assets/link_1.0.stl" />
+    <mesh name="link_2.0" content_type="model/stl" file="wonik_allegro/assets/link_2.0.stl" />
+    <mesh name="link_3.0" content_type="model/stl" file="wonik_allegro/assets/link_3.0.stl" />
+    <mesh name="link_3.0_tip" content_type="model/stl" file="wonik_allegro/assets/link_3.0_tip.stl" />
+    <mesh name="link_12.0_right" content_type="model/stl" file="wonik_allegro/assets/link_12.0_right.stl" />
+    <mesh name="link_13.0" content_type="model/stl" file="wonik_allegro/assets/link_13.0.stl" />
+    <mesh name="link_14.0" content_type="model/stl" file="wonik_allegro/assets/link_14.0.stl" />
+    <mesh name="link_15.0" content_type="model/stl" file="wonik_allegro/assets/link_15.0.stl" />
+    <mesh name="link_15.0_tip" content_type="model/stl" file="wonik_allegro/assets/link_15.0_tip.stl" />
+    <mesh name="leap_palm_lower" content_type="model/stl" file="leap_hand/right/palm_lower.stl" />
+    <mesh name="leap_mcp_joint" content_type="model/stl" file="leap_hand/right/mcp_joint.stl" />
+    <mesh name="leap_pip" content_type="model/stl" file="leap_hand/right/pip.stl" />
+    <mesh name="leap_dip" content_type="model/stl" file="leap_hand/right/dip.stl" />
+    <mesh name="leap_fingertip" content_type="model/stl" file="leap_hand/right/fingertip.stl" />
+    <mesh name="leap_thumb_pip" content_type="model/stl" file="leap_hand/right/thumb_pip.stl" />
+    <mesh name="leap_thumb_dip" content_type="model/stl" file="leap_hand/right/thumb_dip.stl" />
+    <mesh name="leap_thumb_fingertip" content_type="model/stl" file="leap_hand/right/thumb_fingertip.stl" />
+    <mesh name="pedestal" content_type="model/stl" file="rethink_mount/pedestal.stl" />
+    <mesh name="inspire_meshes__visual__right_base_link" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__visual__right_base_link.obj" />
+    <mesh name="inspire_meshes__visual__right_thumb_proximal_base" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__visual__right_thumb_proximal_base.obj" />
+    <mesh name="inspire_meshes__collision__right_thumb_proximal_base" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__collision__right_thumb_proximal_base.obj" />
+    <mesh name="inspire_meshes__visual__right_thumb_proximal" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__visual__right_thumb_proximal.obj" />
+    <mesh name="inspire_meshes__collision__right_thumb_proximal" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__collision__right_thumb_proximal.obj" />
+    <mesh name="inspire_meshes__visual__right_thumb_intermediate" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__visual__right_thumb_intermediate.obj" />
+    <mesh name="inspire_meshes__collision__right_thumb_intermediate" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__collision__right_thumb_intermediate.obj" />
+    <mesh name="inspire_meshes__visual__right_thumb_distal" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__visual__right_thumb_distal.obj" />
+    <mesh name="inspire_meshes__collision__right_thumb_distal" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__collision__right_thumb_distal.obj" />
+    <mesh name="inspire_meshes__visual__right_index_proximal" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__visual__right_index_proximal.obj" />
+    <mesh name="inspire_meshes__collision__right_index_proximal" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__collision__right_index_proximal.obj" />
+    <mesh name="inspire_meshes__visual__right_index_intermediate" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__visual__right_index_intermediate.obj" />
+    <mesh name="inspire_meshes__collision__right_index_intermediate" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__collision__right_index_intermediate.obj" />
+    <mesh name="inspire_meshes__visual__right_middle_intermediate" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__visual__right_middle_intermediate.obj" />
+    <mesh name="inspire_meshes__collision__right_middle_intermediate" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__collision__right_middle_intermediate.obj" />
+    <mesh name="inspire_meshes__visual__right_pinky_intermediate" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__visual__right_pinky_intermediate.obj" />
+    <mesh name="inspire_meshes__collision__right_pinky_intermediate" content_type="model/obj" file="../../../../teleoperation/inspire/assets/right/meshes__collision__right_pinky_intermediate.obj" />
+    <mesh name="bucket_original-5" file="bucket/textured_objs_thickness/original-5/original-5.obj" scale="0.25 0.25 0.25" />
+    <mesh name="bucket_original-1_0" file="bucket/textured_objs_thickness/original-1/original-1_0.obj" scale="0.25 0.25 0.25" />
+    <mesh name="bucket_original-1_1" file="bucket/textured_objs_thickness/original-1/original-1_1.obj" scale="0.25 0.25 0.25" />
+    <mesh name="bucket_original-4" file="bucket/textured_objs_thickness/original-4/original-4.obj" scale="0.25 0.25 0.25" />
+    <mesh name="bucket_original-3" file="bucket/textured_objs_thickness/original-3/original-3.obj" scale="0.25 0.25 0.25" />
+    <mesh name="model_normalized_0_vis" file="boxed_food_0/visual/model_normalized_0.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12" />
+    <mesh name="benchhand_right_native_link0_c" content_type="model/stl" file="franka_emika_panda/assets/link0.stl" />
+    <mesh name="benchhand_right_native_link1_c" content_type="model/stl" file="franka_emika_panda/assets/link1.stl" />
+    <mesh name="benchhand_right_native_link2_c" content_type="model/stl" file="franka_emika_panda/assets/link2.stl" />
+    <mesh name="benchhand_right_native_link3_c" content_type="model/stl" file="franka_emika_panda/assets/link3.stl" />
+    <mesh name="benchhand_right_native_link4_c" content_type="model/stl" file="franka_emika_panda/assets/link4.stl" />
+    <mesh name="benchhand_right_native_link5_c0" content_type="model/obj" file="franka_emika_panda/assets/link5_collision_0.obj" />
+    <mesh name="benchhand_right_native_link5_c1" content_type="model/obj" file="franka_emika_panda/assets/link5_collision_1.obj" />
+    <mesh name="benchhand_right_native_link5_c2" content_type="model/obj" file="franka_emika_panda/assets/link5_collision_2.obj" />
+    <mesh name="benchhand_right_native_link6_c" content_type="model/stl" file="franka_emika_panda/assets/link6.stl" />
+    <mesh name="benchhand_right_native_link7_c" content_type="model/stl" file="franka_emika_panda/assets/link7.stl" />
+    <mesh name="benchhand_right_native_link0_0" content_type="model/obj" file="franka_emika_panda/assets/link0_0.obj" />
+    <mesh name="benchhand_right_native_link0_1" content_type="model/obj" file="franka_emika_panda/assets/link0_1.obj" />
+    <mesh name="benchhand_right_native_link0_2" content_type="model/obj" file="franka_emika_panda/assets/link0_2.obj" />
+    <mesh name="benchhand_right_native_link0_3" content_type="model/obj" file="franka_emika_panda/assets/link0_3.obj" />
+    <mesh name="benchhand_right_native_link0_4" content_type="model/obj" file="franka_emika_panda/assets/link0_4.obj" />
+    <mesh name="benchhand_right_native_link0_5" content_type="model/obj" file="franka_emika_panda/assets/link0_5.obj" />
+    <mesh name="benchhand_right_native_link0_7" content_type="model/obj" file="franka_emika_panda/assets/link0_7.obj" />
+    <mesh name="benchhand_right_native_link0_8" content_type="model/obj" file="franka_emika_panda/assets/link0_8.obj" />
+    <mesh name="benchhand_right_native_link0_9" content_type="model/obj" file="franka_emika_panda/assets/link0_9.obj" />
+    <mesh name="benchhand_right_native_link0_10" content_type="model/obj" file="franka_emika_panda/assets/link0_10.obj" />
+    <mesh name="benchhand_right_native_link0_11" content_type="model/obj" file="franka_emika_panda/assets/link0_11.obj" />
+    <mesh name="benchhand_right_native_link1" content_type="model/obj" file="franka_emika_panda/assets/link1.obj" />
+    <mesh name="benchhand_right_native_link2" content_type="model/obj" file="franka_emika_panda/assets/link2.obj" />
+    <mesh name="benchhand_right_native_link3_0" content_type="model/obj" file="franka_emika_panda/assets/link3_0.obj" />
+    <mesh name="benchhand_right_native_link3_1" content_type="model/obj" file="franka_emika_panda/assets/link3_1.obj" />
+    <mesh name="benchhand_right_native_link3_2" content_type="model/obj" file="franka_emika_panda/assets/link3_2.obj" />
+    <mesh name="benchhand_right_native_link3_3" content_type="model/obj" file="franka_emika_panda/assets/link3_3.obj" />
+    <mesh name="benchhand_right_native_link4_0" content_type="model/obj" file="franka_emika_panda/assets/link4_0.obj" />
+    <mesh name="benchhand_right_native_link4_1" content_type="model/obj" file="franka_emika_panda/assets/link4_1.obj" />
+    <mesh name="benchhand_right_native_link4_2" content_type="model/obj" file="franka_emika_panda/assets/link4_2.obj" />
+    <mesh name="benchhand_right_native_link4_3" content_type="model/obj" file="franka_emika_panda/assets/link4_3.obj" />
+    <mesh name="benchhand_right_native_link5_0" content_type="model/obj" file="franka_emika_panda/assets/link5_0.obj" />
+    <mesh name="benchhand_right_native_link5_1" content_type="model/obj" file="franka_emika_panda/assets/link5_1.obj" />
+    <mesh name="benchhand_right_native_link5_2" content_type="model/obj" file="franka_emika_panda/assets/link5_2.obj" />
+    <mesh name="benchhand_right_native_link6_0" content_type="model/obj" file="franka_emika_panda/assets/link6_0.obj" />
+    <mesh name="benchhand_right_native_link6_1" content_type="model/obj" file="franka_emika_panda/assets/link6_1.obj" />
+    <mesh name="benchhand_right_native_link6_2" content_type="model/obj" file="franka_emika_panda/assets/link6_2.obj" />
+    <mesh name="benchhand_right_native_link6_3" content_type="model/obj" file="franka_emika_panda/assets/link6_3.obj" />
+    <mesh name="benchhand_right_native_link6_4" content_type="model/obj" file="franka_emika_panda/assets/link6_4.obj" />
+    <mesh name="benchhand_right_native_link6_5" content_type="model/obj" file="franka_emika_panda/assets/link6_5.obj" />
+    <mesh name="benchhand_right_native_link6_6" content_type="model/obj" file="franka_emika_panda/assets/link6_6.obj" />
+    <mesh name="benchhand_right_native_link6_7" content_type="model/obj" file="franka_emika_panda/assets/link6_7.obj" />
+    <mesh name="benchhand_right_native_link6_8" content_type="model/obj" file="franka_emika_panda/assets/link6_8.obj" />
+    <mesh name="benchhand_right_native_link6_9" content_type="model/obj" file="franka_emika_panda/assets/link6_9.obj" />
+    <mesh name="benchhand_right_native_link6_10" content_type="model/obj" file="franka_emika_panda/assets/link6_10.obj" />
+    <mesh name="benchhand_right_native_link6_11" content_type="model/obj" file="franka_emika_panda/assets/link6_11.obj" />
+    <mesh name="benchhand_right_native_link6_12" content_type="model/obj" file="franka_emika_panda/assets/link6_12.obj" />
+    <mesh name="benchhand_right_native_link6_13" content_type="model/obj" file="franka_emika_panda/assets/link6_13.obj" />
+    <mesh name="benchhand_right_native_link6_14" content_type="model/obj" file="franka_emika_panda/assets/link6_14.obj" />
+    <mesh name="benchhand_right_native_link6_15" content_type="model/obj" file="franka_emika_panda/assets/link6_15.obj" />
+    <mesh name="benchhand_right_native_link6_16" content_type="model/obj" file="franka_emika_panda/assets/link6_16.obj" />
+    <mesh name="benchhand_right_native_link7_0" content_type="model/obj" file="franka_emika_panda/assets/link7_0.obj" />
+    <mesh name="benchhand_right_native_link7_1" content_type="model/obj" file="franka_emika_panda/assets/link7_1.obj" />
+    <mesh name="benchhand_right_native_link7_2" content_type="model/obj" file="franka_emika_panda/assets/link7_2.obj" />
+    <mesh name="benchhand_right_native_link7_3" content_type="model/obj" file="franka_emika_panda/assets/link7_3.obj" />
+    <mesh name="benchhand_right_native_link7_4" content_type="model/obj" file="franka_emika_panda/assets/link7_4.obj" />
+    <mesh name="benchhand_right_native_link7_5" content_type="model/obj" file="franka_emika_panda/assets/link7_5.obj" />
+    <mesh name="benchhand_right_native_link7_6" content_type="model/obj" file="franka_emika_panda/assets/link7_6.obj" />
+    <mesh name="benchhand_right_native_link7_7" content_type="model/obj" file="franka_emika_panda/assets/link7_7.obj" />
+    <mesh name="benchhand_right_native_base_link" content_type="model/stl" file="wonik_allegro/assets/base_link.stl" />
+    <mesh name="benchhand_right_native_link_0.0" content_type="model/stl" file="wonik_allegro/assets/link_0.0.stl" />
+    <mesh name="benchhand_right_native_link_1.0" content_type="model/stl" file="wonik_allegro/assets/link_1.0.stl" />
+    <mesh name="benchhand_right_native_link_2.0" content_type="model/stl" file="wonik_allegro/assets/link_2.0.stl" />
+    <mesh name="benchhand_right_native_link_3.0" content_type="model/stl" file="wonik_allegro/assets/link_3.0.stl" />
+    <mesh name="benchhand_right_native_link_3.0_tip" content_type="model/stl" file="wonik_allegro/assets/link_3.0_tip.stl" />
+    <mesh name="benchhand_right_native_link_12.0_right" content_type="model/stl" file="wonik_allegro/assets/link_12.0_right.stl" />
+    <mesh name="benchhand_right_native_link_13.0" content_type="model/stl" file="wonik_allegro/assets/link_13.0.stl" />
+    <mesh name="benchhand_right_native_link_14.0" content_type="model/stl" file="wonik_allegro/assets/link_14.0.stl" />
+    <mesh name="benchhand_right_native_link_15.0" content_type="model/stl" file="wonik_allegro/assets/link_15.0.stl" />
+    <mesh name="benchhand_right_native_link_15.0_tip" content_type="model/stl" file="wonik_allegro/assets/link_15.0_tip.stl" />
+    <mesh name="benchhand_right_native_leap_palm_lower" content_type="model/stl" file="leap_hand/right/palm_lower.stl" />
+    <mesh name="benchhand_right_native_leap_mcp_joint" content_type="model/stl" file="leap_hand/right/mcp_joint.stl" />
+    <mesh name="benchhand_right_native_leap_pip" content_type="model/stl" file="leap_hand/right/pip.stl" />
+    <mesh name="benchhand_right_native_leap_dip" content_type="model/stl" file="leap_hand/right/dip.stl" />
+    <mesh name="benchhand_right_native_leap_fingertip" content_type="model/stl" file="leap_hand/right/fingertip.stl" />
+    <mesh name="benchhand_right_native_leap_thumb_pip" content_type="model/stl" file="leap_hand/right/thumb_pip.stl" />
+    <mesh name="benchhand_right_native_leap_thumb_dip" content_type="model/stl" file="leap_hand/right/thumb_dip.stl" />
+    <mesh name="benchhand_right_native_leap_thumb_fingertip" content_type="model/stl" file="leap_hand/right/thumb_fingertip.stl" />
+    <mesh name="benchhand_right_native_pedestal" content_type="model/stl" file="rethink_mount/pedestal.stl" />
+    <mesh name="benchhand_right_native_wuji_base_link" content_type="model/stl" file="../../../../teleoperation/wuji/assets/right/base_link.STL" />
+    <mesh name="benchhand_right_native_wuji_CMC_joint" content_type="model/stl" file="../../../../teleoperation/wuji/assets/right/CMC_joint.STL" />
+    <mesh name="benchhand_right_native_wuji_CMC_2rd" content_type="model/stl" file="../../../../teleoperation/wuji/assets/right/CMC_2rd.STL" />
+    <mesh name="benchhand_right_native_wuji_MCP_thumb" content_type="model/stl" file="../../../../teleoperation/wuji/assets/right/MCP_thumb.STL" />
+    <mesh name="benchhand_right_native_wuji_IP_thumb" content_type="model/stl" file="../../../../teleoperation/wuji/assets/right/IP_thumb.STL" />
+    <mesh name="benchhand_right_native_wuji_fingertip_thumb" content_type="model/stl" file="../../../../teleoperation/wuji/assets/right/fingertip_thumb.STL" />
+    <mesh name="benchhand_right_native_wuji_MCP_joint_index" content_type="model/stl" file="../../../../teleoperation/wuji/assets/right/MCP_joint_index.STL" />
+    <mesh name="benchhand_right_native_wuji_PIPMCP_2rd_index" content_type="model/stl" file="../../../../teleoperation/wuji/assets/right/PIPMCP_2rd_index.STL" />
+    <mesh name="benchhand_right_native_wuji_DIP_index" content_type="model/stl" file="../../../../teleoperation/wuji/assets/right/DIP_index.STL" />
+    <mesh name="benchhand_right_native_wuji_tipmount_index" content_type="model/stl" file="../../../../teleoperation/wuji/assets/right/tipmount_index.STL" />
+    <mesh name="benchhand_right_native_wuji_fingertip_index" content_type="model/stl" file="../../../../teleoperation/wuji/assets/right/fingertip_index.STL" />
+    <mesh name="benchhand_right_native_wuji_MCP_joint_middle" content_type="model/stl" file="../../../../teleoperation/wuji/assets/right/MCP_joint_middle.STL" />
+    <mesh name="benchhand_right_native_wuji_PIPMCP_2rd_middle" content_type="model/stl" file="../../../../teleoperation/wuji/assets/right/PIPMCP_2rd_middle.STL" />
+    <mesh name="benchhand_right_native_wuji_DIP_middle" content_type="model/stl" file="../../../../teleoperation/wuji/assets/right/DIP_middle.STL" />
+    <mesh name="benchhand_right_native_wuji_tipmount_middle" content_type="model/stl" file="../../../../teleoperation/wuji/assets/right/tipmount_middle.STL" />
+    <mesh name="benchhand_right_native_wuji_fingertip_middle" content_type="model/stl" file="../../../../teleoperation/wuji/assets/right/fingertip_middle.STL" />
+    <mesh name="benchhand_right_native_wuji_MCP_joint_ring" content_type="model/stl" file="../../../../teleoperation/wuji/assets/right/MCP_joint_ring.STL" />
+    <mesh name="benchhand_right_native_wuji_PIPMCP_2rd_ring" content_type="model/stl" file="../../../../teleoperation/wuji/assets/right/PIPMCP_2rd_ring.STL" />
+    <mesh name="benchhand_right_native_wuji_DIP_ring" content_type="model/stl" file="../../../../teleoperation/wuji/assets/right/DIP_ring.STL" />
+    <mesh name="benchhand_right_native_wuji_tipmount_ring" content_type="model/stl" file="../../../../teleoperation/wuji/assets/right/tipmount_ring.STL" />
+    <mesh name="benchhand_right_native_wuji_fingertip_ring" content_type="model/stl" file="../../../../teleoperation/wuji/assets/right/fingertip_ring.STL" />
+    <mesh name="benchhand_right_native_wuji_MCP_joint_pinky" content_type="model/stl" file="../../../../teleoperation/wuji/assets/right/MCP_joint_pinky.STL" />
+    <mesh name="benchhand_right_native_wuji_PIPMCP_2rd_pinky" content_type="model/stl" file="../../../../teleoperation/wuji/assets/right/PIPMCP_2rd_pinky.STL" />
+    <mesh name="benchhand_right_native_wuji_DIP_pinky" content_type="model/stl" file="../../../../teleoperation/wuji/assets/right/DIP_pinky.STL" />
+    <mesh name="benchhand_right_native_wuji_tipmount_pinky" content_type="model/stl" file="../../../../teleoperation/wuji/assets/right/tipmount_pinky.STL" />
+    <mesh name="benchhand_right_native_wuji_fingertip_pinky" content_type="model/stl" file="../../../../teleoperation/wuji/assets/right/fingertip_pinky.STL" />
+  </asset>
+
+  <worldbody>
+    <geom name="floor" size="3 3 0.01" type="plane" material="floorplane" />
+    <geom name="wall_leftcorner_visual" size="1.06 1.5 0.01" pos="-1.25 2.25 1.5" quat="0.653281 0.653281 0.270598 0.270598" type="box" contype="0" conaffinity="0" group="1" material="walls_mat" />
+    <geom name="wall_rightcorner_visual" size="1.06 1.5 0.01" pos="-1.25 -2.25 1.5" quat="0.653281 0.653281 -0.270598 -0.270598" type="box" contype="0" conaffinity="0" group="1" material="walls_mat" />
+    <geom name="wall_left_visual" size="1.75 1.5 0.01" pos="1.25 3 1.5" quat="0.707107 0.707107 0 0" type="box" contype="0" conaffinity="0" group="1" material="walls_mat" />
+    <geom name="wall_right_visual" size="1.75 1.5 0.01" pos="1.25 -3 1.5" quat="0.707107 -0.707107 0 0" type="box" contype="0" conaffinity="0" group="1" material="walls_mat" />
+    <geom name="wall_rear_visual" size="1.5 1.5 0.01" pos="-2 0 1.5" quat="0.5 0.5 0.5 0.5" type="box" contype="0" conaffinity="0" group="1" material="walls_mat" />
+    <geom name="wall_front_visual" size="3 1.5 0.01" pos="3 0 1.5" quat="0.5 0.5 -0.5 -0.5" type="box" contype="0" conaffinity="0" group="1" material="walls_mat" />
+    <camera name="front" pos="1.3 0 1.6" quat="0.596368 0.379928 0.379928 0.596368" />
+    <camera name="back" pos="-0.8 0 0.7" quat="-0.596368 -0.379928 0.379928 0.596368" />
+    <camera name="left" pos="-1 0.8 2" quat="-0.353554 -0.146446 0.353554 0.853553" />
+    <camera name="right" pos="-1 -0.8 2" quat="0.853553 0.353554 -0.146446 -0.353554" />
+    <camera name="top0" pos="0.17 0 1.8" quat="0.707107 0 0 -0.707107" />
+    <light pos="0 0 0.5" dir="0 0 -1" type="directional" castshadow="false" />
+    <light pos="0 0 3" dir="0 0 -1" diffuse="1 1 1" />
+    <body name="base" pos="-0.8 0 0.924">
+      <body name="controller_box">
+        <inertial pos="-0.325 0 -0.38" mass="46.64" diaginertia="1.71363 1.27988 0.809981" />
+        <geom name="controller_box_col" size="0.11 0.2 0.265" pos="-0.325 0 -0.38" type="box" group="3" />
+      </body>
+      <body name="pedestal_feet">
+        <inertial pos="-0.1225 0 -0.758" mass="167.09" diaginertia="8.16095 9.59375 15.0785" />
+        <geom name="pedestal_feet_col" size="0.385 0.35 0.155" pos="-0.1225 0 -0.758" type="box" group="3" />
+      </body>
+      <body name="torso">
+        <inertial pos="0 0 0" mass="0.0001" diaginertia="1e-08 1e-08 1e-08" />
+        <geom name="torso_vis" size="0.05 0.05 0.05" pos="0 0 -0.05" type="box" contype="0" conaffinity="0" group="1" rgba="0.2 0.2 0.2 1" />
+      </body>
+      <body name="pedestal">
+        <inertial pos="0 0 0" quat="0.659267 -0.259505 -0.260945 0.655692" mass="60.864" diaginertia="6.0869 5.81635 4.20915" />
+        <geom name="pedestal_vis" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.2 0.2 0.2 1" mesh="pedestal" />
+        <geom name="pedestal_col" size="0.18 0.31" pos="-0.02 0 -0.29" type="cylinder" group="3" rgba="0.2 0.2 0.2 1" />
+      </body>
+      <body name="link0" childclass="panda" pos="0.05 0 0">
+        <inertial pos="-0.041018 -0.00014 0.049974" quat="0.00630474 0.751245 0.00741774 0.659952" mass="0.629769" diaginertia="0.00430465 0.00387984 0.00313051" />
+        <geom class="panda/visual" material="off_white" mesh="link0_0" />
+        <geom class="panda/visual" material="dark_grey" mesh="link0_1" />
+        <geom class="panda/visual" material="off_white" mesh="link0_2" />
+        <geom class="panda/visual" material="dark_grey" mesh="link0_3" />
+        <geom class="panda/visual" material="off_white" mesh="link0_4" />
+        <geom class="panda/visual" material="dark_grey" mesh="link0_5" />
+        <geom class="panda/visual" material="white" mesh="link0_7" />
+        <geom class="panda/visual" material="white" mesh="link0_8" />
+        <geom class="panda/visual" material="dark_grey" mesh="link0_9" />
+        <geom class="panda/visual" material="off_white" mesh="link0_10" />
+        <geom class="panda/visual" material="white" mesh="link0_11" />
+        <geom class="panda/collision" mesh="link0_c" />
+        <body name="link1" pos="0 0 0.333">
+          <inertial pos="0.003875 0.002081 -0.04762" quat="0.711549 0.00634377 -0.0131124 0.702485" mass="4.97068" diaginertia="0.707137 0.703435 0.00852456" />
+          <joint name="joint1" pos="0 0 0" axis="0 0 1" />
+          <geom class="panda/visual" material="white" mesh="link1" />
+          <geom class="panda/collision" mesh="link1_c" />
+          <site name="joint1" pos="0 0 0" />
+          <body name="link2" quat="0.707107 -0.707107 0 0">
+            <inertial pos="-0.003141 -0.02872 0.003495" quat="-0.168175 0.828366 -0.122878 0.520027" mass="0.646926" diaginertia="0.0310326 0.0283001 0.00273425" />
+            <joint name="joint2" pos="0 0 0" axis="0 0 1" range="-1.7628 1.7628" />
+            <geom class="panda/visual" material="white" mesh="link2" />
+            <geom class="panda/collision" mesh="link2_c" />
+            <site name="joint2" pos="0 0 0" />
+            <body name="link3" pos="0 -0.316 0" quat="0.707107 0.707107 0 0">
+              <inertial pos="0.027518 0.039252 -0.066502" quat="0.662769 -0.00678331 0.252053 0.705096" mass="3.2286" diaginertia="0.0415014 0.0414793 0.00124635" />
+              <joint name="joint3" pos="0 0 0" axis="0 0 1" />
+              <geom class="panda/visual" material="white" mesh="link3_0" />
+              <geom class="panda/visual" material="white" mesh="link3_1" />
+              <geom class="panda/visual" material="white" mesh="link3_2" />
+              <geom class="panda/visual" material="dark_grey" mesh="link3_3" />
+              <geom class="panda/collision" mesh="link3_c" />
+              <site name="joint3" pos="0 0 0" />
+              <body name="link4" pos="0.0825 0 0" quat="0.707107 0.707107 0 0">
+                <inertial pos="-0.05317 0.104419 0.027454" quat="0.65058 0.529822 -0.0962034 0.535518" mass="3.5879" diaginertia="0.0349596 0.0281483 0.0106201" />
+                <joint name="joint4" pos="0 0 0" axis="0 0 1" range="-3.0718 -0.0698" />
+                <geom class="panda/visual" material="white" mesh="link4_0" />
+                <geom class="panda/visual" material="white" mesh="link4_1" />
+                <geom class="panda/visual" material="dark_grey" mesh="link4_2" />
+                <geom class="panda/visual" material="white" mesh="link4_3" />
+                <geom class="panda/collision" mesh="link4_c" />
+                <site name="joint4" pos="0 0 0" />
+                <body name="link5" pos="-0.0825 0.384 0" quat="0.707107 -0.707107 0 0">
+                  <inertial pos="-0.011953 0.041065 -0.038437" quat="0.987313 -0.0121954 0.0719187 -0.141037" mass="1.22595" diaginertia="0.0367625 0.0288531 0.00803437" />
+                  <joint name="joint5" pos="0 0 0" axis="0 0 1" />
+                  <geom class="panda/visual" material="dark_grey" mesh="link5_0" />
+                  <geom class="panda/visual" material="white" mesh="link5_1" />
+                  <geom class="panda/visual" material="white" mesh="link5_2" />
+                  <geom class="panda/collision" mesh="link5_c0" />
+                  <geom class="panda/collision" mesh="link5_c1" />
+                  <geom class="panda/collision" mesh="link5_c2" />
+                  <site name="joint5" pos="0 0 0" />
+                  <body name="link6" quat="0.707107 0.707107 0 0">
+                    <inertial pos="0.060149 -0.014117 -0.010517" quat="0.101075 0.59332 0.0287227 0.798079" mass="1.66656" diaginertia="0.00584276 0.00431037 0.00159787" />
+                    <joint name="joint6" pos="0 0 0" axis="0 0 1" range="-0.0175 3.7525" />
+                    <geom class="panda/visual" material="off_white" mesh="link6_0" />
+                    <geom class="panda/visual" material="white" mesh="link6_1" />
+                    <geom class="panda/visual" material="dark_grey" mesh="link6_2" />
+                    <geom class="panda/visual" material="white" mesh="link6_3" />
+                    <geom class="panda/visual" material="white" mesh="link6_4" />
+                    <geom class="panda/visual" material="white" mesh="link6_5" />
+                    <geom class="panda/visual" material="white" mesh="link6_6" />
+                    <geom class="panda/visual" material="light_blue" mesh="link6_7" />
+                    <geom class="panda/visual" material="light_blue" mesh="link6_8" />
+                    <geom class="panda/visual" material="dark_grey" mesh="link6_9" />
+                    <geom class="panda/visual" material="dark_grey" mesh="link6_10" />
+                    <geom class="panda/visual" material="white" mesh="link6_11" />
+                    <geom class="panda/visual" material="green" mesh="link6_12" />
+                    <geom class="panda/visual" material="white" mesh="link6_13" />
+                    <geom class="panda/visual" material="dark_grey" mesh="link6_14" />
+                    <geom class="panda/visual" material="dark_grey" mesh="link6_15" />
+                    <geom class="panda/visual" material="white" mesh="link6_16" />
+                    <geom class="panda/collision" mesh="link6_c" />
+                    <site name="joint6" pos="0 0 0" />
+                    <body name="link7" pos="0.088 0 0" quat="0.707107 0.707107 0 0">
+                      <inertial pos="0.010517 -0.004252 0.061597" quat="0.992939 -0.0762041 0.0733595 -0.0537067" mass="0.735522" diaginertia="0.0127345 0.0101055 0.00451803" />
+                      <joint name="joint7" pos="0 0 0" axis="0 0 1" />
+                      <geom class="panda/visual" material="white" mesh="link7_0" />
+                      <geom class="panda/visual" material="dark_grey" mesh="link7_1" />
+                      <geom class="panda/visual" material="dark_grey" mesh="link7_2" />
+                      <geom class="panda/visual" material="dark_grey" mesh="link7_3" />
+                      <geom class="panda/visual" material="dark_grey" mesh="link7_4" />
+                      <geom class="panda/visual" material="dark_grey" mesh="link7_5" />
+                      <geom class="panda/visual" material="dark_grey" mesh="link7_6" />
+                      <geom class="panda/visual" material="white" mesh="link7_7" />
+                      <geom class="panda/collision" mesh="link7_c" />
+                      <site name="joint7" pos="0 0 0" />
+                      <body name="attachment" pos="0 0 0.107" quat="0.382683 0 0 0.92388">
+                        <site name="attachment_site" pos="0 0 0" quat="0 0 0 1" />
+                        <camera name="handcam_rgb" pos="0.14 0.03 0.04" quat="-0.353678 0.612589 -0.612589 0.352678" fovy="60" />
+                        <frame name="inspire_mount_frame" childclass="panda" />
+                        <body name="benchhand_right_mount" childclass="benchhand_right_native_panda">
+                          <inertial pos="-0.0529658 5.77386e-05 0.0204511" quat="0.021677 0.752663 0.0112358 0.657953" mass="0.220729" diaginertia="0.000363185 0.00031977 8.97817e-05" />
+                          <geom name="benchhand_right_native_wuji_wrist_adapter_visual" size="0.03 0.03 0.02" pos="-0.025 0 0.015" type="box" contype="0" conaffinity="0" group="1" density="0" rgba="0.2 0.21 0.23 1" />
+                          <geom name="benchhand_right_wuji_wrist_adapter_collision" size="0.03 0.03 0.02" pos="-0.025 0 0.015" type="box" group="3" density="0" rgba="0.2 0.21 0.23 1" friction="1 0.0050000000000000001 0.0001" />
+                          <frame name="benchhand_right_native_wuji_mount_frame" childclass="benchhand_right_native_panda">
+                            <geom pos="-0.05 0 0.03" quat="0.707107 -0.707107 0 0" type="mesh" material="benchhand_right_native_wuji_graphite_shell" mesh="benchhand_right_native_wuji_base_link" friction="1 0.0050000000000000001 0.0001" />
+                            <body name="benchhand_right_native_wuji_CMC_joint" pos="-0.0787119 0.0205754 0.0385244" quat="0.753118 -0.211674 0.493692 -0.379836">
+                              <inertial pos="-0.00771368 0.00183232 -0.00219639" quat="0.418651 0.521498 0.235473 0.705212" mass="0.00125786" diaginertia="7.24179e-08 6.51247e-08 3.42713e-08" />
+                              <joint name="benchhand_right_native_wuji_F1J1" pos="0 0 0" axis="0 0 1" range="-0.0448 1.6508" actuatorfrcrange="-120 120" damping="8" />
+                              <geom type="mesh" material="benchhand_right_native_wuji_satin_metal" mesh="benchhand_right_native_wuji_CMC_joint" friction="1 0.0050000000000000001 0.0001" />
+                              <body name="benchhand_right_native_wuji_CMC_2rd" pos="-0.0145598 0.00383359 -0.00576551" quat="0.905178 -0.1259 -0.324307 -0.244185">
+                                <inertial pos="-0.013483 0.000922867 0.00666084" quat="0.337092 0.657043 0.501458 0.450781" mass="0.00526816" diaginertia="5.58658e-07 5.43302e-07 1.44343e-07" />
+                                <joint name="benchhand_right_native_wuji_F1J2" pos="0 0 0" axis="0 -1 0" range="-0.1659 0.9339" actuatorfrcrange="-120 120" damping="8" />
+                                <geom type="mesh" material="benchhand_right_native_wuji_satin_metal" mesh="benchhand_right_native_wuji_CMC_2rd" friction="1 0.0050000000000000001 0.0001" />
+                                <body name="benchhand_right_native_wuji_MCP_thumb" pos="-0.030766 -5.5784e-05 0.012586" quat="0.97254 0.166031 0.160773 -0.0274129">
+                                  <inertial pos="-0.012784 0.00137061 -1.60835e-05" quat="0.499144 0.499099 0.501598 0.500155" mass="0.00451777" diaginertia="3.89433e-07 3.80199e-07 1.2299e-07" />
+                                  <joint name="benchhand_right_native_wuji_F1J3" pos="0 0 0" axis="0 0 1" range="0 1.6272" actuatorfrcrange="-120 120" damping="8" />
+                                  <geom type="mesh" material="benchhand_right_native_wuji_satin_metal" mesh="benchhand_right_native_wuji_MCP_thumb" friction="1 0.0050000000000000001 0.0001" />
+                                  <body name="benchhand_right_native_wuji_IP_thumb" pos="-0.0289947 0.000556724 -0.000250001" quat="0.999954 0 0 -0.00959916">
+                                    <inertial pos="-0.0130197 -0.000475267 0.000237944" quat="-0.10917 0.700862 0.0976146 0.698101" mass="0.0047298" diaginertia="4.05044e-07 3.95756e-07 1.27584e-07" />
+                                    <joint name="benchhand_right_native_wuji_F1J4" pos="0 0 0" axis="0 0 1" range="0 1.6272" actuatorfrcrange="-120 120" damping="8" />
+                                    <geom type="mesh" material="benchhand_right_native_wuji_satin_metal" mesh="benchhand_right_native_wuji_IP_thumb" friction="1 0.0050000000000000001 0.0001" />
+                                    <geom pos="-0.0293 0.00105 0.00025" type="mesh" material="benchhand_right_native_wuji_soft_tip" mesh="benchhand_right_native_wuji_fingertip_thumb" friction="1 0.0050000000000000001 0.0001" />
+                                    </body>
+                                </body>
+                              </body>
+                            </body>
+                            <body name="benchhand_right_native_wuji_MCP_joint_index" pos="-0.141917 0.0294339 0.0241299" quat="0.779447 -0.623012 0.0208971 -0.0622989">
+                              <inertial pos="-0.000319915 0.00132925 -6.02704e-09" quat="0.653281 0.653281 -0.270598 -0.270598" mass="0.000379035" diaginertia="1.29788e-08 1e-08 7.02117e-09" />
+                              <joint name="benchhand_right_native_wuji_F2J1" pos="0 0 0" axis="0 0 -1" range="-1.63595 0" actuatorfrcrange="-120 120" damping="8" />
+                              <geom type="mesh" material="benchhand_right_native_wuji_satin_metal" mesh="benchhand_right_native_wuji_MCP_joint_index" friction="1 0.0050000000000000001 0.0001" />
+                              <body name="benchhand_right_native_wuji_PIPMCP_2rd_index" pos="-0.00400001 -0.0022 0">
+                                <inertial pos="-0.0174056 0.00607488 7.02482e-06" quat="-0.0140253 0.707082 0.0148837 0.706836" mass="0.00657987" diaginertia="9.50286e-07 9.46349e-07 1.7336e-07" />
+                                <joint name="benchhand_right_native_wuji_F2J2" pos="0 0 0" axis="0 1 0" range="-0.495 0.495" actuatorfrcrange="-120 120" damping="8" />
+                                <geom type="mesh" material="benchhand_right_native_wuji_satin_metal" mesh="benchhand_right_native_wuji_PIPMCP_2rd_index" friction="1 0.0050000000000000001 0.0001" />
+                                <body name="benchhand_right_native_wuji_DIP_index" pos="-0.0366177 0.0046 1.55809e-05" quat="1 0 0.0002166 0">
+                                  <inertial pos="-0.015509 0.0011228 4.7032e-06" quat="0.509098 0.508083 0.491129 0.49139" mass="0.0045089" diaginertia="3.9744e-07 3.8791e-07 1.2265e-07" />
+                                  <joint name="benchhand_right_native_wuji_F2J3" pos="0 0 0" axis="0 0 1" range="0 1.6272" actuatorfrcrange="-120 120" damping="8" />
+                                  <geom type="mesh" material="benchhand_right_native_wuji_satin_metal" mesh="benchhand_right_native_wuji_DIP_index" friction="1 0.0050000000000000001 0.0001" />
+                                  <body name="benchhand_right_native_wuji_tipmount_index" pos="-0.029 0 0" quat="1 0.000134297 0 0">
+                                    <inertial pos="-0.00116749 -0.0145481 0.000566459" quat="0.708595 0.690859 0.0720125 0.124179" mass="0.00336976" diaginertia="6.8595e-07 6.83181e-07 1.00506e-07" />
+                                    <joint name="benchhand_right_native_wuji_F2J4" pos="0 0 0" axis="0 0 1" range="0 1.6272" actuatorfrcrange="-120 120" damping="8" />
+                                    <geom type="mesh" material="benchhand_right_native_wuji_satin_metal" mesh="benchhand_right_native_wuji_tipmount_index" friction="1 0.0050000000000000001 0.0001" />
+                                    <geom pos="-0.0267 0.00105 0" quat="1 0 0 0" type="mesh" material="benchhand_right_native_wuji_soft_tip" mesh="benchhand_right_native_wuji_fingertip_index" friction="1 0.0050000000000000001 0.0001" />
+                                    </body>
+                                </body>
+                              </body>
+                            </body>
+                            <body name="benchhand_right_native_wuji_MCP_joint_middle" pos="-0.139544 0.00746146 0.0195403" quat="0.706228 -0.706639 -0.0308348 -0.0308525">
+                              <inertial pos="-0.000319986 0.00132925 2.64397e-08" quat="0.653281 0.653281 -0.270598 -0.270598" mass="0.000379027" diaginertia="1.29789e-08 1e-08 7.02114e-09" />
+                              <joint name="benchhand_right_native_wuji_F3J1" pos="0 0 0" axis="0 0 -1" range="-1.63595 0" actuatorfrcrange="-120 120" damping="8" />
+                              <geom type="mesh" material="benchhand_right_native_wuji_satin_metal" mesh="benchhand_right_native_wuji_MCP_joint_middle" friction="1 0.0050000000000000001 0.0001" />
+                              <body name="benchhand_right_native_wuji_PIPMCP_2rd_middle" pos="-0.00400001 -0.0022 0">
+                                <inertial pos="-0.0174056 0.00607488 7.02692e-06" quat="-0.014022 0.707082 0.014887 0.706836" mass="0.00657987" diaginertia="9.50286e-07 9.46349e-07 1.7336e-07" />
+                                <joint name="benchhand_right_native_wuji_F3J2" pos="0 0 0" axis="0 1 0" range="-0.495 0.495" actuatorfrcrange="-120 120" damping="8" />
+                                <geom type="mesh" material="benchhand_right_native_wuji_satin_metal" mesh="benchhand_right_native_wuji_PIPMCP_2rd_middle" friction="1 0.0050000000000000001 0.0001" />
+                                <body name="benchhand_right_native_wuji_DIP_middle" pos="-0.0366177 0.0046 1.55809e-05" quat="1 0 0.0002166 0">
+                                  <inertial pos="-0.0155094 0.00112279 4.71782e-06" quat="0.509084 0.508097 0.491114 0.491404" mass="0.00450885" diaginertia="3.97439e-07 3.87915e-07 1.22648e-07" />
+                                  <joint name="benchhand_right_native_wuji_F3J3" pos="0 0 0" axis="0 0 1" range="0 1.6272" actuatorfrcrange="-120 120" damping="8" />
+                                  <geom type="mesh" material="benchhand_right_native_wuji_satin_metal" mesh="benchhand_right_native_wuji_DIP_middle" friction="1 0.0050000000000000001 0.0001" />
+                                  <body name="benchhand_right_native_wuji_tipmount_middle" pos="-0.029 0 0" quat="1 0.000134297 0 0">
+                                    <inertial pos="-0.00116806 -0.0145481 0.000563402" quat="0.708556 0.690915 0.0721477 0.124012" mass="0.00336971" diaginertia="6.8591e-07 6.8314e-07 1.00506e-07" />
+                                    <joint name="benchhand_right_native_wuji_F3J4" pos="0 0 0" axis="0 0 1" range="0 1.6272" actuatorfrcrange="-120 120" damping="8" />
+                                    <geom type="mesh" material="benchhand_right_native_wuji_satin_metal" mesh="benchhand_right_native_wuji_tipmount_middle" friction="1 0.0050000000000000001 0.0001" />
+                                    <geom pos="-0.0267 0.00105 0" quat="1 0 0 0" type="mesh" material="benchhand_right_native_wuji_soft_tip" mesh="benchhand_right_native_wuji_fingertip_middle" friction="1 0.0050000000000000001 0.0001" />
+                                    </body>
+                                </body>
+                              </body>
+                            </body>
+                            <body name="benchhand_right_native_wuji_MCP_joint_ring" pos="-0.134429 -0.013712 0.0223351" quat="0.687583 -0.723504 -0.0612991 0.00389899">
+                              <inertial pos="-0.000319999 0.00132924 3.28507e-08" quat="0.653281 0.653281 -0.270598 -0.270598" mass="0.000379025" diaginertia="1.29788e-08 1e-08 7.02115e-09" />
+                              <joint name="benchhand_right_native_wuji_F4J1" pos="0 0 0" axis="0 0 -1" range="-1.63595 0" actuatorfrcrange="-120 120" damping="8" />
+                              <geom type="mesh" material="benchhand_right_native_wuji_satin_metal" mesh="benchhand_right_native_wuji_MCP_joint_ring" friction="1 0.0050000000000000001 0.0001" />
+                              <body name="benchhand_right_native_wuji_PIPMCP_2rd_ring" pos="-0.004 -0.0022 0">
+                                <inertial pos="-0.0174056 0.00607488 7.02738e-06" quat="-0.0140212 0.707082 0.0148879 0.706836" mass="0.00657987" diaginertia="9.50286e-07 9.46349e-07 1.7336e-07" />
+                                <joint name="benchhand_right_native_wuji_F4J2" pos="0 0 0" axis="0 1 0" range="-0.495 0.495" actuatorfrcrange="-120 120" damping="8" />
+                                <geom type="mesh" material="benchhand_right_native_wuji_satin_metal" mesh="benchhand_right_native_wuji_PIPMCP_2rd_ring" friction="1 0.0050000000000000001 0.0001" />
+                                <body name="benchhand_right_native_wuji_DIP_ring" pos="-0.036618 0.0046 1.5581e-05" quat="1 0 0.0002166 0">
+                                  <inertial pos="-0.0155094 0.00112279 4.73413e-06" quat="0.509072 0.508109 0.491101 0.491417" mass="0.00450885" diaginertia="3.97439e-07 3.87915e-07 1.22648e-07" />
+                                  <joint name="benchhand_right_native_wuji_F4J3" pos="0 0 0" axis="0 0 1" range="0 1.6272" actuatorfrcrange="-120 120" damping="8" />
+                                  <geom type="mesh" material="benchhand_right_native_wuji_satin_metal" mesh="benchhand_right_native_wuji_DIP_ring" friction="1 0.0050000000000000001 0.0001" />
+                                  <body name="benchhand_right_native_wuji_tipmount_ring" pos="-0.029 0 0" quat="1 0.000134295 0 0">
+                                    <inertial pos="-0.00116836 -0.0145421 0.000563447" quat="0.708554 0.690907 0.0721721 0.124052" mass="0.00336974" diaginertia="6.85495e-07 6.82725e-07 1.00505e-07" />
+                                    <joint name="benchhand_right_native_wuji_F4J4" pos="0 0 0" axis="0 0 1" range="0 1.6272" actuatorfrcrange="-120 120" damping="8" />
+                                    <geom type="mesh" material="benchhand_right_native_wuji_satin_metal" mesh="benchhand_right_native_wuji_tipmount_ring" friction="1 0.0050000000000000001 0.0001" />
+                                    <geom pos="-0.0267 0.0010404 0" quat="1 0 0 0" type="mesh" material="benchhand_right_native_wuji_soft_tip" mesh="benchhand_right_native_wuji_fingertip_ring" friction="1 0.0050000000000000001 0.0001" />
+                                    </body>
+                                </body>
+                              </body>
+                            </body>
+                            <body name="benchhand_right_native_wuji_MCP_joint_pinky" pos="-0.124281 -0.0340011 0.0277313" quat="0.642147 -0.759154 -0.0973283 0.0431278">
+                              <inertial pos="0 0 0" mass="0.0001" diaginertia="1e-08 1e-08 1e-08" />
+                              <joint name="benchhand_right_native_wuji_F5J1" pos="0 0 0" axis="0 0 -1" range="-1.63595 0" actuatorfrcrange="-120 120" damping="8" />
+                              <geom type="mesh" material="benchhand_right_native_wuji_satin_metal" mesh="benchhand_right_native_wuji_MCP_joint_pinky" friction="1 0.0050000000000000001 0.0001" />
+                              <body name="benchhand_right_native_wuji_PIPMCP_2rd_pinky" pos="-0.00400001 -0.0022 0">
+                                <inertial pos="-0.0174056 0.00607489 7.02946e-06" quat="-0.0140185 0.707081 0.0148905 0.706836" mass="0.00657987" diaginertia="9.50286e-07 9.46349e-07 1.7336e-07" />
+                                <joint name="benchhand_right_native_wuji_F5J2" pos="0 0 0" axis="0 1 0" range="-0.495 0.495" actuatorfrcrange="-120 120" damping="8" />
+                                <geom type="mesh" material="benchhand_right_native_wuji_satin_metal" mesh="benchhand_right_native_wuji_PIPMCP_2rd_pinky" friction="1 0.0050000000000000001 0.0001" />
+                                <body name="benchhand_right_native_wuji_DIP_pinky" pos="-0.0366177 0.0046 1.55809e-05" quat="1 0 0.000216601 0">
+                                  <inertial pos="-0.0155094 0.00112279 4.74867e-06" quat="0.509063 0.508118 0.491091 0.491427" mass="0.00450886" diaginertia="3.9744e-07 3.87915e-07 1.22648e-07" />
+                                  <joint name="benchhand_right_native_wuji_F5J3" pos="0 0 0" axis="0 0 1" range="0 1.6272" actuatorfrcrange="-120 120" damping="8" />
+                                  <geom type="mesh" material="benchhand_right_native_wuji_satin_metal" mesh="benchhand_right_native_wuji_DIP_pinky" friction="1 0.0050000000000000001 0.0001" />
+                                  <body name="benchhand_right_native_wuji_tipmount_pinky" pos="-0.029 0 0" quat="1 0.000134297 0 0">
+                                    <inertial pos="-0.00116882 -0.0145475 0.000568224" quat="0.708616 0.690834 0.0718582 0.12429" mass="0.00336974" diaginertia="6.85889e-07 6.8312e-07 1.00506e-07" />
+                                    <joint name="benchhand_right_native_wuji_F5J4" pos="0 0 0" axis="0 0 1" range="0 1.6272" actuatorfrcrange="-120 120" damping="8" />
+                                    <geom type="mesh" material="benchhand_right_native_wuji_satin_metal" mesh="benchhand_right_native_wuji_tipmount_pinky" friction="1 0.0050000000000000001 0.0001" />
+                                    <geom pos="-0.0267 0.00105 0" quat="1 0 0 0" type="mesh" material="benchhand_right_native_wuji_soft_tip" mesh="benchhand_right_native_wuji_fingertip_pinky" friction="1 0.0050000000000000001 0.0001" />
+                                    </body>
+                                </body>
+                              </body>
+                            </body>
+                          </frame>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <body name="bucket" childclass="bucket" pos="-0.2 0 1" quat="0 0 -0.707107 -0.707107">
+      <joint name="bucket_root" type="free" armature="0" damping="0" frictionloss="0" />
+      <geom class="bucket/visual" type="mesh" density="0" material="bucket_original-4_material_0_0" mesh="bucket_original-4" />
+      <geom class="bucket/visual" type="mesh" density="0" material="bucket_original-3_material_0_0" mesh="bucket_original-3" />
+      <geom class="bucket/visual" type="mesh" density="0" material="bucket_original-5_material_0_0" mesh="bucket_original-5" />
+      <geom name="bucket_back" class="bucket/collision" size="0.195 0.09 0.004" pos="-0.01 0.01 -0.129" type="box" />
+      <geom name="bucket_front" class="bucket/collision" size="0.195 0.09 0.004" pos="-0.01 0.01 0.12" type="box" />
+      <geom name="bucket_l" class="bucket/collision" size="0.003 0.015 0.128" pos="-0.2 0.085 -0.005" type="box" />
+      <geom name="bucket_r" class="bucket/collision" size="0.003 0.015 0.128" pos="0.183 0.085 -0.005" type="box" />
+      <geom name="bucket_left" class="bucket/collision" size="0.001 0.09 0.128" pos="-0.183 0.01 -0.005" quat="0.996566 0 0 0.082808" type="box" mass="0.05" />
+      <geom name="bucket_right" class="bucket/collision" size="0.001 0.09 0.128" pos="0.168 0.01 -0.005" quat="0.997503 0 0 -0.070627" type="box" mass="0.05" />
+      <geom name="bucket_bottom" class="bucket/collision" size="0.163 0.002 0.12" pos="-0.007 -0.078 -0.005" type="box" group="1" rgba="1 0 0 1" />
+      <site name="bucket_ref_0" pos="-0.18 -0.08 -0.13" size="0.01" rgba="1 0 0 0" />
+      <site name="bucket_ref_1" pos="-0.18 -0.08 0.12" size="0.01" rgba="1 0 0 0" />
+      <site name="bucket_ref_2" pos="-0.18 0.09 -0.13" size="0.01" rgba="1 0 0 0" />
+      <site name="bucket_ref_3" pos="-0.18 0.09 0.12" size="0.01" rgba="1 0 0 0" />
+      <site name="bucket_ref_4" pos="0.16 -0.08 -0.13" size="0.01" rgba="1 0 0 0" />
+      <site name="bucket_ref_5" pos="0.16 -0.08 0.12" size="0.01" rgba="1 0 0 0" />
+      <site name="bucket_ref_6" pos="0.16 0.09 -0.13" size="0.01" rgba="1 0 0 0" />
+      <site name="bucket_ref_7" pos="0.16 0.09 0.12" size="0.01" rgba="1 0 0 0" />
+      <body name="bucket_link_0" pos="-0.00220934 0.0350497 0">
+        <joint name="bucket_joint_0" pos="-0.005 0.055 0" axis="0 0 1" range="0 3.14159" />
+        <geom class="bucket/visual" pos="0.00220934 -0.0350497 0" quat="1 0 0 0" type="mesh" density="0" material="bucket_original-1_0_material_1_0" mesh="bucket_original-1_0" />
+        <geom class="bucket/visual" pos="0.00220934 -0.0350497 0" quat="1 0 0 0" type="mesh" density="0" material="bucket_original-1_1_material_0_0" mesh="bucket_original-1_1" />
+        <geom name="handle1" class="bucket/collision" size="0.002 0.008 0.12" pos="0.175 0.053 -0.005" type="box" />
+        <geom name="handle2" class="bucket/collision" size="0.09 0.008 0.0014" pos="0.085 0.053 -0.122" type="box" />
+        <geom name="handle3" class="bucket/collision" size="0.09 0.008 0.0014" pos="0.085 0.053 0.113" type="box" />
+      </body>
+    </body>
+    <body name="boxed_food_0" pos="-0.1 0.4 0.958">
+      <joint name="boxed_food_0_freejoint" type="free" />
+      <geom type="mesh" contype="0" conaffinity="0" group="1" solimp="0.998 0.998" mass="0" material="auto" mesh="model_normalized_0_vis" />
+      <geom name="boxed_food_collision_main" size="0.0225 0.063 0.0394" pos="0.0015 0 0.0014" type="box" priority="2" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0.1" rgba="0 0 0 0" />
+      <geom name="boxed_food_collision_side" size="0.0025 0.063 0.0394" pos="-0.023 0 0.0014" type="box" priority="2" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0.1" rgba="0 0 0 0" />
+    </body>
+    <body name="table" pos="-0.15 0 0">
+      <geom name="table_collision" size="0.4 0.8 0.03" pos="0 0 0.89" type="box" group="3" />
+      <geom name="table_visual" size="0.4 0.8 0.03" pos="0 0 0.89" type="box" contype="0" conaffinity="0" group="1" material="table_ceramic" />
+      <geom size="0.04 0.43" pos="0.32 0.72 0.43" type="cylinder" contype="0" conaffinity="0" group="1" material="table_legs_metal" />
+      <geom size="0.04 0.43" pos="0.32 -0.72 0.43" type="cylinder" contype="0" conaffinity="0" group="1" material="table_legs_metal" />
+      <geom size="0.04 0.43" pos="-0.32 0.72 0.43" type="cylinder" contype="0" conaffinity="0" group="1" material="table_legs_metal" />
+      <geom size="0.04 0.43" pos="-0.32 -0.72 0.43" type="cylinder" contype="0" conaffinity="0" group="1" material="table_legs_metal" />
+      <site name="table_top" pos="0 0 0.92" size="0.002" rgba="0 0 0 0" />
+    </body>
+    <body name="target" pos="0.15 0 0.5" quat="0 1 0 0" mocap="true">
+      <geom name="target" size="0.03 0.03 0.03" type="box" contype="0" conaffinity="0" rgba="0.6 0.3 0.3 0" />
+    </body>
+  </worldbody>
+
+  <actuator>
+    <general name="actuator1" class="panda" joint="joint1" ctrlrange="-87 87" />
+    <general name="actuator2" class="panda" joint="joint2" ctrlrange="-87 87" />
+    <general name="actuator3" class="panda" joint="joint3" ctrlrange="-87 87" />
+    <general name="actuator4" class="panda" joint="joint4" ctrlrange="-87 87" />
+    <general name="actuator5" class="panda" joint="joint5" ctrlrange="-12 12" />
+    <general name="actuator6" class="panda" joint="joint6" ctrlrange="-12 12" />
+    <general name="actuator7" class="panda" joint="joint7" ctrlrange="-12 12" />
+    <general name="bucket_joint_0" joint="bucket_joint_0" ctrllimited="true" ctrlrange="-1 1" gear="10 0 0 0 0 0" />
+    <general name="benchhand_right_native_wuji_F1J1_ctrl" joint="benchhand_right_native_wuji_F1J1" ctrllimited="true" ctrlrange="-0.0448 1.6508" forcerange="-120 120" biastype="affine" gainprm="120" biasprm="0 -120" />
+    <general name="benchhand_right_native_wuji_F1J2_ctrl" joint="benchhand_right_native_wuji_F1J2" ctrllimited="true" ctrlrange="-0.1659 0.9339" forcerange="-120 120" biastype="affine" gainprm="120" biasprm="0 -120" />
+    <general name="benchhand_right_native_wuji_F1J3_ctrl" joint="benchhand_right_native_wuji_F1J3" ctrllimited="true" ctrlrange="0 1.6272" forcerange="-120 120" biastype="affine" gainprm="120" biasprm="0 -120" />
+    <general name="benchhand_right_native_wuji_F1J4_ctrl" joint="benchhand_right_native_wuji_F1J4" ctrllimited="true" ctrlrange="0 1.6272" forcerange="-120 120" biastype="affine" gainprm="120" biasprm="0 -120" />
+    <general name="benchhand_right_native_wuji_F2J1_ctrl" joint="benchhand_right_native_wuji_F2J1" ctrllimited="true" ctrlrange="-1.63595 0" forcerange="-120 120" biastype="affine" gainprm="120" biasprm="0 -120" />
+    <general name="benchhand_right_native_wuji_F2J2_ctrl" joint="benchhand_right_native_wuji_F2J2" ctrllimited="true" ctrlrange="-0.495 0.495" forcerange="-120 120" biastype="affine" gainprm="120" biasprm="0 -120" />
+    <general name="benchhand_right_native_wuji_F2J3_ctrl" joint="benchhand_right_native_wuji_F2J3" ctrllimited="true" ctrlrange="0 1.6272" forcerange="-120 120" biastype="affine" gainprm="120" biasprm="0 -120" />
+    <general name="benchhand_right_native_wuji_F2J4_ctrl" joint="benchhand_right_native_wuji_F2J4" ctrllimited="true" ctrlrange="0 1.6272" forcerange="-120 120" biastype="affine" gainprm="120" biasprm="0 -120" />
+    <general name="benchhand_right_native_wuji_F3J1_ctrl" joint="benchhand_right_native_wuji_F3J1" ctrllimited="true" ctrlrange="-1.63595 0" forcerange="-120 120" biastype="affine" gainprm="120" biasprm="0 -120" />
+    <general name="benchhand_right_native_wuji_F3J2_ctrl" joint="benchhand_right_native_wuji_F3J2" ctrllimited="true" ctrlrange="-0.495 0.495" forcerange="-120 120" biastype="affine" gainprm="120" biasprm="0 -120" />
+    <general name="benchhand_right_native_wuji_F3J3_ctrl" joint="benchhand_right_native_wuji_F3J3" ctrllimited="true" ctrlrange="0 1.6272" forcerange="-120 120" biastype="affine" gainprm="120" biasprm="0 -120" />
+    <general name="benchhand_right_native_wuji_F3J4_ctrl" joint="benchhand_right_native_wuji_F3J4" ctrllimited="true" ctrlrange="0 1.6272" forcerange="-120 120" biastype="affine" gainprm="120" biasprm="0 -120" />
+    <general name="benchhand_right_native_wuji_F4J1_ctrl" joint="benchhand_right_native_wuji_F4J1" ctrllimited="true" ctrlrange="-1.63595 0" forcerange="-120 120" biastype="affine" gainprm="120" biasprm="0 -120" />
+    <general name="benchhand_right_native_wuji_F4J2_ctrl" joint="benchhand_right_native_wuji_F4J2" ctrllimited="true" ctrlrange="-0.495 0.495" forcerange="-120 120" biastype="affine" gainprm="120" biasprm="0 -120" />
+    <general name="benchhand_right_native_wuji_F4J3_ctrl" joint="benchhand_right_native_wuji_F4J3" ctrllimited="true" ctrlrange="0 1.6272" forcerange="-120 120" biastype="affine" gainprm="120" biasprm="0 -120" />
+    <general name="benchhand_right_native_wuji_F4J4_ctrl" joint="benchhand_right_native_wuji_F4J4" ctrllimited="true" ctrlrange="0 1.6272" forcerange="-120 120" biastype="affine" gainprm="120" biasprm="0 -120" />
+    <general name="benchhand_right_native_wuji_F5J1_ctrl" joint="benchhand_right_native_wuji_F5J1" ctrllimited="true" ctrlrange="-1.63595 0" forcerange="-120 120" biastype="affine" gainprm="120" biasprm="0 -120" />
+    <general name="benchhand_right_native_wuji_F5J2_ctrl" joint="benchhand_right_native_wuji_F5J2" ctrllimited="true" ctrlrange="-0.495 0.495" forcerange="-120 120" biastype="affine" gainprm="120" biasprm="0 -120" />
+    <general name="benchhand_right_native_wuji_F5J3_ctrl" joint="benchhand_right_native_wuji_F5J3" ctrllimited="true" ctrlrange="0 1.6272" forcerange="-120 120" biastype="affine" gainprm="120" biasprm="0 -120" />
+    <general name="benchhand_right_native_wuji_F5J4_ctrl" joint="benchhand_right_native_wuji_F5J4" ctrllimited="true" ctrlrange="0 1.6272" forcerange="-120 120" biastype="affine" gainprm="120" biasprm="0 -120" />
+  </actuator>
+
+  <sensor>
+    <jointpos joint="joint1" name="panda/joint1_pos" />
+    <jointpos joint="joint2" name="panda/joint2_pos" />
+    <jointpos joint="joint3" name="panda/joint3_pos" />
+    <jointpos joint="joint4" name="panda/joint4_pos" />
+    <jointpos joint="joint5" name="panda/joint5_pos" />
+    <jointpos joint="joint6" name="panda/joint6_pos" />
+    <jointpos joint="joint7" name="panda/joint7_pos" />
+    <jointvel joint="joint1" name="panda/joint1_vel" />
+    <jointvel joint="joint2" name="panda/joint2_vel" />
+    <jointvel joint="joint3" name="panda/joint3_vel" />
+    <jointvel joint="joint4" name="panda/joint4_vel" />
+    <jointvel joint="joint5" name="panda/joint5_vel" />
+    <jointvel joint="joint6" name="panda/joint6_vel" />
+    <jointvel joint="joint7" name="panda/joint7_vel" />
+    <torque site="joint1" name="panda/joint1_torque" />
+    <torque site="joint2" name="panda/joint2_torque" />
+    <torque site="joint3" name="panda/joint3_torque" />
+    <torque site="joint4" name="panda/joint4_torque" />
+    <torque site="joint5" name="panda/joint5_torque" />
+    <torque site="joint6" name="panda/joint6_torque" />
+    <torque site="joint7" name="panda/joint7_torque" />
+    <force site="attachment_site" name="panda/wrist_force" />
+    <framepos objtype="site" objname="attachment_site" name="franka/flange_pos" />
+    <framequat objtype="site" objname="attachment_site" name="franka/flange_quat" />
+    <framelinvel objtype="site" objname="attachment_site" name="franka/flange_vel" />
+    <framepos objtype="body" objname="bucket" name="bucket_pos" />
+    <framequat objtype="body" objname="bucket" name="bucket_quat" />
+    <framepos objtype="body" objname="boxed_food_0" name="boxed_food_0_pos" />
+    <framequat objtype="body" objname="boxed_food_0" name="boxed_food_0_quat" />
+    <jointpos joint="bucket_joint_0" name="bucket_joint_pos" />
+    <jointvel joint="bucket_joint_0" name="bucket_joint_quat" />
+  </sensor>
+</mujoco>

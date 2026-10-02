@@ -1,0 +1,210 @@
+from __future__ import annotations
+
+import argparse
+import sys
+import xml.etree.ElementTree as ET
+from pathlib import Path
+
+try:
+    from teleoperation.inspire.retarget.hand_profile import (
+        INSPIRE_RIGHT_ACTIVE_JOINT_NAMES,
+        INSPIRE_RIGHT_MIMIC_RULES,
+    )
+    from teleoperation.unidex_mimic.common import (
+        compile_prefixed_urdf_hand,
+        generate_panda_mounted_hand,
+    )
+except ImportError:
+    package_root = Path(__file__).resolve().parents[3]
+    if str(package_root) not in sys.path:
+        sys.path.insert(0, str(package_root))
+    from teleoperation.inspire.retarget.hand_profile import (
+        INSPIRE_RIGHT_ACTIVE_JOINT_NAMES,
+        INSPIRE_RIGHT_MIMIC_RULES,
+    )
+    from teleoperation.unidex_mimic.common import (
+        compile_prefixed_urdf_hand,
+        generate_panda_mounted_hand,
+    )
+
+
+INSPIRE_ACTUATOR_KP = 120.0
+INSPIRE_ACTUATOR_FORCE = 120.0
+INSPIRE_JOINT_DAMPING = 2.0
+INSPIRE_VISUAL_RGBA = "0.50 0.50 0.50 1"
+INSPIRE_MATTE_MATERIAL = "inspire_matte_gray"
+INSPIRE_BASE_VISUAL_MESH = "inspire_meshes__visual__right_base_link"
+
+
+def build_argparser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description="Generate a Panda-mounted Inspire XML from the local UniDex Inspire right-hand URDF."
+    )
+    parser.add_argument("--panda_template", type=Path, default=Path("dexjoco/dexjoco/sim/envs/xmls/panda_leap_right.xml"))
+    parser.add_argument("--inspire_urdf", type=Path, default=Path("teleoperation/inspire/assets/right/main.urdf"))
+    parser.add_argument("--fixed_urdf", type=Path, default=Path("teleoperation/inspire/assets/right/main_mujoco.urdf"))
+    parser.add_argument("--hand_xml", type=Path, default=Path("teleoperation/inspire/assets/right/inspire_right.xml"))
+    parser.add_argument("--output", type=Path, default=Path("dexjoco/dexjoco/sim/envs/xmls/panda_inspire_right.xml"))
+    return parser
+
+
+def set_inspire_joint_actuator_force_range(xml_path: Path, force: float) -> None:
+    tree = ET.parse(xml_path)
+    root = tree.getroot()
+    force_range = f"{-float(force):g} {float(force):g}"
+    for joint in root.findall(".//joint"):
+        if joint.attrib.get("name", "").startswith("inspire_"):
+            joint.set("actuatorfrcrange", force_range)
+    tree.write(xml_path, encoding="utf-8", xml_declaration=False)
+
+
+def apply_inspire_joint_dynamics(xml_path: Path) -> None:
+    tree = ET.parse(xml_path)
+    root = tree.getroot()
+    for joint in root.findall(".//joint"):
+        if joint.attrib.get("name", "").startswith("inspire_"):
+            joint.set("damping", f"{INSPIRE_JOINT_DAMPING:g}")
+    tree.write(xml_path, encoding="utf-8", xml_declaration=False)
+
+
+def apply_inspire_matte_visuals(xml_path: Path) -> None:
+    tree = ET.parse(xml_path)
+    root = tree.getroot()
+    asset = root.find("asset")
+    if asset is None:
+        asset = ET.Element("asset")
+        root.insert(1, asset)
+
+    material = asset.find(f"./material[@name='{INSPIRE_MATTE_MATERIAL}']")
+    if material is None:
+        material = ET.SubElement(asset, "material", {"name": INSPIRE_MATTE_MATERIAL})
+    material.set("rgba", INSPIRE_VISUAL_RGBA)
+    material.set("specular", "0.02")
+    material.set("shininess", "0.04")
+    material.set("reflectance", "0")
+
+    for geom in root.findall(".//geom"):
+        name = geom.attrib.get("name", "")
+        mesh_name = geom.attrib.get("mesh", "")
+        if not (name.startswith("inspire_") or mesh_name.startswith("inspire_")):
+            continue
+        if geom.attrib.get("group") == "3":
+            geom.set("rgba", "0 0 0 0")
+            continue
+        geom.attrib.pop("rgba", None)
+        geom.set("material", INSPIRE_MATTE_MATERIAL)
+    tree.write(xml_path, encoding="utf-8", xml_declaration=False)
+
+
+def add_inspire_base_collision(xml_path: Path) -> None:
+    tree = ET.parse(xml_path)
+    root = tree.getroot()
+
+    for parent in root.iter():
+        children = list(parent)
+        has_base_visual = any(
+            child.tag == "geom"
+            and child.attrib.get("mesh") == INSPIRE_BASE_VISUAL_MESH
+            and child.attrib.get("group") != "3"
+            for child in children
+        )
+        if has_base_visual:
+            for child in children:
+                if child.tag != "geom":
+                    continue
+                if child.attrib.get("group") == "3" and not child.attrib.get("mesh"):
+                    parent.remove(child)
+            children = list(parent)
+
+        if any(
+            child.tag == "geom"
+            and child.attrib.get("name") == "inspire_base_link_collision"
+            for child in children
+        ):
+            continue
+
+        for index, child in enumerate(children):
+            if (
+                child.tag == "geom"
+                and child.attrib.get("mesh") == INSPIRE_BASE_VISUAL_MESH
+                and child.attrib.get("group") != "3"
+            ):
+                attrib = {
+                    key: value
+                    for key, value in child.attrib.items()
+                    if key not in {"contype", "conaffinity", "material"}
+                }
+                attrib.update(
+                    {
+                        "name": "inspire_base_link_collision",
+                        "type": "mesh",
+                        "group": "3",
+                        "density": "0",
+                        "rgba": "0 0 0 0",
+                        "mesh": INSPIRE_BASE_VISUAL_MESH,
+                    }
+                )
+                parent.insert(index + 1, ET.Element("geom", attrib))
+                break
+
+    tree.write(xml_path, encoding="utf-8", xml_declaration=False)
+
+
+def generate(
+    panda_template: Path,
+    inspire_urdf: Path,
+    fixed_urdf: Path,
+    hand_xml: Path,
+    output: Path,
+) -> None:
+    # Inspire URDF 的远端指节是 mimic joint。这里只给主动 6 关节加 actuator，
+    # mimic 指节由 MuJoCo 从 URDF 转出的 equality 关系负责跟随。
+    compile_prefixed_urdf_hand(
+        raw_urdf=inspire_urdf,
+        fixed_urdf=fixed_urdf,
+        hand_xml=hand_xml,
+        prefix="inspire_",
+        active_joint_names=tuple(name.removeprefix("inspire_") for name in INSPIRE_RIGHT_ACTIVE_JOINT_NAMES),
+        mimic_rules={
+            follower.removeprefix("inspire_"): (
+                driver.removeprefix("inspire_"),
+                multiplier,
+                offset,
+            )
+            for follower, (driver, multiplier, offset) in INSPIRE_RIGHT_MIMIC_RULES.items()
+        },
+        visual_rgba=INSPIRE_VISUAL_RGBA,
+        actuator_kp=INSPIRE_ACTUATOR_KP,
+        actuator_force=INSPIRE_ACTUATOR_FORCE,
+    )
+    set_inspire_joint_actuator_force_range(hand_xml, INSPIRE_ACTUATOR_FORCE)
+    apply_inspire_joint_dynamics(hand_xml)
+    apply_inspire_matte_visuals(hand_xml)
+    add_inspire_base_collision(hand_xml)
+    generate_panda_mounted_hand(
+        panda_template=panda_template,
+        hand_xml=hand_xml,
+        output=output,
+        frame_name="inspire_mount_frame",
+        adapter_name="inspire_wrist_adapter_visual",
+        mount_pos=[-0.02, 0.0, 0.03],
+        mount_quat=[0.707, 0.0, -0.707, 0.0],
+        mesh_prefix="inspire_",
+        asset_prefix="../../../../../teleoperation/inspire/assets/right",
+        adapter_pos=[0.005, 0.0, 0.015],
+    )
+    set_inspire_joint_actuator_force_range(output, INSPIRE_ACTUATOR_FORCE)
+    apply_inspire_joint_dynamics(output)
+    apply_inspire_matte_visuals(output)
+    add_inspire_base_collision(output)
+    print(f"[generate_panda_inspire_xml] wrote {output}")
+
+
+def main() -> int:
+    args = build_argparser().parse_args()
+    generate(args.panda_template, args.inspire_urdf, args.fixed_urdf, args.hand_xml, args.output)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

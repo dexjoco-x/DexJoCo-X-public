@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "registered_cells": 42,
+  "model_fingerprints": 42,
+  "collector_files": 134,
+  "historical_task_ids_rejected": true,
+  "diagnostic_only": true,
+  "trajectories": [
+    {
+      "task": "pick_bucket",
+      "passed": true,
+      "frames": 2,
+      "replay_max_state_error": 0.0
+    },
+    {
+      "task": "hammer_nail",
+      "passed": true,
+      "frames": 2,
+      "replay_max_state_error": 0.0
+    },
+    {
+      "task": "single_hand_hanoi",
+      "passed": true,
+      "frames": 2,
+      "replay_max_state_error": 0.0
+    },
+    {
+      "task": "bimanual_microwave_cook",
+      "passed": true,
+      "frames": 2,
+      "replay_max_state_error": 0.0
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "passed": true,
+      "frames": 2,
+      "replay_max_state_error": 0.0
+    },
+    {
+      "task": "bimanual_photograph",
+      "passed": true,
+      "frames": 2,
+      "replay_max_state_error": 0.0
+    }
+  ]
+}

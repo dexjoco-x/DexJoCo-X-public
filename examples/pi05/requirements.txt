@@ -1,0 +1,8 @@
+# Install PyTorch for the user's GPU separately; no training framework is needed.
+numpy==1.26.4
+torch==2.8.0
+sentencepiece==0.2.2
+safetensors==0.6.2
+einops==0.8.2
+websockets>=11,<16
+msgpack>=1,<2

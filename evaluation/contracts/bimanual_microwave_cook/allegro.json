@@ -1,0 +1,215 @@
+{
+  "joint_names": {
+    "right": [
+      "benchhand_right_native_ffj0",
+      "benchhand_right_native_ffj1",
+      "benchhand_right_native_ffj2",
+      "benchhand_right_native_ffj3",
+      "benchhand_right_native_mfj0",
+      "benchhand_right_native_mfj1",
+      "benchhand_right_native_mfj2",
+      "benchhand_right_native_mfj3",
+      "benchhand_right_native_rfj0",
+      "benchhand_right_native_rfj1",
+      "benchhand_right_native_rfj2",
+      "benchhand_right_native_rfj3",
+      "benchhand_right_native_thj0",
+      "benchhand_right_native_thj1",
+      "benchhand_right_native_thj2",
+      "benchhand_right_native_thj3"
+    ],
+    "left": [
+      "benchhand_left_native_rfj0_left",
+      "benchhand_left_native_rfj1_left",
+      "benchhand_left_native_rfj2_left",
+      "benchhand_left_native_rfj3_left",
+      "benchhand_left_native_mfj0_left",
+      "benchhand_left_native_mfj1_left",
+      "benchhand_left_native_mfj2_left",
+      "benchhand_left_native_mfj3_left",
+      "benchhand_left_native_ffj0_left",
+      "benchhand_left_native_ffj1_left",
+      "benchhand_left_native_ffj2_left",
+      "benchhand_left_native_ffj3_left",
+      "benchhand_left_native_thj0_left",
+      "benchhand_left_native_thj1_left",
+      "benchhand_left_native_thj2_left",
+      "benchhand_left_native_thj3_left"
+    ]
+  },
+  "actuator_names": {
+    "right": [
+      "benchhand_right_native_ffa0",
+      "benchhand_right_native_ffa1",
+      "benchhand_right_native_ffa2",
+      "benchhand_right_native_ffa3",
+      "benchhand_right_native_mfa0",
+      "benchhand_right_native_mfa1",
+      "benchhand_right_native_mfa2",
+      "benchhand_right_native_mfa3",
+      "benchhand_right_native_rfa0",
+      "benchhand_right_native_rfa1",
+      "benchhand_right_native_rfa2",
+      "benchhand_right_native_rfa3",
+      "benchhand_right_native_tha0",
+      "benchhand_right_native_tha1",
+      "benchhand_right_native_tha2",
+      "benchhand_right_native_tha3"
+    ],
+    "left": [
+      "benchhand_left_native_ffa0_left",
+      "benchhand_left_native_ffa1_left",
+      "benchhand_left_native_ffa2_left",
+      "benchhand_left_native_ffa3_left",
+      "benchhand_left_native_mfa0_left",
+      "benchhand_left_native_mfa1_left",
+      "benchhand_left_native_mfa2_left",
+      "benchhand_left_native_mfa3_left",
+      "benchhand_left_native_rfa0_left",
+      "benchhand_left_native_rfa1_left",
+      "benchhand_left_native_rfa2_left",
+      "benchhand_left_native_rfa3_left",
+      "benchhand_left_native_tha0_left",
+      "benchhand_left_native_tha1_left",
+      "benchhand_left_native_tha2_left",
+      "benchhand_left_native_tha3_left"
+    ]
+  },
+  "instruction": "Put the food in the microwave, close its door, and press start.",
+  "control_dt": 0.05,
+  "wrist_camera_rig": {
+    "name": "dexjoco_official_allegro60_hanoi_front_v1",
+    "position_tcp": [
+      -0.14,
+      -0.03,
+      0.04
+    ],
+    "vertical_fov_deg": 60.0,
+    "reference_tcp_site_quat_wxyz": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "reference_attachment_quat_single_wxyz": [
+      -0.353553,
+      0.612372,
+      -0.612372,
+      0.352553
+    ],
+    "reference_attachment_quat_dual_wxyz": [
+      -0.353553,
+      0.612372,
+      -0.612372,
+      0.353553
+    ],
+    "hanoi_main_camera": "front",
+    "cross_hand_mapping": "same attachment_site/TCP extrinsics",
+    "real_world_calibrated": false
+  },
+  "camera_profile": "dexjoco_official_allegro60_hanoi_front_v1",
+  "cameras": {
+    "front": {
+      "camera_name": "back",
+      "body": "world",
+      "position_body_m": [
+        -1.3,
+        0.0,
+        2.2
+      ],
+      "quaternion_body_wxyz": [
+        0.6532814294902178,
+        0.27059817790077156,
+        -0.27059817790077156,
+        -0.6532814294902178
+      ],
+      "vertical_fov_deg": 45.0
+    },
+    "wrist_right": {
+      "camera_name": "handcam_rgb_right",
+      "body": "attachment_right",
+      "position_body_m": [
+        0.14,
+        0.03,
+        0.04
+      ],
+      "quaternion_body_wxyz": [
+        -0.353553286310042,
+        0.6123724959037347,
+        -0.6123724959037345,
+        0.353553286310042
+      ],
+      "vertical_fov_deg": 60.0,
+      "position_tcp_m": [
+        -0.14,
+        -0.03,
+        0.04
+      ],
+      "rotation_tcp": [
+        [
+          -1.6653345369377348e-16,
+          0.500000294957478,
+          -0.8660252334905927
+        ],
+        [
+          1.0000000000000004,
+          1.6653345369377348e-16,
+          -5.551115123125783e-17
+        ],
+        [
+          5.551115123125783e-17,
+          -0.8660252334905927,
+          -0.500000294957478
+        ]
+      ]
+    },
+    "wrist_left": {
+      "camera_name": "handcam_rgb_left",
+      "body": "attachment_left",
+      "position_body_m": [
+        0.14,
+        0.03,
+        0.04
+      ],
+      "quaternion_body_wxyz": [
+        -0.353553286310042,
+        0.6123724959037347,
+        -0.6123724959037345,
+        0.353553286310042
+      ],
+      "vertical_fov_deg": 60.0,
+      "position_tcp_m": [
+        -0.14,
+        -0.03,
+        0.04
+      ],
+      "rotation_tcp": [
+        [
+          -1.6653345369377348e-16,
+          0.500000294957478,
+          -0.8660252334905927
+        ],
+        [
+          1.0000000000000004,
+          1.6653345369377348e-16,
+          -5.551115123125783e-17
+        ],
+        [
+          5.551115123125783e-17,
+          -0.8660252334905927,
+          -0.500000294957478
+        ]
+      ]
+    }
+  },
+  "image_preprocessing": {
+    "size": [
+      256,
+      256
+    ],
+    "fps": 20,
+    "rotation_degrees": 0,
+    "vertical_flip": false,
+    "observation_timing": "pre-action"
+  }
+}

@@ -1,0 +1,752 @@
+{
+  "date": "2026-10-02",
+  "passed": true,
+  "release_scope": "dataset, simulator, evaluator, inference adapters",
+  "fresh_simulator_environment": {
+    "python": "3.11.15",
+    "packages": {
+      "six": "1.17.0",
+      "tqdm": "4.70.1",
+      "websockets": "15.0.1",
+      "dexjoco-x": "0.1.0",
+      "typing_extensions": "4.16.0",
+      "PyYAML": "6.0.3",
+      "pandas": "2.3.3",
+      "Farama-Notifications": "0.0.6",
+      "tyro": "1.0.16",
+      "setuptools": "79.0.1",
+      "packaging": "26.3",
+      "Deprecated": "1.3.1",
+      "jax": "0.4.38",
+      "hf-xet": "1.6.0",
+      "imageio-ffmpeg": "0.6.0",
+      "zipp": "4.1.0",
+      "glfw": "2.10.2",
+      "ImageIO": "2.38.0",
+      "httpx2": "2.13.1",
+      "zarr": "2.18.6",
+      "h11": "0.16.0",
+      "anyio": "4.15.1",
+      "scipy": "1.17.1",
+      "dm_robotics-transformations": "0.9.0",
+      "gymnasium": "1.0.0",
+      "asciitree": "0.3.3",
+      "opencv-python": "4.11.0.86",
+      "numpy": "1.26.4",
+      "psutil": "7.2.2",
+      "tzdata": "2026.4",
+      "numcodecs": "0.15.1",
+      "typeguard": "4.6.0",
+      "truststore": "0.10.4",
+      "filelock": "4.0.9",
+      "wrapt": "2.5.0",
+      "python-dateutil": "2.9.0.post0",
+      "fasteners": "0.20",
+      "msgpack": "1.2.3",
+      "cloudpickle": "3.1.2",
+      "jaxlib": "0.4.38",
+      "PyOpenGL": "3.1.10",
+      "pyarrow": "25.0.1",
+      "fsspec": "2026.9.0",
+      "av": "18.1.0",
+      "opt_einsum": "3.4.0",
+      "idna": "3.20",
+      "ml_dtypes": "0.5.4",
+      "pillow": "12.3.0",
+      "httpcore2": "2.13.1",
+      "pytz": "2026.4",
+      "docstring_parser": "0.18.0",
+      "absl-py": "2.5.0",
+      "huggingface_hub": "2.1.1",
+      "etils": "1.14.0",
+      "click": "8.5.0",
+      "mujoco": "3.4.0",
+      "pip": "24.0"
+    }
+  },
+  "fresh_policy_environment": {
+    "python": "3.11.15",
+    "torch": "2.8.0+cu128",
+    "cuda": "12.8",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "include_system_site_packages": false,
+    "packages": {
+      "sentencepiece": "0.2.2",
+      "nvidia-cusparse-cu12": "12.5.8.93",
+      "websockets": "15.0.1",
+      "typing_extensions": "4.16.0",
+      "triton": "3.4.0",
+      "sympy": "1.14.0",
+      "nvidia-nccl-cu12": "2.27.3",
+      "setuptools": "79.0.1",
+      "networkx": "3.6.1",
+      "torch": "2.8.0+cu128",
+      "nvidia-nvtx-cu12": "12.8.90",
+      "mpmath": "1.3.0",
+      "nvidia-cuda-cupti-cu12": "12.8.90",
+      "fsspec": "2026.7.0",
+      "nvidia-cufile-cu12": "1.13.1.3",
+      "nvidia-curand-cu12": "10.3.9.90",
+      "filelock": "3.32.3",
+      "numpy": "1.26.4",
+      "nvidia-cuda-runtime-cu12": "12.8.90",
+      "nvidia-cufft-cu12": "11.3.3.83",
+      "nvidia-cublas-cu12": "12.8.4.1",
+      "MarkupSafe": "3.0.3",
+      "Jinja2": "3.1.6",
+      "nvidia-cusolver-cu12": "11.7.3.90",
+      "safetensors": "0.6.2",
+      "msgpack": "1.2.3",
+      "nvidia-cuda-nvrtc-cu12": "12.8.93",
+      "nvidia-cudnn-cu12": "9.10.2.21",
+      "einops": "0.8.2",
+      "nvidia-nvjitlink-cu12": "12.8.93",
+      "pip": "24.0",
+      "nvidia-cusparselt-cu12": "0.7.1"
+    }
+  },
+  "dependency_checks_passed": true,
+  "policy_dependencies_installed_from_official_cached_wheels": true,
+  "private_training_directory_present": false,
+  "training_implementation_included": false,
+  "weights_included": false,
+  "downloaded_task_package": {
+    "passed": true,
+    "tasks": [
+      "hammer_nail"
+    ],
+    "files_checked": 1754,
+    "episodes": 350,
+    "missing": [],
+    "changed": [],
+    "transport": "archive",
+    "archive_revision": "478663e1c09a21b2e6e28fa0cbee910523cf73b0",
+    "archives": 1
+  },
+  "native_data_validation": {
+    "passed": true,
+    "groups": 7,
+    "episodes": 350,
+    "frames": 103845,
+    "representation": "native",
+    "model_training_required": false,
+    "groups_checked": [
+      {
+        "task": "hammer_nail",
+        "hand": "allegro",
+        "episodes": 50,
+        "frames": 18245,
+        "maximum_physical_inverse_error": 2.7507115918368186e-07,
+        "decoded_video_frames": 4,
+        "statistics_sha256": "c3a9bd588c62285af23f23c0f53982ae6d669263116b6bd8aa9993682d058ac3",
+        "passed": true
+      },
+      {
+        "task": "hammer_nail",
+        "hand": "inspire",
+        "episodes": 50,
+        "frames": 19374,
+        "maximum_physical_inverse_error": 5.979615025353269e-08,
+        "decoded_video_frames": 4,
+        "statistics_sha256": "4199083ecf5401d7e819cc687535d9b88a9827fe12b4f421801ccef6035097a2",
+        "passed": true
+      },
+      {
+        "task": "hammer_nail",
+        "hand": "leap",
+        "episodes": 50,
+        "frames": 15014,
+        "maximum_physical_inverse_error": 2.8062080970059355e-07,
+        "decoded_video_frames": 4,
+        "statistics_sha256": "04d19a54f86d95c2256dc71ba436b0521a00d118db67c19633ee19a7d91414fc",
+        "passed": true
+      },
+      {
+        "task": "hammer_nail",
+        "hand": "linkerhand_l20",
+        "episodes": 50,
+        "frames": 14102,
+        "maximum_physical_inverse_error": 2.793950302226733e-07,
+        "decoded_video_frames": 4,
+        "statistics_sha256": "231ed7f652e7f9daf8726cfdc6468219f7707a36303a61aa19d0bcd82d3cd06d",
+        "passed": true
+      },
+      {
+        "task": "hammer_nail",
+        "hand": "sharpa_wave",
+        "episodes": 50,
+        "frames": 12107,
+        "maximum_physical_inverse_error": 2.7953504266875484e-07,
+        "decoded_video_frames": 4,
+        "statistics_sha256": "6ef73377dae2c948f34bfe8831caa180b8c26e383efaba6715ae610f0a5d04f4",
+        "passed": true
+      },
+      {
+        "task": "hammer_nail",
+        "hand": "wuji",
+        "episodes": 50,
+        "frames": 13958,
+        "maximum_physical_inverse_error": 2.6599989855213835e-07,
+        "decoded_video_frames": 4,
+        "statistics_sha256": "fde1292c46c9fa96792e54f27059fcb4190f8b25851581d2c157347d35e94ac4",
+        "passed": true
+      },
+      {
+        "task": "hammer_nail",
+        "hand": "xhand",
+        "episodes": 50,
+        "frames": 11045,
+        "maximum_physical_inverse_error": 2.7853036588254554e-07,
+        "decoded_video_frames": 4,
+        "statistics_sha256": "cd172f001ea1f7498bcebacdaaab18169fa1c1f894792d7befc7abe3ccae96a6",
+        "passed": true
+      }
+    ]
+  },
+  "faas_conversion_validation": {
+    "passed": true,
+    "episodes": 350,
+    "train_episodes": 350,
+    "two_arm_encoding": true,
+    "test_split_used_for_statistics": false,
+    "roundtrip": {
+      "allegro": {
+        "count": 291920,
+        "mae": 0.0,
+        "max_abs": 0.0,
+        "p99_abs": 0.0
+      },
+      "leap": {
+        "count": 240224,
+        "mae": 0.0,
+        "max_abs": 0.0,
+        "p99_abs": 0.0
+      },
+      "xhand": {
+        "count": 132540,
+        "mae": 0.0,
+        "max_abs": 0.0,
+        "p99_abs": 0.0
+      },
+      "inspire": {
+        "count": 116244,
+        "mae": 0.0,
+        "max_abs": 0.0,
+        "p99_abs": 0.0
+      },
+      "wuji": {
+        "count": 279160,
+        "mae": 0.0,
+        "max_abs": 0.0,
+        "p99_abs": 0.0
+      },
+      "sharpa_wave": {
+        "count": 266354,
+        "mae": 0.0,
+        "max_abs": 0.0,
+        "p99_abs": 0.0
+      },
+      "linkerhand_l20": {
+        "count": 225632,
+        "mae": 0.0,
+        "max_abs": 0.0,
+        "p99_abs": 0.0
+      }
+    },
+    "manifest": "beingh05_faas_datasets.json"
+  },
+  "environment_validation": {
+    "passed": true,
+    "cells": 42,
+    "checks": [
+      "environment_init",
+      "contract",
+      "observation",
+      "native_action_encode",
+      "physics_step"
+    ],
+    "groups": [
+      {
+        "task": "bimanual_microwave_cook",
+        "hand": "allegro",
+        "passed": true,
+        "active_state_dims": 46,
+        "active_action_dims": 44,
+        "physics_step_finite": true
+      },
+      {
+        "task": "bimanual_microwave_cook",
+        "hand": "inspire",
+        "passed": true,
+        "active_state_dims": 38,
+        "active_action_dims": 24,
+        "physics_step_finite": true
+      },
+      {
+        "task": "bimanual_microwave_cook",
+        "hand": "leap",
+        "passed": true,
+        "active_state_dims": 46,
+        "active_action_dims": 44,
+        "physics_step_finite": true
+      },
+      {
+        "task": "bimanual_microwave_cook",
+        "hand": "linkerhand_l20",
+        "passed": true,
+        "active_state_dims": 56,
+        "active_action_dims": 44,
+        "physics_step_finite": true
+      },
+      {
+        "task": "bimanual_microwave_cook",
+        "hand": "sharpa_wave",
+        "passed": true,
+        "active_state_dims": 58,
+        "active_action_dims": 56,
+        "physics_step_finite": true
+      },
+      {
+        "task": "bimanual_microwave_cook",
+        "hand": "wuji",
+        "passed": true,
+        "active_state_dims": 54,
+        "active_action_dims": 52,
+        "physics_step_finite": true
+      },
+      {
+        "task": "bimanual_microwave_cook",
+        "hand": "xhand",
+        "passed": true,
+        "active_state_dims": 38,
+        "active_action_dims": 36,
+        "physics_step_finite": true
+      },
+      {
+        "task": "bimanual_photograph",
+        "hand": "allegro",
+        "passed": true,
+        "active_state_dims": 46,
+        "active_action_dims": 44,
+        "physics_step_finite": true
+      },
+      {
+        "task": "bimanual_photograph",
+        "hand": "inspire",
+        "passed": true,
+        "active_state_dims": 38,
+        "active_action_dims": 24,
+        "physics_step_finite": true
+      },
+      {
+        "task": "bimanual_photograph",
+        "hand": "leap",
+        "passed": true,
+        "active_state_dims": 46,
+        "active_action_dims": 44,
+        "physics_step_finite": true
+      },
+      {
+        "task": "bimanual_photograph",
+        "hand": "linkerhand_l20",
+        "passed": true,
+        "active_state_dims": 56,
+        "active_action_dims": 44,
+        "physics_step_finite": true
+      },
+      {
+        "task": "bimanual_photograph",
+        "hand": "sharpa_wave",
+        "passed": true,
+        "active_state_dims": 58,
+        "active_action_dims": 56,
+        "physics_step_finite": true
+      },
+      {
+        "task": "bimanual_photograph",
+        "hand": "wuji",
+        "passed": true,
+        "active_state_dims": 54,
+        "active_action_dims": 52,
+        "physics_step_finite": true
+      },
+      {
+        "task": "bimanual_photograph",
+        "hand": "xhand",
+        "passed": true,
+        "active_state_dims": 38,
+        "active_action_dims": 36,
+        "physics_step_finite": true
+      },
+      {
+        "task": "bimanual_unlock_ipad",
+        "hand": "allegro",
+        "passed": true,
+        "active_state_dims": 46,
+        "active_action_dims": 44,
+        "physics_step_finite": true
+      },
+      {
+        "task": "bimanual_unlock_ipad",
+        "hand": "inspire",
+        "passed": true,
+        "active_state_dims": 38,
+        "active_action_dims": 24,
+        "physics_step_finite": true
+      },
+      {
+        "task": "bimanual_unlock_ipad",
+        "hand": "leap",
+        "passed": true,
+        "active_state_dims": 46,
+        "active_action_dims": 44,
+        "physics_step_finite": true
+      },
+      {
+        "task": "bimanual_unlock_ipad",
+        "hand": "linkerhand_l20",
+        "passed": true,
+        "active_state_dims": 56,
+        "active_action_dims": 44,
+        "physics_step_finite": true
+      },
+      {
+        "task": "bimanual_unlock_ipad",
+        "hand": "sharpa_wave",
+        "passed": true,
+        "active_state_dims": 58,
+        "active_action_dims": 56,
+        "physics_step_finite": true
+      },
+      {
+        "task": "bimanual_unlock_ipad",
+        "hand": "wuji",
+        "passed": true,
+        "active_state_dims": 54,
+        "active_action_dims": 52,
+        "physics_step_finite": true
+      },
+      {
+        "task": "bimanual_unlock_ipad",
+        "hand": "xhand",
+        "passed": true,
+        "active_state_dims": 38,
+        "active_action_dims": 36,
+        "physics_step_finite": true
+      },
+      {
+        "task": "hammer_nail",
+        "hand": "allegro",
+        "passed": true,
+        "active_state_dims": 23,
+        "active_action_dims": 22,
+        "physics_step_finite": true
+      },
+      {
+        "task": "hammer_nail",
+        "hand": "inspire",
+        "passed": true,
+        "active_state_dims": 19,
+        "active_action_dims": 12,
+        "physics_step_finite": true
+      },
+      {
+        "task": "hammer_nail",
+        "hand": "leap",
+        "passed": true,
+        "active_state_dims": 23,
+        "active_action_dims": 22,
+        "physics_step_finite": true
+      },
+      {
+        "task": "hammer_nail",
+        "hand": "linkerhand_l20",
+        "passed": true,
+        "active_state_dims": 28,
+        "active_action_dims": 22,
+        "physics_step_finite": true
+      },
+      {
+        "task": "hammer_nail",
+        "hand": "sharpa_wave",
+        "passed": true,
+        "active_state_dims": 29,
+        "active_action_dims": 28,
+        "physics_step_finite": true
+      },
+      {
+        "task": "hammer_nail",
+        "hand": "wuji",
+        "passed": true,
+        "active_state_dims": 27,
+        "active_action_dims": 26,
+        "physics_step_finite": true
+      },
+      {
+        "task": "hammer_nail",
+        "hand": "xhand",
+        "passed": true,
+        "active_state_dims": 19,
+        "active_action_dims": 18,
+        "physics_step_finite": true
+      },
+      {
+        "task": "pick_bucket",
+        "hand": "allegro",
+        "passed": true,
+        "active_state_dims": 23,
+        "active_action_dims": 22,
+        "physics_step_finite": true
+      },
+      {
+        "task": "pick_bucket",
+        "hand": "inspire",
+        "passed": true,
+        "active_state_dims": 19,
+        "active_action_dims": 12,
+        "physics_step_finite": true
+      },
+      {
+        "task": "pick_bucket",
+        "hand": "leap",
+        "passed": true,
+        "active_state_dims": 23,
+        "active_action_dims": 22,
+        "physics_step_finite": true
+      },
+      {
+        "task": "pick_bucket",
+        "hand": "linkerhand_l20",
+        "passed": true,
+        "active_state_dims": 28,
+        "active_action_dims": 22,
+        "physics_step_finite": true
+      },
+      {
+        "task": "pick_bucket",
+        "hand": "sharpa_wave",
+        "passed": true,
+        "active_state_dims": 29,
+        "active_action_dims": 28,
+        "physics_step_finite": true
+      },
+      {
+        "task": "pick_bucket",
+        "hand": "wuji",
+        "passed": true,
+        "active_state_dims": 27,
+        "active_action_dims": 26,
+        "physics_step_finite": true
+      },
+      {
+        "task": "pick_bucket",
+        "hand": "xhand",
+        "passed": true,
+        "active_state_dims": 19,
+        "active_action_dims": 18,
+        "physics_step_finite": true
+      },
+      {
+        "task": "single_hand_hanoi",
+        "hand": "allegro",
+        "passed": true,
+        "active_state_dims": 23,
+        "active_action_dims": 22,
+        "physics_step_finite": true
+      },
+      {
+        "task": "single_hand_hanoi",
+        "hand": "inspire",
+        "passed": true,
+        "active_state_dims": 19,
+        "active_action_dims": 12,
+        "physics_step_finite": true
+      },
+      {
+        "task": "single_hand_hanoi",
+        "hand": "leap",
+        "passed": true,
+        "active_state_dims": 23,
+        "active_action_dims": 22,
+        "physics_step_finite": true
+      },
+      {
+        "task": "single_hand_hanoi",
+        "hand": "linkerhand_l20",
+        "passed": true,
+        "active_state_dims": 28,
+        "active_action_dims": 22,
+        "physics_step_finite": true
+      },
+      {
+        "task": "single_hand_hanoi",
+        "hand": "sharpa_wave",
+        "passed": true,
+        "active_state_dims": 29,
+        "active_action_dims": 28,
+        "physics_step_finite": true
+      },
+      {
+        "task": "single_hand_hanoi",
+        "hand": "wuji",
+        "passed": true,
+        "active_state_dims": 27,
+        "active_action_dims": 26,
+        "physics_step_finite": true
+      },
+      {
+        "task": "single_hand_hanoi",
+        "hand": "xhand",
+        "passed": true,
+        "active_state_dims": 19,
+        "active_action_dims": 18,
+        "physics_step_finite": true
+      }
+    ]
+  },
+  "diagnostic_replay": {
+    "passed": true,
+    "registered_cells": 42,
+    "model_fingerprints": 42,
+    "collector_files": 134,
+    "historical_task_ids_rejected": true,
+    "diagnostic_only": true,
+    "trajectories": [
+      {
+        "task": "pick_bucket",
+        "passed": true,
+        "frames": 2,
+        "replay_max_state_error": 0.0
+      },
+      {
+        "task": "hammer_nail",
+        "passed": true,
+        "frames": 2,
+        "replay_max_state_error": 0.0
+      },
+      {
+        "task": "single_hand_hanoi",
+        "passed": true,
+        "frames": 2,
+        "replay_max_state_error": 0.0
+      },
+      {
+        "task": "bimanual_microwave_cook",
+        "passed": true,
+        "frames": 2,
+        "replay_max_state_error": 0.0
+      },
+      {
+        "task": "bimanual_unlock_ipad",
+        "passed": true,
+        "frames": 2,
+        "replay_max_state_error": 0.0
+      },
+      {
+        "task": "bimanual_photograph",
+        "passed": true,
+        "frames": 2,
+        "replay_max_state_error": 0.0
+      }
+    ]
+  },
+  "representation_validation": {
+    "passed": true,
+    "task": "bimanual_microwave_cook",
+    "hand": "xhand",
+    "representations": [
+      {
+        "representation": "native",
+        "passed": true,
+        "action_roundtrip_max_abs": 0.0,
+        "physics_step_finite": true
+      },
+      {
+        "representation": "faas",
+        "passed": true,
+        "action_roundtrip_max_abs": 0.0,
+        "physics_step_finite": true
+      }
+    ]
+  },
+  "rpc_validation": {
+    "passed": true,
+    "checks": [
+      {
+        "layout": "grouped80_v1",
+        "representation": "native",
+        "passed": true
+      },
+      {
+        "layout": "grouped80_v1",
+        "representation": "faas",
+        "passed": true
+      },
+      {
+        "layout": "arm40_v1",
+        "representation": "native",
+        "passed": true
+      },
+      {
+        "layout": "arm40_v1",
+        "representation": "faas",
+        "passed": true
+      }
+    ],
+    "test_policy": "hold_action",
+    "action_horizon": 30,
+    "full_policy_forward_tested": false,
+    "formal_scenes_executed": false
+  },
+  "pi05_unit_tests_passed": 7,
+  "real_checkpoint_rollout": {
+    "hand": "sharpa_wave",
+    "task": "hammer_nail",
+    "steps": 16,
+    "action_horizon": 25,
+    "execution_horizon": 8,
+    "diagnostic_only": true,
+    "success": false,
+    "metadata": {
+      "schema": "benchmark7_eval80_h25_async_v2",
+      "layout": "arm40_v1",
+      "representation": "native",
+      "action_dim": 80,
+      "action_horizon": 25,
+      "action_units": "physical_unnormalized",
+      "explicit_flow_noise": true,
+      "policy_kind": "pi05_rlinf",
+      "token_layout": "ego_interleave32",
+      "trained_hands": [
+        "sharpa_wave"
+      ],
+      "trained_tasks": [
+        "hammer_nail"
+      ],
+      "diagnostic_only": true,
+      "checkpoint_sha256": "2448257ec7377d99683b48bf5deaf9019ba2cd54990901498552653f41f21f91",
+      "contract_sha256": "6331f68f1ac366295088d407c211945e7f918206783a8ad6a9948742c3580759",
+      "upstream_commit": "e1d1bac185fc8d2718c25df9ae8a9089893c46c2"
+    }
+  },
+  "upstream_rlinf_commit": "e1d1bac185fc8d2718c25df9ae8a9089893c46c2",
+  "upstream_model_code_unmodified": true,
+  "diagnostic_policy_rejected_by_formal_evaluator": true,
+  "compatibility_fix": {
+    "problem": "Zarr 2.18.6 cannot import the removed Numcodecs 0.16 Blosc helpers",
+    "zarr": "2.18.6",
+    "numcodecs": "0.15.1",
+    "package_bound": "numcodecs>=0.10,<0.16",
+    "replay_validation_after_fix": true
+  },
+  "original_private_repositories_modified_by_export": false,
+  "github_history_replacement_pending": true,
+  "remote_visibility_changed": false,
+  "full_training_performed": false,
+  "formal_success_rate_measured": false,
+  "limitations": [
+    "Fresh download and conversion cover hammer_nail (350 episodes), not a second download of all six archives.",
+    "Real learned-policy rollout covers Sharpa Wave hammer_nail; 42 environment cells are checked without learned policies.",
+    "Optional DexLatent requires an external compatible codec; this snapshot does not contain codec weights."
+  ]
+}

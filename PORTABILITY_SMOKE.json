@@ -1,0 +1,349 @@
+{
+  "passed": true,
+  "cells": 42,
+  "checks": [
+    "environment_init",
+    "contract",
+    "observation",
+    "native_action_encode",
+    "physics_step"
+  ],
+  "groups": [
+    {
+      "task": "bimanual_microwave_cook",
+      "hand": "allegro",
+      "passed": true,
+      "active_state_dims": 46,
+      "active_action_dims": 44,
+      "physics_step_finite": true
+    },
+    {
+      "task": "bimanual_microwave_cook",
+      "hand": "inspire",
+      "passed": true,
+      "active_state_dims": 38,
+      "active_action_dims": 24,
+      "physics_step_finite": true
+    },
+    {
+      "task": "bimanual_microwave_cook",
+      "hand": "leap",
+      "passed": true,
+      "active_state_dims": 46,
+      "active_action_dims": 44,
+      "physics_step_finite": true
+    },
+    {
+      "task": "bimanual_microwave_cook",
+      "hand": "linkerhand_l20",
+      "passed": true,
+      "active_state_dims": 56,
+      "active_action_dims": 44,
+      "physics_step_finite": true
+    },
+    {
+      "task": "bimanual_microwave_cook",
+      "hand": "sharpa_wave",
+      "passed": true,
+      "active_state_dims": 58,
+      "active_action_dims": 56,
+      "physics_step_finite": true
+    },
+    {
+      "task": "bimanual_microwave_cook",
+      "hand": "wuji",
+      "passed": true,
+      "active_state_dims": 54,
+      "active_action_dims": 52,
+      "physics_step_finite": true
+    },
+    {
+      "task": "bimanual_microwave_cook",
+      "hand": "xhand",
+      "passed": true,
+      "active_state_dims": 38,
+      "active_action_dims": 36,
+      "physics_step_finite": true
+    },
+    {
+      "task": "bimanual_photograph",
+      "hand": "allegro",
+      "passed": true,
+      "active_state_dims": 46,
+      "active_action_dims": 44,
+      "physics_step_finite": true
+    },
+    {
+      "task": "bimanual_photograph",
+      "hand": "inspire",
+      "passed": true,
+      "active_state_dims": 38,
+      "active_action_dims": 24,
+      "physics_step_finite": true
+    },
+    {
+      "task": "bimanual_photograph",
+      "hand": "leap",
+      "passed": true,
+      "active_state_dims": 46,
+      "active_action_dims": 44,
+      "physics_step_finite": true
+    },
+    {
+      "task": "bimanual_photograph",
+      "hand": "linkerhand_l20",
+      "passed": true,
+      "active_state_dims": 56,
+      "active_action_dims": 44,
+      "physics_step_finite": true
+    },
+    {
+      "task": "bimanual_photograph",
+      "hand": "sharpa_wave",
+      "passed": true,
+      "active_state_dims": 58,
+      "active_action_dims": 56,
+      "physics_step_finite": true
+    },
+    {
+      "task": "bimanual_photograph",
+      "hand": "wuji",
+      "passed": true,
+      "active_state_dims": 54,
+      "active_action_dims": 52,
+      "physics_step_finite": true
+    },
+    {
+      "task": "bimanual_photograph",
+      "hand": "xhand",
+      "passed": true,
+      "active_state_dims": 38,
+      "active_action_dims": 36,
+      "physics_step_finite": true
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "allegro",
+      "passed": true,
+      "active_state_dims": 46,
+      "active_action_dims": 44,
+      "physics_step_finite": true
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "inspire",
+      "passed": true,
+      "active_state_dims": 38,
+      "active_action_dims": 24,
+      "physics_step_finite": true
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "leap",
+      "passed": true,
+      "active_state_dims": 46,
+      "active_action_dims": 44,
+      "physics_step_finite": true
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "linkerhand_l20",
+      "passed": true,
+      "active_state_dims": 56,
+      "active_action_dims": 44,
+      "physics_step_finite": true
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "sharpa_wave",
+      "passed": true,
+      "active_state_dims": 58,
+      "active_action_dims": 56,
+      "physics_step_finite": true
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "wuji",
+      "passed": true,
+      "active_state_dims": 54,
+      "active_action_dims": 52,
+      "physics_step_finite": true
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "passed": true,
+      "active_state_dims": 38,
+      "active_action_dims": 36,
+      "physics_step_finite": true
+    },
+    {
+      "task": "hammer_nail",
+      "hand": "allegro",
+      "passed": true,
+      "active_state_dims": 23,
+      "active_action_dims": 22,
+      "physics_step_finite": true
+    },
+    {
+      "task": "hammer_nail",
+      "hand": "inspire",
+      "passed": true,
+      "active_state_dims": 19,
+      "active_action_dims": 12,
+      "physics_step_finite": true
+    },
+    {
+      "task": "hammer_nail",
+      "hand": "leap",
+      "passed": true,
+      "active_state_dims": 23,
+      "active_action_dims": 22,
+      "physics_step_finite": true
+    },
+    {
+      "task": "hammer_nail",
+      "hand": "linkerhand_l20",
+      "passed": true,
+      "active_state_dims": 28,
+      "active_action_dims": 22,
+      "physics_step_finite": true
+    },
+    {
+      "task": "hammer_nail",
+      "hand": "sharpa_wave",
+      "passed": true,
+      "active_state_dims": 29,
+      "active_action_dims": 28,
+      "physics_step_finite": true
+    },
+    {
+      "task": "hammer_nail",
+      "hand": "wuji",
+      "passed": true,
+      "active_state_dims": 27,
+      "active_action_dims": 26,
+      "physics_step_finite": true
+    },
+    {
+      "task": "hammer_nail",
+      "hand": "xhand",
+      "passed": true,
+      "active_state_dims": 19,
+      "active_action_dims": 18,
+      "physics_step_finite": true
+    },
+    {
+      "task": "pick_bucket",
+      "hand": "allegro",
+      "passed": true,
+      "active_state_dims": 23,
+      "active_action_dims": 22,
+      "physics_step_finite": true
+    },
+    {
+      "task": "pick_bucket",
+      "hand": "inspire",
+      "passed": true,
+      "active_state_dims": 19,
+      "active_action_dims": 12,
+      "physics_step_finite": true
+    },
+    {
+      "task": "pick_bucket",
+      "hand": "leap",
+      "passed": true,
+      "active_state_dims": 23,
+      "active_action_dims": 22,
+      "physics_step_finite": true
+    },
+    {
+      "task": "pick_bucket",
+      "hand": "linkerhand_l20",
+      "passed": true,
+      "active_state_dims": 28,
+      "active_action_dims": 22,
+      "physics_step_finite": true
+    },
+    {
+      "task": "pick_bucket",
+      "hand": "sharpa_wave",
+      "passed": true,
+      "active_state_dims": 29,
+      "active_action_dims": 28,
+      "physics_step_finite": true
+    },
+    {
+      "task": "pick_bucket",
+      "hand": "wuji",
+      "passed": true,
+      "active_state_dims": 27,
+      "active_action_dims": 26,
+      "physics_step_finite": true
+    },
+    {
+      "task": "pick_bucket",
+      "hand": "xhand",
+      "passed": true,
+      "active_state_dims": 19,
+      "active_action_dims": 18,
+      "physics_step_finite": true
+    },
+    {
+      "task": "single_hand_hanoi",
+      "hand": "allegro",
+      "passed": true,
+      "active_state_dims": 23,
+      "active_action_dims": 22,
+      "physics_step_finite": true
+    },
+    {
+      "task": "single_hand_hanoi",
+      "hand": "inspire",
+      "passed": true,
+      "active_state_dims": 19,
+      "active_action_dims": 12,
+      "physics_step_finite": true
+    },
+    {
+      "task": "single_hand_hanoi",
+      "hand": "leap",
+      "passed": true,
+      "active_state_dims": 23,
+      "active_action_dims": 22,
+      "physics_step_finite": true
+    },
+    {
+      "task": "single_hand_hanoi",
+      "hand": "linkerhand_l20",
+      "passed": true,
+      "active_state_dims": 28,
+      "active_action_dims": 22,
+      "physics_step_finite": true
+    },
+    {
+      "task": "single_hand_hanoi",
+      "hand": "sharpa_wave",
+      "passed": true,
+      "active_state_dims": 29,
+      "active_action_dims": 28,
+      "physics_step_finite": true
+    },
+    {
+      "task": "single_hand_hanoi",
+      "hand": "wuji",
+      "passed": true,
+      "active_state_dims": 27,
+      "active_action_dims": 26,
+      "physics_step_finite": true
+    },
+    {
+      "task": "single_hand_hanoi",
+      "hand": "xhand",
+      "passed": true,
+      "active_state_dims": 19,
+      "active_action_dims": 18,
+      "physics_step_finite": true
+    }
+  ]
+}

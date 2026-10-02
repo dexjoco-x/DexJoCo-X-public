@@ -1,0 +1,2 @@
+# Preserve exact upstream and frozen contract bytes, including CRLF.
+* -text

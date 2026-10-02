@@ -1,0 +1,758 @@
+{
+  "version": "benchmark7_v3",
+  "task": "pick_bucket",
+  "hand": "allegro",
+  "status": "candidate_not_task_validated",
+  "reference": "repo://simulator/dexjoco/sim/envs/xmls/cross_embodiment_v1_pick_bucket_inspire.xml",
+  "reference_sha256": "1d48df586ed2ad5b884f84bc7bfc770d5d4eca2f2fbf1e534e3c41e40f19e858",
+  "xml_sha256": "d694808a532621a9ffd964eab5fb6c244dd6f506cbaf38cdf2ab0f483b3197bc",
+  "sides": {
+    "right": {
+      "joint_names": [
+        "benchhand_right_native_ffj0",
+        "benchhand_right_native_ffj1",
+        "benchhand_right_native_ffj2",
+        "benchhand_right_native_ffj3",
+        "benchhand_right_native_mfj0",
+        "benchhand_right_native_mfj1",
+        "benchhand_right_native_mfj2",
+        "benchhand_right_native_mfj3",
+        "benchhand_right_native_rfj0",
+        "benchhand_right_native_rfj1",
+        "benchhand_right_native_rfj2",
+        "benchhand_right_native_rfj3",
+        "benchhand_right_native_thj0",
+        "benchhand_right_native_thj1",
+        "benchhand_right_native_thj2",
+        "benchhand_right_native_thj3"
+      ],
+      "state_joint_names": [
+        "benchhand_right_native_ffj0",
+        "benchhand_right_native_ffj1",
+        "benchhand_right_native_ffj2",
+        "benchhand_right_native_ffj3",
+        "benchhand_right_native_mfj0",
+        "benchhand_right_native_mfj1",
+        "benchhand_right_native_mfj2",
+        "benchhand_right_native_mfj3",
+        "benchhand_right_native_rfj0",
+        "benchhand_right_native_rfj1",
+        "benchhand_right_native_rfj2",
+        "benchhand_right_native_rfj3",
+        "benchhand_right_native_thj0",
+        "benchhand_right_native_thj1",
+        "benchhand_right_native_thj2",
+        "benchhand_right_native_thj3"
+      ],
+      "kinematic_joint_names": [
+        "benchhand_right_native_ffj0",
+        "benchhand_right_native_ffj1",
+        "benchhand_right_native_ffj2",
+        "benchhand_right_native_ffj3",
+        "benchhand_right_native_mfj0",
+        "benchhand_right_native_mfj1",
+        "benchhand_right_native_mfj2",
+        "benchhand_right_native_mfj3",
+        "benchhand_right_native_rfj0",
+        "benchhand_right_native_rfj1",
+        "benchhand_right_native_rfj2",
+        "benchhand_right_native_rfj3",
+        "benchhand_right_native_thj0",
+        "benchhand_right_native_thj1",
+        "benchhand_right_native_thj2",
+        "benchhand_right_native_thj3"
+      ],
+      "transmissions": [
+        [
+          [
+            "benchhand_right_native_ffj0",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_ffj1",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_ffj2",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_ffj3",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_mfj0",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_mfj1",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_mfj2",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_mfj3",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_rfj0",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_rfj1",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_rfj2",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_rfj3",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_thj0",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_thj1",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_thj2",
+            1.0
+          ]
+        ],
+        [
+          [
+            "benchhand_right_native_thj3",
+            1.0
+          ]
+        ]
+      ],
+      "actuator_names": [
+        "benchhand_right_native_ffa0",
+        "benchhand_right_native_ffa1",
+        "benchhand_right_native_ffa2",
+        "benchhand_right_native_ffa3",
+        "benchhand_right_native_mfa0",
+        "benchhand_right_native_mfa1",
+        "benchhand_right_native_mfa2",
+        "benchhand_right_native_mfa3",
+        "benchhand_right_native_rfa0",
+        "benchhand_right_native_rfa1",
+        "benchhand_right_native_rfa2",
+        "benchhand_right_native_rfa3",
+        "benchhand_right_native_tha0",
+        "benchhand_right_native_tha1",
+        "benchhand_right_native_tha2",
+        "benchhand_right_native_tha3"
+      ],
+      "home": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.263,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "joint_ranges": [
+        [
+          -0.47,
+          0.47
+        ],
+        [
+          -0.196,
+          1.61
+        ],
+        [
+          -0.174,
+          1.709
+        ],
+        [
+          -0.227,
+          1.618
+        ],
+        [
+          -0.47,
+          0.47
+        ],
+        [
+          -0.196,
+          1.61
+        ],
+        [
+          -0.174,
+          1.709
+        ],
+        [
+          -0.227,
+          1.618
+        ],
+        [
+          -0.47,
+          0.47
+        ],
+        [
+          -0.196,
+          1.61
+        ],
+        [
+          -0.174,
+          1.709
+        ],
+        [
+          -0.227,
+          1.618
+        ],
+        [
+          0.263,
+          1.396
+        ],
+        [
+          -0.105,
+          1.163
+        ],
+        [
+          -0.189,
+          1.644
+        ],
+        [
+          -0.162,
+          1.719
+        ]
+      ],
+      "actuator_ranges": [
+        [
+          -0.47,
+          0.47
+        ],
+        [
+          -0.196,
+          1.61
+        ],
+        [
+          -0.174,
+          1.709
+        ],
+        [
+          -0.227,
+          1.618
+        ],
+        [
+          -0.47,
+          0.47
+        ],
+        [
+          -0.196,
+          1.61
+        ],
+        [
+          -0.174,
+          1.709
+        ],
+        [
+          -0.227,
+          1.618
+        ],
+        [
+          -0.47,
+          0.47
+        ],
+        [
+          -0.196,
+          1.61
+        ],
+        [
+          -0.174,
+          1.709
+        ],
+        [
+          -0.227,
+          1.618
+        ],
+        [
+          0.263,
+          1.396
+        ],
+        [
+          -0.105,
+          1.163
+        ],
+        [
+          -0.189,
+          1.644
+        ],
+        [
+          -0.162,
+          1.719
+        ]
+      ],
+      "independent_commands": 16,
+      "actuators": 16,
+      "state_joints": 16,
+      "command_semantics": "actuator joint/tendon position targets; proxy joint_names used only for reset"
+    }
+  },
+  "surface_friction_policy": {
+    "id": "source_first_surface_friction_v1",
+    "scope": "surface friction only; not uniform whole-hand physics",
+    "source_review": {
+      "basis": "original_model_simulator_default",
+      "files": [
+        "dexjoco/dexjoco/sim/envs/xmls/panda_allegro_copy.xml",
+        "dexjoco/dexjoco/sim/envs/xmls/panda_allegro_left.xml",
+        "dexjoco/dexjoco/sim/envs/xmls/wonik_allegro/README.md"
+      ],
+      "urls": [
+        "https://mujoco.readthedocs.io/en/3.4.0/XMLreference.html#body-geom"
+      ],
+      "note": "Original collision classes omit friction; compiled value is the MuJoCo default.",
+      "files_sha256": {
+        "dexjoco/dexjoco/sim/envs/xmls/panda_allegro_copy.xml": "9c3402c23fd2b7cb9d7e798db0066e6b40ba5b650f97aa9a603d50aec9976af4",
+        "dexjoco/dexjoco/sim/envs/xmls/panda_allegro_left.xml": "c4371774244e75f8134e2607708089a1bbaf4c014ab3705f751b461966d1b23d",
+        "dexjoco/dexjoco/sim/envs/xmls/wonik_allegro/README.md": "59e686bef444b058af72dac73d8fec11df2519d91306427fe0c4f2f12cc72206"
+      }
+    },
+    "geoms": {
+      "benchhand_right_native_allegro_palm:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "original_model_simulator_default",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_ff_base:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "original_model_simulator_default",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_ff_proximal:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "original_model_simulator_default",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_ff_medial:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "original_model_simulator_default",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_ff_distal:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "original_model_simulator_default",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_ff_tip:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "original_model_simulator_default",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_mf_base:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "original_model_simulator_default",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_mf_proximal:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "original_model_simulator_default",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_mf_medial:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "original_model_simulator_default",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_mf_distal:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "original_model_simulator_default",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_mf_tip:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "original_model_simulator_default",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_rf_base:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "original_model_simulator_default",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_rf_proximal:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "original_model_simulator_default",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_rf_medial:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "original_model_simulator_default",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_rf_distal:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "original_model_simulator_default",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_rf_tip:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "original_model_simulator_default",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_th_base:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "original_model_simulator_default",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_th_proximal:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "original_model_simulator_default",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_th_medial:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "original_model_simulator_default",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_th_distal:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "original_model_simulator_default",
+          "measured": false
+        }
+      },
+      "benchhand_right_native_th_tip:geom:1": {
+        "side": "right",
+        "original": [
+          1.0,
+          0.005,
+          0.0001
+        ],
+        "resolved": {
+          "value": [
+            1.0,
+            0.005,
+            0.0001
+          ],
+          "basis": "original_model_simulator_default",
+          "measured": false
+        }
+      }
+    },
+    "measured_surface_evidence_found": false,
+    "preserved": "Every compiled array other than hand geom_friction, including joint frictionloss and elastomer solref.",
+    "limitations": [
+      "Fallback surface parameters are not material measurements.",
+      "Existing geometric/postprocessing approximations have not been certified or removed.",
+      "Other contact solver parameters are retained, not newly calibrated in this revision."
+    ],
+    "sha256": "36a87758720719cd96c054f5a79d000a2d21a77ea9e0807fad141417616b4719"
+  },
+  "parent_model": {
+    "path": "repo://simulator/dexjoco/sim/envs/xmls/benchmark7_v1_pick_bucket_allegro.xml",
+    "xml_sha256": "e5c67b3f48397ed7859971b25d70e37fb2a820d52c66e9d785fec83debf88ff7",
+    "metadata_sha256": "3f4cade9006ef13e790639d2b018c7390afe67f2a66cb475e2e675aea0786367"
+  },
+  "revision_check": {
+    "changed_arrays": [],
+    "changed_hand_geoms": 0,
+    "inherited_nonfinite_arrays": {
+      "mesh_polynormal": {
+        "count": 450,
+        "locations_sha256": "d72dd9be024d8aa17f397474607a028611ee07b9c4b159ce91955fad40ee1c19"
+      }
+    },
+    "nonhand_sha256": "dee6e055b6837234e7d797b3ca37a2277603cb53331edcdb45412682a5347c43"
+  },
+  "geometry_revision": {
+    "id": "wuji_native_collision_only_v1",
+    "removed_geoms": {},
+    "source_files": {},
+    "parent": {
+      "path": "repo://simulator/dexjoco/sim/envs/xmls/benchmark7_v2_pick_bucket_allegro.xml",
+      "xml_sha256": "bab590939aa8b2a8817506d8c9d6a06a97b5040fd4253761665fd88970ee443f",
+      "metadata_sha256": "ade709729f034d91df27cc19e6fe5b6e23e1e8d9d6a92536c45a429ab8252c56"
+    },
+    "scope": "Remove local Wuji supplemental grasp geoms only. Keep native mesh collisions and wrist adapter.",
+    "limitations": [
+      "Matched local URDF, not independently certified hardware geometry.",
+      "Inherited inertia floors, drives, solver settings and source imperfections unchanged.",
+      "Friction policy source notes describe the imported parent; this record describes current geometry."
+    ],
+    "sha256": "84dc6dab89dfd1bfd2d8cf3dc95c71c3c3e658e76941022805bcf454c52a90e7"
+  }
+}

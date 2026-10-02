@@ -1,0 +1,631 @@
+{
+  "repository": "https://github.com/EmptyBlueBox/DexLatent",
+  "commit": "502750df34b9fa6a1b56a66481586887ec722f9c",
+  "license_text": "licenses/third_party/dexlatent/LICENSE",
+  "notice_sha256": {
+    "licenses/third_party/dexlatent/LICENSE": "7b9dc57eacc7f2eb802de5f5061aee814b68a3eb6ba0541ce2657e5c13231000"
+  },
+  "files": [
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_back_link.STL",
+      "sha256": "e27263455a76bcb31d231ac56030741d69ceb16712f98ed34063c771dfcd3963",
+      "upstream_git_blob": "4454d80c970a99398fce1db04e28c1212c785b21",
+      "upstream_path": "Assets/xhand/meshes/left_hand_back_link.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_back_link.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_ee_link.STL",
+      "sha256": "60aacb47a4544cdda9074567e2c437f49f8a6d1178af40fd2d7a5bec6ff198c9",
+      "upstream_git_blob": "804f5fe37e4f5915293a4daf06517089076fa4df",
+      "upstream_path": "Assets/xhand/meshes/left_hand_ee_link.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_ee_link.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_index_bend_link.STL",
+      "sha256": "43ebef269b5ab5c2ae8de9cb4f32f68c2c47683856c7dd9abdfed75a5885da4a",
+      "upstream_git_blob": "09a69aef6a9a119fb738da184ba625f8999d146b",
+      "upstream_path": "Assets/xhand/meshes/left_hand_index_bend_link.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_index_bend_link.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_index_rota_link1.STL",
+      "sha256": "d7693bc3b701271113175f17463d2b037139e275602c16f4d35cf0eb6ac57189",
+      "upstream_git_blob": "34f7dce3cb34a7af37899a910b0cf0546b1a9223",
+      "upstream_path": "Assets/xhand/meshes/left_hand_index_rota_link1.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_index_rota_link1.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_index_rota_link2.STL",
+      "sha256": "722cc0618fc11ffd2f9977ef892739557f59c3fb1f8139db0f8b6de5d168d801",
+      "upstream_git_blob": "6b6d950468bf7cbb34fa109fcd16625c2ea3e717",
+      "upstream_path": "Assets/xhand/meshes/left_hand_index_rota_link2.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_index_rota_link2.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_index_rota_tip.STL",
+      "sha256": "2217e0e4f39f0e3e23360720794a51e21c0c2360c653988f97d8200a93218614",
+      "upstream_git_blob": "ef53d0e2367108b0adc58fcf2686f34cfbbaef36",
+      "upstream_path": "Assets/xhand/meshes/left_hand_index_rota_tip.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_index_rota_tip.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_index_rotaback_link1.STL",
+      "sha256": "bddb3cd3a32eff00359db0ff2d3a5a58b5b2486239260459dd109c99ed124def",
+      "upstream_git_blob": "8bd9f3a612e60184b0b4c1cdfce7a2a4993771e3",
+      "upstream_path": "Assets/xhand/meshes/left_hand_index_rotaback_link1.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_index_rotaback_link1.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_index_rotaback_link2.STL",
+      "sha256": "7de46150617ca03132ac5c94189f7ee562b7f74b8ddfc5b8ee30eb79ccef30a3",
+      "upstream_git_blob": "c5f79c285f7fd0a7f051354b06d6a41497068ee6",
+      "upstream_path": "Assets/xhand/meshes/left_hand_index_rotaback_link2.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_index_rotaback_link2.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_link.STL",
+      "sha256": "c8f032845747dd30e9934a6b9efce08b21c231af0553611f19328492aabe3392",
+      "upstream_git_blob": "8c6bfc09a5f43581b1d50fa999365a013341f8be",
+      "upstream_path": "Assets/xhand/meshes/left_hand_link.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_link.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_mid_link1.STL",
+      "sha256": "5eb5f0278f1eac5df5f85819a00580524680d627f7aadfea77c035185a603276",
+      "upstream_git_blob": "a9ee2a7d53d719853f558d91960e64e4bba3c348",
+      "upstream_path": "Assets/xhand/meshes/left_hand_mid_link1.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_mid_link1.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_mid_link2.STL",
+      "sha256": "e190e8e22f18e11b21be11e2f2b9f2c66c095b1cf119246a253ce239f3a1b852",
+      "upstream_git_blob": "7af13fc9396af71ba137e0e1f19f242603b4b0d6",
+      "upstream_path": "Assets/xhand/meshes/left_hand_mid_link2.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_mid_link2.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_mid_tip.STL",
+      "sha256": "dc25621d1dd8e3c82f865a6ea4552eac4ca277caf91ddc2bad6f05d7fda5db08",
+      "upstream_git_blob": "0749f404710c9ddb5ec1cc8602fb507e65222297",
+      "upstream_path": "Assets/xhand/meshes/left_hand_mid_tip.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_mid_tip.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_midback_link1.STL",
+      "sha256": "5929b197d5d4fb44112b7472d00977748b7351b94b69e98f10ec8de60e637ceb",
+      "upstream_git_blob": "006bc07f7c4c7859c0a42d2fd9b33c3852c25d15",
+      "upstream_path": "Assets/xhand/meshes/left_hand_midback_link1.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_midback_link1.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_midback_link2.STL",
+      "sha256": "19b7b94fe16e9562f695afe77e6b22ba2f005bbb75188adf1a9946df0b4a6f6f",
+      "upstream_git_blob": "ff3bb9d65e7d67ecea3e6e146736c409fb3016df",
+      "upstream_path": "Assets/xhand/meshes/left_hand_midback_link2.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_midback_link2.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_pinky_link1.STL",
+      "sha256": "0663d5c91855df64bbfd8a6bb4824a406c6ba54ffedba0d5c8f2380c5e5f5b71",
+      "upstream_git_blob": "8d9f782ddf3f2f4457e2a64dc698598cc8f35241",
+      "upstream_path": "Assets/xhand/meshes/left_hand_pinky_link1.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_pinky_link1.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_pinky_link2.STL",
+      "sha256": "bf16cc3c28e3e5d0e3be45961025dd6b161ce9f0730dec8d18ca646522076ed6",
+      "upstream_git_blob": "51b1f00a9d443be78fddefd637417b55efa1ca3f",
+      "upstream_path": "Assets/xhand/meshes/left_hand_pinky_link2.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_pinky_link2.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_pinky_tip.STL",
+      "sha256": "aa6bf59c41d893b785d87ffed875dcae1251f25e4cf5ffd05d78b0101ca35d10",
+      "upstream_git_blob": "0c5f0c226eca9cbd87bf0c06dbe51051085e09d9",
+      "upstream_path": "Assets/xhand/meshes/left_hand_pinky_tip.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_pinky_tip.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_pinkyback_link1.STL",
+      "sha256": "e092a402b4b4fa4a37dfb9188950ccaeefb93db0f8eae28380dfed22f24c7947",
+      "upstream_git_blob": "5c293f08c67a5cc350ab3670d02b42c152696545",
+      "upstream_path": "Assets/xhand/meshes/left_hand_pinkyback_link1.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_pinkyback_link1.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_pinkyback_link2.STL",
+      "sha256": "a355813a61774f973a03cb2831a8eb5eeebe5b91a00c8d40a5af3fb7d807bab1",
+      "upstream_git_blob": "6105995bf2136a135c53968664dbb4ce96c7e33a",
+      "upstream_path": "Assets/xhand/meshes/left_hand_pinkyback_link2.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_pinkyback_link2.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_ring_link1.STL",
+      "sha256": "1e065acc6d85cdd56a174181706138a991702fd9c9db0e1284884536336dfe8f",
+      "upstream_git_blob": "ed7e1deef1607dc394a6da80141d4d265ac61c2b",
+      "upstream_path": "Assets/xhand/meshes/left_hand_ring_link1.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_ring_link1.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_ring_link2.STL",
+      "sha256": "5161ddca1d5dbb9921dd5642197a1b940b3c078a45197c8cebe26a36b7a34a8f",
+      "upstream_git_blob": "0747f5cb7eff9a46d81798d811e957bd953af0fd",
+      "upstream_path": "Assets/xhand/meshes/left_hand_ring_link2.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_ring_link2.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_ring_tip.STL",
+      "sha256": "3502fb69aeeffaf7da4eedd8baf3284dbd54bad1ff0be565c125776580affc66",
+      "upstream_git_blob": "278390ec2f1f3d9215e3da747f1873f8da81cb9f",
+      "upstream_path": "Assets/xhand/meshes/left_hand_ring_tip.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_ring_tip.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_ringback_link1.STL",
+      "sha256": "190f91a52b5ea86f49345caeb67b938060f42a97e119e17baa472b144276a546",
+      "upstream_git_blob": "bec38d65be9b1a51af8fe8b6720cc22791f7e59f",
+      "upstream_path": "Assets/xhand/meshes/left_hand_ringback_link1.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_ringback_link1.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_ringback_link2.STL",
+      "sha256": "cfed0d0a2efa04360164b50985055f1341cb6dbf53036f1578031492c9fed397",
+      "upstream_git_blob": "586a0f949640a8fc2e3c8d377fc16915b2863c61",
+      "upstream_path": "Assets/xhand/meshes/left_hand_ringback_link2.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_ringback_link2.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_thumb_bend_link.STL",
+      "sha256": "9f9f6818fbdfcf929526f9a2911495c90b19b091679b6dd069afc767fd5d6d3b",
+      "upstream_git_blob": "84d239a8aae48a614474a54c9a429e2bc7500fd8",
+      "upstream_path": "Assets/xhand/meshes/left_hand_thumb_bend_link.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_thumb_bend_link.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_thumb_rota_link1.STL",
+      "sha256": "405f1b0951e3623245d77fbb421f8dc1b8eee3ae381ccc540421dfa720dc4702",
+      "upstream_git_blob": "4c34bc085ad4247a2be58ba553b4b043ff2ad3f4",
+      "upstream_path": "Assets/xhand/meshes/left_hand_thumb_rota_link1.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_thumb_rota_link1.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_thumb_rota_link2.STL",
+      "sha256": "3d1c583ea988f18cfa6960dd51315f15088db3fe95925dda5d8f5de7d2612975",
+      "upstream_git_blob": "a228e20b81416cf97c20635c099b028eec06ad39",
+      "upstream_path": "Assets/xhand/meshes/left_hand_thumb_rota_link2.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_thumb_rota_link2.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_thumb_rota_tip.STL",
+      "sha256": "7837ae36c489c56fdcd0461d05a8a0a9c197a613e0dc377d14dd1b2579fcdd67",
+      "upstream_git_blob": "ed83817bb42dd75e4e40aff1a1d9fb753fc8f5a5",
+      "upstream_path": "Assets/xhand/meshes/left_hand_thumb_rota_tip.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_thumb_rota_tip.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_thumb_rotaback_link1.STL",
+      "sha256": "39cf01a3c00ae61807a89280238aedddfb4f0dfceae5765048a396fb58bd9e57",
+      "upstream_git_blob": "32993e423a788803be4adf31ab287fcb9169f2aa",
+      "upstream_path": "Assets/xhand/meshes/left_hand_thumb_rotaback_link1.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_thumb_rotaback_link1.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/meshes/left_hand_thumb_rotaback_link2.STL",
+      "sha256": "eb952a524899b51cfb7409bedcc0bf767360f337fabb3f5a03b9d5167995dc25",
+      "upstream_git_blob": "1f94ea23bca22155a3afa3a61f4aa9520590f57c",
+      "upstream_path": "Assets/xhand/meshes/left_hand_thumb_rotaback_link2.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/left_hand_thumb_rotaback_link2.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/left/source.urdf",
+      "sha256": "ade0bab9725d80a66a6acf525e5e25b253ce9970a64ae414102708a786a89a50",
+      "upstream_git_blob": "2a84e30bee9e105525413818ce0dd5ec3d6c7744",
+      "upstream_path": "Assets/xhand/xhand_left.urdf",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/xhand_left.urdf",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_back_link.STL",
+      "sha256": "fedbb59739e6e80c0feb800cbb958d59bfb1a464caefa5e42c2179c580df5d70",
+      "upstream_git_blob": "526a8abef207c1dfbc498744a5368e8b46318e7f",
+      "upstream_path": "Assets/xhand/meshes/right_hand_back_link.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_back_link.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_ee_link.STL",
+      "sha256": "56fde4037d14e41ce5768aacafbb50bbfd90b4ebb92b8b00fbb78c4a1bd6befe",
+      "upstream_git_blob": "d691ba987ca95139e423a63aca8674f93912a529",
+      "upstream_path": "Assets/xhand/meshes/right_hand_ee_link.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_ee_link.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_index_bend_link.STL",
+      "sha256": "2b42f534951e818bc2e52bf0142d5763d956f50ff4ae5426dc2daa6c7f27f67b",
+      "upstream_git_blob": "c83566de40be5c6c718e6ccce09ae97cc402bb06",
+      "upstream_path": "Assets/xhand/meshes/right_hand_index_bend_link.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_index_bend_link.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_index_rota_link1.STL",
+      "sha256": "60ee60faf3d4c4ed98f98b1d0b50c80d242e888c80c255e5c8b1a379bf9b389f",
+      "upstream_git_blob": "d5be0844992ccffbe7db158f18c6d9112e32b70e",
+      "upstream_path": "Assets/xhand/meshes/right_hand_index_rota_link1.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_index_rota_link1.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_index_rota_link2.STL",
+      "sha256": "8a8b20810de67c842b76127ff4b1744a56a3eb859dba4a4a40d5991bc2069b68",
+      "upstream_git_blob": "e30c3f7a8c5586f3aa59a6a1ed33c6d42295e480",
+      "upstream_path": "Assets/xhand/meshes/right_hand_index_rota_link2.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_index_rota_link2.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_index_rota_tip.STL",
+      "sha256": "2c324fa34a1fd4acc66e65c39f17cbfaffdfc0e42ca4869a284d98067047ea84",
+      "upstream_git_blob": "ed8adc08366304feb59ecbfc628bb39232961442",
+      "upstream_path": "Assets/xhand/meshes/right_hand_index_rota_tip.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_index_rota_tip.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_index_rotaback_link1.STL",
+      "sha256": "63719171047f0da12f6d2bb47954819e45a5afb8758c68871c2470321cf9d934",
+      "upstream_git_blob": "33c5958e6263f5321213a21250ee59c203f26899",
+      "upstream_path": "Assets/xhand/meshes/right_hand_index_rotaback_link1.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_index_rotaback_link1.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_index_rotaback_link2.STL",
+      "sha256": "d88ff35358175bddb2b2d3e34a17dcf236b045ba6eea8035a40bfada8cfe4149",
+      "upstream_git_blob": "2de1a260aaabb40abceea4b70f21b8d070141bc4",
+      "upstream_path": "Assets/xhand/meshes/right_hand_index_rotaback_link2.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_index_rotaback_link2.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_link.STL",
+      "sha256": "0ad7a31a94fe48569505c0c14a12152849d930682a006ec377bcf97a50d28ccf",
+      "upstream_git_blob": "5605eb5841862d68b3697ac6966aa38dc40157cd",
+      "upstream_path": "Assets/xhand/meshes/right_hand_link.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_link.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_mid_link1.STL",
+      "sha256": "9cbf464e77d3eb21175eef6c184a123449856d9b22fa36a06f5a985df11dfe89",
+      "upstream_git_blob": "2f3a71f6864bbcbe615554cf97a5e1230efebaeb",
+      "upstream_path": "Assets/xhand/meshes/right_hand_mid_link1.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_mid_link1.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_mid_link2.STL",
+      "sha256": "1efb6b05981e5bab65949f0453be53888287cb268c40651a16cd61c61583d065",
+      "upstream_git_blob": "a1317baa6503ef6506da7b1d56e1c4fa743002e5",
+      "upstream_path": "Assets/xhand/meshes/right_hand_mid_link2.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_mid_link2.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_mid_tip.STL",
+      "sha256": "3fa1026bc428a8e3b9cda8f69669876e8edfd83a99768ee99a3a3f83488ae3f9",
+      "upstream_git_blob": "b60b5221e44701b6423e85ec9d17946ae0d5f754",
+      "upstream_path": "Assets/xhand/meshes/right_hand_mid_tip.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_mid_tip.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_midback_link1.STL",
+      "sha256": "f47c126bd001b1881a60b4b870e443525842822c4df941bd2a19be4127e7b855",
+      "upstream_git_blob": "6ac1599260353f821f6e0d7e32364919a181f261",
+      "upstream_path": "Assets/xhand/meshes/right_hand_midback_link1.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_midback_link1.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_midback_link2.STL",
+      "sha256": "1ea571457ae9f9d60b9a3a90d4ed9372454b7764a911bf7cc6aa0d49b505b350",
+      "upstream_git_blob": "c87eefd8dde7b61def396b4c59d2484f1e56f2b2",
+      "upstream_path": "Assets/xhand/meshes/right_hand_midback_link2.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_midback_link2.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_pinky_link1.STL",
+      "sha256": "07a80af890d64c4233186ac25d60ebe7bbb1c12e4da66ce2cf2390165f6de307",
+      "upstream_git_blob": "b06c0a27b4966175c0a23c7e94e14c7aaec477f8",
+      "upstream_path": "Assets/xhand/meshes/right_hand_pinky_link1.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_pinky_link1.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_pinky_link2.STL",
+      "sha256": "8421f33f0af2f9c97bdf6682765e9c9d5d55435affe642a13db0a4d4c23567e9",
+      "upstream_git_blob": "b8bdefca92349ee8f92b9c7ea30b7a05efdee10d",
+      "upstream_path": "Assets/xhand/meshes/right_hand_pinky_link2.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_pinky_link2.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_pinky_tip.STL",
+      "sha256": "74b422c83ca751c349a77bc8a14825bbea79fb940ec6d52143d829a178fbcd05",
+      "upstream_git_blob": "795beb2d06c3f9392878c92ada03521e90ba865d",
+      "upstream_path": "Assets/xhand/meshes/right_hand_pinky_tip.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_pinky_tip.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_pinkyback_link1.STL",
+      "sha256": "ca0e3d80e6da6d421e288c384c564b5d5bd8cf360adc431718fb9a19dfbf8217",
+      "upstream_git_blob": "93eabf39abffe39c22b5dc8aff8eda8c1518bfa8",
+      "upstream_path": "Assets/xhand/meshes/right_hand_pinkyback_link1.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_pinkyback_link1.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_pinkyback_link2.STL",
+      "sha256": "6c79947f24aeaaa8a934eefcca605463e3940e54ac9e63456df294044b9c3c37",
+      "upstream_git_blob": "c064ecf0326986127737e4f73afb769b9a2f65be",
+      "upstream_path": "Assets/xhand/meshes/right_hand_pinkyback_link2.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_pinkyback_link2.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_ring_link1.STL",
+      "sha256": "f7eb90fba418bf611dee4753ef5e2f4a9401beea3f6c93c9450a484fb179aeda",
+      "upstream_git_blob": "edbe156a91c991eddf1a958b2072c2a1bb40bc84",
+      "upstream_path": "Assets/xhand/meshes/right_hand_ring_link1.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_ring_link1.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_ring_link2.STL",
+      "sha256": "ac6d366eb9e1b0932bcb4c24d825cecc5e2471cb42852c7258e839c111a1cb8c",
+      "upstream_git_blob": "316876ead02e1f80604f54b97bd0ddfd66620189",
+      "upstream_path": "Assets/xhand/meshes/right_hand_ring_link2.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_ring_link2.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_ring_tip.STL",
+      "sha256": "09fcde0995e5b1e395afcb03a472e280dca5d32e439819fd6a31a12c4d0dc66f",
+      "upstream_git_blob": "c70e3f64d0ac22e0d2f5a5d581d0b9703d8570f7",
+      "upstream_path": "Assets/xhand/meshes/right_hand_ring_tip.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_ring_tip.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_ringback_link1.STL",
+      "sha256": "44960bbb4357f314337d1e1c016fdf4530fd510beb5cb410f364e64dc84bd6be",
+      "upstream_git_blob": "0be220fc70f3ed10e89746c5c6fd7aecd5ac7ad7",
+      "upstream_path": "Assets/xhand/meshes/right_hand_ringback_link1.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_ringback_link1.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_ringback_link2.STL",
+      "sha256": "0ac9248152b9090e38b1430e80502cb2ec53b8240b643c9fa6adbfe4e4555b30",
+      "upstream_git_blob": "a7ea3a46e5b4c0b436b33cfc73e61cc0e7525fc2",
+      "upstream_path": "Assets/xhand/meshes/right_hand_ringback_link2.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_ringback_link2.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_thumb_bend_link.STL",
+      "sha256": "0b09a01a05c4bb77ae8108be128ffc2061e4ea71e8f3f70574ad93890ab1d239",
+      "upstream_git_blob": "dc5e2afb92ddc9c26d69184b299344d2270590a1",
+      "upstream_path": "Assets/xhand/meshes/right_hand_thumb_bend_link.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_thumb_bend_link.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_thumb_rota_link1.STL",
+      "sha256": "910f987f5ad3e8848b03e35200bd67ee056b2468c70e2dd0c704251d3e7d26f0",
+      "upstream_git_blob": "f77139a57286a5ea9822343726e8d2e7da45d4e2",
+      "upstream_path": "Assets/xhand/meshes/right_hand_thumb_rota_link1.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_thumb_rota_link1.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_thumb_rota_link2.STL",
+      "sha256": "44b48f08126891da921c2ae3f66eb1f5276f43739ab66f34c30a2c7cca4c34d1",
+      "upstream_git_blob": "7b9797116e63f21b060c37cc2cf9c1f4d5870437",
+      "upstream_path": "Assets/xhand/meshes/right_hand_thumb_rota_link2.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_thumb_rota_link2.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_thumb_rota_tip.STL",
+      "sha256": "7df2da203400193eb896bf4f74c3e4c9c93a9f024c9810b1290262d96a4776b7",
+      "upstream_git_blob": "6df721e25787c4fd517a79547457f1ec7e2575ea",
+      "upstream_path": "Assets/xhand/meshes/right_hand_thumb_rota_tip.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_thumb_rota_tip.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_thumb_rotaback_link1.STL",
+      "sha256": "c45000508f354ff2736ecc2ab7523e205bed6820ea4d2f9eeebfb6e1134c960e",
+      "upstream_git_blob": "540a4a786d9a2ebf15c7a40690b67bfbd4423e26",
+      "upstream_path": "Assets/xhand/meshes/right_hand_thumb_rotaback_link1.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_thumb_rotaback_link1.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/meshes/right_hand_thumb_rotaback_link2.STL",
+      "sha256": "2f1ca18e2cb5c938f68b1ba5e2bc0f6453c5709570d45b4f2f0e52d59628d5c4",
+      "upstream_git_blob": "e39b599fe3f43bec10ca1b11e370c3d1955827a5",
+      "upstream_path": "Assets/xhand/meshes/right_hand_thumb_rotaback_link2.STL",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/meshes/right_hand_thumb_rotaback_link2.STL",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/xhand/right/source.urdf",
+      "sha256": "4c59ffc702f1d6820c7d9d0b5410de0316c5a174e8883e9a97522017865930a0",
+      "upstream_git_blob": "a6a960745dcee44a14b857a3fb3a64367fff96f4",
+      "upstream_path": "Assets/xhand/xhand_right.urdf",
+      "source_url": "https://github.com/EmptyBlueBox/DexLatent/blob/502750df34b9fa6a1b56a66481586887ec722f9c/Assets/xhand/xhand_right.urdf",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    }
+  ],
+  "coverage": "Only listed byte-identical XHand files. Converted MJCF/metadata are project changes and are not asserted to be byte-identical upstream assets."
+}

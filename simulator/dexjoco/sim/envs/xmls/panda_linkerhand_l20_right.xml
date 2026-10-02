@@ -1,0 +1,622 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="panda_linkerhand_l20_right">
+  <compiler angle="radian" />
+  <option noslip_tolerance="0" noslip_iterations="5" />
+  <default>
+    <default class="panda">
+      <joint range="-2.8973 2.8973" armature="0.1" damping="1" />
+      <site size="0.001 0.005 0.005" group="4" rgba="0.5 0.5 0.5 0.3" />
+      <default class="panda/visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" />
+      </default>
+      <default class="panda/collision">
+        <geom type="mesh" group="3" />
+      </default>
+    </default>
+    <default class="2f85">
+      <mesh scale="0.001 0.001 0.001" />
+      <site group="4" rgba="0.9 0.9 0.9 1" />
+      <general biastype="affine" />
+      <default class="driver">
+        <joint solreflimit="0.005" solimplimit="0.95 0.99" range="0 0.8" armature="0.005" damping="0.1" />
+      </default>
+      <default class="follower">
+        <joint solreflimit="0.005" solimplimit="0.95 0.99" range="-0.872664 0.872664" />
+      </default>
+      <default class="spring_link">
+        <joint springref="2.62" stiffness="0.05" range="-0.296706 0.8" damping="0.00125" />
+      </default>
+      <default class="coupler">
+        <joint solreflimit="0.005" solimplimit="0.95 0.99" range="-1.57 0" />
+      </default>
+      <default class="2f85/visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" />
+      </default>
+      <default class="2f85/collision">
+        <geom type="mesh" group="3" />
+        <default class="pad_box1">
+          <geom size="0.011 0.004 0.009375" type="box" priority="1" friction="0.7" solref="0.004" solimp="0.95 0.99" rgba="0.55 0.55 0.55 1" />
+        </default>
+        <default class="pad_box2">
+          <geom size="0.011 0.004 0.009375" type="box" priority="1" friction="0.6" solref="0.004" solimp="0.95 0.99" rgba="0.45 0.45 0.45 1" />
+        </default>
+      </default>
+    </default>
+    <default class="allegro_right">
+      <joint damping="0.1" />
+      <geom density="800" />
+      <general biastype="affine" gainprm="2" biasprm="0 -2" />
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" material="black" />
+        <default class="palm_visual">
+          <geom mesh="base_link" />
+        </default>
+        <default class="base_visual">
+          <geom mesh="link_0.0" />
+        </default>
+        <default class="proximal_visual">
+          <geom mesh="link_1.0" />
+        </default>
+        <default class="medial_visual">
+          <geom mesh="link_2.0" />
+        </default>
+        <default class="distal_visual">
+          <geom mesh="link_3.0" />
+        </default>
+        <default class="fingertip_visual">
+          <geom material="white" mesh="link_3.0_tip" />
+        </default>
+        <default class="thumbtip_visual">
+          <geom material="white" mesh="link_15.0_tip" />
+        </default>
+      </default>
+      <default class="collision">
+        <geom type="box" group="3" />
+        <default class="palm_collision">
+          <geom size="0.0204 0.0565 0.0475" />
+        </default>
+        <default class="base_collision">
+          <geom size="0.0098 0.01375 0.0082" />
+          <default class="thumb_base_collision">
+            <geom size="0.0179 0.017 0.02275" />
+          </default>
+        </default>
+        <default class="proximal_collision">
+          <geom size="0.0098 0.01375 0.027" />
+          <default class="thumb_proximal_collision">
+            <geom size="0.0098 0.01375 0.00885" />
+          </default>
+        </default>
+        <default class="medial_collision">
+          <geom size="0.0098 0.01375 0.0192" />
+          <default class="thumb_medial_collision">
+            <geom size="0.0098 0.01375 0.0257" />
+          </default>
+        </default>
+        <default class="distal_collision">
+          <geom size="0.0098 0.01375 0.008" />
+          <default class="thumb_distal_collision">
+            <geom size="0.0098 0.01375 0.0157" />
+          </default>
+        </default>
+        <default class="fingertip_collision">
+          <geom size="0.012 0.01 0" type="capsule" />
+          <default class="thumbtip_collision">
+            <geom size="0.012 0.008 0" />
+          </default>
+        </default>
+      </default>
+      <default class="base">
+        <joint range="-0.47 0.47" />
+        <general ctrlrange="-0.47 0.47" />
+      </default>
+      <default class="proximal">
+        <joint range="-0.196 1.61" />
+        <general ctrlrange="-0.196 1.61" />
+      </default>
+      <default class="medial">
+        <joint range="-0.174 1.709" />
+        <general ctrlrange="-0.174 1.709" />
+      </default>
+      <default class="distal">
+        <joint range="-0.227 1.618" />
+        <general ctrlrange="-0.227 1.618" />
+      </default>
+      <default class="thumb_base">
+        <joint range="0.263 1.396" />
+        <general ctrlrange="0.263 1.396" />
+      </default>
+      <default class="thumb_proximal">
+        <joint range="-0.105 1.163" />
+        <general ctrlrange="-0.105 1.163" />
+      </default>
+      <default class="thumb_medial">
+        <joint range="-0.189 1.644" />
+        <general ctrlrange="-0.189 1.644" />
+      </default>
+      <default class="thumb_distal">
+        <joint range="-0.162 1.719" />
+        <general ctrlrange="-0.162 1.719" />
+      </default>
+    </default>
+    <default class="/main" />
+    <default class="linker_l20">
+      <joint damping="0.05" armature="0.002" limited="true" />
+      <geom friction="1 0.005 0.0001" condim="4" solref="0.004 1" />
+    </default>
+  </default>
+  <asset>
+    <material name="white" />
+    <material name="off_white" rgba="0.901961 0.921569 0.929412 1" />
+    <material name="dark_grey" rgba="0.25 0.25 0.25 1" />
+    <material name="green" rgba="0 1 0 1" />
+    <material name="light_blue" rgba="0.039216 0.541176 0.780392 1" />
+    <material name="metal" rgba="0.58 0.58 0.58 1" />
+    <material name="silicone" rgba="0.1882 0.1882 0.1882 1" />
+    <material name="gray" rgba="0.4627 0.4627 0.4627 1" />
+    <material name="black" rgba="0.149 0.149 0.149 1" />
+    <material name="allegro_black" rgba="0.2 0.2 0.2 1" />
+    <material name="allegro_white" rgba="0.9 0.9 0.9 1" />
+    <mesh name="link0_c" content_type="model/stl" file="franka_emika_panda/assets/link0.stl" />
+    <mesh name="link1_c" content_type="model/stl" file="franka_emika_panda/assets/link1.stl" />
+    <mesh name="link2_c" content_type="model/stl" file="franka_emika_panda/assets/link2.stl" />
+    <mesh name="link3_c" content_type="model/stl" file="franka_emika_panda/assets/link3.stl" />
+    <mesh name="link4_c" content_type="model/stl" file="franka_emika_panda/assets/link4.stl" />
+    <mesh name="link5_c0" content_type="model/obj" file="franka_emika_panda/assets/link5_collision_0.obj" />
+    <mesh name="link5_c1" content_type="model/obj" file="franka_emika_panda/assets/link5_collision_1.obj" />
+    <mesh name="link5_c2" content_type="model/obj" file="franka_emika_panda/assets/link5_collision_2.obj" />
+    <mesh name="link6_c" content_type="model/stl" file="franka_emika_panda/assets/link6.stl" />
+    <mesh name="link7_c" content_type="model/stl" file="franka_emika_panda/assets/link7.stl" />
+    <mesh name="link0_0" content_type="model/obj" file="franka_emika_panda/assets/link0_0.obj" />
+    <mesh name="link0_1" content_type="model/obj" file="franka_emika_panda/assets/link0_1.obj" />
+    <mesh name="link0_2" content_type="model/obj" file="franka_emika_panda/assets/link0_2.obj" />
+    <mesh name="link0_3" content_type="model/obj" file="franka_emika_panda/assets/link0_3.obj" />
+    <mesh name="link0_4" content_type="model/obj" file="franka_emika_panda/assets/link0_4.obj" />
+    <mesh name="link0_5" content_type="model/obj" file="franka_emika_panda/assets/link0_5.obj" />
+    <mesh name="link0_7" content_type="model/obj" file="franka_emika_panda/assets/link0_7.obj" />
+    <mesh name="link0_8" content_type="model/obj" file="franka_emika_panda/assets/link0_8.obj" />
+    <mesh name="link0_9" content_type="model/obj" file="franka_emika_panda/assets/link0_9.obj" />
+    <mesh name="link0_10" content_type="model/obj" file="franka_emika_panda/assets/link0_10.obj" />
+    <mesh name="link0_11" content_type="model/obj" file="franka_emika_panda/assets/link0_11.obj" />
+    <mesh name="link1" content_type="model/obj" file="franka_emika_panda/assets/link1.obj" />
+    <mesh name="link2" content_type="model/obj" file="franka_emika_panda/assets/link2.obj" />
+    <mesh name="link3_0" content_type="model/obj" file="franka_emika_panda/assets/link3_0.obj" />
+    <mesh name="link3_1" content_type="model/obj" file="franka_emika_panda/assets/link3_1.obj" />
+    <mesh name="link3_2" content_type="model/obj" file="franka_emika_panda/assets/link3_2.obj" />
+    <mesh name="link3_3" content_type="model/obj" file="franka_emika_panda/assets/link3_3.obj" />
+    <mesh name="link4_0" content_type="model/obj" file="franka_emika_panda/assets/link4_0.obj" />
+    <mesh name="link4_1" content_type="model/obj" file="franka_emika_panda/assets/link4_1.obj" />
+    <mesh name="link4_2" content_type="model/obj" file="franka_emika_panda/assets/link4_2.obj" />
+    <mesh name="link4_3" content_type="model/obj" file="franka_emika_panda/assets/link4_3.obj" />
+    <mesh name="link5_0" content_type="model/obj" file="franka_emika_panda/assets/link5_0.obj" />
+    <mesh name="link5_1" content_type="model/obj" file="franka_emika_panda/assets/link5_1.obj" />
+    <mesh name="link5_2" content_type="model/obj" file="franka_emika_panda/assets/link5_2.obj" />
+    <mesh name="link6_0" content_type="model/obj" file="franka_emika_panda/assets/link6_0.obj" />
+    <mesh name="link6_1" content_type="model/obj" file="franka_emika_panda/assets/link6_1.obj" />
+    <mesh name="link6_2" content_type="model/obj" file="franka_emika_panda/assets/link6_2.obj" />
+    <mesh name="link6_3" content_type="model/obj" file="franka_emika_panda/assets/link6_3.obj" />
+    <mesh name="link6_4" content_type="model/obj" file="franka_emika_panda/assets/link6_4.obj" />
+    <mesh name="link6_5" content_type="model/obj" file="franka_emika_panda/assets/link6_5.obj" />
+    <mesh name="link6_6" content_type="model/obj" file="franka_emika_panda/assets/link6_6.obj" />
+    <mesh name="link6_7" content_type="model/obj" file="franka_emika_panda/assets/link6_7.obj" />
+    <mesh name="link6_8" content_type="model/obj" file="franka_emika_panda/assets/link6_8.obj" />
+    <mesh name="link6_9" content_type="model/obj" file="franka_emika_panda/assets/link6_9.obj" />
+    <mesh name="link6_10" content_type="model/obj" file="franka_emika_panda/assets/link6_10.obj" />
+    <mesh name="link6_11" content_type="model/obj" file="franka_emika_panda/assets/link6_11.obj" />
+    <mesh name="link6_12" content_type="model/obj" file="franka_emika_panda/assets/link6_12.obj" />
+    <mesh name="link6_13" content_type="model/obj" file="franka_emika_panda/assets/link6_13.obj" />
+    <mesh name="link6_14" content_type="model/obj" file="franka_emika_panda/assets/link6_14.obj" />
+    <mesh name="link6_15" content_type="model/obj" file="franka_emika_panda/assets/link6_15.obj" />
+    <mesh name="link6_16" content_type="model/obj" file="franka_emika_panda/assets/link6_16.obj" />
+    <mesh name="link7_0" content_type="model/obj" file="franka_emika_panda/assets/link7_0.obj" />
+    <mesh name="link7_1" content_type="model/obj" file="franka_emika_panda/assets/link7_1.obj" />
+    <mesh name="link7_2" content_type="model/obj" file="franka_emika_panda/assets/link7_2.obj" />
+    <mesh name="link7_3" content_type="model/obj" file="franka_emika_panda/assets/link7_3.obj" />
+    <mesh name="link7_4" content_type="model/obj" file="franka_emika_panda/assets/link7_4.obj" />
+    <mesh name="link7_5" content_type="model/obj" file="franka_emika_panda/assets/link7_5.obj" />
+    <mesh name="link7_6" content_type="model/obj" file="franka_emika_panda/assets/link7_6.obj" />
+    <mesh name="link7_7" content_type="model/obj" file="franka_emika_panda/assets/link7_7.obj" />
+    <mesh name="base_link" content_type="model/stl" file="wonik_allegro/assets/base_link.stl" />
+    <mesh name="link_0.0" content_type="model/stl" file="wonik_allegro/assets/link_0.0.stl" />
+    <mesh name="link_1.0" content_type="model/stl" file="wonik_allegro/assets/link_1.0.stl" />
+    <mesh name="link_2.0" content_type="model/stl" file="wonik_allegro/assets/link_2.0.stl" />
+    <mesh name="link_3.0" content_type="model/stl" file="wonik_allegro/assets/link_3.0.stl" />
+    <mesh name="link_3.0_tip" content_type="model/stl" file="wonik_allegro/assets/link_3.0_tip.stl" />
+    <mesh name="link_12.0_right" content_type="model/stl" file="wonik_allegro/assets/link_12.0_right.stl" />
+    <mesh name="link_13.0" content_type="model/stl" file="wonik_allegro/assets/link_13.0.stl" />
+    <mesh name="link_14.0" content_type="model/stl" file="wonik_allegro/assets/link_14.0.stl" />
+    <mesh name="link_15.0" content_type="model/stl" file="wonik_allegro/assets/link_15.0.stl" />
+    <mesh name="link_15.0_tip" content_type="model/stl" file="wonik_allegro/assets/link_15.0_tip.stl" />
+    <mesh name="leap_palm_lower" content_type="model/stl" file="leap_hand/right/palm_lower.stl" />
+    <mesh name="leap_mcp_joint" content_type="model/stl" file="leap_hand/right/mcp_joint.stl" />
+    <mesh name="leap_pip" content_type="model/stl" file="leap_hand/right/pip.stl" />
+    <mesh name="leap_dip" content_type="model/stl" file="leap_hand/right/dip.stl" />
+    <mesh name="leap_fingertip" content_type="model/stl" file="leap_hand/right/fingertip.stl" />
+    <mesh name="leap_thumb_pip" content_type="model/stl" file="leap_hand/right/thumb_pip.stl" />
+    <mesh name="leap_thumb_dip" content_type="model/stl" file="leap_hand/right/thumb_dip.stl" />
+    <mesh name="leap_thumb_fingertip" content_type="model/stl" file="leap_hand/right/thumb_fingertip.stl" />
+    <mesh name="pedestal" content_type="model/stl" file="rethink_mount/pedestal.stl" />
+    <material name="l20_adapter_anodized" rgba="0.18 0.20 0.23 1" specular="0.35" shininess="0.35" />
+    <material name="l20_adapter_metal" rgba="0.42 0.44 0.47 1" specular="0.45" shininess="0.4" />
+    <texture name="l20_palette" type="2d" builtin="checker" rgb1="0.66 0.68 0.71" rgb2="0.045 0.05 0.055" width="2" height="2" />
+    <material name="l20_silver_graphite" texture="l20_palette" texuniform="false" texrepeat="1 1" rgba="1 1 1 1" specular="0.18" shininess="0.25" reflectance="0" />
+    <mesh name="l20_hand_base_link" file="linkerhand_l20/right/meshes/hand_base_link.STL" scale="1 1 1" />
+    <mesh name="l20_hand_base_link_surface" file="linkerhand_l20/right/visual/hand_base_link.obj" scale="1 1 1" />
+    <mesh name="l20_thumb_metacarpals_base1" file="linkerhand_l20/right/meshes/thumb_metacarpals_base1.STL" scale="1 1 1" />
+    <mesh name="l20_thumb_metacarpals_base1_surface" file="linkerhand_l20/right/visual/thumb_metacarpals_base1.obj" scale="1 1 1" />
+    <mesh name="l20_thumb_metacarpals_base2" file="linkerhand_l20/right/meshes/thumb_metacarpals_base2.STL" scale="1 1 1" />
+    <mesh name="l20_thumb_metacarpals_base2_surface" file="linkerhand_l20/right/visual/thumb_metacarpals_base2.obj" scale="1 1 1" />
+    <mesh name="l20_thumb_metacarpals" file="linkerhand_l20/right/meshes/thumb_metacarpals.STL" scale="1 1 1" />
+    <mesh name="l20_thumb_metacarpals_surface" file="linkerhand_l20/right/visual/thumb_metacarpals.obj" scale="1 1 1" />
+    <mesh name="l20_thumb_proximal" file="linkerhand_l20/right/meshes/thumb_proximal.STL" scale="1 1 1" />
+    <mesh name="l20_thumb_proximal_surface" file="linkerhand_l20/right/visual/thumb_proximal.obj" scale="1 1 1" />
+    <mesh name="l20_thumb_distal" file="linkerhand_l20/right/meshes/thumb_distal.STL" scale="1 1 1" />
+    <mesh name="l20_thumb_distal_surface" file="linkerhand_l20/right/visual/thumb_distal.obj" scale="1 1 1" />
+    <mesh name="l20_index_metacarpals" file="linkerhand_l20/right/meshes/index_metacarpals.STL" scale="1 1 1" />
+    <mesh name="l20_index_metacarpals_surface" file="linkerhand_l20/right/visual/index_metacarpals.obj" scale="1 1 1" />
+    <mesh name="l20_index_proximal" file="linkerhand_l20/right/meshes/index_proximal.STL" scale="1 1 1" />
+    <mesh name="l20_index_proximal_surface" file="linkerhand_l20/right/visual/index_proximal.obj" scale="1 1 1" />
+    <mesh name="l20_index_middle" file="linkerhand_l20/right/meshes/index_middle.STL" scale="1 1 1" />
+    <mesh name="l20_index_middle_surface" file="linkerhand_l20/right/visual/index_middle.obj" scale="1 1 1" />
+    <mesh name="l20_index_distal" file="linkerhand_l20/right/meshes/index_distal.STL" scale="1 1 1" />
+    <mesh name="l20_index_distal_surface" file="linkerhand_l20/right/visual/index_distal.obj" scale="1 1 1" />
+    <mesh name="l20_middle_metacarpals" file="linkerhand_l20/right/meshes/middle_metacarpals.STL" scale="1 1 1" />
+    <mesh name="l20_middle_metacarpals_surface" file="linkerhand_l20/right/visual/middle_metacarpals.obj" scale="1 1 1" />
+    <mesh name="l20_middle_proximal" file="linkerhand_l20/right/meshes/middle_proximal.STL" scale="1 1 1" />
+    <mesh name="l20_middle_proximal_surface" file="linkerhand_l20/right/visual/middle_proximal.obj" scale="1 1 1" />
+    <mesh name="l20_middle_middle" file="linkerhand_l20/right/meshes/middle_middle.STL" scale="1 1 1" />
+    <mesh name="l20_middle_middle_surface" file="linkerhand_l20/right/visual/middle_middle.obj" scale="1 1 1" />
+    <mesh name="l20_middle_distal" file="linkerhand_l20/right/meshes/middle_distal.STL" scale="1 1 1" />
+    <mesh name="l20_middle_distal_surface" file="linkerhand_l20/right/visual/middle_distal.obj" scale="1 1 1" />
+    <mesh name="l20_ring_metacarpals" file="linkerhand_l20/right/meshes/ring_metacarpals.STL" scale="1 1 1" />
+    <mesh name="l20_ring_metacarpals_surface" file="linkerhand_l20/right/visual/ring_metacarpals.obj" scale="1 1 1" />
+    <mesh name="l20_ring_proximal" file="linkerhand_l20/right/meshes/ring_proximal.STL" scale="1 1 1" />
+    <mesh name="l20_ring_proximal_surface" file="linkerhand_l20/right/visual/ring_proximal.obj" scale="1 1 1" />
+    <mesh name="l20_ring_middle" file="linkerhand_l20/right/meshes/ring_middle.STL" scale="1 1 1" />
+    <mesh name="l20_ring_middle_surface" file="linkerhand_l20/right/visual/ring_middle.obj" scale="1 1 1" />
+    <mesh name="l20_ring_distal" file="linkerhand_l20/right/meshes/ring_distal.STL" scale="1 1 1" />
+    <mesh name="l20_ring_distal_surface" file="linkerhand_l20/right/visual/ring_distal.obj" scale="1 1 1" />
+    <mesh name="l20_pinky_metacarpals" file="linkerhand_l20/right/meshes/pinky_metacarpals.STL" scale="1 1 1" />
+    <mesh name="l20_pinky_metacarpals_surface" file="linkerhand_l20/right/visual/pinky_metacarpals.obj" scale="1 1 1" />
+    <mesh name="l20_pinky_proximal" file="linkerhand_l20/right/meshes/pinky_proximal.STL" scale="1 1 1" />
+    <mesh name="l20_pinky_proximal_surface" file="linkerhand_l20/right/visual/pinky_proximal.obj" scale="1 1 1" />
+    <mesh name="l20_pinky_middle" file="linkerhand_l20/right/meshes/pinky_middle.STL" scale="1 1 1" />
+    <mesh name="l20_pinky_middle_surface" file="linkerhand_l20/right/visual/pinky_middle.obj" scale="1 1 1" />
+    <mesh name="l20_pinky_distal" file="linkerhand_l20/right/meshes/pinky_distal.STL" scale="1 1 1" />
+    <mesh name="l20_pinky_distal_surface" file="linkerhand_l20/right/visual/pinky_distal.obj" scale="1 1 1" />
+  </asset>
+  <worldbody>
+    <body name="base" pos="-0.8 0 0.924">
+      <body name="controller_box">
+        <inertial pos="-0.325 0 -0.38" mass="46.64" diaginertia="1.71363 1.27988 0.809981" />
+        <geom name="controller_box_col" size="0.11 0.2 0.265" pos="-0.325 0 -0.38" type="box" group="3" />
+      </body>
+      <body name="pedestal_feet">
+        <inertial pos="-0.1225 0 -0.758" mass="167.09" diaginertia="8.16095 9.59375 15.0785" />
+        <geom name="pedestal_feet_col" size="0.385 0.35 0.155" pos="-0.1225 0 -0.758" type="box" group="3" />
+      </body>
+      <body name="torso">
+        <inertial pos="0 0 0" mass="0.0001" diaginertia="1e-08 1e-08 1e-08" />
+        <geom name="torso_vis" size="0.05 0.05 0.05" pos="0 0 -0.05" type="box" contype="0" conaffinity="0" group="1" rgba="0.2 0.2 0.2 1" />
+      </body>
+      <body name="pedestal">
+        <inertial pos="0 0 0" quat="0.659267 -0.259505 -0.260945 0.655692" mass="60.864" diaginertia="6.0869 5.81635 4.20915" />
+        <geom name="pedestal_vis" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.2 0.2 0.2 1" mesh="pedestal" />
+        <geom name="pedestal_col" size="0.18 0.31" pos="-0.02 0 -0.29" type="cylinder" group="3" rgba="0.2 0.2 0.2 1" />
+      </body>
+      <body name="link0" childclass="panda" pos="0.05 0 0">
+        <inertial pos="-0.041018 -0.00014 0.049974" quat="0.00630474 0.751245 0.00741774 0.659952" mass="0.629769" diaginertia="0.00430465 0.00387984 0.00313051" />
+        <geom class="panda/visual" material="off_white" mesh="link0_0" />
+        <geom class="panda/visual" material="dark_grey" mesh="link0_1" />
+        <geom class="panda/visual" material="off_white" mesh="link0_2" />
+        <geom class="panda/visual" material="dark_grey" mesh="link0_3" />
+        <geom class="panda/visual" material="off_white" mesh="link0_4" />
+        <geom class="panda/visual" material="dark_grey" mesh="link0_5" />
+        <geom class="panda/visual" material="white" mesh="link0_7" />
+        <geom class="panda/visual" material="white" mesh="link0_8" />
+        <geom class="panda/visual" material="dark_grey" mesh="link0_9" />
+        <geom class="panda/visual" material="off_white" mesh="link0_10" />
+        <geom class="panda/visual" material="white" mesh="link0_11" />
+        <geom class="panda/collision" mesh="link0_c" />
+        <body name="link1" pos="0 0 0.333">
+          <inertial pos="0.003875 0.002081 -0.04762" quat="0.711549 0.00634377 -0.0131124 0.702485" mass="4.97068" diaginertia="0.707137 0.703435 0.00852456" />
+          <joint name="joint1" pos="0 0 0" axis="0 0 1" />
+          <geom class="panda/visual" material="white" mesh="link1" />
+          <geom class="panda/collision" mesh="link1_c" />
+          <site name="joint1" pos="0 0 0" />
+          <body name="link2" quat="0.707107 -0.707107 0 0">
+            <inertial pos="-0.003141 -0.02872 0.003495" quat="-0.168175 0.828366 -0.122878 0.520027" mass="0.646926" diaginertia="0.0310326 0.0283001 0.00273425" />
+            <joint name="joint2" pos="0 0 0" axis="0 0 1" range="-1.7628 1.7628" />
+            <geom class="panda/visual" material="white" mesh="link2" />
+            <geom class="panda/collision" mesh="link2_c" />
+            <site name="joint2" pos="0 0 0" />
+            <body name="link3" pos="0 -0.316 0" quat="0.707107 0.707107 0 0">
+              <inertial pos="0.027518 0.039252 -0.066502" quat="0.662769 -0.00678331 0.252053 0.705096" mass="3.2286" diaginertia="0.0415014 0.0414793 0.00124635" />
+              <joint name="joint3" pos="0 0 0" axis="0 0 1" />
+              <geom class="panda/visual" material="white" mesh="link3_0" />
+              <geom class="panda/visual" material="white" mesh="link3_1" />
+              <geom class="panda/visual" material="white" mesh="link3_2" />
+              <geom class="panda/visual" material="dark_grey" mesh="link3_3" />
+              <geom class="panda/collision" mesh="link3_c" />
+              <site name="joint3" pos="0 0 0" />
+              <body name="link4" pos="0.0825 0 0" quat="0.707107 0.707107 0 0">
+                <inertial pos="-0.05317 0.104419 0.027454" quat="0.65058 0.529822 -0.0962034 0.535518" mass="3.5879" diaginertia="0.0349596 0.0281483 0.0106201" />
+                <joint name="joint4" pos="0 0 0" axis="0 0 1" range="-3.0718 -0.0698" />
+                <geom class="panda/visual" material="white" mesh="link4_0" />
+                <geom class="panda/visual" material="white" mesh="link4_1" />
+                <geom class="panda/visual" material="dark_grey" mesh="link4_2" />
+                <geom class="panda/visual" material="white" mesh="link4_3" />
+                <geom class="panda/collision" mesh="link4_c" />
+                <site name="joint4" pos="0 0 0" />
+                <body name="link5" pos="-0.0825 0.384 0" quat="0.707107 -0.707107 0 0">
+                  <inertial pos="-0.011953 0.041065 -0.038437" quat="0.987313 -0.0121954 0.0719187 -0.141037" mass="1.22595" diaginertia="0.0367625 0.0288531 0.00803437" />
+                  <joint name="joint5" pos="0 0 0" axis="0 0 1" />
+                  <geom class="panda/visual" material="dark_grey" mesh="link5_0" />
+                  <geom class="panda/visual" material="white" mesh="link5_1" />
+                  <geom class="panda/visual" material="white" mesh="link5_2" />
+                  <geom class="panda/collision" mesh="link5_c0" />
+                  <geom class="panda/collision" mesh="link5_c1" />
+                  <geom class="panda/collision" mesh="link5_c2" />
+                  <site name="joint5" pos="0 0 0" />
+                  <body name="link6" quat="0.707107 0.707107 0 0">
+                    <inertial pos="0.060149 -0.014117 -0.010517" quat="0.101075 0.59332 0.0287227 0.798079" mass="1.66656" diaginertia="0.00584276 0.00431037 0.00159787" />
+                    <joint name="joint6" pos="0 0 0" axis="0 0 1" range="-0.0175 3.7525" />
+                    <geom class="panda/visual" material="off_white" mesh="link6_0" />
+                    <geom class="panda/visual" material="white" mesh="link6_1" />
+                    <geom class="panda/visual" material="dark_grey" mesh="link6_2" />
+                    <geom class="panda/visual" material="white" mesh="link6_3" />
+                    <geom class="panda/visual" material="white" mesh="link6_4" />
+                    <geom class="panda/visual" material="white" mesh="link6_5" />
+                    <geom class="panda/visual" material="white" mesh="link6_6" />
+                    <geom class="panda/visual" material="light_blue" mesh="link6_7" />
+                    <geom class="panda/visual" material="light_blue" mesh="link6_8" />
+                    <geom class="panda/visual" material="dark_grey" mesh="link6_9" />
+                    <geom class="panda/visual" material="dark_grey" mesh="link6_10" />
+                    <geom class="panda/visual" material="white" mesh="link6_11" />
+                    <geom class="panda/visual" material="green" mesh="link6_12" />
+                    <geom class="panda/visual" material="white" mesh="link6_13" />
+                    <geom class="panda/visual" material="dark_grey" mesh="link6_14" />
+                    <geom class="panda/visual" material="dark_grey" mesh="link6_15" />
+                    <geom class="panda/visual" material="white" mesh="link6_16" />
+                    <geom class="panda/collision" mesh="link6_c" />
+                    <site name="joint6" pos="0 0 0" />
+                    <body name="link7" pos="0.088 0 0" quat="0.707107 0.707107 0 0">
+                      <inertial pos="0.010517 -0.004252 0.061597" quat="0.992939 -0.0762041 0.0733595 -0.0537067" mass="0.735522" diaginertia="0.0127345 0.0101055 0.00451803" />
+                      <joint name="joint7" pos="0 0 0" axis="0 0 1" />
+                      <geom class="panda/visual" material="white" mesh="link7_0" />
+                      <geom class="panda/visual" material="dark_grey" mesh="link7_1" />
+                      <geom class="panda/visual" material="dark_grey" mesh="link7_2" />
+                      <geom class="panda/visual" material="dark_grey" mesh="link7_3" />
+                      <geom class="panda/visual" material="dark_grey" mesh="link7_4" />
+                      <geom class="panda/visual" material="dark_grey" mesh="link7_5" />
+                      <geom class="panda/visual" material="dark_grey" mesh="link7_6" />
+                      <geom class="panda/visual" material="white" mesh="link7_7" />
+                      <geom class="panda/collision" mesh="link7_c" />
+                      <site name="joint7" pos="0 0 0" />
+                      <body name="attachment" pos="0 0 0.107" quat="0.382683 0 0 0.92388">
+                        <site name="attachment_site" pos="0 0 0" quat="0 0 0 1" />
+                        <camera name="handcam_rgb" pos="0.14 0.03 0.04" quat="-0.353678 0.612589 -0.612589 0.352678" fovy="60" />
+                        <body name="l20_wrist_adapter">
+                          <!-- l20_right_angle_adapter_v1: fixed simulation approximation; 120 g estimated mass and box inertia, not measured hardware. Hand/TCP transform unchanged. -->
+                          <inertial mass="0.12" pos="0.004 0 0.024" diaginertia="6.082e-05 6.082e-05 6.962e-05" />
+                          <geom name="l20_adapter_flange_visual" type="cylinder" pos="0 0 0.003" size="0.0295 0.003" density="0" contype="0" conaffinity="0" group="1" friction="0.8 0.005 0.0001" condim="4" solref="0.004 1" material="l20_adapter_metal" />
+                          <geom name="l20_adapter_flange_collision" type="cylinder" pos="0 0 0.003" size="0.0295 0.003" density="0" contype="1" conaffinity="1" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.004 1" />
+                          <geom name="l20_adapter_elbow_visual" type="box" pos="0.012 0 0.026" size="0.015 0.021 0.020" density="0" contype="0" conaffinity="0" group="1" friction="0.8 0.005 0.0001" condim="4" solref="0.004 1" material="l20_adapter_anodized" />
+                          <geom name="l20_adapter_elbow_collision" type="box" pos="0.012 0 0.026" size="0.015 0.021 0.020" density="0" contype="1" conaffinity="1" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.004 1" />
+                          <geom name="l20_adapter_hand_plate_visual" type="box" pos="-0.006 0 0.026" size="0.003 0.027 0.025" density="0" contype="0" conaffinity="0" group="1" friction="0.8 0.005 0.0001" condim="4" solref="0.004 1" material="l20_adapter_metal" />
+                          <geom name="l20_adapter_hand_plate_collision" type="box" pos="-0.006 0 0.026" size="0.003 0.027 0.025" density="0" contype="1" conaffinity="1" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.004 1" />
+                        </body>
+                        <body name="l20_hand_base_link" childclass="linker_l20" pos="-0.009 0 0.026" quat="0.7071067811865476 0 -0.7071067811865476 0">
+                          <inertial pos="-0.0023553326597099 -0.000476950676809626 0.0840274681191193" mass="0.130043890829375" fullinertia="0.000269869493591 0.000164906210535 0.00011883452437 -5.66836728556e-07 1.07919384482e-06 4.94586055862e-06" />
+                          <geom name="l20_hand_base_link_visual" type="mesh" mesh="l20_hand_base_link_surface" pos="0 0 0" quat="1 0 0 0" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" material="l20_silver_graphite" />
+                          <geom name="l20_hand_base_link_collision" type="mesh" mesh="l20_hand_base_link" pos="0 0 0" quat="1 0 0 0" contype="1" conaffinity="1" group="3" density="0" rgba="0.6 0.6 0.6 1" />
+                          <body name="l20_thumb_metacarpals_base1" childclass="linker_l20" pos="0.01916 0.01 0.0436" quat="1 0 0 0">
+                            <inertial pos="0.0121300685642492 -0.00368626401900367 0.000253013805235423" mass="0.0173128324517923" fullinertia="4.04974890264e-06 2.43513754798e-06 2.09347392895e-06 -1.31074266242e-07 -7.53905165404e-09 1.46366596393e-07" />
+                            <geom name="l20_thumb_metacarpals_base1_visual" type="mesh" mesh="l20_thumb_metacarpals_base1_surface" pos="0 0 0" quat="1 0 0 0" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" material="l20_silver_graphite" />
+                            <geom name="l20_thumb_metacarpals_base1_collision" type="mesh" mesh="l20_thumb_metacarpals_base1" pos="0 0 0" quat="1 0 0 0" contype="1" conaffinity="1" group="3" density="0" rgba="0.6 0.6 0.6 1" />
+                            <joint name="l20_thumb_cmc_roll" type="hinge" axis="1 0 0" range="0 1.39" />
+                            <body name="l20_thumb_metacarpals_base2" childclass="linker_l20" pos="0.019845 0 0" quat="0.926488281019 -0.37632361756 0 0">
+                              <inertial pos="0.00274804892423072 0.00768600825377847 0.00362008971119372" mass="0.0129293097380942" fullinertia="1.69313015477e-06 7.29549807682e-07 1.40162512565e-06 3.38052446473e-07 -1.17465962843e-07 -3.62516556547e-07" />
+                              <geom name="l20_thumb_metacarpals_base2_visual" type="mesh" mesh="l20_thumb_metacarpals_base2_surface" pos="0 0 0" quat="1 0 0 0" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" material="l20_silver_graphite" />
+                              <geom name="l20_thumb_metacarpals_base2_collision" type="mesh" mesh="l20_thumb_metacarpals_base2" pos="0 0 0" quat="1 0 0 0" contype="1" conaffinity="1" group="3" density="0" rgba="0.6 0.6 0.6 1" />
+                              <joint name="l20_thumb_cmc_yaw" type="hinge" axis="0 0 -1" range="0 1.57" />
+                              <body name="l20_thumb_metacarpals" childclass="linker_l20" pos="0.0088264 0.024243 0.0005" quat="0.494189680496 -0.415773940324 -0.291116329402 -0.705804415539">
+                                <inertial pos="0.00680467489235993 -0.000348945978923473 0.0329029974283304" mass="0.0311449727019751" fullinertia="1.14965619265e-05 1.37913772818e-05 3.56917509197e-06 -1.14093661337e-08 5.08562599331e-08 2.39355105126e-08" />
+                                <geom name="l20_thumb_metacarpals_visual" type="mesh" mesh="l20_thumb_metacarpals_surface" pos="0 0 0" quat="1 0 0 0" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" material="l20_silver_graphite" />
+                                <geom name="l20_thumb_metacarpals_collision" type="mesh" mesh="l20_thumb_metacarpals" pos="0 0 0" quat="1 0 0 0" contype="1" conaffinity="1" group="3" density="0" rgba="0.6 0.6 0.6 1" />
+                                <joint name="l20_thumb_cmc_pitch" type="hinge" axis="0 1 0" range="0 0.83" />
+                                <body name="l20_thumb_proximal" childclass="linker_l20" pos="0.012702 0 0.062726" quat="1 0 0 0">
+                                  <inertial pos="-0.00268743345276515 0.000568290980153867 0.0118503606835096" mass="0.00549015851204037" fullinertia="4.78349857032e-07 6.23171205283e-07 2.34919130275e-07 4.61712014179e-11 5.41138774666e-08 5.1155668272e-09" />
+                                  <geom name="l20_thumb_proximal_visual" type="mesh" mesh="l20_thumb_proximal_surface" pos="0 0 0" quat="1 0 0 0" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" material="l20_silver_graphite" />
+                                  <geom name="l20_thumb_proximal_collision" type="mesh" mesh="l20_thumb_proximal" pos="0 0 0" quat="1 0 0 0" contype="1" conaffinity="1" group="3" density="0" rgba="0.6 0.6 0.6 1" />
+                                  <joint name="l20_thumb_mcp" type="hinge" axis="0 1 0" range="0 1.25" />
+                                  <body name="l20_thumb_distal" childclass="linker_l20" pos="-0.0048365 0 0.034223" quat="1 0 0 0">
+                                    <inertial pos="-0.000650482106033023 2.41300573138245E-05 0.0111942838051236" mass="0.00585464206993151" fullinertia="3.37157269657e-07 4.37703462647e-07 1.85639673847e-07 3.69307135028e-10 -1.12308316042e-07 -9.36246753896e-10" />
+                                    <geom name="l20_thumb_distal_visual" type="mesh" mesh="l20_thumb_distal_surface" pos="0 0 0" quat="1 0 0 0" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" material="l20_silver_graphite" />
+                                    <geom name="l20_thumb_distal_collision" type="mesh" mesh="l20_thumb_distal" pos="0 0 0" quat="1 0 0 0" contype="1" conaffinity="1" group="3" density="0" rgba="0.6 0.6 0.6 1" />
+                                    <joint name="l20_thumb_ip" type="hinge" axis="0 1 0" range="0 1.29" />
+                                  </body>
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                          <body name="l20_index_metacarpals" childclass="linker_l20" pos="0.0038 0.03525 0.1481" quat="1 0 0 0">
+                            <inertial pos="-0.00794297216778595 3.01910607593964E-07 0.00220112291424343" mass="0.000895533942236676" fullinertia="3.46286808249e-08 2.8543986898e-08 4.38105935701e-08 5.20721113539e-13 5.91055676999e-09 6.15915602929e-13" />
+                            <geom name="l20_index_metacarpals_visual" type="mesh" mesh="l20_index_metacarpals_surface" pos="0 0 0" quat="1 0 0 0" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" material="l20_silver_graphite" />
+                            <geom name="l20_index_metacarpals_collision" type="mesh" mesh="l20_index_metacarpals" pos="0 0 0" quat="1 0 0 0" contype="1" conaffinity="1" group="3" density="0" rgba="0.6 0.6 0.6 1" />
+                            <joint name="l20_index_mcp_roll" type="hinge" axis="-1 0 0" range="-0.23 0.23" />
+                            <body name="l20_index_proximal" childclass="linker_l20" pos="-0.0021302 0 0" quat="1 0 0 0">
+                              <inertial pos="-0.00114165889805229 -3.47779025311364E-05 0.0228930740987338" mass="0.00450935628154297" fullinertia="6.66693338336e-07 6.74214594717e-07 1.35760887991e-07 1.00781853153e-11 -2.53156876802e-08 1.59197443844e-10" />
+                              <geom name="l20_index_proximal_visual" type="mesh" mesh="l20_index_proximal_surface" pos="0 0 0" quat="1 0 0 0" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" material="l20_silver_graphite" />
+                              <geom name="l20_index_proximal_collision" type="mesh" mesh="l20_index_proximal" pos="0 0 0" quat="1 0 0 0" contype="1" conaffinity="1" group="3" density="0" rgba="0.6 0.6 0.6 1" />
+                              <joint name="l20_index_mcp_pitch" type="hinge" axis="0 1 0" range="0 1.22" />
+                              <body name="l20_index_middle" childclass="linker_l20" pos="-0.0041946 0 0.044819" quat="1 0 0 0">
+                                <inertial pos="-0.000206830314670474 -2.69762827288106E-06 0.0167055565294545" mass="0.00237861824163327" fullinertia="2.29584431475e-07 1.76802239049e-07 9.6287538032e-08 -3.79527882007e-12 -1.47269516053e-08 3.59871792474e-13" />
+                                <geom name="l20_index_middle_visual" type="mesh" mesh="l20_index_middle_surface" pos="0 0 0" quat="1 0 0 0" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" material="l20_silver_graphite" />
+                                <geom name="l20_index_middle_collision" type="mesh" mesh="l20_index_middle" pos="0 0 0" quat="1 0 0 0" contype="1" conaffinity="1" group="3" density="0" rgba="0.6 0.6 0.6 1" />
+                                <joint name="l20_index_pip" type="hinge" axis="0 1 0" range="0 1.75" />
+                                <body name="l20_index_distal" childclass="linker_l20" pos="0.0028245 0 0.031696" quat="1 0 0 0">
+                                  <inertial pos="-0.00816260402461631 -2.26721604493323E-05 0.00811819722869647" mass="0.00334176238570705" fullinertia="1.59568900399e-07 1.78096631602e-07 1.34139906914e-07 -1.52271643282e-10 -5.94266141046e-08 1.23981970769e-10" />
+                                  <geom name="l20_index_distal_visual" type="mesh" mesh="l20_index_distal_surface" pos="0 0 0" quat="1 0 0 0" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" material="l20_silver_graphite" />
+                                  <geom name="l20_index_distal_collision" type="mesh" mesh="l20_index_distal" pos="0 0 0" quat="1 0 0 0" contype="1" conaffinity="1" group="3" density="0" rgba="0.6 0.6 0.6 1" />
+                                  <joint name="l20_index_dip" type="hinge" axis="0 1 0" range="0 1.55" />
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                          <body name="l20_middle_metacarpals" childclass="linker_l20" pos="0.0038 0.01175 0.1526" quat="1 0 0 0">
+                            <inertial pos="-0.00794297217144934 3.01910607571412E-07 0.00220112291424346" mass="0.000895533942236672" fullinertia="3.46286808249e-08 2.8543986898e-08 4.38105935701e-08 5.20721113362e-13 5.91055676999e-09 6.15915602825e-13" />
+                            <geom name="l20_middle_metacarpals_visual" type="mesh" mesh="l20_middle_metacarpals_surface" pos="0 0 0" quat="1 0 0 0" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" material="l20_silver_graphite" />
+                            <geom name="l20_middle_metacarpals_collision" type="mesh" mesh="l20_middle_metacarpals" pos="0 0 0" quat="1 0 0 0" contype="1" conaffinity="1" group="3" density="0" rgba="0.6 0.6 0.6 1" />
+                            <joint name="l20_middle_mcp_roll" type="hinge" axis="-1 0 0" range="-0.23 0.23" />
+                            <body name="l20_middle_proximal" childclass="linker_l20" pos="-0.0021302 0 0" quat="1 0 0 0">
+                              <inertial pos="-0.00114165889805231 -3.47779025311071E-05 0.0228930740987338" mass="0.00450935628154299" fullinertia="6.66693338336e-07 6.74214594717e-07 1.35760887991e-07 1.00781853159e-11 -2.53156876802e-08 1.59197443845e-10" />
+                              <geom name="l20_middle_proximal_visual" type="mesh" mesh="l20_middle_proximal_surface" pos="0 0 0" quat="1 0 0 0" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" material="l20_silver_graphite" />
+                              <geom name="l20_middle_proximal_collision" type="mesh" mesh="l20_middle_proximal" pos="0 0 0" quat="1 0 0 0" contype="1" conaffinity="1" group="3" density="0" rgba="0.6 0.6 0.6 1" />
+                              <joint name="l20_middle_mcp_pitch" type="hinge" axis="0 1 0" range="0 1.22" />
+                              <body name="l20_middle_middle" childclass="linker_l20" pos="-0.0041946 0 0.044819" quat="1 0 0 0">
+                                <inertial pos="-0.000206830311076763 -2.69763200638285E-06 0.0167055565392871" mass="0.00237861824399121" fullinertia="2.29584431767e-07 1.76802239347e-07 9.6287538109e-08 -3.79531728858e-12 -1.47269515026e-08 3.59776198217e-13" />
+                                <geom name="l20_middle_middle_visual" type="mesh" mesh="l20_middle_middle_surface" pos="0 0 0" quat="1 0 0 0" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" material="l20_silver_graphite" />
+                                <geom name="l20_middle_middle_collision" type="mesh" mesh="l20_middle_middle" pos="0 0 0" quat="1 0 0 0" contype="1" conaffinity="1" group="3" density="0" rgba="0.6 0.6 0.6 1" />
+                                <joint name="l20_middle_pip" type="hinge" axis="0 1 0" range="0 1.75" />
+                                <body name="l20_middle_distal" childclass="linker_l20" pos="0.0028245 0 0.031696" quat="1 0 0 0">
+                                  <inertial pos="-0.00816260402458386 -2.26721612610642E-05 0.00811819722943347" mass="0.0033417623857295" fullinertia="1.59568900407e-07 1.7809663155e-07 1.34139906933e-07 -1.52271672186e-10 -5.9426614107e-08 1.23981962913e-10" />
+                                  <geom name="l20_middle_distal_visual" type="mesh" mesh="l20_middle_distal_surface" pos="0 0 0" quat="1 0 0 0" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" material="l20_silver_graphite" />
+                                  <geom name="l20_middle_distal_collision" type="mesh" mesh="l20_middle_distal" pos="0 0 0" quat="1 0 0 0" contype="1" conaffinity="1" group="3" density="0" rgba="0.6 0.6 0.6 1" />
+                                  <joint name="l20_middle_dip" type="hinge" axis="0 1 0" range="0 1.55" />
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                          <body name="l20_ring_metacarpals" childclass="linker_l20" pos="0.0038 -0.01175 0.1481" quat="1 0 0 0">
+                            <inertial pos="-0.00794297217511273 3.01910607531514E-07 0.00220112291424343" mass="0.00089553394223667" fullinertia="3.46286808249e-08 2.8543986898e-08 4.38105935701e-08 5.20721113372e-13 5.91055676999e-09 6.15915602739e-13" />
+                            <geom name="l20_ring_metacarpals_visual" type="mesh" mesh="l20_ring_metacarpals_surface" pos="0 0 0" quat="1 0 0 0" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" material="l20_silver_graphite" />
+                            <geom name="l20_ring_metacarpals_collision" type="mesh" mesh="l20_ring_metacarpals" pos="0 0 0" quat="1 0 0 0" contype="1" conaffinity="1" group="3" density="0" rgba="0.6 0.6 0.6 1" />
+                            <joint name="l20_ring_mcp_roll" type="hinge" axis="-1 0 0" range="-0.23 0.23" />
+                            <body name="l20_ring_proximal" childclass="linker_l20" pos="-0.0021302 0 0" quat="1 0 0 0">
+                              <inertial pos="-0.00114165889805229 -3.47779025311641E-05 0.0228930740987337" mass="0.00450935628154299" fullinertia="6.66693338336e-07 6.74214594717e-07 1.35760887991e-07 1.00781853171e-11 -2.53156876802e-08 1.59197443844e-10" />
+                              <geom name="l20_ring_proximal_visual" type="mesh" mesh="l20_ring_proximal_surface" pos="0 0 0" quat="1 0 0 0" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" material="l20_silver_graphite" />
+                              <geom name="l20_ring_proximal_collision" type="mesh" mesh="l20_ring_proximal" pos="0 0 0" quat="1 0 0 0" contype="1" conaffinity="1" group="3" density="0" rgba="0.6 0.6 0.6 1" />
+                              <joint name="l20_ring_mcp_pitch" type="hinge" axis="0 1 0" range="0 1.22" />
+                              <body name="l20_ring_middle" childclass="linker_l20" pos="-0.0041946 0 0.044819" quat="1 0 0 0">
+                                <inertial pos="-0.000206830314670712 -2.69762827293657E-06 0.0167055565294543" mass="0.00237861824163314" fullinertia="2.29584431475e-07 1.76802239049e-07 9.6287538032e-08 -3.79527881056e-12 -1.47269516053e-08 3.59871797816e-13" />
+                                <geom name="l20_ring_middle_visual" type="mesh" mesh="l20_ring_middle_surface" pos="0 0 0" quat="1 0 0 0" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" material="l20_silver_graphite" />
+                                <geom name="l20_ring_middle_collision" type="mesh" mesh="l20_ring_middle" pos="0 0 0" quat="1 0 0 0" contype="1" conaffinity="1" group="3" density="0" rgba="0.6 0.6 0.6 1" />
+                                <joint name="l20_ring_pip" type="hinge" axis="0 1 0" range="0 1.75" />
+                                <body name="l20_ring_distal" childclass="linker_l20" pos="0.0028245 0 0.031696" quat="1 0 0 0">
+                                  <inertial pos="-0.00816260402385198 -2.26723442381116E-05 0.00811819722787116" mass="0.00334176238553782" fullinertia="1.59568900414e-07 1.78096631554e-07 1.34139906898e-07 -1.52265550111e-10 -5.94266140921e-08 1.23978578539e-10" />
+                                  <geom name="l20_ring_distal_visual" type="mesh" mesh="l20_ring_distal_surface" pos="0 0 0" quat="1 0 0 0" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" material="l20_silver_graphite" />
+                                  <geom name="l20_ring_distal_collision" type="mesh" mesh="l20_ring_distal" pos="0 0 0" quat="1 0 0 0" contype="1" conaffinity="1" group="3" density="0" rgba="0.6 0.6 0.6 1" />
+                                  <joint name="l20_ring_dip" type="hinge" axis="0 1 0" range="0 1.55" />
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                          <body name="l20_pinky_metacarpals" childclass="linker_l20" pos="0.0038 -0.03525 0.1436" quat="1 0 0 0">
+                            <inertial pos="-0.00794297217877612 3.019106075558E-07 0.00220112291424343" mass="0.000895533942236661" fullinertia="3.46286808249e-08 2.8543986898e-08 4.38105935701e-08 5.20721113386e-13 5.91055676999e-09 6.15915602788e-13" />
+                            <geom name="l20_pinky_metacarpals_visual" type="mesh" mesh="l20_pinky_metacarpals_surface" pos="0 0 0" quat="1 0 0 0" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" material="l20_silver_graphite" />
+                            <geom name="l20_pinky_metacarpals_collision" type="mesh" mesh="l20_pinky_metacarpals" pos="0 0 0" quat="1 0 0 0" contype="1" conaffinity="1" group="3" density="0" rgba="0.6 0.6 0.6 1" />
+                            <joint name="l20_pinky_mcp_roll" type="hinge" axis="-1 0 0" range="-0.23 0.23" />
+                            <body name="l20_pinky_proximal" childclass="linker_l20" pos="-0.0021302 0 0" quat="1 0 0 0">
+                              <inertial pos="-0.00114165890216106 -3.47779084241967E-05 0.0228930741124087" mass="0.00450935627773312" fullinertia="6.66693337543e-07 6.74214593817e-07 1.35760887844e-07 1.00781372652e-11 -2.53156873668e-08 1.59197565506e-10" />
+                              <geom name="l20_pinky_proximal_visual" type="mesh" mesh="l20_pinky_proximal_surface" pos="0 0 0" quat="1 0 0 0" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" material="l20_silver_graphite" />
+                              <geom name="l20_pinky_proximal_collision" type="mesh" mesh="l20_pinky_proximal" pos="0 0 0" quat="1 0 0 0" contype="1" conaffinity="1" group="3" density="0" rgba="0.6 0.6 0.6 1" />
+                              <joint name="l20_pinky_mcp_pitch" type="hinge" axis="0 1 0" range="0 1.22" />
+                              <body name="l20_pinky_middle" childclass="linker_l20" pos="-0.0041946 0 0.044819" quat="1 0 0 0">
+                                <inertial pos="-0.000206830314670489 -2.69762827287412E-06 0.0167055565294545" mass="0.0023786182416333" fullinertia="2.29584431475e-07 1.76802239049e-07 9.6287538032e-08 -3.79527884681e-12 -1.47269516053e-08 3.5987180643e-13" />
+                                <geom name="l20_pinky_middle_visual" type="mesh" mesh="l20_pinky_middle_surface" pos="0 0 0" quat="1 0 0 0" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" material="l20_silver_graphite" />
+                                <geom name="l20_pinky_middle_collision" type="mesh" mesh="l20_pinky_middle" pos="0 0 0" quat="1 0 0 0" contype="1" conaffinity="1" group="3" density="0" rgba="0.6 0.6 0.6 1" />
+                                <joint name="l20_pinky_pip" type="hinge" axis="0 1 0" range="0 1.75" />
+                                <body name="l20_pinky_distal" childclass="linker_l20" pos="0.0028245 0 0.031696" quat="1 0 0 0">
+                                  <inertial pos="-0.00816260391299546 -2.26722056161019E-05 0.00811819704290559" mass="0.00334176233214274" fullinertia="1.59568898337e-07 1.78096625945e-07 1.34139902528e-07 -1.52270106342e-10 -5.94266114993e-08 1.23981107884e-10" />
+                                  <geom name="l20_pinky_distal_visual" type="mesh" mesh="l20_pinky_distal_surface" pos="0 0 0" quat="1 0 0 0" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" material="l20_silver_graphite" />
+                                  <geom name="l20_pinky_distal_collision" type="mesh" mesh="l20_pinky_distal" pos="0 0 0" quat="1 0 0 0" contype="1" conaffinity="1" group="3" density="0" rgba="0.6 0.6 0.6 1" />
+                                  <joint name="l20_pinky_dip" type="hinge" axis="0 1 0" range="0 1.55" />
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <equality>
+    <joint joint1="l20_thumb_ip" joint2="l20_thumb_mcp" polycoef="0 1.03 0 0 0" solref="0.004 1" />
+    <joint joint1="l20_index_dip" joint2="l20_index_pip" polycoef="0 0.89 0 0 0" solref="0.004 1" />
+    <joint joint1="l20_middle_dip" joint2="l20_middle_pip" polycoef="0 0.89 0 0 0" solref="0.004 1" />
+    <joint joint1="l20_ring_dip" joint2="l20_ring_pip" polycoef="0 0.89 0 0 0" solref="0.004 1" />
+    <joint joint1="l20_pinky_dip" joint2="l20_pinky_pip" polycoef="0 0.89 0 0 0" solref="0.004 1" />
+  </equality>
+  <actuator>
+    <general name="actuator1" class="panda" joint="joint1" ctrlrange="-87 87" />
+    <general name="actuator2" class="panda" joint="joint2" ctrlrange="-87 87" />
+    <general name="actuator3" class="panda" joint="joint3" ctrlrange="-87 87" />
+    <general name="actuator4" class="panda" joint="joint4" ctrlrange="-87 87" />
+    <general name="actuator5" class="panda" joint="joint5" ctrlrange="-12 12" />
+    <general name="actuator6" class="panda" joint="joint6" ctrlrange="-12 12" />
+    <general name="actuator7" class="panda" joint="joint7" ctrlrange="-12 12" />
+    <position name="l20_thumb_cmc_roll_ctrl" joint="l20_thumb_cmc_roll" kp="20" kv="0.2" ctrlrange="0 1.39" forcerange="-1 1" />
+    <position name="l20_thumb_cmc_yaw_ctrl" joint="l20_thumb_cmc_yaw" kp="20" kv="0.2" ctrlrange="0 1.57" forcerange="-1 1" />
+    <position name="l20_thumb_cmc_pitch_ctrl" joint="l20_thumb_cmc_pitch" kp="20" kv="0.2" ctrlrange="0 0.83" forcerange="-1 1" />
+    <position name="l20_thumb_mcp_ctrl" joint="l20_thumb_mcp" kp="20" kv="0.2" ctrlrange="0 1.25" forcerange="-1 1" />
+    <position name="l20_index_mcp_roll_ctrl" joint="l20_index_mcp_roll" kp="20" kv="0.2" ctrlrange="-0.23 0.23" forcerange="-1 1" />
+    <position name="l20_index_mcp_pitch_ctrl" joint="l20_index_mcp_pitch" kp="20" kv="0.2" ctrlrange="0 1.22" forcerange="-1 1" />
+    <position name="l20_index_pip_ctrl" joint="l20_index_pip" kp="20" kv="0.2" ctrlrange="0 1.75" forcerange="-1 1" />
+    <position name="l20_middle_mcp_roll_ctrl" joint="l20_middle_mcp_roll" kp="20" kv="0.2" ctrlrange="-0.23 0.23" forcerange="-1 1" />
+    <position name="l20_middle_mcp_pitch_ctrl" joint="l20_middle_mcp_pitch" kp="20" kv="0.2" ctrlrange="0 1.22" forcerange="-1 1" />
+    <position name="l20_middle_pip_ctrl" joint="l20_middle_pip" kp="20" kv="0.2" ctrlrange="0 1.75" forcerange="-1 1" />
+    <position name="l20_ring_mcp_roll_ctrl" joint="l20_ring_mcp_roll" kp="20" kv="0.2" ctrlrange="-0.23 0.23" forcerange="-1 1" />
+    <position name="l20_ring_mcp_pitch_ctrl" joint="l20_ring_mcp_pitch" kp="20" kv="0.2" ctrlrange="0 1.22" forcerange="-1 1" />
+    <position name="l20_ring_pip_ctrl" joint="l20_ring_pip" kp="20" kv="0.2" ctrlrange="0 1.75" forcerange="-1 1" />
+    <position name="l20_pinky_mcp_roll_ctrl" joint="l20_pinky_mcp_roll" kp="20" kv="0.2" ctrlrange="-0.23 0.23" forcerange="-1 1" />
+    <position name="l20_pinky_mcp_pitch_ctrl" joint="l20_pinky_mcp_pitch" kp="20" kv="0.2" ctrlrange="0 1.22" forcerange="-1 1" />
+    <position name="l20_pinky_pip_ctrl" joint="l20_pinky_pip" kp="20" kv="0.2" ctrlrange="0 1.75" forcerange="-1 1" />
+  </actuator>
+  <sensor>
+    <jointpos joint="joint1" name="panda/joint1_pos" />
+    <jointpos joint="joint2" name="panda/joint2_pos" />
+    <jointpos joint="joint3" name="panda/joint3_pos" />
+    <jointpos joint="joint4" name="panda/joint4_pos" />
+    <jointpos joint="joint5" name="panda/joint5_pos" />
+    <jointpos joint="joint6" name="panda/joint6_pos" />
+    <jointpos joint="joint7" name="panda/joint7_pos" />
+    <jointvel joint="joint1" name="panda/joint1_vel" />
+    <jointvel joint="joint2" name="panda/joint2_vel" />
+    <jointvel joint="joint3" name="panda/joint3_vel" />
+    <jointvel joint="joint4" name="panda/joint4_vel" />
+    <jointvel joint="joint5" name="panda/joint5_vel" />
+    <jointvel joint="joint6" name="panda/joint6_vel" />
+    <jointvel joint="joint7" name="panda/joint7_vel" />
+    <torque site="joint1" name="panda/joint1_torque" />
+    <torque site="joint2" name="panda/joint2_torque" />
+    <torque site="joint3" name="panda/joint3_torque" />
+    <torque site="joint4" name="panda/joint4_torque" />
+    <torque site="joint5" name="panda/joint5_torque" />
+    <torque site="joint6" name="panda/joint6_torque" />
+    <torque site="joint7" name="panda/joint7_torque" />
+    <force site="attachment_site" name="panda/wrist_force" />
+    <framepos objtype="site" objname="attachment_site" name="franka/flange_pos" />
+    <framequat objtype="site" objname="attachment_site" name="franka/flange_quat" />
+    <framelinvel objtype="site" objname="attachment_site" name="franka/flange_vel" />
+  </sensor>
+  <contact>
+    <exclude body1="l20_hand_base_link" body2="l20_thumb_metacarpals_base1" />
+    <exclude body1="l20_hand_base_link" body2="l20_thumb_metacarpals_base2" />
+    <exclude body1="l20_hand_base_link" body2="l20_index_metacarpals" />
+    <exclude body1="l20_hand_base_link" body2="l20_index_proximal" />
+    <exclude body1="l20_hand_base_link" body2="l20_middle_metacarpals" />
+    <exclude body1="l20_hand_base_link" body2="l20_middle_proximal" />
+    <exclude body1="l20_hand_base_link" body2="l20_ring_metacarpals" />
+    <exclude body1="l20_hand_base_link" body2="l20_ring_proximal" />
+    <exclude body1="l20_hand_base_link" body2="l20_pinky_metacarpals" />
+    <exclude body1="l20_hand_base_link" body2="l20_pinky_proximal" />
+  </contact>
+</mujoco>

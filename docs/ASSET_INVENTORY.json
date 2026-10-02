@@ -1,0 +1,116 @@
+{
+  "generated": "2026-10-01",
+  "algorithm": "sha256",
+  "assets": [
+    {
+      "name": "camera",
+      "path": "simulator/dexjoco/sim/envs/xmls/camera",
+      "status": "unresolved",
+      "files": 451,
+      "bytes": 2996811,
+      "tree_sha256": "fd651882996967a69cf3e9287cdfcb0a46838577ab89fe203a3d495e2f0924ab",
+      "evidence": null
+    },
+    {
+      "name": "bucket",
+      "path": "simulator/dexjoco/sim/envs/xmls/bucket",
+      "status": "likely-noncommercial-unresolved",
+      "files": 43,
+      "bytes": 1725324,
+      "tree_sha256": "f2b72ad1fdc87ebefe8ee0d14588d8f22e599ec8873113f86d861025ad7bf9e7",
+      "evidence": "Directory fingerprint matches GAPartNet/PartNet-Mobility style; GAPartNet states CC BY-NC 4.0, exact object source receipt pending"
+    },
+    {
+      "name": "ipad",
+      "path": "simulator/dexjoco/sim/envs/xmls/ipad",
+      "status": "unresolved",
+      "files": 29,
+      "bytes": 21765643,
+      "tree_sha256": "bf5024636d6b53dc5b986d2bbae456af607546270222ad3786a562a4b8decdab",
+      "evidence": null
+    },
+    {
+      "name": "table_arena",
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena",
+      "status": "partial",
+      "files": 52,
+      "bytes": 55255852,
+      "tree_sha256": "2b0adead185ab60780dc6e8f2123f18f3e235e650fa3306990d6619e04bf3901",
+      "evidence": "43/50 original files exactly match RoboSuite 1.4.1 under MIT; 7 added textures unresolved"
+    },
+    {
+      "name": "rethink_mount",
+      "path": "simulator/dexjoco/sim/envs/xmls/rethink_mount",
+      "status": "conditional",
+      "files": 6,
+      "bytes": 8394444,
+      "tree_sha256": "5617b7539c7769d545290e98abac21e57692a87aed79914522d8b6346156f269",
+      "evidence": "pedestal.stl exactly matches RoboSuite 1.4.1 under MIT; OBJ/DAE conversion receipt pending"
+    },
+    {
+      "name": "photograph",
+      "path": "simulator/dexjoco/sim/envs/xmls/photograph",
+      "status": "unresolved",
+      "files": 3,
+      "bytes": 914107,
+      "tree_sha256": "c5c0647560575757381ba839a152eb25159f8efe4eb87dbeed5ce3bbe0d67730",
+      "evidence": null
+    },
+    {
+      "name": "boxed_food_0",
+      "path": "simulator/dexjoco/sim/envs/xmls/boxed_food_0",
+      "status": "unresolved",
+      "files": 37,
+      "bytes": 112600,
+      "tree_sha256": "7728e10032ad4914e18bd29fda0cec8e7521064f8724e13a2efd6b0da010c1ca",
+      "evidence": null
+    },
+    {
+      "name": "hot_dog_2",
+      "path": "simulator/dexjoco/sim/envs/xmls/hot_dog_2",
+      "status": "unresolved",
+      "files": 37,
+      "bytes": 1639713,
+      "tree_sha256": "52e5d08df8af5ace006729f0837dfb0628c8b0febc8c98e4b9614604675ee7be",
+      "evidence": null
+    },
+    {
+      "name": "robocasa_microwave",
+      "path": "simulator/dexjoco/sim/envs/xmls/robocasa_microwave",
+      "status": "unresolved",
+      "files": 5,
+      "bytes": 881001,
+      "tree_sha256": "8ad28cd4eac26549a19e5ac3b4feb901f458fd8058cb22aa749bd72ebdadf0ac",
+      "evidence": "No exact match in RoboCasa commit 456174f62b89b8fca99eaaf33949c29fec9cfc2a"
+    },
+    {
+      "name": "leap_hand",
+      "path": "simulator/dexjoco/sim/envs/xmls/leap_hand",
+      "status": "partial",
+      "files": 33,
+      "bytes": 47899919,
+      "tree_sha256": "c737d640b14953c03d3a3eaa4966d680be4ffc9ed0793a5a4fe2e97551921bbd",
+      "evidence": "16 meshes exactly match LEAP_Hand_Sim commit 150bc3d4b61fd6619193ba5a8ef209f3609ced89; remaining UniDex-derived bundle unresolved"
+    },
+    {
+      "name": "inspire",
+      "path": "simulator/teleoperation/inspire",
+      "status": "restricted-unresolved",
+      "files": 36,
+      "bytes": 12214406,
+      "tree_sha256": "c511a6dc0a1fdc217d9ce9876d8bdbb659aea873a5a65cc6a8d55bf4156b0290",
+      "evidence": "8 collision meshes exactly match dex-urdf commit f5e7132f22108164577fea4c25ef99b5cc0e1900; upstream identifies CC BY-NC-SA 4.0",
+      "scope": "Simulator model assets only; glove mappings and calibration code excluded."
+    },
+    {
+      "name": "wuji",
+      "path": "simulator/teleoperation/wuji",
+      "status": "unresolved",
+      "files": 57,
+      "bytes": 5826749,
+      "tree_sha256": "aca2a9cb6aa1d5f99a4c58dbde9efda6c34ff9123708e38cfa87500f0a7fa2a4",
+      "evidence": "No exact files matched official wuji-description commit c2cd7f8d1ef8b6dc8cb907c17daa5a88b4442d95",
+      "scope": "Simulator model assets only; glove mappings and calibration code excluded."
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "joint_names": {
+    "right": [
+      "benchhand_right_native_wuji_F1J1",
+      "benchhand_right_native_wuji_F1J2",
+      "benchhand_right_native_wuji_F1J3",
+      "benchhand_right_native_wuji_F1J4",
+      "benchhand_right_native_wuji_F2J1",
+      "benchhand_right_native_wuji_F2J2",
+      "benchhand_right_native_wuji_F2J3",
+      "benchhand_right_native_wuji_F2J4",
+      "benchhand_right_native_wuji_F3J1",
+      "benchhand_right_native_wuji_F3J2",
+      "benchhand_right_native_wuji_F3J3",
+      "benchhand_right_native_wuji_F3J4",
+      "benchhand_right_native_wuji_F4J1",
+      "benchhand_right_native_wuji_F4J2",
+      "benchhand_right_native_wuji_F4J3",
+      "benchhand_right_native_wuji_F4J4",
+      "benchhand_right_native_wuji_F5J1",
+      "benchhand_right_native_wuji_F5J2",
+      "benchhand_right_native_wuji_F5J3",
+      "benchhand_right_native_wuji_F5J4"
+    ]
+  },
+  "actuator_names": {
+    "right": [
+      "benchhand_right_native_wuji_F1J1_ctrl",
+      "benchhand_right_native_wuji_F1J2_ctrl",
+      "benchhand_right_native_wuji_F1J3_ctrl",
+      "benchhand_right_native_wuji_F1J4_ctrl",
+      "benchhand_right_native_wuji_F2J1_ctrl",
+      "benchhand_right_native_wuji_F2J2_ctrl",
+      "benchhand_right_native_wuji_F2J3_ctrl",
+      "benchhand_right_native_wuji_F2J4_ctrl",
+      "benchhand_right_native_wuji_F3J1_ctrl",
+      "benchhand_right_native_wuji_F3J2_ctrl",
+      "benchhand_right_native_wuji_F3J3_ctrl",
+      "benchhand_right_native_wuji_F3J4_ctrl",
+      "benchhand_right_native_wuji_F4J1_ctrl",
+      "benchhand_right_native_wuji_F4J2_ctrl",
+      "benchhand_right_native_wuji_F4J3_ctrl",
+      "benchhand_right_native_wuji_F4J4_ctrl",
+      "benchhand_right_native_wuji_F5J1_ctrl",
+      "benchhand_right_native_wuji_F5J2_ctrl",
+      "benchhand_right_native_wuji_F5J3_ctrl",
+      "benchhand_right_native_wuji_F5J4_ctrl"
+    ]
+  },
+  "instruction": "Pick up the hammer and hammer the nail into the wooden block.",
+  "control_dt": 0.05,
+  "wrist_camera_rig": {
+    "name": "dexjoco_official_allegro60_hanoi_front_v1",
+    "position_tcp": [
+      -0.14,
+      -0.03,
+      0.04
+    ],
+    "vertical_fov_deg": 60.0,
+    "reference_tcp_site_quat_wxyz": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "reference_attachment_quat_single_wxyz": [
+      -0.353553,
+      0.612372,
+      -0.612372,
+      0.352553
+    ],
+    "reference_attachment_quat_dual_wxyz": [
+      -0.353553,
+      0.612372,
+      -0.612372,
+      0.353553
+    ],
+    "hanoi_main_camera": "front",
+    "cross_hand_mapping": "same attachment_site/TCP extrinsics",
+    "real_world_calibrated": false
+  },
+  "camera_profile": "dexjoco_official_allegro60_hanoi_front_v1",
+  "cameras": {
+    "front": {
+      "camera_name": "front",
+      "body": "world",
+      "position_body_m": [
+        1.3,
+        0.0,
+        1.6
+      ],
+      "quaternion_body_wxyz": [
+        0.5963679543134455,
+        0.3799279708944791,
+        0.3799279708944791,
+        0.5963679543134455
+      ],
+      "vertical_fov_deg": 45.0
+    },
+    "wrist_right": {
+      "camera_name": "handcam_rgb",
+      "body": "attachment",
+      "position_body_m": [
+        0.14,
+        0.03,
+        0.04
+      ],
+      "quaternion_body_wxyz": [
+        -0.35367817570346194,
+        0.6125888107635359,
+        -0.6125888107635359,
+        0.3526778216527158
+      ],
+      "vertical_fov_deg": 60.0,
+      "position_tcp_m": [
+        -0.14,
+        -0.03,
+        0.04
+      ],
+      "rotation_tcp": [
+        [
+          -0.0007066060832240928,
+          0.5010612049989595,
+          -0.8654115607922244
+        ],
+        [
+          0.9999989992917732,
+          -0.0007066060832240928,
+          -0.0012256113965781745
+        ],
+        [
+          -0.0012256113965781745,
+          -0.8654115607922244,
+          -0.5010602042907326
+        ]
+      ]
+    }
+  },
+  "image_preprocessing": {
+    "size": [
+      256,
+      256
+    ],
+    "fps": 20,
+    "rotation_degrees": 0,
+    "vertical_flip": false,
+    "observation_timing": "pre-action"
+  }
+}

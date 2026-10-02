@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "sources": [
+    {
+      "source": "hammer_nail_xhand_native_delta",
+      "passed": true,
+      "action_dimension": 18
+    },
+    {
+      "source": "pick_bucket_xhand_native_delta",
+      "passed": true,
+      "action_dimension": 18
+    },
+    {
+      "source": "hammer_nail_linkerhand_l20_native_delta",
+      "passed": true,
+      "action_dimension": 22
+    },
+    {
+      "source": "pick_bucket_linkerhand_l20_native_delta",
+      "passed": true,
+      "action_dimension": 22
+    },
+    {
+      "source": "hammer_nail_inspire_native_delta",
+      "passed": true,
+      "action_dimension": 12
+    },
+    {
+      "source": "pick_bucket_inspire_native_delta",
+      "passed": true,
+      "action_dimension": 12
+    },
+    {
+      "source": "pick_bucket_leap_native_delta",
+      "passed": true,
+      "action_dimension": 22
+    },
+    {
+      "source": "pick_bucket_sharpa_wave_native_delta",
+      "passed": true,
+      "action_dimension": 28
+    }
+  ]
+}

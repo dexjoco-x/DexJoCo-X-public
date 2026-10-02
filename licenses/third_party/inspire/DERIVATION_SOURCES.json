@@ -1,0 +1,69 @@
+{
+  "repository": "https://github.com/dexsuite/dex-urdf",
+  "commit": "f5e7132f22108164577fea4c25ef99b5cc0e1900",
+  "files": [
+    {
+      "stem": "base_link",
+      "sha256": "5e4523c936818785318829a5ae64831994d7a85814e53d6461c0ee9212ca6750",
+      "upstream_git_blob": "fb4cc62ea7e749c2ab69373bc13d02dc0bbf6081",
+      "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_base_link.glb",
+      "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_base_link.glb"
+    },
+    {
+      "stem": "index_intermediate",
+      "sha256": "55f2041dd7674ba95d3fca88dbfdd721bf6f4c4b17d8ae56733ca040a6ee0584",
+      "upstream_git_blob": "6cfa3f699111bf452825c1443f17d736cf55ff75",
+      "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_index_intermediate.glb",
+      "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_index_intermediate.glb"
+    },
+    {
+      "stem": "index_proximal",
+      "sha256": "aa989ff69ebf066dabef421ed9062d34a4588162aa1569c717a3262a99a031ba",
+      "upstream_git_blob": "03d29bb740c8889dfadd32c89c7b1a5b5ce97c6d",
+      "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_index_proximal.glb",
+      "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_index_proximal.glb"
+    },
+    {
+      "stem": "middle_intermediate",
+      "sha256": "57ae7d1525270ac4edef4f9ff1b98898e3943e39d3ccc4ab068831fd54349636",
+      "upstream_git_blob": "111a1f40beb61bf15b93dc589bae2c4ab2f31041",
+      "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_middle_intermediate.glb",
+      "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_middle_intermediate.glb"
+    },
+    {
+      "stem": "pinky_intermediate",
+      "sha256": "6b49449acc77fc66f78eaa2025e608b8eae94f22c1cc3e6b6663c960035675e3",
+      "upstream_git_blob": "717917a7a84246c5d039f448cdb6f94a4c2af1a1",
+      "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_pinky_intermediate.glb",
+      "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_pinky_intermediate.glb"
+    },
+    {
+      "stem": "thumb_distal",
+      "sha256": "eb4f5ac8fc524c0c70d06f98dd897307a0a340fa74091d3345c981d2a8f23cf8",
+      "upstream_git_blob": "bc50aaa665d963ebfb0ac111ab52a5a611e1ce85",
+      "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_thumb_distal.glb",
+      "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_thumb_distal.glb"
+    },
+    {
+      "stem": "thumb_intermediate",
+      "sha256": "1e9df1f663633b73c918479c2b27bd7c586a90a7c9273f10b00e87030197c228",
+      "upstream_git_blob": "c8378896435ccb98abc07e53c4951280c3d56e07",
+      "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_thumb_intermediate.glb",
+      "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_thumb_intermediate.glb"
+    },
+    {
+      "stem": "thumb_proximal",
+      "sha256": "c3b9fdd15bcea183e0f05fa261cb7da93ba4d905e7fa04906c7776c9d3975d5a",
+      "upstream_git_blob": "6f3b6b303224e1968ce21fa779b58b4ebadcc600",
+      "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_thumb_proximal.glb",
+      "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_thumb_proximal.glb"
+    },
+    {
+      "stem": "thumb_proximal_base",
+      "sha256": "3e1143d3fc366a169e795be8003892f7e5d7cd5b7b322ac55b39089aca5c9f81",
+      "upstream_git_blob": "a56e8c63115c4a3baabaedb3f02b5b80c1469143",
+      "upstream_path": "robots/hands/inspire_hand/meshes/visual/right_thumb_proximal_base.glb",
+      "source_url": "https://github.com/dexsuite/dex-urdf/blob/f5e7132f22108164577fea4c25ef99b5cc0e1900/robots/hands/inspire_hand/meshes/visual/right_thumb_proximal_base.glb"
+    }
+  ]
+}

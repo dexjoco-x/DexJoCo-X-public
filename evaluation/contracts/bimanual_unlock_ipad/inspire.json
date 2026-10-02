@@ -1,0 +1,187 @@
+{
+  "joint_names": {
+    "right": [
+      "benchhand_right_native_inspire_thumb_proximal_yaw_joint",
+      "benchhand_right_native_inspire_thumb_proximal_pitch_joint",
+      "benchhand_right_native_inspire_thumb_intermediate_joint",
+      "benchhand_right_native_inspire_thumb_distal_joint",
+      "benchhand_right_native_inspire_index_proximal_joint",
+      "benchhand_right_native_inspire_index_intermediate_joint",
+      "benchhand_right_native_inspire_middle_proximal_joint",
+      "benchhand_right_native_inspire_middle_intermediate_joint",
+      "benchhand_right_native_inspire_ring_proximal_joint",
+      "benchhand_right_native_inspire_ring_intermediate_joint",
+      "benchhand_right_native_inspire_pinky_proximal_joint",
+      "benchhand_right_native_inspire_pinky_intermediate_joint"
+    ],
+    "left": [
+      "benchhand_left_native_inspire_thumb_proximal_yaw_joint_left",
+      "benchhand_left_native_inspire_thumb_proximal_pitch_joint_left",
+      "benchhand_left_native_inspire_thumb_intermediate_joint_left",
+      "benchhand_left_native_inspire_thumb_distal_joint_left",
+      "benchhand_left_native_inspire_index_proximal_joint_left",
+      "benchhand_left_native_inspire_index_intermediate_joint_left",
+      "benchhand_left_native_inspire_middle_proximal_joint_left",
+      "benchhand_left_native_inspire_middle_intermediate_joint_left",
+      "benchhand_left_native_inspire_ring_proximal_joint_left",
+      "benchhand_left_native_inspire_ring_intermediate_joint_left",
+      "benchhand_left_native_inspire_pinky_proximal_joint_left",
+      "benchhand_left_native_inspire_pinky_intermediate_joint_left"
+    ]
+  },
+  "actuator_names": {
+    "right": [
+      "benchhand_right_native_inspire_thumb_proximal_yaw_joint_ctrl",
+      "benchhand_right_native_inspire_thumb_proximal_pitch_joint_ctrl",
+      "benchhand_right_native_inspire_index_proximal_joint_ctrl",
+      "benchhand_right_native_inspire_middle_proximal_joint_ctrl",
+      "benchhand_right_native_inspire_ring_proximal_joint_ctrl",
+      "benchhand_right_native_inspire_pinky_proximal_joint_ctrl"
+    ],
+    "left": [
+      "benchhand_left_native_inspire_thumb_proximal_yaw_joint_ctrl_left",
+      "benchhand_left_native_inspire_thumb_proximal_pitch_joint_ctrl_left",
+      "benchhand_left_native_inspire_index_proximal_joint_ctrl_left",
+      "benchhand_left_native_inspire_middle_proximal_joint_ctrl_left",
+      "benchhand_left_native_inspire_ring_proximal_joint_ctrl_left",
+      "benchhand_left_native_inspire_pinky_proximal_joint_ctrl_left"
+    ]
+  },
+  "control_dt": 0.05,
+  "instruction": "First lift the tablet off its stand with the left hand, orient and hold it steadily, then use the right hand to press 1, 2, then 3 while maintaining the left-hand grasp.",
+  "wrist_camera_rig": {
+    "name": "dexjoco_official_allegro60_hanoi_front_v1",
+    "position_tcp": [
+      -0.14,
+      -0.03,
+      0.04
+    ],
+    "vertical_fov_deg": 60.0,
+    "reference_tcp_site_quat_wxyz": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "reference_attachment_quat_single_wxyz": [
+      -0.353553,
+      0.612372,
+      -0.612372,
+      0.352553
+    ],
+    "reference_attachment_quat_dual_wxyz": [
+      -0.353553,
+      0.612372,
+      -0.612372,
+      0.353553
+    ],
+    "hanoi_main_camera": "front",
+    "cross_hand_mapping": "same attachment_site/TCP extrinsics",
+    "real_world_calibrated": false
+  },
+  "camera_profile": "dexjoco_official_allegro60_hanoi_front_v1",
+  "cameras": {
+    "front": {
+      "camera_name": "back",
+      "body": "world",
+      "position_body_m": [
+        -1.3,
+        0.0,
+        2.2
+      ],
+      "quaternion_body_wxyz": [
+        0.6532814294902178,
+        0.27059817790077156,
+        -0.27059817790077156,
+        -0.6532814294902178
+      ],
+      "vertical_fov_deg": 45.0
+    },
+    "wrist_right": {
+      "camera_name": "handcam_rgb_right",
+      "body": "attachment_right",
+      "position_body_m": [
+        0.14,
+        0.03,
+        0.04
+      ],
+      "quaternion_body_wxyz": [
+        -0.353553286310042,
+        0.6123724959037347,
+        -0.6123724959037345,
+        0.353553286310042
+      ],
+      "vertical_fov_deg": 60.0,
+      "position_tcp_m": [
+        -0.14,
+        -0.03,
+        0.04
+      ],
+      "rotation_tcp": [
+        [
+          -1.6653345369377348e-16,
+          0.500000294957478,
+          -0.8660252334905927
+        ],
+        [
+          1.0000000000000004,
+          1.6653345369377348e-16,
+          -5.551115123125783e-17
+        ],
+        [
+          5.551115123125783e-17,
+          -0.8660252334905927,
+          -0.500000294957478
+        ]
+      ]
+    },
+    "wrist_left": {
+      "camera_name": "handcam_rgb_left",
+      "body": "attachment_left",
+      "position_body_m": [
+        0.14,
+        0.03,
+        0.04
+      ],
+      "quaternion_body_wxyz": [
+        -0.353553286310042,
+        0.6123724959037347,
+        -0.6123724959037345,
+        0.353553286310042
+      ],
+      "vertical_fov_deg": 60.0,
+      "position_tcp_m": [
+        -0.14,
+        -0.03,
+        0.04
+      ],
+      "rotation_tcp": [
+        [
+          -1.6653345369377348e-16,
+          0.500000294957478,
+          -0.8660252334905927
+        ],
+        [
+          1.0000000000000004,
+          1.6653345369377348e-16,
+          -5.551115123125783e-17
+        ],
+        [
+          5.551115123125783e-17,
+          -0.8660252334905927,
+          -0.500000294957478
+        ]
+      ]
+    }
+  },
+  "image_preprocessing": {
+    "size": [
+      256,
+      256
+    ],
+    "fps": 20,
+    "rotation_degrees": 0,
+    "vertical_flip": false,
+    "observation_timing": "pre-action"
+  }
+}

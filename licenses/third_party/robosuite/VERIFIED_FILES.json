@@ -1,0 +1,484 @@
+{
+  "repository": "https://github.com/ARISE-Initiative/robosuite",
+  "commit": "c848ca848020d0c4ccdd10c5056bd06f2a195ba2",
+  "license_text": "licenses/third_party/robosuite/LICENSE",
+  "files": [
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/brass-ambra.png",
+      "sha256": "246007818045b92276631294bb61d797806f2381d7044e98b6e3c4465f8e085c",
+      "upstream_git_blob": "8c8f338abc1ed25626469bb6003314ea5a733dcb",
+      "upstream_path": "robosuite/models/assets/textures/brass-ambra.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/brass-ambra.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/ceramic.png",
+      "sha256": "beef464a2aa9143ba6a25a44adcbfd1f1aff16c5969edbf08019b61025388402",
+      "upstream_git_blob": "cbfbd3543e08d1d0a4d66746a58b04d1ecc9066c",
+      "upstream_path": "robosuite/models/assets/textures/ceramic.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/ceramic.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/dark-wood.png",
+      "sha256": "5da8dbf7af06ecd251840aceec25fedcfa98267041cea289b2829c982e008dc3",
+      "upstream_git_blob": "69e773595dd8f66229da7c3cc5b2a9dae9afff9a",
+      "upstream_path": "robosuite/models/assets/textures/dark-wood.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/dark-wood.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/desktop_random_textures/blue-wood.png",
+      "sha256": "9b1eab21395a05d7463751f9075b16bc4fba8fd4be42938bda25ea634a345884",
+      "upstream_git_blob": "ffb9c3cc71d9c9f63f8c945d301e15f1adfffb8c",
+      "upstream_path": "robosuite/models/assets/textures/blue-wood.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/blue-wood.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/desktop_random_textures/brass-ambra.png",
+      "sha256": "246007818045b92276631294bb61d797806f2381d7044e98b6e3c4465f8e085c",
+      "upstream_git_blob": "8c8f338abc1ed25626469bb6003314ea5a733dcb",
+      "upstream_path": "robosuite/models/assets/textures/brass-ambra.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/brass-ambra.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/desktop_random_textures/ceramic.png",
+      "sha256": "beef464a2aa9143ba6a25a44adcbfd1f1aff16c5969edbf08019b61025388402",
+      "upstream_git_blob": "cbfbd3543e08d1d0a4d66746a58b04d1ecc9066c",
+      "upstream_path": "robosuite/models/assets/textures/ceramic.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/ceramic.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/desktop_random_textures/cream-plaster.png",
+      "sha256": "5f989033f089158b2c8f0f1f7881f6922b018a5b154558b2edcc9f41a21ab983",
+      "upstream_git_blob": "b8e6c5b8e030b1a7e51556bb701589b5b331a599",
+      "upstream_path": "robosuite/models/assets/textures/cream-plaster.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/cream-plaster.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/desktop_random_textures/dark-wood.png",
+      "sha256": "5da8dbf7af06ecd251840aceec25fedcfa98267041cea289b2829c982e008dc3",
+      "upstream_git_blob": "69e773595dd8f66229da7c3cc5b2a9dae9afff9a",
+      "upstream_path": "robosuite/models/assets/textures/dark-wood.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/dark-wood.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/desktop_random_textures/gray-plaster.png",
+      "sha256": "7ee7520ebf6118051ced809cb9754983e7537a40f8d5271d5cb2fabdd71c33bd",
+      "upstream_git_blob": "6050efe26a501e1ce76146bf66fa509e35703fed",
+      "upstream_path": "robosuite/models/assets/textures/gray-plaster.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/gray-plaster.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/desktop_random_textures/light-wood.png",
+      "sha256": "967be64bdb170d36283bc43c2ae5d525ec88f78bc837dc7d0efc9a28d68caad1",
+      "upstream_git_blob": "f63484f64c56e24a5db941a8271c7334944a5e46",
+      "upstream_path": "robosuite/models/assets/textures/light-wood.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/light-wood.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/desktop_random_textures/metal.png",
+      "sha256": "93784216a66b52be9c8ccc3732e50f511815291e32f34f97bd139ed7229061fa",
+      "upstream_git_blob": "3624f17479ea4fa6e9fbe1678a2b8455d4a8afa2",
+      "upstream_path": "robosuite/models/assets/textures/metal.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/metal.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/desktop_random_textures/pink-plaster.png",
+      "sha256": "c6f8435c8aec555fa89ee72d472d652f31ce1afc0e07372e9857b0aa50f6e029",
+      "upstream_git_blob": "f1ae9df373c346b506776976c9873b10500e24d5",
+      "upstream_path": "robosuite/models/assets/textures/pink-plaster.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/pink-plaster.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/desktop_random_textures/steel-scratched.png",
+      "sha256": "7e22a111d516cc84addde9b2b18353d8a6ec521b9b79ec5e9c169e2d9000d3fe",
+      "upstream_git_blob": "b32060b8b05234d4c4cb81f8985e4640db41843c",
+      "upstream_path": "robosuite/models/assets/textures/steel-scratched.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/steel-scratched.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/desktop_random_textures/white-plaster.png",
+      "sha256": "a35c03edcef74c940400dd39e2384d05169d1d15ac247166b3b7a930acd70f03",
+      "upstream_git_blob": "1448e1d74e643eb1d3a9f326d1e52b794a0eb9af",
+      "upstream_path": "robosuite/models/assets/textures/white-plaster.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/white-plaster.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/desktop_random_textures/yellow-plaster.png",
+      "sha256": "7f98027e5dd4ad845a1a20f302b183c62b8e8fab54799634c5143c1dde0d0362",
+      "upstream_git_blob": "a59c5511fcf6148ef5e0651ac127ba3d3411c824",
+      "upstream_path": "robosuite/models/assets/textures/yellow-plaster.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/yellow-plaster.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/light-gray-floor-tile.png",
+      "sha256": "a2aae4ba3b38c3ab9851eca9ad6e76cef9357ef75b3e9a4b280f694ca30acbc5",
+      "upstream_git_blob": "eac0cea44a26bbfeeb0ef0d0f134dde5dd43d0c2",
+      "upstream_path": "robosuite/models/assets/textures/light-gray-floor-tile.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/light-gray-floor-tile.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/light-gray-plaster.png",
+      "sha256": "d0bdaf13b44ab6ef3122451f6b3853e40bdf20bb9be7662649683ba525dfe191",
+      "upstream_git_blob": "a739cc1fb29441b73fae9053d413155e0f494f60",
+      "upstream_path": "robosuite/models/assets/textures/light-gray-plaster.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/light-gray-plaster.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/light-wood.png",
+      "sha256": "967be64bdb170d36283bc43c2ae5d525ec88f78bc837dc7d0efc9a28d68caad1",
+      "upstream_git_blob": "f63484f64c56e24a5db941a8271c7334944a5e46",
+      "upstream_path": "robosuite/models/assets/textures/light-wood.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/light-wood.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/metal.png",
+      "sha256": "93784216a66b52be9c8ccc3732e50f511815291e32f34f97bd139ed7229061fa",
+      "upstream_git_blob": "3624f17479ea4fa6e9fbe1678a2b8455d4a8afa2",
+      "upstream_path": "robosuite/models/assets/textures/metal.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/metal.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/steel-brushed.png",
+      "sha256": "43f30e7a2d0e8085aa15f58623b1753a003f93e5fe336eeaf65c146f955a81d5",
+      "upstream_git_blob": "3eae1cc759833356e7c841f03d2da1f7d2a4a165",
+      "upstream_path": "robosuite/models/assets/textures/steel-brushed.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/steel-brushed.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/rethink_mount/pedestal.stl",
+      "sha256": "f96ff12bfb347c77580e4392556b15e47ef7228711c45b0f1193b100af22866a",
+      "upstream_git_blob": "a34bc94809a6827b3dc7697e0f720431d7464c99",
+      "upstream_path": "robosuite/models/assets/mounts/meshes/rethink_mount/pedestal.stl",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/mounts/meshes/rethink_mount/pedestal.stl",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    }
+  ],
+  "coverage": "Only listed byte-identical files; other files in the same directories are not covered by this verification.",
+  "notice_sha256": {
+    "licenses/third_party/robosuite/LICENSE": "177978cbece0a4c454c2aaec5b3f145b39270814874c43109da9e829c39d9cba"
+  },
+  "historical_verified_files_not_distributed": [
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/blue-wood.png",
+      "sha256": "9b1eab21395a05d7463751f9075b16bc4fba8fd4be42938bda25ea634a345884",
+      "upstream_git_blob": "ffb9c3cc71d9c9f63f8c945d301e15f1adfffb8c",
+      "upstream_path": "robosuite/models/assets/textures/blue-wood.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/blue-wood.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/bread.png",
+      "sha256": "22814a06ae3c7dc097801887e6aec97f830b7368b611cab56d1c4ad5ae57bddc",
+      "upstream_git_blob": "064ff13b3453c14698c5c57ec22a8f55351dfbc8",
+      "upstream_path": "robosuite/models/assets/textures/bread.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/bread.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/can.png",
+      "sha256": "9d1b29ff348a4425f84bb0de6b46139446b7e950058348d52fced0a707558e02",
+      "upstream_git_blob": "1927142f3f55c2087e4817dc63a2ad1462252157",
+      "upstream_path": "robosuite/models/assets/textures/can.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/can.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/cereal.png",
+      "sha256": "aa0be8e701b41b3a7284bcd1e6e18adb541d007d00b2dbfe69772620bea790c8",
+      "upstream_git_blob": "b078cdb7d33f96c734f17f8a7bb93ed904e658ba",
+      "upstream_path": "robosuite/models/assets/textures/cereal.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/cereal.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/clay.png",
+      "sha256": "0ea2ced7f0f07996292314e3f3f5df68c4d8c5b2cbf2180c899ed269906fdcd2",
+      "upstream_git_blob": "a24843a819f5a4be13a088d504bd4ea1b97a64ef",
+      "upstream_path": "robosuite/models/assets/textures/clay.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/clay.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/cream-plaster.png",
+      "sha256": "5f989033f089158b2c8f0f1f7881f6922b018a5b154558b2edcc9f41a21ab983",
+      "upstream_git_blob": "b8e6c5b8e030b1a7e51556bb701589b5b331a599",
+      "upstream_path": "robosuite/models/assets/textures/cream-plaster.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/cream-plaster.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/desktop_random_textures/steel-brushed.png",
+      "sha256": "43f30e7a2d0e8085aa15f58623b1753a003f93e5fe336eeaf65c146f955a81d5",
+      "upstream_git_blob": "3eae1cc759833356e7c841f03d2da1f7d2a4a165",
+      "upstream_path": "robosuite/models/assets/textures/steel-brushed.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/steel-brushed.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/dirt.png",
+      "sha256": "b410966a8e0c1d52e2847bdb61aa51c6291efcd7e92839923637d0dcdb91e973",
+      "upstream_git_blob": "e56c97fb2e34164da1de7f376bfcff85eab8d86e",
+      "upstream_path": "robosuite/models/assets/textures/dirt.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/dirt.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/glass.png",
+      "sha256": "9e12c4e1ed663ba3b690a701626e80189be02228f6d29c985273f15da4de423a",
+      "upstream_git_blob": "437c4c753386dc17dda20c8ae9d03d21266b2d52",
+      "upstream_path": "robosuite/models/assets/textures/glass.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/glass.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/gray-felt.png",
+      "sha256": "04c1b483f04be0bd3d26a42ca530c05244cf4b52c0ccb027dbb8fc2bee41ca05",
+      "upstream_git_blob": "caf26e30368190e968d5c8717054836a3fcc2b0f",
+      "upstream_path": "robosuite/models/assets/textures/gray-felt.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/gray-felt.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/gray-plaster.png",
+      "sha256": "7ee7520ebf6118051ced809cb9754983e7537a40f8d5271d5cb2fabdd71c33bd",
+      "upstream_git_blob": "6050efe26a501e1ce76146bf66fa509e35703fed",
+      "upstream_path": "robosuite/models/assets/textures/gray-plaster.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/gray-plaster.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/gray-woodgrain.png",
+      "sha256": "b9e65c147f2683dbcfe6279b359db649aef0cb40ef8b1e3ed5ba6f29fab6b3d0",
+      "upstream_git_blob": "433046ff8ae69bc530ac1e66faf48bc0465a6927",
+      "upstream_path": "robosuite/models/assets/textures/gray-woodgrain.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/gray-woodgrain.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/green-wood.png",
+      "sha256": "e4fd42ec6dea58f46aa96fc1d78d57c52450a6497dcad887ae8e2ff8c4af3797",
+      "upstream_git_blob": "ec1d9ec3d2aecadc242aed042902b516aee3e816",
+      "upstream_path": "robosuite/models/assets/textures/green-wood.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/green-wood.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/lemon.png",
+      "sha256": "93a21938e5fe8d62a042c5591b13b9bec75d94791f7d08f375beb60fce523610",
+      "upstream_git_blob": "abecefe55972af876574dc1c5f481752c364ecba",
+      "upstream_path": "robosuite/models/assets/textures/lemon.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/lemon.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/pink-plaster.png",
+      "sha256": "c6f8435c8aec555fa89ee72d472d652f31ce1afc0e07372e9857b0aa50f6e029",
+      "upstream_git_blob": "f1ae9df373c346b506776976c9873b10500e24d5",
+      "upstream_path": "robosuite/models/assets/textures/pink-plaster.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/pink-plaster.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/red-wood.png",
+      "sha256": "d42411e594d6be26c4876ada623b163af6621402462b244d86eaf6e72aca6494",
+      "upstream_git_blob": "ded747de5a51ac1f8c3ec76f204326fbb7ebeb0a",
+      "upstream_path": "robosuite/models/assets/textures/red-wood.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/red-wood.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/soda.png",
+      "sha256": "2774d29c6c16e1a3b3156e6679897a1695127ec59463d2de1a7ffd7f11b41b4d",
+      "upstream_git_blob": "a7569fb23dd050f8b3f1742db7d06f7519bc2511",
+      "upstream_path": "robosuite/models/assets/textures/soda.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/soda.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/steel-scratched.png",
+      "sha256": "7e22a111d516cc84addde9b2b18353d8a6ec521b9b79ec5e9c169e2d9000d3fe",
+      "upstream_git_blob": "b32060b8b05234d4c4cb81f8985e4640db41843c",
+      "upstream_path": "robosuite/models/assets/textures/steel-scratched.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/steel-scratched.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/white-bricks.png",
+      "sha256": "864e2bfb462939212c4141a060eb4c3f34c891b6909873797b08f8c4185433d1",
+      "upstream_git_blob": "f1196793abb91a2314bfd90fb801a34b37a2b4ff",
+      "upstream_path": "robosuite/models/assets/textures/white-bricks.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/white-bricks.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/white-plaster.png",
+      "sha256": "a35c03edcef74c940400dd39e2384d05169d1d15ac247166b3b7a930acd70f03",
+      "upstream_git_blob": "1448e1d74e643eb1d3a9f326d1e52b794a0eb9af",
+      "upstream_path": "robosuite/models/assets/textures/white-plaster.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/white-plaster.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/wood-tiles.png",
+      "sha256": "18d87069529422d832559ce969858576dd46f83efc3dfd9e5ffbf26d740be123",
+      "upstream_git_blob": "01f66ec20465e765edb990e309bc5f03baf8ae97",
+      "upstream_path": "robosuite/models/assets/textures/wood-tiles.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/wood-tiles.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/wood-varnished-panels.png",
+      "sha256": "67b48dc99b89004d98cb0811f170d39993e7e205cc8d5bd3d01a4be137e33a85",
+      "upstream_git_blob": "8003dd8b64e9f345569d6067fc32d7f579ebdd50",
+      "upstream_path": "robosuite/models/assets/textures/wood-varnished-panels.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/wood-varnished-panels.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/table_arena/textures/yellow-plaster.png",
+      "sha256": "7f98027e5dd4ad845a1a20f302b183c62b8e8fab54799634c5143c1dde0d0362",
+      "upstream_git_blob": "a59c5511fcf6148ef5e0651ac127ba3d3411c824",
+      "upstream_path": "robosuite/models/assets/textures/yellow-plaster.png",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/textures/yellow-plaster.png",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/rethink_mount/pedestal.dae",
+      "sha256": "b9a74be4ae114c9acafccf68e1e49d8fd815ec030012ce1b60bdcf9b30db49f5",
+      "upstream_git_blob": "aa31c451d101fca6eebc6778ca262c4adcbb0b39",
+      "upstream_path": "robosuite/models/assets/mounts/meshes/rethink_mount/pedestal.dae",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/mounts/meshes/rethink_mount/pedestal.dae",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/rethink_mount/pedestal.mtl",
+      "sha256": "ad7c0b8f65e2212a0c70ba09e79ff4729cc288a963bc52d69c0bc0304a683aaa",
+      "upstream_git_blob": "4c763b9f2f15306780e7a5e666354d83fc4891cf",
+      "upstream_path": "robosuite/models/assets/mounts/meshes/rethink_mount/pedestal.mtl",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/mounts/meshes/rethink_mount/pedestal.mtl",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/rethink_mount/pedestal.obj",
+      "sha256": "a5db81bfd184f4a20857a238d878cdb73428986767ec7aec5bd629f75ee71c75",
+      "upstream_git_blob": "c87129fe01f62568243f9e7dca650f54da04d8f1",
+      "upstream_path": "robosuite/models/assets/mounts/meshes/rethink_mount/pedestal.obj",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite/blob/c848ca848020d0c4ccdd10c5056bd06f2a195ba2/robosuite/models/assets/mounts/meshes/rethink_mount/pedestal.obj",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    }
+  ],
+  "distribution_scope": "Only entries in files are included in this public source snapshot."
+}

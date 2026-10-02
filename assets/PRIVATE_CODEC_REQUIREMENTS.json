@@ -1,0 +1,16 @@
+{
+  "weights_distributed": false,
+  "files": [
+    {
+      "path": "evaluation/codecs/selected.pt",
+      "sha256": "73b1c80497a493835e58ace3e3abe509906d63916a4c263f5191d585a38bbd7b",
+      "bytes": 9218513
+    },
+    {
+      "path": "representations/table1_sided_v3/codecs/selected.pt",
+      "sha256": "73b1c80497a493835e58ace3e3abe509906d63916a4c263f5191d585a38bbd7b",
+      "bytes": 9218513
+    }
+  ],
+  "note": "Private historical codec hashes, for version matching only; obtain or train your own compatible codec."
+}

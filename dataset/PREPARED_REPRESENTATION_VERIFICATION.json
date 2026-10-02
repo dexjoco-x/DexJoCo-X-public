@@ -1,0 +1,61 @@
+{
+  "passed": true,
+  "source": {
+    "groups": 42,
+    "episodes": 2100,
+    "frames": 946156,
+    "split": "train"
+  },
+  "representations": {
+    "faas": {
+      "passed": true,
+      "groups": 42,
+      "episodes": 2100,
+      "frames": 946156,
+      "all_train": true,
+      "episodes_per_group": 50,
+      "array_width": 200,
+      "finite": true,
+      "masked_values_are_zero": true,
+      "min": -1.0,
+      "max": 1.0,
+      "shared_train_stats_hash_count": 1,
+      "codec_contract_sha256": "57ec9c7b73d57e866b816924f3bea70b93a058ab379bd084bb8a1bb4526cc51c",
+      "codec_checkpoint_sha256": null,
+      "source_manifest_sha256": {
+        "bimanual_microwave_cook.json": "86dd17d7c7ef77cdbf0a81d0ff2cfcdaf78967f5b6d6fadff45bf5ecc7713e50",
+        "bimanual_photograph.json": "62da814f2de65f4e01715b20f34765178aa0f4a8b74f2acc4a92feaf2391e11a",
+        "bimanual_unlock_ipad.json": "f38efe3abfd2048334e825c925d0a289e3facabca7ea2c5c6a603d932d0ff3dc",
+        "hammer_nail.json": "b0802926b65a8a53b6056dcf9f07a0e1f0fda160d5bbdebc5b63b33cd484c9c3",
+        "pick_bucket.json": "bf1d2573505a47f0732727c2ccfd85b0ec8b7f1482d4c8acbcb96160b9b20140",
+        "single_hand_hanoi.json": "ba9849d4ee6965e4adcc1fb543851dcbe3d42d22a5ecb9540f1f2cc5cca01a22"
+      },
+      "sampling": "frame-proportional step sampling"
+    },
+    "dexlatent": {
+      "passed": true,
+      "groups": 42,
+      "episodes": 2100,
+      "frames": 946156,
+      "all_train": true,
+      "episodes_per_group": 50,
+      "array_width": 200,
+      "finite": true,
+      "masked_values_are_zero": true,
+      "min": -1.0,
+      "max": 1.0,
+      "shared_train_stats_hash_count": 1,
+      "codec_contract_sha256": "57ec9c7b73d57e866b816924f3bea70b93a058ab379bd084bb8a1bb4526cc51c",
+      "codec_checkpoint_sha256": "73b1c80497a493835e58ace3e3abe509906d63916a4c263f5191d585a38bbd7b",
+      "source_manifest_sha256": {
+        "bimanual_microwave_cook.json": "86dd17d7c7ef77cdbf0a81d0ff2cfcdaf78967f5b6d6fadff45bf5ecc7713e50",
+        "bimanual_photograph.json": "62da814f2de65f4e01715b20f34765178aa0f4a8b74f2acc4a92feaf2391e11a",
+        "bimanual_unlock_ipad.json": "f38efe3abfd2048334e825c925d0a289e3facabca7ea2c5c6a603d932d0ff3dc",
+        "hammer_nail.json": "b0802926b65a8a53b6056dcf9f07a0e1f0fda160d5bbdebc5b63b33cd484c9c3",
+        "pick_bucket.json": "bf1d2573505a47f0732727c2ccfd85b0ec8b7f1482d4c8acbcb96160b9b20140",
+        "single_hand_hanoi.json": "ba9849d4ee6965e4adcc1fb543851dcbe3d42d22a5ecb9540f1f2cc5cca01a22"
+      },
+      "sampling": "frame-proportional step sampling"
+    }
+  }
+}

@@ -1,0 +1,566 @@
+{
+  "version": "dexlatent_xhand_v1",
+  "source": "Local third_party/DexLatent/Assets/xhand",
+  "side": "left",
+  "source_sha256": {
+    "source.urdf": "ade0bab9725d80a66a6acf525e5e25b253ce9970a64ae414102708a786a89a50",
+    "meshes/left_hand_link.STL": "c8f032845747dd30e9934a6b9efce08b21c231af0553611f19328492aabe3392",
+    "meshes/left_hand_ee_link.STL": "60aacb47a4544cdda9074567e2c437f49f8a6d1178af40fd2d7a5bec6ff198c9",
+    "meshes/left_hand_back_link.STL": "e27263455a76bcb31d231ac56030741d69ceb16712f98ed34063c771dfcd3963",
+    "meshes/left_hand_thumb_bend_link.STL": "9f9f6818fbdfcf929526f9a2911495c90b19b091679b6dd069afc767fd5d6d3b",
+    "meshes/left_hand_thumb_rota_link1.STL": "405f1b0951e3623245d77fbb421f8dc1b8eee3ae381ccc540421dfa720dc4702",
+    "meshes/left_hand_thumb_rotaback_link1.STL": "39cf01a3c00ae61807a89280238aedddfb4f0dfceae5765048a396fb58bd9e57",
+    "meshes/left_hand_thumb_rota_link2.STL": "3d1c583ea988f18cfa6960dd51315f15088db3fe95925dda5d8f5de7d2612975",
+    "meshes/left_hand_thumb_rotaback_link2.STL": "eb952a524899b51cfb7409bedcc0bf767360f337fabb3f5a03b9d5167995dc25",
+    "meshes/left_hand_thumb_rota_tip.STL": "7837ae36c489c56fdcd0461d05a8a0a9c197a613e0dc377d14dd1b2579fcdd67",
+    "meshes/left_hand_index_bend_link.STL": "43ebef269b5ab5c2ae8de9cb4f32f68c2c47683856c7dd9abdfed75a5885da4a",
+    "meshes/left_hand_index_rota_link1.STL": "d7693bc3b701271113175f17463d2b037139e275602c16f4d35cf0eb6ac57189",
+    "meshes/left_hand_index_rotaback_link1.STL": "bddb3cd3a32eff00359db0ff2d3a5a58b5b2486239260459dd109c99ed124def",
+    "meshes/left_hand_index_rota_link2.STL": "722cc0618fc11ffd2f9977ef892739557f59c3fb1f8139db0f8b6de5d168d801",
+    "meshes/left_hand_index_rotaback_link2.STL": "7de46150617ca03132ac5c94189f7ee562b7f74b8ddfc5b8ee30eb79ccef30a3",
+    "meshes/left_hand_index_rota_tip.STL": "2217e0e4f39f0e3e23360720794a51e21c0c2360c653988f97d8200a93218614",
+    "meshes/left_hand_mid_link1.STL": "5eb5f0278f1eac5df5f85819a00580524680d627f7aadfea77c035185a603276",
+    "meshes/left_hand_midback_link1.STL": "5929b197d5d4fb44112b7472d00977748b7351b94b69e98f10ec8de60e637ceb",
+    "meshes/left_hand_mid_link2.STL": "e190e8e22f18e11b21be11e2f2b9f2c66c095b1cf119246a253ce239f3a1b852",
+    "meshes/left_hand_midback_link2.STL": "19b7b94fe16e9562f695afe77e6b22ba2f005bbb75188adf1a9946df0b4a6f6f",
+    "meshes/left_hand_mid_tip.STL": "dc25621d1dd8e3c82f865a6ea4552eac4ca277caf91ddc2bad6f05d7fda5db08",
+    "meshes/left_hand_ring_link1.STL": "1e065acc6d85cdd56a174181706138a991702fd9c9db0e1284884536336dfe8f",
+    "meshes/left_hand_ringback_link1.STL": "190f91a52b5ea86f49345caeb67b938060f42a97e119e17baa472b144276a546",
+    "meshes/left_hand_ring_link2.STL": "5161ddca1d5dbb9921dd5642197a1b940b3c078a45197c8cebe26a36b7a34a8f",
+    "meshes/left_hand_ringback_link2.STL": "cfed0d0a2efa04360164b50985055f1341cb6dbf53036f1578031492c9fed397",
+    "meshes/left_hand_ring_tip.STL": "3502fb69aeeffaf7da4eedd8baf3284dbd54bad1ff0be565c125776580affc66",
+    "meshes/left_hand_pinky_link1.STL": "0663d5c91855df64bbfd8a6bb4824a406c6ba54ffedba0d5c8f2380c5e5f5b71",
+    "meshes/left_hand_pinkyback_link1.STL": "e092a402b4b4fa4a37dfb9188950ccaeefb93db0f8eae28380dfed22f24c7947",
+    "meshes/left_hand_pinky_link2.STL": "bf16cc3c28e3e5d0e3be45961025dd6b161ce9f0730dec8d18ca646522076ed6",
+    "meshes/left_hand_pinkyback_link2.STL": "a355813a61774f973a03cb2831a8eb5eeebe5b91a00c8d40a5af3fb7d807bab1",
+    "meshes/left_hand_pinky_tip.STL": "aa6bf59c41d893b785d87ffed875dcae1251f25e4cf5ffd05d78b0101ca35d10"
+  },
+  "urdf_robot_name": "xhand_left",
+  "joint_names": [
+    "xhand_left_hand_thumb_bend_joint",
+    "xhand_left_hand_thumb_rota_joint1",
+    "xhand_left_hand_thumb_rota_joint2",
+    "xhand_left_hand_index_bend_joint",
+    "xhand_left_hand_index_joint1",
+    "xhand_left_hand_index_joint2",
+    "xhand_left_hand_mid_joint1",
+    "xhand_left_hand_mid_joint2",
+    "xhand_left_hand_ring_joint1",
+    "xhand_left_hand_ring_joint2",
+    "xhand_left_hand_pinky_joint1",
+    "xhand_left_hand_pinky_joint2"
+  ],
+  "joint_limits": [
+    [
+      0.0,
+      1.832
+    ],
+    [
+      -0.698,
+      1.745
+    ],
+    [
+      0.0,
+      1.745
+    ],
+    [
+      -0.174,
+      0.174
+    ],
+    [
+      0.0,
+      1.919
+    ],
+    [
+      0.0,
+      1.919
+    ],
+    [
+      0.0,
+      1.919
+    ],
+    [
+      0.0,
+      1.919
+    ],
+    [
+      0.0,
+      1.919
+    ],
+    [
+      0.0,
+      1.919
+    ],
+    [
+      0.0,
+      1.919
+    ],
+    [
+      0.0,
+      1.919
+    ]
+  ],
+  "effort_limits_nm": [
+    1.1,
+    1.1,
+    0.4,
+    0.4,
+    1.1,
+    0.4,
+    1.1,
+    0.4,
+    1.1,
+    0.4,
+    1.1,
+    0.4
+  ],
+  "urdf_velocity_limits_rad_s": [
+    8.63,
+    8.63,
+    14.38,
+    14.38,
+    8.63,
+    14.38,
+    8.63,
+    14.38,
+    8.63,
+    14.38,
+    8.63,
+    14.38
+  ],
+  "velocity_limits_enforced": false,
+  "position_kp": 20,
+  "position_kv": 0.2,
+  "total_hand_mass_kg": 1.1036509600000002,
+  "independent_action_dim": 12,
+  "fixed_joint_count": 18,
+  "fixed_link_inertia_aggregation": {
+    "base_link": [
+      "left_hand_link",
+      "left_hand_ee_link",
+      "left_hand_back_link"
+    ],
+    "left_hand_thumb_bend_link": [
+      "left_hand_thumb_bend_link"
+    ],
+    "left_hand_thumb_rota_link1": [
+      "left_hand_thumb_rota_link1",
+      "left_hand_thumb_rotaback_link1"
+    ],
+    "left_hand_thumb_rota_link2": [
+      "left_hand_thumb_rota_link2",
+      "left_hand_thumb_rotaback_link2",
+      "left_hand_thumb_rota_tip"
+    ],
+    "left_hand_index_bend_link": [
+      "left_hand_index_bend_link"
+    ],
+    "left_hand_index_rota_link1": [
+      "left_hand_index_rota_link1",
+      "left_hand_index_rotaback_link1"
+    ],
+    "left_hand_index_rota_link2": [
+      "left_hand_index_rota_link2",
+      "left_hand_index_rotaback_link2",
+      "left_hand_index_rota_tip"
+    ],
+    "left_hand_mid_link1": [
+      "left_hand_mid_link1",
+      "left_hand_midback_link1"
+    ],
+    "left_hand_mid_link2": [
+      "left_hand_mid_link2",
+      "left_hand_midback_link2",
+      "left_hand_mid_tip"
+    ],
+    "left_hand_ring_link1": [
+      "left_hand_ring_link1",
+      "left_hand_ringback_link1"
+    ],
+    "left_hand_ring_link2": [
+      "left_hand_ring_link2",
+      "left_hand_ringback_link2",
+      "left_hand_ring_tip"
+    ],
+    "left_hand_pinky_link1": [
+      "left_hand_pinky_link1",
+      "left_hand_pinkyback_link1"
+    ],
+    "left_hand_pinky_link2": [
+      "left_hand_pinky_link2",
+      "left_hand_pinkyback_link2",
+      "left_hand_pinky_tip"
+    ]
+  },
+  "source_invalid_fixed_inertias": [
+    {
+      "link": "left_hand_ee_link",
+      "principal": [
+        -7.861397690072276e-28,
+        1.691557001400968e-27,
+        3e-11
+      ],
+      "merged_into": "base_link"
+    },
+    {
+      "link": "left_hand_back_link",
+      "principal": [
+        -7.861397690072276e-28,
+        1.691557001400968e-27,
+        3e-11
+      ],
+      "merged_into": "base_link"
+    },
+    {
+      "link": "left_hand_thumb_rotaback_link1",
+      "principal": [
+        -7.861397690072276e-28,
+        1.691557001400968e-27,
+        3e-11
+      ],
+      "merged_into": "left_hand_thumb_rota_link1"
+    },
+    {
+      "link": "left_hand_thumb_rotaback_link2",
+      "principal": [
+        -7.861397690072276e-28,
+        1.691557001400968e-27,
+        3e-11
+      ],
+      "merged_into": "left_hand_thumb_rota_link2"
+    },
+    {
+      "link": "left_hand_thumb_rota_tip",
+      "principal": [
+        -7.861397690072276e-28,
+        1.691557001400968e-27,
+        3e-11
+      ],
+      "merged_into": "left_hand_thumb_rota_link2"
+    },
+    {
+      "link": "left_hand_index_rotaback_link1",
+      "principal": [
+        -7.861397690072276e-28,
+        1.691557001400968e-27,
+        3e-11
+      ],
+      "merged_into": "left_hand_index_rota_link1"
+    },
+    {
+      "link": "left_hand_index_rotaback_link2",
+      "principal": [
+        -7.861397690072276e-28,
+        1.691557001400968e-27,
+        3e-11
+      ],
+      "merged_into": "left_hand_index_rota_link2"
+    },
+    {
+      "link": "left_hand_index_rota_tip",
+      "principal": [
+        -7.861397690072276e-28,
+        1.691557001400968e-27,
+        3e-11
+      ],
+      "merged_into": "left_hand_index_rota_link2"
+    },
+    {
+      "link": "left_hand_midback_link1",
+      "principal": [
+        -7.861397690072276e-28,
+        1.691557001400968e-27,
+        3e-11
+      ],
+      "merged_into": "left_hand_mid_link1"
+    },
+    {
+      "link": "left_hand_midback_link2",
+      "principal": [
+        -7.861397690072276e-28,
+        1.691557001400968e-27,
+        3e-11
+      ],
+      "merged_into": "left_hand_mid_link2"
+    },
+    {
+      "link": "left_hand_mid_tip",
+      "principal": [
+        -7.861397690072276e-28,
+        1.691557001400968e-27,
+        3e-11
+      ],
+      "merged_into": "left_hand_mid_link2"
+    },
+    {
+      "link": "left_hand_ringback_link1",
+      "principal": [
+        -7.861397690072276e-28,
+        1.691557001400968e-27,
+        3e-11
+      ],
+      "merged_into": "left_hand_ring_link1"
+    },
+    {
+      "link": "left_hand_ringback_link2",
+      "principal": [
+        -7.861397690072276e-28,
+        1.691557001400968e-27,
+        3e-11
+      ],
+      "merged_into": "left_hand_ring_link2"
+    },
+    {
+      "link": "left_hand_ring_tip",
+      "principal": [
+        -7.861397690072276e-28,
+        1.691557001400968e-27,
+        3e-11
+      ],
+      "merged_into": "left_hand_ring_link2"
+    },
+    {
+      "link": "left_hand_pinkyback_link1",
+      "principal": [
+        -7.861397690072276e-28,
+        1.691557001400968e-27,
+        3e-11
+      ],
+      "merged_into": "left_hand_pinky_link1"
+    },
+    {
+      "link": "left_hand_pinkyback_link2",
+      "principal": [
+        -7.861397690072276e-28,
+        1.691557001400968e-27,
+        3e-11
+      ],
+      "merged_into": "left_hand_pinky_link2"
+    },
+    {
+      "link": "left_hand_pinky_tip",
+      "principal": [
+        -7.861397690072276e-28,
+        1.691557001400968e-27,
+        3e-11
+      ],
+      "merged_into": "left_hand_pinky_link2"
+    }
+  ],
+  "inertia_tensor_repairs": [],
+  "adjacent_body_collision_exclusions": [
+    [
+      "xhand_left_hand_back_link",
+      "xhand_left_hand_thumb_bend_link"
+    ],
+    [
+      "xhand_left_hand_ee_link",
+      "xhand_left_hand_thumb_bend_link"
+    ],
+    [
+      "xhand_left_hand_link",
+      "xhand_left_hand_thumb_bend_link"
+    ],
+    [
+      "xhand_left_hand_thumb_bend_link",
+      "xhand_left_hand_thumb_rota_link1"
+    ],
+    [
+      "xhand_left_hand_thumb_bend_link",
+      "xhand_left_hand_thumb_rotaback_link1"
+    ],
+    [
+      "xhand_left_hand_thumb_rota_link1",
+      "xhand_left_hand_thumb_rota_link2"
+    ],
+    [
+      "xhand_left_hand_thumb_rota_link1",
+      "xhand_left_hand_thumb_rota_tip"
+    ],
+    [
+      "xhand_left_hand_thumb_rota_link1",
+      "xhand_left_hand_thumb_rotaback_link2"
+    ],
+    [
+      "xhand_left_hand_thumb_rotaback_link1",
+      "xhand_left_hand_thumb_rota_link2"
+    ],
+    [
+      "xhand_left_hand_thumb_rotaback_link1",
+      "xhand_left_hand_thumb_rota_tip"
+    ],
+    [
+      "xhand_left_hand_thumb_rotaback_link1",
+      "xhand_left_hand_thumb_rotaback_link2"
+    ],
+    [
+      "xhand_left_hand_index_rota_link1",
+      "xhand_left_hand_index_rota_link2"
+    ],
+    [
+      "xhand_left_hand_index_rota_link1",
+      "xhand_left_hand_index_rota_tip"
+    ],
+    [
+      "xhand_left_hand_index_rota_link1",
+      "xhand_left_hand_index_rotaback_link2"
+    ],
+    [
+      "xhand_left_hand_index_rotaback_link1",
+      "xhand_left_hand_index_rota_link2"
+    ],
+    [
+      "xhand_left_hand_index_rotaback_link1",
+      "xhand_left_hand_index_rota_tip"
+    ],
+    [
+      "xhand_left_hand_index_rotaback_link1",
+      "xhand_left_hand_index_rotaback_link2"
+    ],
+    [
+      "xhand_left_hand_back_link",
+      "xhand_left_hand_mid_link1"
+    ],
+    [
+      "xhand_left_hand_back_link",
+      "xhand_left_hand_midback_link1"
+    ],
+    [
+      "xhand_left_hand_ee_link",
+      "xhand_left_hand_mid_link1"
+    ],
+    [
+      "xhand_left_hand_ee_link",
+      "xhand_left_hand_midback_link1"
+    ],
+    [
+      "xhand_left_hand_link",
+      "xhand_left_hand_mid_link1"
+    ],
+    [
+      "xhand_left_hand_link",
+      "xhand_left_hand_midback_link1"
+    ],
+    [
+      "xhand_left_hand_mid_link1",
+      "xhand_left_hand_mid_link2"
+    ],
+    [
+      "xhand_left_hand_mid_link1",
+      "xhand_left_hand_mid_tip"
+    ],
+    [
+      "xhand_left_hand_mid_link1",
+      "xhand_left_hand_midback_link2"
+    ],
+    [
+      "xhand_left_hand_midback_link1",
+      "xhand_left_hand_mid_link2"
+    ],
+    [
+      "xhand_left_hand_midback_link1",
+      "xhand_left_hand_mid_tip"
+    ],
+    [
+      "xhand_left_hand_midback_link1",
+      "xhand_left_hand_midback_link2"
+    ],
+    [
+      "xhand_left_hand_back_link",
+      "xhand_left_hand_ring_link1"
+    ],
+    [
+      "xhand_left_hand_back_link",
+      "xhand_left_hand_ringback_link1"
+    ],
+    [
+      "xhand_left_hand_ee_link",
+      "xhand_left_hand_ring_link1"
+    ],
+    [
+      "xhand_left_hand_ee_link",
+      "xhand_left_hand_ringback_link1"
+    ],
+    [
+      "xhand_left_hand_link",
+      "xhand_left_hand_ring_link1"
+    ],
+    [
+      "xhand_left_hand_link",
+      "xhand_left_hand_ringback_link1"
+    ],
+    [
+      "xhand_left_hand_ring_link1",
+      "xhand_left_hand_ring_link2"
+    ],
+    [
+      "xhand_left_hand_ring_link1",
+      "xhand_left_hand_ring_tip"
+    ],
+    [
+      "xhand_left_hand_ring_link1",
+      "xhand_left_hand_ringback_link2"
+    ],
+    [
+      "xhand_left_hand_ringback_link1",
+      "xhand_left_hand_ring_link2"
+    ],
+    [
+      "xhand_left_hand_ringback_link1",
+      "xhand_left_hand_ring_tip"
+    ],
+    [
+      "xhand_left_hand_ringback_link1",
+      "xhand_left_hand_ringback_link2"
+    ],
+    [
+      "xhand_left_hand_back_link",
+      "xhand_left_hand_pinky_link1"
+    ],
+    [
+      "xhand_left_hand_back_link",
+      "xhand_left_hand_pinkyback_link1"
+    ],
+    [
+      "xhand_left_hand_ee_link",
+      "xhand_left_hand_pinky_link1"
+    ],
+    [
+      "xhand_left_hand_ee_link",
+      "xhand_left_hand_pinkyback_link1"
+    ],
+    [
+      "xhand_left_hand_link",
+      "xhand_left_hand_pinky_link1"
+    ],
+    [
+      "xhand_left_hand_link",
+      "xhand_left_hand_pinkyback_link1"
+    ],
+    [
+      "xhand_left_hand_pinky_link1",
+      "xhand_left_hand_pinky_link2"
+    ],
+    [
+      "xhand_left_hand_pinky_link1",
+      "xhand_left_hand_pinky_tip"
+    ],
+    [
+      "xhand_left_hand_pinky_link1",
+      "xhand_left_hand_pinkyback_link2"
+    ],
+    [
+      "xhand_left_hand_pinkyback_link1",
+      "xhand_left_hand_pinky_link2"
+    ],
+    [
+      "xhand_left_hand_pinkyback_link1",
+      "xhand_left_hand_pinky_tip"
+    ],
+    [
+      "xhand_left_hand_pinkyback_link1",
+      "xhand_left_hand_pinkyback_link2"
+    ]
+  ],
+  "note": "Fixed accessory inertias are transformed and summed with their rigid parent, without modifying source tensors. All combined inertias are physical. Original URDF/meshes/colors/limits/masses retained. Convex mesh collisions and simulated position gains are not hardware calibration."
+}

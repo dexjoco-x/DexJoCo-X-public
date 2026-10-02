@@ -1,0 +1,174 @@
+{
+  "repository": "https://github.com/leap-hand/LEAP_Hand_Sim",
+  "commit": "150bc3d4b61fd6619193ba5a8ef209f3609ced89",
+  "license_text": "licenses/third_party/leap/LICENSE.txt",
+  "files": [
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/leap_hand/left/dip.stl",
+      "sha256": "9222f0ee1fa0077c70a219f7952df6f4208b003ad06a608e006cd0d8057d4b1c",
+      "upstream_git_blob": "e2944a9d8b3a343ed0b660866c85c7a7bb0e06dd",
+      "upstream_path": "assets/leap_hand/dip.stl",
+      "source_url": "https://github.com/leap-hand/LEAP_Hand_Sim/blob/150bc3d4b61fd6619193ba5a8ef209f3609ced89/assets/leap_hand/dip.stl",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/leap_hand/left/mcp_joint.stl",
+      "sha256": "56af82c57b469d491f544d6de12e2696b4284b50e89ca271502aaa0631f04b59",
+      "upstream_git_blob": "c5ff5f553230e9c667775a61f6018cdb68d7871b",
+      "upstream_path": "assets/leap_hand/mcp_joint.stl",
+      "source_url": "https://github.com/leap-hand/LEAP_Hand_Sim/blob/150bc3d4b61fd6619193ba5a8ef209f3609ced89/assets/leap_hand/mcp_joint.stl",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/leap_hand/left/pip.stl",
+      "sha256": "b778405c95127023c8b110e6e2f5a181ad8a46dadc2ac98d3f038debae52ef33",
+      "upstream_git_blob": "dcfecd6b9b33c15e2e5f3c98ac6791523440dcd1",
+      "upstream_path": "assets/leap_hand/pip.stl",
+      "source_url": "https://github.com/leap-hand/LEAP_Hand_Sim/blob/150bc3d4b61fd6619193ba5a8ef209f3609ced89/assets/leap_hand/pip.stl",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/leap_hand/left/thumb_dip.stl",
+      "sha256": "7261cf99cd44ae42360dc72a417c2526a73ec8ff4c446858042d6d0675b4f2bf",
+      "upstream_git_blob": "9abae54668d48576e589b635387a54758c1eb49b",
+      "upstream_path": "assets/leap_hand/thumb_dip.stl",
+      "source_url": "https://github.com/leap-hand/LEAP_Hand_Sim/blob/150bc3d4b61fd6619193ba5a8ef209f3609ced89/assets/leap_hand/thumb_dip.stl",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/leap_hand/left/thumb_pip.stl",
+      "sha256": "40532d5d555e150748f8563fb378ab3d0839b9221eb5ef108e86fde01a98dfe0",
+      "upstream_git_blob": "fee67668f9e2c139973a95336b209854e04b0ead",
+      "upstream_path": "assets/leap_hand/thumb_pip.stl",
+      "source_url": "https://github.com/leap-hand/LEAP_Hand_Sim/blob/150bc3d4b61fd6619193ba5a8ef209f3609ced89/assets/leap_hand/thumb_pip.stl",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/leap_hand/right/dip.stl",
+      "sha256": "9222f0ee1fa0077c70a219f7952df6f4208b003ad06a608e006cd0d8057d4b1c",
+      "upstream_git_blob": "e2944a9d8b3a343ed0b660866c85c7a7bb0e06dd",
+      "upstream_path": "assets/leap_hand/dip.stl",
+      "source_url": "https://github.com/leap-hand/LEAP_Hand_Sim/blob/150bc3d4b61fd6619193ba5a8ef209f3609ced89/assets/leap_hand/dip.stl",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/leap_hand/right/mcp_joint.stl",
+      "sha256": "56af82c57b469d491f544d6de12e2696b4284b50e89ca271502aaa0631f04b59",
+      "upstream_git_blob": "c5ff5f553230e9c667775a61f6018cdb68d7871b",
+      "upstream_path": "assets/leap_hand/mcp_joint.stl",
+      "source_url": "https://github.com/leap-hand/LEAP_Hand_Sim/blob/150bc3d4b61fd6619193ba5a8ef209f3609ced89/assets/leap_hand/mcp_joint.stl",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/leap_hand/right/palm_lower.stl",
+      "sha256": "eae47756f1a1978b255a36c0b75c24c0af886d10026c2950a2b0acef66f09c8c",
+      "upstream_git_blob": "1f92c6d87d9bbfd0c88411d85c518793b7459bed",
+      "upstream_path": "assets/leap_hand/palm_lower.stl",
+      "source_url": "https://github.com/leap-hand/LEAP_Hand_Sim/blob/150bc3d4b61fd6619193ba5a8ef209f3609ced89/assets/leap_hand/palm_lower.stl",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/leap_hand/right/pip.stl",
+      "sha256": "b778405c95127023c8b110e6e2f5a181ad8a46dadc2ac98d3f038debae52ef33",
+      "upstream_git_blob": "dcfecd6b9b33c15e2e5f3c98ac6791523440dcd1",
+      "upstream_path": "assets/leap_hand/pip.stl",
+      "source_url": "https://github.com/leap-hand/LEAP_Hand_Sim/blob/150bc3d4b61fd6619193ba5a8ef209f3609ced89/assets/leap_hand/pip.stl",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/leap_hand/right/thumb_dip.stl",
+      "sha256": "7261cf99cd44ae42360dc72a417c2526a73ec8ff4c446858042d6d0675b4f2bf",
+      "upstream_git_blob": "9abae54668d48576e589b635387a54758c1eb49b",
+      "upstream_path": "assets/leap_hand/thumb_dip.stl",
+      "source_url": "https://github.com/leap-hand/LEAP_Hand_Sim/blob/150bc3d4b61fd6619193ba5a8ef209f3609ced89/assets/leap_hand/thumb_dip.stl",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/leap_hand/right/thumb_pip.stl",
+      "sha256": "40532d5d555e150748f8563fb378ab3d0839b9221eb5ef108e86fde01a98dfe0",
+      "upstream_git_blob": "fee67668f9e2c139973a95336b209854e04b0ead",
+      "upstream_path": "assets/leap_hand/thumb_pip.stl",
+      "source_url": "https://github.com/leap-hand/LEAP_Hand_Sim/blob/150bc3d4b61fd6619193ba5a8ef209f3609ced89/assets/leap_hand/thumb_pip.stl",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    }
+  ],
+  "coverage": "Only listed byte-identical files; other files in the same directories are not covered by this verification.",
+  "notice_sha256": {
+    "licenses/third_party/leap/LICENSE.txt": "5a91c3d709c2ee3a71f166b46e3208cebd83c0c7a870746c729b31a01f156984"
+  },
+  "historical_verified_files_not_distributed": [
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/leap_hand/left/fingertip_old.stl",
+      "sha256": "e149e01e395b58950332dc2e2bda4b51b5557328a73c80b990d184c2e84dcc53",
+      "upstream_git_blob": "c7393370758780539f72b58a2d4b30afd3d380d5",
+      "upstream_path": "assets/leap_hand/fingertip.stl",
+      "source_url": "https://github.com/leap-hand/LEAP_Hand_Sim/blob/150bc3d4b61fd6619193ba5a8ef209f3609ced89/assets/leap_hand/fingertip.stl",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/leap_hand/left/palm_lower.stl",
+      "sha256": "eae47756f1a1978b255a36c0b75c24c0af886d10026c2950a2b0acef66f09c8c",
+      "upstream_git_blob": "1f92c6d87d9bbfd0c88411d85c518793b7459bed",
+      "upstream_path": "assets/leap_hand/palm_lower.stl",
+      "source_url": "https://github.com/leap-hand/LEAP_Hand_Sim/blob/150bc3d4b61fd6619193ba5a8ef209f3609ced89/assets/leap_hand/palm_lower.stl",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/leap_hand/left/thumb_fingertip_old.stl",
+      "sha256": "b43c5a13cf67a25da5ea64afafdcae2179b53971f940375c94656919d717dfb0",
+      "upstream_git_blob": "eac757a4d9adf76069b198fc8c8a744f269a7315",
+      "upstream_path": "assets/leap_hand/thumb_fingertip.stl",
+      "source_url": "https://github.com/leap-hand/LEAP_Hand_Sim/blob/150bc3d4b61fd6619193ba5a8ef209f3609ced89/assets/leap_hand/thumb_fingertip.stl",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/leap_hand/right/fingertip_old.stl",
+      "sha256": "e149e01e395b58950332dc2e2bda4b51b5557328a73c80b990d184c2e84dcc53",
+      "upstream_git_blob": "c7393370758780539f72b58a2d4b30afd3d380d5",
+      "upstream_path": "assets/leap_hand/fingertip.stl",
+      "source_url": "https://github.com/leap-hand/LEAP_Hand_Sim/blob/150bc3d4b61fd6619193ba5a8ef209f3609ced89/assets/leap_hand/fingertip.stl",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    },
+    {
+      "path": "simulator/dexjoco/sim/envs/xmls/leap_hand/right/thumb_fingertip_old.stl",
+      "sha256": "b43c5a13cf67a25da5ea64afafdcae2179b53971f940375c94656919d717dfb0",
+      "upstream_git_blob": "eac757a4d9adf76069b198fc8c8a744f269a7315",
+      "upstream_path": "assets/leap_hand/thumb_fingertip.stl",
+      "source_url": "https://github.com/leap-hand/LEAP_Hand_Sim/blob/150bc3d4b61fd6619193ba5a8ef209f3609ced89/assets/leap_hand/thumb_fingertip.stl",
+      "license": "MIT",
+      "decision": "documented-license",
+      "modifications": "Repackaged; file content unchanged."
+    }
+  ],
+  "distribution_scope": "Only entries in files are included in this public source snapshot."
+}

@@ -1,0 +1,10 @@
+# Compatibility constraints for the independently tested Python 3.11 setup.
+# Apply to the benchmark/data tools; upstream policy training uses its own env.
+jax==0.4.38
+jaxlib==0.4.38
+dm-robotics-transformations==0.9.0
+opencv-python==4.11.0.86
+numpy==1.26.4
+numcodecs==0.15.1
+zarr==2.18.6
+numpydantic==1.8.1

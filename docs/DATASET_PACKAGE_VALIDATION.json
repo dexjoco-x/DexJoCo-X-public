@@ -1,0 +1,482 @@
+{
+  "passed": true,
+  "date": "2026-10-02",
+  "version": "dataset-v1.0-corrected",
+  "repositories_remain_private": true,
+  "new_archives_uploaded": false,
+  "data_or_code_made_public": false,
+  "source_dataset_modified": false,
+  "weights_or_glove_mappings_included": false,
+  "packages": {
+    "tasks": 6,
+    "episodes": 2100,
+    "hands": 7,
+    "episodes_per_hand_task": 50,
+    "frames": 946156,
+    "archive_bytes": 8241715200,
+    "unique_installed_files": 11513,
+    "archives": {
+      "hammer_nail": {
+        "archive": "DexJoCo-X_hammer_nail_v1.0.tar",
+        "sha256": "68cbdb5795cad5dfc292a192186898f621e743267bef902039ac1bc8b80e854d",
+        "archive_bytes": 745820160,
+        "episodes": 350,
+        "frames": 103845
+      },
+      "pick_bucket": {
+        "archive": "DexJoCo-X_pick_bucket_v1.0.tar",
+        "sha256": "2787ebab3f9857b1fdacb16843e845b260cbf6ca92e48ec9999df96578becca4",
+        "archive_bytes": 961986560,
+        "episodes": 350,
+        "frames": 123239
+      },
+      "single_hand_hanoi": {
+        "archive": "DexJoCo-X_single_hand_hanoi_v1.0.tar",
+        "sha256": "ebff5dd6534ea3c2bfffacdde04d63030efcd1a4902897509e5296d18d82a90a",
+        "archive_bytes": 1333821440,
+        "episodes": 350,
+        "frames": 216136
+      },
+      "bimanual_microwave_cook": {
+        "archive": "DexJoCo-X_bimanual_microwave_cook_v1.0.tar",
+        "sha256": "763c1940437ad12a98a9c5f5ce350edf8a26c0eb99d90b1cca416d566c0763f7",
+        "archive_bytes": 2080747520,
+        "episodes": 350,
+        "frames": 205748
+      },
+      "bimanual_photograph": {
+        "archive": "DexJoCo-X_bimanual_photograph_v1.0.tar",
+        "sha256": "6f43f1983606e12c966dc4947af9b8472e2949b4aa72b3590866505a2d4fcc4f",
+        "archive_bytes": 955463680,
+        "episodes": 350,
+        "frames": 104006
+      },
+      "bimanual_unlock_ipad": {
+        "archive": "DexJoCo-X_bimanual_unlock_ipad_v1.0.tar",
+        "sha256": "ebf2967cbb02350a04791acd664d3166c59a875e6167fcbaed99c17ec24e7ef9",
+        "archive_bytes": 2163875840,
+        "episodes": 350,
+        "frames": 193182
+      }
+    }
+  },
+  "source_hub": {
+    "repo_id": "darenrenjian/DexJoCo-X",
+    "repo_type": "dataset",
+    "revision": "338ca1daf91c74d995ab1b8bd55a2c2d802076a5",
+    "visibility_last_checked": "private"
+  },
+  "checks": {
+    "BUILD": {
+      "passed": true,
+      "tasks": [
+        "hammer_nail",
+        "pick_bucket",
+        "single_hand_hanoi",
+        "bimanual_microwave_cook",
+        "bimanual_photograph",
+        "bimanual_unlock_ipad"
+      ],
+      "episodes": 2100,
+      "archive_bytes": 8241715200
+    },
+    "EXTRACT_ALL": {
+      "passed": true,
+      "tasks": [
+        "hammer_nail",
+        "pick_bucket",
+        "single_hand_hanoi",
+        "bimanual_microwave_cook",
+        "bimanual_photograph",
+        "bimanual_unlock_ipad"
+      ],
+      "files_checked": 11513,
+      "episodes": 2100,
+      "missing": [],
+      "changed": []
+    },
+    "UNPACKED_DATA_SMOKE": {
+      "passed": true,
+      "episodes": 2100,
+      "groups": 42,
+      "frames": 946156,
+      "start_and_terminal_samples": 84,
+      "symlinks": 0,
+      "weights_included": false,
+      "dataset_readable_after_unpack": true
+    },
+    "SAFETY_CHECKS": {
+      "passed": true,
+      "checks": [
+        {
+          "case": "corrupt_archive",
+          "rejected": true,
+          "destination_unchanged": true,
+          "error": "Archive checksum mismatch: test.tar"
+        },
+        {
+          "case": "symlink_member",
+          "rejected": true,
+          "destination_unchanged": true,
+          "error": "Only exact ordinary data files may be extracted"
+        },
+        {
+          "case": "path_traversal",
+          "rejected": true,
+          "destination_unchanged": true,
+          "error": "Invalid dataset path: bundle/../../outside.json"
+        },
+        {
+          "case": "existing_data_conflict",
+          "rejected": true,
+          "destination_unchanged": true,
+          "error": "Existing data would change: bundle/catalog.json"
+        }
+      ]
+    },
+    "HF_HAMMER_DOWNLOAD": {
+      "passed": true,
+      "tasks": [
+        "hammer_nail"
+      ],
+      "files_checked": 1754,
+      "episodes": 350,
+      "missing": [],
+      "changed": []
+    },
+    "DOWNLOADED_HAMMER_LOADER": {
+      "passed": true,
+      "task": "hammer_nail",
+      "hand": "xhand",
+      "loader": "BeingH.dataset.datasets.vla_dataset.LeRobotIterableDataset",
+      "beingh_root": "<external-beingh-checkout>",
+      "dataset_only_constants_shim": true,
+      "shim_scope": "model-registry constants only; upstream dataset loader, Parquet reader, Decord video reader, transforms, and bridge are unmodified",
+      "representations": {
+        "native": {
+          "dataset_path": "prepared/beingh05/train/hammer_nail/xhand",
+          "indexed_samples": 1,
+          "video_views": 2,
+          "images": [
+            {
+              "shape": [
+                1,
+                3,
+                224,
+                224
+              ],
+              "dtype": "torch.float32",
+              "finite": true
+            },
+            {
+              "shape": [
+                1,
+                3,
+                224,
+                224
+              ],
+              "dtype": "torch.float32",
+              "finite": true
+            }
+          ],
+          "state": {
+            "shape": [
+              1,
+              200
+            ],
+            "dtype": "torch.float32",
+            "finite": true
+          },
+          "action": {
+            "shape": [
+              30,
+              200
+            ],
+            "dtype": "torch.float32",
+            "finite": true
+          },
+          "action_mask": {
+            "shape": [
+              30,
+              200
+            ],
+            "dtype": "torch.bool",
+            "finite": true
+          },
+          "num_tokens": 758
+        },
+        "faas": {
+          "dataset_path": "prepared/beingh05_faas/train/hammer_nail/xhand",
+          "indexed_samples": 1,
+          "video_views": 2,
+          "images": [
+            {
+              "shape": [
+                1,
+                3,
+                224,
+                224
+              ],
+              "dtype": "torch.float32",
+              "finite": true
+            },
+            {
+              "shape": [
+                1,
+                3,
+                224,
+                224
+              ],
+              "dtype": "torch.float32",
+              "finite": true
+            }
+          ],
+          "state": {
+            "shape": [
+              1,
+              200
+            ],
+            "dtype": "torch.float32",
+            "finite": true
+          },
+          "action": {
+            "shape": [
+              30,
+              200
+            ],
+            "dtype": "torch.float32",
+            "finite": true
+          },
+          "action_mask": {
+            "shape": [
+              30,
+              200
+            ],
+            "dtype": "torch.bool",
+            "finite": true
+          },
+          "num_tokens": 758
+        }
+      }
+    },
+    "DEFAULT_LOADER_REGRESSION": {
+      "passed": true,
+      "task": "bimanual_microwave_cook",
+      "hand": "xhand",
+      "loader": "BeingH.dataset.datasets.vla_dataset.LeRobotIterableDataset",
+      "beingh_root": "<external-beingh-checkout>",
+      "dataset_only_constants_shim": true,
+      "shim_scope": "model-registry constants only; upstream dataset loader, Parquet reader, Decord video reader, transforms, and bridge are unmodified",
+      "representations": {
+        "native": {
+          "dataset_path": "prepared/beingh05/train/bimanual_microwave_cook/xhand",
+          "indexed_samples": 1,
+          "video_views": 3,
+          "images": [
+            {
+              "shape": [
+                1,
+                3,
+                224,
+                224
+              ],
+              "dtype": "torch.float32",
+              "finite": true
+            },
+            {
+              "shape": [
+                1,
+                3,
+                224,
+                224
+              ],
+              "dtype": "torch.float32",
+              "finite": true
+            },
+            {
+              "shape": [
+                1,
+                3,
+                224,
+                224
+              ],
+              "dtype": "torch.float32",
+              "finite": true
+            }
+          ],
+          "state": {
+            "shape": [
+              1,
+              200
+            ],
+            "dtype": "torch.float32",
+            "finite": true
+          },
+          "action": {
+            "shape": [
+              30,
+              200
+            ],
+            "dtype": "torch.float32",
+            "finite": true
+          },
+          "action_mask": {
+            "shape": [
+              30,
+              200
+            ],
+            "dtype": "torch.bool",
+            "finite": true
+          },
+          "num_tokens": 1018
+        },
+        "faas": {
+          "dataset_path": "prepared/beingh05_faas/train/bimanual_microwave_cook/xhand",
+          "indexed_samples": 1,
+          "video_views": 3,
+          "images": [
+            {
+              "shape": [
+                1,
+                3,
+                224,
+                224
+              ],
+              "dtype": "torch.float32",
+              "finite": true
+            },
+            {
+              "shape": [
+                1,
+                3,
+                224,
+                224
+              ],
+              "dtype": "torch.float32",
+              "finite": true
+            },
+            {
+              "shape": [
+                1,
+                3,
+                224,
+                224
+              ],
+              "dtype": "torch.float32",
+              "finite": true
+            }
+          ],
+          "state": {
+            "shape": [
+              1,
+              200
+            ],
+            "dtype": "torch.float32",
+            "finite": true
+          },
+          "action": {
+            "shape": [
+              30,
+              200
+            ],
+            "dtype": "torch.float32",
+            "finite": true
+          },
+          "action_mask": {
+            "shape": [
+              30,
+              200
+            ],
+            "dtype": "torch.bool",
+            "finite": true
+          },
+          "num_tokens": 1018
+        },
+        "dexlatent": {
+          "dataset_path": "prepared/beingh05_dexlatent/train/bimanual_microwave_cook/xhand",
+          "indexed_samples": 1,
+          "video_views": 3,
+          "images": [
+            {
+              "shape": [
+                1,
+                3,
+                224,
+                224
+              ],
+              "dtype": "torch.float32",
+              "finite": true
+            },
+            {
+              "shape": [
+                1,
+                3,
+                224,
+                224
+              ],
+              "dtype": "torch.float32",
+              "finite": true
+            },
+            {
+              "shape": [
+                1,
+                3,
+                224,
+                224
+              ],
+              "dtype": "torch.float32",
+              "finite": true
+            }
+          ],
+          "state": {
+            "shape": [
+              1,
+              200
+            ],
+            "dtype": "torch.float32",
+            "finite": true
+          },
+          "action": {
+            "shape": [
+              30,
+              200
+            ],
+            "dtype": "torch.float32",
+            "finite": true
+          },
+          "action_mask": {
+            "shape": [
+              30,
+              200
+            ],
+            "dtype": "torch.bool",
+            "finite": true
+          },
+          "num_tokens": 1018
+        }
+      }
+    }
+  },
+  "download_to_prepared_data": {
+    "passed": true,
+    "task": "hammer_nail",
+    "native_groups": 7,
+    "faas_groups": 7,
+    "episodes_each": 350,
+    "frames_each": 103845,
+    "real_beingh_loader_passed": true,
+    "loader_hand": "xhand",
+    "loader_representations": [
+      "native",
+      "faas"
+    ],
+    "video_views": 2,
+    "model_forward_tested": false
+  },
+  "dexlatent": "No encoder is distributed; full-view numerical checks and private-codec conversion were completed in the preceding isolated-install validation.",
+  "not_executed": [
+    "full model training",
+    "learned-policy success evaluation",
+    "live glove capture"
+  ]
+}

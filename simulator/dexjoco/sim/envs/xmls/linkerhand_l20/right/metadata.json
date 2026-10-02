@@ -1,0 +1,616 @@
+{
+  "package_label": "L20 V10.1",
+  "urdf_robot_name": "linkerhand_L25NS_right.urdf",
+  "side": "right",
+  "source_sha256": {
+    "source.urdf": "debff645646840bdf5942c049c687672af0268f113f8260145f51ccc435d1245",
+    "meshes/pinky_distal.STL": "3b22871d948ef80447f93866af3643ffa87cb22c1c172750fca9357f3aaa46de",
+    "meshes/thumb_metacarpals_base2.STL": "a5679a28a612ab6aa62a4f7fa1c67be42f807bba7c2ca00ba062ca2e4ef0070d",
+    "meshes/pinky_metacarpals.STL": "b63d10a0e18af0169c75b85eb740c1f25123f6c4c5be0c5368afc65e8c73771f",
+    "meshes/hand_base_link.STL": "79e36d4c7e9282c79601976d41144557d1928810202589e31bed335f3d308cd1",
+    "meshes/middle_proximal.STL": "edd3af02319cd4a3b4e07a6f5d33d501887d5ab78625489254f289785b6f57e1",
+    "meshes/thumb_proximal.STL": "4cd7d6a283d2e5c3f6dfbd88aa1e18f9f481375d1e6b47f2c373a285184b123d",
+    "meshes/thumb_distal.STL": "026dd2fac43c4461c5a90561ef29039f4a08802c0e47e5c422ecac2f34babe1e",
+    "meshes/index_metacarpals.STL": "106ad58d52420c3216ccb87865f55062d4b4b558078dda95210a085a9bbe277c",
+    "meshes/pinky_proximal.STL": "311ce029c4972530d3b234307f4ea6ca1789577c2786d56f969a5dfac2ef6a57",
+    "meshes/middle_middle.STL": "600b8e7486abc8a2707a5ecc66d4b5bea1dc0895c7173e911ba994f5cac30c10",
+    "meshes/index_proximal.STL": "d4f85e69dd94d56bdc4646c945ca8a237c652fd5dffba86c7b9ce1d8067ae8e1",
+    "meshes/ring_distal.STL": "fca7bf31fa3f377110d31f7623e27f8c7845faedbdca7c09f98c94a28867bd69",
+    "meshes/ring_proximal.STL": "168df91e5a5643a899556f96ca3f3b7fe8a3349436be42dfb5632c0d524f9a47",
+    "meshes/middle_distal.STL": "688be3d9dd7fda49a8f9dbba824fedef5cf427c94e2e9e1ea96834eafbf6945a",
+    "meshes/thumb_metacarpals_base1.STL": "8416e5f826f12c4597754fbe3052983635345a76e3d98a4cdbc38ed363a9da78",
+    "meshes/pinky_middle.STL": "c6696bfcd2dbef8f248f86a6f45a90d5ba7b40e11cdb13a86b96347240a7b751",
+    "meshes/ring_metacarpals.STL": "11797279afee7f856e472755d3a96593baea659d2ec0014edb02006ae48b5d71",
+    "meshes/thumb_metacarpals.STL": "0a82998ece3c784bba7861b850d00ed483d93434f94f72c6298fea0917e328ca",
+    "meshes/index_middle.STL": "27f9ccd91c5bdb1f6a1c42aeee4ab79e7e0aaf1e124a36999c75715b70d0aee6",
+    "meshes/index_distal.STL": "324aa4b852e0c469bfc0c0bb9b19e0ccffc7dcb401d6a678481340588465fa26",
+    "meshes/middle_metacarpals.STL": "65bc65257a01e0ccd284dfdf3b2a66f2a865bf80faeb4da746cd1fd05114fe40",
+    "meshes/ring_middle.STL": "2b3a0815e8daf95e76c9f54f84c13709a3951aa44ec6bb863facf60ba32c3c16"
+  },
+  "joint_names": [
+    "l20_thumb_cmc_roll",
+    "l20_thumb_cmc_yaw",
+    "l20_thumb_cmc_pitch",
+    "l20_thumb_mcp",
+    "l20_index_mcp_roll",
+    "l20_index_mcp_pitch",
+    "l20_index_pip",
+    "l20_middle_mcp_roll",
+    "l20_middle_mcp_pitch",
+    "l20_middle_pip",
+    "l20_ring_mcp_roll",
+    "l20_ring_mcp_pitch",
+    "l20_ring_pip",
+    "l20_pinky_mcp_roll",
+    "l20_pinky_mcp_pitch",
+    "l20_pinky_pip"
+  ],
+  "joint_limits": [
+    [
+      0.0,
+      1.39
+    ],
+    [
+      0.0,
+      1.57
+    ],
+    [
+      0.0,
+      0.83
+    ],
+    [
+      0.0,
+      1.25
+    ],
+    [
+      -0.23,
+      0.23
+    ],
+    [
+      0.0,
+      1.22
+    ],
+    [
+      0.0,
+      1.75
+    ],
+    [
+      -0.23,
+      0.23
+    ],
+    [
+      0.0,
+      1.22
+    ],
+    [
+      0.0,
+      1.75
+    ],
+    [
+      -0.23,
+      0.23
+    ],
+    [
+      0.0,
+      1.22
+    ],
+    [
+      0.0,
+      1.75
+    ],
+    [
+      -0.23,
+      0.23
+    ],
+    [
+      0.0,
+      1.22
+    ],
+    [
+      0.0,
+      1.75
+    ]
+  ],
+  "mimic_joints": [
+    {
+      "joint": "l20_thumb_ip",
+      "parent": "l20_thumb_mcp",
+      "multiplier": 1.03,
+      "offset": 0.0
+    },
+    {
+      "joint": "l20_index_dip",
+      "parent": "l20_index_pip",
+      "multiplier": 0.89,
+      "offset": 0.0
+    },
+    {
+      "joint": "l20_middle_dip",
+      "parent": "l20_middle_pip",
+      "multiplier": 0.89,
+      "offset": 0.0
+    },
+    {
+      "joint": "l20_ring_dip",
+      "parent": "l20_ring_pip",
+      "multiplier": 0.89,
+      "offset": 0.0
+    },
+    {
+      "joint": "l20_pinky_dip",
+      "parent": "l20_pinky_pip",
+      "multiplier": 0.89,
+      "offset": 0.0
+    }
+  ],
+  "physical_joint_count": 21,
+  "independent_action_dim": 16,
+  "position_kp": 20,
+  "position_kv": 0.2,
+  "inertia_repairs": [
+    {
+      "link": "thumb_metacarpals_base2",
+      "original_principal": [
+        4.896461398473133e-07,
+        1.3818193992110446e-06,
+        1.9324960390486657e-06
+      ],
+      "corrected_principal": [
+        5.099896498440825e-07,
+        1.402162909207814e-06,
+        1.9121525290518966e-06
+      ]
+    }
+  ],
+  "palm_housing_collision_exclusions": [
+    "thumb_metacarpals_base1",
+    "thumb_metacarpals_base2",
+    "index_metacarpals",
+    "index_proximal",
+    "middle_metacarpals",
+    "middle_proximal",
+    "ring_metacarpals",
+    "ring_proximal",
+    "pinky_metacarpals",
+    "pinky_proximal"
+  ],
+  "visual_appearance": {
+    "version": "l20_silver_graphite_v1",
+    "reference": "https://www.linkerhand.com/details/LinkerHandL20/",
+    "components": {
+      "hand_base_link": {
+        "triangles": 68662,
+        "rubber_triangles": 37456,
+        "rubber_components": [
+          {
+            "faces": 31132,
+            "bounds": [
+              [
+                0.0231698639690876,
+                -0.046906862407922745,
+                0.03972271457314491
+              ],
+              [
+                0.027827417477965355,
+                0.04678908362984657,
+                0.12594793736934662
+              ]
+            ],
+            "area": 0.014690567407377786
+          },
+          {
+            "faces": 3334,
+            "bounds": [
+              [
+                -0.02356834150850773,
+                -0.04500305652618408,
+                0.04683180898427963
+              ],
+              [
+                -0.018038414418697357,
+                -0.028599875047802925,
+                0.11639684438705444
+              ]
+            ],
+            "area": 0.0023541147140103574
+          },
+          {
+            "faces": 2990,
+            "bounds": [
+              [
+                -0.02361920475959778,
+                0.028594257310032845,
+                0.04717312008142471
+              ],
+              [
+                -0.018010716885328293,
+                0.04508758336305618,
+                0.12016312032938004
+              ]
+            ],
+            "area": 0.00239357747985501
+          }
+        ]
+      },
+      "thumb_metacarpals_base1": {
+        "triangles": 17058,
+        "rubber_triangles": 0,
+        "rubber_components": []
+      },
+      "thumb_metacarpals_base2": {
+        "triangles": 4556,
+        "rubber_triangles": 0,
+        "rubber_components": []
+      },
+      "thumb_metacarpals": {
+        "triangles": 23174,
+        "rubber_triangles": 10612,
+        "rubber_components": [
+          {
+            "faces": 9514,
+            "bounds": [
+              [
+                0.010770939290523529,
+                -0.015683112666010857,
+                0.015962455421686172
+              ],
+              [
+                0.026439126580953598,
+                0.015683112666010857,
+                0.0505484864115715
+              ]
+            ],
+            "area": 0.003605067456544192
+          },
+          {
+            "faces": 1098,
+            "bounds": [
+              [
+                0.006006890907883644,
+                -0.00839999970048666,
+                0.05229565128684044
+              ],
+              [
+                0.015598076395690441,
+                3.0000557671883143e-05,
+                0.07082167267799377
+              ]
+            ],
+            "area": 0.0005353964001865438
+          }
+        ]
+      },
+      "thumb_proximal": {
+        "triangles": 14338,
+        "rubber_triangles": 7390,
+        "rubber_components": [
+          {
+            "faces": 7390,
+            "bounds": [
+              [
+                -0.0006088764639571309,
+                -0.009529623202979565,
+                0.010114413686096668
+              ],
+              [
+                0.008764113299548626,
+                0.009594561532139778,
+                0.03004639409482479
+              ]
+            ],
+            "area": 0.0012335200924415558
+          }
+        ]
+      },
+      "thumb_distal": {
+        "triangles": 22168,
+        "rubber_triangles": 14326,
+        "rubber_components": [
+          {
+            "faces": 14326,
+            "bounds": [
+              [
+                -0.01190843153744936,
+                -0.008892040699720383,
+                0.010755564086139202
+              ],
+              [
+                0.009705516509711742,
+                0.008856517262756824,
+                0.030757920816540718
+              ]
+            ],
+            "area": 0.001700284868877575
+          }
+        ]
+      },
+      "index_metacarpals": {
+        "triangles": 3034,
+        "rubber_triangles": 0,
+        "rubber_components": []
+      },
+      "index_proximal": {
+        "triangles": 17662,
+        "rubber_triangles": 9450,
+        "rubber_components": [
+          {
+            "faces": 9450,
+            "bounds": [
+              [
+                0.0009138309978879988,
+                -0.008356796577572823,
+                0.015307527966797352
+              ],
+              [
+                0.008955652825534344,
+                0.008132992312312126,
+                0.03857387602329254
+              ]
+            ],
+            "area": 0.0015147006287505342
+          }
+        ]
+      },
+      "index_middle": {
+        "triangles": 16110,
+        "rubber_triangles": 11058,
+        "rubber_components": [
+          {
+            "faces": 11058,
+            "bounds": [
+              [
+                -0.0005830259760841727,
+                -0.008203498087823391,
+                0.007040206342935562
+              ],
+              [
+                0.009410188533365726,
+                0.008182176388800144,
+                0.02979210577905178
+              ]
+            ],
+            "area": 0.001328963116328987
+          }
+        ]
+      },
+      "index_distal": {
+        "triangles": 19696,
+        "rubber_triangles": 13944,
+        "rubber_components": [
+          {
+            "faces": 13944,
+            "bounds": [
+              [
+                -0.01879742555320263,
+                -0.0075900317169725895,
+                0.005313877481967211
+              ],
+              [
+                0.0023115254007279873,
+                0.007564613129943609,
+                0.022931091487407684
+              ]
+            ],
+            "area": 0.001443298787479883
+          }
+        ]
+      },
+      "middle_metacarpals": {
+        "triangles": 3034,
+        "rubber_triangles": 0,
+        "rubber_components": []
+      },
+      "middle_proximal": {
+        "triangles": 17662,
+        "rubber_triangles": 9450,
+        "rubber_components": [
+          {
+            "faces": 9450,
+            "bounds": [
+              [
+                0.0009138309978879988,
+                -0.008356796577572823,
+                0.015307527966797352
+              ],
+              [
+                0.008955652825534344,
+                0.008132992312312126,
+                0.03857387602329254
+              ]
+            ],
+            "area": 0.0015147006287505342
+          }
+        ]
+      },
+      "middle_middle": {
+        "triangles": 16110,
+        "rubber_triangles": 11058,
+        "rubber_components": [
+          {
+            "faces": 11058,
+            "bounds": [
+              [
+                -0.0005830259760841727,
+                -0.008203498087823391,
+                0.007040206342935562
+              ],
+              [
+                0.009410188533365726,
+                0.008182176388800144,
+                0.02979210577905178
+              ]
+            ],
+            "area": 0.001328963116328987
+          }
+        ]
+      },
+      "middle_distal": {
+        "triangles": 19696,
+        "rubber_triangles": 13944,
+        "rubber_components": [
+          {
+            "faces": 13944,
+            "bounds": [
+              [
+                -0.01879742555320263,
+                -0.0075900317169725895,
+                0.005313877481967211
+              ],
+              [
+                0.0023115254007279873,
+                0.007564613129943609,
+                0.022931091487407684
+              ]
+            ],
+            "area": 0.001443298787479883
+          }
+        ]
+      },
+      "ring_metacarpals": {
+        "triangles": 3034,
+        "rubber_triangles": 0,
+        "rubber_components": []
+      },
+      "ring_proximal": {
+        "triangles": 17662,
+        "rubber_triangles": 9450,
+        "rubber_components": [
+          {
+            "faces": 9450,
+            "bounds": [
+              [
+                0.0009138309978879988,
+                -0.008356796577572823,
+                0.015307527966797352
+              ],
+              [
+                0.008955652825534344,
+                0.008132992312312126,
+                0.03857387602329254
+              ]
+            ],
+            "area": 0.0015147006287505342
+          }
+        ]
+      },
+      "ring_middle": {
+        "triangles": 16110,
+        "rubber_triangles": 11058,
+        "rubber_components": [
+          {
+            "faces": 11058,
+            "bounds": [
+              [
+                -0.0005830259760841727,
+                -0.008203498087823391,
+                0.007040206342935562
+              ],
+              [
+                0.009410188533365726,
+                0.008182176388800144,
+                0.02979210577905178
+              ]
+            ],
+            "area": 0.001328963116328987
+          }
+        ]
+      },
+      "ring_distal": {
+        "triangles": 19696,
+        "rubber_triangles": 13944,
+        "rubber_components": [
+          {
+            "faces": 13944,
+            "bounds": [
+              [
+                -0.01879742555320263,
+                -0.0075900317169725895,
+                0.005313877481967211
+              ],
+              [
+                0.0023115254007279873,
+                0.007564613129943609,
+                0.022931091487407684
+              ]
+            ],
+            "area": 0.001443298787479883
+          }
+        ]
+      },
+      "pinky_metacarpals": {
+        "triangles": 3034,
+        "rubber_triangles": 0,
+        "rubber_components": []
+      },
+      "pinky_proximal": {
+        "triangles": 17662,
+        "rubber_triangles": 9450,
+        "rubber_components": [
+          {
+            "faces": 9450,
+            "bounds": [
+              [
+                0.0009138309978879988,
+                -0.008356796577572823,
+                0.015307527966797352
+              ],
+              [
+                0.008955652825534344,
+                0.008132992312312126,
+                0.03857387602329254
+              ]
+            ],
+            "area": 0.0015147006287505342
+          }
+        ]
+      },
+      "pinky_middle": {
+        "triangles": 16110,
+        "rubber_triangles": 11058,
+        "rubber_components": [
+          {
+            "faces": 11058,
+            "bounds": [
+              [
+                -0.0005830259760841727,
+                -0.008203498087823391,
+                0.007040206342935562
+              ],
+              [
+                0.009410188533365726,
+                0.008182176388800144,
+                0.02979210577905178
+              ]
+            ],
+            "area": 0.001328963116328987
+          }
+        ]
+      },
+      "pinky_distal": {
+        "triangles": 19696,
+        "rubber_triangles": 13944,
+        "rubber_components": [
+          {
+            "faces": 13944,
+            "bounds": [
+              [
+                -0.01879742555320263,
+                -0.0075900317169725895,
+                0.005313877481967211
+              ],
+              [
+                0.0023115254007279873,
+                0.007564613129943609,
+                0.022931091487407684
+              ]
+            ],
+            "area": 0.001443298787479883
+          }
+        ]
+      }
+    },
+    "collision_meshes_unchanged": true,
+    "note": "Approximate silver/graphite appearance from official product images, not a measured reflectance calibration."
+  },
+  "note": "Joint limits, masses, meshes and mimic ratios come from the supplied URDF. Invalid inertia tensors receive the explicitly recorded minimal principal-moment projection. Servo gains are simulation settings, not manufacturer calibration. Mesh collisions use MuJoCo convex hulls."
+}

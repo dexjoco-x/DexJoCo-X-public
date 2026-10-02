@@ -1,0 +1,224 @@
+{
+  "joint_names": {
+    "right": [
+      "benchhand_right_native_xhand_right_hand_thumb_bend_joint",
+      "benchhand_right_native_xhand_right_hand_thumb_rota_joint1",
+      "benchhand_right_native_xhand_right_hand_thumb_rota_joint2",
+      "benchhand_right_native_xhand_right_hand_index_bend_joint",
+      "benchhand_right_native_xhand_right_hand_index_joint1",
+      "benchhand_right_native_xhand_right_hand_index_joint2",
+      "benchhand_right_native_xhand_right_hand_mid_joint1",
+      "benchhand_right_native_xhand_right_hand_mid_joint2",
+      "benchhand_right_native_xhand_right_hand_ring_joint1",
+      "benchhand_right_native_xhand_right_hand_ring_joint2",
+      "benchhand_right_native_xhand_right_hand_pinky_joint1",
+      "benchhand_right_native_xhand_right_hand_pinky_joint2"
+    ],
+    "left": []
+  },
+  "actuator_names": {
+    "right": [
+      "benchhand_right_native_xhand_right_hand_thumb_bend_joint_ctrl",
+      "benchhand_right_native_xhand_right_hand_thumb_rota_joint1_ctrl",
+      "benchhand_right_native_xhand_right_hand_thumb_rota_joint2_ctrl",
+      "benchhand_right_native_xhand_right_hand_index_bend_joint_ctrl",
+      "benchhand_right_native_xhand_right_hand_index_joint1_ctrl",
+      "benchhand_right_native_xhand_right_hand_index_joint2_ctrl",
+      "benchhand_right_native_xhand_right_hand_mid_joint1_ctrl",
+      "benchhand_right_native_xhand_right_hand_mid_joint2_ctrl",
+      "benchhand_right_native_xhand_right_hand_ring_joint1_ctrl",
+      "benchhand_right_native_xhand_right_hand_ring_joint2_ctrl",
+      "benchhand_right_native_xhand_right_hand_pinky_joint1_ctrl",
+      "benchhand_right_native_xhand_right_hand_pinky_joint2_ctrl"
+    ],
+    "left": []
+  },
+  "instruction": "Use the right hand to stack the Hanoi disks on post C in order: large, medium, small, then release them.",
+  "control_dt": 0.05,
+  "source_contract": {
+    "version": "single_hand_hanoi_inspire_scene_v3",
+    "task": "single_hand_hanoi",
+    "hand": "xhand",
+    "object_source": "arena_arm_hand_bimanual_hanoi_inspire.xml",
+    "model_xml": "repo://simulator/dexjoco/sim/envs/xmls/benchmark7_v3_single_hand_hanoi_inspire_scene_xhand.xml",
+    "model_sha256": "69ab787e0f97978b856d2c54bb8a4eb4418b251d354bc801e44976567a3af9a2",
+    "object_source_hashes": {
+      "arena_arm_hand_bimanual_hanoi_inspire.xml": "923918772505af58c0f5d00d90757dd06b5575a161bbdcd5b2adb31f986b1664",
+      "hanoi_base.xml": "107c04e0bb8a5f211e937cd15f0be0d7a8e39ec251163a1122f44ac395972fbd",
+      "hanoi_disk_large_inspire.xml": "6a2c9c36fc0912c2c06f948183f08a9098ed443148921788c3963a0025797f2e",
+      "hanoi_disk_medium_inspire.xml": "20847076c8577b4e8506636307fa3c00fffd612311b2e930f4aadaa1a1d8f4c1",
+      "hanoi_disk_small_inspire.xml": "8bae978e079d4edffc50106720db8eb300859a027372d8ef59a5da8cd43e7408"
+    },
+    "active_arms": [
+      "right"
+    ],
+    "left_arm_present": false,
+    "arm_base_position": [
+      -0.8,
+      0.0,
+      0.924
+    ],
+    "control_dt": 0.05,
+    "physics_dt": 0.002,
+    "max_episode_steps": 2000,
+    "action": "world delta TCP rotvec6 + native actuator position targets",
+    "translation_action_bound": 0.08,
+    "rotation_action_bound": 0.3,
+    "initial_towers": {
+      "A": [
+        "small"
+      ],
+      "B": [
+        "medium"
+      ],
+      "C": [
+        "large"
+      ]
+    },
+    "goal_towers": {
+      "A": [],
+      "B": [],
+      "C": [
+        "large",
+        "medium",
+        "small"
+      ]
+    },
+    "success_policy": {
+      "id": "single_hand_hanoi_released_v1",
+      "required_success_steps": 1,
+      "terminate_on_first_success": true,
+      "native_stable_steps": 20,
+      "released_stable_steps": 20,
+      "active_arms": [
+        "right"
+      ],
+      "left_task_contact_invalidates_episode": true
+    },
+    "release_steps": 20,
+    "post_assignment_tol": 0.04,
+    "placement_height_tol": 0.012,
+    "static_qvel_tol": 0.35,
+    "success_trigger_target": 20,
+    "illegal_trigger_target": 10,
+    "auto_reset": false,
+    "wrist_camera_rig": {
+      "name": "common_tcp_side85_v1",
+      "position_tcp": [
+        0.14,
+        0.22,
+        0.1
+      ],
+      "look_at_tcp": [
+        0.16,
+        0,
+        0.18
+      ],
+      "vertical_fov_deg": 85.0
+    },
+    "model_mutations_during_rollout": false,
+    "arm_pos_gain": 400.0,
+    "arm_ori_gain": 200.0,
+    "arm_damping_ratio": 4.0
+  },
+  "observation_timing": "pre_action",
+  "privileged_state_excluded": true,
+  "tcp_state_source": "recomputed from pre-action qpos to synchronize RGB; raw recorded TCP can retain previous physics-substep cache",
+  "wrist_camera_rig": {
+    "name": "dexjoco_official_allegro60_hanoi_front_v1",
+    "position_tcp": [
+      -0.14,
+      -0.03,
+      0.04
+    ],
+    "vertical_fov_deg": 60.0,
+    "reference_tcp_site_quat_wxyz": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "reference_attachment_quat_single_wxyz": [
+      -0.353553,
+      0.612372,
+      -0.612372,
+      0.352553
+    ],
+    "reference_attachment_quat_dual_wxyz": [
+      -0.353553,
+      0.612372,
+      -0.612372,
+      0.353553
+    ],
+    "hanoi_main_camera": "front",
+    "cross_hand_mapping": "same attachment_site/TCP extrinsics",
+    "real_world_calibrated": false
+  },
+  "camera_profile": "dexjoco_official_allegro60_hanoi_front_v1",
+  "cameras": {
+    "front": {
+      "camera_name": "front",
+      "body": "world",
+      "position_body_m": [
+        1.3,
+        0.0,
+        1.6
+      ],
+      "quaternion_body_wxyz": [
+        0.5963678059445466,
+        0.37992820378709397,
+        0.37992820378709397,
+        0.5963678059445466
+      ],
+      "vertical_fov_deg": 45.0
+    },
+    "wrist_right": {
+      "camera_name": "handcam_rgb_right",
+      "body": "attachment_right",
+      "position_body_m": [
+        0.14,
+        0.03,
+        0.04
+      ],
+      "quaternion_body_wxyz": [
+        -0.35367817570346194,
+        0.6125888107635359,
+        -0.6125888107635359,
+        0.3526778216527158
+      ],
+      "vertical_fov_deg": 60.0,
+      "position_tcp_m": [
+        -0.14,
+        -0.03,
+        0.04
+      ],
+      "rotation_tcp": [
+        [
+          -0.0007066060832240928,
+          0.5010612049989595,
+          -0.8654115607922244
+        ],
+        [
+          0.9999989992917732,
+          -0.0007066060832240928,
+          -0.0012256113965781745
+        ],
+        [
+          -0.0012256113965781745,
+          -0.8654115607922244,
+          -0.5010602042907326
+        ]
+      ]
+    }
+  },
+  "image_preprocessing": {
+    "size": [
+      256,
+      256
+    ],
+    "fps": 20,
+    "rotation_degrees": 0,
+    "vertical_flip": false,
+    "observation_timing": "pre-action"
+  }
+}
