@@ -27,4 +27,4 @@ python tools/release_audit.py
 python tools/release_history_audit.py --output ./outputs/history_audit.json
 ```
 
-完整包版本、依赖版本、哈希和诊断字段见 [JSON 验收记录](DATASET_EVAL_RELEASE_VALIDATION.json)。GitHub 发布仓库的旧历史尚未被本次本地导出替换；原完整工作仓库保留。
+完整包版本、依赖版本、哈希和诊断字段见 [JSON 验收记录](DATASET_EVAL_RELEASE_VALIDATION.json)。GitHub 发布仓库已同步独立候选历史，仍保持私有；旧历史及旧标签已先作本地镜像备份，原完整工作仓库保留。

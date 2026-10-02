@@ -18,6 +18,16 @@
   "release_scope": "dataset, simulator evaluation, inference examples",
   "model_training_implementation_included": false,
   "new_independent_local_history": true,
-  "github_history_replacement_pending": true,
-  "remote_visibility_changed_by_this_export": false
+  "github_history_replacement_pending": false,
+  "remote_visibility_changed_by_this_export": false,
+  "github_private_sync": {
+    "date": "2026-10-02",
+    "repository": "darenrenjian/DexJoCo-X-public",
+    "visibility": "PRIVATE",
+    "independent_snapshot_commit": "012700802056facdd2cb1416d0340b24a71b2dcb",
+    "previous_main_commit": "1c57513de76d0fc5e478d3cf9ba7a5e8b80e9088",
+    "previous_history_backed_up_locally": true,
+    "obsolete_tag_removed": "v0.1.0",
+    "complete_work_repository_preserved": true
+  }
 }

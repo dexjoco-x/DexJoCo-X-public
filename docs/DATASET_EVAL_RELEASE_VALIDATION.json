@@ -740,7 +740,7 @@
     "replay_validation_after_fix": true
   },
   "original_private_repositories_modified_by_export": false,
-  "github_history_replacement_pending": true,
+  "github_history_replacement_pending": false,
   "remote_visibility_changed": false,
   "full_training_performed": false,
   "formal_success_rate_measured": false,
@@ -748,5 +748,15 @@
     "Fresh download and conversion cover hammer_nail (350 episodes), not a second download of all six archives.",
     "Real learned-policy rollout covers Sharpa Wave hammer_nail; 42 environment cells are checked without learned policies.",
     "Optional DexLatent requires an external compatible codec; this snapshot does not contain codec weights."
-  ]
+  ],
+  "github_private_sync": {
+    "date": "2026-10-02",
+    "repository": "darenrenjian/DexJoCo-X-public",
+    "visibility": "PRIVATE",
+    "independent_snapshot_commit": "012700802056facdd2cb1416d0340b24a71b2dcb",
+    "previous_main_commit": "1c57513de76d0fc5e478d3cf9ba7a5e8b80e9088",
+    "previous_history_backed_up_locally": true,
+    "obsolete_tag_removed": "v0.1.0",
+    "complete_work_repository_preserved": true
+  }
 }
