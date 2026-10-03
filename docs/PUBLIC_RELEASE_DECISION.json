@@ -42,7 +42,11 @@
     "requires_separate_upstream_simulation_asset_download": false,
     "preserves_frozen_asset_files": true,
     "preserves_upstream_license_and_provenance_records": true,
-    "changes_upstream_permission_status": false
+    "changes_upstream_permission_status": false,
+    "reference_publication_structure": "DexJoCo: first-party MIT, third-party assets retain their own terms",
+    "choice_reaffirmed_date": "2026-10-03",
+    "original_dataset_license_preserved": "CC-BY-NC-SA-4.0",
+    "current_frozen_assets_retained": true
   },
   "dataset_license": {
     "selected_date": "2026-10-03",
