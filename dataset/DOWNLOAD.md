@@ -2,7 +2,7 @@
 
 版本：`dataset-v1.0-corrected`。共 7 手、6 任务、2,100 条示范，全部为训练数据。每个任务包包含七只手各 50 条，共 350 条。50 条 XHand 微波炉示范使用修正后的左手安装方向 `xhand_left_mount_rx180_v1`。
 
-数据已公开，下载入口为 [Hugging Face 数据仓库](https://huggingface.co/datasets/darenrenjian/DexJoCo-X)。六个 TAR 任务包已上传到该公开仓库的 `task_packages/v1.0/`，原始文件目录仍保留。下载工具默认获取选定任务的 TAR 包，核对归档与包内文件的 SHA-256 后自动解压。
+数据目前保持私有，下载入口为 [Hugging Face 数据仓库](https://huggingface.co/datasets/darenrenjian/DexJoCo-X)。六个 TAR 任务包已上传到该私有仓库的 `task_packages/v1.0/`，原始文件目录仍保留。下载工具默认获取选定任务的 TAR 包，核对归档与包内文件的 SHA-256 后自动解压。
 
 ## 六个任务包
 
@@ -20,7 +20,7 @@ NPZ 张量和 H.264 视频已经压缩，因此使用 TAR 分包，避免重新�
 
 ## 在线按任务下载
 
-在代码仓库根目录安装下载工具即可下载，无需登录：
+在代码仓库根目录安装下载工具，并先使用 `hf auth login` 登录有访问权限的账号：
 
 ```bash
 pip install -c requirements/constraints-python311.txt \
@@ -47,7 +47,7 @@ python tools/dataset_packages.py download --transport files --tasks hammer_nail 
   --data-root "$DATA_ROOT"
 ```
 
-`--transport archive` 明确选择归档方式，默认 `auto` 使用本索引中已上传的归档。公开数据无需访问令牌。如为下载限流使用 Hugging Face 账号，令牌仅由登录缓存或 `HF_TOKEN` 环境变量提供，不写入索引、脚本或 Git。
+`--transport archive` 明确选择归档方式，默认 `auto` 使用本索引中已上传的归档。当前私有数据访问需要授权；令牌仅由登录缓存或 `HF_TOKEN` 环境变量提供，不写入索引、脚本或 Git。
 
 ## 从本地 TAR 包安装
 

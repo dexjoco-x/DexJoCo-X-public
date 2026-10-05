@@ -55,7 +55,7 @@ The environment check covers all 42 hand–task pairs. See the [quickstart](docs
 
 ## Download and inspect demonstrations
 
-No login is required. The six task archives total approximately **8.24 GB**, with 50 demonstrations per hand in each archive. Downloading and extracting the full dataset requires approximately 16.5 GB of disk space.
+The code and dataset are currently private; downloading requires an authorized Hugging Face account. The six task archives total approximately **8.24 GB**, with 50 demonstrations per hand in each archive. Downloading and extracting the full dataset requires approximately 16.5 GB of disk space.
 
 Download the hammer task, verify its files, and inspect one Allegro demonstration:
 

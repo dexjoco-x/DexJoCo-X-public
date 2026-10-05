@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "publication_requested_by_project_owner": true,
+  "publication_requested_by_project_owner": false,
   "contact_upstream_authors": false,
   "source_code_license": "MIT (first-party scope only)",
   "unconfirmed_third_party_license_files": 282,
@@ -11,10 +11,10 @@
   "private_repository_visibility_changed": true,
   "previous_publication_requested_by_project_owner": true,
   "previously_published": true,
-  "current_visibility": "PUBLIC",
-  "publication_paused_by_project_owner": false,
+  "current_visibility": "PRIVATE",
+  "publication_paused_by_project_owner": true,
   "status_updated_date": "2026-10-05",
-  "future_publication_requires_new_explicit_instruction": false,
+  "future_publication_requires_new_explicit_instruction": true,
   "release_scope": "dataset, simulator evaluation, inference examples",
   "model_training_implementation_included": false,
   "new_independent_local_history": true,
@@ -56,8 +56,8 @@
     "new_upstream_permissions_obtained": false,
     "changes_publication_paused_status": false
   },
-  "publication_instruction": "代码和数据集可以公开了",
-  "publication_stage": "public",
+  "publication_instruction": "代码和数据集先不要公开",
+  "publication_stage": "paused by project owner",
   "publication_authorized_date": "2026-10-05",
   "public_release_date": "2026-10-05",
   "public_repositories": {
@@ -70,5 +70,6 @@
     "glove_mappings",
     "complete_work_repository",
     "hf_original_data_history_archive"
-  ]
+  ],
+  "visibility_reverted_to_private_date": "2026-10-05"
 }
