@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-05",
+  "passed": true,
+  "github_repository": "https://github.com/darenrenjian/DexJoCo-X-public",
+  "huggingface_dataset": "https://huggingface.co/datasets/darenrenjian/DexJoCo-X",
+  "website": "https://darenrenjian.github.io/DexJoCo-X-website/",
+  "arxiv": "https://arxiv.org/abs/2610.03278",
+  "anonymous_api_access": {
+    "github_http_status": 200,
+    "github_private": false,
+    "huggingface_http_status": 200,
+    "huggingface_private": false
+  },
+  "github_anonymous_clone": true,
+  "data_download_authentication": {
+    "token_environment_variables_removed": true,
+    "empty_hf_home": true,
+    "implicit_token_disabled": true
+  },
+  "download": {
+    "passed": true,
+    "tasks": [
+      "hammer_nail"
+    ],
+    "files_checked": 1754,
+    "episodes": 350,
+    "missing": [],
+    "changed": [],
+    "transport": "archive",
+    "archive_revision": "9f48e1404168227a22586af0cffb8371dbb7e1f1",
+    "archives": 1
+  },
+  "installation": {
+    "passed": true,
+    "anonymous_source_clone": true,
+    "pip_build_and_install": true,
+    "loaded_from_installed_wheel": true,
+    "dependencies": "previously validated Python 3.11 evaluation environment",
+    "assets_checked": 801,
+    "asset_hashes_match": true,
+    "environment": "hammer_nail/allegro",
+    "observation_and_physics_step": true,
+    "rgb_shape": [
+      256,
+      256,
+      3
+    ]
+  },
+  "dataset_card_and_license_checks": [
+    {
+      "file": "README.md",
+      "http_status": 200,
+      "sha256": "4fd88ccb7c15665ee07301bdc014ff555f3711467a647139455de37dbf2da94b",
+      "matches_local": true
+    },
+    {
+      "file": "DATASET_LICENSE_SCOPE.md",
+      "http_status": 200,
+      "sha256": "5ce4a1bb072974f270929cecf5a2b93cb77b11abb253e77ca99352fce3182be8",
+      "matches_local": true
+    },
+    {
+      "file": "SHA256SUMS",
+      "http_status": 200,
+      "sha256": "90a4bab84c66677ff5200189ecec2d8552bdb30e84a0ca2ec860adce91e792b4",
+      "matches_local": true
+    }
+  ],
+  "website_build_commit": "166f63709ef1d2264b5bb2c5d47003cb2537c939",
+  "website_build_status": "built",
+  "website_resource_links_enabled": true,
+  "private_materials": {
+    "complete_work_repository": "PRIVATE",
+    "weights_repository": "PRIVATE",
+    "old_data_history_archive": "PRIVATE",
+    "glove_mappings_in_public_code": false,
+    "training_implementation_in_public_code": false
+  },
+  "third_party_license_clearance_changed": false,
+  "new_upstream_permissions_obtained": false,
+  "known_unconfirmed_asset_scopes": 282
+}
