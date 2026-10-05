@@ -1,22 +1,41 @@
 # DexJoCo-X
 
-[中文](README.md) · [Project website](https://darenrenjian.github.io/DexJoCo-X-website/) · [Paper PDF](https://darenrenjian.github.io/DexJoCo-X-website/assets/paper.pdf)
+A multi-hand manipulation benchmark for comparing action representations across dexterous hands.
 
-DexJoCo-X provides 2,100 demonstrations and a common simulation evaluation interface across seven dexterous hands and six tasks. Each of the 42 hand–task pairs contains 50 training demonstrations. Evaluation uses independent scene seeds and three independent runs of 50 rollouts per pair.
+[Website](https://darenrenjian.github.io/DexJoCo-X-website/) · [Paper](https://arxiv.org/abs/2610.03278) · [Dataset](https://huggingface.co/datasets/darenrenjian/DexJoCo-X) · [中文](README.md)
 
-**Paper:** DexJoCo-X: Benchmarking Action Representations for Multi-Hand Dexterous Manipulation. **Authors:** Xiangwei Jiang, Yao Mu, Lixin Duan, Wen Li. Available as [arXiv:2610.03278](https://arxiv.org/abs/2610.03278). Citation metadata is available in [CITATION.cff](CITATION.cff) and [the official BibTeX](CITATION.bib).
+![DexJoCo-X overview](https://darenrenjian.github.io/DexJoCo-X-website/assets/overview.webp)
 
-The evaluation code and [dataset](https://huggingface.co/datasets/darenrenjian/DexJoCo-X) are publicly available. This release contains the simulator and required assets, dataset download and conversion tools, Native/FAAS interfaces, and a π₀.₅ inference example. It does not include model training implementations, model or codec weights, or glove mappings. DexLatent evaluation requires a compatible codec supplied by the user.
+**7 hands · 6 tasks · 42 hand–task pairs · 2,100 demonstrations**
 
-All robot models, task objects, meshes, and textures required by the seven-hand, six-task environments are bundled in this repository and included in the wheel packaging configuration. No separate simulation asset download from DexJoCo, UniDex, or manufacturer repositories is required. Demonstrations are downloaded from this project's Hugging Face dataset. Bundled assets retain their original provenance and applicable license terms.
+DexJoCo-X brings different dexterous hands into a common set of tasks, data formats, and evaluation interfaces to compare Native, FAAS, and DexLatent action representations. Each hand–task pair contains 50 training demonstrations. Closed-loop evaluation uses independent scene seeds.
 
-Bundled assets and all 42 environments were checked from an installed wheel; see [the bundled asset validation](docs/BUNDLED_ASSET_VALIDATION.md).
+## What's included
+
+- **Dataset**: 20 Hz demonstrations with RGB video, robot states, actions, valid-dimension masks, and task contracts.
+- **Simulation environments**: robot models, objects, meshes, and textures for all seven hands and six tasks, bundled with the repository.
+- **Evaluation tools**: a common policy interface, success criteria, and result logging, plus a π₀.₅ / Ego-π inference example and scene expansion tools for existing demonstrations.
+
+Use your own training framework and policy checkpoints. DexLatent also requires a compatible local codec. Glove mappings and recording tools are not included.
+
+**Hands**: Allegro, Inspire, LEAP, LinkerHand, Sharpa Wave, Wuji, and XHand.
+
+| Type | Task | Configuration name |
+|---|---|---|
+| Single-arm | Hammer a nail | `hammer_nail` |
+| Single-arm | Pick up a bucket | `pick_bucket` |
+| Single-arm | Tower of Hanoi | `single_hand_hanoi` |
+| Bimanual | Operate a microwave | `bimanual_microwave_cook` |
+| Bimanual | Take a photograph | `bimanual_photograph` |
+| Bimanual | Unlock a tablet | `bimanual_unlock_ipad` |
 
 ## Install
 
-Use Python 3.11. From the repository root:
+Use Python 3.11:
 
 ```bash
+git clone https://github.com/darenrenjian/DexJoCo-X-public.git
+cd DexJoCo-X-public
 python3.11 -m venv .venv
 source .venv/bin/activate
 pip install -c requirements/constraints-python311.txt \
@@ -24,68 +43,60 @@ pip install -c requirements/constraints-python311.txt \
 python tools/runtime_assets.py check
 ```
 
-On a headless Ubuntu/Debian machine, install `libosmesa6`, then check all 42 environment combinations:
+For headless Ubuntu / Debian, use OSMesa:
 
 ```bash
+sudo apt-get install libosmesa6
 export MUJOCO_GL=osmesa PYOPENGL_PLATFORM=osmesa
 python tools/portability_smoke.py
 ```
 
+The environment check covers all 42 hand–task pairs. See the [quickstart](docs/QUICKSTART.md) for the full workflow.
+
 ## Download and inspect demonstrations
 
-The six task archives total 8.242 GB. Each task archive contains 350 demonstrations. The dataset can be downloaded without an account or access token.
+No login is required. The six task archives total approximately **8.24 GB**, with 50 demonstrations per hand in each archive. Downloading and extracting the full dataset requires approximately 16.5 GB of disk space.
+
+Download the hammer task, verify its files, and inspect one Allegro demonstration:
 
 ```bash
 export DATA_ROOT="$PWD/outputs/data"
 python tools/dataset_packages.py download --tasks hammer_nail \
-  --data-root "$DATA_ROOT" --report ./outputs/download.json
+  --data-root "$DATA_ROOT"
 python -m examples.read_demo --data-root "$DATA_ROOT" \
   --task hammer_nail --hand allegro --frame 0 --horizon 25 \
   --output ./outputs/allegro_preview
 ```
 
-The downloader pins the dataset revision and verifies archive and file SHA-256 hashes. Use `--tasks all` to download all six tasks. XHand microwave demonstrations include the corrected left-hand installation.
+Use `--tasks all` to download all tasks. The reader returns 80-dimensional states and action chunks in physical units, masks, and RGB images. Optional conversion produces Parquet training views. Field definitions, normalization, and conversion are documented in the [data interface](dataset/README.md) and [download guide](dataset/DOWNLOAD.md).
 
-```python
-from examples.read_demo import read_demo
+## Connect a policy and evaluate
 
-sample = read_demo(data_root, task="hammer_nail", hand="allegro", horizon=25)
-state = sample["state"]                # (80,), physical units
-actions = sample["actions"]            # (25, 80), physical units
-action_mask = sample["action_mask"]
-rgb = sample["images"]["front"]         # uint8 RGB, (256, 256, 3)
-```
-
-The `arm40_v1` layout stores the right side in slots 0:40 and the left side in slots 40:80. Each side starts with six wrist channels followed by native hand actuator channels. Wrist states use world-frame positions and rotation vectors; actions use world-frame wrist increments and actuator targets. Units, masks, channel order, and camera names are documented in [the data interface](dataset/README.md).
-
-## Connect your own policy
-
-The [π₀.₅ example](examples/pi05/README.md) loads your own checkpoint, tokenizer, and training statistics through a fixed external RLinf version. It supports a 32-dimensional single-right-arm head and Ego-π left/right interleaved tokens. For interleaved inference, 50 tokens correspond to 25 physical time steps. Checkpoint format and normalization must match the inference adapter.
-
-Start the policy server following that guide, then run a short integration check:
+A policy receives images, robot states, masks, and task instructions and returns action chunks. Start your policy server using the [π₀.₅ / Ego-π example](examples/pi05/README.md), then evaluate a supported hand and task:
 
 ```bash
 python evaluation/evaluate.py --server ws://127.0.0.1:8200 \
   --layout arm40_v1 --representation native \
-  --hand allegro --task hammer_nail --episodes 1 \
+  --hand allegro --task hammer_nail --episodes 150 \
   --action-horizon 25 --execution-horizon 8 \
-  --diagnostic --max-steps 16 --output ./outputs/pi05_diagnostic
+  --output ./outputs/allegro_hammer
 ```
 
-The checkpoint must support the selected hand and task. For formal evaluation, remove `--diagnostic --max-steps 16` and use `--episodes 150`; a six-task checkpoint can use `--task all`. See [the evaluation protocol](evaluation/README.md).
+Each hand–task pair uses **three independent evaluations of 50 rollouts each**. Other policies can use the same interface. Action layout, representation, and prediction horizon must match the policy server; see the [evaluation protocol](evaluation/README.md).
 
-Raw physical tensors can be adapted to an external training framework. The optional Parquet conversion uses 200-dimensional normalized fields and is distinct from the 80-dimensional physical tensors; see [the download and conversion guide](dataset/DOWNLOAD.md). This repository provides no training implementation.
+## Documentation
 
-## Hands and tasks
+| Topic | Guide |
+|---|---|
+| Installation through policy integration | [Quickstart](docs/QUICKSTART.md) |
+| Data fields and conversion | [Data interface](dataset/README.md) · [Download guide](dataset/DOWNLOAD.md) |
+| Simulation and evaluation | [Environments](simulator/README.md) · [Evaluation interface](evaluation/README.md) |
+| π₀.₅ / Ego-π inference | [Integration example](examples/pi05/README.md) |
+| Automated scene expansion | [Collection tools](collection/README.md) |
+| Data and model versions | [Versioning](docs/VERSIONING.md) |
 
-Hands: Allegro, Inspire, LEAP, LinkerHand, Sharpa Wave, Wuji, and XHand. The historical internal key `linkerhand_l20` is retained for compatibility; its source geometry is from the official L25 model.
+## Citation and licenses
 
-Single-arm tasks: `hammer_nail`, `pick_bucket`, `single_hand_hanoi`.
+Citation metadata is available in [BibTeX](CITATION.bib) and [CITATION.cff](CITATION.cff).
 
-Bimanual tasks: `bimanual_microwave_cook`, `bimanual_photograph`, `bimanual_unlock_ipad`.
-
-## Validation and licenses
-
-Independent installation, task download, data conversion, all 42 environment combinations, and a real checkpoint integration run are documented in [the validation record](docs/DATASET_EVAL_RELEASE_VALIDATION.md). The real checkpoint run verifies the inference pipeline; it is not a new benchmark success-rate measurement.
-
-Original project code is covered by [MIT](LICENSE), within [the stated scope](LICENSE_SCOPE.md). Original dataset contributions use **CC BY-NC-SA 4.0** within [the data license scope](dataset/LICENSE_SCOPE.md). Third-party code, assets, and third-party rights in rendered appearances retain their own terms; see [the notices](THIRD_PARTY_NOTICES.md) and [license status](LICENSE_STATUS.md).
+Original code uses [MIT](LICENSE) within the [documented scope](LICENSE_SCOPE.md). Original dataset contributions use **CC BY-NC-SA 4.0** within the [data license scope](dataset/LICENSE_SCOPE.md). Third-party code and assets retain their separate terms; see the [third-party notices](THIRD_PARTY_NOTICES.md) and [license status](LICENSE_STATUS.md) for sources, licenses, and unconfirmed scopes.

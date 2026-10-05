@@ -1,80 +1,102 @@
 # DexJoCo-X
 
-[English](README.en.md) · [项目网站](https://darenrenjian.github.io/DexJoCo-X-website/) · [论文 PDF](https://darenrenjian.github.io/DexJoCo-X-website/assets/paper.pdf)
+用于比较不同灵巧手动作表征的多手操作基准。
 
-DexJoCo-X 提供七种代表性灵巧手、六个任务的训练数据与统一仿真评测环境，共 42 个手–任务组合、2,100 条示范，每个组合 50 条。
+[项目网站](https://darenrenjian.github.io/DexJoCo-X-website/) · [论文](https://arxiv.org/abs/2610.03278) · [数据集](https://huggingface.co/datasets/darenrenjian/DexJoCo-X) · [English](README.en.md)
 
-论文 **DexJoCo-X: Benchmarking Action Representations for Multi-Hand Dexterous Manipulation** 已在 arXiv 正式公布，编号为 [2610.03278](https://arxiv.org/abs/2610.03278)。作者依次为 Xiangwei Jiang、Yao Mu、Lixin Duan、Wen Li。引用信息见 [CITATION.cff](CITATION.cff) 和 [官方 BibTeX](CITATION.bib)。
+![DexJoCo-X 项目总览](https://darenrenjian.github.io/DexJoCo-X-website/assets/overview.webp)
 
-本版本包含仿真与必要模型资产、数据清单及下载/转换工具、Native / FAAS / DexLatent 评测接口，以及使用自有权重的 π0.5 推理示例。模型训练实现、训练补丁、策略与编码器权重、手套映射和旧 Git 历史均不包含在此版本中。完整视频和张量存放在公开的 [Hugging Face 数据仓库](https://huggingface.co/datasets/darenrenjian/DexJoCo-X)；代码和数据均可直接访问。
+**7 种灵巧手 · 6 个任务 · 42 个手–任务组合 · 2,100 条示范**
 
-七手六任务所需的机器人模型、任务物体、网格和纹理全部随本仓库提供，并纳入 wheel 打包配置。使用者无需再从 DexJoCo、UniDex 或厂商仓库另行下载仿真模型；数据从本项目 Hugging Face 仓库下载。资产保留原来源及各自许可，详见下方说明。
+DexJoCo-X 将多种灵巧手置于统一的任务、数据格式和评测接口中，支持比较 Native、FAAS 和 DexLatent 动作表征。每个手–任务组合包含 50 条训练示范，闭环评测使用独立场景种子。
 
-模型随包安装的 42 个环境验收结果见 [随包资产验收](docs/BUNDLED_ASSET_VALIDATION.md)。
+## 项目内容
 
-## 安装与环境检查
+- **数据集**：20 Hz 示范，包含 RGB 视频、机器人状态、动作、有效维掩码和任务合约。
+- **仿真环境**：七手六任务所需的机器人模型、物体、网格和纹理随仓库提供，无需另行下载仿真资产。
+- **评测工具**：统一策略接口、成功判定和结果记录，提供 π₀.₅ / Ego-π 推理接入示例及已有示范的场景扩增工具。
 
-第一次使用请从 [完整快速上手](docs/QUICKSTART.md) 开始，依次安装、下载单任务、查看示范并接入自己的策略。
+训练可使用自己的框架；评测需自备策略权重，DexLatent 还需匹配的本地编码器。手套映射与录制工具不包含在本仓库中。
 
-使用 Python 3.11，在仓库根目录安装：
+**灵巧手**：Allegro、Inspire、LEAP、LinkerHand、Sharpa Wave、Wuji、XHand。
+
+| 类型 | 任务 | 配置名称 |
+|---|---|---|
+| 单臂 | 敲钉子 | `hammer_nail` |
+| 单臂 | 提桶 | `pick_bucket` |
+| 单臂 | 汉诺塔 | `single_hand_hanoi` |
+| 双臂 | 微波炉操作 | `bimanual_microwave_cook` |
+| 双臂 | 拍照 | `bimanual_photograph` |
+| 双臂 | 解锁平板 | `bimanual_unlock_ipad` |
+
+## 安装
+
+使用 Python 3.11：
 
 ```bash
-pip install -c requirements/constraints-python311.txt -e './simulator[benchmark,dataset,download]'
+git clone https://github.com/darenrenjian/DexJoCo-X-public.git
+cd DexJoCo-X-public
+python3.11 -m venv .venv
+source .venv/bin/activate
+pip install -c requirements/constraints-python311.txt \
+  -e './simulator[benchmark,dataset,download]'
 python tools/runtime_assets.py check
 ```
 
-无显示器环境需安装 OSMesa，并设置：
+无显示器的 Ubuntu / Debian 环境可使用 OSMesa：
 
 ```bash
+sudo apt-get install libosmesa6
 export MUJOCO_GL=osmesa PYOPENGL_PLATFORM=osmesa
 python tools/portability_smoke.py
-python tools/representation_smoke.py --representations native faas
-python tools/scope_smoke.py --output ./outputs/diagnostic_replay
 ```
 
-这些检查覆盖 42 个环境、动作接口、图像和确定性回放。DexLatent 另需安装 `./simulator[dexlatent]` 并提供兼容的本地编码器。
+环境检查覆盖全部 42 个手–任务组合。完整步骤见 [快速上手](docs/QUICKSTART.md)。
 
-## 下载与使用
+## 下载并查看示范
 
-完整数据按六任务分包，共 8.242 GB。每个包含七只手各 50 条示范。数据可直接下载，无需账号或访问令牌。
+数据无需登录即可下载。六个任务包共约 **8.24 GB**，每包包含七种手各 50 条示范；完整下载并解压约需 16.5 GB 空间。
+
+以下命令下载敲钉子任务，校验文件并查看一条 Allegro 示范：
 
 ```bash
-export DATA_ROOT=/path/to/DexJoCo-X_dataset
-python tools/dataset_packages.py download --tasks hammer_nail --data-root "$DATA_ROOT"
-python dataset/tools/prepare_server.py "$DATA_ROOT"
-python tools/dataset_smoke.py --data-root "$DATA_ROOT" --output ./outputs/data_check.json
+export DATA_ROOT="$PWD/outputs/data"
+python tools/dataset_packages.py download --tasks hammer_nail \
+  --data-root "$DATA_ROOT"
+python -m examples.read_demo --data-root "$DATA_ROOT" \
+  --task hammer_nail --hand allegro --frame 0 --horizon 25 \
+  --output ./outputs/allegro_preview
 ```
 
-下载包包含原生张量、视频、合约、来源及校验信息；转换后的 Parquet 数据另行生成。使用者按这些字段对接自己的训练框架，并用自有 checkpoint 在评测环境中执行。
+使用 `--tasks all` 下载全部任务。读取示例输出物理单位下的 80 维状态、动作块、掩码与 RGB；也可按需转换为 Parquet 训练视图。字段、归一化和转换方式见 [数据接口](dataset/README.md)与[下载指南](dataset/DOWNLOAD.md)。
 
-## 手与任务
+## 接入策略与评测
 
-| 手型 | 内部键 |
+策略接收图像、机器人状态、掩码和任务指令，返回动作块。按 [π₀.₅ / Ego-π 示例](examples/pi05/README.md)启动自己的策略服务后，可评估其支持的手型和任务，例如：
+
+```bash
+python evaluation/evaluate.py --server ws://127.0.0.1:8200 \
+  --layout arm40_v1 --representation native \
+  --hand allegro --task hammer_nail --episodes 150 \
+  --action-horizon 25 --execution-horizon 8 \
+  --output ./outputs/allegro_hammer
+```
+
+每个手–任务组合执行 **3 次独立评估，每次 50 个 rollout**。其他策略可通过相同接口接入；动作排列、表征和预测长度应与策略服务一致，详见 [评测协议](evaluation/README.md)。
+
+## 文档
+
+| 内容 | 入口 |
 |---|---|
-| Allegro | `allegro` |
-| Inspire | `inspire` |
-| LEAP | `leap` |
-| LinkerHand | `linkerhand_l20` |
-| Sharpa Wave | `sharpa_wave` |
-| Wuji | `wuji` |
-| XHand | `xhand` |
+| 从安装到策略接入 | [快速上手](docs/QUICKSTART.md) |
+| 数据字段与格式转换 | [数据接口](dataset/README.md) · [下载指南](dataset/DOWNLOAD.md) |
+| 仿真环境与评测协议 | [仿真环境](simulator/README.md) · [评测接口](evaluation/README.md) |
+| π₀.₅ / Ego-π 推理 | [接入示例](examples/pi05/README.md) |
+| 自动场景扩增 | [采集工具](collection/README.md) |
+| 数据与模型版本 | [版本说明](docs/VERSIONING.md) |
 
-LinkerHand 的历史内部键保持兼容，模型源几何来自官方 L25，见 [版本说明](docs/VERSIONING.md)。
+## 引用与许可
 
-单臂任务：`hammer_nail`、`pick_bucket`、`single_hand_hanoi`。
-双臂任务：`bimanual_microwave_cook`、`bimanual_photograph`、`bimanual_unlock_ipad`。
+引用信息见 [BibTeX](CITATION.bib) 或 [CITATION.cff](CITATION.cff)。
 
-每个手–任务组合评估三次，每次 50 个 rollout。评测使用独立场景种子，策略只接收图像、机器人状态、掩码和指令。
-
-## 使用指南
-
-- [数据下载与转换](dataset/DOWNLOAD.md)、[数据字段](dataset/README.md)、[数据卡](docs/DATASET_CARD.md)。
-- [读取原始示范](examples/read_demo.py)：输出未归一化的 `arm40_v1` 状态、动作块、掩码与 RGB。
-- [仿真环境](simulator/README.md)和[评测协议](evaluation/README.md)。
-- [π0.5 推理示例](examples/pi05/README.md)：RLinf 推理后端，支持单臂 32 维和 Ego-π 左右交替排列。
-- [场景扩增工具](collection/README.md)：以已有机器人示范为输入，不提供手套录制工具。
-- [版本验收](docs/DATASET_EVAL_RELEASE_VALIDATION.md)和[发布范围](docs/RELEASE_LAYOUT.md)。
-
-## 来源与许可
-
-原创代码采用 [MIT](LICENSE)，适用范围见 [LICENSE_SCOPE.md](LICENSE_SCOPE.md)。原创示范数据贡献采用 **CC BY-NC-SA 4.0**，许可范围、署名及完整条款见 [数据许可](dataset/LICENSE_SCOPE.md)。第三方代码和模型资产保留各自许可及来源，不统一重新授权为 MIT 或数据许可；已记录条款与未确认范围见 [来源说明](THIRD_PARTY_NOTICES.md)、[当前许可状态](LICENSE_STATUS.md)。
+原创代码采用 [MIT](LICENSE)，适用范围见 [代码许可说明](LICENSE_SCOPE.md)。原创数据贡献采用 **CC BY-NC-SA 4.0**，详见 [数据许可](dataset/LICENSE_SCOPE.md)。第三方代码和模型资产保留各自条款；来源、许可及未确认范围见 [第三方说明](THIRD_PARTY_NOTICES.md)与[许可状态](LICENSE_STATUS.md)。
