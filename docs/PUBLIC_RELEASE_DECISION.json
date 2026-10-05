@@ -8,10 +8,10 @@
   "glove_mappings_public": false,
   "weights_public": false,
   "full_demonstrations_in_git": false,
-  "private_repository_visibility_changed": false,
+  "private_repository_visibility_changed": true,
   "previous_publication_requested_by_project_owner": true,
   "previously_published": true,
-  "current_visibility": "PRIVATE",
+  "current_visibility": "PUBLIC",
   "publication_paused_by_project_owner": false,
   "status_updated_date": "2026-10-05",
   "future_publication_requires_new_explicit_instruction": false,
@@ -57,6 +57,18 @@
     "changes_publication_paused_status": false
   },
   "publication_instruction": "代码和数据集可以公开了",
-  "publication_stage": "authorized; visibility change pending",
-  "publication_authorized_date": "2026-10-05"
+  "publication_stage": "public",
+  "publication_authorized_date": "2026-10-05",
+  "public_release_date": "2026-10-05",
+  "public_repositories": {
+    "github": "https://github.com/darenrenjian/DexJoCo-X-public",
+    "huggingface_dataset": "https://huggingface.co/datasets/darenrenjian/DexJoCo-X"
+  },
+  "private_materials_preserved": [
+    "model_training_implementation",
+    "policy_and_codec_weights",
+    "glove_mappings",
+    "complete_work_repository",
+    "hf_original_data_history_archive"
+  ]
 }
