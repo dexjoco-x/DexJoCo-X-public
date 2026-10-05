@@ -4,7 +4,7 @@
 
 DexJoCo-X provides 2,100 demonstrations and a common simulation evaluation interface across seven dexterous hands and six tasks. Each of the 42 hand–task pairs contains 50 training demonstrations. Evaluation uses independent scene seeds and three independent runs of 50 rollouts per pair.
 
-**Paper:** DexJoCo-X: Benchmarking Action Representations for Multi-Hand Dexterous Manipulation. **Authors:** Xiangwei Jiang, Yao Mu, Lixin Duan, Wen Li. Submitted to arXiv on October 2, 2026; the public identifier is pending. Citation metadata is available in [CITATION.cff](CITATION.cff).
+**Paper:** DexJoCo-X: Benchmarking Action Representations for Multi-Hand Dexterous Manipulation. **Authors:** Xiangwei Jiang, Yao Mu, Lixin Duan, Wen Li. Available as [arXiv:2610.03278](https://arxiv.org/abs/2610.03278). Citation metadata is available in [CITATION.cff](CITATION.cff) and [the official BibTeX](CITATION.bib).
 
 The code and dataset repositories are currently private. This release contains the simulator and required assets, dataset download and conversion tools, Native/FAAS interfaces, and a π₀.₅ inference example. It does not include model training implementations, model or codec weights, or glove mappings. DexLatent evaluation requires a compatible codec supplied by the user.
 

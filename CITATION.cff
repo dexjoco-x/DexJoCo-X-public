@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Please cite the DexJoCo-X paper when using this benchmark. The arXiv identifier will be added after announcement."
+message: "Please cite the DexJoCo-X paper, arXiv:2610.03278, when using this benchmark."
 type: software
 title: "DexJoCo-X: Dataset and Evaluation Environment"
 version: 0.1.0
@@ -27,4 +27,5 @@ preferred-citation:
     - family-names: Li
       given-names: Wen
   year: 2026
-  url: "https://darenrenjian.github.io/DexJoCo-X-website/assets/paper.pdf"
+  url: "https://arxiv.org/abs/2610.03278"
+  doi: "10.48550/arXiv.2610.03278"
