@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "publication_requested_by_project_owner": false,
+  "publication_requested_by_project_owner": true,
   "contact_upstream_authors": false,
   "source_code_license": "MIT (first-party scope only)",
   "unconfirmed_third_party_license_files": 282,
@@ -12,9 +12,9 @@
   "previous_publication_requested_by_project_owner": true,
   "previously_published": true,
   "current_visibility": "PRIVATE",
-  "publication_paused_by_project_owner": true,
-  "status_updated_date": "2026-10-02",
-  "future_publication_requires_new_explicit_instruction": true,
+  "publication_paused_by_project_owner": false,
+  "status_updated_date": "2026-10-05",
+  "future_publication_requires_new_explicit_instruction": false,
   "release_scope": "dataset, simulator evaluation, inference examples",
   "model_training_implementation_included": false,
   "new_independent_local_history": true,
@@ -55,5 +55,8 @@
     "third_party_material_terms_preserved": true,
     "new_upstream_permissions_obtained": false,
     "changes_publication_paused_status": false
-  }
+  },
+  "publication_instruction": "代码和数据集可以公开了",
+  "publication_stage": "authorized; visibility change pending",
+  "publication_authorized_date": "2026-10-05"
 }

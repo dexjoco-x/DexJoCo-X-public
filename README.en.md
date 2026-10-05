@@ -6,7 +6,7 @@ DexJoCo-X provides 2,100 demonstrations and a common simulation evaluation inter
 
 **Paper:** DexJoCo-X: Benchmarking Action Representations for Multi-Hand Dexterous Manipulation. **Authors:** Xiangwei Jiang, Yao Mu, Lixin Duan, Wen Li. Available as [arXiv:2610.03278](https://arxiv.org/abs/2610.03278). Citation metadata is available in [CITATION.cff](CITATION.cff) and [the official BibTeX](CITATION.bib).
 
-The code and dataset repositories are currently private. This release contains the simulator and required assets, dataset download and conversion tools, Native/FAAS interfaces, and a π₀.₅ inference example. It does not include model training implementations, model or codec weights, or glove mappings. DexLatent evaluation requires a compatible codec supplied by the user.
+The evaluation code and [dataset](https://huggingface.co/datasets/darenrenjian/DexJoCo-X) are publicly available. This release contains the simulator and required assets, dataset download and conversion tools, Native/FAAS interfaces, and a π₀.₅ inference example. It does not include model training implementations, model or codec weights, or glove mappings. DexLatent evaluation requires a compatible codec supplied by the user.
 
 All robot models, task objects, meshes, and textures required by the seven-hand, six-task environments are bundled in this repository and included in the wheel packaging configuration. No separate simulation asset download from DexJoCo, UniDex, or manufacturer repositories is required. Demonstrations are downloaded from this project's Hugging Face dataset. Bundled assets retain their original provenance and applicable license terms.
 
@@ -33,10 +33,9 @@ python tools/portability_smoke.py
 
 ## Download and inspect demonstrations
 
-The six task archives total 8.242 GB. Each task archive contains 350 demonstrations. Access to the current private Hugging Face dataset is required.
+The six task archives total 8.242 GB. Each task archive contains 350 demonstrations. The dataset can be downloaded without an account or access token.
 
 ```bash
-hf auth login
 export DATA_ROOT="$PWD/outputs/data"
 python tools/dataset_packages.py download --tasks hammer_nail \
   --data-root "$DATA_ROOT" --report ./outputs/download.json

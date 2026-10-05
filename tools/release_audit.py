@@ -64,13 +64,15 @@ def main():
             if not path.is_file() or digest(path) != model[hash_field]: errors.append('Frozen model/contract mismatch: ' + model['task'] + '/' + model['hand'])
     asset_license = json.loads((ROOT / 'docs/ASSET_RELEASE_REPORT.json').read_text())
     if not asset_license['integrity_passed']: errors.append('Asset provenance integrity')
+    decision = json.loads((ROOT / 'docs/PUBLIC_RELEASE_DECISION.json').read_text())
     result = {'passed_static_checks': not errors, 'files': len(paths), 'runtime_asset_integrity': assets,
               'model_training_implementation_included': False,
               'glove_mappings_public': False, 'weights_public': False, 'complete_demonstrations_in_git': False,
               'third_party_license_review_complete': asset_license['runtime_assets_cleared'],
               'asset_license_counts': asset_license['counts'], 'new_upstream_permissions_obtained': False,
-              'publication_requested_by_project_owner': json.loads((ROOT / 'docs/PUBLIC_RELEASE_DECISION.json').read_text())['publication_requested_by_project_owner'],
-              'current_visibility': 'PRIVATE', 'publication_paused_by_project_owner': True, 'errors': errors}
+              'publication_requested_by_project_owner': decision['publication_requested_by_project_owner'],
+              'current_visibility': decision['current_visibility'],
+              'publication_paused_by_project_owner': decision['publication_paused_by_project_owner'], 'errors': errors}
     (ROOT / 'RELEASE_AUDIT.json').write_text(json.dumps(result, indent=2) + '\n')
     (ROOT / 'RELEASE_MANIFEST.json').write_text(json.dumps({'algorithm': 'sha256', 'files': {path.relative_to(ROOT).as_posix(): digest(path) for path in paths}}, indent=2) + '\n')
     print(json.dumps(result, indent=2))

@@ -1,6 +1,6 @@
 # DexJoCo-X dataset license scope
 
-**Selected on October 3, 2026.** Original dataset contributions are licensed as described below. Code and data repositories remain private until publication is explicitly requested.
+**Selected on October 3, 2026.** Original dataset contributions are licensed as described below.
 
 ## Original dataset contributions
 

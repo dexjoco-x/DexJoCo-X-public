@@ -260,7 +260,7 @@ def download(args, index, tasks):
     try:
         from huggingface_hub import snapshot_download
     except ImportError as error:
-        raise RuntimeError("Install './simulator[download]' first; private data also requires HF authentication") from error
+        raise RuntimeError("Install './simulator[download]' first") from error
     if use_archives:
         cache = args.archives_root or root.parent / (root.name + '_archives')
         if any(p.is_symlink() for p in (cache, *cache.parents)):

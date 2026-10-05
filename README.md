@@ -6,7 +6,7 @@ DexJoCo-X 提供七种代表性灵巧手、六个任务的训练数据与统一�
 
 论文 **DexJoCo-X: Benchmarking Action Representations for Multi-Hand Dexterous Manipulation** 已在 arXiv 正式公布，编号为 [2610.03278](https://arxiv.org/abs/2610.03278)。作者依次为 Xiangwei Jiang、Yao Mu、Lixin Duan、Wen Li。引用信息见 [CITATION.cff](CITATION.cff) 和 [官方 BibTeX](CITATION.bib)。
 
-本候选包含仿真与必要模型资产、数据清单及下载/转换工具、Native / FAAS / DexLatent 评测接口，以及使用自有权重的 π0.5 推理示例。模型训练实现、训练补丁、策略与编码器权重、手套映射和旧 Git 历史均不包含在此版本中。完整视频和张量单独存放在 Hugging Face 数据仓库；代码及数据目前仍保持私有。
+本版本包含仿真与必要模型资产、数据清单及下载/转换工具、Native / FAAS / DexLatent 评测接口，以及使用自有权重的 π0.5 推理示例。模型训练实现、训练补丁、策略与编码器权重、手套映射和旧 Git 历史均不包含在此版本中。完整视频和张量存放在公开的 [Hugging Face 数据仓库](https://huggingface.co/datasets/darenrenjian/DexJoCo-X)；代码和数据均可直接访问。
 
 七手六任务所需的机器人模型、任务物体、网格和纹理全部随本仓库提供，并纳入 wheel 打包配置。使用者无需再从 DexJoCo、UniDex 或厂商仓库另行下载仿真模型；数据从本项目 Hugging Face 仓库下载。资产保留原来源及各自许可，详见下方说明。
 
@@ -36,10 +36,9 @@ python tools/scope_smoke.py --output ./outputs/diagnostic_replay
 
 ## 下载与使用
 
-完整数据按六任务分包，共 8.242 GB。每个包含七只手各 50 条示范。当前私有下载需要有权访问数据仓库的 Hugging Face 账号。
+完整数据按六任务分包，共 8.242 GB。每个包含七只手各 50 条示范。数据可直接下载，无需账号或访问令牌。
 
 ```bash
-hf auth login
 export DATA_ROOT=/path/to/DexJoCo-X_dataset
 python tools/dataset_packages.py download --tasks hammer_nail --data-root "$DATA_ROOT"
 python dataset/tools/prepare_server.py "$DATA_ROOT"
@@ -74,7 +73,7 @@ LinkerHand 的历史内部键保持兼容，模型源几何来自官方 L25，�
 - [仿真环境](simulator/README.md)和[评测协议](evaluation/README.md)。
 - [π0.5 推理示例](examples/pi05/README.md)：RLinf 推理后端，支持单臂 32 维和 Ego-π 左右交替排列。
 - [场景扩增工具](collection/README.md)：以已有机器人示范为输入，不提供手套录制工具。
-- [本候选验收](docs/DATASET_EVAL_RELEASE_VALIDATION.md)和[发布范围](docs/RELEASE_LAYOUT.md)。
+- [版本验收](docs/DATASET_EVAL_RELEASE_VALIDATION.md)和[发布范围](docs/RELEASE_LAYOUT.md)。
 
 ## 来源与许可
 

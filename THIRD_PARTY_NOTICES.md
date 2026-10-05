@@ -24,4 +24,4 @@
 
 RGB 示范数据含模型和纹理的渲染结果。原创数据贡献采用 [CC BY-NC-SA 4.0](dataset/LICENSE_SCOPE.md)，第三方素材及其渲染外观中的第三方权利仍保留各自条款；该数据许可不补充条款未明确素材的授权，也不统一覆盖全部第三方权利。
 
-当前私有候选包包含七手六任务所需最小资产集合。历史核验中未被本版引用的 LEAP/RoboSuite 文件未包含在候选包中，其记录保留在相应 JSON 的 `historical_verified_files_not_distributed` 字段。许可范围未确认的 282 个文件保留逐文件来源记录，当前并未取得新的上游许可确认；适用范围见 [许可说明](LICENSE_SCOPE.md)，后续处理方案见 [资产发布方案](docs/ASSET_PUBLICATION_OPTIONS.md)。
+当前发布包包含七手六任务所需最小资产集合。历史核验中未被本版引用的 LEAP/RoboSuite 文件未包含在候选包中，其记录保留在相应 JSON 的 `historical_verified_files_not_distributed` 字段。许可范围未确认的 282 个文件保留逐文件来源记录，当前并未取得新的上游许可确认；适用范围见 [许可说明](LICENSE_SCOPE.md)，后续处理方案见 [资产发布方案](docs/ASSET_PUBLICATION_OPTIONS.md)。

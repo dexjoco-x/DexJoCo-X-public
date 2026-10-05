@@ -1,5 +1,7 @@
 > Public source snapshot: 801 runtime files, no glove mappings or weights. The project owner requested direct publication without new upstream contact. Historical verification receipts also mention non-distributed files, separated in the receipt JSONs. Outstanding third-party terms remain unconfirmed.
 
+> 2026-10-05 更新：评测代码与干净数据仓库已获负责人公开授权。本文其余可见性描述为原验收时的历史状态；权重、手套映射及完整归档继续私有。
+
 # Asset license audit (2026-10-01)
 
 This is a provenance audit for release preparation, not legal advice. “Verified” means a license file is present locally or an exact/near-exact upstream derivation has been identified. It does not replace approval by the project rights holders.

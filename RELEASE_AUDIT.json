@@ -18,8 +18,8 @@
     "documented-license": 303
   },
   "new_upstream_permissions_obtained": false,
-  "publication_requested_by_project_owner": false,
+  "publication_requested_by_project_owner": true,
   "current_visibility": "PRIVATE",
-  "publication_paused_by_project_owner": true,
+  "publication_paused_by_project_owner": false,
   "errors": []
 }

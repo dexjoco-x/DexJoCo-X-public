@@ -2,12 +2,12 @@
 
 本仓库已包含七手六任务所需的全部仿真模型、网格和纹理，无需到其他项目另行获取模型。以下下载步骤仅用于本项目的示范数据。
 
-所有命令在代码仓库根目录运行。当前代码与数据仓库均为私有，需要有访问权限的 GitHub 和 Hugging Face 账号。
+所有命令在代码仓库根目录运行。代码与数据已公开，克隆和下载无需账号或访问令牌。
 
 ## 1. 安装仿真与数据环境
 
 ```bash
-git clone git@github.com:darenrenjian/DexJoCo-X-public.git
+git clone https://github.com/darenrenjian/DexJoCo-X-public.git
 cd DexJoCo-X-public
 python3.11 -m venv .venv
 source .venv/bin/activate
@@ -29,7 +29,6 @@ python tools/portability_smoke.py
 ## 2. 下载一个任务并读取示范
 
 ```bash
-hf auth login
 export DATA_ROOT="$PWD/outputs/data"
 python tools/dataset_packages.py download --tasks hammer_nail \
   --data-root "$DATA_ROOT" --report ./outputs/download.json
