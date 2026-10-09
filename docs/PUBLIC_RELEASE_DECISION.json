@@ -75,7 +75,7 @@
   "dataset_public": true,
   "dataset_publication_authorized": true,
   "code_public": false,
-  "code_collaboration_plan": "organization-private-read-only; invitation sent",
+  "code_collaboration_plan": "organization-private-read-only; access active",
   "github_current_repository": "dexjoco-x/DexJoCo-X-public",
   "code_collaboration": {
     "organization": "dexjoco-x",
@@ -85,7 +85,15 @@
     "permission": "read",
     "invitation_id": 336905519,
     "invitation_created_at": "2026-10-09T09:09:48Z",
-    "status": "pending_acceptance",
-    "invitation_url": "https://github.com/dexjoco-x/DexJoCo-X-public/invitations"
+    "status": "accepted",
+    "invitation_url": "https://github.com/dexjoco-x/DexJoCo-X-public/invitations",
+    "permissions_verified": {
+      "pull": true,
+      "push": false,
+      "admin": false,
+      "maintain": false,
+      "triage": false
+    },
+    "access_verified_at_utc": "2026-10-09T09:12:47.441988+00:00"
   }
 }
