@@ -13,7 +13,7 @@
   "previously_published": true,
   "current_visibility": "PRIVATE",
   "publication_paused_by_project_owner": true,
-  "status_updated_date": "2026-10-05",
+  "status_updated_date": "2026-10-09",
   "future_publication_requires_new_explicit_instruction": true,
   "release_scope": "dataset, simulator evaluation, inference examples",
   "model_training_implementation_included": false,
@@ -56,8 +56,8 @@
     "new_upstream_permissions_obtained": false,
     "changes_publication_paused_status": false
   },
-  "publication_instruction": "代码和数据集先不要公开",
-  "publication_stage": "paused by project owner",
+  "publication_instruction": "代码保持私有并通过组织只读邀请；数据集直接公开",
+  "publication_stage": "code private; dataset public",
   "publication_authorized_date": "2026-10-05",
   "public_release_date": "2026-10-05",
   "public_repositories": {
@@ -71,5 +71,9 @@
     "complete_work_repository",
     "hf_original_data_history_archive"
   ],
-  "visibility_reverted_to_private_date": "2026-10-05"
+  "visibility_reverted_to_private_date": "2026-10-05",
+  "dataset_public": true,
+  "dataset_publication_authorized": true,
+  "code_public": false,
+  "code_collaboration_plan": "organization-private-read-only; setup and invitation pending"
 }
