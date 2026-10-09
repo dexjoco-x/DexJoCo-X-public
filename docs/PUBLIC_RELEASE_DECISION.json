@@ -61,7 +61,7 @@
   "publication_authorized_date": "2026-10-05",
   "public_release_date": "2026-10-05",
   "public_repositories": {
-    "github": "https://github.com/darenrenjian/DexJoCo-X-public",
+    "github": "https://github.com/dexjoco-x/DexJoCo-X-public",
     "huggingface_dataset": "https://huggingface.co/datasets/darenrenjian/DexJoCo-X"
   },
   "private_materials_preserved": [
@@ -75,5 +75,17 @@
   "dataset_public": true,
   "dataset_publication_authorized": true,
   "code_public": false,
-  "code_collaboration_plan": "organization-private-read-only; setup and invitation pending"
+  "code_collaboration_plan": "organization-private-read-only; invitation sent",
+  "github_current_repository": "dexjoco-x/DexJoCo-X-public",
+  "code_collaboration": {
+    "organization": "dexjoco-x",
+    "repository": "dexjoco-x/DexJoCo-X-public",
+    "organization_default_repository_permission": "none",
+    "invitee": "tju-xuan",
+    "permission": "read",
+    "invitation_id": 336905519,
+    "invitation_created_at": "2026-10-09T09:09:48Z",
+    "status": "pending_acceptance",
+    "invitation_url": "https://github.com/dexjoco-x/DexJoCo-X-public/invitations"
+  }
 }

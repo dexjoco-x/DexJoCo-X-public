@@ -7,7 +7,7 @@
 ## 1. 安装仿真与数据环境
 
 ```bash
-git clone https://github.com/darenrenjian/DexJoCo-X-public.git
+git clone https://github.com/dexjoco-x/DexJoCo-X-public.git
 cd DexJoCo-X-public
 python3.11 -m venv .venv
 source .venv/bin/activate

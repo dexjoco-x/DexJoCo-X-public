@@ -34,7 +34,7 @@ Use your own training framework and policy checkpoints. DexLatent also requires 
 Use Python 3.11:
 
 ```bash
-git clone https://github.com/darenrenjian/DexJoCo-X-public.git
+git clone https://github.com/dexjoco-x/DexJoCo-X-public.git
 cd DexJoCo-X-public
 python3.11 -m venv .venv
 source .venv/bin/activate

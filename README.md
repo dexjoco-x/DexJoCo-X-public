@@ -34,7 +34,7 @@ DexJoCo-X 将多种灵巧手置于统一的任务、数据格式和评测接口�
 使用 Python 3.11：
 
 ```bash
-git clone https://github.com/darenrenjian/DexJoCo-X-public.git
+git clone https://github.com/dexjoco-x/DexJoCo-X-public.git
 cd DexJoCo-X-public
 python3.11 -m venv .venv
 source .venv/bin/activate
