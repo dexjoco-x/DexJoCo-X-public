@@ -2,9 +2,9 @@
 
 用于比较不同灵巧手动作表征的多手操作基准。
 
-[项目网站](https://darenrenjian.github.io/DexJoCo-X-website/) · [论文](https://arxiv.org/abs/2610.03278) · [数据集](https://huggingface.co/datasets/darenrenjian/DexJoCo-X) · [English](README.en.md)
+[项目网站](https://jxw-wei.github.io/DexJoCo-X-website/) · [论文](https://arxiv.org/abs/2610.03278) · [数据集](https://huggingface.co/datasets/darenrenjian/DexJoCo-X) · [English](README.en.md)
 
-![DexJoCo-X 项目总览](https://darenrenjian.github.io/DexJoCo-X-website/assets/overview.webp)
+![DexJoCo-X 项目总览](https://jxw-wei.github.io/DexJoCo-X-website/assets/overview.webp)
 
 **7 种灵巧手 · 6 个任务 · 42 个手–任务组合 · 2,100 条示范**
 

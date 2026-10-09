@@ -2,9 +2,9 @@
 
 A multi-hand manipulation benchmark for comparing action representations across dexterous hands.
 
-[Website](https://darenrenjian.github.io/DexJoCo-X-website/) · [Paper](https://arxiv.org/abs/2610.03278) · [Dataset](https://huggingface.co/datasets/darenrenjian/DexJoCo-X) · [中文](README.md)
+[Website](https://jxw-wei.github.io/DexJoCo-X-website/) · [Paper](https://arxiv.org/abs/2610.03278) · [Dataset](https://huggingface.co/datasets/darenrenjian/DexJoCo-X) · [中文](README.md)
 
-![DexJoCo-X overview](https://darenrenjian.github.io/DexJoCo-X-website/assets/overview.webp)
+![DexJoCo-X overview](https://jxw-wei.github.io/DexJoCo-X-website/assets/overview.webp)
 
 **7 hands · 6 tasks · 42 hand–task pairs · 2,100 demonstrations**
 

@@ -12,7 +12,7 @@ Attribution information:
 
 - Dataset: DexJoCo-X, `dataset-v1.0-corrected`.
 - Creators: Xiangwei Jiang, Yao Mu, Lixin Duan, Wen Li.
-- Project: https://darenrenjian.github.io/DexJoCo-X-website/
+- Project: https://jxw-wei.github.io/DexJoCo-X-website/
 - Dataset: https://huggingface.co/datasets/darenrenjian/DexJoCo-X
 - License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 

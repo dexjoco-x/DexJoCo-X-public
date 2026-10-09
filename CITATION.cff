@@ -12,8 +12,8 @@ authors:
     given-names: Lixin
   - family-names: Li
     given-names: Wen
-repository-code: "https://github.com/darenrenjian/DexJoCo-X-public"
-url: "https://darenrenjian.github.io/DexJoCo-X-website/"
+repository-code: "https://github.com/dexjoco-x/DexJoCo-X-public"
+url: "https://jxw-wei.github.io/DexJoCo-X-website/"
 preferred-citation:
   type: article
   title: "DexJoCo-X: Benchmarking Action Representations for Multi-Hand Dexterous Manipulation"
