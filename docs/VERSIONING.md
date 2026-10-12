@@ -1,13 +1,13 @@
-# 版本与兼容性
+# Versions and compatibility
 
-**中文** | [English](VERSIONING.en.md)
+**English** | [中文](VERSIONING.zh.md)
 
-| 版本 | 内容 |
+| Version | Contents |
 |---|---|
-| `paper-v1` | 论文 Table I 的训练数据、checkpoint 和评测结果 |
-| `dataset-v1.0-corrected` | 当前公开的 2,100 条示范 |
-| `runtime-v9` | 与当前数据配套的仿真环境 |
+| `paper-v1` | Training data, checkpoints, and evaluation results for Table I in the paper |
+| `dataset-v1.0-corrected` | The current public dataset of 2,100 demonstrations |
+| `runtime-v9` | Simulation environments matching the current dataset |
 
-公开数据更新了 XHand 微波炉的 50 条示范；论文 checkpoint 的训练早于该更新，未在当前公开数据上重新训练。
+The public dataset updates 50 XHand microwave demonstrations. The paper checkpoints were trained before this update and have not been retrained on the current public dataset.
 
-`linkerhand_l20` 是文件和合约中的兼容键。其左右手源 URDF 由官方 L25 文件修改，文档统一使用 `LinkerHand`；当前版本保留键名和模型几何。
+`linkerhand_l20` is a compatibility key in files and contracts. Its source left/right URDFs were modified from the official L25 files. Documentation uses `LinkerHand`; this release preserves the key and model geometry.

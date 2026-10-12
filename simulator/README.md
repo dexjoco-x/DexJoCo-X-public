@@ -1,12 +1,12 @@
-# 仿真环境
+# Simulation environments
 
-**中文** | [English](README.en.md)
+**English** | [中文](README.zh.md)
 
-MuJoCo 环境覆盖七种灵巧手和六个任务，机器人、物体模型及纹理随包提供。
+MuJoCo environments cover seven dexterous hands and six tasks. Robot models, objects, and textures are included in the package.
 
-## 创建环境
+## Create an environment
 
-完成 [安装](../README.md#开始使用) 后，在 Python 中运行：
+After [installation](../README.md#get-started), run in Python:
 
 ```python
 from dexjoco.benchmark6.environments import make_env
@@ -19,19 +19,19 @@ finally:
     env.close()
 ```
 
-`make_env(task, hand, seed=...)` 接受首页列出的任务和手型。`pixels=True` 启用图像观察；`hold_action()` 返回保持当前姿态的动作，方便检查环境。
+`make_env(task, hand, seed=...)` accepts the tasks and hands listed on the homepage. Set `pixels=True` to enable image observations. `hold_action()` returns an action that holds the current pose for an environment check.
 
-## 控制与观察
+## Control and observations
 
-腕部动作使用世界坐标系下的位置和旋转增量，手部动作使用执行器目标值。执行器名称、范围和成功条件记录在 [任务合约](../evaluation/contracts) 中。
+Wrist actions are world-frame translation and rotation increments; hand actions are actuator targets. Actuator names, ranges, and success conditions are recorded in the [task contracts](../evaluation/contracts).
 
-统一策略接口使用图像、状态、掩码和任务指令，见 [评测文档](../evaluation/README.md)。相机设置见 [相机配置](../dataset/CAMERA_PROFILE.md)。
+The common policy interface uses images, states, masks, and task instructions. See the [evaluation guide](../evaluation/README.md) and [camera settings](../dataset/CAMERA_PROFILE.md) (Chinese).
 
-## 相关模块
+## Modules
 
-- `dexjoco.benchmark6.environments`：环境入口。
-- `dexjoco.benchmark6.success_policy`：成功判定。
-- `dexjoco.benchmark6.dataset`：示范数据接口。
-- `dexjoco.autocollect`：已有示范的场景扩增。
+- `dexjoco.benchmark6.environments`: environment entry point.
+- `dexjoco.benchmark6.success_policy`: success predicates.
+- `dexjoco.benchmark6.dataset`: demonstration reader.
+- `dexjoco.autocollect`: scene expansion from existing demonstrations.
 
-`teleoperation/` 保存环境引用的模型资产。第三方来源与条款见 [来源说明](../THIRD_PARTY_NOTICES.md)，兼容标识见 [版本说明](../docs/VERSIONING.md)。
+`teleoperation/` contains model assets referenced by the environments. See [third-party notices](../THIRD_PARTY_NOTICES.md) for sources and terms, and [version compatibility](../docs/VERSIONING.md) for identifiers.

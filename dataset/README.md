@@ -1,14 +1,14 @@
-# 数据集：下载、读取与转换
+# Dataset: download, read, and convert
 
-**中文** | [English](README.en.md)
+**English** | [中文](README.zh.md)
 
-**7 种手 · 6 个任务 · 2,100 条训练示范 · 946,156 帧 · 20 Hz**
+**7 hands · 6 tasks · 2,100 training demonstrations · 946,156 frames · 20 Hz**
 
-[Hugging Face 数据集](https://huggingface.co/datasets/darenrenjian/DexJoCo-X)按任务提供六个 TAR 包，每包包含七种手各 50 条示范。版本为 `dataset-v1.0-corrected`。
+The [Hugging Face dataset](https://huggingface.co/datasets/darenrenjian/DexJoCo-X) provides six task archives. Each contains 50 demonstrations for each of the seven hands. The dataset version is `dataset-v1.0-corrected`.
 
-## 下载
+## Download
 
-完成 [安装](../README.md#开始使用) 后，在仓库根目录运行：
+After [installation](../README.md#get-started), run from the repository root:
 
 ```bash
 export DATA_ROOT="$PWD/outputs/data"
@@ -16,9 +16,9 @@ python tools/dataset_packages.py download --tasks hammer_nail \
   --data-root "$DATA_ROOT"
 ```
 
-使用 `--tasks all` 下载全部任务，或填写多个任务名称。工具自动解压并核对 SHA-256。六个包合计 8.242 GB，下载并解压约占 16.5 GB。
+Use `--tasks all` for the full dataset, or specify multiple task names. The tool extracts the archives and verifies SHA-256 checksums. The six archives total 8.242 GB; downloading and extracting them requires about 16.5 GB.
 
-| 任务 | 条数 | 包大小（GB） |
+| Task | Demonstrations | Archive size (GB) |
 |---|---:|---:|
 | `hammer_nail` | 350 | 0.746 |
 | `pick_bucket` | 350 | 0.962 |
@@ -27,9 +27,9 @@ python tools/dataset_packages.py download --tasks hammer_nail \
 | `bimanual_photograph` | 350 | 0.955 |
 | `bimanual_unlock_ipad` | 350 | 2.164 |
 
-常用选项：`--dry-run` 预览下载范围，`--workers` 设置并行数，`--archives-root` 设置归档缓存，`--transport files` 按原始文件下载。默认归档保存在数据目录旁的 `<目录名>_archives/task_packages/v1.0/`。
+Options: `--dry-run` previews the download, `--workers` sets parallelism, `--archives-root` sets the archive cache, and `--transport files` downloads individual raw files. The default archive cache is `<data-directory-name>_archives/task_packages/v1.0/`, next to the data directory.
 
-已有本地任务包时：
+For existing local task archives:
 
 ```bash
 export PACK_ROOT=/path/to/task_packages
@@ -38,26 +38,26 @@ python tools/dataset_packages.py extract --tasks all \
   --data-root "$DATA_ROOT"
 ```
 
-下载工具绑定 revision `9f48e1404168227a22586af0cffb8371dbb7e1f1`，数据卡更新不会改变下载内容。
+The downloader pins revision `9f48e1404168227a22586af0cffb8371dbb7e1f1`. Dataset-card updates do not change the downloaded data.
 
-## 目录与原始字段
+## Directory layout and raw fields
 
 ```text
 DATA_ROOT/bundle/
-  manifests/<任务>.json
-  episodes/<任务>/<手型>/<场景>/
+  manifests/<task>.json
+  episodes/<task>/<hand>/<scene>/
     native.npz
     contract.json
     front.mp4
     wrist_right.mp4
-    wrist_left.mp4       # 双臂任务
+    wrist_left.mp4       # bimanual tasks
 ```
 
-manifest 记录场景、种子、有效步数与文件哈希。`native.npz` 包含 `state`、`action`、状态/动作掩码、`arm_mask`、`timestamp` 和 `image_mask`。
+The manifest records scenes, seeds, valid frame counts, and file hashes. `native.npz` contains `state`, `action`, state/action masks, `arm_mask`, `timestamp`, and `image_mask`.
 
-原始数组侧序为右、左。每侧状态前七维是腕部世界位置与 wxyz 四元数；动作前六维是世界坐标腕部位移和旋转增量，后面是手部执行器目标值。位置单位为米，旋转单位为弧度；手通道顺序和范围见该示范的 `contract.json`。视频为 256×256、20 Hz 的 RGB，使用 manifest 中的有效步数。
+Raw arrays order the right side before the left. Each side's state begins with seven wrist values: world position and a wxyz quaternion. Each side's action begins with six world-frame wrist translation and rotation increments, followed by hand actuator targets. Positions use meters and rotations use radians. Hand channel order and ranges are defined in each demonstration's `contract.json`. RGB videos are 256×256 at 20 Hz; use the valid frame count in the manifest.
 
-## 读取示范
+## Read a demonstration
 
 ```bash
 python -m examples.read_demo --data-root "$DATA_ROOT" \
@@ -65,11 +65,11 @@ python -m examples.read_demo --data-root "$DATA_ROOT" \
   --output ./outputs/allegro_preview
 ```
 
-`examples.read_demo.read_demo` 可在 Python 中直接读取。接口将腕部状态转换为旋转向量，返回物理单位下的 80 维状态、动作块、掩码和 RGB；右侧占 0:40，左侧占 40:80。示例见 [快速上手](../docs/QUICKSTART.md)。
+Use `examples.read_demo.read_demo` directly in Python. It converts wrist orientations to rotation vectors and returns 80-dimensional states, action chunks, masks, and RGB images in physical units. The right side occupies 0:40 and the left side 40:80. See the [quickstart](../docs/QUICKSTART.md).
 
-## 转换训练格式
+## Convert to training formats
 
-需要 Parquet 与视频训练视图时运行：
+To create Parquet and video training views:
 
 ```bash
 python dataset/tools/prepare_server.py "$DATA_ROOT"
@@ -77,11 +77,11 @@ python dataset/tools/prepare_benchmark7_repr.py "$DATA_ROOT" --representation fa
   --contracts representations/table1_sided_v3/codecs/faas7_project_v3_sided.json
 ```
 
-默认控制坐标和 FAAS 分别输出到 `prepared/beingh05/`、`prepared/beingh05_faas/`。目录名为兼容键；两种视图均为通用数据格式，state/action 宽度为 200，右侧占 0:40，左侧占 40:80，其余填零。腕部状态采用 rotvec，FAAS 手部采用 32 个功能槽位。
+The default control coordinates and FAAS views are written to `prepared/beingh05/` and `prepared/beingh05_faas/`. These directory names are compatibility keys. Both views use a general data format with 200-dimensional state/action arrays: right side 0:40, left side 40:80, and zero padding elsewhere. Wrist states use rotation vectors; FAAS uses 32 functional hand slots.
 
-转换结果按每个手–任务组合的 q01/q99 归一化并裁剪到 [-1, 1]，无效维度置零。它与读取接口的 80 维物理数据不同；训练和推理采用同一套归一化规则。π₀.₅ 的统计量约定见 [策略示例](../examples/pi05/README.md)。
+Conversion normalizes each hand–task pair using q01/q99, clips values to [-1, 1], and zeros invalid dimensions. These views differ from the reader's 80-dimensional physical values. Use matching normalization for training and inference. See the [policy example](../examples/pi05/README.md) for π₀.₅ statistics.
 
-DexLatent 转换需要兼容的编码器及其匹配记录：
+DexLatent conversion requires a compatible encoder and a matching binding record:
 
 ```bash
 python dataset/tools/prepare_benchmark7_repr.py "$DATA_ROOT" --representation dexlatent \
@@ -90,13 +90,13 @@ python dataset/tools/prepare_benchmark7_repr.py "$DATA_ROOT" --representation de
   --seal representations/table1_sided_v3/codecs/frozen_seal.json
 ```
 
-`--seal` 应绑定所用编码器及控制定义。输出为 `prepared/beingh05_dexlatent/`，已有转换目录时使用新的工作目录。
+`--seal` binds the encoder and control definitions. Output is written to `prepared/beingh05_dexlatent/`. Use a new working directory if a converted output already exists.
 
-## 校验与相关说明
+## Verification and related guides
 
 ```bash
 python tools/dataset_packages.py verify --tasks hammer_nail --data-root "$DATA_ROOT"
 python tools/dataset_smoke.py --data-root "$DATA_ROOT" --output ./outputs/data_check.json
 ```
 
-部分下载时选择已安装的任务。完整数据的版本关系、图像配置和许可分别见 [版本说明](../docs/VERSIONING.md)、[相机配置](CAMERA_PROFILE.md)和[数据许可](LICENSE_SCOPE.md)。
+For a partial download, select an installed task. See [version compatibility](../docs/VERSIONING.md), [camera settings](CAMERA_PROFILE.md) (Chinese), and [data licensing](LICENSE_SCOPE.md).

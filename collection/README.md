@@ -1,24 +1,24 @@
-# 场景扩增
+# Scene expansion
 
-**中文** | [English](README.en.md)
+**English** | [中文](README.zh.md)
 
-基于已有机器人示范，在随机场景中执行任务，验证成功后导出新的示范。
+Execute tasks from existing robot demonstrations in randomized scenes, verify success, and export new demonstrations.
 
-流程：**读取示范 → 采样场景 → 执行动作 → 成功判定 → 导出数据**。
+Workflow: **Read demonstration → Sample scene → Execute actions → Check success → Export data**.
 
-## 组件
+## Components
 
-| 模块 | 用途 |
+| Module | Purpose |
 |---|---|
-| `dexjoco.benchmark6.environments.make_env` | 创建任务与手型环境 |
-| `dexjoco.autocollect` | 场景扩增与执行 |
-| `dexjoco.benchmark6.success_policy` | 任务成功判定 |
-| `dexjoco.benchmark6.export.export_episode` | 导出图像、状态、动作和掩码 |
+| `dexjoco.benchmark6.environments.make_env` | Create a task and hand environment |
+| `dexjoco.autocollect` | Scene expansion and execution |
+| `dexjoco.benchmark6.success_policy` | Task success checks |
+| `dexjoco.benchmark6.export.export_episode` | Export images, states, actions, and masks |
 
-运行环境连通性检查：
+Check environment connectivity:
 
 ```bash
 python collection/smoke.py
 ```
 
-该命令创建环境并执行一步。人工手套映射、校准和实时录制工具单独管理；本模块从已有机器人示范开始。
+This creates an environment and executes one step. Glove mappings, calibration, and live recording tools are managed separately; this module starts from existing robot demonstrations.
