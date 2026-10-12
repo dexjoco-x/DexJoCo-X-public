@@ -8,9 +8,9 @@
 
 ## 更新动态
 
-- **2026-10-12** — 评测代码与仿真环境现已在 [GitHub](https://github.com/dexjoco-x/DexJoCo-X-public) 公开。
-- **2026-10-05** — 包含 2,100 条示范的数据集在 [Hugging Face](https://huggingface.co/datasets/darenrenjian/DexJoCo-X) 公开。
-- **2026-10-02** — 论文首个版本提交至 [arXiv](https://arxiv.org/abs/2610.03278)。
+- 🎉 **2026-10-12** — 评测代码与仿真环境现已在 [GitHub](https://github.com/dexjoco-x/DexJoCo-X-public) 公开。
+- 🎉 **2026-10-05** — 包含 2,100 条示范的数据集在 [Hugging Face](https://huggingface.co/datasets/darenrenjian/DexJoCo-X) 公开。
+- 🎉 **2026-10-02** — 论文首个版本提交至 [arXiv](https://arxiv.org/abs/2610.03278)。
 
 ![项目总览](https://jxw-wei.github.io/DexJoCo-X-website/assets/overview.webp)
 

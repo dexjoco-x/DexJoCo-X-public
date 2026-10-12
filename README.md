@@ -8,9 +8,9 @@ A multi-hand manipulation dataset and a unified simulation benchmark.
 
 ## News
 
-- **2026-10-12** — The benchmark code and simulation environments are publicly available on [GitHub](https://github.com/dexjoco-x/DexJoCo-X-public).
-- **2026-10-05** — The dataset of 2,100 demonstrations is released on [Hugging Face](https://huggingface.co/datasets/darenrenjian/DexJoCo-X).
-- **2026-10-02** — The paper's first version is submitted to [arXiv](https://arxiv.org/abs/2610.03278).
+- 🎉 **2026-10-12** — The benchmark code and simulation environments are publicly available on [GitHub](https://github.com/dexjoco-x/DexJoCo-X-public).
+- 🎉 **2026-10-05** — The dataset of 2,100 demonstrations is released on [Hugging Face](https://huggingface.co/datasets/darenrenjian/DexJoCo-X).
+- 🎉 **2026-10-02** — The paper's first version is submitted to [arXiv](https://arxiv.org/abs/2610.03278).
 
 ![Overview](https://jxw-wei.github.io/DexJoCo-X-website/assets/overview.webp)
 
