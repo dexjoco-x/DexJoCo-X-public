@@ -186,7 +186,3 @@ robot_type: single_arm
 ## 许可证
 
 该软件包中 DexJoCo 拥有的代码基于 MIT License 发布。捆绑在 `dexjoco/sim/envs/xmls` 下的第三方机器人和手部资源保留其各自的许可条款。
-
-## DexJoCo-X v9 模型修订
-
-XHand 微波炉环境使用 `xhand_left_mount_rx180_v1`。该模型已通过 50 条修复轨迹的原生动作回放和成功条件验证。

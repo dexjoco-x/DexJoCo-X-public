@@ -28,4 +28,4 @@ Parquet 字段包括 observation.state、observation.state_mask、action、actio
 
 DexLatent 视图另需兼容的本地编码器及匹配记录，见 [转换说明](DOWNLOAD.md)。下载包不含任何预转换缓存或编码器权重。π0.5 示例采用的 Ego-π 归一化与这里的有界转换不同，训练和推理必须使用相同的统计量和规则，见 [推理示例](../examples/pi05/README.md)。
 
-XHand 微波炉的 50 条左手轨迹已按 `xhand_left_mount_rx180_v1` 修正。论文历史模型和修正数据的关系见 [版本说明](../docs/VERSIONING.md)。
+数据与环境的版本关系见 [版本说明](../docs/VERSIONING.md)。

@@ -1,6 +1,6 @@
 # 数据下载、分包与校验
 
-版本：`dataset-v1.0-corrected`。共 7 手、6 任务、2,100 条示范，全部为训练数据。每个任务包包含七只手各 50 条，共 350 条。50 条 XHand 微波炉示范使用修正后的左手安装方向 `xhand_left_mount_rx180_v1`。
+版本：`dataset-v1.0-corrected`。共 7 手、6 任务、2,100 条示范，全部为训练数据。每个任务包包含七只手各 50 条，共 350 条。
 
 数据集已公开，下载入口为 [Hugging Face 数据仓库](https://huggingface.co/datasets/darenrenjian/DexJoCo-X)。六个 TAR 任务包已上传到该公开仓库的 `task_packages/v1.0/`，原始文件目录仍保留。下载工具默认获取选定任务的 TAR 包，核对归档与包内文件的 SHA-256 后自动解压。
 
