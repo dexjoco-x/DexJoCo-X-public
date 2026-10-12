@@ -1,8 +1,8 @@
 # π0.5 接入 DexJoCo-X 评测
 
-这是独立的推理示例：读取使用者自己的 checkpoint、训练统计量和 tokenizer，接收评测器的 RGB、状态、掩码及指令，返回已反归一化的 Native 动作块。无需本项目的 `training/` 目录、手套映射或模型权重。
+读取训练好的 checkpoint、统计量和 tokenizer，接收 RGB、状态、掩码及指令，返回物理单位下的动作块。
 
-示例使用 [RLinf 的 π0.5 PyTorch 推理实现](https://github.com/RLinf/RLinf/tree/e1d1bac185fc8d2718c25df9ae8a9089893c46c2/rlinf/models/embodiment/openpi_rlinf)，固定版本为 `e1d1bac185fc8d2718c25df9ae8a9089893c46c2`。上游模型代码在外部安装，不复制到这个示例中。入口只加载模型模块，跳过 RLinf 的训练算法注册器；上游源码不需要修改。
+示例使用 [RLinf 的 π0.5 PyTorch 推理实现](https://github.com/RLinf/RLinf/tree/e1d1bac185fc8d2718c25df9ae8a9089893c46c2/rlinf/models/embodiment/openpi_rlinf)，固定版本为 `e1d1bac185fc8d2718c25df9ae8a9089893c46c2`。上游模型代码在独立环境中安装，入口直接加载其推理模块。
 
 ## 动作与观测约定
 
@@ -11,7 +11,7 @@
 | `single_right32` | H × 32 | H | 三个单右臂任务 |
 | `ego_interleave32` | 2H × 32，先左后右 | H | 单臂、双臂任务；与论文的 π0.5（Ego-π）排列一致 |
 
-默认示范命令采用第二种排列：50 个动作 token 配对成 25 个物理时间步。两种排列都保留 32 维动作头，不扩展成 80 维网络。`single_right32` 如果遇到活动的左臂维度会报错。
+默认示范命令采用第二种排列：50 个动作 token 配对成 25 个物理时间步。两种排列均使用 32 维动作头。
 
 - 评测器采用 `arm40_v1`：右侧 0:40，左侧 40:80。每侧前 6 维为腕部，后面为手的 actuator 顺序；模型使用右侧 0:32、左侧 40:72，其余槽位必须为空。
 - 状态为世界坐标腕部位置（米）、旋转向量（弧度）及原生手状态。动作是世界坐标腕部增量（米/弧度）与原生 actuator 目标值；具体 actuator 名称、顺序及范围见对应的 [环境合约](../../evaluation/contracts)。运行时按环境控制周期执行。
@@ -30,7 +30,7 @@ git -C /path/to/RLinf checkout e1d1bac185fc8d2718c25df9ae8a9089893c46c2
 pip install -r examples/pi05/requirements.txt
 ```
 
-本轮 GPU 验收使用 PyTorch 2.8.0 + CUDA 12.8。适用显卡可先运行 `pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cu128`，再安装上述依赖；显卡与驱动需支持所选 CUDA 构建。
+已验证的 GPU 配置为 PyTorch 2.8.0 + CUDA 12.8，可运行 `pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cu128`，或选择与显卡驱动兼容的 PyTorch 构建。
 
 准备自己的 **完整 RLinf 模型 state_dict**，格式为 `.pt` 或 `.safetensors`，以及对应的 PaliGemma tokenizer。OpenPI 的 JAX checkpoint 或官方 PyTorch 文件不是此入口的直接输入；使用 OpenPI 训练时，需按 [RLinf 上游转换工具](https://github.com/RLinf/RLinf/tree/e1d1bac185fc8d2718c25df9ae8a9089893c46c2/rlinf/utils/ckpt_convertor/openpi) 转换，并验证训练和推理的排列、tokenizer、归一化与指令一致。仅转换权重不会自动把普通 π0.5 策略变成交替预测策略。
 
@@ -38,9 +38,9 @@ pip install -r examples/pi05/requirements.txt
 
 把训练时实际使用的分位数保存为 `statistics.json`，结构为 `state`、`action` 两个对象，各含 `q01`、`q99` 数组。交替模式的状态和动作统计量均为 80 维；单臂模式的状态统计量为 32 维，动作统计量为 80 维，其中只有右侧模型槽位有效。
 
-这些必须是该 checkpoint 使用的统计量。数据转换后 Parquet 中的预归一化数值不能再当作物理值输入此接口；现有 Native 转换统计量采用的裁剪方式也不能直接冒充这里的 Ego-π 统计量。训练数据字段和转换方式见 [数据指南](../../dataset/DOWNLOAD.md)。
+使用 checkpoint 训练时的统计量。评测接口输入为物理值，与预归一化的 Parquet 视图区分；数据字段见 [数据集文档](../../dataset/README.md)。
 
-直接读取原始示范的 `arm40_v1` 物理字段，并查看 25 步到 50 个左右交替 token 的排列，见 [快速上手中的数据读取示例](../../docs/QUICKSTART.md)。该例子不进行模型训练，也不替 checkpoint 自动生成统计量。
+读取原始物理字段见 [快速上手](../../docs/QUICKSTART.md)。交替排列将左侧 `actions[:, 40:72]` 与右侧 `actions[:, :32]` 按时间配对，25 步形成 50 个 token。
 
 在仓库根目录运行，例如一个使用 Sharpa Wave 的六任务模型：
 
@@ -83,14 +83,6 @@ python evaluation/evaluate.py \
   --output ./outputs/my_pi05_evaluation
 ```
 
-每个手–任务组合评估三次、每次 50 条；结果保存成功字段、场景和策略种子、接口及 checkpoint 哈希。服务为一个指定手型的模型时，评测器也选择该手型；七手独立模型分别启动和评估。短验收使用 `--episodes 1 --diagnostic --max-steps 16`，同时选择 checkpoint 支持的一个任务。短验收输出不会冒充正式成功率。
+每个手–任务组合评估三次、每次 50 条；结果保存成功字段、场景和策略种子、接口及 checkpoint 哈希。服务为一个指定手型的模型时，评测器也选择该手型；七手独立模型分别启动和评估。短验收使用 `--episodes 1 --diagnostic --max-steps 16`，同时选择 checkpoint 支持的一个任务。诊断结果与正式成功率分开记录。
 
 单臂模式在上述接口生成命令中改为 `--token-layout single_right32`，只选择单臂任务；服务和评测器使用一致的物理 `--action-horizon`。
-
-## 验收
-
-```bash
-python -m unittest discover -s tests -p test_pi05_example.py -v
-```
-
-本项目已用私有 π0.5（Ego-π）checkpoint 验证未修改上游的加载、显式噪声和 16 步仿真执行，详见 [验收记录](../../docs/PI05_EXAMPLE_VALIDATION.json)。示例不附带 checkpoint、tokenizer、训练实现或实际训练统计量。单臂排列完成接口检查；没有用单臂专用 checkpoint 测量成功率。

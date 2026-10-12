@@ -1,17 +1,14 @@
-# Official camera profile v5
+# 相机配置
 
-Profile: `dexjoco_official_allegro60_hanoi_front_v1`. Allegro official single/dual camera extrinsics are transferred through the attachment_site TCP frame to all seven hands. FOV 60 degrees. Hanoi uses the official single-arm front camera at [1.3, 0, 1.6] m, FOV 45. RGB stays 256x256 at 20 Hz, pre-action, no manual image rotation or flip.
+默认配置为 `dexjoco_official_allegro60_hanoi_front_v1`。通过 TCP 的 `attachment_site` 坐标系，将 Allegro 的官方相机外参应用到七种手型。
 
-For collection/evaluation using an existing simulation package, put this release tools directory on sys.path and call `from official_camera import activate; activate()` BEFORE creating benchmark6 environments. Alternatively call `configure(env)` for every already constructed environment. This affects only the current process. XHand photo and iPad still require their previously verified left-hand model revisions.
+| 设置 | 配置 |
+|---|---|
+| 图像 | RGB，256×256，20 Hz，动作执行前采样 |
+| 常规任务视场角 | 60° |
+| 汉诺塔 front 相机 | 世界位置 [1.3, 0, 1.6] m，视场角 45° |
+| 视频有效长度 | 对应 manifest 的 `steps` |
 
-Local benchmark6/cameras.py now defaults to this profile. Historical data/checkpoints require `BENCHMARK7_CAMERA_PROFILE=common_tcp_side85_v1` before importing the updated local package. Never evaluate an old-camera checkpoint with the new-camera profile without explicitly intending that distribution change.
+当前仿真环境默认启用该配置。使用旧版本相机训练的策略时，在导入仿真模块前设置 `BENCHMARK7_CAMERA_PROFILE=common_tcp_side85_v1`，使评测观察与训练保持一致。
 
-Use this release's own prepared directory and statistics for new training. Do not reuse v4 image caches. This is alignment to official simulation camera conventions, not proof of real Franka hand-eye calibration.
-
-## Exact demonstration replay
-
-Recorded-state rendering preserves all saved joint/object states. iPad additionally executes the original actions to restore its button highlights and unlocked screen. The older iPad sources require the original multithread BLAS numerical behavior: four BLAS threads reproduced the original default-32-thread reference within the existing 1e-8 acceptance tolerance; forcing one thread can diverge at contact. Newly recollected Allegro iPad was verified with one thread. These are numerical replay settings, not changes to robot stiffness, friction, or task rules. Per-episode camera conversion checks record actual replay errors.
-
-## Frame interval
-
-Every new video contains exactly the existing manifest steps. The effective training interval and native tensors are unchanged. Some v4 files stored extra post-success frames beyond the effective interval; those unused tail frames are not rendered into new wrist videos. Unchanged third-person video files are retained byte-for-byte and are still bounded by the manifest effective frame count when training.
+旧数据的相机转换和数值回放记录见 [历史配置](../docs/maintenance/CAMERA_PROFILE_HISTORY.md)。

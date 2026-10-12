@@ -26,7 +26,7 @@ python -m pip install -c requirements/constraints-python311.txt \
   './dist/dexjoco_x-0.1.0-py3-none-any.whl[benchmark,dataset,download]'
 ```
 
-系统图形库与其他 Python 依赖仍按 [快速上手](QUICKSTART.md) 安装。上述安装不需要从其他项目下载机器人模型或任务素材。完整示范数据通过本项目的 Hugging Face 下载入口提供。
+系统图形库与其他 Python 依赖仍按 [快速上手](../QUICKSTART.md) 安装。上述安装不需要从其他项目下载机器人模型或任务素材。完整示范数据通过本项目的 Hugging Face 下载入口提供。
 
 wheel SHA-256：`b620a99ac5e5cde450f50ca56e0d2c51275c00e573a48fca74f4bb185c41c3a1`。
 

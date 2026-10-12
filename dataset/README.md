@@ -1,18 +1,73 @@
-# DexJoCo-X 数据字段与转换
+# 数据集：下载、读取与转换
 
-原始数据版本为 `dataset-v1.0-corrected`：七手、六任务、2,100 条示范和 946,156 帧，20 Hz；每个手–任务组合 50 条，全部属于训练集。闭环评测采用独立场景种子。下载步骤见 [数据指南](DOWNLOAD.md)。
+**7 种手 · 6 个任务 · 2,100 条训练示范 · 946,156 帧 · 20 Hz**
 
-## 原生记录
+[Hugging Face 数据集](https://huggingface.co/datasets/darenrenjian/DexJoCo-X)按任务提供六个 TAR 包，每包包含七种手各 50 条示范。版本为 `dataset-v1.0-corrected`。
 
-`bundle/manifests/<task>.json` 索引每条示范的 hand、scene_id、seed、steps、split、张量、合约和视频路径，并绑定文件 SHA-256。
+## 下载
 
-`native.npz` 含 state、action、state_mask、action_mask、arm_mask、timestamp 和 image_mask。双臂数组的侧序为右、左；缺失侧和填充维度由掩码标识。每侧状态前七维为腕部世界位置与 wxyz 四元数，后面为原生手状态；动作前六维为世界坐标腕部位移/旋转增量，后面为 actuator 目标值。腕部位置单位为米，旋转单位为弧度；手通道名称、顺序和范围见该 episode 的合约。
+完成 [安装](../README.md#开始使用) 后，在仓库根目录运行：
 
-视频为 256×256 RGB、20 Hz 的 H.264，视图包含 front、wrist_right，以及双臂任务的 wrist_left。有效长度使用 manifest 的 steps。任务指令和成功条件由对应合约记录。
+```bash
+export DATA_ROOT="$PWD/outputs/data"
+python tools/dataset_packages.py download --tasks hammer_nail \
+  --data-root "$DATA_ROOT"
+```
 
-## 转换视图
+使用 `--tasks all` 下载全部任务，或填写多个任务名称。工具自动解压并核对 SHA-256。六个包合计 8.242 GB，下载并解压约占 16.5 GB。
 
-仅查看或接入原始物理字段时，无需先转换。运行 `python -m examples.read_demo --data-root "$DATA_ROOT" --task hammer_nail --hand allegro`，或在自己的接口中调用 `examples.read_demo.read_demo`。它把腕部状态四元数转换为 rotvec，输出未归一化的 80 维 `arm40_v1` 状态、带掩码的动作块与 RGB；见 [快速上手](../docs/QUICKSTART.md)。
+| 任务 | 条数 | 包大小（GB） |
+|---|---:|---:|
+| `hammer_nail` | 350 | 0.746 |
+| `pick_bucket` | 350 | 0.962 |
+| `single_hand_hanoi` | 350 | 1.334 |
+| `bimanual_microwave_cook` | 350 | 2.081 |
+| `bimanual_photograph` | 350 | 0.955 |
+| `bimanual_unlock_ipad` | 350 | 2.164 |
+
+常用选项：`--dry-run` 预览下载范围，`--workers` 设置并行数，`--archives-root` 设置归档缓存，`--transport files` 按原始文件下载。默认归档保存在数据目录旁的 `<目录名>_archives/task_packages/v1.0/`。
+
+已有本地任务包时：
+
+```bash
+export PACK_ROOT=/path/to/task_packages
+python tools/dataset_packages.py extract --tasks all \
+  --index "$PACK_ROOT/PACKAGES.json" --archives-root "$PACK_ROOT" \
+  --data-root "$DATA_ROOT"
+```
+
+下载工具绑定 revision `9f48e1404168227a22586af0cffb8371dbb7e1f1`，数据卡更新不会改变下载内容。
+
+## 目录与原始字段
+
+```text
+DATA_ROOT/bundle/
+  manifests/<任务>.json
+  episodes/<任务>/<手型>/<场景>/
+    native.npz
+    contract.json
+    front.mp4
+    wrist_right.mp4
+    wrist_left.mp4       # 双臂任务
+```
+
+manifest 记录场景、种子、有效步数与文件哈希。`native.npz` 包含 `state`、`action`、状态/动作掩码、`arm_mask`、`timestamp` 和 `image_mask`。
+
+原始数组侧序为右、左。每侧状态前七维是腕部世界位置与 wxyz 四元数；动作前六维是世界坐标腕部位移和旋转增量，后面是手部执行器目标值。位置单位为米，旋转单位为弧度；手通道顺序和范围见该示范的 `contract.json`。视频为 256×256、20 Hz 的 RGB，使用 manifest 中的有效步数。
+
+## 读取示范
+
+```bash
+python -m examples.read_demo --data-root "$DATA_ROOT" \
+  --task hammer_nail --hand allegro --frame 0 --horizon 25 \
+  --output ./outputs/allegro_preview
+```
+
+`examples.read_demo.read_demo` 可在 Python 中直接读取。接口将腕部状态转换为旋转向量，返回物理单位下的 80 维状态、动作块、掩码和 RGB；右侧占 0:40，左侧占 40:80。示例见 [快速上手](../docs/QUICKSTART.md)。
+
+## 转换训练格式
+
+需要 Parquet 与视频训练视图时运行：
 
 ```bash
 python dataset/tools/prepare_server.py "$DATA_ROOT"
@@ -20,12 +75,26 @@ python dataset/tools/prepare_benchmark7_repr.py "$DATA_ROOT" --representation fa
   --contracts representations/table1_sided_v3/codecs/faas7_project_v3_sided.json
 ```
 
-Native 输出至 `prepared/beingh05/`，FAAS 输出至 `prepared/beingh05_faas/`。目录名称保持历史兼容，它们是通用 Parquet/视频数据，不包含模型训练实现。两者的 state/action 宽度为 200：右侧占 0:40，左侧占 40:80，其余为零；每侧腕部占前六维，状态旋转使用 rotvec，后面为手坐标。Native 保留原生手坐标，FAAS 使用 32 个功能槽位。
+默认控制坐标和 FAAS 分别输出到 `prepared/beingh05/`、`prepared/beingh05_faas/`。目录名为兼容键；两种视图均为通用数据格式，state/action 宽度为 200，右侧占 0:40，左侧占 40:80，其余填零。腕部状态采用 rotvec，FAAS 手部采用 32 个功能槽位。
 
-Parquet 字段包括 observation.state、observation.state_mask、action、action.valid_mask、timestamp、frame_index、episode_index、index 和 task_index。meta 中提供任务指令、episode 索引、原始训练统计量及格式信息。每个手–任务组分别计算 q01/q99，转换后的值已归一化并裁剪到 [-1, 1]，无效维度归零；对接训练框架时避免重复归一化。
+转换结果按每个手–任务组合的 q01/q99 归一化并裁剪到 [-1, 1]，无效维度置零。它与读取接口的 80 维物理数据不同；训练和推理采用同一套归一化规则。π₀.₅ 的统计量约定见 [策略示例](../examples/pi05/README.md)。
 
-`tools/dataset_smoke.py` 检查已安装任务的原始数组、转换数值、掩码、episode 索引和首尾视频帧。转换视频优先使用硬链接，跨文件系统时复制，不创建软链接。
+DexLatent 转换需要兼容的编码器及其匹配记录：
 
-DexLatent 视图另需兼容的本地编码器及匹配记录，见 [转换说明](DOWNLOAD.md)。下载包不含任何预转换缓存或编码器权重。π0.5 示例采用的 Ego-π 归一化与这里的有界转换不同，训练和推理必须使用相同的统计量和规则，见 [推理示例](../examples/pi05/README.md)。
+```bash
+python dataset/tools/prepare_benchmark7_repr.py "$DATA_ROOT" --representation dexlatent \
+  --contracts representations/table1_sided_v3/codecs/faas7_project_v3_sided.json \
+  --checkpoint /path/to/selected.pt \
+  --seal representations/table1_sided_v3/codecs/frozen_seal.json
+```
 
-数据与环境的版本关系见 [版本说明](../docs/VERSIONING.md)。
+`--seal` 应绑定所用编码器及控制定义。输出为 `prepared/beingh05_dexlatent/`，已有转换目录时使用新的工作目录。
+
+## 校验与相关说明
+
+```bash
+python tools/dataset_packages.py verify --tasks hammer_nail --data-root "$DATA_ROOT"
+python tools/dataset_smoke.py --data-root "$DATA_ROOT" --output ./outputs/data_check.json
+```
+
+部分下载时选择已安装的任务。完整数据的版本关系、图像配置和许可分别见 [版本说明](../docs/VERSIONING.md)、[相机配置](CAMERA_PROFILE.md)和[数据许可](LICENSE_SCOPE.md)。

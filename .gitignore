@@ -17,3 +17,6 @@ logs/
 /simulator/teleoperation/**/retarget/
 /simulator/teleoperation/**/configs/
 /simulator/teleoperation/**/bridge/
+
+# 本地检查输出
+/*_SMOKE.json
