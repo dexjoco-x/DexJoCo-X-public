@@ -1,6 +1,6 @@
 # DexJoCo-X
 
-A multi-hand manipulation benchmark for comparing action representations across dexterous hands.
+A multi-hand manipulation dataset and a unified simulation environment for evaluation.
 
 [Website](https://jxw-wei.github.io/DexJoCo-X-website/) · [Paper](https://arxiv.org/abs/2610.03278) · [Dataset](https://huggingface.co/datasets/darenrenjian/DexJoCo-X) · [中文](README.md)
 
@@ -8,7 +8,7 @@ A multi-hand manipulation benchmark for comparing action representations across 
 
 **7 hands · 6 tasks · 42 hand–task pairs · 2,100 demonstrations**
 
-DexJoCo-X brings different dexterous hands into a common set of tasks, data formats, and evaluation interfaces to compare Native, FAAS, and DexLatent action representations. Each hand–task pair contains 50 training demonstrations. Closed-loop evaluation uses independent scene seeds.
+DexJoCo-X provides manipulation demonstrations for seven dexterous hands, six simulation tasks, and a common evaluation interface. Train your own policies on the dataset and connect them to the simulator to evaluate multi-hand manipulation under consistent task settings and success criteria. Each hand–task pair contains 50 training demonstrations. Closed-loop evaluation uses independent scene seeds.
 
 ## What's included
 
@@ -16,7 +16,7 @@ DexJoCo-X brings different dexterous hands into a common set of tasks, data form
 - **Simulation environments**: robot models, objects, meshes, and textures for all seven hands and six tasks, bundled with the repository.
 - **Evaluation tools**: a common policy interface, success criteria, and result logging, plus a π₀.₅ / Ego-π inference example and scene expansion tools for existing demonstrations.
 
-Use your own training framework and policy checkpoints. DexLatent also requires a compatible local codec. Glove mappings and recording tools are not included.
+Use your own training framework and connect your trained policy for evaluation. Glove mappings and recording tools are not included.
 
 **Hands**: Allegro, Inspire, LEAP, LinkerHand, Sharpa Wave, Wuji, and XHand.
 
