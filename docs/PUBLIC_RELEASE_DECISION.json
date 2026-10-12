@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "publication_requested_by_project_owner": false,
+  "publication_requested_by_project_owner": true,
   "contact_upstream_authors": false,
   "source_code_license": "MIT (first-party scope only)",
   "unconfirmed_third_party_license_files": 282,
@@ -11,9 +11,9 @@
   "private_repository_visibility_changed": true,
   "previous_publication_requested_by_project_owner": true,
   "previously_published": true,
-  "current_visibility": "PRIVATE",
-  "publication_paused_by_project_owner": true,
-  "status_updated_date": "2026-10-09",
+  "current_visibility": "PUBLIC",
+  "publication_paused_by_project_owner": false,
+  "status_updated_date": "2026-10-12",
   "future_publication_requires_new_explicit_instruction": true,
   "release_scope": "dataset, simulator evaluation, inference examples",
   "model_training_implementation_included": false,
@@ -56,10 +56,10 @@
     "new_upstream_permissions_obtained": false,
     "changes_publication_paused_status": false
   },
-  "publication_instruction": "代码保持私有并通过组织只读邀请；数据集直接公开",
-  "publication_stage": "code private; dataset public",
-  "publication_authorized_date": "2026-10-05",
-  "public_release_date": "2026-10-05",
+  "publication_instruction": "发布代码仓库；数据集继续公开；训练实现、权重、手套映射及完整工作归档继续私有",
+  "publication_stage": "code public; dataset public",
+  "publication_authorized_date": "2026-10-12",
+  "public_release_date": "2026-10-12",
   "public_repositories": {
     "github": "https://github.com/dexjoco-x/DexJoCo-X-public",
     "huggingface_dataset": "https://huggingface.co/datasets/darenrenjian/DexJoCo-X"
@@ -74,8 +74,8 @@
   "visibility_reverted_to_private_date": "2026-10-05",
   "dataset_public": true,
   "dataset_publication_authorized": true,
-  "code_public": false,
-  "code_collaboration_plan": "organization-private-read-only; access active",
+  "code_public": true,
+  "code_collaboration_plan": "public read access; existing collaborator remains read-only",
   "github_current_repository": "dexjoco-x/DexJoCo-X-public",
   "code_collaboration": {
     "organization": "dexjoco-x",

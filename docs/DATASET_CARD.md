@@ -18,7 +18,7 @@
 
 `dataset-v1.0-corrected` 替换了 XHand 微波炉任务的 50 条轨迹，安装修订号为 `xhand_left_mount_rx180_v1`；其余 2,050 条继承自冻结数据。历史论文 checkpoint 与当前修正数据分版本记录。
 
-下载索引绑定固定 Hugging Face revision、归档及逐文件 SHA-256。工具下载后检查哈希并安全解压。数据集已公开，无需登录即可下载；代码仓库保持私有。
+下载索引绑定固定 Hugging Face revision、归档及逐文件 SHA-256。工具下载后检查哈希并安全解压。代码与数据集均已公开，克隆代码和下载数据无需登录。
 
 ## 使用与许可
 
