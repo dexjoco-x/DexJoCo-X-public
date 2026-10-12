@@ -1,5 +1,7 @@
 # 版本与兼容性
 
+**中文** | [English](VERSIONING.en.md)
+
 | 版本 | 内容 |
 |---|---|
 | `paper-v1` | 论文 Table I 的训练数据、checkpoint 和评测结果 |

@@ -1,8 +1,10 @@
 # DexJoCo-X
 
+[中文](README.md) | **English**
+
 A multi-hand manipulation dataset and a unified simulation benchmark.
 
-[Website](https://jxw-wei.github.io/DexJoCo-X-website/) · [Paper](https://arxiv.org/abs/2610.03278) · [Dataset](https://huggingface.co/datasets/darenrenjian/DexJoCo-X) · [中文文档](README.md)
+[Website](https://jxw-wei.github.io/DexJoCo-X-website/) · [Paper](https://arxiv.org/abs/2610.03278) · [Dataset](https://huggingface.co/datasets/darenrenjian/DexJoCo-X)
 
 ![Overview](https://jxw-wei.github.io/DexJoCo-X-website/assets/overview.webp)
 
@@ -10,7 +12,16 @@ A multi-hand manipulation dataset and a unified simulation benchmark.
 
 DexJoCo-X provides demonstrations, MuJoCo environments, and a common policy evaluation interface. Train your own policies and evaluate them under consistent task settings and success criteria. Required simulation models and assets are included.
 
-The seven hands are Allegro, Inspire, LEAP, LinkerHand, Sharpa Wave, Wuji, and XHand. Tasks cover hammering, bucket lifting, Tower of Hanoi, microwave operation, photography, and tablet unlocking, with 50 training demonstrations per hand–task pair.
+The seven hands are Allegro, Inspire, LEAP, LinkerHand, Sharpa Wave, Wuji, and XHand, with 50 training demonstrations per hand–task pair.
+
+| Type | Task | Configuration |
+|---|---|---|
+| Single-arm | Hammer a nail | `hammer_nail` |
+| Single-arm | Lift a bucket | `pick_bucket` |
+| Single-arm | Tower of Hanoi | `single_hand_hanoi` |
+| Bimanual | Operate a microwave | `bimanual_microwave_cook` |
+| Bimanual | Take a photograph | `bimanual_photograph` |
+| Bimanual | Unlock a tablet | `bimanual_unlock_ipad` |
 
 ## Get started
 
@@ -26,7 +37,19 @@ pip install -c requirements/constraints-python311.txt \
 python tools/runtime_assets.py check
 ```
 
-Follow the [quickstart](docs/QUICKSTART.md) to download a task and read a demonstration. All six task archives total 8.24 GB; downloading and extracting them requires about 16.5 GB. Detailed guides are maintained in Chinese: [data](dataset/README.md), [environments](simulator/README.md), [evaluation](evaluation/README.md), and [π₀.₅ / Ego-π integration](examples/pi05/README.md).
+Follow the [quickstart](docs/QUICKSTART.en.md) to download a task, read a demonstration, and connect a policy. All six task archives total 8.24 GB; downloading and extracting them requires about 16.5 GB.
+
+## Guides
+
+| Goal | Guide |
+|---|---|
+| Install and read the first demonstration | [Quickstart](docs/QUICKSTART.en.md) |
+| Download data, inspect fields, convert formats | [Dataset](dataset/README.en.md) |
+| Create and use simulation environments | [Environments](simulator/README.en.md) |
+| Connect a policy and evaluate | [Evaluation](evaluation/README.en.md) |
+| Connect π₀.₅ / Ego-π | [Policy example](examples/pi05/README.en.md) |
+| Expand scenes from existing demonstrations | [Scene expansion](collection/README.en.md) |
+| Check data and environment compatibility | [Versions](docs/VERSIONING.en.md) |
 
 Training implementations, policy weights, and glove recording tools are managed separately.
 

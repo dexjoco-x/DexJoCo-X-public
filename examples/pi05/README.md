@@ -1,5 +1,7 @@
 # π0.5 接入 DexJoCo-X 评测
 
+**中文** | [English](README.en.md)
+
 读取训练好的 checkpoint、统计量和 tokenizer，接收 RGB、状态、掩码及指令，返回物理单位下的动作块。
 
 示例使用 [RLinf 的 π0.5 PyTorch 推理实现](https://github.com/RLinf/RLinf/tree/e1d1bac185fc8d2718c25df9ae8a9089893c46c2/rlinf/models/embodiment/openpi_rlinf)，固定版本为 `e1d1bac185fc8d2718c25df9ae8a9089893c46c2`。上游模型代码在独立环境中安装，入口直接加载其推理模块。

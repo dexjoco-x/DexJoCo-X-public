@@ -1,0 +1,59 @@
+# Quickstart
+
+[中文](QUICKSTART.md) | **English**
+
+Run all commands from the repository root. First complete the [installation steps](../README.en.md#get-started).
+
+## 1. Check the environments
+
+```bash
+python tools/portability_smoke.py
+```
+
+This checks all 42 environments across seven hands and six tasks. On a headless Ubuntu / Debian machine, use OSMesa:
+
+```bash
+sudo apt-get install libosmesa6
+export MUJOCO_GL=osmesa PYOPENGL_PLATFORM=osmesa
+python tools/portability_smoke.py
+```
+
+## 2. Download and inspect a demonstration
+
+```bash
+export DATA_ROOT="$PWD/outputs/data"
+python tools/dataset_packages.py download --tasks hammer_nail \
+  --data-root "$DATA_ROOT"
+python -m examples.read_demo --data-root "$DATA_ROOT" \
+  --task hammer_nail --hand allegro --frame 0 --horizon 25 \
+  --output ./outputs/allegro_preview
+```
+
+Each task package contains 50 demonstrations per hand. The reader returns states, action chunks, and masks, and saves the selected RGB frames to a new output directory.
+
+You can also read a demonstration in Python:
+
+```python
+from examples.read_demo import read_demo
+
+sample = read_demo(data_root, task="hammer_nail", hand="allegro", horizon=25)
+state = sample["state"]           # (80,), physical units
+actions = sample["actions"]      # (25, 80), physical units
+rgb = sample["images"]["front"]   # uint8 RGB, (256, 256, 3)
+```
+
+Use `--tasks all` to download all tasks. See the [dataset guide](../dataset/README.en.md) for fields and format conversion.
+
+## 3. Connect a policy and evaluate
+
+Start a policy server using the [π₀.₅ / Ego-π example](../examples/pi05/README.en.md), then run:
+
+```bash
+python evaluation/evaluate.py --server ws://127.0.0.1:8200 \
+  --layout arm40_v1 --representation native \
+  --hand allegro --task hammer_nail --episodes 150 \
+  --action-horizon 25 --execution-horizon 8 \
+  --output ./outputs/allegro_hammer
+```
+
+This example requires a policy supporting Allegro hammering. Each action chunk predicts 25 steps and executes the first eight. Evaluation consists of three independent runs of 50 rollouts each. Match the action layout and prediction horizon to the policy server. See the [evaluation guide](../evaluation/README.en.md) for other policies.

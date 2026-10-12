@@ -1,5 +1,7 @@
 # 数据集：下载、读取与转换
 
+**中文** | [English](README.en.md)
+
 **7 种手 · 6 个任务 · 2,100 条训练示范 · 946,156 帧 · 20 Hz**
 
 [Hugging Face 数据集](https://huggingface.co/datasets/darenrenjian/DexJoCo-X)按任务提供六个 TAR 包，每包包含七种手各 50 条示范。版本为 `dataset-v1.0-corrected`。

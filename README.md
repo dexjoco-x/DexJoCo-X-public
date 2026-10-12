@@ -1,8 +1,10 @@
 # DexJoCo-X
 
+**中文** | [English](README.en.md)
+
 面向多种灵巧手的操作数据集与统一仿真评测环境。
 
-[项目网站](https://jxw-wei.github.io/DexJoCo-X-website/) · [论文](https://arxiv.org/abs/2610.03278) · [数据集](https://huggingface.co/datasets/darenrenjian/DexJoCo-X) · [English](README.en.md)
+[项目网站](https://jxw-wei.github.io/DexJoCo-X-website/) · [论文](https://arxiv.org/abs/2610.03278) · [数据集](https://huggingface.co/datasets/darenrenjian/DexJoCo-X)
 
 ![项目总览](https://jxw-wei.github.io/DexJoCo-X-website/assets/overview.webp)
 
