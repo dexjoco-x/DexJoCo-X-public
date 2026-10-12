@@ -59,6 +59,10 @@ python tools/runtime_assets.py check
 
 训练可选用自己的框架。公开内容包括数据、环境和评测工具；策略权重、模型训练实现及手套录制工具单独管理。
 
+## 联系方式
+
+使用中有任何问题或建议，欢迎联系姜相维：[jxw@std.uestc.edu.cn](mailto:jxw@std.uestc.edu.cn)，也可以提交 [GitHub Issue](https://github.com/dexjoco-x/DexJoCo-X-public/issues)。
+
 ## 引用与许可
 
 论文引用见 [BibTeX](CITATION.bib)。原创代码采用 [MIT](LICENSE)，原创数据贡献采用 [CC BY-NC-SA 4.0](dataset/LICENSE_SCOPE.md)。第三方模型与代码保留各自条款，详见 [来源说明](THIRD_PARTY_NOTICES.md)和[许可状态](LICENSE_STATUS.md)。

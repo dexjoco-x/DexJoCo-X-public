@@ -59,6 +59,10 @@ Follow the [quickstart](docs/QUICKSTART.md) to download a task, read a demonstra
 
 Training implementations, policy weights, and glove recording tools are managed separately.
 
+## Contact
+
+For questions, feedback, or help using DexJoCo-X, contact [Xiangwei Jiang](mailto:jxw@std.uestc.edu.cn) at **jxw@std.uestc.edu.cn**, or open a [GitHub issue](https://github.com/dexjoco-x/DexJoCo-X-public/issues).
+
 ## Citation and licenses
 
 See [BibTeX](CITATION.bib). Original code uses [MIT](LICENSE); original dataset contributions use [CC BY-NC-SA 4.0](dataset/LICENSE_SCOPE.md). Third-party components retain their own terms; see [notices](THIRD_PARTY_NOTICES.md) and [license status](LICENSE_STATUS.md).
