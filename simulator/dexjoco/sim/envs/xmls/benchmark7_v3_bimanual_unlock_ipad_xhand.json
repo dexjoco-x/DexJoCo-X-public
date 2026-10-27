@@ -2,10 +2,10 @@
   "version": "benchmark7_v3",
   "task": "bimanual_unlock_ipad",
   "hand": "xhand",
-  "status": "candidate_not_task_validated",
+  "status": "mount_aligned_native_replay_verified",
   "reference": "repo://simulator/dexjoco/sim/envs/xmls/cross_embodiment_v1_bimanual_unlock_ipad_inspire.xml",
   "reference_sha256": "b7cd47eab898dcbbeb067e89dcf545fa07dee3ec470618a58b25d346be118407",
-  "xml_sha256": "f7862ea3f7befa7d0185ad4ffa049d63cb0d96d81045cd8defbf1193d842fe0b",
+  "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
   "sides": {
     "right": {
       "joint_names": [
@@ -1676,5 +1676,18 @@
       "Friction policy source notes describe the imported parent; this record describes current geometry."
     ],
     "sha256": "5ab87c28ae918493b4425eb0033fdeff556bee5cf406331594d1359dd0a2a8dc"
+  },
+  "mount_revision": {
+    "id": "xhand_left_mount_rx180_ipad_v1",
+    "scope": "XHand left CAD fixed transform only",
+    "legacy_xml_sha256": "f7862ea3f7befa7d0185ad4ffa049d63cb0d96d81045cd8defbf1193d842fe0b",
+    "source_xml_sha256": "e6a338f9e7dbf6213e607254b8f2a43baf5b9f0b0a652e7c7a1172b189ee57bc",
+    "source_transform_body": "benchhand_left_native_xhand_left_base_link"
+  },
+  "native_replay_verification": {
+    "episodes": 50,
+    "successes": 50,
+    "report": "docs/replay/xhand_ipad_mount_fixed50.json",
+    "report_sha256": "82ab5ff5ca765645dc128c9e23e6c4ac28db4313a2f732665bf59b2989865501"
   }
 }

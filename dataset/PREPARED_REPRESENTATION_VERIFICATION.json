@@ -57,5 +57,7 @@
       },
       "sampling": "frame-proportional step sampling"
     }
-  }
+  },
+  "dataset_version": "dataset-v1.0-corrected",
+  "scope": "Historical verification for the previous dataset manifests; regenerate prepared views from a new dataset revision."
 }

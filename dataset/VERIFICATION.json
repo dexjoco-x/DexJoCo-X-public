@@ -8,18 +8,61 @@
   "splits": {
     "train": 2100
   },
-  "frames": 946156,
-  "corrected_xhand_microwave_episodes": 50,
-  "referenced_files_verified": 9450,
-  "release_files_checksummed": 34984,
-  "prepared_groups": 42,
-  "prepared_representation_groups": {
-    "native": 42,
-    "faas": 42,
-    "dexlatent": 42
-  },
-  "prepared_representation_content_audit_passed": true,
-  "adapter_checks_passed": true,
+  "frames": 939356,
+  "continuous_native_replay_successes": 2100,
+  "recorded_state_fidelity_successes": 2100,
+  "newly_collected_action_sequences": 220,
   "symlinks": 0,
-  "base_v8_manifest_hashes_unchanged": true
+  "all_video_frame_counts_verified": true,
+  "all_public_tensor_fields_valid": true,
+  "reference_environment": {
+    "python": "3.11.15 | packaged by conda-forge | (main, Mar  5 2026, 16:45:40) [GCC 14.3.0]",
+    "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.31",
+    "machine": "x86_64",
+    "packages": {
+      "mujoco": "3.4.0",
+      "numpy": "1.26.4",
+      "scipy": "1.17.1",
+      "gymnasium": "1.0.0",
+      "dm-robotics-transformations": "0.9.0"
+    },
+    "mujoco_version": "3.4.0",
+    "mujoco_library_sha256": {
+      "libmujoco.so.3.4.0": "764cf4ea21dea7764db0284b2f283af1ec9a9e962241b72d1c5b63b86d624c85"
+    },
+    "blas": [
+      {
+        "internal_api": "openblas",
+        "version": "0.3.23.dev",
+        "threading_layer": "pthreads",
+        "architecture": "Haswell",
+        "num_threads": 1
+      },
+      {
+        "internal_api": "openblas",
+        "version": "0.3.33",
+        "threading_layer": "pthreads",
+        "architecture": "Haswell",
+        "num_threads": 1
+      }
+    ],
+    "numpy_extension_sha256": "a735e4e8355b75c800112af8a5b1731b891b2016ed57067352eea6cab0aa00bc",
+    "scipy_rotation_extension_sha256": "cda2fb0d93c1d7a103915f2cb51de347c612c5fe88530e8f9d2cacf78d01635a",
+    "numerical_environment": {
+      "OPENBLAS_CORETYPE": "Haswell",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": null
+    },
+    "native_execution_helpers_sha256": {
+      "initial_error": "7e49da1b4cb22b04d2634271d808356f1f01bb029ef244f270be596f4a700d99",
+      "commands": "bbc299ad39eb9384e18ecb6ad6ac6948e6f962589567c0459fbe45dbe20881c4",
+      "step": "2081a3cbb927122f29e88d487a2bcd85f6fb9c3a22de110329230bfe7e26a2b9"
+    }
+  },
+  "reports": {
+    "native_replay": "metadata/NATIVE_REPLAY.json",
+    "hammer_motion": "metadata/HAMMER_MOTION.json"
+  },
+  "prepared_views_included": false
 }

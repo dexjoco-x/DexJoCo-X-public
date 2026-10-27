@@ -1,5 +1,8 @@
 {
-  "release": "DexJoCo-X_dataset_v9_candidate_20261001",
+  "release": "DexJoCo-X_dataset_v10_native_replay_20261027",
+  "dataset_version": "dataset-v1.1-native-replay",
+  "package_version": "v1.1",
+  "release_date": "2026-10-27",
   "tasks": [
     "bimanual_microwave_cook",
     "bimanual_photograph",
@@ -9,7 +12,7 @@
     "single_hand_hanoi"
   ],
   "episodes": 2100,
-  "frames": 946156,
+  "frames": 939356,
   "splits": {
     "train": 2100
   },
@@ -20,18 +23,21 @@
   ],
   "camera_profile": "dexjoco_official_allegro60_hanoi_front_v1",
   "manifest_sha256": {
-    "bimanual_microwave_cook.json": "86dd17d7c7ef77cdbf0a81d0ff2cfcdaf78967f5b6d6fadff45bf5ecc7713e50",
-    "bimanual_photograph.json": "62da814f2de65f4e01715b20f34765178aa0f4a8b74f2acc4a92feaf2391e11a",
-    "bimanual_unlock_ipad.json": "f38efe3abfd2048334e825c925d0a289e3facabca7ea2c5c6a603d932d0ff3dc",
-    "hammer_nail.json": "b0802926b65a8a53b6056dcf9f07a0e1f0fda160d5bbdebc5b63b33cd484c9c3",
-    "pick_bucket.json": "bf1d2573505a47f0732727c2ccfd85b0ec8b7f1482d4c8acbcb96160b9b20140",
-    "single_hand_hanoi.json": "ba9849d4ee6965e4adcc1fb543851dcbe3d42d22a5ecb9540f1f2cc5cca01a22"
+    "bimanual_microwave_cook.json": "c83974bbe538f965a8977dd6e5d3b79fe7ebabdbd84eb03981d2386663abf574",
+    "bimanual_photograph.json": "3035e8a1ef25c9e9bfb0ed13c24c3056713b5453aac923986103cca187725d81",
+    "bimanual_unlock_ipad.json": "cfb5d09d243f41973320c6eb488e96c694afda2f4b2df1e1dc4e054a65eea8ca",
+    "hammer_nail.json": "41432884eaad9d1ac444c319fabba079b505df812a71419982b902e30334b4e6",
+    "pick_bucket.json": "56e6cc050a848429238feae3f2371caaa7626fc2459ceb6ef43e978180888a02",
+    "single_hand_hanoi.json": "1a7452f55f5660b25258e60c5731f4e00b6ce702d2762190fd48c287222189ce"
   },
-  "model_training_started_by_this_release": false,
-  "replaced_episodes": 200,
-  "retained_episodes": 1900,
-  "parent_release": "20260911_ipad_manual_v8",
-  "corrected_xhand_microwave_episodes": 50,
-  "xhand_microwave_mount_revision": "xhand_left_mount_rx180_v1",
-  "source_locator_scheme": "release-relative-v1"
+  "native_replay_report": "metadata/NATIVE_REPLAY.json",
+  "quality_reports": [
+    "metadata/HAMMER_MOTION.json"
+  ],
+  "parent_dataset_revision": "9f48e1404168227a22586af0cffb8371dbb7e1f1",
+  "newly_collected_action_sequences": 220,
+  "unexecuted_terminal_suffixes_removed": 918,
+  "observation_timing": "pre-action",
+  "control_hz": 20,
+  "source_locator_scheme": "bundle-relative-v2"
 }

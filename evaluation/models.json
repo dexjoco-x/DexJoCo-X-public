@@ -5,7 +5,7 @@
     "original_xml_sha256": "d0d86b04f61c36afbf2ed23c4d08ebc36bac2113e3eadc0f9f1a992c2a66e98f",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_microwave_cook_allegro.xml",
     "portable_xml_sha256": "300f9e7035eb6eb9202ef1b9b1b837a2af207ae5c23112d0697e50ac6514ff24",
-    "contract_sha256": "093a2b532750d162785253e6dc9a8f2de70dac34a22f2c6601ad3ba87c9d56aa",
+    "contract_sha256": "2c070eaed72547e6cf93c6a21980c70a393dedfdd79b7a7a0053c6d50703d6f1",
     "source_scene": "scene_000",
     "contract": "contracts/bimanual_microwave_cook/allegro.json"
   },
@@ -15,7 +15,7 @@
     "original_xml_sha256": "3de9c3e80255e790f600fc30f614ee9e79f0fe7cc07b67ea9fbcaa2ba874d3a5",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_microwave_cook_inspire.xml",
     "portable_xml_sha256": "7bd47ce773a01302d8356d9d4e5007b235b87860cb58a2eaf3d6200674d9b96c",
-    "contract_sha256": "a9bb656616f8ab2730e38049e63470906c79ceb0b03a6d34a2153368301e1d85",
+    "contract_sha256": "4a809a396ce19010ef879a85898d7641220afd341ac61561c8a54902b15d296b",
     "source_scene": "scene_000",
     "contract": "contracts/bimanual_microwave_cook/inspire.json"
   },
@@ -25,7 +25,7 @@
     "original_xml_sha256": "0930822d5686a94c95f9ae2be3132c8d3abc849b3539fcb440fe00a0e34ebc2f",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_microwave_cook_leap.xml",
     "portable_xml_sha256": "56e9834d5afae15c009c95fd0095fa567f21cf55fd14538e92d4f1797d5706ac",
-    "contract_sha256": "54824f03b0542ac356cefb3ee0c8adbdd9da54b74260f00aaa8ecc4690299e21",
+    "contract_sha256": "67c0ca7cfc9decbd4451587adf2e2556680ce481c5fe269f060f35f970c295bc",
     "source_scene": "scene_000",
     "contract": "contracts/bimanual_microwave_cook/leap.json"
   },
@@ -35,7 +35,7 @@
     "original_xml_sha256": "24e6dca84717269ce39e9abe3c2515804823d0f610d78aa91cbe588d626c7de0",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_microwave_cook_linkerhand_l20.xml",
     "portable_xml_sha256": "998df47653357a621bf85b101bd0a4e978dc6361cb7774ff79966d399f9400e1",
-    "contract_sha256": "9c68390f310a38489142c9aefb96415b44632f8b2c09ddbf8cbda1608958af3c",
+    "contract_sha256": "2e93bbaa0e120a3d335f510289d9f3ede8103acd7627545c21fa40b9caae42a4",
     "source_scene": "scene_000",
     "contract": "contracts/bimanual_microwave_cook/linkerhand_l20.json"
   },
@@ -45,7 +45,7 @@
     "original_xml_sha256": "d862236fef3aa42c6ba458fed0e9844303920d41879e0d20b969245c873fc27c",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_microwave_cook_sharpa_wave.xml",
     "portable_xml_sha256": "a48217ad2c16db5d4679afcb74098196e74851a964789f8b61e523f16a079392",
-    "contract_sha256": "07b8b7a8b9d0c56e45f065c69ff12c10f93dc0aebe734d245fa4f28b3a7d3f5b",
+    "contract_sha256": "ed398032da7863536bc305ee91ddced5fa075ef42dbcafcebfbf26a3ea6bec4e",
     "source_scene": "scene_000",
     "contract": "contracts/bimanual_microwave_cook/sharpa_wave.json"
   },
@@ -55,7 +55,7 @@
     "original_xml_sha256": "a28cc64bcd3e29aa83cacf2ff1a836d06c9ac8f61cf0129932dab69869c59ded",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_microwave_cook_wuji.xml",
     "portable_xml_sha256": "3fcaa9596fa015e30a4dc58425d47d2595af64543f6d5baea5a4e3f8bf5f3c0e",
-    "contract_sha256": "e8d4f370a34f136e38e75b81b7e3266468af9022631b22e7fbe8cde8b24d5818",
+    "contract_sha256": "0ab89995d210c22b00ff38e330b5b439b20e365c827c960b51840efa85daa52f",
     "source_scene": "scene_000",
     "contract": "contracts/bimanual_microwave_cook/wuji.json"
   },
@@ -65,7 +65,7 @@
     "original_xml_sha256": "b49d61e79c3d275336ed191233a491728dbfb3f144349d6351475a6d790b2001",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_microwave_cook_xhand.xml",
     "portable_xml_sha256": "11e56fb27fb68ae61ddf169c6ce1b9f335c053ee8e5a6c19f7441cff9440bd84",
-    "contract_sha256": "19d72638857aa15912ae786e97b35053f4e04bb623d5d539ce4bca6c29401801",
+    "contract_sha256": "fe090ae980cd526d7bafd7eea2652e06c80c6ed49f05d70888c87d5efea1f3ce",
     "source_scene": "scene_000",
     "mount_revision": "xhand_left_mount_rx180_v1",
     "contract": "contracts/bimanual_microwave_cook/xhand.json"
@@ -76,7 +76,7 @@
     "original_xml_sha256": "d672826c85f715148d4f6f9de50b80c6fb7b70fea510b2235cacbbd042a8e7a6",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_photograph_allegro.xml",
     "portable_xml_sha256": "27aa43d1e01ce5a31178b473b88f84a334509a297d361dc2eb8f2b137de7908e",
-    "contract_sha256": "7de5021d9d474c0492c2c0a77c409ee96cc14a72a87c25bfc8d015f5f94cf47a",
+    "contract_sha256": "e746d97ed6aff6032affb18d36109b7b6c1386fd0f6b19ceec24356df84d29ac",
     "source_scene": "scene_000",
     "contract": "contracts/bimanual_photograph/allegro.json"
   },
@@ -86,7 +86,7 @@
     "original_xml_sha256": "6e9db11521392cc1e0f8a1d7b3f07785ed1e906ea9ecd9f436325ff1eb1f5f8d",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_photograph_inspire.xml",
     "portable_xml_sha256": "992e9c2e90602be0e367c601c6071940a3a843bda0d0df73300f1d0994dcaace",
-    "contract_sha256": "21e21610b12acf60181e6016da7d7a6f66c7348747ad3b866795360c48c19cca",
+    "contract_sha256": "3b50ab1ca97292ffbb268d577ce78b57f6219583b0f6819f2e92777d606c7791",
     "source_scene": "scene_000",
     "contract": "contracts/bimanual_photograph/inspire.json"
   },
@@ -96,7 +96,7 @@
     "original_xml_sha256": "4c175a0f91868eabd27ef182950b4b8b1f282ecccd7a04e47188d6ab602e2df6",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_photograph_leap.xml",
     "portable_xml_sha256": "5e0a8c019e921506ab07573ebd9cf890f5ae9b00517e8a4a2d81e102ea7dfffe",
-    "contract_sha256": "0c3bd01aff7746fb821ccc1b4fe9da9db1d725354fdc13e054bb9ee3d420fcdb",
+    "contract_sha256": "693c98073f81c0ad5d5d8b455b7fd3bc32eea146057b9ca9f62b7d48a6882991",
     "source_scene": "scene_000",
     "contract": "contracts/bimanual_photograph/leap.json"
   },
@@ -106,7 +106,7 @@
     "original_xml_sha256": "c257b820bc60661d0451b6a215f94882f93c58eb2225a4e2c699adea12e1b765",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_photograph_linkerhand_l20.xml",
     "portable_xml_sha256": "5073398b2070c7169f21b17463373a688e04aed72866b39fe63ea7a4781df2d3",
-    "contract_sha256": "a2a54bf757e1ac3f315105b11dfd9a53abf6ba6b4f424a82ceee3031dd3373e4",
+    "contract_sha256": "059c568cd3849a4e57019a976a375308341b171b82c89b1c259aeec3bfdc0613",
     "source_scene": "scene_000",
     "contract": "contracts/bimanual_photograph/linkerhand_l20.json"
   },
@@ -116,7 +116,7 @@
     "original_xml_sha256": "2332478027712102491d0915ea8ecd6f199d47ee6a8e43aa62775af2fe8877c1",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_photograph_sharpa_wave.xml",
     "portable_xml_sha256": "90b00bf73248e15547bed93965653a86bcde908193354ec8040cf48ba4731fa9",
-    "contract_sha256": "38bba9e05ed4ec41259490fbc376c5083e7009a2f67d4917bfa7cd3b62b99e75",
+    "contract_sha256": "14e096cb3ad9727736316d031407acdf7a52be804d35cdd1d0d3fed2630f34f3",
     "source_scene": "scene_000",
     "contract": "contracts/bimanual_photograph/sharpa_wave.json"
   },
@@ -126,7 +126,7 @@
     "original_xml_sha256": "8fa21e7d1cc5071994e5b3a869ce0b89a7bc54524d764a42e8422fdecb606e2c",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_photograph_wuji.xml",
     "portable_xml_sha256": "71b19848d1ca7668bba3688118299ff21bad1a5fe2104d807fb63b045ce1b22b",
-    "contract_sha256": "d882a80cdcdab2df329f5442988146008a657d554b2ef12b3a3396371257522f",
+    "contract_sha256": "e02539cdc55a74910b8ffab0f4abe280adae04b543350eb6897869334efe864c",
     "source_scene": "scene_000",
     "contract": "contracts/bimanual_photograph/wuji.json"
   },
@@ -135,10 +135,11 @@
     "hand": "xhand",
     "original_xml_sha256": "d5899fedee9d6f784f89c18583fcea08094dd547115851d75a93e8bd109d330b",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_photograph_xhand.xml",
-    "portable_xml_sha256": "eabdd9845e7d51f4d8fb411f0478ec0ed27fc24f50acdfc912d197ed61c4f02b",
-    "contract_sha256": "50f505fed8d788658f6a18f22c161278f60fba63460ae7a073d9bf9f0d2685d1",
+    "portable_xml_sha256": "3646994298bd20701b76e0ee2d8b65a2b63c56510b02cbb124fce4f0c2435832",
+    "contract_sha256": "03aa9b575842d973682b5275b779aee34ecdf60e52682369af53d9e93445898d",
     "source_scene": "scene_000",
-    "contract": "contracts/bimanual_photograph/xhand.json"
+    "contract": "contracts/bimanual_photograph/xhand.json",
+    "mount_revision": "xhand_left_mount_rx180_photo_v1"
   },
   {
     "task": "bimanual_unlock_ipad",
@@ -146,7 +147,7 @@
     "original_xml_sha256": "7f9ac6e0b058968521ecb64853d03051080062eefdaa3363b7174b7343b6425a",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_unlock_ipad_allegro.xml",
     "portable_xml_sha256": "fbac6a3487ef119f954f5eb055249f591c97755a0bb6d3bd1152ce6c4ceba4a5",
-    "contract_sha256": "79462960bab7c51f2e81129ab37ea740dd40698c119b1b95dad6390fbf465201",
+    "contract_sha256": "be61315023eb2deef2fbe34551e93535f0fde618ee18929f26c22d372c3cb4fc",
     "source_scene": "scene_000",
     "contract": "contracts/bimanual_unlock_ipad/allegro.json"
   },
@@ -156,7 +157,7 @@
     "original_xml_sha256": "7c29d6f0e4300a643a1eb18dbd09aa8de7c8223e2ec3e5a0a8def47b8e056800",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_unlock_ipad_inspire.xml",
     "portable_xml_sha256": "340ef93f5410d70a374e9f04b8130e859c54cb2f3854a74728a66b5e771ab6f1",
-    "contract_sha256": "64a0c4eca4d20915cfdaf0f85d83dbfbbad00ab9f8d36b7a2b0c7cc17599435d",
+    "contract_sha256": "84bb54020bf3a8683c2046fdb774aff6eb6018f61b0cd5088f7a3a3221e5f2e0",
     "source_scene": "scene_000",
     "contract": "contracts/bimanual_unlock_ipad/inspire.json"
   },
@@ -166,7 +167,7 @@
     "original_xml_sha256": "3acb3291a0a7d724958ebda1967748f5c24145143f6ee203698d1f3115251749",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_unlock_ipad_leap.xml",
     "portable_xml_sha256": "0af6eb0f2a579dc6acf491db565892621a6195d6de4be4702483f8fea74c7760",
-    "contract_sha256": "21a32cefb4e8ffe824c314dba68ac047e5da9b507f6dfa33c3a412d3b5f63496",
+    "contract_sha256": "f1df63dca7f2726e087704415a292d4344cd5b7000f6f3b4d19adc15acb66dbb",
     "source_scene": "scene_000",
     "contract": "contracts/bimanual_unlock_ipad/leap.json"
   },
@@ -176,7 +177,7 @@
     "original_xml_sha256": "a832421ef38cc6ac7339b6edced754b8acc7856918f0b3229b6954c38b23fdf9",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_unlock_ipad_linkerhand_l20.xml",
     "portable_xml_sha256": "c4bd1e87ac94efb7b938ca744d93af11d1234077ace89541a174c614dffd0507",
-    "contract_sha256": "be7ed1158638649473cc1b66a74847db5073567133cc39b959a1c179b0a705e5",
+    "contract_sha256": "d0ace1260cb641a0c6ad2ac5732b523682eb7ae8a631328d0c25d8d03a783cd1",
     "source_scene": "scene_000",
     "contract": "contracts/bimanual_unlock_ipad/linkerhand_l20.json"
   },
@@ -186,7 +187,7 @@
     "original_xml_sha256": "8b699a3b010a75d87c5faeca6f6df863c296078971a2d8e978837a55c204e80d",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_unlock_ipad_sharpa_wave.xml",
     "portable_xml_sha256": "b591abc81305d9c15ecd8678cd3af1a3bd3215acbcadf6eb990590566805ba72",
-    "contract_sha256": "bd6de17adffbf0174bc709f89f668d0c370d22b1d02c54a0ea6604f8225b6543",
+    "contract_sha256": "5646f9ffac5fa443f99ce84d887b1b58f333e6028ab83eb6b1aff9e47a5b565f",
     "source_scene": "scene_000",
     "contract": "contracts/bimanual_unlock_ipad/sharpa_wave.json"
   },
@@ -196,7 +197,7 @@
     "original_xml_sha256": "e3258dbd1615c92b515487ac1cf3b9880b8ae7ff44e291d2384b830e9fd4c3df",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_unlock_ipad_wuji.xml",
     "portable_xml_sha256": "78f80dfa92a41f6f0462ce7be2d8e61c0d1105497bcc3b3a92a883dfb2d03427",
-    "contract_sha256": "8f5e34e531fda4ddb38a686e0d151a97b35c1bacc6aa676a2c1facb815c38812",
+    "contract_sha256": "f4357404763e04dfc9fef50e5387f13a241f6827326a65d243922164c7c88008",
     "source_scene": "scene_000",
     "contract": "contracts/bimanual_unlock_ipad/wuji.json"
   },
@@ -205,10 +206,11 @@
     "hand": "xhand",
     "original_xml_sha256": "ec83ca14a14522dc5b44abee6b9dd14c6bfe91c97d49a3ca2f0215431713df87",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_unlock_ipad_xhand.xml",
-    "portable_xml_sha256": "f7862ea3f7befa7d0185ad4ffa049d63cb0d96d81045cd8defbf1193d842fe0b",
-    "contract_sha256": "a62a0813590c6357d1641c1cd38f608173fc5ce7d1eb742c1af26c3a321d409f",
+    "portable_xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+    "contract_sha256": "f437bf9d709763bb221e9347cf7b68a7d7e8a032475639a1687218fc674c5042",
     "source_scene": "scene_000",
-    "contract": "contracts/bimanual_unlock_ipad/xhand.json"
+    "contract": "contracts/bimanual_unlock_ipad/xhand.json",
+    "mount_revision": "xhand_left_mount_rx180_ipad_v1"
   },
   {
     "task": "hammer_nail",
@@ -216,7 +218,7 @@
     "original_xml_sha256": "5b93324cb39fb8a30273715f1bf4598095204bc2460bb007ce7e304d46a13ccc",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_hammer_nail_allegro.xml",
     "portable_xml_sha256": "1caa97f3d48900e09b2fe31b093281616664ffdfd09228a2c7ae6da67ab2870f",
-    "contract_sha256": "1576deeb7a2e3f5540fea394934b9ff83187727034f8301de91e7501fe4f7606",
+    "contract_sha256": "2fb34e83a51f1321e3813614ebb6cc38ccf4f7041cfc0784ea7e54c4083ed306",
     "source_scene": "scene_000",
     "contract": "contracts/hammer_nail/allegro.json"
   },
@@ -226,7 +228,7 @@
     "original_xml_sha256": "332efb0a5eae74b05b1492c8e93cf36917906379f6797e5b02cd1fa2f3b54df8",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_hammer_nail_inspire.xml",
     "portable_xml_sha256": "abd8df2f666ed9a4cf6ebc593e623a855ba909f571d70af7158f43a5a51127aa",
-    "contract_sha256": "530ecfa21cfbeb7ada7ddf4698e8e175f2bec0c8003b72be0e3e17395cb9f508",
+    "contract_sha256": "c16d010ce562a535ca2bc2b78759de52c888e21175ce0e08e4d9030f1e4a3218",
     "source_scene": "scene_000",
     "contract": "contracts/hammer_nail/inspire.json"
   },
@@ -236,7 +238,7 @@
     "original_xml_sha256": "0337e68eb0a3f88f219a8bac9d2b3cc4e39945868ee696b79c58cee2f099728a",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_hammer_nail_leap.xml",
     "portable_xml_sha256": "1d2eb5e4aac2aa2d1fa60c307f7c9d32fb814c7bbffc4ca6e8da7eedc293ed75",
-    "contract_sha256": "177cb36a311e87a0c23ba9332376d75c198a248a99d897466923990b72d08fbc",
+    "contract_sha256": "3be4a5752bf24e6be60e7ede93ed1b1589197398330bbfed5e49d7ffaf495d44",
     "source_scene": "scene_000",
     "contract": "contracts/hammer_nail/leap.json"
   },
@@ -246,7 +248,7 @@
     "original_xml_sha256": "28e1eaf007fbfae6b83b9e7f7d94611e806bd5338df085372685af94dffde222",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_hammer_nail_linkerhand_l20.xml",
     "portable_xml_sha256": "2fd2ab0c4140ec70811ea6b47980311fb8f11b58eef25e952b9e5cce0ac1cfe7",
-    "contract_sha256": "dfe752d492b5517daafa9560096e1e574ba5199b1a4a4ce939e6ff973c6c9613",
+    "contract_sha256": "51f2fb9dae9873525f53e247c278415e0f8ae99a429a27973633621e8b7a7b80",
     "source_scene": "scene_000",
     "contract": "contracts/hammer_nail/linkerhand_l20.json"
   },
@@ -256,7 +258,7 @@
     "original_xml_sha256": "727659c871bc16fb6aab33e838188c9ab8848968cef6e7c8f51846dec7f879cc",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_hammer_nail_sharpa_wave.xml",
     "portable_xml_sha256": "eddca7a0c7e87f270facca38869b5d4907b967003a5231628fcfb4cc7d827f63",
-    "contract_sha256": "99ee79025637fae88294aba0d1006f2c41514c8f54c7eb2980b15ed4daf5a392",
+    "contract_sha256": "20fab8e8368180c749e4aaa504beec8e9b8cd9bcb3555a85f379406c6720ddb7",
     "source_scene": "scene_000",
     "contract": "contracts/hammer_nail/sharpa_wave.json"
   },
@@ -266,7 +268,7 @@
     "original_xml_sha256": "19b77df3295785c4967dd2cd6d28c7a5414cd49e61f809a962d7970d3db89544",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_hammer_nail_wuji.xml",
     "portable_xml_sha256": "579e0397554545e8a7fb65a3c48b8049b5e62dc4e7adf8ca1795a0d08aab2915",
-    "contract_sha256": "18affed56a8933256fe26ea6140c3857984ff5c7664af8612e609cb33081e9f1",
+    "contract_sha256": "ab501b45908f3d240d6814ed0bfe25913a164895973f2ce7c95a75f665a3b653",
     "source_scene": "scene_000",
     "contract": "contracts/hammer_nail/wuji.json"
   },
@@ -276,7 +278,7 @@
     "original_xml_sha256": "28608d868cda250e68041a319c213a06ed1a60fbbaef67835e91890ee6c727bb",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_hammer_nail_xhand.xml",
     "portable_xml_sha256": "1bbadcbe35a6051f28d852e002c59ecf27780937318558874a19c5b615af4cba",
-    "contract_sha256": "841a1eb1fee5acb98026ce2d42c10f19fa0b2be22a93746d10fbc52b00fad767",
+    "contract_sha256": "54cde5caf3597c34eb29fea61774ed225ce2fcad50a9d2b58380188c4600c8f3",
     "source_scene": "scene_000",
     "contract": "contracts/hammer_nail/xhand.json"
   },
@@ -286,7 +288,7 @@
     "original_xml_sha256": "f5362c73f3a56108a6375b76dd8e6ce7a4200c607e2a8ed6cb3c79e2512239f1",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_pick_bucket_allegro.xml",
     "portable_xml_sha256": "d694808a532621a9ffd964eab5fb6c244dd6f506cbaf38cdf2ab0f483b3197bc",
-    "contract_sha256": "83b88f8271e593b1ce6b6b44cdaf0c91474381268746e81624a6c163ac3d6648",
+    "contract_sha256": "e5486de5696cb011b7eb0fc720075302e5596d050352a51af25f344766a3efa4",
     "source_scene": "scene_000",
     "contract": "contracts/pick_bucket/allegro.json"
   },
@@ -296,7 +298,7 @@
     "original_xml_sha256": "5993359af8502e2b8f8849403089ec9264c0b943163f90f4ba2e570d1fcf371c",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_pick_bucket_inspire.xml",
     "portable_xml_sha256": "906ed2808db51183d7cada8e1b6c8686d56713305df8e617b847344a148013c0",
-    "contract_sha256": "b5402da9af16478c113eea55cf2a63d70dd625e281c376c399cf519a8fd2a1ea",
+    "contract_sha256": "9792b69ff433bd861aec1dc4a2817ea875c092f31fb3ba29624fccf12cb3ef07",
     "source_scene": "scene_000",
     "contract": "contracts/pick_bucket/inspire.json"
   },
@@ -306,7 +308,7 @@
     "original_xml_sha256": "a9187806999528a2755ce603abcac0ccde2350a38179bcbf19708772e2926545",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_pick_bucket_leap.xml",
     "portable_xml_sha256": "7bc7bf5523cf2e985903819da4628061bf01cd6b1f5dd2d1f49b5a81b8af3236",
-    "contract_sha256": "f23d68d6db8079bab5ce70dd46cef6a96c546f6796aebd016f221ef5e5c66730",
+    "contract_sha256": "9faec6f1984a3aacf104c113b9e9106f6b19193792b587c5f15389fdbf65d183",
     "source_scene": "scene_000",
     "contract": "contracts/pick_bucket/leap.json"
   },
@@ -316,7 +318,7 @@
     "original_xml_sha256": "4c1d70f0cf0391a951cafb5ddfb78e1cbee83cf3324fdd949c7cf7a075fefa49",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_pick_bucket_linkerhand_l20.xml",
     "portable_xml_sha256": "c43f86064c9e9ed81ac18178af04f67a80975921decc490d1741fc3f049dd647",
-    "contract_sha256": "0113d8debcfa9e9c294cdeb26d817ccb66438d98b4a8e7f4a486af2abeced3f9",
+    "contract_sha256": "5fef1edde5afd5fa99bd8cf2cc3545524034ab6e7458300bfdb2329296a54c3e",
     "source_scene": "scene_000",
     "contract": "contracts/pick_bucket/linkerhand_l20.json"
   },
@@ -326,7 +328,7 @@
     "original_xml_sha256": "67c3ee07cf3aaefe6577fb953bc0d24a033497786d55527703f2b8a4a3cfe7c0",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_pick_bucket_sharpa_wave.xml",
     "portable_xml_sha256": "cc14e26547c87d60228753d2eef8f56245e1ac31f118a948baea2548a21ecd4c",
-    "contract_sha256": "49a11f344bd232717323c0cf49e897f7736d4d6f61ebaf5cc9fe18ccf4e1b526",
+    "contract_sha256": "461db69a9c41df9fc7dfaf4db08b8e6827cd03f9708059a4373294a0414a6988",
     "source_scene": "scene_000",
     "contract": "contracts/pick_bucket/sharpa_wave.json"
   },
@@ -336,7 +338,7 @@
     "original_xml_sha256": "7e270a446af07548e9a743415445c80ef0e7fa667f628b5c20d2387b26abc329",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_pick_bucket_wuji.xml",
     "portable_xml_sha256": "5dadfe60d152648a5c80d7211fa3fc151f29841b9a570d98fd9b69274035cf9c",
-    "contract_sha256": "da792a7cab38c7274a355cd302affe59eaf1eab6a339e0fb3495d23a7e2af1ab",
+    "contract_sha256": "7b133b2e0b032b576b80582f1cf658f2bfb842371b8fa64a8d7dac0a80cd3c4f",
     "source_scene": "scene_000",
     "contract": "contracts/pick_bucket/wuji.json"
   },
@@ -346,7 +348,7 @@
     "original_xml_sha256": "41b5f85ac9fb068b917a95f38870d5f3a57ee607ef4239b66818288ef451fe9e",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_pick_bucket_xhand.xml",
     "portable_xml_sha256": "ab699b0b869d554df2d0fa071d86cf2049414e4ba19a5a3f79b364806ab3d861",
-    "contract_sha256": "23554b5ae3cd33625ba0c0c782303f4a91584f8cfc3b60915a29cf2cae23472f",
+    "contract_sha256": "53e377c8545575453100d56433ed97758c5a0f48ceb8d45019c6502df7403ea7",
     "source_scene": "scene_000",
     "contract": "contracts/pick_bucket/xhand.json"
   },
@@ -356,7 +358,7 @@
     "original_xml_sha256": "3e8362236273ac2873772cdc0e082a0260ff5ed274f86497322080ec2a1dcd86",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_single_hand_hanoi_inspire_scene_allegro.xml",
     "portable_xml_sha256": "58adfe7e5c165b1bbfcd9b3512bf848b5130feff75d48a5be3ac4ae50ce79794",
-    "contract_sha256": "e765dc181c63c8f6de94c343baf2db40132be350953243a44e6b2d74ed966a47",
+    "contract_sha256": "b11ccb2862ccc2c612997bb4280c3734a3d473cd42f9554e11d78440bd33622f",
     "source_scene": "scene_000",
     "contract": "contracts/single_hand_hanoi/allegro.json"
   },
@@ -366,7 +368,7 @@
     "original_xml_sha256": "163a1d146f41bd22461fd698953ad28874f1566726249774fff7be1b8c21a030",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_single_hand_hanoi_inspire_scene_inspire.xml",
     "portable_xml_sha256": "54270aab0a78408c3e68a5da8fe4fe17369af1b85a2a9bcfdbce9c0e8707582c",
-    "contract_sha256": "3a257b587a753fff27ec977889e5c5c096bc7f31341119d0b788e0d5f6785c01",
+    "contract_sha256": "fa77b265b79cb05f05ce006f0d156a3df359d1e0c7fb463731a5c135fdab4061",
     "source_scene": "scene_000",
     "contract": "contracts/single_hand_hanoi/inspire.json"
   },
@@ -376,7 +378,7 @@
     "original_xml_sha256": "4d4791936005867d612ea826457a10cc795fb461a43e8608d5418f6113c4fa15",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_single_hand_hanoi_inspire_scene_leap.xml",
     "portable_xml_sha256": "26a30e96abd806fc836ad28f203f2a97f90d3a282616181002b2566c71a0ccb8",
-    "contract_sha256": "93071f727104fab291941d2a76eb5c4ba9d58b0a0d2488e01b7762baa66bdf1b",
+    "contract_sha256": "bfa6d25fbe1521ab2c54b1a833e8ac0e83c7f25805e09764049ff38099d8858f",
     "source_scene": "scene_000",
     "contract": "contracts/single_hand_hanoi/leap.json"
   },
@@ -386,7 +388,7 @@
     "original_xml_sha256": "19b0c2b30af3a55ce4d4e0c59f73acfd9e980fdb96427cdb39a4eeac8e175595",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_single_hand_hanoi_inspire_scene_linkerhand_l20.xml",
     "portable_xml_sha256": "8981b861edf0038b7c07f470303f6d6724639065d048933d016a74d9521d8bb2",
-    "contract_sha256": "28119ce274f3e3021f7cede2efb655c1620bfed703a0c4f6ee3b073057a00761",
+    "contract_sha256": "385d8a72bab0e3c4f54f0cb244813012c7b6123a27132ec1a675775b12ba7aaa",
     "source_scene": "scene_000",
     "contract": "contracts/single_hand_hanoi/linkerhand_l20.json"
   },
@@ -396,7 +398,7 @@
     "original_xml_sha256": "9ba1d7ee7f67cb50b0c136af0536d8c2e5a440d8de5a152759b27accce710ca7",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_single_hand_hanoi_inspire_scene_sharpa_wave.xml",
     "portable_xml_sha256": "7ca4ebe6a65d454cef13f4a6ba3cf168803d322172057205e4354a0829757ad2",
-    "contract_sha256": "c354e39b43295b31af03281208342b2dc4b34f748254f52beb4a54f1bfbe73cb",
+    "contract_sha256": "e4fed5b481c85e4dc5f9482ea4cf3ee9b8ee083ce45adcd9491da3ad62285436",
     "source_scene": "scene_000",
     "contract": "contracts/single_hand_hanoi/sharpa_wave.json"
   },
@@ -406,7 +408,7 @@
     "original_xml_sha256": "997676a7da9919fe8de98c19c808ff60a6b3776c4568d435bf87543049152147",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_single_hand_hanoi_inspire_scene_wuji.xml",
     "portable_xml_sha256": "58679039779824fd77b6a6b72a8dae1c091da7b7f7427d9d61daa753af4975e4",
-    "contract_sha256": "4a6cf5566bbb665dae3eb478bf1680b1ea60879fac61fb912936ee550d868c34",
+    "contract_sha256": "28ba94664dbbf35648700d76a7f645fe0c5344c0cb61bdcd233b2a9cd8f20c74",
     "source_scene": "scene_000",
     "contract": "contracts/single_hand_hanoi/wuji.json"
   },
@@ -416,7 +418,7 @@
     "original_xml_sha256": "69ab787e0f97978b856d2c54bb8a4eb4418b251d354bc801e44976567a3af9a2",
     "portable_model": "../simulator/dexjoco/sim/envs/xmls/benchmark7_v3_single_hand_hanoi_inspire_scene_xhand.xml",
     "portable_xml_sha256": "31f2c8479aab8161a723dbdca19e6659d74b251027f3396706f659fad01bdca6",
-    "contract_sha256": "b36466565ec73a625d057443be7da62c06cfe0a345ed54b136a0fe98e4272a53",
+    "contract_sha256": "77f126ffabd69a367ab0acc1fd994952b195254a5529de31dbb870a8abc40dde",
     "source_scene": "scene_000",
     "contract": "contracts/single_hand_hanoi/xhand.json"
   }

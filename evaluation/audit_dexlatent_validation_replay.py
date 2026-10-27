@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
-"""Replay all frozen validation demonstrations before admitting DexLatent.
+"""Compare Native and DexLatent replay on selected saved demonstrations.
 
 Each episode is run twice from the same seed: once with the original native
 commands and once after the exact sided DexLatent action encode/decode bridge.
 This is a codec acceptance test, not learned-policy evaluation.
+For Native trajectory and recorded-state verification, use audit_native_replay.py.
 """
 import argparse
+import gc
 import hashlib
 import json
 import os
@@ -54,6 +56,8 @@ def run_episode(job):
     from runtime import Runtime
 
     bundle, row = Path(job[0]), job[1]
+    if hashlib.sha256((bundle / row['tensor']).read_bytes()).hexdigest() != row['tensor_sha256']:
+        raise ValueError('Tensor checksum does not match manifest')
     with np.load(bundle / row["tensor"]) as data:
         states = data["state"]
         actions = data["action"]
@@ -88,6 +92,8 @@ def run_episode(job):
                                       "maximum_action_error": max_error}
         finally:
             runtime.close()
+            runtime = None
+            gc.collect()
     result["preserved"] = result["native"]["passed"] == result["dexlatent"]["passed"]
     return result
 
@@ -98,11 +104,16 @@ def main(args):
     if args.checkpoint:
         os.environ['BENCHMARK7_DEXLATENT_CHECKPOINT'] = str(args.checkpoint.resolve())
         os.environ['BENCHMARK7_DEXLATENT_SHA256'] = hashlib.sha256(args.checkpoint.read_bytes()).hexdigest()
+    bundle = args.release if (args.release / 'manifests').is_dir() else args.release / 'bundle'
     rows = []
-    for path in sorted((args.release / "bundle/manifests").glob("*.json")):
-        rows.extend(x for x in json.loads(path.read_text()) if x["split"] == "validation")
-    assert len(rows) == 210
-    jobs = [(args.release / "bundle", row) for row in rows]
+    for path in sorted((bundle / 'manifests').glob('*.json')):
+        rows.extend(x for x in json.loads(path.read_text())
+                    if (not args.split or x['split'] in args.split)
+                    and (not args.task or x['task'] in args.task)
+                    and (not args.hand or x['hand'] in args.hand))
+    if not rows:
+        raise ValueError('No demonstrations match the selected manifest splits/tasks/hands')
+    jobs = [(bundle, row) for row in rows]
     records = []
     with ProcessPoolExecutor(max_workers=args.workers) as pool:
         futures = [pool.submit(run_episode, job) for job in jobs]
@@ -115,13 +126,15 @@ def main(args):
     native = sum(x["native"]["passed"] for x in records)
     latent = sum(x["dexlatent"]["passed"] for x in records)
     regressions = sum(x["native"]["passed"] and not x["dexlatent"]["passed"] for x in records)
-    # Some delivered tensors are shorter than their accepted source trajectory
-    # because video-alignment trimming removed the terminal success tail.  Use
-    # replayed native successes as the paired denominator; the codec must not
-    # regress any of those episodes.
-    report = {"passed": regressions == 0,
-              "scope": "all frozen validation demonstrations; no test split; codec replay only",
-              "episodes": 210, "checkpoint": os.environ.get('BENCHMARK7_DEXLATENT_CHECKPOINT', 'package default'),
+    # Native task replay must pass in its own right; paired codec preservation
+    # must never turn two failed rollouts into an accepted demonstration.
+    native_passed = native == len(records)
+    report = {"passed": native_passed and regressions == 0,
+              "native_task_replay_passed": native_passed,
+              "codec_preserves_native_successes": regressions == 0,
+              "scope": "all selected manifest entries; paired codec replay only",
+              "filters": {"split": args.split, "task": args.task, "hand": args.hand},
+              "episodes": len(records), "checkpoint": os.environ.get('BENCHMARK7_DEXLATENT_CHECKPOINT', 'package default'),
               "checkpoint_sha256": os.environ.get('BENCHMARK7_DEXLATENT_SHA256'), "native_successes": native,
               "dexlatent_successes": latent, "native_to_dexlatent_regressions": regressions,
               "records": records}
@@ -135,6 +148,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("release", type=Path)
     parser.add_argument("--checkpoint", type=Path)
-    parser.add_argument("--workers", type=int, default=14)
+    parser.add_argument('--split', action='append', choices=('train','validation','test'))
+    parser.add_argument('--task', action='append')
+    parser.add_argument('--hand', action='append')
+    parser.add_argument("--workers", type=int, default=2)
     parser.add_argument("--output", type=Path, required=True)
     main(parser.parse_args())

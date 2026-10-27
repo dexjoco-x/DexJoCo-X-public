@@ -2,9 +2,9 @@
 
 [English](README.md) | **中文**
 
-**7 种手 · 6 个任务 · 2,100 条训练示范 · 946,156 帧 · 20 Hz**
+**7 种手 · 6 个任务 · 2,100 条训练示范 · 939,356 帧 · 20 Hz**
 
-[Hugging Face 数据集](https://huggingface.co/datasets/darenrenjian/DexJoCo-X)按任务提供六个 TAR 包，每包包含七种手各 50 条示范。版本为 `dataset-v1.0-corrected`。
+[Hugging Face 数据集](https://huggingface.co/datasets/darenrenjian/DexJoCo-X)按任务提供六个 TAR 包，每包包含七种手各 50 条示范。版本为 `dataset-v1.1-native-replay`。
 
 ## 下载
 
@@ -16,18 +16,18 @@ python tools/dataset_packages.py download --tasks hammer_nail \
   --data-root "$DATA_ROOT"
 ```
 
-使用 `--tasks all` 下载全部任务，或填写多个任务名称。工具自动解压并核对 SHA-256。六个包合计 8.242 GB，下载并解压约占 16.5 GB。
+使用 `--tasks all` 下载全部任务，或填写多个任务名称。工具自动解压并核对 SHA-256。六个包合计 4.379 GB，下载并解压约占 8.8 GB。
 
 | 任务 | 条数 | 包大小（GB） |
 |---|---:|---:|
-| `hammer_nail` | 350 | 0.746 |
-| `pick_bucket` | 350 | 0.962 |
-| `single_hand_hanoi` | 350 | 1.334 |
-| `bimanual_microwave_cook` | 350 | 2.081 |
-| `bimanual_photograph` | 350 | 0.955 |
-| `bimanual_unlock_ipad` | 350 | 2.164 |
+| `hammer_nail` | 350 | 0.386 |
+| `pick_bucket` | 350 | 0.522 |
+| `single_hand_hanoi` | 350 | 0.714 |
+| `bimanual_microwave_cook` | 350 | 1.108 |
+| `bimanual_photograph` | 350 | 0.506 |
+| `bimanual_unlock_ipad` | 350 | 1.143 |
 
-常用选项：`--dry-run` 预览下载范围，`--workers` 设置并行数，`--archives-root` 设置归档缓存，`--transport files` 按原始文件下载。默认归档保存在数据目录旁的 `<目录名>_archives/task_packages/v1.0/`。
+常用选项：`--dry-run` 预览下载范围，`--workers` 设置并行数，`--archives-root` 设置归档缓存，`--transport files` 按原始文件下载。默认归档保存在数据目录旁的 `<目录名>_archives/task_packages/v1.1/`。
 
 已有本地任务包时：
 
@@ -38,7 +38,7 @@ python tools/dataset_packages.py extract --tasks all \
   --data-root "$DATA_ROOT"
 ```
 
-下载工具绑定 revision `9f48e1404168227a22586af0cffb8371dbb7e1f1`，数据卡更新不会改变下载内容。
+下载工具使用 [`PACKAGES.json`](PACKAGES.json) 中固定的提交；数据卡更新不会改变下载内容。
 
 ## 目录与原始字段
 

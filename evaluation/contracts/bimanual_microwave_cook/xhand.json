@@ -207,5 +207,126 @@
     "observation": "post_control_step_50ms",
     "completion": "native food-inside AND door-closed AND start-button-contact",
     "additional_hold_s": 0.0
-  }
+  },
+  "model_binding": {
+    "body": "benchhand_left_native_xhand_left_base_link",
+    "position": [
+      -0.025,
+      0.0,
+      0.03
+    ],
+    "quaternion_wxyz": [
+      0.7065430006065149,
+      0.0002817680002418337,
+      -0.7076700006074823,
+      -0.00028132000024144906
+    ]
+  },
+  "actuator_ranges": {
+    "right": [
+      [
+        0.0,
+        1.832
+      ],
+      [
+        -0.698,
+        1.745
+      ],
+      [
+        0.0,
+        1.745
+      ],
+      [
+        -0.174,
+        0.174
+      ],
+      [
+        0.0,
+        1.919
+      ],
+      [
+        0.0,
+        1.919
+      ],
+      [
+        0.0,
+        1.919
+      ],
+      [
+        0.0,
+        1.919
+      ],
+      [
+        0.0,
+        1.919
+      ],
+      [
+        0.0,
+        1.919
+      ],
+      [
+        0.0,
+        1.919
+      ],
+      [
+        0.0,
+        1.919
+      ]
+    ],
+    "left": [
+      [
+        0.0,
+        1.832
+      ],
+      [
+        -0.698,
+        1.745
+      ],
+      [
+        0.0,
+        1.745
+      ],
+      [
+        -0.174,
+        0.174
+      ],
+      [
+        0.0,
+        1.919
+      ],
+      [
+        0.0,
+        1.919
+      ],
+      [
+        0.0,
+        1.919
+      ],
+      [
+        0.0,
+        1.919
+      ],
+      [
+        0.0,
+        1.919
+      ],
+      [
+        0.0,
+        1.919
+      ],
+      [
+        0.0,
+        1.919
+      ],
+      [
+        0.0,
+        1.919
+      ]
+    ]
+  },
+  "native_cartesian_bounds": {
+    "translation_m": 0.08,
+    "rotation_rad": 0.3
+  },
+  "native_replay_reference": "native_replay_v10_linux64_haswell"
 }

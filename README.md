@@ -8,6 +8,8 @@ A multi-hand manipulation dataset and a unified simulation benchmark.
 
 ## News
 
+- 🔧 **2026-10-27** — Dataset v1.1 and runtime v10 provide replay-verified demonstrations and a pinned numerical environment. See the [update](docs/REPLAY_REPAIR.md).
+
 - 🎉 **2026-10-12** — The benchmark code and simulation environments are publicly available on [GitHub](https://github.com/dexjoco-x/DexJoCo-X-public).
 - 🎉 **2026-10-05** — The dataset of 2,100 demonstrations is released on [Hugging Face](https://huggingface.co/datasets/darenrenjian/DexJoCo-X).
 - 🎉 **2026-10-02** — The paper's first version is submitted to [arXiv](https://arxiv.org/abs/2610.03278).
@@ -31,19 +33,23 @@ The seven hands are Allegro, Inspire, LEAP, LinkerHand, Sharpa Wave, Wuji, and X
 
 ## Get started
 
-Use Python 3.11:
+Use the reference environment on Linux x86_64 with AVX2/FMA:
 
 ```bash
 git clone https://github.com/dexjoco-x/DexJoCo-X-public.git
 cd DexJoCo-X-public
-python3.11 -m venv .venv
-source .venv/bin/activate
+conda create -n dexjoco-x --file requirements/native-replay-linux64.conda.txt
+conda env config vars set -n dexjoco-x OPENBLAS_CORETYPE=Haswell \
+  OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
+conda activate dexjoco-x
+python -m pip install -r requirements/native-replay-pip.txt
+python -m pip install --force-reinstall --no-deps numpy==1.26.4 PyOpenGL==3.1.10
 pip install -c requirements/constraints-python311.txt \
   -e './simulator[benchmark,dataset,download]'
 python tools/runtime_assets.py check
 ```
 
-Follow the [quickstart](docs/QUICKSTART.md) to download a task, read a demonstration, and connect a policy. All six task archives total 8.24 GB; downloading and extracting them requires about 16.5 GB.
+Follow the [quickstart](docs/QUICKSTART.md) to download a task, read a demonstration, and connect a policy. The downloader's `--dry-run` option reports the selected download size.
 
 ## Guides
 
@@ -56,6 +62,7 @@ Follow the [quickstart](docs/QUICKSTART.md) to download a task, read a demonstra
 | Connect π₀.₅ / Ego-π | [Policy example](examples/pi05/README.md) |
 | Expand scenes from existing demonstrations | [Scene expansion](collection/README.md) |
 | Check data and environment compatibility | [Versions](docs/VERSIONING.md) |
+| Reproduce saved demonstration actions | [Replay setup](docs/REPLAY_REPAIR.md) |
 
 Training implementations, policy weights, and glove recording tools are managed separately.
 

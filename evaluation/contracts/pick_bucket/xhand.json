@@ -129,5 +129,62 @@
     "rotation_degrees": 0,
     "vertical_flip": false,
     "observation_timing": "pre-action"
-  }
+  },
+  "actuator_ranges": {
+    "right": [
+      [
+        0.0,
+        1.832
+      ],
+      [
+        -0.698,
+        1.745
+      ],
+      [
+        0.0,
+        1.745
+      ],
+      [
+        -0.174,
+        0.174
+      ],
+      [
+        0.0,
+        1.919
+      ],
+      [
+        0.0,
+        1.919
+      ],
+      [
+        0.0,
+        1.919
+      ],
+      [
+        0.0,
+        1.919
+      ],
+      [
+        0.0,
+        1.919
+      ],
+      [
+        0.0,
+        1.919
+      ],
+      [
+        0.0,
+        1.919
+      ],
+      [
+        0.0,
+        1.919
+      ]
+    ]
+  },
+  "native_cartesian_bounds": {
+    "translation_m": 0.02,
+    "rotation_rad": 0.03
+  },
+  "native_replay_reference": "native_replay_v10_linux64_haswell"
 }

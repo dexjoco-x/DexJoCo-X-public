@@ -7,6 +7,7 @@ from collections import Counter
 import hashlib
 import json
 import os
+import re
 from pathlib import Path, PurePosixPath
 import shutil
 import tarfile
@@ -90,10 +91,14 @@ def source_files(source, task, checksum_index):
             expected['bundle/' + video['path']] = video['sha256']
         if row.get('camera_audit_path'):
             expected['bundle/' + row['camera_audit_path']] = row['camera_audit_sha256']
-    common = ('bundle/catalog.json', 'metadata/VERIFICATION.json', 'metadata/CAMERA_PROFILE.md')
+    catalog = read(source / 'bundle/catalog.json')
+    common = ['bundle/catalog.json', 'metadata/VERIFICATION.json', 'metadata/CAMERA_PROFILE.md']
+    if catalog.get('native_replay_report'):
+        common.append(catalog['native_replay_report'])
+    common.extend(catalog.get('quality_reports', []))
     for name in common:
         expected[name] = checksum_index[name]
-    if task == 'bimanual_microwave_cook':
+    if task == 'bimanual_microwave_cook' and catalog.get('package_version', 'v1.0') == 'v1.0':
         for name in ('collection_protocol.json', 'episode_checks.json', 'release.json', 'runtime_manifest.json'):
             relative = 'bundle/evidence/xhand_microwave_corrected_v9/' + name
             expected[relative] = checksum_index[relative]
@@ -122,20 +127,24 @@ class HashingReader:
 def build(args, tasks):
     source, output = args.source_root.absolute(), args.output.absolute()
     output.mkdir(parents=True, exist_ok=True)
+    catalog = read(source / 'bundle/catalog.json')
+    package_version = catalog.get('package_version', 'v1.0')
+    if not re.fullmatch(r'v[0-9]+\.[0-9]+', package_version):
+        raise ValueError('Invalid package version in dataset catalog')
     checksums = {}
     for line in (source / 'SHA256SUMS').read_text().splitlines():
         digest, name = line.split('  ', 1)
         checksums[name] = digest
-    index = {'schema_version': 1, 'dataset_version': 'dataset-v1.0-corrected',
-             'created': '2026-10-02', 'episodes': 2100, 'frames': 946156, 'split': 'train',
+    index = {'schema_version': 1, 'dataset_version': catalog.get('dataset_version', 'dataset-v1.0-corrected'),
+             'created': catalog.get('release_date', '2026-10-02'), 'episodes': catalog['episodes'], 'frames': catalog['frames'], 'split': 'train',
              'weights_included': False, 'glove_mappings_included': False,
              'prepared_views_included': False,
              'huggingface': {'repo_id': 'darenrenjian/DexJoCo-X', 'repo_type': 'dataset',
-                             'revision': REVISION, 'visibility_last_checked': 'private'},
+                             'revision': args.revision or (REVISION if package_version == 'v1.0' else None)},
              'archives_uploaded_to_hub': False, 'tasks': {}}
     for task in tasks:
         rows, files = source_files(source, task, checksums)
-        filename = 'DexJoCo-X_' + task + '_v1.0.tar'
+        filename = 'DexJoCo-X_' + task + '_' + package_version + '.tar'
         archive_path = output / filename
         if archive_path.exists():
             raise FileExistsError(archive_path)
@@ -245,6 +254,8 @@ def download(args, index, tasks):
     if use_archives and not index.get('archives_uploaded_to_hub', False):
         raise ValueError('This index does not contain uploaded task archives; use --transport files')
     hub = index['archive_huggingface'] if use_archives else index['huggingface']
+    if not re.fullmatch(r'[0-9a-f]{40}', hub.get('revision') or ''):
+        raise ValueError('The package index needs a pinned published dataset commit')
     if args.dry_run:
         return {'dry_run': True, 'tasks': tasks, 'files': len(files),
                 'transport': 'archive' if use_archives else 'files',
@@ -266,7 +277,7 @@ def download(args, index, tasks):
         if any(p.is_symlink() for p in (cache, *cache.parents)):
             raise ValueError('Archive cache must not contain symlink parents')
         prefix = hub['path_prefix']
-        if prefix != 'task_packages/v1.0/':
+        if not re.fullmatch(r'task_packages/v[0-9]+\.[0-9]+/', prefix):
             raise ValueError('Unexpected archive directory in the package index')
         for task in tasks:
             entry = index['tasks'][task]
@@ -295,6 +306,7 @@ def main():
     parser.add_argument('--index', type=Path, default=DEFAULT_INDEX)
     parser.add_argument('--tasks', nargs='+', choices=(*TASKS, 'all'), default=['all'])
     parser.add_argument('--source-root', type=Path)
+    parser.add_argument('--revision', help='Published raw-data commit for a newly built package index')
     parser.add_argument('--output', type=Path)
     parser.add_argument('--data-root', type=Path)
     parser.add_argument('--archives-root', type=Path)

@@ -386,13 +386,13 @@
     },
     {
       "path": "simulator/dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_photograph_xhand.json",
-      "sha256": "676b5b4e55e36d0123a6d78d36e48bd2327247abad1a81ec78bddbaccb7c6174",
-      "bytes": 42906
+      "sha256": "4c97781b3bef87ff12dfab8678d0a1be50d602be3d8cf842f676e5f445581ca0",
+      "bytes": 43526
     },
     {
       "path": "simulator/dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_photograph_xhand.xml",
-      "sha256": "eabdd9845e7d51f4d8fb411f0478ec0ed27fc24f50acdfc912d197ed61c4f02b",
-      "bytes": 288465
+      "sha256": "3646994298bd20701b76e0ee2d8b65a2b63c56510b02cbb124fce4f0c2435832",
+      "bytes": 288511
     },
     {
       "path": "simulator/dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_unlock_ipad_allegro.json",
@@ -456,13 +456,13 @@
     },
     {
       "path": "simulator/dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_unlock_ipad_xhand.json",
-      "sha256": "a3596f76afd129af75dfbbcd766f0d18d52b7182bb5deec417162d011aaac395",
-      "bytes": 42909
+      "sha256": "e972259ae02900c5b38fe770fbaac8e846cca12c4c0a2935f3ca5ace943ae6ee",
+      "bytes": 43527
     },
     {
       "path": "simulator/dexjoco/sim/envs/xmls/benchmark7_v3_bimanual_unlock_ipad_xhand.xml",
-      "sha256": "f7862ea3f7befa7d0185ad4ffa049d63cb0d96d81045cd8defbf1193d842fe0b",
-      "bytes": 220823
+      "sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+      "bytes": 220869
     },
     {
       "path": "simulator/dexjoco/sim/envs/xmls/benchmark7_v3_hammer_nail_allegro.json",

@@ -2,10 +2,10 @@
   "version": "benchmark7_v3",
   "task": "bimanual_photograph",
   "hand": "xhand",
-  "status": "candidate_not_task_validated",
+  "status": "mount_aligned_native_replay_verified",
   "reference": "repo://simulator/dexjoco/sim/envs/xmls/cross_embodiment_v1_bimanual_photograph_inspire.xml",
   "reference_sha256": "5dbb96e67cbe13c9a27c0213a3620d05f00d4f018ef4836143ea479da0eec5df",
-  "xml_sha256": "eabdd9845e7d51f4d8fb411f0478ec0ed27fc24f50acdfc912d197ed61c4f02b",
+  "xml_sha256": "3646994298bd20701b76e0ee2d8b65a2b63c56510b02cbb124fce4f0c2435832",
   "sides": {
     "right": {
       "joint_names": [
@@ -1676,5 +1676,18 @@
       "Friction policy source notes describe the imported parent; this record describes current geometry."
     ],
     "sha256": "9f7702b5d435dc3cff2ecfdb39d2704c95244baf12396cbd77747fd5888729d1"
+  },
+  "mount_revision": {
+    "id": "xhand_left_mount_rx180_photo_v1",
+    "scope": "XHand left CAD fixed transform only",
+    "legacy_xml_sha256": "eabdd9845e7d51f4d8fb411f0478ec0ed27fc24f50acdfc912d197ed61c4f02b",
+    "source_xml_sha256": "d5899fedee9d6f784f89c18583fcea08094dd547115851d75a93e8bd109d330b",
+    "source_transform_body": "benchhand_left_native_xhand_left_base_link"
+  },
+  "native_replay_verification": {
+    "episodes": 50,
+    "successes": 50,
+    "report": "docs/replay/xhand_photo_mount_fixed50.json",
+    "report_sha256": "7a5cf84f65a569f655cfd4183311d6992d3bc35d48223c93402eba3df77e35b0"
   }
 }

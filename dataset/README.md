@@ -2,9 +2,9 @@
 
 **English** | [中文](README.zh.md)
 
-**7 hands · 6 tasks · 2,100 training demonstrations · 946,156 frames · 20 Hz**
+**7 hands · 6 tasks · 2,100 training demonstrations · 939,356 frames · 20 Hz**
 
-The [Hugging Face dataset](https://huggingface.co/datasets/darenrenjian/DexJoCo-X) provides six task archives. Each contains 50 demonstrations for each of the seven hands. The dataset version is `dataset-v1.0-corrected`.
+The [Hugging Face dataset](https://huggingface.co/datasets/darenrenjian/DexJoCo-X) provides six task archives. Each contains 50 demonstrations for each of the seven hands. The dataset version is `dataset-v1.1-native-replay`.
 
 ## Download
 
@@ -16,18 +16,18 @@ python tools/dataset_packages.py download --tasks hammer_nail \
   --data-root "$DATA_ROOT"
 ```
 
-Use `--tasks all` for the full dataset, or specify multiple task names. The tool extracts the archives and verifies SHA-256 checksums. The six archives total 8.242 GB; downloading and extracting them requires about 16.5 GB.
+Use `--tasks all` for the full dataset, or specify multiple task names. The tool extracts the archives and verifies SHA-256 checksums. The six archives total 4.379 GB; downloading and extracting them requires about 8.8 GB.
 
 | Task | Demonstrations | Archive size (GB) |
 |---|---:|---:|
-| `hammer_nail` | 350 | 0.746 |
-| `pick_bucket` | 350 | 0.962 |
-| `single_hand_hanoi` | 350 | 1.334 |
-| `bimanual_microwave_cook` | 350 | 2.081 |
-| `bimanual_photograph` | 350 | 0.955 |
-| `bimanual_unlock_ipad` | 350 | 2.164 |
+| `hammer_nail` | 350 | 0.386 |
+| `pick_bucket` | 350 | 0.522 |
+| `single_hand_hanoi` | 350 | 0.714 |
+| `bimanual_microwave_cook` | 350 | 1.108 |
+| `bimanual_photograph` | 350 | 0.506 |
+| `bimanual_unlock_ipad` | 350 | 1.143 |
 
-Options: `--dry-run` previews the download, `--workers` sets parallelism, `--archives-root` sets the archive cache, and `--transport files` downloads individual raw files. The default archive cache is `<data-directory-name>_archives/task_packages/v1.0/`, next to the data directory.
+Options: `--dry-run` previews the download, `--workers` sets parallelism, `--archives-root` sets the archive cache, and `--transport files` downloads individual raw files. The default archive cache is `<data-directory-name>_archives/task_packages/v1.1/`, next to the data directory.
 
 For existing local task archives:
 
@@ -38,7 +38,7 @@ python tools/dataset_packages.py extract --tasks all \
   --data-root "$DATA_ROOT"
 ```
 
-The downloader pins revision `9f48e1404168227a22586af0cffb8371dbb7e1f1`. Dataset-card updates do not change the downloaded data.
+The downloader uses the immutable dataset commit recorded in [`PACKAGES.json`](PACKAGES.json). Dataset-card edits do not change the downloaded payload.
 
 ## Directory layout and raw fields
 

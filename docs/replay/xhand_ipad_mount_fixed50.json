@@ -1,0 +1,1465 @@
+{
+  "passed": true,
+  "episodes": 50,
+  "successes": 50,
+  "failures": 0,
+  "execution_errors": 0,
+  "scope": "all manifest splits; explicit task/hand/scene filters only",
+  "filters": {
+    "task": [
+      "bimanual_unlock_ipad"
+    ],
+    "hand": [
+      "xhand"
+    ],
+    "scene": null
+  },
+  "manifest_sha256": {
+    "bimanual_microwave_cook.json": "86dd17d7c7ef77cdbf0a81d0ff2cfcdaf78967f5b6d6fadff45bf5ecc7713e50",
+    "bimanual_photograph.json": "62da814f2de65f4e01715b20f34765178aa0f4a8b74f2acc4a92feaf2391e11a",
+    "bimanual_unlock_ipad.json": "f38efe3abfd2048334e825c925d0a289e3facabca7ea2c5c6a603d932d0ff3dc",
+    "hammer_nail.json": "b0802926b65a8a53b6056dcf9f07a0e1f0fda160d5bbdebc5b63b33cd484c9c3",
+    "pick_bucket.json": "bf1d2573505a47f0732727c2ccfd85b0ec8b7f1482d4c8acbcb96160b9b20140",
+    "single_hand_hanoi.json": "ba9849d4ee6965e4adcc1fb543851dcbe3d42d22a5ecb9540f1f2cc5cca01a22"
+  },
+  "environment": {
+    "python": "3.11.15 | packaged by conda-forge | (main, Mar  5 2026, 16:45:40) [GCC 14.3.0]",
+    "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.31",
+    "machine": "x86_64",
+    "packages": {
+      "mujoco": "3.4.0",
+      "numpy": "1.26.4",
+      "scipy": "1.17.1",
+      "gymnasium": "1.0.0",
+      "dm-robotics-transformations": "0.9.0"
+    },
+    "mujoco_version": "3.4.0",
+    "mujoco_library_sha256": {
+      "libmujoco.so.3.4.0": "764cf4ea21dea7764db0284b2f283af1ec9a9e962241b72d1c5b63b86d624c85"
+    },
+    "blas": [
+      {
+        "internal_api": "openblas",
+        "version": "0.3.33",
+        "threading_layer": "pthreads",
+        "architecture": "Haswell",
+        "num_threads": 1
+      },
+      {
+        "internal_api": "openblas",
+        "version": "0.3.23.dev",
+        "threading_layer": "pthreads",
+        "architecture": "Haswell",
+        "num_threads": 1
+      }
+    ],
+    "numerical_environment": {
+      "OPENBLAS_CORETYPE": "Haswell",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": null
+    }
+  },
+  "records": [
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_000",
+      "seed": 154187,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_000/native.npz",
+      "tensor_sha256": "2f638ccc827426d503a510320dfceff4760c0de87b632a36b3ad10a673e12a87",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_001",
+      "seed": 158715,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_001/native.npz",
+      "tensor_sha256": "8f626b9cd5707bb2fb6659eb8db8117be360abd726719cbeb46b82e270354dc3",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_002",
+      "seed": 187349,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_002/native.npz",
+      "tensor_sha256": "dcb357583006a8a98efe3e36e17273cb890c2b3c48c1b430e687bcb851d7e95e",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_003",
+      "seed": 110337,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_003/native.npz",
+      "tensor_sha256": "c8a5acfa82881d2ad5c7b9efab625f275f8272838b71279106dc607c53d2b314",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_004",
+      "seed": 156734,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_004/native.npz",
+      "tensor_sha256": "1d0597637673018508dc4b5cf6820d538bf0478b92c14064cb1a2b7e32d39dab",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_005",
+      "seed": 191814,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_005/native.npz",
+      "tensor_sha256": "09a56e8530fff7387e04384261471236fdfe2a14658fd95e3f64e11ed81e2644",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_006",
+      "seed": 138560,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_006/native.npz",
+      "tensor_sha256": "66f4cb112910a1c546a7b22563f189c69db2c9f2a2fce5e0694782f60fb4543e",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_007",
+      "seed": 124101,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_007/native.npz",
+      "tensor_sha256": "db685b15cb43377531cb985f05494cece056d479915f6f9c5a793345cd412e73",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_008",
+      "seed": 176093,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_008/native.npz",
+      "tensor_sha256": "3eb304f464fa8e95d73881f24b38478ae339c7ad6da953d75f29cb714db26f6b",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_009",
+      "seed": 105090,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_009/native.npz",
+      "tensor_sha256": "b533f71af8768eebc5c7505853154404cf1663a56409712760311ace9bc18609",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_010",
+      "seed": 113684,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_010/native.npz",
+      "tensor_sha256": "a49d03c1861653ca8f1fa4656321d6615833678e6e12229cea456b490a1bf5cd",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_011",
+      "seed": 199854,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_011/native.npz",
+      "tensor_sha256": "b11998ea28dd13e44dc67b02bef2758a1a003eea81e58dc73afea938d2fdf879",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_012",
+      "seed": 112778,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_012/native.npz",
+      "tensor_sha256": "e50610e720892ae9755a17db94b8ac0d10623d0337addda8146596b797131881",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_013",
+      "seed": 162140,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_013/native.npz",
+      "tensor_sha256": "32ab55d7f0027b7c1244d980c0513e1edb48fdee3c760a32fe4c0fbfe2220844",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_014",
+      "seed": 140824,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_014/native.npz",
+      "tensor_sha256": "a5620dcb5a800af251114dd1f4f371e93bfc6ca7a7409f0bc941a73bf0f4106e",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_015",
+      "seed": 154190,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_015/native.npz",
+      "tensor_sha256": "18deb95a2a61860714d6639c37310a338d96b2734f48c735f4f7e0967fd91cc9",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_016",
+      "seed": 164765,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_016/native.npz",
+      "tensor_sha256": "a238b5c6035d7f60af67df6426f6764b159beb5501a9d18e06d2c0cc7bd74ecc",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_017",
+      "seed": 117616,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_017/native.npz",
+      "tensor_sha256": "60ca1176f9c24a3f649143231b94cb37a53455d13461863b22903c0bc039ab86",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_018",
+      "seed": 152494,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_018/native.npz",
+      "tensor_sha256": "f816ccf266e2daad697f7fc9eb8fa91b503ca655224214b3cc4c80ed0754f193",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_019",
+      "seed": 104904,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_019/native.npz",
+      "tensor_sha256": "0b8c0354d5b8375838f706c7e3493b10a8a3fd5b090fbadfc29f0c39c9dbf4a8",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_020",
+      "seed": 153679,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_020/native.npz",
+      "tensor_sha256": "aec93c8fa689d677e03251b54b895d2e164cc24a1f814b6700be1391539d8fc6",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_021",
+      "seed": 149893,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_021/native.npz",
+      "tensor_sha256": "0c1622cba29bf45fe99d19f5dd6d6d176e019d38c039fd97fcf92c7d07a57488",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_022",
+      "seed": 142999,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_022/native.npz",
+      "tensor_sha256": "1990eaefde8164826af74372f2203b3d5b825729311eaf79783c00897eef9c94",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_023",
+      "seed": 130751,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_023/native.npz",
+      "tensor_sha256": "575d0609382863e0d0708248e74b0033b4a1f643ff246f00294596a683b2c057",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_024",
+      "seed": 136216,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_024/native.npz",
+      "tensor_sha256": "ab5bda9b55ce370e73a91f742f53ed56995a5d4bb875d8a49c05523effd6dd78",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_025",
+      "seed": 171305,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_025/native.npz",
+      "tensor_sha256": "6949fc21aed8620b02d53decdbd9fcf5f51f394f7f56bef615e1161cd61e73d1",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_026",
+      "seed": 158258,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_026/native.npz",
+      "tensor_sha256": "b318c70e18b9e9aa8030b9c07e60920469e37e5e68787e1feed1099610649a8c",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_027",
+      "seed": 145809,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_027/native.npz",
+      "tensor_sha256": "8ced58659880f702079d9b260068d9e374af7516557fc33b9be868bdc247367e",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_028",
+      "seed": 162821,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_028/native.npz",
+      "tensor_sha256": "f0f16eeaa864175718f20e0954da2f63c0c3309b97ef313713c90427e6a21eee",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 449,
+      "saved_steps": 450,
+      "executed_steps": 450,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_029",
+      "seed": 158950,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_029/native.npz",
+      "tensor_sha256": "e992d144c23c7555a7eb2e2fe9c60e7c34f0884527bb884a90f8dd8b83bf3d38",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_030",
+      "seed": 101165,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_030/native.npz",
+      "tensor_sha256": "f8ea40d2c33300e9b48ef720867253868037fda370a065342024527b04f887e5",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 449,
+      "saved_steps": 450,
+      "executed_steps": 450,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_031",
+      "seed": 108864,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_031/native.npz",
+      "tensor_sha256": "03b8b95e6bfdd7c2a4a571293164f878386614795c5ffb358192c157f7942832",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_032",
+      "seed": 140675,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_032/native.npz",
+      "tensor_sha256": "d6a8ad4226e661fb1a594f8fa2f5860d4ce7e7e84fa3d72ba0b18e428bb4a560",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_033",
+      "seed": 155960,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_033/native.npz",
+      "tensor_sha256": "afbb582af302aeae78889a2ac44d473d0edea7554e7c92de5614cbe44f91c016",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_034",
+      "seed": 137603,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_034/native.npz",
+      "tensor_sha256": "17391dbb0b08ca0bb9b2ebff46e2a11ac3490d31b91912d68b941ca3241fa240",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_035",
+      "seed": 184227,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_035/native.npz",
+      "tensor_sha256": "ea60bddbfa255d7fed62bc3c7b7921c30895cf593176c857fa350fb4406aa48e",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_036",
+      "seed": 175880,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_036/native.npz",
+      "tensor_sha256": "b62a24b47d8962bd07ede3243e81ff200999a0a135673a8cc0588382b8fff2cc",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_037",
+      "seed": 139473,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_037/native.npz",
+      "tensor_sha256": "038815cefd03061b5c83546181d5a22bde596b3ac9487a2423763fdebcc189fa",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_038",
+      "seed": 141354,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_038/native.npz",
+      "tensor_sha256": "89794293e4bed95c51ea0c7ce5d882b952ae5d12f36b804433b4881dea58b30d",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_039",
+      "seed": 183637,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_039/native.npz",
+      "tensor_sha256": "fd8a7210f0bd761db869f19cb714e23512ce7b8e760e603fd9b1067b7f6de61d",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_040",
+      "seed": 146473,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_040/native.npz",
+      "tensor_sha256": "e336c1fa12e86d880b471b8450eae964c13f244f1c23ef34dfea1293012e5409",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_041",
+      "seed": 171665,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_041/native.npz",
+      "tensor_sha256": "878b08a482d6508863748c2d1ce3115ca5ce1692a721973a48dced8a2e3330b3",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_042",
+      "seed": 166036,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_042/native.npz",
+      "tensor_sha256": "6c6b0efb379e0d1400d307d049daf386a8f238b406d12f3cc19cc435b9855e51",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_043",
+      "seed": 179457,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_043/native.npz",
+      "tensor_sha256": "f3e6134775412652401c88550b4e12e72a528125e225dd81251a780ffde947fc",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_044",
+      "seed": 195054,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_044/native.npz",
+      "tensor_sha256": "b6f63a9393679bdb11fcebd592b2abb899cdf1026a8cf43be1271e18ef7553e1",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_045",
+      "seed": 104961,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_045/native.npz",
+      "tensor_sha256": "16269d574bc9a71877edbb5676e95a768dbc30bd45fb00ba367185c321de106b",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_046",
+      "seed": 126614,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_046/native.npz",
+      "tensor_sha256": "6762619fa2cd6ab0e0f42ce1f067e203df358358f67060bab150d4a10971ec6f",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_047",
+      "seed": 180382,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_047/native.npz",
+      "tensor_sha256": "8d7ccaf343cf9fe504e963648bc5e88fed3ca7c8812a18df9e72356ff0dfddf3",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_048",
+      "seed": 124778,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_048/native.npz",
+      "tensor_sha256": "f426041c7acda5c672c1b0482dda595a118f6da5708aa6d0edd5df6e3e30f019",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    },
+    {
+      "task": "bimanual_unlock_ipad",
+      "hand": "xhand",
+      "scene_id": "scene_049",
+      "seed": 127637,
+      "tensor": "episodes/bimanual_unlock_ipad/xhand/scene_049/native.npz",
+      "tensor_sha256": "8069ea627c45a24ca4ebfc8b517a19c32b30c68d6418d55efc98e5041cfaacb1",
+      "model_binding": {
+        "xml_sha256": "4df61d6c6421cbe1007b504917114e79a5d580749a3bdfd4b5688af2c70601a6",
+        "mount_revision": "xhand_left_mount_rx180_ipad_v1"
+      },
+      "initial_robot_error": 5.250602197470755e-08,
+      "passed": true,
+      "first_success_step": 450,
+      "saved_steps": 451,
+      "executed_steps": 451,
+      "terminated": true,
+      "truncated": false,
+      "stop_reason": "terminated",
+      "final_info": {
+        "succeed": true,
+        "grasp_penalty": 0.0,
+        "failure_reason": "",
+        "unlock_index": 3,
+        "ipad_phase": "unlocked"
+      },
+      "error": null
+    }
+  ]
+}

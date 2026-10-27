@@ -8,6 +8,8 @@
 
 ## 更新动态
 
+- 🔧 **2026-10-27** — 数据集 v1.1 与运行环境 v10 提供通过回放验证的示范和固定数值环境，见[更新说明](docs/REPLAY_REPAIR.zh-CN.md)。
+
 - 🎉 **2026-10-12** — 评测代码与仿真环境现已在 [GitHub](https://github.com/dexjoco-x/DexJoCo-X-public) 公开。
 - 🎉 **2026-10-05** — 包含 2,100 条示范的数据集在 [Hugging Face](https://huggingface.co/datasets/darenrenjian/DexJoCo-X) 公开。
 - 🎉 **2026-10-02** — 论文首个版本提交至 [arXiv](https://arxiv.org/abs/2610.03278)。
@@ -31,19 +33,23 @@ DexJoCo-X 提供操作示范、MuJoCo 仿真环境和统一评测接口。使用
 
 ## 开始使用
 
-使用 Python 3.11，在终端执行：
+在支持 AVX2/FMA 的 Linux x86_64 上使用参考环境：
 
 ```bash
 git clone https://github.com/dexjoco-x/DexJoCo-X-public.git
 cd DexJoCo-X-public
-python3.11 -m venv .venv
-source .venv/bin/activate
+conda create -n dexjoco-x --file requirements/native-replay-linux64.conda.txt
+conda env config vars set -n dexjoco-x OPENBLAS_CORETYPE=Haswell \
+  OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
+conda activate dexjoco-x
+python -m pip install -r requirements/native-replay-pip.txt
+python -m pip install --force-reinstall --no-deps numpy==1.26.4 PyOpenGL==3.1.10
 pip install -c requirements/constraints-python311.txt \
   -e './simulator[benchmark,dataset,download]'
 python tools/runtime_assets.py check
 ```
 
-下一步按照 [快速上手](docs/QUICKSTART.zh.md) 下载一个任务、读取示范并接入策略。六个任务包合计约 8.24 GB，下载并解压约需 16.5 GB 空间。
+下一步按照 [快速上手](docs/QUICKSTART.zh.md) 下载一个任务、读取示范并接入策略。下载工具的 `--dry-run` 选项可以查看所选任务的下载大小。
 
 ## 使用文档
 
@@ -58,6 +64,8 @@ python tools/runtime_assets.py check
 | 核对数据与环境版本 | [版本说明](docs/VERSIONING.zh.md) |
 
 训练可选用自己的框架。公开内容包括数据、环境和评测工具；策略权重、模型训练实现及手套录制工具单独管理。
+
+示范动作回放请参阅[参考环境说明](docs/REPLAY_REPAIR.zh-CN.md)。
 
 ## 联系方式
 

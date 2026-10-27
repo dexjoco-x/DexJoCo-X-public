@@ -1678,7 +1678,7 @@
                             <geom name="benchhand_left_adapter_native_xhand_adapter_hand_plate_visual" size="0.003 0.03 0.025" pos="-0.022 0 0.03" type="box" contype="0" conaffinity="0" group="1" friction="0.8" density="0" rgba="0.2 0.22 0.25 1" />
                             <geom name="benchhand_left_adapter_native_xhand_adapter_hand_plate_collision" size="0.003 0.03 0.025" pos="-0.022 0 0.03" type="box" group="3" friction="1 0.0050000000000000001 0.0001" density="0" rgba="0.2 0.22 0.25 1" />
                           </body>
-                          <body name="benchhand_left_native_xhand_left_base_link" childclass="benchhand_left_native_xhand" pos="-0.025 0 0.03" quat="0.000281768 -0.706543 -0.00028132 0.70767">
+                          <body name="benchhand_left_native_xhand_left_base_link" childclass="benchhand_left_native_xhand" pos="-0.025 0 0.03" quat="0.70654300060651487 0.00028176800024183368 -0.70767000060748231 -0.00028132000024144906">
                             <inertial pos="0.0102663 0.00333483 0.0570449" quat="0.992158 -0.124787 0.00359455 -0.00613979" mass="0.53911" diaginertia="0.000644417 0.000477641 0.000264514" />
                             <body name="benchhand_left_native_xhand_left_hand_link" quat="0.000563312 0.707388 -0.706825 -0.000562864">
                               <geom name="benchhand_left_native_xhand_left_hand_link_visual_0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.055 0.055 0.063 1" mesh="benchhand_left_native_xhand_left_hand_link_visual_0_mesh" />

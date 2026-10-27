@@ -1,0 +1,36 @@
+{
+  "packages": {
+    "mujoco": "3.4.0",
+    "numpy": "1.26.4",
+    "scipy": "1.17.1",
+    "gymnasium": "1.0.0",
+    "dm-robotics-transformations": "0.9.0"
+  },
+  "mujoco_library_sha256": {
+    "libmujoco.so.3.4.0": "764cf4ea21dea7764db0284b2f283af1ec9a9e962241b72d1c5b63b86d624c85"
+  },
+  "numpy_extension_sha256": "a735e4e8355b75c800112af8a5b1731b891b2016ed57067352eea6cab0aa00bc",
+  "scipy_rotation_extension_sha256": "cda2fb0d93c1d7a103915f2cb51de347c612c5fe88530e8f9d2cacf78d01635a",
+  "blas": [
+    {
+      "internal_api": "openblas",
+      "version": "0.3.33",
+      "threading_layer": "pthreads",
+      "architecture": "Haswell",
+      "num_threads": 1
+    },
+    {
+      "internal_api": "openblas",
+      "version": "0.3.23.dev",
+      "threading_layer": "pthreads",
+      "architecture": "Haswell",
+      "num_threads": 1
+    }
+  ],
+  "numerical_environment": {
+    "OPENBLAS_CORETYPE": "Haswell",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": null
+  }
+}

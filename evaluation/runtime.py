@@ -54,6 +54,20 @@ class Runtime:
   self.renderer=mujoco.Renderer(self.m,height=256,width=256) if render else None
   self.cameras=self.contract['cameras'];self._check_contract()
  def _check_contract(self):
+  expected_revision=self.contract.get('model_revision')
+  revision=self.e.hand_metadata.get('mount_revision',{}).get('id')
+  if self.contract.get('evaluation_requires_matching_mount') and revision!=expected_revision:
+   raise RuntimeError(f'Model mount mismatch for {self.task}/{self.hand}: expected {expected_revision}, got {revision}')
+  binding=self.contract.get('model_binding')
+  if binding:
+   body=self.m.body(binding['body'])
+   if not np.allclose(body.pos,binding['position'],atol=1e-12,rtol=0):
+    raise RuntimeError(f'Model mount position mismatch for {self.task}/{self.hand}')
+   expected=Rotation.from_quat(binding['quaternion_wxyz'],scalar_first=True).as_matrix()
+   actual=Rotation.from_quat(body.quat,scalar_first=True).as_matrix()
+   if not np.allclose(actual,expected,atol=1e-12,rtol=0):
+    raise RuntimeError(f'Model mount orientation mismatch for {self.task}/{self.hand}')
+  self.model_binding={'xml_sha256':self.e.hand_metadata['xml_sha256'],'mount_revision':revision}
   for side,ids in self.e._native_ctrl_ids.items():
    assert [self.m.actuator(int(i)).name for i in ids]==self.contract['actuator_names'][side]
    assert self.e.hand_metadata['sides'][side]['state_joint_names']==self.contract['joint_names'][side]
