@@ -26,3 +26,7 @@ The earlier raw snapshot is available at dataset revision
 `linkerhand_l20` is a compatibility key in files and contracts. Its source left/right
 URDFs were modified from the official L25 files. Documentation uses `LinkerHand`;
 the key and model geometry are preserved.
+
+## Training v1
+
+`training-float32-v1` is a separate re-recorded training release with 2,100 trajectories and 933,865 frames. Use the code tagged `training-v1`, the same reference physics environment as Raw v1.1, and the bound `quantile_affine_v3` statistics. Its LeRobot and Being-H exports contain identical float32 labels, decoded into float64 physical commands. Raw v1.1, earlier checkpoints, and the paper experiment dataset retain their existing versions. See [training conversion](TRAINING_CONVERSION.md).

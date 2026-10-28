@@ -2,6 +2,8 @@
 
 **English** | [中文](README.zh.md)
 
+For new training, download the separate **[Training v1 package](../docs/TRAINING_CONVERSION.md#download-verified-training-v1)**. It contains 2,100 trajectories, 933,865 frames, and verified LeRobot/Being-H views. The Raw v1.1 instructions below remain available for original-precision replay.
+
 **7 hands · 6 tasks · 2,100 training demonstrations · 939,356 frames · 20 Hz**
 
 The [Hugging Face dataset](https://huggingface.co/datasets/darenrenjian/DexJoCo-X) provides six task archives. Each contains 50 demonstrations for each of the seven hands. The dataset version is `dataset-v1.1-native-replay`.

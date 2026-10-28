@@ -8,6 +8,8 @@ A multi-hand manipulation dataset and a unified simulation benchmark.
 
 ## News
 
+- 🔧 **2026-10-28** — Training v1 adds verified float32 labels, synchronized observations, and prepared LeRobot/Being-H views. All 2,100 saved-label replays pass. [Download and usage](docs/TRAINING_CONVERSION.md).
+
 - 🔧 **2026-10-28** — Runtime v10.1 strengthens episode validation, records the numerical environment for policy evaluation, and adds an action-precision diagnostic. See the [replay notes](docs/REPLAY_REPAIR.md).
 
 - 🔧 **2026-10-27** — Dataset v1.1 and runtime v10 provide replay-verified demonstrations and a pinned numerical environment. See the [update](docs/REPLAY_REPAIR.md).

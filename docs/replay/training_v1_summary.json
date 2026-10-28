@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "dataset_version": "training-float32-v1",
+  "episodes": 2100,
+  "frames": 933865,
+  "groups": 42,
+  "episodes_per_group": 50,
+  "normalization_version": "quantile_affine_v3",
+  "label_dtype": "float32",
+  "decode_dtype": "float64",
+  "task_successes": 2100,
+  "recorded_state_matches": 2100,
+  "execution_errors": 0,
+  "trained_policy_evaluation": false,
+  "validation_code_commit": "3da16838d75c51ad1f5858874e4aea71d5af8128",
+  "readers": {
+    "final_beingh_loader": {
+      "episodes": 2100,
+      "frames": 933865,
+      "max_action_error": 0.0,
+      "passed": true
+    },
+    "final_lerobot_loader": {
+      "passed": true,
+      "episodes": 2100,
+      "frames": 933865,
+      "lerobot_version": "0.4.4",
+      "video_backend": "pyav"
+    },
+    "final_format_check": {
+      "passed": true,
+      "episodes": 2100,
+      "frames": 933865,
+      "complete_source_coverage": true
+    }
+  },
+  "physical_replay_report": {
+    "path": "metadata/final_saved_label_replay.json",
+    "sha256": "31280d4d908a474180839288e633cfc53f32c6b2bf160d523e0585d2dace446d"
+  },
+  "manifest_sha256": {
+    "bimanual_microwave_cook.json": "5ecdb18b99c9bfd6031ba62218a3701357fe91df049d9b6a9ecca11cb7624a81",
+    "bimanual_photograph.json": "b66b77d48bc6e8c715bae8d991e8359e07e5a3f5996a62c0371a059ddeaa4c7f",
+    "bimanual_unlock_ipad.json": "2797b8b155c3b91f3cc52139e955f542468443a03b7466c24962c2fdf58d92cc",
+    "hammer_nail.json": "c5779aa63ce9a13b4037295835b177eb463b8edbe10a5f198521a036c9794d5d",
+    "pick_bucket.json": "0d62cb4faad97cc4417d86a58813e11639a9b1cea7633976560077af75ec48e7",
+    "single_hand_hanoi.json": "2664c2d44002df99af798cc54e1913f733080d825b4df25309f2aa60d5f4390d"
+  },
+  "collection_methods": {
+    "continuous_execution_of_exported_float32_labels": 1712,
+    "new_physical_rollout_from_adjacent_float32_labels": 341,
+    "new_collection_tracking_accepted_world_targets": 45,
+    "new_collection_with_saved_additional_vertical_hammer_strokes": 2
+  }
+}

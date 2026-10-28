@@ -8,6 +8,8 @@
 
 ## 更新动态
 
+- 🔧 **2026-10-28** — 发布训练版v1：float32标签、同步视频与状态，以及LeRobot/Being-H预转换格式；2100条最终标签全部通过回放。[下载与用法](docs/TRAINING_CONVERSION.zh.md)。
+
 - 🔧 **2026-10-28** — Runtime v10.1 补充示范字段验证、策略评测数值环境记录与动作精度诊断。详见[回放说明](docs/REPLAY_REPAIR.zh-CN.md)。
 
 - 🔧 **2026-10-27** — 数据集 v1.1 与运行环境 v10 提供通过回放验证的示范和固定数值环境，见[更新说明](docs/REPLAY_REPAIR.zh-CN.md)。

@@ -2,6 +2,67 @@
 
 [English](TRAINING_CONVERSION.md) | [中文](TRAINING_CONVERSION.zh.md)
 
+## Download verified Training v1
+
+Training v1 contains **2,100 re-recorded trajectories and 933,865 frames**, with
+50 demonstrations for every hand–task pair. All final saved-label sequences pass
+continuous task-success and recorded-state checks in the reference environment.
+Full Being-H and official LeRobot 0.4.4 reader checks also pass.
+
+The package is 5.21 GB and includes synchronized videos, raw tensors, frozen
+statistics, and both prepared readers. It is separate from Raw v1.1 and from the
+historical data used in the paper experiments. Keep these datasets in separate folders.
+
+```bash
+hf download darenrenjian/DexJoCo-X --type dataset \
+  --revision training-float32-v1 --include 'training_v1/*' \
+  --local-dir ./training_download
+(cd training_download/training_v1 && sha256sum -c SHA256SUMS)
+mkdir -p ./outputs/training_v1
+tar -xf ./training_download/training_v1/DexJoCo-X_training-v1.tar \
+  -C ./outputs/training_v1
+export DATA_ROOT="$PWD/outputs/training_v1"
+```
+
+Repeated videos use TAR hard links; extraction produces ordinary local files,
+with no symbolic links. The prepared views are `prepared/beingh_final_v3/` and
+`prepared/lerobot_final_v3/`. Their corresponding statistics are in
+`prepared/beingh_final_v3_train_stats.json` and
+`prepared/lerobot_final_v3_train_stats.json`.
+
+In the reference physics environment:
+
+```bash
+python -m pip install --no-deps -r requirements/training-replay-pip.txt
+python evaluation/audit_training_replay.py --data-root "$DATA_ROOT" \
+  --prepared-name lerobot_final_v3 --workers 4 --output training_replay.json
+```
+
+The package's `metadata/VERIFICATION.json` and per-episode report record the
+checks. These checks execute demonstration labels, not a trained model. No task
+success criterion or runtime model was changed for the training repair.
+
+For official LeRobot, use a separate reader/training environment:
+
+```python
+from pathlib import Path
+from lerobot.datasets.lerobot_dataset import LeRobotDataset
+
+folder = Path("outputs/training_v1/prepared/lerobot_final_v3/train/hammer_nail/allegro")
+windows = {key: [i / 20 for i in range(16)]
+           for key in ("action", "action.valid_mask")}
+dataset = LeRobotDataset("dexjoco-x/local", root=folder,
+                        video_backend="pyav", delta_timestamps=windows)
+sample = dataset[0]
+loss_mask = sample["action.valid_mask"] & ~sample["action_is_pad"][:, None]
+```
+
+The native200 labels are already normalized. Disable further state/action
+normalization in the training configuration. Use `Native200PolicyAdapter` below
+with the matching statistics, and retain its float64 commands through the
+simulation interface. Existing checkpoints keep their original decoder and
+statistics. This verified package contains the native200 representation.
+
 The old conversion clipped valid demonstrations at dataset quantiles. For example,
 a 1.61 cm wrist command could become 0.41 cm. The new `quantile_affine_v3` scales
 commands without removing values outside the central 98% of the data. Labels can

@@ -21,3 +21,7 @@ v1.1 使用[参考环境](REPLAY_REPAIR.zh-CN.md)。论文检查点尚未针对�
 
 `linkerhand_l20` 是文件和接口中的兼容名称，其左右手源 URDF 修改自官方 L25 文件。
 文档统一称为 `LinkerHand`，本版保留兼容名称与模型几何。
+
+## 训练版v1
+
+`training-float32-v1`是独立重新记录的训练版，包含2100条轨迹、933865帧。使用代码标签`training-v1`、与Raw v1.1相同的参考仿真环境，以及绑定的`quantile_affine_v3`统计量。LeRobot与Being-H格式保存相同的float32标签，解码得到float64实际指令。Raw v1.1、已有模型和论文实验数据分别保留原版本。详见[训练转换指南](TRAINING_CONVERSION.zh.md)。

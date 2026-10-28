@@ -2,6 +2,8 @@
 
 [English](README.md) | **中文**
 
+开始新训练，请下载独立的 **[训练版v1](../docs/TRAINING_CONVERSION.zh.md)**：2100条轨迹、933865帧，包含已验证的LeRobot/Being-H格式。下文的Raw v1.1下载方式继续用于原始精度回放。
+
 **7 种手 · 6 个任务 · 2,100 条训练示范 · 939,356 帧 · 20 Hz**
 
 [Hugging Face 数据集](https://huggingface.co/datasets/darenrenjian/DexJoCo-X)按任务提供六个 TAR 包，每包包含七种手各 50 条示范。版本为 `dataset-v1.1-native-replay`。

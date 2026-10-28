@@ -2,6 +2,48 @@
 
 [English](TRAINING_CONVERSION.md) | [中文](TRAINING_CONVERSION.zh.md)
 
+## 下载已验证的训练版 v1
+
+训练版包含 **2100条重新记录的轨迹、933865帧**，每个手型与任务组合仍为50条。
+在参考环境中，全部最终标签均通过连续物理回放、任务成功和状态一致性检查；
+Being-H和官方LeRobot 0.4.4加载器的全量读取检查也已通过。
+
+下载包约5.21 GB，包含配套视频、原始张量、固定统计量，以及两种预转换读取格式。
+它与Raw v1.1、论文实验的历史数据分别保存，请解压到独立目录。
+
+```bash
+hf download darenrenjian/DexJoCo-X --type dataset \
+  --revision training-float32-v1 --include 'training_v1/*' \
+  --local-dir ./training_download
+(cd training_download/training_v1 && sha256sum -c SHA256SUMS)
+mkdir -p ./outputs/training_v1
+tar -xf ./training_download/training_v1/DexJoCo-X_training-v1.tar \
+  -C ./outputs/training_v1
+export DATA_ROOT="$PWD/outputs/training_v1"
+```
+
+包内通过TAR硬链接避免重复存储相同视频，解压后都是普通本地文件，不包含软链接。
+两种训练视图分别是`prepared/beingh_final_v3/`和`prepared/lerobot_final_v3/`，
+配套统计量分别为`prepared/beingh_final_v3_train_stats.json`和
+`prepared/lerobot_final_v3_train_stats.json`。
+
+在参考仿真环境中执行最终训练标签回放：
+
+```bash
+python -m pip install --no-deps -r requirements/training-replay-pip.txt
+python evaluation/audit_training_replay.py --data-root "$DATA_ROOT" \
+  --prepared-name lerobot_final_v3 --workers 4 --output training_replay.json
+```
+
+包内`metadata/VERIFICATION.json`和逐条报告记录了验证结果。验证执行保存的示范标签，
+不代表训练后模型的成功率；本次修复没有降低成功标准，也没有改动环境模型。
+
+官方LeRobot的读取示例见[英文版](TRAINING_CONVERSION.md#download-verified-training-v1)。
+该包使用native200动作表征，标签已经归一化，训练时应关闭额外的状态/动作归一化，
+同时正确处理有效维度和时间填充掩码。推理时使用下文的配套适配器与统计量，
+将标签还原为float64实际指令，并保留该精度发送到环境。已有模型继续使用训练时的
+统计量与解码器，不能通过直接更换解码器来修复已有模型。
+
 旧转换按数据分位数裁掉了部分有效示范动作，例如把 1.61 厘米的腕部移动压成
 0.41 厘米。新的 `quantile_affine_v3` 只缩放，不删除中央 98% 范围以外的值。
 标签可以超过 [-1, 1]；实际控制器的物理限制继续保留。
