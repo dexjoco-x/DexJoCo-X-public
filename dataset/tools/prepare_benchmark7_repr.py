@@ -15,6 +15,7 @@ import numpy as np
 import pandas as pd
 from scipy.spatial.transform import Rotation
 from data_io import link_or_copy
+from normalization import AFFINE,LEGACY,VERSIONS,bind,normalize
 
 
 SIDES = ("right", "left")
@@ -55,14 +56,6 @@ def statistics(values, masks):
         else:
             out["q01"][i], out["q99"][i], out["std"][i] = -1, 1, 1
     return {key: value.tolist() for key, value in out.items()}
-
-
-def normalize(x, mask, stats):
-    lo, hi = np.asarray(stats["q01"]), np.asarray(stats["q99"])
-    span = hi - lo
-    y = 2 * (x - lo) / np.where(span != 0, span, 1) - 1
-    y = np.where(span != 0, y, x)
-    return np.where(mask, np.clip(y, -1, 1), 0).astype(np.float32)
 
 
 class Encoder:
@@ -144,8 +137,10 @@ def main(args):
     root = args.root.resolve()
     bundle = root / "bundle"
     prepared = root / "prepared"
-    output = prepared / ("beingh05_" + args.representation)
-    if output.exists():
+    suffix = '_affine_v2' if args.normalization == AFFINE else '_legacy_v1'
+    output_name = ('beingh05_' if args.reader == 'beingh' else 'lerobot_') + args.representation + suffix
+    output = prepared / output_name
+    if output.exists() or (prepared / (output_name + '_train_stats.json')).exists():
         raise FileExistsError(output)
     encoder = Encoder(args.representation, args.contracts, args.checkpoint, args.seal)
     rows = []
@@ -194,15 +189,16 @@ def main(args):
     # normalization would remap the same latent value differently in every
     # dataset and quietly undo the intended cross-embodiment alignment.
     shared_stats = {
-        name: statistics(
+        name: bind(statistics(
             [chunk for data in raw_values.values() for chunk in data[name]],
             [chunk for data in raw_values.values() for chunk in data[name + "_mask"]],
-        )
+        ), args.normalization)
         for name in ("state", "action")
     }
-    stats_name = "beingh05_" + args.representation + "_train_stats.json"
+    stats_name = output_name + "_train_stats.json"
     write(prepared / stats_name, {
         "representation": args.representation,
+        "normalization_version": args.normalization,
         "scope": "shared across all task/hand groups; frozen train split only; mask-aware frame pooling",
         "codec_contract_sha256": encoder.codec_hash,
         "codec_checkpoint_sha256": encoder.checkpoint_hash,
@@ -255,7 +251,7 @@ def main(args):
                 link_or_copy(bundle / row["videos"][view]["path"], video)
                 episode.update({f"videos/{key}/chunk_index": 0, f"videos/{key}/file_index": idx,
                     f"videos/{key}/from_timestamp": 0.0,
-                    f"videos/{key}/to_timestamp": (n - 1) / 20})
+                    f"videos/{key}/to_timestamp": n / 20})
             episodes.append(episode)
             total += n
         features = {k: {"dtype": "float32", "shape": [200]} for k in ("observation.state", "action")}
@@ -268,16 +264,19 @@ def main(args):
                 "video.height": 256, "video.width": 256, "video.channels": 3,
                 "video.codec": "h264", "video.pix_fmt": "yuv420p", "video.is_depth_map": False,
                 "has_audio": False}}
-        write(meta / "info.json", {"codebase_version": "v3.0", "robot_type": hand,
+        paths = ('chunk_index', 'file_index') if args.reader == 'lerobot' else ('episode_chunk', 'episode_index')
+        write(meta / "info.json", {"codebase_version": "v3.0" if args.reader == 'lerobot' else 'v2.1', "reader": args.reader, "robot_type": hand,
             "total_episodes": len(group_rows), "total_frames": total, "total_tasks": 1,
             "chunks_size": 1000, "fps": 20,
-            "data_path": "data/chunk-{episode_chunk:03d}/episode_{episode_index:06d}.parquet",
-            "video_path": "videos/{video_key}/chunk-{episode_chunk:03d}/episode_{episode_index:06d}.mp4",
+            "data_path": "data/chunk-{" + paths[0] + ":03d}/episode_{" + paths[1] + ":06d}.parquet",
+            "video_path": "videos/{video_key}/chunk-{" + paths[0] + ":03d}/episode_{" + paths[1] + ":06d}.mp4",
             "features": features, "splits": {split: f"0:{len(group_rows)}"},
             "representation": "benchmark7_" + args.representation + "200_dualarm_v1",
             "codec_contract_sha256": encoder.codec_hash,
             "codec_checkpoint_sha256": encoder.checkpoint_hash,
             "normalization_scope": "shared_train_frame_pool",
+            "normalization_version": args.normalization,
+            "physical_replay_verified": False,
             "pre_normalized": True, "object_pose_input": False,
             "layout": "right TCP6+hand32 at 0:38; left TCP6+hand32 at 40:78"})
         identity = {key: [value] * 200 for key, value in (("mean", 0.), ("std", 1.),
@@ -295,7 +294,7 @@ def main(args):
             "path": str(dest.relative_to(root)), "episodes": len(group_rows), "frames": total,
             "config": "benchmark7_native200_dual" if len(views) == 3 else "benchmark7_native200_single"})
         print("PREPARED", args.representation, task, hand, split, len(group_rows), flush=True)
-    manifest_name = "beingh05_" + args.representation + "_datasets.json"
+    manifest_name = output_name + "_datasets.json"
     write(prepared / manifest_name, manifest)
     recipe = {}
     for group in manifest:
@@ -308,7 +307,7 @@ def main(args):
             "normalize_type": "imagenet", "use_color_jitter": True}, "frame_step_size": [1],
             "num_used_episodes_per_task": [-1], "num_used_episodes_per_dataset": [-1],
             "num_used_frames_per_dataset": [-1], "weight": group["frames"]}
-    write(prepared / ("beingh05_" + args.representation + "_train.yaml"), recipe)
+    write(prepared / (output_name + "_train.yaml"), recipe)
     report = {}
     for hand, chunks in roundtrip.items():
         error = np.concatenate(chunks)
@@ -316,8 +315,9 @@ def main(args):
             "max_abs": float(error.max()), "p99_abs": float(np.quantile(error, 0.99))}
     if args.representation == "faas" and max(x["max_abs"] for x in report.values()) > 1e-5:
         raise ValueError("FAAS roundtrip gate failed")
-    write(prepared / ("beingh05_" + args.representation + "_conversion_check.json"), {
+    write(prepared / (output_name + "_conversion_check.json"), {
         "passed": True, "episodes": len(rows), "train_episodes": sum(r["split"] == "train" for r in rows),
+        "physical_replay_verified": False, "normalization_version": args.normalization,
         "two_arm_encoding": True, "test_split_used_for_statistics": False,
         "roundtrip": report, "manifest": manifest_name})
 
@@ -329,4 +329,6 @@ if __name__ == "__main__":
     parser.add_argument("--contracts", type=Path, required=True)
     parser.add_argument("--checkpoint", type=Path)
     parser.add_argument("--seal", type=Path)
+    parser.add_argument("--normalization", choices=VERSIONS, default=AFFINE)
+    parser.add_argument("--reader", choices=['beingh', 'lerobot'], default='beingh')
     main(parser.parse_args())

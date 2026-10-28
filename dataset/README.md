@@ -57,7 +57,7 @@ The manifest records scenes, seeds, valid frame counts, and file hashes. `native
 
 The raw `image_mask` order is `[front, wrist_right, wrist_left]`; the policy interface uses `[base, wrist_left, wrist_right]`, with `base` corresponding to `front`. Match images by camera name.
 
-v1.1 stores actions as float64. Preserve these values for exact demonstration replay. Training conversion uses float32 normalization and clipping, so converted actions are not the original saved command sequence; see the [precision diagnostic](../docs/REPLAY_REPAIR.md#data-validation-and-action-precision).
+v1.1 stores actions as float64. Preserve these values for exact demonstration replay. New training exports use versioned, unclipped normalization with float32 labels and a float64 decoder. Conversion still changes numerical precision; its physical replay must be checked separately from Raw v1.1. See [training conversion](../docs/TRAINING_CONVERSION.md).
 
 Raw arrays order the right side before the left. Each side's state begins with seven wrist values: world position and a wxyz quaternion. Each side's action begins with six world-frame wrist translation and rotation increments, followed by hand actuator targets. Positions use meters and rotations use radians. Hand channel order and ranges are defined in each demonstration's `contract.json`. RGB videos are 256×256 at 20 Hz; use the valid frame count in the manifest.
 
@@ -81,9 +81,11 @@ python dataset/tools/prepare_benchmark7_repr.py "$DATA_ROOT" --representation fa
   --contracts representations/table1_sided_v3/codecs/faas7_project_v3_sided.json
 ```
 
-The default control coordinates and FAAS views are written to `prepared/beingh05/` and `prepared/beingh05_faas/`. These directory names are compatibility keys. Both views use a general data format with 200-dimensional state/action arrays: right side 0:40, left side 40:80, and zero padding elsewhere. Wrist states use rotation vectors; FAAS uses 32 functional hand slots.
+The default control coordinates and FAAS views are written to `prepared/beingh05_affine_v2/` and `prepared/beingh05_faas_affine_v2/`. These are Being-H-compatible Parquet/video views with 200-dimensional state/action arrays: right side 0:40, left side 40:80, and zero padding elsewhere. Wrist states use rotation vectors; FAAS uses 32 functional hand slots. Existing exports are not overwritten.
 
-Conversion normalizes each hand–task pair using q01/q99, clips values to [-1, 1], and zeros invalid dimensions. These views differ from the reader's 80-dimensional physical values. Use matching normalization for training and inference. See the [policy example](../examples/pi05/README.md) for π₀.₅ statistics.
+`quantile_affine_v2` uses q01/q99 to scale values without clipping them to [-1, 1]. Native statistics are fitted per hand–task pair; FAAS/DexLatent statistics are shared across the training data. Equal quantiles use a reversible offset rule, and invalid dimensions stay zero. Native action labels round inward at the physical controller limits. Use the bound statistics and decoder for inference. Older, unversioned statistics retain the original clipped behavior for existing checkpoints.
+
+Use `--reader lerobot` for an official LeRobot v3 export. See [training conversion](../docs/TRAINING_CONVERSION.md) for reader checks, saved-label replay, and the matching inference adapter. Conversion alone does not verify physical task success.
 
 DexLatent conversion requires a compatible encoder and a matching binding record:
 
@@ -94,7 +96,7 @@ python dataset/tools/prepare_benchmark7_repr.py "$DATA_ROOT" --representation de
   --seal representations/table1_sided_v3/codecs/frozen_seal.json
 ```
 
-`--seal` binds the encoder and control definitions. Output is written to `prepared/beingh05_dexlatent/`. Use a new working directory if a converted output already exists.
+`--seal` binds the encoder and control definitions. Output is written to `prepared/beingh05_dexlatent_affine_v2/`. Use a new working directory if a converted output already exists. Encoder reconstruction and normalized-label replay are separate checks.
 
 ## Verification and related guides
 

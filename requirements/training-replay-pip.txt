@@ -1,0 +1,4 @@
+# Add Parquet loading to the locked native replay environment.
+# PyArrow 26 requires NumPy 2; keep the reference NumPy 1.26 binary unchanged.
+pandas==2.3.3
+pyarrow==19.0.1

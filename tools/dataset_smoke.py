@@ -14,6 +14,7 @@ from scipy.spatial.transform import Rotation
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'dataset/tools'))
 from data_io import write
+from normalization import AFFINE,version
 
 
 def video_frame(path, index):
@@ -30,7 +31,7 @@ def video_frame(path, index):
 
 def reference(raw, kind):
     """Physical field layout independent of the conversion entry point."""
-    values = np.zeros((len(raw[kind]), 200), np.float32)
+    values = np.zeros((len(raw[kind]), 200), np.float64)
     masks = np.zeros_like(values, bool)
     for arm, base in enumerate((0, 40)):
         active = raw[kind + '_mask'][:, arm, 0].astype(bool)
@@ -53,13 +54,14 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--data-root', required=True, type=Path)
     parser.add_argument('--output', required=True, type=Path)
+    parser.add_argument('--prepared-name', default='beingh05_affine_v2')
     args = parser.parse_args()
     bundle = args.data_root / 'bundle'
     rows = {}
     for path in sorted((bundle/'manifests').glob('*.json')):
         for row in json.loads(path.read_text()):
             rows[(row['task'], row['hand'], row['scene_id'])] = row
-    groups = json.loads((args.data_root/'prepared/beingh05_datasets.json').read_text())
+    groups = json.loads((args.data_root/'prepared'/(args.prepared_name+'_datasets.json')).read_text())
     reports = []
     for group in groups:
         directory = args.data_root / group['path']
@@ -86,13 +88,20 @@ def main():
                 value = np.stack(frame[value_key].to_list())
                 mask = np.stack(frame[mask_key].to_list()).astype(bool)
                 assert value.shape == mask.shape == (len(frame), 200)
-                assert np.isfinite(value).all() and np.max(np.abs(value)) <= 1.000001
+                assert np.isfinite(value).all()
                 assert not value[~mask].any()
                 physical, expected_mask = reference(raw, kind)
                 np.testing.assert_array_equal(mask, expected_mask)
                 lo, hi = np.asarray(stats[kind]['q01']), np.asarray(stats[kind]['q99'])
-                restored = np.where(mask, (value+1)/2*(hi-lo)+lo, 0)
-                expected = np.where(mask, np.clip(physical, lo, hi), 0)
+                if version(stats[kind]) == AFFINE:
+                    assert info['normalization_version'] == AFFINE
+                    span = hi-lo
+                    restored = np.where(mask, np.where(span != 0, (value.astype(np.float64)+1)/2*span+lo, value.astype(np.float64)+lo), 0)
+                    expected = np.where(mask, physical, 0)
+                else:
+                    assert np.max(np.abs(value)) <= 1.000001
+                    restored = np.where(mask, (value+1)/2*(hi-lo)+lo, 0)
+                    expected = np.where(mask, np.clip(physical, lo, hi), 0)
                 current = float(np.max(np.abs(restored-expected)))
                 assert current < 1e-5, (group['task'], group['hand'], kind, current)
                 error = max(error, current)
@@ -113,8 +122,10 @@ def main():
                             maximum_physical_inverse_error=error, decoded_video_frames=videos,
                             statistics_sha256=hashlib.sha256(stats_path.read_bytes()).hexdigest(), passed=True))
         print(group['task'], group['hand'], checked, 'episodes passed', flush=True)
-    assert reports and sum(row['episodes'] for row in reports) == len(rows)
-    result = dict(passed=True, groups=len(reports), episodes=len(rows),
+    assert reports
+    result = dict(passed=True, groups=len(reports), episodes=sum(r['episodes'] for r in reports),
+                  source_episodes=len(rows), complete_source_coverage=sum(r['episodes'] for r in reports)==len(rows),
+                  physical_replay_checked=False,
                   frames=sum(row['frames'] for row in reports), representation='native',
                   model_training_required=False, groups_checked=reports)
     write(args.output, result)

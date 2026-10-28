@@ -57,7 +57,7 @@ manifest 记录场景、种子、有效步数与文件哈希。`native.npz` 包�
 
 原始 `image_mask` 的顺序为 `[front, wrist_right, wrist_left]`；策略接口的顺序为 `[base, wrist_left, wrist_right]`，其中 `base` 对应 `front`。请按相机名称对应图像。
 
-v1.1 的动作为 float64，精确回放时应保留这些数值。训练转换使用 float32 归一化和裁剪，转换后的动作已不是原始保存指令；详见[精度诊断](../docs/REPLAY_REPAIR.zh-CN.md#数据验证与动作精度)。
+v1.1 的动作为 float64，精确回放时应保留这些数值。新训练导出使用带版本标记的无分位数裁剪归一化，标签为 float32、解码为 float64。转换仍会改变数值精度，因此需要单独检查转换后的物理回放；详见[训练转换](../docs/TRAINING_CONVERSION.zh.md)。
 
 原始数组侧序为右、左。每侧状态前七维是腕部世界位置与 wxyz 四元数；动作前六维是世界坐标腕部位移和旋转增量，后面是手部执行器目标值。位置单位为米，旋转单位为弧度；手通道顺序和范围见该示范的 `contract.json`。视频为 256×256、20 Hz 的 RGB，使用 manifest 中的有效步数。
 
@@ -81,9 +81,11 @@ python dataset/tools/prepare_benchmark7_repr.py "$DATA_ROOT" --representation fa
   --contracts representations/table1_sided_v3/codecs/faas7_project_v3_sided.json
 ```
 
-默认控制坐标和 FAAS 分别输出到 `prepared/beingh05/`、`prepared/beingh05_faas/`。目录名为兼容键；两种视图均为通用数据格式，state/action 宽度为 200，右侧占 0:40，左侧占 40:80，其余填零。腕部状态采用 rotvec，FAAS 手部采用 32 个功能槽位。
+默认控制坐标和 FAAS 分别输出到 `prepared/beingh05_affine_v2/`、`prepared/beingh05_faas_affine_v2/`。它们是兼容 Being-H 加载器的 Parquet/视频视图，state/action 宽度为 200，右侧占 0:40，左侧占 40:80，其余填零。腕部状态采用 rotvec，FAAS 手部采用 32 个功能槽位。已有导出不会被覆盖。
 
-转换结果按每个手–任务组合的 q01/q99 归一化并裁剪到 [-1, 1]，无效维度置零。它与读取接口的 80 维物理数据不同；训练和推理采用同一套归一化规则。π₀.₅ 的统计量约定见 [策略示例](../examples/pi05/README.zh.md)。
+`quantile_affine_v2` 使用 q01/q99 缩放，但不把范围外的有效值裁到 [-1, 1]。默认控制坐标按手–任务组合拟合统计量，FAAS/DexLatent 使用训练数据共享统计量。分位数相等的通道使用可逆的偏移规则，无效维度保持零。默认控制坐标的动作标签会在实际控制器边界处向合法范围内舍入。推理必须使用绑定的统计量和解码器；无版本标记的旧统计量保留旧裁剪行为，供已有检查点使用。
+
+使用 `--reader lerobot` 导出官方 LeRobot v3 视图。[训练转换说明](../docs/TRAINING_CONVERSION.zh.md)包含读取器检查、保存标签回放和对应的推理适配器。仅完成转换不代表任务物理执行成功。
 
 DexLatent 转换需要兼容的编码器及其匹配记录：
 
@@ -94,7 +96,7 @@ python dataset/tools/prepare_benchmark7_repr.py "$DATA_ROOT" --representation de
   --seal representations/table1_sided_v3/codecs/frozen_seal.json
 ```
 
-`--seal` 应绑定所用编码器及控制定义。输出为 `prepared/beingh05_dexlatent/`，已有转换目录时使用新的工作目录。
+`--seal` 应绑定所用编码器及控制定义。输出为 `prepared/beingh05_dexlatent_affine_v2/`，已有转换目录时使用新的工作目录。编码器的重建检查不能代替归一化标签的物理回放检查。
 
 ## 校验与相关说明
 
