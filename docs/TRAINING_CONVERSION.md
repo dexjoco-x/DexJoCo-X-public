@@ -83,6 +83,13 @@ labels verbatim and reject mismatched statistics. RGB and robot states must come
 from that same rollout. These are new training trajectories, not a claim that
 float32 conversion preserves the original float64 execution.
 
+`collection/collect_training_labels.py` can track the accepted source wrist
+targets while executing the final labels. For hammer collection, the optional
+`--hammer-strokes` adds explicit vertical strokes after the source target sequence.
+Those steps are part of the saved demonstration and are included in its new RGB
+and state recordings. The collector records the parameters and independently
+replays the result; the evaluation runtime never appends recovery actions.
+
 This check executes saved labels as ideal commands; it does not measure a trained
 policy's success rate. The dataset, model architecture, and training budget remain
 separate experimental variables.

@@ -89,18 +89,37 @@ def verify_candidate(directory, contract):
     finally: runtime.close()
 
 
-def collect(row, bundle, statistics, directory, cache, gain=1., tail=40, terminal_z_offset=0.):
+def collect(row, bundle, statistics, directory, cache, gain=1., tail=40, terminal_z_offset=0.,
+            hammer_strokes=0, stroke_amplitude=.06, stroke_depth=.008, stroke_down_steps=8):
     directory, bundle = Path(directory), Path(bundle)
     if directory.exists(): raise FileExistsError(directory)
     if terminal_z_offset and row['task'] not in ('hammer_nail', 'pick_bucket'):
         raise ValueError('Terminal vertical motion is defined only for hammer/bucket collection')
     if tail < 0 or not np.isfinite(gain) or gain <= 0 or not np.isfinite(terminal_z_offset):
         raise ValueError('Invalid collection parameters')
+    if (hammer_strokes < 0 or stroke_down_steps < 1 or not np.isfinite([stroke_amplitude, stroke_depth]).all()
+            or stroke_amplitude <= 0 or stroke_depth < 0):
+        raise ValueError('Invalid additional stroke parameters')
+    if hammer_strokes and row['task'] != 'hammer_nail':
+        raise ValueError('Additional hammer strokes are defined only for hammer_nail')
     contract = json.loads((bundle / row['contract']).read_text())
     with np.load(bundle / row['tensor'], allow_pickle=False) as z:
         action_mask, state_mask = z['action_mask'][0].copy(), z['state_mask'][0].copy()
     codec = TrainingActionCodec(statistics, contract, action_mask)
     reference, positions, rotations = target_path(bundle, row, cache)
+    original_steps = len(reference)
+    if hammer_strokes:
+        heights = np.r_[np.linspace(stroke_amplitude / 12, stroke_amplitude, 12),
+                        np.linspace(stroke_amplitude, -stroke_depth, stroke_down_steps)]
+        extra_positions = []
+        for _ in range(hammer_strokes):
+            for height in heights:
+                target = positions[-1].copy(); target[0, 2] += height
+                extra_positions.append(target)
+        count = len(extra_positions)
+        reference = np.concatenate([reference, np.repeat(reference[-1:], count, axis=0)])
+        positions = np.concatenate([positions, extra_positions])
+        rotations = np.concatenate([rotations, np.repeat(rotations[-1:], count, axis=0)])
     runtime = Runtime(row['task'], row['hand'], row['seed'], 'arm40_v1', 'native', False)
     states = []; actions = []; labels = []; private = []; strikes = []; first = None; requested_clips = 0
     trace = hashlib.sha256()
@@ -129,13 +148,20 @@ def collect(row, bundle, statistics, directory, cache, gain=1., tail=40, termina
         meta = {k: row[k] for k in ('task', 'hand', 'scene_id', 'seed')}
         meta.update(source_tensor_sha256=row['tensor_sha256'], source_method='new_collection_tracking_accepted_world_targets',
             action_statistics=statistics, normalization_version=statistics['normalization_version'], gain=gain,
-            terminal_hold_budget=tail, extra_collected_steps=max(0, len(labels) - len(reference)),
+            terminal_hold_budget=tail, extra_collected_steps=max(0, len(labels) - original_steps),
             terminal_z_offset_m=terminal_z_offset,
             saved_steps=len(labels), task_success=first is not None, first_success_step=first,
             motion_quality_pass=quality, max_strike_tilt_deg=max(strikes, default=None),
             requested_coordinates_limited_to_physical_range=requested_clips,
             physical_trace_sha256=trace.hexdigest(), model_binding=runtime.model_binding,
             new_physical_collection=True, rgb_generated=False, release_ready=False, final_info=info)
+        if hammer_strokes:
+            meta.update(source_method='new_collection_with_saved_additional_vertical_hammer_strokes',
+                original_reference_steps=original_steps, maximum_extra_strokes=hammer_strokes,
+                stroke_amplitude_m=stroke_amplitude, stroke_lower_offset_m=stroke_depth,
+                stroke_down_steps=stroke_down_steps,
+                world_targets_from='accepted_source_wrist_targets_plus_explicit_vertical_offsets',
+                object_pose_control_input=False)
     finally: runtime.close()
     directory.mkdir(parents=True, exist_ok=False)
     np.savez_compressed(directory / 'candidate.npz', state=states, action=actions, labels=labels,
@@ -159,13 +185,19 @@ def main():
     p.add_argument('--gain', type=float, default=1.)
     p.add_argument('--tail', type=int, default=40)
     p.add_argument('--terminal-z-offset', type=float, default=0.)
+    p.add_argument('--hammer-strokes', type=int, default=0, help='Explicit additional collected strokes, stored in the saved action sequence')
+    p.add_argument('--stroke-amplitude', type=float, default=.06)
+    p.add_argument('--stroke-depth', type=float, default=.008)
+    p.add_argument('--stroke-down-steps', type=int, default=8)
     args = p.parse_args()
     mismatch = reference_mismatches(environment_fingerprint())
     if mismatch: raise RuntimeError(mismatch)
     bundle = args.data_root / 'bundle'
     row = next(r for r in json.loads((bundle / 'manifests' / (args.task + '.json')).read_text()) if r['hand'] == args.hand and r['scene_id'] == args.scene)
     stats = json.loads(args.statistics_file.read_text())['groups'][args.task + '/' + args.hand]['action']
-    result = collect(row, bundle, stats, args.output, args.target_cache, args.gain, args.tail, args.terminal_z_offset)
+    result = collect(row, bundle, stats, args.output, args.target_cache, args.gain, args.tail,
+                     args.terminal_z_offset, args.hammer_strokes, args.stroke_amplitude,
+                     args.stroke_depth, args.stroke_down_steps)
     print(json.dumps({k: v for k, v in result.items() if k not in ('action_statistics', 'final_info')}, indent=2, default=jsonable))
     return 0 if result['accepted_for_observation_export'] else 1
 

@@ -93,6 +93,12 @@ def export(source, source_bundle, row, output_bundle):
         physical_trace_sha256=trace.hexdigest(), model_binding=runtime.model_binding,
         pre_action_rgb=True, videos_fully_decoded=True, steps=n, private_physics_excluded=True,
         release_ready=False)
+    evidence['source_steps'] = row['steps']
+    parameter_keys = ('gain', 'terminal_hold_budget', 'extra_collected_steps', 'terminal_z_offset_m',
+                      'rounding_variant', 'label_max_abs_change', 'original_reference_steps',
+                      'maximum_extra_strokes', 'stroke_amplitude_m', 'stroke_lower_offset_m',
+                      'stroke_down_steps', 'world_targets_from', 'object_pose_control_input')
+    evidence['collection_parameters'] = {key: meta[key] for key in parameter_keys if key in meta}
     evpath = output_bundle / 'evidence/training_affine_v2' / row['task'] / row['hand'] / (row['scene_id'] + '.json')
     evpath.parent.mkdir(parents=True, exist_ok=True)
     evpath.write_text(json.dumps(evidence, indent=2, default=jsonable) + '\n')

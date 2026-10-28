@@ -68,4 +68,8 @@ reply = {'actions': adapter.actions(prediction, observation)}
 这些标签，并检查统计量是否匹配。RGB 和状态来自同一次执行；这是新采集的训练轨迹，不是把原有
 float64 轨迹无损转换成 float32。
 
+`collection/collect_training_labels.py` 可以在执行最终标签的同时跟随原示范的腕部目标。
+锤钉采集还可通过 `--hammer-strokes` 显式增加抬锤和敲击步骤。这些步骤属于新示范，
+会保存为动作并生成对应 RGB 和状态。采集参数会被记录，结果要独立回放；评估环境不会额外补动作。
+
 这里执行的是保存的标签，不是训练后的模型预测；回放结果与策略学习效果应分别报告。
