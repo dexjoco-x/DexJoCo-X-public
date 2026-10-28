@@ -81,9 +81,9 @@ python dataset/tools/prepare_benchmark7_repr.py "$DATA_ROOT" --representation fa
   --contracts representations/table1_sided_v3/codecs/faas7_project_v3_sided.json
 ```
 
-默认控制坐标和 FAAS 分别输出到 `prepared/beingh05_affine_v2/`、`prepared/beingh05_faas_affine_v2/`。它们是兼容 Being-H 加载器的 Parquet/视频视图，state/action 宽度为 200，右侧占 0:40，左侧占 40:80，其余填零。腕部状态采用 rotvec，FAAS 手部采用 32 个功能槽位。已有导出不会被覆盖。
+默认控制坐标和 FAAS 分别输出到 `prepared/beingh05_affine_v3/`、`prepared/beingh05_faas_affine_v3/`。它们是兼容 Being-H 加载器的 Parquet/视频视图，state/action 宽度为 200，右侧占 0:40，左侧占 40:80，其余填零。腕部状态采用 rotvec，FAAS 手部采用 32 个功能槽位。已有导出不会被覆盖。
 
-`quantile_affine_v2` 使用 q01/q99 缩放，但不把范围外的有效值裁到 [-1, 1]。默认控制坐标按手–任务组合拟合统计量，FAAS/DexLatent 使用训练数据共享统计量。分位数相等的通道使用可逆的偏移规则，无效维度保持零。默认控制坐标的动作标签会在实际控制器边界处向合法范围内舍入。推理必须使用绑定的统计量和解码器；无版本标记的旧统计量保留旧裁剪行为，供已有检查点使用。
+`quantile_affine_v3` 使用 q01/q99 缩放，但不把范围外的有效值裁到 [-1, 1]。默认控制坐标按手–任务组合拟合统计量，FAAS/DexLatent 使用训练数据共享统计量。分位数相等的通道使用可逆的偏移规则，无效维度保持零。默认控制坐标的动作标签会在实际控制器边界处向合法范围内舍入。推理必须使用绑定的统计量和解码器；无版本标记的旧统计量保留旧裁剪行为，供已有检查点使用。
 
 使用 `--reader lerobot` 导出官方 LeRobot v3 视图。[训练转换说明](../docs/TRAINING_CONVERSION.zh.md)包含读取器检查、保存标签回放和对应的推理适配器。仅完成转换不代表任务物理执行成功。
 
@@ -96,7 +96,7 @@ python dataset/tools/prepare_benchmark7_repr.py "$DATA_ROOT" --representation de
   --seal representations/table1_sided_v3/codecs/frozen_seal.json
 ```
 
-`--seal` 应绑定所用编码器及控制定义。输出为 `prepared/beingh05_dexlatent_affine_v2/`，已有转换目录时使用新的工作目录。编码器的重建检查不能代替归一化标签的物理回放检查。
+`--seal` 应绑定所用编码器及控制定义。输出为 `prepared/beingh05_dexlatent_affine_v3/`，已有转换目录时使用新的工作目录。编码器的重建检查不能代替归一化标签的物理回放检查。
 
 ## 校验与相关说明
 

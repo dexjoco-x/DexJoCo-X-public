@@ -69,7 +69,7 @@ def check_group(root, group, horizon, video_backend):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--data-root', required=True, type=Path)
-    parser.add_argument('--prepared-name', default='lerobot_affine_v2')
+    parser.add_argument('--prepared-name', default='lerobot_affine_v3')
     parser.add_argument('--output', required=True, type=Path)
     parser.add_argument('--horizon', type=int, default=16)
     parser.add_argument('--video-backend', default='pyav')

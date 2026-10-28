@@ -81,9 +81,9 @@ python dataset/tools/prepare_benchmark7_repr.py "$DATA_ROOT" --representation fa
   --contracts representations/table1_sided_v3/codecs/faas7_project_v3_sided.json
 ```
 
-The default control coordinates and FAAS views are written to `prepared/beingh05_affine_v2/` and `prepared/beingh05_faas_affine_v2/`. These are Being-H-compatible Parquet/video views with 200-dimensional state/action arrays: right side 0:40, left side 40:80, and zero padding elsewhere. Wrist states use rotation vectors; FAAS uses 32 functional hand slots. Existing exports are not overwritten.
+The default control coordinates and FAAS views are written to `prepared/beingh05_affine_v3/` and `prepared/beingh05_faas_affine_v3/`. These are Being-H-compatible Parquet/video views with 200-dimensional state/action arrays: right side 0:40, left side 40:80, and zero padding elsewhere. Wrist states use rotation vectors; FAAS uses 32 functional hand slots. Existing exports are not overwritten.
 
-`quantile_affine_v2` uses q01/q99 to scale values without clipping them to [-1, 1]. Native statistics are fitted per hand–task pair; FAAS/DexLatent statistics are shared across the training data. Equal quantiles use a reversible offset rule, and invalid dimensions stay zero. Native action labels round inward at the physical controller limits. Use the bound statistics and decoder for inference. Older, unversioned statistics retain the original clipped behavior for existing checkpoints.
+`quantile_affine_v3` uses q01/q99 to scale values without clipping them to [-1, 1]. Native statistics are fitted per hand–task pair; FAAS/DexLatent statistics are shared across the training data. Equal quantiles use a reversible offset rule, and invalid dimensions stay zero. Native action labels round inward at the physical controller limits. Use the bound statistics and decoder for inference. Older, unversioned statistics retain the original clipped behavior for existing checkpoints.
 
 Use `--reader lerobot` for an official LeRobot v3 export. See [training conversion](../docs/TRAINING_CONVERSION.md) for reader checks, saved-label replay, and the matching inference adapter. Conversion alone does not verify physical task success.
 
@@ -96,7 +96,7 @@ python dataset/tools/prepare_benchmark7_repr.py "$DATA_ROOT" --representation de
   --seal representations/table1_sided_v3/codecs/frozen_seal.json
 ```
 
-`--seal` binds the encoder and control definitions. Output is written to `prepared/beingh05_dexlatent_affine_v2/`. Use a new working directory if a converted output already exists. Encoder reconstruction and normalized-label replay are separate checks.
+`--seal` binds the encoder and control definitions. Output is written to `prepared/beingh05_dexlatent_affine_v3/`. Use a new working directory if a converted output already exists. Encoder reconstruction and normalized-label replay are separate checks.
 
 ## Verification and related guides
 

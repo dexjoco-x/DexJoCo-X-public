@@ -2,13 +2,13 @@
 import numpy as np
 
 from dataset.tools.adapters import bind_action_bounds, decode, encode
-from dataset.tools.normalization import AFFINE, denormalize, normalize, version
+from dataset.tools.normalization import AFFINE, AFFINE_V2, denormalize, normalize, version
 
 
 class TrainingActionCodec:
     def __init__(self, statistics, contract, action_mask):
-        if version(statistics) != AFFINE:
-            raise ValueError('New collection requires quantile_affine_v2 statistics')
+        if version(statistics) not in (AFFINE, AFFINE_V2):
+            raise ValueError('Collection requires versioned affine statistics')
         self.native_mask = np.asarray(action_mask, bool)
         if self.native_mask.shape != (2, 28):
             raise ValueError('Expected native action mask[2, 28]')

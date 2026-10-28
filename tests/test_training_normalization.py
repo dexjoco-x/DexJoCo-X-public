@@ -6,7 +6,7 @@ from pathlib import Path
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from dataset.tools.normalization import AFFINE, LEGACY, bind, denormalize, normalize
+from dataset.tools.normalization import AFFINE, AFFINE_V2, LEGACY, bind, denormalize, normalize, stabilize_scales, scale_labels, preserve_decoded_scale
 
 
 class TrainingNormalizationTest(unittest.TestCase):
@@ -73,6 +73,38 @@ class TrainingNormalizationTest(unittest.TestCase):
             normalize(np.array([np.nan]), [True], bind(dict(q01=[0], q99=[1])))
         with self.assertRaises(ValueError):
             denormalize([0], [True], dict(q01=[0], q99=[1], normalization_version='unknown'))
+
+    def test_nearly_constant_channel_has_bounded_labels_and_identical_commands(self):
+        old = bind(dict(q01=[1.7449999998609003], q99=[1.744999999980638],
+                        physical_bounds=dict(minimum=[0.], maximum=[1.745])), AFFINE_V2)
+        new = stabilize_scales(old)
+        values = np.array([[0.], [1.], [1.7449999999], [1.745]])
+        mask = np.ones_like(values, bool)
+        previous = normalize(values, mask, old)
+        self.assertGreater(np.abs(previous).max(), 1e10)
+        labels = normalize(values, mask, new)
+        self.assertLessEqual(np.abs(labels).max(), 1.)
+        np.testing.assert_array_equal(labels, scale_labels(previous, new))
+        np.testing.assert_array_equal(denormalize(labels, mask, new), denormalize(previous, mask, old))
+
+    def test_saved_neighboring_labels_keep_every_bit_after_rescaling(self):
+        old = bind(dict(q01=[-.01], q99=[.01], physical_bounds=dict(minimum=[-.05], maximum=[.05])), AFFINE_V2)
+        new = stabilize_scales(old)
+        labels = np.nextafter(np.array([[3.2], [1e-8]], np.float32), np.float32(-np.inf))
+        scaled = scale_labels(labels, new)
+        np.testing.assert_array_equal(denormalize(scaled, [[True]], new), denormalize(labels, [[True]], old))
+        with self.assertRaises(ValueError):
+            scale_labels(np.array([np.nextafter(np.float32(0), np.float32(1))]), new)
+
+    def test_subnormal_collection_commands_survive_the_scale_fit(self):
+        previous = bind(dict(q01=[0., 1.745], q99=[0., 1.745],
+                             physical_bounds=dict(minimum=[0., 0.], maximum=[1.745, 1.745])), AFFINE_V2)
+        labels = np.array([[np.nextafter(np.float32(0), np.float32(1))]*2], np.float32)
+        proposed = stabilize_scales(previous)
+        adjusted = preserve_decoded_scale(labels, [[True, True]], previous, proposed)
+        self.assertEqual(adjusted['label_scale_exponents'], [0, 1])
+        scaled = scale_labels(labels, adjusted, require_label_bits=False)
+        np.testing.assert_array_equal(denormalize(labels, [[True, True]], previous), denormalize(scaled, [[True, True]], adjusted))
 
 
 if __name__ == '__main__':

@@ -14,7 +14,7 @@ from scipy.spatial.transform import Rotation
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'dataset/tools'))
 from data_io import write
-from normalization import AFFINE,version
+from normalization import AFFINE,AFFINE_V2,version
 
 
 def video_frame(path, index):
@@ -54,7 +54,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--data-root', required=True, type=Path)
     parser.add_argument('--output', required=True, type=Path)
-    parser.add_argument('--prepared-name', default='beingh05_affine_v2')
+    parser.add_argument('--prepared-name', default='beingh05_affine_v3')
     args = parser.parse_args()
     bundle = args.data_root / 'bundle'
     rows = {}
@@ -93,10 +93,12 @@ def main():
                 physical, expected_mask = reference(raw, kind)
                 np.testing.assert_array_equal(mask, expected_mask)
                 lo, hi = np.asarray(stats[kind]['q01']), np.asarray(stats[kind]['q99'])
-                if version(stats[kind]) == AFFINE:
-                    assert info['normalization_version'] == AFFINE
+                if version(stats[kind]) in (AFFINE,AFFINE_V2):
+                    assert info['normalization_version'] == version(stats[kind])
                     span = hi-lo
-                    restored = np.where(mask, np.where(span != 0, (value.astype(np.float64)+1)/2*span+lo, value.astype(np.float64)+lo), 0)
+                    powers=np.asarray(stats[kind].get('label_scale_exponents',[0]*200),np.int32)
+                    unscaled=np.ldexp(value.astype(np.float64),powers)
+                    restored = np.where(mask, np.where(span != 0, (unscaled+1)/2*span+lo, unscaled+lo), 0)
                     expected = np.where(mask, physical, 0)
                 else:
                     assert np.max(np.abs(value)) <= 1.000001

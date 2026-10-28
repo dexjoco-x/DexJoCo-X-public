@@ -114,7 +114,7 @@ def run(job):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--data-root', required=True, type=Path)
-    p.add_argument('--prepared-name', default='beingh05_affine_v2')
+    p.add_argument('--prepared-name', default='beingh05_affine_v3')
     p.add_argument('--workers', default=4, type=int)
     p.add_argument('--output', required=True, type=Path)
     p.add_argument('--candidate-dir', type=Path)

@@ -15,7 +15,7 @@ import numpy as np
 import pandas as pd
 from scipy.spatial.transform import Rotation
 from data_io import link_or_copy
-from normalization import AFFINE,LEGACY,VERSIONS,bind,normalize
+from normalization import AFFINE,AFFINE_V2,LEGACY,VERSIONS,bind,normalize,stabilize_scales
 
 
 SIDES = ("right", "left")
@@ -137,7 +137,7 @@ def main(args):
     root = args.root.resolve()
     bundle = root / "bundle"
     prepared = root / "prepared"
-    suffix = '_affine_v2' if args.normalization == AFFINE else '_legacy_v1'
+    suffix = '_affine_v3' if args.normalization == AFFINE else '_affine_v2' if args.normalization == AFFINE_V2 else '_legacy_v1'
     output_name = ('beingh05_' if args.reader == 'beingh' else 'lerobot_') + args.representation + suffix
     output = prepared / output_name
     if output.exists() or (prepared / (output_name + '_train_stats.json')).exists():
@@ -195,6 +195,8 @@ def main(args):
         ), args.normalization)
         for name in ("state", "action")
     }
+    if args.normalization == AFFINE:
+        shared_stats = {key: stabilize_scales(value) for key, value in shared_stats.items()}
     stats_name = output_name + "_train_stats.json"
     write(prepared / stats_name, {
         "representation": args.representation,

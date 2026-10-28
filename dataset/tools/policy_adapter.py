@@ -1,19 +1,19 @@
 """Versioned native200 preprocessing and float64 decoding for arm40_v1 servers."""
 import numpy as np
-from .normalization import AFFINE, normalize, denormalize, version
+from .normalization import AFFINE, AFFINE_V2, normalize, denormalize, version
 
 
 class Native200PolicyAdapter:
-    """Use with models trained on the matching affine-v2 labels and statistics.
+    """Use with models trained on matching versioned affine labels and statistics.
 
     The model owns RGB preprocessing. The evaluator owns physical action limits.
     This adapter must not be substituted into an existing legacy checkpoint.
     """
 
     def __init__(self, groups):
-        if (not groups or any(version(s) != AFFINE for g in groups.values() for s in g.values())
+        if (not groups or any(version(s) not in (AFFINE,AFFINE_V2) for g in groups.values() for s in g.values())
                 or any('physical_bounds' not in g['action'] for g in groups.values())):
-            raise ValueError('This adapter requires affine-v2 training statistics')
+            raise ValueError('This adapter requires versioned native200 affine statistics')
         self.groups = groups
 
     def _group(self, observation):

@@ -3,9 +3,15 @@
 [English](TRAINING_CONVERSION.md) | [中文](TRAINING_CONVERSION.zh.md)
 
 The old conversion clipped valid demonstrations at dataset quantiles. For example,
-a 1.61 cm wrist command could become 0.41 cm. The new `quantile_affine_v2` scales
+a 1.61 cm wrist command could become 0.41 cm. The new `quantile_affine_v3` scales
 commands without removing values outside the central 98% of the data. Labels can
 exceed [-1, 1]. The policy's physical controller limits still apply.
+
+V3 also scales labels by powers of two so nearly constant channels do not produce
+huge training targets. The decoder reverses this scaling before the affine inverse.
+For collected v2 labels, `rescale_training_bundle.py` checks every decoded command
+for exact equality and retains the matching videos and states. Its scale fitting
+also preserves tiny commands that would otherwise underflow during rescaling.
 
 Statistics record the normalization version, and new outputs use separate paths.
 Unversioned statistics retain `quantile_clip_v1` behavior for old checkpoints.
@@ -16,7 +22,7 @@ python dataset/tools/prepare_server.py "$DATA_ROOT"
 python tools/dataset_smoke.py --data-root "$DATA_ROOT" --output data_check.json
 ```
 
-The output is `prepared/beingh05_affine_v2/`; its statistics, dataset list and
+The output is `prepared/beingh05_affine_v3/`; its statistics, dataset list and
 training recipe have the same prefix. Use `--output-name NAME` for another export.
 Use `--statistics-file FILE` to reuse frozen statistics when exporting newly
 collected trajectories. Fit statistics once, before collecting final labels.
@@ -33,7 +39,7 @@ and replay the exported files themselves:
 ```bash
 python -m pip install --no-deps -r requirements/training-replay-pip.txt
 python evaluation/audit_training_replay.py --data-root "$DATA_ROOT" \
-  --prepared-name beingh05_affine_v2 --workers 4 --output training_replay.json
+  --prepared-name beingh05_affine_v3 --workers 4 --output training_replay.json
 ```
 
 The audit separately reports task completion and agreement with recorded states.
@@ -50,9 +56,9 @@ In a separate reader environment with `lerobot==0.4.4`:
 
 ```bash
 python dataset/tools/prepare_server.py "$DATA_ROOT" --reader lerobot \
-  --statistics-file "$DATA_ROOT/prepared/beingh05_affine_v2_train_stats.json"
+  --statistics-file "$DATA_ROOT/prepared/beingh05_affine_v3_train_stats.json"
 python tools/check_lerobot.py --data-root "$DATA_ROOT" \
-  --prepared-name lerobot_affine_v2 --output lerobot_reader_check.json
+  --prepared-name lerobot_affine_v3 --output lerobot_reader_check.json
 ```
 
 This checks every numeric label, sampled RGB frames, and action chunks at episode

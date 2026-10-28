@@ -3,8 +3,12 @@
 [English](TRAINING_CONVERSION.md) | [中文](TRAINING_CONVERSION.zh.md)
 
 旧转换按数据分位数裁掉了部分有效示范动作，例如把 1.61 厘米的腕部移动压成
-0.41 厘米。新的 `quantile_affine_v2` 只缩放，不删除中央 98% 范围以外的值。
+0.41 厘米。新的 `quantile_affine_v3` 只缩放，不删除中央 98% 范围以外的值。
 标签可以超过 [-1, 1]；实际控制器的物理限制继续保留。
+
+v3 另外使用 2 的整数次幂缩放，避免几乎不变的通道产生极大的训练标签。解码时先撤销这次缩放，
+再进行逆变换。对已经采集的 v2 标签，`rescale_training_bundle.py` 逐值检查解码指令完全相同，
+并保留对应的视频和状态；缩放系数也会兼顾极小指令，避免舍入为零而改变执行值。
 
 统计量中记录归一化版本，新导出使用独立目录。无版本标记的旧统计量继续使用
 `quantile_clip_v1`，保证旧检查点仍按原规则解码。不要直接给已有检查点更换统计量或解码器。
@@ -14,7 +18,7 @@ python dataset/tools/prepare_server.py "$DATA_ROOT"
 python tools/dataset_smoke.py --data-root "$DATA_ROOT" --output data_check.json
 ```
 
-输出目录为 `prepared/beingh05_affine_v2/`，统计量、数据清单和训练配置使用同一前缀。
+输出目录为 `prepared/beingh05_affine_v3/`，统计量、数据清单和训练配置使用同一前缀。
 需要另一次导出时使用 `--output-name NAME`；重新采集后使用
 `--statistics-file FILE` 复用已经冻结的统计量。统计量应在最终标签采集前固定。
 
@@ -28,7 +32,7 @@ Parquet 读取依赖，再直接回放导出的文件：
 ```bash
 python -m pip install --no-deps -r requirements/training-replay-pip.txt
 python evaluation/audit_training_replay.py --data-root "$DATA_ROOT" \
-  --prepared-name beingh05_affine_v2 --workers 4 --output training_replay.json
+  --prepared-name beingh05_affine_v3 --workers 4 --output training_replay.json
 ```
 
 检查分别报告任务是否完成、记录状态是否一致。如果转换后的指令改变了轨迹，就要从实际执行
@@ -41,9 +45,9 @@ python evaluation/audit_training_replay.py --data-root "$DATA_ROOT" \
 
 ```bash
 python dataset/tools/prepare_server.py "$DATA_ROOT" --reader lerobot \
-  --statistics-file "$DATA_ROOT/prepared/beingh05_affine_v2_train_stats.json"
+  --statistics-file "$DATA_ROOT/prepared/beingh05_affine_v3_train_stats.json"
 python tools/check_lerobot.py --data-root "$DATA_ROOT" \
-  --prepared-name lerobot_affine_v2 --output lerobot_reader_check.json
+  --prepared-name lerobot_affine_v3 --output lerobot_reader_check.json
 ```
 
 该检查核对全部数值标签、抽取的视频帧和轨迹末尾的动作块。LeRobot 会重复末帧值来补齐动作块，

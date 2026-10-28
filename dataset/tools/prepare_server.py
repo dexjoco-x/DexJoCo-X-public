@@ -5,13 +5,14 @@ import numpy as np
 import pandas as pd
 from adapters import PortableDataset,encode,normalize,bind_action_bounds,saved_training_labels
 from data_io import write,sha,link_or_copy
-from normalization import AFFINE,LEGACY,VERSIONS,bind,version
+from normalization import AFFINE,AFFINE_V2,LEGACY,VERSIONS,bind,version,stabilize_scales
 
 def main(root,normalization_version=AFFINE,output_name=None,task=None,hand=None,scene=None,statistics_file=None,reader='beingh'):
  root=Path(root);bundle=root/'bundle';output=root/'prepared';output.mkdir(exist_ok=True)
  if reader not in ('beingh','lerobot'):raise ValueError(reader)
  prefix='beingh05' if reader=='beingh' else 'lerobot'
- name=output_name or (prefix+('_affine_v2' if normalization_version==AFFINE else '_legacy_v1'))
+ suffix='_affine_v3' if normalization_version==AFFINE else '_affine_v2' if normalization_version==AFFINE_V2 else '_legacy_v1'
+ name=output_name or (prefix+suffix)
  if not re.fullmatch(r'[A-Za-z0-9_-]+',name):raise ValueError('Output name must be one plain directory name')
  statsfile=output/(name+'_train_stats.json')
  if statsfile.exists() or (output/name).exists():raise FileExistsError('Choose a new output name; existing training exports are never overwritten')
@@ -23,16 +24,18 @@ def main(root,normalization_version=AFFINE,output_name=None,task=None,hand=None,
   stats_origin={'source_sha256':sha(statistics_file),'fit_manifest_hashes':frozen.get('statistics_origin',{}).get('fit_manifest_hashes',frozen['manifest_hashes'])}
  else:
   stats={g:{k:bind(s,normalization_version) for k,s in group.items()} for g,group in ds.fit_stats().items()}
-  if normalization_version==AFFINE:
+  if normalization_version!=LEGACY:
    for g in stats:
     row=next(r for r in ds.allrows if r['task']+'/'+r['hand']==g)
     stats[g]['action']=bind_action_bounds(stats[g]['action'],json.loads((bundle/row['contract']).read_text()))
+  if normalization_version==AFFINE:
+   stats={g:{k:stabilize_scales(s) for k,s in group.items()} for g,group in stats.items()}
   stats_origin={'fit_manifest_hashes':manifests}
  rows_selected=[r for r in ds.allrows if (not task or r['task'] in task) and (not hand or r['hand'] in hand) and (not scene or r['scene_id'] in scene)]
  if not rows_selected:raise ValueError('No episodes selected')
  for r in rows_selected:
   if r['task']+'/'+r['hand'] not in stats:raise ValueError('Frozen statistics do not cover selected episodes')
- write(statsfile,{'layout':'beingh05','normalization_version':normalization_version,'label_dtype':'float32','decode_dtype':'float64' if normalization_version==AFFINE else 'legacy',
+ write(statsfile,{'layout':'beingh05','normalization_version':normalization_version,'label_dtype':'float32','decode_dtype':'float64' if normalization_version!=LEGACY else 'legacy',
   'scope':'per task/hand; frozen training statistics','manifest_hashes':manifests,'statistics_origin':stats_origin,'groups':stats})
  print('STATS',name,len(stats),flush=True)
  ds.layout='beingh05';ds.stats=stats
@@ -69,7 +72,7 @@ def main(root,normalization_version=AFFINE,output_name=None,task=None,hand=None,
   write(meta/'info.json',{'codebase_version':'v3.0' if reader=='lerobot' else 'v2.1','reader':reader,'robot_type':hand,'total_episodes':len(rows),'total_frames':total,'total_tasks':1,'chunks_size':1000,'fps':20,
    'data_path':'data/chunk-{'+paths[0]+':03d}/episode_{'+paths[1]+':06d}.parquet','video_path':'videos/{video_key}/chunk-{'+paths[0]+':03d}/episode_{'+paths[1]+':06d}.mp4','features':features,
    'splits':{split:f'0:{len(rows)}'},'representation':'benchmark7_project_native200_v1','normalization_version':normalization_version,
-   'decode_dtype':'float64' if normalization_version==AFFINE else 'legacy','training_stats_sha256':sha(statsfile),'pre_normalized':True,'object_pose_input':False,
+   'decode_dtype':'float64' if normalization_version!=LEGACY else 'legacy','training_stats_sha256':sha(statsfile),'pre_normalized':True,'object_pose_input':False,
    'physical_replay_verified':False})
   # Identity normalization metadata: actual per-group raw stats are separately
   # bound and used before writing Parquet; the model config does not renormalize.
