@@ -8,11 +8,7 @@
 
 ## 更新动态
 
-- 🔧 **2026-10-28** — 发布训练版v1：float32标签、同步视频与状态，以及LeRobot/Being-H预转换格式；2100条最终标签全部通过回放。[下载与用法](docs/TRAINING_CONVERSION.zh.md)。
-
-- 🔧 **2026-10-28** — Runtime v10.1 补充示范字段验证、策略评测数值环境记录与动作精度诊断。详见[回放说明](docs/REPLAY_REPAIR.zh-CN.md)。
-
-- 🔧 **2026-10-27** — 数据集 v1.1 与运行环境 v10 提供通过回放验证的示范和固定数值环境，见[更新说明](docs/REPLAY_REPAIR.zh-CN.md)。
+- 🔧 **2026-10-28** — 训练与回放统一使用 **Training v1**：同一批 2,100 条轨迹，包含 float64 动作和配套 LeRobot/Being-H 格式。[下载与使用](dataset/README.zh.md)。
 
 - 🎉 **2026-10-12** — 评测代码与仿真环境现已在 [GitHub](https://github.com/dexjoco-x/DexJoCo-X-public) 公开。
 - 🎉 **2026-10-05** — 包含 2,100 条示范的数据集在 [Hugging Face](https://huggingface.co/datasets/darenrenjian/DexJoCo-X) 公开。
@@ -53,7 +49,7 @@ pip install -c requirements/constraints-python311.txt \
 python tools/runtime_assets.py check
 ```
 
-下一步按照 [快速上手](docs/QUICKSTART.zh.md) 下载一个任务、读取示范并接入策略。下载工具的 `--dry-run` 选项可以查看所选任务的下载大小。
+下一步按照 [快速上手](docs/QUICKSTART.zh.md) 下载 Training v1、读取示范并接入策略。下载工具的 `--dry-run` 选项可以查看完整包的下载大小。
 
 ## 使用文档
 

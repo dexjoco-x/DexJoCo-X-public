@@ -1,32 +1,40 @@
-# Versions and compatibility
+# Current benchmark and version history
 
 **English** | [中文](VERSIONING.zh.md)
 
-| Version | Contents |
+## Current standard
+
+Use **Training v1** (`training-float32-v1`) with the current code and
+[reference environment](REPLAY_REPAIR.md). All download commands in the current
+guides resolve to this one dataset: 2,100 demonstrations, 933,865 frames, seven
+hands and six tasks. Its float64, LeRobot and Being-H files represent the same
+executions. [Download](../dataset/README.md).
+
+Training uses 50 demonstrations per hand–task pair. Policy evaluation uses three
+independent runs of 50 rollouts per pair, with the fixed scene seeds and success
+criteria in the [evaluation guide](../evaluation/README.md). Report the dataset
+identifier, code commit, model checkpoint and evaluation settings alongside results.
+
+Training v1 uses the existing reference physics and corrected runtime models.
+Its float32 labels use the bound `quantile_affine_v3` statistics and float64 decoder.
+Updating the default download does not change its archive, trajectories or task rules.
+
+## Historical snapshots
+
+Earlier snapshots are archived for tracing prior results. They are not alternative
+choices for new benchmark runs and are no longer in the default data directory.
+
+| Archived snapshot | Purpose |
 |---|---|
-| `dataset-v1.1-native-replay` | 2,100 replay-verified demonstrations; 939,356 synchronized frames |
-| `runtime-v10.1` | Stricter data validation, evaluation environment records, and float32 diagnostics; same v10 physics and v1.1 data |
-| `runtime-v10` | Paired models and a pinned numerical environment for v1.1 |
-| `dataset-v1.0-corrected` / `runtime-v9` | Previous public snapshot, retained for reproducibility |
-| `paper-v1` | Earlier training snapshots, checkpoints and reported policy results |
+| [Raw v1.1](https://huggingface.co/datasets/darenrenjian/DexJoCo-X/tree/dataset-v1.1-native-replay) | Earlier float64 release and replay investigation |
+| [Initial public snapshot](https://huggingface.co/datasets/darenrenjian/DexJoCo-X/tree/dataset-v1.0-corrected) | Reproduce earlier public downloads |
+| `paper-v1` | Earlier paper experiments and model checkpoints |
 
-The v1.1 update corrects XHand left mounts in the photograph and tablet environments,
-recollects 220 physical action sequences, removes unexecuted terminal suffixes from
-918 other sequences, and exports synchronized observations for every demonstration.
-The original 50-demonstration budget per hand–task pair and task success rules remain.
+The paper's reported results used earlier data; they have not been relabeled as
+Training v1 results. Earlier checkpoints keep their own statistics and decoder.
+Training v1 and Raw v1.1 share scene IDs, so combining them does not add independent
+scenes. The [issue history](https://github.com/dexjoco-x/DexJoCo-X-public/issues/1)
+records the corrections.
 
-Use the [reference environment](REPLAY_REPAIR.md) with v1.1. The paper checkpoints
-have not been retrained for this update; identify the data/runtime version when
-reporting training or policy evaluation results. Regenerate converted training views
-from the selected raw dataset version.
-
-The earlier raw snapshot is available at dataset revision
-`9f48e1404168227a22586af0cffb8371dbb7e1f1`.
-
-`linkerhand_l20` is a compatibility key in files and contracts. Its source left/right
-URDFs were modified from the official L25 files. Documentation uses `LinkerHand`;
-the key and model geometry are preserved.
-
-## Training v1
-
-`training-float32-v1` is a separate re-recorded training release with 2,100 trajectories and 933,865 frames. Use the code tagged `training-v1`, the same reference physics environment as Raw v1.1, and the bound `quantile_affine_v3` statistics. Its LeRobot and Being-H exports contain identical float32 labels, decoded into float64 physical commands. Raw v1.1, earlier checkpoints, and the paper experiment dataset retain their existing versions. See [training conversion](TRAINING_CONVERSION.md).
+`linkerhand_l20` is a retained file/contract key. Its source geometry is based on
+the official L25 model; public descriptions use LinkerHand.

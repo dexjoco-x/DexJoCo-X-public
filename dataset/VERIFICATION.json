@@ -1,68 +1,55 @@
 {
   "passed": true,
+  "dataset_version": "training-float32-v1",
   "episodes": 2100,
-  "hand_task_pairs": 42,
-  "episodes_per_pair": [
-    50
-  ],
-  "splits": {
-    "train": 2100
-  },
-  "frames": 939356,
-  "continuous_native_replay_successes": 2100,
-  "recorded_state_fidelity_successes": 2100,
-  "newly_collected_action_sequences": 220,
-  "symlinks": 0,
-  "all_video_frame_counts_verified": true,
-  "all_public_tensor_fields_valid": true,
-  "reference_environment": {
-    "python": "3.11.15 | packaged by conda-forge | (main, Mar  5 2026, 16:45:40) [GCC 14.3.0]",
-    "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.31",
-    "machine": "x86_64",
-    "packages": {
-      "mujoco": "3.4.0",
-      "numpy": "1.26.4",
-      "scipy": "1.17.1",
-      "gymnasium": "1.0.0",
-      "dm-robotics-transformations": "0.9.0"
+  "frames": 933865,
+  "groups": 42,
+  "episodes_per_group": 50,
+  "normalization_version": "quantile_affine_v3",
+  "label_dtype": "float32",
+  "decode_dtype": "float64",
+  "task_successes": 2100,
+  "recorded_state_matches": 2100,
+  "execution_errors": 0,
+  "trained_policy_evaluation": false,
+  "validation_code_commit": "3da16838d75c51ad1f5858874e4aea71d5af8128",
+  "readers": {
+    "final_beingh_loader": {
+      "episodes": 2100,
+      "frames": 933865,
+      "max_action_error": 0.0,
+      "passed": true
     },
-    "mujoco_version": "3.4.0",
-    "mujoco_library_sha256": {
-      "libmujoco.so.3.4.0": "764cf4ea21dea7764db0284b2f283af1ec9a9e962241b72d1c5b63b86d624c85"
+    "final_lerobot_loader": {
+      "passed": true,
+      "episodes": 2100,
+      "frames": 933865,
+      "lerobot_version": "0.4.4",
+      "video_backend": "pyav"
     },
-    "blas": [
-      {
-        "internal_api": "openblas",
-        "version": "0.3.23.dev",
-        "threading_layer": "pthreads",
-        "architecture": "Haswell",
-        "num_threads": 1
-      },
-      {
-        "internal_api": "openblas",
-        "version": "0.3.33",
-        "threading_layer": "pthreads",
-        "architecture": "Haswell",
-        "num_threads": 1
-      }
-    ],
-    "numpy_extension_sha256": "a735e4e8355b75c800112af8a5b1731b891b2016ed57067352eea6cab0aa00bc",
-    "scipy_rotation_extension_sha256": "cda2fb0d93c1d7a103915f2cb51de347c612c5fe88530e8f9d2cacf78d01635a",
-    "numerical_environment": {
-      "OPENBLAS_CORETYPE": "Haswell",
-      "OPENBLAS_NUM_THREADS": "1",
-      "OMP_NUM_THREADS": "1",
-      "MKL_NUM_THREADS": null
-    },
-    "native_execution_helpers_sha256": {
-      "initial_error": "7e49da1b4cb22b04d2634271d808356f1f01bb029ef244f270be596f4a700d99",
-      "commands": "bbc299ad39eb9384e18ecb6ad6ac6948e6f962589567c0459fbe45dbe20881c4",
-      "step": "2081a3cbb927122f29e88d487a2bcd85f6fb9c3a22de110329230bfe7e26a2b9"
+    "final_format_check": {
+      "passed": true,
+      "episodes": 2100,
+      "frames": 933865,
+      "complete_source_coverage": true
     }
   },
-  "reports": {
-    "native_replay": "metadata/NATIVE_REPLAY.json",
-    "hammer_motion": "metadata/HAMMER_MOTION.json"
+  "physical_replay_report": {
+    "path": "metadata/final_saved_label_replay.json",
+    "sha256": "31280d4d908a474180839288e633cfc53f32c6b2bf160d523e0585d2dace446d"
   },
-  "prepared_views_included": false
+  "manifest_sha256": {
+    "bimanual_microwave_cook.json": "5ecdb18b99c9bfd6031ba62218a3701357fe91df049d9b6a9ecca11cb7624a81",
+    "bimanual_photograph.json": "b66b77d48bc6e8c715bae8d991e8359e07e5a3f5996a62c0371a059ddeaa4c7f",
+    "bimanual_unlock_ipad.json": "2797b8b155c3b91f3cc52139e955f542468443a03b7466c24962c2fdf58d92cc",
+    "hammer_nail.json": "c5779aa63ce9a13b4037295835b177eb463b8edbe10a5f198521a036c9794d5d",
+    "pick_bucket.json": "0d62cb4faad97cc4417d86a58813e11639a9b1cea7633976560077af75ec48e7",
+    "single_hand_hanoi.json": "2664c2d44002df99af798cc54e1913f733080d825b4df25309f2aa60d5f4390d"
+  },
+  "collection_methods": {
+    "continuous_execution_of_exported_float32_labels": 1712,
+    "new_physical_rollout_from_adjacent_float32_labels": 341,
+    "new_collection_tracking_accepted_world_targets": 45,
+    "new_collection_with_saved_additional_vertical_hammer_strokes": 2
+  }
 }

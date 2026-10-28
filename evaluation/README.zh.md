@@ -2,6 +2,8 @@
 
 [English](README.md) | **中文**
 
+当前统一使用 **Training v1** 训练数据、[参考环境](../docs/REPLAY_REPAIR.zh-CN.md)及下述评估协议。float64 与 LeRobot 是同一批轨迹的不同格式，不是不同的评测标准。请同时记录数据版本 `training-float32-v1` 和代码提交。
+
 评测器连接策略服务，将图像、机器人状态、掩码和任务指令发送给策略，接收动作块并在仿真中执行。
 
 ## 运行评测

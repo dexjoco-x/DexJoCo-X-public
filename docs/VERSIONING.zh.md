@@ -1,27 +1,32 @@
-# 版本与兼容性
+# 当前标准与历史版本
 
 [English](VERSIONING.md) | **中文**
 
-| 版本 | 内容 |
+## 当前统一标准
+
+使用 **Training v1**（`training-float32-v1`）、当前代码和[参考环境](REPLAY_REPAIR.zh-CN.md)。
+当前指南中的下载命令均指向这一版：7 种手、6 个任务、2,100 条示范、933,865 帧。
+其中 float64、LeRobot 和 Being-H 文件对应同一批实际执行的轨迹。[下载数据](../dataset/README.zh.md)。
+
+训练预算为每个手–任务组合 50 条示范；策略评估为每个组合独立运行三次、每次 50 条，
+使用[评估指南](../evaluation/README.zh.md)规定的场景种子和成功条件。
+报告结果时同时记录数据版本、代码提交、模型检查点和评估设置。
+
+Training v1 使用现有参考物理环境和已修复的模型。float32 标签配套
+`quantile_affine_v3` 统计量与 float64 解码器。本次统一下载入口没有改变归档、轨迹或成功判据。
+
+## 历史记录
+
+旧版仅用于追溯已有结果，不再作为新实验的并列选项，也不再放在默认数据目录中。
+
+| 历史快照 | 用途 |
 |---|---|
-| `dataset-v1.1-native-replay` | 2,100 条通过回放验证的示范，939,356 帧同步观测 |
-| `runtime-v10.1` | 补充字段验证、评测环境记录与 float32 诊断；沿用 v10 物理环境和 v1.1 数据 |
-| `runtime-v10` | v1.1 配套模型与固定数值环境 |
-| `dataset-v1.0-corrected` / `runtime-v9` | 此前公开的版本，保留用于追溯 |
-| `paper-v1` | 此前的训练数据快照、检查点与论文策略结果 |
+| [Raw v1.1](https://huggingface.co/datasets/darenrenjian/DexJoCo-X/tree/dataset-v1.1-native-replay) | 早期 float64 数据和回放调查 |
+| [最初公开快照](https://huggingface.co/datasets/darenrenjian/DexJoCo-X/tree/dataset-v1.0-corrected) | 复现早期公开下载 |
+| `paper-v1` | 论文原实验和模型检查点 |
 
-v1.1 修正 XHand 拍照和平板环境的左手安装方式，重新物理采集 220 条动作序列，
-从另 918 条示范中移除任务终止后不再执行的尾段，并为全部示范同步导出观测。
-每个手–任务组合仍有 50 条示范，任务成功标准保持一致。
+论文原有结果使用早期数据，没有改记为 Training v1 的结果。旧模型仍使用各自训练时的统计量
+与解码器。Training v1 和 Raw v1.1 共享场景编号，合并它们不会增加独立场景。
+[Issue 历史](https://github.com/dexjoco-x/DexJoCo-X-public/issues/1)保留了修复经过。
 
-v1.1 使用[参考环境](REPLAY_REPAIR.zh-CN.md)。论文检查点尚未针对本次更新重新训练；
-报告训练或策略评测结果时请注明数据和环境版本。转换后的训练视图应从所选原始数据版本重新生成。
-
-旧版原始数据可通过 revision `9f48e1404168227a22586af0cffb8371dbb7e1f1` 获取。
-
-`linkerhand_l20` 是文件和接口中的兼容名称，其左右手源 URDF 修改自官方 L25 文件。
-文档统一称为 `LinkerHand`，本版保留兼容名称与模型几何。
-
-## 训练版v1
-
-`training-float32-v1`是独立重新记录的训练版，包含2100条轨迹、933865帧。使用代码标签`training-v1`、与Raw v1.1相同的参考仿真环境，以及绑定的`quantile_affine_v3`统计量。LeRobot与Being-H格式保存相同的float32标签，解码得到float64实际指令。Raw v1.1、已有模型和论文实验数据分别保留原版本。详见[训练转换指南](TRAINING_CONVERSION.zh.md)。
+`linkerhand_l20` 是保留的文件和合约键名；源几何基于官方 L25，公开文字称为 LinkerHand。

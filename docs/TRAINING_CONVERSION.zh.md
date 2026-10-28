@@ -9,17 +9,11 @@
 Being-H和官方LeRobot 0.4.4加载器的全量读取检查也已通过。
 
 下载包约5.21 GB，包含配套视频、原始张量、固定统计量，以及两种预转换读取格式。
-它与Raw v1.1、论文实验的历史数据分别保存，请解压到独立目录。
+Training v1 是当前统一版本，包含同一批轨迹的 float64 动作和训练格式。请下载到新的目录；旧版仅用于历史追溯。
 
 ```bash
-hf download darenrenjian/DexJoCo-X --type dataset \
-  --revision training-float32-v1 --include 'training_v1/*' \
-  --local-dir ./training_download
-(cd training_download/training_v1 && sha256sum -c SHA256SUMS)
-mkdir -p ./outputs/training_v1
-tar -xf ./training_download/training_v1/DexJoCo-X_training-v1.tar \
-  -C ./outputs/training_v1
 export DATA_ROOT="$PWD/outputs/training_v1"
+python tools/dataset_packages.py download --tasks all --data-root "$DATA_ROOT"
 ```
 
 包内通过TAR硬链接避免重复存储相同视频，解压后都是普通本地文件，不包含软链接。

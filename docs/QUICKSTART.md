@@ -21,15 +21,15 @@ python tools/portability_smoke.py
 ## 2. Download and inspect a demonstration
 
 ```bash
-export DATA_ROOT="$PWD/outputs/data"
-python tools/dataset_packages.py download --tasks hammer_nail \
+export DATA_ROOT="$PWD/outputs/training_v1"
+python tools/dataset_packages.py download --tasks all \
   --data-root "$DATA_ROOT"
 python -m examples.read_demo --data-root "$DATA_ROOT" \
   --task hammer_nail --hand allegro --frame 0 --horizon 25 \
   --output ./outputs/allegro_preview
 ```
 
-Each task package contains 50 demonstrations per hand. The reader returns states, action chunks, and masks, and saves the selected RGB frames to a new output directory.
+Training v1 contains all six tasks, with 50 demonstrations per hand–task pair, plus matching LeRobot and Being-H views. The reader returns states, action chunks, and masks, and saves the selected RGB frames to a new output directory.
 
 You can also read a demonstration in Python:
 
@@ -42,7 +42,7 @@ actions = sample["actions"]      # (25, 80), physical units
 rgb = sample["images"]["front"]   # uint8 RGB, (256, 256, 3)
 ```
 
-Use `--tasks all` to download all tasks. See the [dataset guide](../dataset/README.md) for fields and format conversion.
+The default download is the complete 5.21 GB Training v1 package. See the [dataset guide](../dataset/README.md) for fields and format conversion.
 
 ## 3. Connect a policy and evaluate
 

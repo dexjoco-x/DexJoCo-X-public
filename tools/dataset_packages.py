@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build, download, verify or safely extract the six frozen task data packages."""
+"""Download, verify or safely extract the current DexJoCo-X benchmark bundle."""
 from __future__ import annotations
 
 import argparse
@@ -327,6 +327,18 @@ def main():
         report = build(args, tasks)
     else:
         index = read(args.index)
+        if index.get('schema_version') == 2:
+            if __package__:
+                from . import training_packages
+            else:
+                import training_packages
+            report = training_packages.run(args, index)
+            if args.report:
+                write(args.report, report)
+            print(json.dumps(report, indent=2))
+            if report.get('passed') is False:
+                raise SystemExit(1)
+            return
         if not set(tasks) <= set(index['tasks']):
             parser.error('Index does not contain all selected tasks')
         if args.command == 'list':

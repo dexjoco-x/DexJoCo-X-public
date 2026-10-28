@@ -2,6 +2,8 @@
 
 **English** | [中文](README.zh.md)
 
+The current benchmark uses **Training v1**, the [reference environment](../docs/REPLAY_REPAIR.md), and the evaluation protocol below. Float64 and LeRobot are formats of the same trajectories, not different evaluation standards. Record dataset version `training-float32-v1` and the code commit with your results.
+
 The evaluator connects to a policy server, sends images, robot states, masks, and task instructions, and executes the returned action chunks in simulation.
 
 ## Run an evaluation

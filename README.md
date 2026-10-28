@@ -8,11 +8,7 @@ A multi-hand manipulation dataset and a unified simulation benchmark.
 
 ## News
 
-- 🔧 **2026-10-28** — Training v1 adds verified float32 labels, synchronized observations, and prepared LeRobot/Being-H views. All 2,100 saved-label replays pass. [Download and usage](docs/TRAINING_CONVERSION.md).
-
-- 🔧 **2026-10-28** — Runtime v10.1 strengthens episode validation, records the numerical environment for policy evaluation, and adds an action-precision diagnostic. See the [replay notes](docs/REPLAY_REPAIR.md).
-
-- 🔧 **2026-10-27** — Dataset v1.1 and runtime v10 provide replay-verified demonstrations and a pinned numerical environment. See the [update](docs/REPLAY_REPAIR.md).
+- 🔧 **2026-10-28** — **Training v1** is the current dataset for training and replay: the same 2,100 trajectories in float64 and matching LeRobot/Being-H formats. [Download and usage](dataset/README.md).
 
 - 🎉 **2026-10-12** — The benchmark code and simulation environments are publicly available on [GitHub](https://github.com/dexjoco-x/DexJoCo-X-public).
 - 🎉 **2026-10-05** — The dataset of 2,100 demonstrations is released on [Hugging Face](https://huggingface.co/datasets/darenrenjian/DexJoCo-X).
@@ -53,7 +49,7 @@ pip install -c requirements/constraints-python311.txt \
 python tools/runtime_assets.py check
 ```
 
-Follow the [quickstart](docs/QUICKSTART.md) to download a task, read a demonstration, and connect a policy. The downloader's `--dry-run` option reports the selected download size.
+Follow the [quickstart](docs/QUICKSTART.md) to download Training v1, read a demonstration, and connect a policy. The downloader's `--dry-run` option reports the selected download size.
 
 ## Guides
 

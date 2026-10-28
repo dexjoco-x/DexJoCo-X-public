@@ -1,10 +1,11 @@
-# Native demonstration replay
+# Demonstration replay
 
-[English](REPLAY_REPAIR.md) | [中文](REPLAY_REPAIR.zh-CN.md)
+**English** | [中文](REPLAY_REPAIR.zh-CN.md)
 
-Dataset v1.1 passes saved-action replay and recorded-state verification for all
-2,100 demonstrations in the reference environment. The previous snapshot remains
-available at revision `9f48e1404168227a22586af0cffb8371dbb7e1f1`.
+Use **Training v1** for both training and replay. [Download the current dataset](../dataset/README.md).
+All 2,100 final saved-label sequences complete their tasks and pass recorded-state
+checks in the reference environment. Their decoded commands exactly match the
+package's float64 actions, and all readers use identical videos.
 
 ## Reference environment
 
@@ -43,50 +44,16 @@ The audit verifies tensor checksums, the initial robot state and model bindings,
 then executes saved actions continuously until termination, truncation or the
 end of the sequence. Success must be observed during that sequence.
 
-## Model corrections
-
-XHand photograph and iPad demonstrations require the corrected left-hand mount.
-The model bindings now check its actual orientation as well as revision metadata.
-Both groups passed 50/50 unchanged-action replays in the independent reference
-environment. The XHand microwave model already uses its corrected mount.
-
-The update contains 220 newly collected physical action sequences. Another 918
-sequences retain the original command prefix and remove the unexecuted suffix
-after task termination. All 2,100 demonstrations have synchronized observations
-exported in the reference environment; the dataset contains 939,356 frames.
-These checks certify v1.1 and do not retroactively certify the earlier release.
-
-## Data validation and action precision
-
-The audit compares saved control contracts with the runtime and validates array
-shapes, active-arm/channel and camera masks, timestamps, padding, quaternion norms and action
-limits. A matching checksum alone does not establish data validity.
-
-Replay v1.1 directly from `native.npz`, preserving its saved action precision.
-Casting actions to float32 changes the command sequence. A full diagnostic of all
-2,100 v1.1 demonstrations through the normal policy interface succeeded in
-1,707/2,100 cases (81.3%), with 0 execution errors. The original saved-precision
-replays passed in all 2,100 cases. See the [per-episode results](replay/float32_precision_2100.json).
-This measures sensitivity to action conversion; it is not a learned-policy
-success rate. It does not establish float32 replay compatibility for v1.1.
-
-For new float32 collection, `collection.action_precision.float32_native_action`
-rounds actuator bounds inward to representable values. Execute and save the
-resulting commands, then independently replay and export synchronized observations.
-Applying that helper to an existing dataset does not certify it. New collection
-prototypes are separate from the released v1.1 data.
-
-To reproduce the precision probe in the reference environment:
+## Audit saved LeRobot labels
 
 ```bash
-python evaluation/audit_action_precision.py /path/to/dataset \
-  --task hammer_nail --hand allegro --scene scene_049 \
-  --output /tmp/float32-probe.json
+python -m pip install --no-deps -r requirements/training-replay-pip.txt
+python evaluation/audit_training_replay.py --data-root "$DATA_ROOT" \
+  --prepared-name lerobot_final_v3 --workers 4 --output training_replay.json
 ```
 
-Omit the task/hand/scene filters to check the complete dataset. This command casts
-saved actions to float32 and uses the normal policy interface, including its
-existing action bounds. It writes diagnostic results and returns a nonzero exit
-status if any selected sequence fails. It does not append controls, reset physics
-between steps or modify dataset files. The original user report used float64;
-float32 sensitivity is a separate finding from the subsequent release audit.
+The labels are float32; decode them with the package's statistics and execute the
+float64 commands. See [training usage](TRAINING_CONVERSION.md). These are
+demonstration-replay checks, not trained-policy success rates. Earlier precision
+diagnostics and corrections are in [version history](VERSIONING.md); they do not
+describe the current Training v1 result.

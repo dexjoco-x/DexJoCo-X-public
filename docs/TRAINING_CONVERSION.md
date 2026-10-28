@@ -10,18 +10,13 @@ continuous task-success and recorded-state checks in the reference environment.
 Full Being-H and official LeRobot 0.4.4 reader checks also pass.
 
 The package is 5.21 GB and includes synchronized videos, raw tensors, frozen
-statistics, and both prepared readers. It is separate from Raw v1.1 and from the
-historical data used in the paper experiments. Keep these datasets in separate folders.
+statistics, and both prepared readers. Training v1 is the current benchmark
+standard for replay and new training. Download into a new directory; earlier
+snapshots are archived only for tracing prior results.
 
 ```bash
-hf download darenrenjian/DexJoCo-X --type dataset \
-  --revision training-float32-v1 --include 'training_v1/*' \
-  --local-dir ./training_download
-(cd training_download/training_v1 && sha256sum -c SHA256SUMS)
-mkdir -p ./outputs/training_v1
-tar -xf ./training_download/training_v1/DexJoCo-X_training-v1.tar \
-  -C ./outputs/training_v1
 export DATA_ROOT="$PWD/outputs/training_v1"
+python tools/dataset_packages.py download --tasks all --data-root "$DATA_ROOT"
 ```
 
 Repeated videos use TAR hard links; extraction produces ordinary local files,

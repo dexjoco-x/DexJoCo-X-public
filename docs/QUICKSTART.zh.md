@@ -21,15 +21,15 @@ python tools/portability_smoke.py
 ## 2. 下载并查看一条示范
 
 ```bash
-export DATA_ROOT="$PWD/outputs/data"
-python tools/dataset_packages.py download --tasks hammer_nail \
+export DATA_ROOT="$PWD/outputs/training_v1"
+python tools/dataset_packages.py download --tasks all \
   --data-root "$DATA_ROOT"
 python -m examples.read_demo --data-root "$DATA_ROOT" \
   --task hammer_nail --hand allegro --frame 0 --horizon 25 \
   --output ./outputs/allegro_preview
 ```
 
-一个任务包包含七种手各 50 条示范。读取示例输出状态、动作块和掩码，并将所选帧的 RGB 图像存入一个新的输出目录。
+Training v1 包含全部六个任务，每个手–任务组合 50 条示范，同时附带匹配的 LeRobot 和 Being-H 格式。读取示例输出状态、动作块和掩码，并将所选帧的 RGB 图像存入一个新的输出目录。
 
 也可以在 Python 中读取：
 
@@ -42,7 +42,7 @@ actions = sample["actions"]      # (25, 80)，物理单位
 rgb = sample["images"]["front"]   # uint8 RGB，(256, 256, 3)
 ```
 
-完整下载使用 `--tasks all`。字段和格式转换见 [数据集文档](../dataset/README.zh.md)。
+默认下载完整的 5.21 GB Training v1 包。字段和读取方式见[数据集文档](../dataset/README.zh.md)。
 
 ## 3. 接入策略并评测
 

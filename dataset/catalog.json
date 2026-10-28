@@ -1,8 +1,8 @@
 {
-  "release": "DexJoCo-X_dataset_v10_native_replay_20261027",
-  "dataset_version": "dataset-v1.1-native-replay",
-  "package_version": "v1.1",
-  "release_date": "2026-10-27",
+  "dataset_version": "training-float32-v1",
+  "parent_dataset_version": "dataset-v1.1-native-replay",
+  "episodes": 2100,
+  "frames": 933865,
   "tasks": [
     "bimanual_microwave_cook",
     "bimanual_photograph",
@@ -11,33 +11,36 @@
     "pick_bucket",
     "single_hand_hanoi"
   ],
-  "episodes": 2100,
-  "frames": 939356,
+  "hands": [
+    "allegro",
+    "inspire",
+    "leap",
+    "linkerhand_l20",
+    "sharpa_wave",
+    "wuji",
+    "xhand"
+  ],
   "splits": {
     "train": 2100
   },
-  "views": [
-    "front",
-    "wrist_right",
-    "wrist_left_if_present"
-  ],
-  "camera_profile": "dexjoco_official_allegro60_hanoi_front_v1",
-  "manifest_sha256": {
-    "bimanual_microwave_cook.json": "c83974bbe538f965a8977dd6e5d3b79fe7ebabdbd84eb03981d2386663abf574",
-    "bimanual_photograph.json": "3035e8a1ef25c9e9bfb0ed13c24c3056713b5453aac923986103cca187725d81",
-    "bimanual_unlock_ipad.json": "cfb5d09d243f41973320c6eb488e96c694afda2f4b2df1e1dc4e054a65eea8ca",
-    "hammer_nail.json": "41432884eaad9d1ac444c319fabba079b505df812a71419982b902e30334b4e6",
-    "pick_bucket.json": "56e6cc050a848429238feae3f2371caaa7626fc2459ceb6ef43e978180888a02",
-    "single_hand_hanoi.json": "1a7452f55f5660b25258e60c5731f4e00b6ce702d2762190fd48c287222189ce"
-  },
-  "native_replay_report": "metadata/NATIVE_REPLAY.json",
-  "quality_reports": [
-    "metadata/HAMMER_MOTION.json"
-  ],
-  "parent_dataset_revision": "9f48e1404168227a22586af0cffb8371dbb7e1f1",
-  "newly_collected_action_sequences": 220,
-  "unexecuted_terminal_suffixes_removed": 918,
-  "observation_timing": "pre-action",
   "control_hz": 20,
-  "source_locator_scheme": "bundle-relative-v2"
+  "observation_timing": "pre_action",
+  "camera_profile": "dexjoco_official_allegro60_hanoi_front_v1",
+  "normalization_version": "quantile_affine_v3",
+  "saved_label_dtype": "float32",
+  "decoded_action_dtype": "float64",
+  "training_statistics_sha256": "93f17f1d652f23d80ba47093f5c7a514e50849a2d15a3bb76b9fc5791b5f545a",
+  "manifest_sha256": {
+    "bimanual_microwave_cook.json": "5ecdb18b99c9bfd6031ba62218a3701357fe91df049d9b6a9ecca11cb7624a81",
+    "bimanual_photograph.json": "b66b77d48bc6e8c715bae8d991e8359e07e5a3f5996a62c0371a059ddeaa4c7f",
+    "bimanual_unlock_ipad.json": "2797b8b155c3b91f3cc52139e955f542468443a03b7466c24962c2fdf58d92cc",
+    "hammer_nail.json": "c5779aa63ce9a13b4037295835b177eb463b8edbe10a5f198521a036c9794d5d",
+    "pick_bucket.json": "0d62cb4faad97cc4417d86a58813e11639a9b1cea7633976560077af75ec48e7",
+    "single_hand_hanoi.json": "2664c2d44002df99af798cc54e1913f733080d825b4df25309f2aa60d5f4390d"
+  },
+  "code_commit": "76fc94df84ccb079612704233001149f247a0537",
+  "final_training_file_replay_verified": true,
+  "release_ready": true,
+  "verification_report": "metadata/final_saved_label_replay.json",
+  "reference_raw_version": "dataset-v1.1-native-replay"
 }
