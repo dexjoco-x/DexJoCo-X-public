@@ -75,6 +75,10 @@ python -m examples.read_demo --data-root "$DATA_ROOT" \
 
 需要 Parquet 与视频训练视图时运行：
 
+下面的默认坐标导出使用训练版v1，并自动读取固定统计量。对Raw数据单独做转换实验时，
+需要添加 `--allow-unverified-conversion` 并独立回放检查。
+FAAS与DexLatent的导出需要分别检查重建误差和物理回放。
+
 ```bash
 python dataset/tools/prepare_server.py "$DATA_ROOT"
 python dataset/tools/prepare_benchmark7_repr.py "$DATA_ROOT" --representation faas \

@@ -24,6 +24,10 @@ python tools/dataset_smoke.py --data-root "$DATA_ROOT" --output data_check.json
 
 The output is `prepared/beingh05_affine_v3/`; its statistics, dataset list and
 training recipe have the same prefix. Use `--output-name NAME` for another export.
+For Training v1, the converter automatically loads `bundle/training_statistics.json`.
+Raw conversion experiments require `--allow-unverified-conversion`; their labels
+still need independent replay and matching observations before use as a verified
+training release.
 Use `--statistics-file FILE` to reuse frozen statistics when exporting newly
 collected trajectories. Fit statistics once, before collecting final labels.
 

@@ -19,6 +19,9 @@ python tools/dataset_smoke.py --data-root "$DATA_ROOT" --output data_check.json
 ```
 
 输出目录为 `prepared/beingh05_affine_v3/`，统计量、数据清单和训练配置使用同一前缀。
+对于训练版v1，转换器自动读取 `bundle/training_statistics.json`。
+原始数据的转换实验需要显式添加 `--allow-unverified-conversion`，之后仍需独立回放，
+并确保观测与实际执行一致，才能作为已验证的训练数据。
 需要另一次导出时使用 `--output-name NAME`；重新采集后使用
 `--statistics-file FILE` 复用已经冻结的统计量。统计量应在最终标签采集前固定。
 

@@ -7,7 +7,7 @@ from adapters import PortableDataset,encode,normalize,bind_action_bounds,saved_t
 from data_io import write,sha,link_or_copy
 from normalization import AFFINE,AFFINE_V2,LEGACY,VERSIONS,bind,version,stabilize_scales
 
-def main(root,normalization_version=AFFINE,output_name=None,task=None,hand=None,scene=None,statistics_file=None,reader='beingh'):
+def main(root,normalization_version=AFFINE,output_name=None,task=None,hand=None,scene=None,statistics_file=None,reader='beingh',allow_unverified_conversion=False):
  root=Path(root);bundle=root/'bundle';output=root/'prepared';output.mkdir(exist_ok=True)
  if reader not in ('beingh','lerobot'):raise ValueError(reader)
  prefix='beingh05' if reader=='beingh' else 'lerobot'
@@ -17,6 +17,12 @@ def main(root,normalization_version=AFFINE,output_name=None,task=None,hand=None,
  statsfile=output/(name+'_train_stats.json')
  if statsfile.exists() or (output/name).exists():raise FileExistsError('Choose a new output name; existing training exports are never overwritten')
  ds=PortableDataset(bundle,layout='beingh05')
+ rows_selected=[r for r in ds.allrows if (not task or r['task'] in task) and (not hand or r['hand'] in hand) and (not scene or r['scene_id'] in scene)]
+ if not rows_selected:raise ValueError('No episodes selected')
+ if normalization_version!=LEGACY and not allow_unverified_conversion and any(not r.get('training_statistics_sha256') for r in rows_selected):
+  raise ValueError('Raw conversion can change the executed trajectory. Use Training v1 for new training, or explicitly pass --allow-unverified-conversion for a conversion experiment and independently verify its saved labels.')
+ if statistics_file is None and (bundle/'training_statistics.json').is_file():
+  statistics_file=bundle/'training_statistics.json'
  manifests={p.name:sha(p) for p in (bundle/'manifests').glob('*.json')}
  if statistics_file:
   frozen=json.loads(Path(statistics_file).read_text());stats=frozen['groups']
@@ -31,8 +37,6 @@ def main(root,normalization_version=AFFINE,output_name=None,task=None,hand=None,
   if normalization_version==AFFINE:
    stats={g:{k:stabilize_scales(s) for k,s in group.items()} for g,group in stats.items()}
   stats_origin={'fit_manifest_hashes':manifests}
- rows_selected=[r for r in ds.allrows if (not task or r['task'] in task) and (not hand or r['hand'] in hand) and (not scene or r['scene_id'] in scene)]
- if not rows_selected:raise ValueError('No episodes selected')
  for r in rows_selected:
   if r['task']+'/'+r['hand'] not in stats:raise ValueError('Frozen statistics do not cover selected episodes')
  write(statsfile,{'layout':'beingh05','normalization_version':normalization_version,'label_dtype':'float32','decode_dtype':'float64' if normalization_version!=LEGACY else 'legacy',
@@ -106,4 +110,5 @@ if __name__=='__main__':
  p.add_argument('--output-name');p.add_argument('--task',action='append');p.add_argument('--hand',action='append');p.add_argument('--scene',action='append')
  p.add_argument('--statistics-file',type=Path,help='Reuse frozen statistics when exporting newly collected trajectories')
  p.add_argument('--reader',choices=['beingh','lerobot'],default='beingh',help='Being-H episode paths or official LeRobot v3 file-index paths; numeric labels are identical')
- a=p.parse_args();main(a.root,a.normalization,a.output_name,a.task,a.hand,a.scene,a.statistics_file,a.reader)
+ p.add_argument('--allow-unverified-conversion',action='store_true',help='Explicitly convert raw actions for a separately audited experiment, without certifying physical replay')
+ a=p.parse_args();main(a.root,a.normalization,a.output_name,a.task,a.hand,a.scene,a.statistics_file,a.reader,a.allow_unverified_conversion)

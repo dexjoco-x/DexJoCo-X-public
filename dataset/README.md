@@ -75,6 +75,11 @@ Use `examples.read_demo.read_demo` directly in Python. It converts wrist orienta
 
 To create Parquet and video training views:
 
+Use the Training v1 bundle for the native export below; its frozen statistics are
+loaded automatically. For a separately audited Raw conversion experiment, add
+`--allow-unverified-conversion`. FAAS and DexLatent exports require their own
+reconstruction and physical replay checks.
+
 ```bash
 python dataset/tools/prepare_server.py "$DATA_ROOT"
 python dataset/tools/prepare_benchmark7_repr.py "$DATA_ROOT" --representation faas \
