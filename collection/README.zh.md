@@ -22,3 +22,5 @@ python collection/smoke.py
 ```
 
 该命令创建环境并执行一步。人工手套映射、校准和实时录制工具单独管理；本模块从已有机器人示范开始。
+
+此 smoke 测试只检查一次仿真步进，不代表 42 个组合的完整采集流程已验证。部分试验性实时观测适配器尚未实现。旧 export_episode 入口需要采集源中的 replay.zarr、privileged.zarr 和 final_truth.json；公开训练 native.npz 本身不提供这些输入。

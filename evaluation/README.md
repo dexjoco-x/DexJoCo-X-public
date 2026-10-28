@@ -50,3 +50,5 @@ The adapter converts the model's action format to the evaluation interface. The 
 Use `--episodes 1 --diagnostic --max-steps 16` to check the policy–simulator connection. Diagnostic output is marked `diagnostic_only: true` and recorded separately from full success-rate evaluations.
 
 Environment versions and model hashes are recorded in `models.json`. See [version compatibility](../docs/VERSIONING.md).
+
+Formal evaluation checks the reference numerical environment and saves numerical_environment.json with package/build fingerprints and BLAS settings. A mismatch requires the reference installation or an explicitly diagnostic run.

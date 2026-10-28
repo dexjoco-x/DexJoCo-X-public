@@ -50,3 +50,5 @@ python evaluation/serve80.py --factory my_policy:load \
 使用 `--episodes 1 --diagnostic --max-steps 16` 检查服务和仿真连接。诊断输出带 `diagnostic_only: true`，与完整的成功率评测分开记录。
 
 环境版本与模型哈希记录在 `models.json`，数据兼容关系见 [版本说明](../docs/VERSIONING.zh.md)。
+
+正式评测会核对参考数值环境，并保存 numerical_environment.json，记录软件构建与 BLAS 配置。不匹配时应按参考环境安装；其他环境仅允许显式诊断运行。

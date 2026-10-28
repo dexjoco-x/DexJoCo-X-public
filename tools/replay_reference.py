@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Run the Native audit in the pinned Linux x86_64 numerical environment."""
 import os
-import json
 import platform
 from pathlib import Path
 import runpy
@@ -26,14 +25,11 @@ def main():
     if not {'avx2', 'fma'}.issubset(flags):
         raise SystemExit('The reference OpenBLAS kernel requires AVX2 and FMA.')
     from audit_native_replay import environment_fingerprint
+    from reference_environment import reference_mismatches
     fingerprint = environment_fingerprint()
-    expected = json.loads((ROOT / 'requirements/native-replay-fingerprint.json').read_text())
-    for key in ('packages', 'mujoco_library_sha256', 'numpy_extension_sha256', 'scipy_rotation_extension_sha256'):
-        if fingerprint[key] != expected[key]:
-            raise SystemExit(f'Reference environment mismatch: {key}. Install the Conda and pip reference locks in docs/REPLAY_REPAIR.md.')
-    blas = fingerprint['blas'] or []
-    if not any(row['architecture'] == 'Haswell' and row['num_threads'] == 1 and row['version'] == '0.3.23.dev' for row in blas):
-        raise SystemExit('Expected the NumPy 1.26.4 wheel with one-thread Haswell OpenBLAS. Reinstall NumPy with --force-reinstall --no-deps.')
+    errors = reference_mismatches(fingerprint)
+    if errors:
+        raise SystemExit(f'Reference environment mismatch: {errors}. Install the reference locks in docs/REPLAY_REPAIR.md.')
     runpy.run_path(str(ROOT / 'evaluation/audit_native_replay.py'), run_name='__main__')
 
 

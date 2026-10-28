@@ -8,6 +8,8 @@
 
 ## 更新动态
 
+- 🔧 **2026-10-28** — Runtime v10.1 补充示范字段验证、策略评测数值环境记录与动作精度诊断。详见[回放说明](docs/REPLAY_REPAIR.zh-CN.md)。
+
 - 🔧 **2026-10-27** — 数据集 v1.1 与运行环境 v10 提供通过回放验证的示范和固定数值环境，见[更新说明](docs/REPLAY_REPAIR.zh-CN.md)。
 
 - 🎉 **2026-10-12** — 评测代码与仿真环境现已在 [GitHub](https://github.com/dexjoco-x/DexJoCo-X-public) 公开。

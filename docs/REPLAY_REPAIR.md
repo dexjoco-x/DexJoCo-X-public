@@ -55,3 +55,38 @@ sequences retain the original command prefix and remove the unexecuted suffix
 after task termination. All 2,100 demonstrations have synchronized observations
 exported in the reference environment; the dataset contains 939,356 frames.
 These checks certify v1.1 and do not retroactively certify the earlier release.
+
+## Data validation and action precision
+
+The audit compares saved control contracts with the runtime and validates array
+shapes, active-arm/channel and camera masks, timestamps, padding, quaternion norms and action
+limits. A matching checksum alone does not establish data validity.
+
+Replay v1.1 directly from `native.npz`, preserving its saved action precision.
+Casting actions to float32 changes the command sequence. A full diagnostic of all
+2,100 v1.1 demonstrations through the normal policy interface succeeded in
+1,707/2,100 cases (81.3%), with 0 execution errors. The original saved-precision
+replays passed in all 2,100 cases. See the [per-episode results](replay/float32_precision_2100.json).
+This measures sensitivity to action conversion; it is not a learned-policy
+success rate. It does not establish float32 replay compatibility for v1.1.
+
+For new float32 collection, `collection.action_precision.float32_native_action`
+rounds actuator bounds inward to representable values. Execute and save the
+resulting commands, then independently replay and export synchronized observations.
+Applying that helper to an existing dataset does not certify it. New collection
+prototypes are separate from the released v1.1 data.
+
+To reproduce the precision probe in the reference environment:
+
+```bash
+python evaluation/audit_action_precision.py /path/to/dataset \
+  --task hammer_nail --hand allegro --scene scene_049 \
+  --output /tmp/float32-probe.json
+```
+
+Omit the task/hand/scene filters to check the complete dataset. This command casts
+saved actions to float32 and uses the normal policy interface, including its
+existing action bounds. It writes diagnostic results and returns a nonzero exit
+status if any selected sequence fails. It does not append controls, reset physics
+between steps or modify dataset files. The original user report used float64;
+float32 sensitivity is a separate finding from the subsequent release audit.

@@ -55,6 +55,10 @@ DATA_ROOT/bundle/
 
 The manifest records scenes, seeds, valid frame counts, and file hashes. `native.npz` contains `state`, `action`, state/action masks, `arm_mask`, `timestamp`, and `image_mask`.
 
+The raw `image_mask` order is `[front, wrist_right, wrist_left]`; the policy interface uses `[base, wrist_left, wrist_right]`, with `base` corresponding to `front`. Match images by camera name.
+
+v1.1 stores actions as float64. Preserve these values for exact demonstration replay. Training conversion uses float32 normalization and clipping, so converted actions are not the original saved command sequence; see the [precision diagnostic](../docs/REPLAY_REPAIR.md#data-validation-and-action-precision).
+
 Raw arrays order the right side before the left. Each side's state begins with seven wrist values: world position and a wxyz quaternion. Each side's action begins with six world-frame wrist translation and rotation increments, followed by hand actuator targets. Positions use meters and rotations use radians. Hand channel order and ranges are defined in each demonstration's `contract.json`. RGB videos are 256×256 at 20 Hz; use the valid frame count in the manifest.
 
 ## Read a demonstration

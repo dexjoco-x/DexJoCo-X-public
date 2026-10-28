@@ -22,3 +22,5 @@ python collection/smoke.py
 ```
 
 This creates an environment and executes one step. Glove mappings, calibration, and live recording tools are managed separately; this module starts from existing robot demonstrations.
+
+This smoke test checks one simulator step, not end-to-end collection for all 42 combinations. Experimental live-observation adapters are not all implemented. The legacy export_episode entry requires replay.zarr, privileged.zarr and final_truth.json from a collection source; a public training native.npz alone does not provide those inputs.

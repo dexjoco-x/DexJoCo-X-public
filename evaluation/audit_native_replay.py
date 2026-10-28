@@ -20,6 +20,7 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 
 import numpy as np
 from audit_dexlatent_validation_replay import initial_error, commands, step
+from episode_validation import load_validated_episode
 
 
 def sha256(path):
@@ -62,23 +63,15 @@ def environment_fingerprint():
 
 
 def replay(job):
-    from runtime import Runtime
+    from runtime import Runtime, CONTRACTS
     bundle,row=Path(job[0]),job[1]
     check_states=bool(job[2]) if len(job)>2 else False
     result={k:row[k] for k in ('task','hand','scene_id','seed','tensor','tensor_sha256')}
     runtime=None
     try:
-        path=bundle/row['tensor']
-        if sha256(path)!=row['tensor_sha256']:
-            raise ValueError('Tensor checksum does not match manifest')
-        if sha256(bundle/row['contract'])!=row['contract_sha256']:
-            raise ValueError('Episode contract checksum does not match manifest')
-        with np.load(path,allow_pickle=False) as data:
-            states,actions=data['state'],data['action']
-        if not len(actions) or len(states)!=len(actions) or not np.isfinite(states).all() or not np.isfinite(actions).all():
-            raise ValueError('Expected nonempty, finite, aligned state/action arrays')
-        if len(actions)!=row['steps']:
-            raise ValueError('Action length does not match manifest')
+        states,actions=load_validated_episode(bundle,row,CONTRACTS[row['task']+'/'+row['hand']])
+        result['data_contract_and_arrays_verified']=True
+        result['saved_action_dtype']=str(actions.dtype)
         runtime=Runtime(row['task'],row['hand'],row['seed'],'arm40_v1',representation='native',render=False)
         result['model_binding']=runtime.model_binding
         error=initial_error(runtime,states[0]);result['initial_robot_error']=error
@@ -104,6 +97,8 @@ def replay(job):
                     for delta in (runtime.shadow.site_xpos[site]-states[index,arm,:3],
                                   runtime.shadow.site_xmat[site].reshape(3,3)-expected_rotation,
                                   q-states[index,arm,7:7+len(q)]):
+                        if not np.isfinite(delta).all():
+                            raise ValueError('Non-finite state during recorded-state verification')
                         state_error=max(state_error,float(np.max(np.abs(delta))))
             info,terminated,truncated=step(runtime,commands(runtime,action))
             if info.get('succeed',False) and first is None:
@@ -116,6 +111,8 @@ def replay(job):
                       stop_reason=('terminated' if terminated else 'truncated' if truncated else 'actions_exhausted'),
                       final_info={k:v.item() if isinstance(v,np.generic) else v for k,v in info.items()
                                   if isinstance(v,(bool,int,float,str,np.generic))},error=None)
+        if index+1!=len(actions):
+            raise ValueError('Saved sequence contains actions after environment termination')
         if check_states:
             result.update(max_recorded_robot_state_error=state_error,
                           recorded_state_fidelity_passed=state_error<=2e-5)

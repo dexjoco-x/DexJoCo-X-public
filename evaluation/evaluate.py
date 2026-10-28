@@ -6,6 +6,8 @@ from websockets.sync.client import connect
 import msgpack_numpy as mp
 from execution_contract import rollout, EXECUTION_VERSION
 from runtime import Runtime, PROTOCOL, P
+from audit_native_replay import environment_fingerprint
+from reference_environment import reference_mismatches
 
 def main(a):
     out=Path(a.output);out.mkdir(parents=True,exist_ok=True)
@@ -22,6 +24,16 @@ def main(a):
     if not 1<=execute<=action_horizon:
         raise ValueError('Execution horizon must be positive and no longer than the action chunk')
     protocol_sha=hashlib.sha256((P/"eval_protocol.json").read_bytes()).hexdigest()
+    numerical_environment=environment_fingerprint()
+    mismatches=reference_mismatches(numerical_environment)
+    if mismatches and not diagnostic:
+        raise ValueError(f'Non-reference numerical environment: {mismatches}. Follow docs/REPLAY_REPAIR.md; use --diagnostic for other environments.')
+    environment_record=dict(fingerprint=numerical_environment,reference_matches=not mismatches,
+                            mismatches=mismatches,diagnostic_only=diagnostic)
+    environment_path=out/'numerical_environment.json'
+    if environment_path.exists():raise FileExistsError('Use a fresh output directory')
+    environment_path.write_text(json.dumps(environment_record,indent=2)+'\n')
+    environment_sha=hashlib.sha256(environment_path.read_bytes()).hexdigest()
     with connect(a.server,compression=None,max_size=None,open_timeout=30) as ws:
         meta=mp.unpackb(ws.recv(timeout=30))
         if meta.get("diagnostic_only") and not diagnostic:
@@ -60,6 +72,8 @@ def main(a):
                                  layout=a.layout,representation=a.representation,server_metadata=meta,
                                  environment_manifest_sha256=manifest_sha,
                                  environment_manifest_file="evaluation/models.json",protocol_sha256=protocol_sha,
+                                 numerical_environment_file="numerical_environment.json",
+                                 numerical_environment_sha256=environment_sha,
                                  diagnostic_only=diagnostic,**outcome)
                         row['action_horizon']=action_horizon;row['execution_horizon']=execute
                         path.write_text(json.dumps(row,indent=2)+"\n");results.append(row)
@@ -71,6 +85,8 @@ def main(a):
     summary=dict(episodes=len(results),successes=sum(row["success"] for row in results),
                  success_rate=sum(row["success"] for row in results)/len(results),
                  execution_mode=mode,diagnostic_only=diagnostic,results=results)
+    summary['numerical_environment_file']='numerical_environment.json'
+    summary['numerical_environment_sha256']=environment_sha
     (out/"summary.json").write_text(json.dumps(summary,indent=2)+"\n")
 
 if __name__=="__main__":

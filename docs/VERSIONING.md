@@ -5,6 +5,7 @@
 | Version | Contents |
 |---|---|
 | `dataset-v1.1-native-replay` | 2,100 replay-verified demonstrations; 939,356 synchronized frames |
+| `runtime-v10.1` | Stricter data validation, evaluation environment records, and float32 diagnostics; same v10 physics and v1.1 data |
 | `runtime-v10` | Paired models and a pinned numerical environment for v1.1 |
 | `dataset-v1.0-corrected` / `runtime-v9` | Previous public snapshot, retained for reproducibility |
 | `paper-v1` | Earlier training snapshots, checkpoints and reported policy results |

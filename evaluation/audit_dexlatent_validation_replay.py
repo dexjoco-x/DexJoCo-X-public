@@ -16,6 +16,7 @@ from pathlib import Path
 
 import numpy as np
 from scipy.spatial.transform import Rotation
+from episode_validation import load_validated_episode
 
 
 HERE = Path(__file__).resolve().parent
@@ -53,14 +54,10 @@ def step(runtime, value):
 def run_episode(job):
     import sys
     sys.path.insert(0, str(HERE))
-    from runtime import Runtime
+    from runtime import Runtime, CONTRACTS
 
     bundle, row = Path(job[0]), job[1]
-    if hashlib.sha256((bundle / row['tensor']).read_bytes()).hexdigest() != row['tensor_sha256']:
-        raise ValueError('Tensor checksum does not match manifest')
-    with np.load(bundle / row["tensor"]) as data:
-        states = data["state"]
-        actions = data["action"]
+    states, actions = load_validated_episode(bundle, row, CONTRACTS[row['task']+'/'+row['hand']])
     result = {"task": row["task"], "hand": row["hand"], "scene": row["scene_id"],
               "seed": row["seed"], "steps": len(actions)}
     for representation in ("native", "dexlatent"):

@@ -55,6 +55,10 @@ DATA_ROOT/bundle/
 
 manifest 记录场景、种子、有效步数与文件哈希。`native.npz` 包含 `state`、`action`、状态/动作掩码、`arm_mask`、`timestamp` 和 `image_mask`。
 
+原始 `image_mask` 的顺序为 `[front, wrist_right, wrist_left]`；策略接口的顺序为 `[base, wrist_left, wrist_right]`，其中 `base` 对应 `front`。请按相机名称对应图像。
+
+v1.1 的动作为 float64，精确回放时应保留这些数值。训练转换使用 float32 归一化和裁剪，转换后的动作已不是原始保存指令；详见[精度诊断](../docs/REPLAY_REPAIR.zh-CN.md#数据验证与动作精度)。
+
 原始数组侧序为右、左。每侧状态前七维是腕部世界位置与 wxyz 四元数；动作前六维是世界坐标腕部位移和旋转增量，后面是手部执行器目标值。位置单位为米，旋转单位为弧度；手通道顺序和范围见该示范的 `contract.json`。视频为 256×256、20 Hz 的 RGB，使用 manifest 中的有效步数。
 
 ## 读取示范

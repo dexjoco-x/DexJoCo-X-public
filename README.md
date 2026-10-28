@@ -8,6 +8,8 @@ A multi-hand manipulation dataset and a unified simulation benchmark.
 
 ## News
 
+- 🔧 **2026-10-28** — Runtime v10.1 strengthens episode validation, records the numerical environment for policy evaluation, and adds an action-precision diagnostic. See the [replay notes](docs/REPLAY_REPAIR.md).
+
 - 🔧 **2026-10-27** — Dataset v1.1 and runtime v10 provide replay-verified demonstrations and a pinned numerical environment. See the [update](docs/REPLAY_REPAIR.md).
 
 - 🎉 **2026-10-12** — The benchmark code and simulation environments are publicly available on [GitHub](https://github.com/dexjoco-x/DexJoCo-X-public).
