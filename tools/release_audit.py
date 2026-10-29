@@ -66,7 +66,9 @@ def main():
     if not asset_license['integrity_passed']: errors.append('Asset provenance integrity')
     decision = json.loads((ROOT / 'docs/PUBLIC_RELEASE_DECISION.json').read_text())
     result = {'passed_static_checks': not errors, 'files': len(paths), 'runtime_asset_integrity': assets,
-              'model_training_implementation_included': False,
+              'model_training_implementation_included': (ROOT / 'examples/pi05/train.py').is_file(),
+              'minimal_public_training_example': 'examples/pi05/train.py',
+              'internal_experiment_training_stack_included': False,
               'glove_mappings_public': False, 'weights_public': False, 'complete_demonstrations_in_git': False,
               'third_party_license_review_complete': asset_license['runtime_assets_cleared'],
               'asset_license_counts': asset_license['counts'], 'new_upstream_permissions_obtained': False,

@@ -20,6 +20,8 @@ python evaluation/evaluate.py --server ws://127.0.0.1:8200 \
 
 Use `--task all` to evaluate all six tasks for the selected hand, and `--video` to save recordings. Each hand–task pair is evaluated in three independent runs of 50 rollouts. Results record per-episode success, repeat indices, scene and policy seeds, checkpoint details, and protocol information.
 
+Formal runs require `--episodes 150`; smaller counts require `--diagnostic`. Outputs automatically record the Git commit and working-tree status, evaluation source hashes, and benchmark dataset version/archive hash. Checkpoint training-data identity is recorded separately in server metadata when supplied by the policy.
+
 The environment judges success using geometric, contact, and temporal conditions. Policy observations exclude object ground-truth states. Scene seeds are `10_000_000 + task_index × 1000 + episode_index`, where `episode_index` ranges from 0 to 149; policy seeds range from 17 to 166.
 
 ## States and actions

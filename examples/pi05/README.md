@@ -1,90 +1,81 @@
-# π₀.₅ integration with DexJoCo-X
+# Train and evaluate π₀.₅ on Training v1
 
 **English** | [中文](README.zh.md)
 
-Load a trained checkpoint, statistics, and tokenizer; receive RGB images, states, masks, and instructions; return action chunks in physical units.
+This example connects the released dataset to π₀.₅ fine-tuning, model serving, and benchmark evaluation. It trains one hand on any of the six tasks using the pinned [RLinf PyTorch backend](https://github.com/RLinf/RLinf/tree/e1d1bac185fc8d2718c25df9ae8a9089893c46c2/rlinf/models/embodiment/openpi_rlinf).
 
-This example uses [RLinf's π₀.₅ PyTorch inference implementation](https://github.com/RLinf/RLinf/tree/e1d1bac185fc8d2718c25df9ae8a9089893c46c2/rlinf/models/embodiment/openpi_rlinf), pinned to `e1d1bac185fc8d2718c25df9ae8a9089893c46c2`. Install the upstream code in a separate environment; the entry point loads its inference module directly.
+## 1. Install and prepare the model
 
-## Action and observation conventions
-
-| Layout | Model action head | Physical steps per chunk | Scope |
-|---|---|---|---|
-| `single_right32` | H × 32 | H | Three single-right-arm tasks |
-| `ego_interleave32` | 2H × 32, left then right | H | Single-arm and bimanual tasks; matches the paper's π₀.₅ (Ego-π) layout |
-
-The example commands use the second layout: 50 action tokens pair into 25 physical time steps. Both layouts use a 32-dimensional action head.
-
-- The evaluator uses `arm40_v1`: right side 0:40 and left side 40:80. Each side begins with six wrist dimensions, followed by hand actuators in their defined order. The model uses right slots 0:32 and left slots 40:72; remaining slots must be inactive.
-- States contain world-frame wrist position (meters), rotation vectors (radians), and native hand states. Actions contain world-frame wrist increments (meters/radians) and native actuator targets. See the [environment contracts](../../evaluation/contracts) for actuator names, ordering, and ranges. Execution follows the environment control period.
-- Images use RGB uint8 HWC. `base`, `wrist_left`, and `wrist_right` map to model inputs `base_0_rgb`, `left_wrist_0_rgb`, and `right_wrist_0_rgb`. The upstream model resizes 256×256 images to 224×224. Missing camera images and masks are disabled.
-- Instructions use `Embodiment: {hand}. {instruction}`. States are normalized with training statistics and discretized into text tokens. An overlong context raises an error.
-- Quantile normalization matches the Ego-π interface: ordinary dimensions use q01/q99; spans below 1e-4 use midpoint offsets. Actions are inversely transformed with the same statistics, and invalid dimensions are zeroed.
-- The evaluator supplies explicit flow noise. Alternating layouts pair this noise left then right in the same order; the server does not resample it.
-
-## Installation
-
-Use a separate Python 3.11 environment for the policy server. Simulation can run in another environment over WebSocket. Install a PyTorch build supporting your GPU, then install the example dependencies.
+Use a separate Python 3.11 environment for training and serving. The simulator runs in the [reference environment](../../docs/REPLAY_REPAIR.md) and communicates over WebSocket.
 
 ```bash
 git clone https://github.com/RLinf/RLinf.git /path/to/RLinf
 git -C /path/to/RLinf checkout e1d1bac185fc8d2718c25df9ae8a9089893c46c2
-pip install -r examples/pi05/requirements.txt
+pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cu128
+pip install -r examples/pi05/requirements-training.txt
 ```
 
-The validated GPU configuration uses PyTorch 2.8.0 with CUDA 12.8: `pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cu128`. Alternatively, choose a build compatible with your GPU driver.
+Provide a complete RLinf π₀.₅ base state dictionary (`.pt` or `.safetensors`) and its PaliGemma tokenizer. The official base is `gs://openpi-assets/checkpoints/pi05_base`; obtain it through [OpenPI](https://github.com/Physical-Intelligence/openpi#base-models) and convert it with the pinned [RLinf checkpoint converter](https://github.com/RLinf/RLinf/blob/e1d1bac185fc8d2718c25df9ae8a9089893c46c2/rlinf/utils/ckpt_convertor/openpi/README.md). JAX and OpenPI PyTorch files require conversion before loading here. The tokenizer is available at [Google's PaliGemma tokenizer URL](https://storage.googleapis.com/big_vision/paligemma_tokenizer.model).
 
-Provide your own **complete RLinf model state_dict** in `.pt` or `.safetensors` format and the matching PaliGemma tokenizer. OpenPI JAX checkpoints and official PyTorch files are not direct inputs to this entry point. For OpenPI-trained models, use the [upstream RLinf conversion tools](https://github.com/RLinf/RLinf/tree/e1d1bac185fc8d2718c25df9ae8a9089893c46c2/rlinf/utils/ckpt_convertor/openpi) and verify that training and inference match in layout, tokenizer, normalization, and instructions. Weight conversion alone does not turn an ordinary π₀.₅ policy into an alternating-prediction policy.
+The default recipe freezes the vision/language backbone and fine-tunes the action expert and action/time projections. It uses BF16 computation, FP32 trainable parameters, AdamW, cosine decay, gradient accumulation, and masked flow-matching loss. This is a minimal starting recipe, not the paper's training configuration. A short train–save–reload–evaluate check ran on an RTX 5090 with 32 GB VRAM.
 
-## Bind the checkpoint interface
+## 2. Download the dataset and train
 
-Save the quantiles used during training in `statistics.json`: two objects, `state` and `action`, each containing `q01` and `q99` arrays. In alternating mode, both state and action statistics have 80 dimensions. In single-arm mode, state statistics have 32 dimensions and action statistics have 80, with only the right-side model slots active.
-
-Use the checkpoint's training statistics. Evaluation inputs are physical values, unlike the prenormalized Parquet views; see the [dataset guide](../../dataset/README.md).
-
-See the [quickstart](../../docs/QUICKSTART.md) for reading raw physical fields. The alternating layout pairs left `actions[:, 40:72]` and right `actions[:, :32]` at each time step: 25 steps form 50 tokens.
-
-Run from the repository root. This example describes a six-task model for Sharpa Wave:
+Download [Training v1](../../dataset/README.md) using the dataset tools. Run these commands from the repository root:
 
 ```bash
-python -m examples.pi05.make_contract \
-  --checkpoint /path/to/my_full_weights.pt \
-  --tokenizer /path/to/paligemma_tokenizer.model \
-  --statistics /path/to/statistics.json \
-  --token-layout ego_interleave32 --action-horizon 25 \
-  --max-token-len 384 --inference-steps 5 \
-  --hands sharpa_wave \
-  --tasks hammer_nail pick_bucket single_hand_hanoi \
-          bimanual_microwave_cook bimanual_photograph bimanual_unlock_ipad \
-  --output ./outputs/my_pi05_contract.json
-```
+export DATA_ROOT="$PWD/outputs/training_v1"
+python tools/dataset_packages.py download --tasks all --data-root "$DATA_ROOT"
 
-Set `hands` and `tasks` to the checkpoint's actual supported scope. The interface file binds checkpoint/tokenizer SHA-256 hashes, action layout, horizon, statistics, and scope. The server rejects mismatched files and unsupported tasks. For a diagnostic model, add `--diagnostic-only` when generating this file.
-
-## Serve and evaluate
-
-Terminal one: start the policy server.
-
-```bash
-python -m examples.pi05.serve \
+python -m examples.pi05.train \
   --source /path/to/RLinf \
-  --checkpoint /path/to/my_full_weights.pt \
+  --checkpoint /path/to/pi05_base_rlinf/model.safetensors \
   --tokenizer /path/to/paligemma_tokenizer.model \
-  --contract ./outputs/my_pi05_contract.json \
-  --device cuda --port 8200
+  --dataset-root "$DATA_ROOT" --hand xhand \
+  --steps 10000 --batch-size 1 --accumulation-steps 8 \
+  --output ./outputs/pi05_xhand
 ```
 
-Terminal two: evaluate in a simulation environment with `./simulator[benchmark]` installed.
+Omitting `--tasks` selects all six tasks. To train a subset, add e.g. `--tasks hammer_nail bimanual_photograph`. Each run trains one hand; repeat with other hands for seven hand-specific models. Frames are sampled uniformly from the selected demonstrations. The effective batch size above is 8.
+
+The output contains `model.safetensors`, `contract.json`, `run.json`, and `loss.jsonl`. The model is saved at the end of the run. The contract binds the checkpoint, tokenizer, frozen statistics, dataset version, hand, tasks, and action layout. Short connection tests should use `--steps 2 --accumulation-steps 1 --diagnostic` and a separate output directory.
+
+## 3. Serve and evaluate
+
+In the policy environment:
+
+```bash
+python -m examples.pi05.serve_training_v1 \
+  --source /path/to/RLinf --run ./outputs/pi05_xhand \
+  --tokenizer /path/to/paligemma_tokenizer.model --port 8200
+```
+
+In the reference simulation environment:
 
 ```bash
 python evaluation/evaluate.py \
   --server ws://127.0.0.1:8200 \
   --layout arm40_v1 --representation native \
-  --hand sharpa_wave --task all --episodes 150 \
+  --hand xhand --task all --episodes 150 \
   --action-horizon 25 --execution-horizon 8 \
-  --output ./outputs/my_pi05_evaluation
+  --output ./outputs/pi05_xhand_evaluation
 ```
 
-Each hand–task pair has three runs of 50 rollouts. Results include success fields, scene and policy seeds, and interface/checkpoint hashes. When serving a model for one hand, select the same hand in the evaluator. Serve and evaluate seven separate hand-specific models individually. For a short diagnostic, use `--episodes 1 --diagnostic --max-steps 16` with a supported task. Diagnostic results are recorded separately from full success-rate evaluations.
+Formal evaluation requires **150 episodes per hand–task pair: three independent repeats of 50**. For a connection check, select one supported task and use `--episodes 1 --diagnostic --max-steps 16`. A diagnostic checkpoint cannot produce formal results. Results record code, benchmark archive, checkpoint, interface, environment, and seed information.
 
-For single-arm mode, change the contract command to `--token-layout single_right32` and select only single-arm tasks. Keep the physical `--action-horizon` consistent between server and evaluator.
+## Data and action conventions
+
+| Stage | Representation |
+|---|---|
+| Saved targets | The exact float32 labels in Training v1; no second normalization |
+| Model targets | 50 × 32 tokens: left, right, left, right … for 25 physical steps |
+| Loss mask | Excludes inactive joints, missing arms, and steps beyond the episode end |
+| Model state | Frozen per-hand/task normalization; state bins appended to the instruction |
+| Model images | Front, left wrist, right wrist; RGB preprocessing shared by training and serving |
+| Simulator commands | The frozen Training v1 decoder restores 25 × 80 physical commands in float64 |
+
+The 32-dimensional action head is retained. Right-hand channels use slots 0:32 and left-hand channels 40:72 in the simulator's `arm40_v1` layout. The evaluator supplies the flow noise; the server pairs it in the same left/right order. Each inference predicts 25 physical steps and executes eight before re-inference. The reader uses the bundle's saved labels, which match the prepared LeRobot and Being-H views, and loads `prepared/beingh_final_v3_train_stats.json` without fitting new statistics.
+
+For single-arm-only experiments, `--token-layout single_right32` uses 25 right-hand tokens. It rejects bimanual tasks. Keep the physical horizon consistent in training and evaluation.
+
+Earlier checkpoints using the old quantile interface retain `make_contract.py` and `serve.py`. Their statistics must not be replaced with Training v1 statistics; newly trained models above use `serve_training_v1.py`.

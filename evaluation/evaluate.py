@@ -8,13 +8,16 @@ from execution_contract import rollout, EXECUTION_VERSION
 from runtime import Runtime, PROTOCOL, P
 from audit_native_replay import environment_fingerprint
 from reference_environment import reference_mismatches
+from provenance import evaluation_provenance, validate_episode_count
 
 def main(a):
+    diagnostic=bool(getattr(a,"diagnostic",False))
+    validate_episode_count(a.episodes, diagnostic)
     out=Path(a.output);out.mkdir(parents=True,exist_ok=True)
     tasks=PROTOCOL["tasks"] if a.task=="all" else [a.task]
     hands=PROTOCOL["hands"] if a.hand=="all" else [a.hand]
     manifest_sha=hashlib.sha256((P/"models.json").read_bytes()).hexdigest();results=[]
-    diagnostic=bool(getattr(a,"diagnostic",False))
+    provenance=evaluation_provenance(P.parent)
     max_steps=getattr(a,"max_steps",None)
     if max_steps is not None and (not diagnostic or max_steps<1):
         raise ValueError('--max-steps requires --diagnostic and a positive value')
@@ -74,7 +77,7 @@ def main(a):
                                  environment_manifest_file="evaluation/models.json",protocol_sha256=protocol_sha,
                                  numerical_environment_file="numerical_environment.json",
                                  numerical_environment_sha256=environment_sha,
-                                 diagnostic_only=diagnostic,**outcome)
+                                 diagnostic_only=diagnostic,provenance=provenance,**outcome)
                         row['action_horizon']=action_horizon;row['execution_horizon']=execute
                         path.write_text(json.dumps(row,indent=2)+"\n");results.append(row)
                         print(task,hand,index,outcome["success"],outcome["steps"],flush=True)
@@ -87,6 +90,10 @@ def main(a):
                  execution_mode=mode,diagnostic_only=diagnostic,results=results)
     summary['numerical_environment_file']='numerical_environment.json'
     summary['numerical_environment_sha256']=environment_sha
+    summary['provenance']=provenance
+    summary['episodes_per_hand_task']=a.episodes
+    summary['repeats_per_hand_task']=3 if not diagnostic else None
+    summary['rollouts_per_repeat']=50 if not diagnostic else None
     (out/"summary.json").write_text(json.dumps(summary,indent=2)+"\n")
 
 if __name__=="__main__":
@@ -102,4 +109,4 @@ if __name__=="__main__":
     parser.add_argument("--max-steps",type=int,help="Optional short horizon for --diagnostic only")
     parser.add_argument("--action-horizon",type=int,help="Physical time steps per chunk; Ego-pi pairs 50 tokens into 25 steps")
     parser.add_argument("--execution-horizon",type=int,help="Actions executed before re-inference (default: protocol value)")
-    args=parser.parse_args();assert 1<=args.episodes<=150;main(args)
+    args=parser.parse_args();main(args)

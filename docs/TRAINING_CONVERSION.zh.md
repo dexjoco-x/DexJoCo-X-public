@@ -2,6 +2,8 @@
 
 [English](TRAINING_CONVERSION.md) | [中文](TRAINING_CONVERSION.zh.md)
 
+可直接运行的完整流程见 [π₀.₅ Training v1 示例](../examples/pi05/README.zh.md)：下载 → 训练 → 策略服务 → 评估。
+
 ## 下载已验证的训练版 v1
 
 训练版包含 **2100条重新记录的轨迹、933865帧**，每个手型与任务组合仍为50条。
@@ -104,8 +106,8 @@ state, state_mask = adapter.state(observation)
 reply = {'actions': adapter.actions(prediction, observation)}
 ```
 
-返回的 float64 指令应直接发送，不要再转回 float32。这一适配器用于新的 native200
-训练表示；原有 pi0.5 示例及旧检查点的解码规则保持独立。
+返回的 float64 指令应直接发送，不要再转回 float32。Training v1 的 π₀.₅ 示例
+在拆分 32 维 token 后使用这一解码器；旧检查点保留原有统计量和解码方式。
 
 重新采集的 `native.npz` 另外保存实际执行过的 `training_labels`。导出工具和便携读取器都原样保留
 这些标签，并检查统计量是否匹配。RGB 和状态来自同一次执行；这是新采集的训练轨迹，不是把原有

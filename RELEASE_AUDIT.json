@@ -1,13 +1,15 @@
 {
   "passed_static_checks": true,
-  "files": 1166,
+  "files": 1173,
   "runtime_asset_integrity": {
     "passed": true,
     "checked": 801,
     "missing": [],
     "changed": []
   },
-  "model_training_implementation_included": false,
+  "model_training_implementation_included": true,
+  "minimal_public_training_example": "examples/pi05/train.py",
+  "internal_experiment_training_stack_included": false,
   "glove_mappings_public": false,
   "weights_public": false,
   "complete_demonstrations_in_git": false,

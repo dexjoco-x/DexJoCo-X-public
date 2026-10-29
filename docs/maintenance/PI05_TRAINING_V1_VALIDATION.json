@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-29",
+  "dataset": {
+    "dataset_version": "training-float32-v1",
+    "sha256": "b9f8760e8a722155156dd8783f16cec742975e4864cbd5b176e6394d7dbd2752"
+  },
+  "upstream_commit": "e1d1bac185fc8d2718c25df9ae8a9089893c46c2",
+  "unit_tests": {
+    "passed": 47,
+    "failed": 0
+  },
+  "data_round_trip": {
+    "episodes": 2100,
+    "frames": 933865,
+    "exact_decoded_float64_actions": true,
+    "groups_with_first_last_frame_checks": 42
+  },
+  "training": {
+    "steps": 2,
+    "hand": "xhand",
+    "tasks": [
+      "hammer_nail",
+      "bimanual_photograph"
+    ],
+    "trainable_parameters": 430098464,
+    "device": "NVIDIA RTX 5090 32 GB",
+    "initialization": "Existing local RLinf-format checkpoint; not a newly downloaded base model",
+    "losses": [
+      0.21821065247058868,
+      0.4864320755004883
+    ],
+    "action_projection_updated": true,
+    "frozen_parameter_checked": "img.stem.weight",
+    "checkpoint_saved_and_reloaded": true
+  },
+  "rpc": {
+    "action_dtype": "float64",
+    "action_shape": [
+      25,
+      80
+    ],
+    "same_noise_identical_actions": true,
+    "padding_zero": true
+  },
+  "simulation_integration": [
+    {
+      "task": "hammer_nail",
+      "hand": "xhand",
+      "episodes": 1,
+      "steps": 16,
+      "diagnostic_only": true,
+      "reference_environment_matches": true
+    },
+    {
+      "task": "bimanual_photograph",
+      "hand": "xhand",
+      "episodes": 1,
+      "steps": 16,
+      "diagnostic_only": true,
+      "reference_environment_matches": true
+    }
+  ],
+  "formal_policy_success_rate_measured": false,
+  "full_demonstration_physical_replay_rerun": false,
+  "formal_episode_guard": "150 episodes required unless --diagnostic",
+  "source_sha256": {
+    "examples/pi05/train.py": "d0642a505b381089af52de6d36167b4bcbeba8a9761de3783422ff51c9bd621b",
+    "examples/pi05/training_v1.py": "a112b11fe2a7aa9f2f614b503ac6c077787e84f796ececd550e49f873f762810",
+    "examples/pi05/serve_training_v1.py": "fbd0e825bdded4041bf186b1cb90cb0f7a00956db9ac3f86fabc69cd31ec243c",
+    "evaluation/evaluate.py": "0ed18e7cdcc914a1dd794b4dcd76054fd2fdb93a5f8c070014d9c2d161a895ee",
+    "evaluation/provenance.py": "8b87b278fc42fdf9a37884300990e4fd6ae3c64ac08a5f33fe165ddb1f2e816e",
+    "dataset/tools/adapters.py": "95e3876a32ffffd71dfeb5f7572bce414e85c0174a8b22b7ccc50daa8627aa93"
+  }
+}

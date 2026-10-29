@@ -10,6 +10,7 @@ logs/
 *.pt
 *.pth
 *.ckpt
+*.safetensors
 *.npz
 *.tar.gz
 *.zip

@@ -1,0 +1,4 @@
+-r requirements.txt
+scipy==1.17.1
+opencv-python-headless==4.10.0.84
+huggingface-hub>=1,<3

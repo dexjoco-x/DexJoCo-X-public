@@ -2,6 +2,8 @@
 
 [English](TRAINING_CONVERSION.md) | [中文](TRAINING_CONVERSION.zh.md)
 
+For an executable training workflow, see the [π₀.₅ Training v1 example](../examples/pi05/README.md): download → train → serve → evaluate.
+
 ## Download verified Training v1
 
 Training v1 contains **2,100 re-recorded trajectories and 933,865 frames**, with
@@ -139,9 +141,9 @@ state, state_mask = adapter.state(observation)
 reply = {'actions': adapter.actions(prediction, observation)}
 ```
 
-Send the returned float64 commands unchanged. This does not modify the pi0.5
-example or existing checkpoint decoders; it is the adapter for the new native200
-training representation.
+Send the returned float64 commands unchanged. The Training v1 π₀.₅ example uses
+this decoder after unpacking its 32-D tokens. Existing checkpoint decoders retain
+their original statistics.
 
 For newly collected episodes, `native.npz` also stores the exact `training_labels`
 executed by the collector. Both the exporter and portable loader retain these

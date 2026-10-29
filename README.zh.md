@@ -8,6 +8,7 @@
 
 ## 更新动态
 
+- 🔧 **2026-10-29** — 新增 [Training v1 → π₀.₅ 训练与评估示例](examples/pi05/README.zh.md)；正式评估要求完整执行三次、每次 50 回合。
 - 🔧 **2026-10-28** — 训练与回放统一使用 **Training v1**：同一批 2,100 条轨迹，包含 float64 动作和配套 LeRobot/Being-H 格式。[下载与使用](dataset/README.zh.md)。
 
 - 🎉 **2026-10-12** — 评测代码与仿真环境现已在 [GitHub](https://github.com/dexjoco-x/DexJoCo-X-public) 公开。
@@ -59,11 +60,11 @@ python tools/runtime_assets.py check
 | 下载数据、理解字段、转换格式 | [数据集](dataset/README.zh.md) |
 | 创建和使用仿真环境 | [仿真环境](simulator/README.zh.md) |
 | 接入策略、运行统一评测 | [评测接口](evaluation/README.zh.md) |
-| 接入 π₀.₅ / Ego-π | [策略示例](examples/pi05/README.zh.md) |
+| 训练与评估 π₀.₅ / Ego-π | [可运行示例](examples/pi05/README.zh.md) |
 | 用已有示范扩增场景 | [场景扩增](collection/README.zh.md) |
 | 核对数据与环境版本 | [版本说明](docs/VERSIONING.zh.md) |
 
-训练可选用自己的框架。公开内容包括数据、环境和评测工具；策略权重、模型训练实现及手套录制工具单独管理。
+公开内容包括数据、环境、评测工具和最小 π₀.₅ 训练示例；原论文实验的训练系统、策略权重及手套录制工具单独管理。
 
 示范动作回放请参阅[参考环境说明](docs/REPLAY_REPAIR.zh-CN.md)。
 

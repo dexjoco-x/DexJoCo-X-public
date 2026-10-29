@@ -76,8 +76,9 @@ def statistics(values,masks):
   else:out['q01'][i]=-1;out['q99'][i]=1;out['std'][i]=1
  return {k:v.tolist() for k,v in out.items()}
 class PortableDataset:
- def __init__(self,root,layout='beingh05',split='train',horizon=16,stats=None,holdout_hand=None):
+ def __init__(self,root,layout='beingh05',split='train',horizon=16,stats=None,holdout_hand=None,image_size=224):
   self.root=Path(root);self.layout=layout;self.horizon=horizon;self.holdout_hand=holdout_hand
+  self.image_size=image_size
   allrows=[]
   for p in sorted((self.root/'manifests').glob('*.json')):allrows.extend(json.loads(p.read_text()))
   self.allrows=allrows
@@ -117,8 +118,10 @@ class PortableDataset:
    if present:
     cap=cv2.VideoCapture(str(self.root/row['videos'][v]['path']));cap.set(cv2.CAP_PROP_POS_FRAMES,t);ok,img=cap.read();cap.release()
     if not ok:raise ValueError('Video frame decode failed')
-    img=cv2.cvtColor(img,cv2.COLOR_BGR2RGB);images[PI_KEYS[v]]=cv2.resize(img,(224,224),interpolation=cv2.INTER_AREA)
-   else:images[PI_KEYS[v]]=np.zeros((224,224,3),np.uint8)
+    img=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
+    images[PI_KEYS[v]]=cv2.resize(img,(self.image_size,self.image_size),interpolation=cv2.INTER_AREA) if self.image_size else img
+   else:
+    size=self.image_size or 256;images[PI_KEYS[v]]=np.zeros((size,size,3),np.uint8)
   contract=json.loads((self.root/row['contract']).read_text())
   return {'state':normalize(st,sm,stats['state']),'state_mask':sm,'images':images,'image_masks':masks,
    'actions':labels,'action_mask':am,'prompt':f"Embodiment: {row['hand']}. {contract['instruction']}"}

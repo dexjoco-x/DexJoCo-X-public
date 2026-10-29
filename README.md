@@ -8,6 +8,8 @@ A multi-hand manipulation dataset and a unified simulation benchmark.
 
 ## News
 
+- 🔧 **2026-10-29** — Added a [Training v1 → π₀.₅ training and evaluation example](examples/pi05/README.md); formal evaluation now requires all three 50-rollout repeats.
+
 - 🔧 **2026-10-28** — **Training v1** is the current dataset for training and replay: the same 2,100 trajectories in float64 and matching LeRobot/Being-H formats. [Download and usage](dataset/README.md).
 
 - 🎉 **2026-10-12** — The benchmark code and simulation environments are publicly available on [GitHub](https://github.com/dexjoco-x/DexJoCo-X-public).
@@ -59,12 +61,12 @@ Follow the [quickstart](docs/QUICKSTART.md) to download Training v1, read a demo
 | Download data, inspect fields, convert formats | [Dataset](dataset/README.md) |
 | Create and use simulation environments | [Environments](simulator/README.md) |
 | Connect a policy and evaluate | [Evaluation](evaluation/README.md) |
-| Connect π₀.₅ / Ego-π | [Policy example](examples/pi05/README.md) |
+| Train and evaluate π₀.₅ / Ego-π | [Runnable example](examples/pi05/README.md) |
 | Expand scenes from existing demonstrations | [Scene expansion](collection/README.md) |
 | Check data and environment compatibility | [Versions](docs/VERSIONING.md) |
 | Reproduce saved demonstration actions | [Replay setup](docs/REPLAY_REPAIR.md) |
 
-Training implementations, policy weights, and glove recording tools are managed separately.
+A minimal π₀.₅ training example is included. The original experiment training stack, policy weights, and glove recording tools are managed separately.
 
 ## Contact
 
