@@ -8,6 +8,8 @@ A multi-hand manipulation dataset and a unified simulation benchmark.
 
 ## News
 
+- 🔧 **2026-10-30** — Fixed demonstration replay failures caused by CPU-dependent controller math. **Update the code; Training v1 data and videos do not need to be downloaded again.** [Replay instructions](docs/REPLAY_REPAIR.md).
+
 - 🔧 **2026-10-29** — Added a [Training v1 → π₀.₅ training and evaluation example](examples/pi05/README.md); formal evaluation now requires all three 50-rollout repeats.
 
 - 🔧 **2026-10-28** — **Training v1** is the current dataset for training and replay: the same 2,100 trajectories in float64 and matching LeRobot/Being-H formats. [Download and usage](dataset/README.md).

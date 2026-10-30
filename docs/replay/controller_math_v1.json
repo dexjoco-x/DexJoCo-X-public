@@ -1,0 +1,298 @@
+{
+  "base_code_commit": "c74472a9fbe61146deb01eb03c821fddca028114",
+  "dataset_version": "training-float32-v1",
+  "archive_sha256": "b9f8760e8a722155156dd8783f16cec742975e4864cbd5b176e6394d7dbd2752",
+  "dataset_changed": false,
+  "controller_math_revision": "portable_svml_asin_v1",
+  "case_diagnosis": {
+    "task": "bimanual_microwave_cook",
+    "hand": "allegro",
+    "scene_id": "scene_003",
+    "physics_step_zero_based": 50,
+    "function": "dm_robotics.transformations._transformations.quat_angle",
+    "operation": "arcsin",
+    "input_hex": "0x1.5d2886177baa0p-7",
+    "svml_output_hex": "0x1.5d2a371f310bep-7",
+    "local_system_output_hex": "0x1.5d2a371f310bfp-7"
+  },
+  "reference_vs_fixed_physics_trace": {
+    "task": "bimanual_microwave_cook",
+    "hand": "allegro",
+    "scene_id": "scene_003",
+    "physics_steps": 13125,
+    "arrays_compared": 131250,
+    "all_arrays_byte_identical": true,
+    "first_differences": [],
+    "elapsed_seconds": 4.0819761753082275,
+    "fields": [
+      "qpos",
+      "qvel",
+      "ctrl",
+      "mocap_pos",
+      "mocap_quat"
+    ],
+    "includes_all_robot_and_object_qpos": true
+  },
+  "ubuntu22_validation": {
+    "episodes": 84,
+    "passes": 84,
+    "tasks": 6,
+    "hands": 7,
+    "core_metric_differences_vs_reference": [],
+    "report_sha256": "904b14638ca58d6a244da14391b5360e9f494de369ce87a86187f943415a1a1a"
+  },
+  "unit_tests": {
+    "run": 51,
+    "passed": 51,
+    "skipped": 0
+  },
+  "reference_environment": {
+    "python": "3.11.15 | packaged by conda-forge | (main, Mar  5 2026, 16:45:40) [GCC 14.3.0]",
+    "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.35",
+    "machine": "x86_64",
+    "numpy_cpu_features": {
+      "MMX": true,
+      "SSE": true,
+      "SSE2": true,
+      "SSE3": true,
+      "SSSE3": true,
+      "SSE41": true,
+      "POPCNT": true,
+      "SSE42": true,
+      "AVX": true,
+      "F16C": true,
+      "XOP": false,
+      "FMA4": false,
+      "FMA3": true,
+      "AVX2": true,
+      "AVX512F": false,
+      "AVX512CD": false,
+      "AVX512ER": false,
+      "AVX512PF": false,
+      "AVX5124FMAPS": false,
+      "AVX5124VNNIW": false,
+      "AVX512VPOPCNTDQ": true,
+      "AVX512VL": true,
+      "AVX512BW": true,
+      "AVX512DQ": true,
+      "AVX512VNNI": true,
+      "AVX512IFMA": true,
+      "AVX512VBMI": true,
+      "AVX512VBMI2": true,
+      "AVX512BITALG": true,
+      "AVX512FP16": false,
+      "AVX512_KNL": false,
+      "AVX512_KNM": false,
+      "AVX512_SKX": false,
+      "AVX512_CLX": false,
+      "AVX512_CNL": false,
+      "AVX512_ICL": false,
+      "AVX512_SPR": false,
+      "VSX": false,
+      "VSX2": false,
+      "VSX3": false,
+      "VSX4": false,
+      "VX": false,
+      "VXE": false,
+      "VXE2": false,
+      "NEON": false,
+      "NEON_FP16": false,
+      "NEON_VFPV4": false,
+      "ASIMD": false,
+      "FPHP": false,
+      "ASIMDHP": false,
+      "ASIMDDP": false,
+      "ASIMDFHM": false
+    },
+    "numpy_disabled_cpu_features": "AVX512F,AVX512CD,AVX512_SKX,AVX512_CLX,AVX512_CNL,AVX512_ICL",
+    "system_libraries_sha256": {
+      "libc.so.6": "b2cf6c33b74d2f22543b7a469a75b538911e690f769d0b238843a49465b83793",
+      "libm.so.6": "3dd5511ae94785c9f921429b0f2b2f7aabb461b6f0e6de6dfdbef15f24bdfee6"
+    },
+    "controller_math": {
+      "id": "portable_svml_asin_v1",
+      "asin_probe_hex": "0x1.5d2a371f310bep-7"
+    },
+    "controller_math_sha256": "94e47c6784e20438a425b61b37f7389b5fa084b58cb88ad0af2dcddc8b1d6ec8",
+    "packages": {
+      "mujoco": "3.4.0",
+      "numpy": "1.26.4",
+      "scipy": "1.17.1",
+      "gymnasium": "1.0.0",
+      "dm-robotics-transformations": "0.9.0"
+    },
+    "mujoco_version": "3.4.0",
+    "mujoco_library_sha256": {
+      "libmujoco.so.3.4.0": "764cf4ea21dea7764db0284b2f283af1ec9a9e962241b72d1c5b63b86d624c85"
+    },
+    "blas": [
+      {
+        "internal_api": "openblas",
+        "version": "0.3.33",
+        "threading_layer": "pthreads",
+        "architecture": "Haswell",
+        "num_threads": 1
+      },
+      {
+        "internal_api": "openblas",
+        "version": "0.3.23.dev",
+        "threading_layer": "pthreads",
+        "architecture": "Haswell",
+        "num_threads": 1
+      }
+    ],
+    "numpy_extension_sha256": "a735e4e8355b75c800112af8a5b1731b891b2016ed57067352eea6cab0aa00bc",
+    "scipy_rotation_extension_sha256": "cda2fb0d93c1d7a103915f2cb51de347c612c5fe88530e8f9d2cacf78d01635a",
+    "native_execution_helpers_sha256": {
+      "initial_error": "7e49da1b4cb22b04d2634271d808356f1f01bb029ef244f270be596f4a700d99",
+      "commands": "bbc299ad39eb9384e18ecb6ad6ac6948e6f962589567c0459fbe45dbe20881c4",
+      "step": "2081a3cbb927122f29e88d487a2bcd85f6fb9c3a22de110329230bfe7e26a2b9"
+    },
+    "numerical_environment": {
+      "OPENBLAS_CORETYPE": "Haswell",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    }
+  },
+  "scope": "Saved native demonstration replay; not learned-policy performance.",
+  "date": "2026-10-30",
+  "full_native_replay": {
+    "episodes": 2100,
+    "passed": 2100,
+    "execution_errors": 0,
+    "state_tolerance": 2e-05,
+    "recorded_states_checked": true,
+    "saved_frames": 933865,
+    "max_recorded_robot_state_error": 1.1633808005839796e-07,
+    "all_core_metrics_identical_to_original_reference": true,
+    "per_task": {
+      "bimanual_microwave_cook": 350,
+      "bimanual_photograph": 350,
+      "bimanual_unlock_ipad": 350,
+      "hammer_nail": 350,
+      "pick_bucket": 350,
+      "single_hand_hanoi": 350
+    },
+    "per_hand": {
+      "allegro": 300,
+      "inspire": 300,
+      "leap": 300,
+      "linkerhand_l20": 300,
+      "sharpa_wave": 300,
+      "wuji": 300,
+      "xhand": 300
+    },
+    "report_sha256": "cdcdc6f3de43bc35ae8ac22735d8871312b890950f410f3f680f9448b02e9008"
+  },
+  "full_run_environment": {
+    "python": "3.11.15 | packaged by conda-forge | (main, Mar  5 2026, 16:45:40) [GCC 14.3.0]",
+    "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.31",
+    "machine": "x86_64",
+    "numpy_cpu_features": {
+      "MMX": true,
+      "SSE": true,
+      "SSE2": true,
+      "SSE3": true,
+      "SSSE3": true,
+      "SSE41": true,
+      "POPCNT": true,
+      "SSE42": true,
+      "AVX": true,
+      "F16C": true,
+      "XOP": false,
+      "FMA4": false,
+      "FMA3": true,
+      "AVX2": true,
+      "AVX512F": false,
+      "AVX512CD": false,
+      "AVX512ER": false,
+      "AVX512PF": false,
+      "AVX5124FMAPS": false,
+      "AVX5124VNNIW": false,
+      "AVX512VPOPCNTDQ": true,
+      "AVX512VL": true,
+      "AVX512BW": true,
+      "AVX512DQ": true,
+      "AVX512VNNI": true,
+      "AVX512IFMA": true,
+      "AVX512VBMI": true,
+      "AVX512VBMI2": true,
+      "AVX512BITALG": true,
+      "AVX512FP16": false,
+      "AVX512_KNL": false,
+      "AVX512_KNM": false,
+      "AVX512_SKX": false,
+      "AVX512_CLX": false,
+      "AVX512_CNL": false,
+      "AVX512_ICL": false,
+      "AVX512_SPR": false,
+      "VSX": false,
+      "VSX2": false,
+      "VSX3": false,
+      "VSX4": false,
+      "VX": false,
+      "VXE": false,
+      "VXE2": false,
+      "NEON": false,
+      "NEON_FP16": false,
+      "NEON_VFPV4": false,
+      "ASIMD": false,
+      "FPHP": false,
+      "ASIMDHP": false,
+      "ASIMDDP": false,
+      "ASIMDFHM": false
+    },
+    "numpy_disabled_cpu_features": "AVX512F,AVX512CD,AVX512_SKX,AVX512_CLX,AVX512_CNL,AVX512_ICL",
+    "system_libraries_sha256": {
+      "libc-2.31.so": "53b909551f8e581120ddc2d24cfb5df76c52e3c2e2a5dac0d202b25638b3e902",
+      "libm-2.31.so": "a0e70f48f02a399e8dd37f861a99e226c285a9daf50a25d19fff7ccf18b97f9c"
+    },
+    "controller_math": {
+      "id": "portable_svml_asin_v1",
+      "asin_probe_hex": "0x1.5d2a371f310bep-7"
+    },
+    "controller_math_sha256": "94e47c6784e20438a425b61b37f7389b5fa084b58cb88ad0af2dcddc8b1d6ec8",
+    "packages": {
+      "mujoco": "3.4.0",
+      "numpy": "1.26.4",
+      "scipy": "1.17.1",
+      "gymnasium": "1.0.0",
+      "dm-robotics-transformations": "0.9.0"
+    },
+    "mujoco_version": "3.4.0",
+    "mujoco_library_sha256": {
+      "libmujoco.so.3.4.0": "764cf4ea21dea7764db0284b2f283af1ec9a9e962241b72d1c5b63b86d624c85"
+    },
+    "blas": [
+      {
+        "internal_api": "openblas",
+        "version": "0.3.33",
+        "threading_layer": "pthreads",
+        "architecture": "Haswell",
+        "num_threads": 1
+      },
+      {
+        "internal_api": "openblas",
+        "version": "0.3.23.dev",
+        "threading_layer": "pthreads",
+        "architecture": "Haswell",
+        "num_threads": 1
+      }
+    ],
+    "numpy_extension_sha256": "a735e4e8355b75c800112af8a5b1731b891b2016ed57067352eea6cab0aa00bc",
+    "scipy_rotation_extension_sha256": "cda2fb0d93c1d7a103915f2cb51de347c612c5fe88530e8f9d2cacf78d01635a",
+    "native_execution_helpers_sha256": {
+      "initial_error": "7e49da1b4cb22b04d2634271d808356f1f01bb029ef244f270be596f4a700d99",
+      "commands": "bbc299ad39eb9384e18ecb6ad6ac6948e6f962589567c0459fbe45dbe20881c4",
+      "step": "2081a3cbb927122f29e88d487a2bcd85f6fb9c3a22de110329230bfe7e26a2b9"
+    },
+    "numerical_environment": {
+      "OPENBLAS_CORETYPE": "Haswell",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    }
+  },
+  "remaining_external_check": "Reporter rerun on the actual Threadripper machine."
+}

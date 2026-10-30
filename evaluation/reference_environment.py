@@ -6,7 +6,7 @@ from pathlib import Path
 def reference_mismatches(fingerprint):
     expected = json.loads((Path(__file__).resolve().parents[1] /
                            'requirements/native-replay-fingerprint.json').read_text())
-    errors = [key for key in ('packages', 'mujoco_library_sha256',
+    errors = [key for key in ('packages', 'mujoco_library_sha256', 'controller_math',
                              'numpy_extension_sha256', 'scipy_rotation_extension_sha256')
               if fingerprint.get(key) != expected[key]]
     actual_blas = fingerprint.get('blas') or []

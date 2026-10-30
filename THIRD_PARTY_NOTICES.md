@@ -16,6 +16,7 @@
 | XHand | 官方 DexLatent 固定版本的 MIT；[62 个文件的来源记录](licenses/third_party/dexlatent/README.md)，其中 60 个网格被正式环境引用；生成文件的修改记录单独保留 |
 | 项目文字纹理使用的字体 | DejaVu/Bitstream Vera 字体许可已保留在 `licenses/third_party/dejavu/NOTICE.txt`；不分发字体二进制，历史纹理来源见 `docs/PROJECT_ASSET_PROVENANCE.json` |
 | 软件依赖 | MuJoCo、Gymnasium、NumPy、SciPy、PyTorch、Decord、Being-H 等由各自上游许可证约束；本项目不分发完整 Being-H 源码或基础模型权重 |
+| 标量反正弦计算 | 小参数多项式和计算顺序改编自 NumPy 1.26.4 引用的 Intel SVML，BSD-3-Clause；[来源与修改说明](licenses/third_party/numpy_svml/NOTICE.md)，完整许可保留在同目录 `LICENSE` |
 | π0.5 推理后端 | 使用者单独安装固定版本的 RLinf；本版只提供观测与动作的接口适配，不分发 RLinf 模型源码、训练补丁或权重。RLinf 的 Apache-2.0 条款见 `licenses/third_party/rlinf/LICENSE` |
 
 `licenses/third_party/*/VERIFIED_FILES.json` 中列出的文件保留与上游一致的内容；文件名、路径或打包方式可能改变。其他转换、镜像和改编文件的来源链仍单独核验。

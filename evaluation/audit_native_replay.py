@@ -35,16 +35,24 @@ def environment_fingerprint():
     import mujoco
     import numpy.core._multiarray_umath as numpy_extension
     import scipy.spatial.transform._rotation as scipy_rotation
+    simulator = str(Path(__file__).resolve().parents[1] / 'simulator')
+    if simulator not in sys.path:
+        sys.path.insert(0, simulator)
+    from dexjoco import numerics
+    from numpy.core._multiarray_umath import __cpu_features__
     packages={}
     for name in ('mujoco','numpy','scipy','gymnasium','dm-robotics-transformations'):
         packages[name]=importlib.metadata.version(name)
     libraries={}
+    system_libraries={}
     maps=Path('/proc/self/maps')
     if maps.exists():
         for line in maps.read_text().splitlines():
             path=Path(line.split()[-1])
             if 'libmujoco.so' in path.name and path.is_file():
                 libraries[path.name]=sha256(path)
+            if path.is_file() and (path.name.startswith(('libm-', 'libc-')) or path.name in ('libm.so.6','libc.so.6')):
+                system_libraries[path.name]=sha256(path)
     try:
         from threadpoolctl import threadpool_info
         blas=[{k:r.get(k) for k in ('internal_api','version','threading_layer','architecture','num_threads')}
@@ -52,6 +60,11 @@ def environment_fingerprint():
     except ImportError:
         blas=None
     return {'python':sys.version,'platform':platform.platform(),'machine':platform.machine(),
+            'numpy_cpu_features':{k:bool(v) for k,v in __cpu_features__.items()},
+            'numpy_disabled_cpu_features':os.environ.get('NPY_DISABLE_CPU_FEATURES'),
+            'system_libraries_sha256':system_libraries,
+            'controller_math':numerics.math_fingerprint(),
+            'controller_math_sha256':sha256(numerics.__file__),
             'packages':packages,'mujoco_version':mujoco.mj_versionString(),
             'mujoco_library_sha256':libraries,'blas':blas,
             'numpy_extension_sha256':sha256(numpy_extension.__file__),

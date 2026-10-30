@@ -3,6 +3,7 @@ from typing import Optional, Tuple, Union
 import mujoco
 import numpy as np
 from dm_robotics.transformations import transformations as tr
+from ...numerics import quaternion_axisangle
 
 # 实现PD控制器
 # P = Proportional，比例项：根据“当前位置和目标位置的误差”产生控制量
@@ -56,7 +57,7 @@ def pd_control_orientation(
 ) -> np.ndarray:
     # Compute error.
     quat_err = tr.quat_diff_active(source_quat=quat_des, target_quat=quat)
-    ori_err = tr.quat_to_axisangle(quat_err)
+    ori_err = quaternion_axisangle(quat_err)
     w_err = w
 
     # Apply gains.

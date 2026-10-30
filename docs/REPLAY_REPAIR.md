@@ -9,6 +9,17 @@ package's float64 actions, and all readers use identical videos.
 
 ## Reference environment
 
+Update the code before replaying Training v1. Earlier controllers could produce
+different trajectories on different CPUs even when the package and BLAS checks
+passed: NumPy selected different inverse-trigonometric implementations. The
+controller now uses scalar rotation math with a fixed evaluation order. Audit
+reports also record NumPy CPU dispatch, system library hashes and the controller
+math revision. This code correction does not replace the Training v1 archive or
+videos, change task success rules, or relax the `2e-5` state tolerance.
+The corrected controller passes all 2,100 native replays with NumPy AVX-512
+disabled, plus 84 cases covering all hand/task groups on Ubuntu 22.04.
+[Validation summary](replay/controller_math_v1.json).
+
 Linux x86_64 with AVX2/FMA and Conda is required. Create a separate environment:
 
 ```bash

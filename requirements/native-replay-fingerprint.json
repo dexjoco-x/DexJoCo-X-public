@@ -1,4 +1,8 @@
 {
+  "controller_math": {
+    "id": "portable_svml_asin_v1",
+    "asin_probe_hex": "0x1.5d2a371f310bep-7"
+  },
   "packages": {
     "mujoco": "3.4.0",
     "numpy": "1.26.4",

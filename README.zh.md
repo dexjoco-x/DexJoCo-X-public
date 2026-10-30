@@ -8,6 +8,8 @@
 
 ## 更新动态
 
+- 🔧 **2026-10-30** — 修复控制器在不同 CPU 上运算结果不一致、导致示范回放失败的问题。**请更新代码；Training v1 数据和视频无需重新下载。**[回放说明](docs/REPLAY_REPAIR.zh-CN.md)。
+
 - 🔧 **2026-10-29** — 新增 [Training v1 → π₀.₅ 训练与评估示例](examples/pi05/README.zh.md)；正式评估要求完整执行三次、每次 50 回合。
 - 🔧 **2026-10-28** — 训练与回放统一使用 **Training v1**：同一批 2,100 条轨迹，包含 float64 动作和配套 LeRobot/Being-H 格式。[下载与使用](dataset/README.zh.md)。
 
