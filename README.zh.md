@@ -41,7 +41,8 @@ DexJoCo-X 提供操作示范、MuJoCo 仿真环境和统一评测接口。使用
 ```bash
 git clone https://github.com/dexjoco-x/DexJoCo-X-public.git
 cd DexJoCo-X-public
-conda create -n dexjoco-x --file requirements/native-replay-linux64.conda.txt
+conda create -n dexjoco-x --override-channels -c conda-forge \
+  --file requirements/native-replay-linux64.conda.txt
 conda env config vars set -n dexjoco-x OPENBLAS_CORETYPE=Haswell \
   OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
 conda activate dexjoco-x

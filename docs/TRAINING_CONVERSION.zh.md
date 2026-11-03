@@ -34,7 +34,16 @@ python evaluation/audit_training_replay.py --data-root "$DATA_ROOT" \
 包内`metadata/VERIFICATION.json`和逐条报告记录了验证结果。验证执行保存的示范标签，
 不代表训练后模型的成功率；本次修复没有降低成功标准，也没有改动环境模型。
 
-官方LeRobot的读取示例见[英文版](TRAINING_CONVERSION.md#download-verified-training-v1)。
+官方 LeRobot 使用独立的 Python 3.11 读取/训练环境。
+最小化安装的 Ubuntu/Debian 需要先补齐 `evdev` 依赖的编译工具和头文件：
+
+```bash
+sudo apt-get update
+sudo apt-get install -y build-essential linux-libc-dev
+python -m pip install -r requirements/lerobot-check-pip.txt
+```
+
+直接读取已准备好的数据，示例见[英文版](TRAINING_CONVERSION.md#download-verified-training-v1)。
 该包使用native200动作表征，标签已经归一化，训练时应关闭额外的状态/动作归一化，
 同时正确处理有效维度和时间填充掩码。推理时使用下文的配套适配器与统计量，
 将标签还原为float64实际指令，并保留该精度发送到环境。已有模型继续使用训练时的

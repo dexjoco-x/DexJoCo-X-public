@@ -39,7 +39,17 @@ The package's `metadata/VERIFICATION.json` and per-episode report record the
 checks. These checks execute demonstration labels, not a trained model. No task
 success criterion or runtime model was changed for the training repair.
 
-For official LeRobot, use a separate reader/training environment:
+For official LeRobot, use a separate Python 3.11 reader/training environment.
+On a minimal Ubuntu/Debian installation, install the build dependencies needed
+by LeRobot's `evdev` dependency:
+
+```bash
+sudo apt-get update
+sudo apt-get install -y build-essential linux-libc-dev
+python -m pip install -r requirements/lerobot-check-pip.txt
+```
+
+Read the prepared data directly:
 
 ```python
 from pathlib import Path

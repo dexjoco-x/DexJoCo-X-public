@@ -19,7 +19,8 @@
 需要支持 AVX2/FMA 的 Linux x86_64 与 Conda。请创建独立环境：
 
 ```bash
-conda create -n dexjoco-replay --file requirements/native-replay-linux64.conda.txt
+conda create -n dexjoco-replay --override-channels -c conda-forge \
+  --file requirements/native-replay-linux64.conda.txt
 conda env config vars set -n dexjoco-replay OPENBLAS_CORETYPE=Haswell \
   OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
 conda activate dexjoco-replay
