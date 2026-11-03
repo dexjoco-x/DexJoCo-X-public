@@ -15,11 +15,13 @@ import time
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
 import numpy as np
-import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT), str(ROOT / 'evaluation')]
+# Load MuJoCo's Conda C++ runtime before Pandas/PyArrow can load an older
+# system libstdc++ on Ubuntu 22.04. Replay computations are unchanged.
 from runtime import Runtime, CONTRACTS
+import pandas as pd
 from audit_native_replay import environment_fingerprint
 from reference_environment import reference_mismatches
 from episode_validation import load_validated_episode
