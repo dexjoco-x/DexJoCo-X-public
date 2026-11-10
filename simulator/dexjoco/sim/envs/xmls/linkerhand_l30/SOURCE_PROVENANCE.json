@@ -1,0 +1,316 @@
+{
+  "schema_version": 1,
+  "source_repository": "https://github.com/linker-bot/linker-sim-assets",
+  "source_commit": "d0224b8da58802fe7cb2e35dcc9771693c4543b6",
+  "source_component": "src/linker_robot_assets/assets/components/hands/linkerhand_l30",
+  "scope": "Standalone hand source assets; not registered in task environments.",
+  "license": "No license file or explicit asset license declaration found in the source checkout; no license inferred from existing L20 assets.",
+  "changes": [
+    "URDF and MJCF renamed to source.urdf and hand.xml without content changes.",
+    "Variant paths in meta.yaml updated for the destination layout.",
+    "Meshes copied without content changes; O6 includes only files referenced by the selected side URDF and MJCF."
+  ],
+  "files": [
+    {
+      "path": "left/meshes/base_link.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/left/meshes/base_link.STL",
+      "sha256": "28041ab616e13e37eb02f6200292cd9ac86d5b66835edb89eeff159e7be39ec1",
+      "bytes": 467484
+    },
+    {
+      "path": "left/meshes/index_distal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/left/meshes/index_distal.STL",
+      "sha256": "82f360407163aaeabce8fb59a382647124b7951d817135b1e8983bb5a2fa322c",
+      "bytes": 787884
+    },
+    {
+      "path": "left/meshes/index_metacarpals.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/left/meshes/index_metacarpals.STL",
+      "sha256": "2ea2f3de25ba80dd46a400750fa4cb8f4eb0afe3edd836d8571d62fed555a6c7",
+      "bytes": 248984
+    },
+    {
+      "path": "left/meshes/index_middle.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/left/meshes/index_middle.STL",
+      "sha256": "c3452a7d932e84117b63fe8742e7457e2c759ca148c6cfb26fcce393452715fa",
+      "bytes": 340684
+    },
+    {
+      "path": "left/meshes/index_proximal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/left/meshes/index_proximal.STL",
+      "sha256": "5e685be23975a91c13b854d8a52bfd2ee5c4edd28748800e4c54d83c65ec63dc",
+      "bytes": 602084
+    },
+    {
+      "path": "left/meshes/middle_distal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/left/meshes/middle_distal.STL",
+      "sha256": "2727f6e3663aee8f36865234577bb81a1b5100f51291521adf59d00b388542ce",
+      "bytes": 787884
+    },
+    {
+      "path": "left/meshes/middle_metacarpals.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/left/meshes/middle_metacarpals.STL",
+      "sha256": "0ad8904eb962bd047c2fc10b2980f50440fbac9001b90287fd1cd2321867a221",
+      "bytes": 248984
+    },
+    {
+      "path": "left/meshes/middle_middle.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/left/meshes/middle_middle.STL",
+      "sha256": "a44700d48fbe1409a044b67465c8f4a3a46008313a6d5d54ef9cc2155fb875ba",
+      "bytes": 340684
+    },
+    {
+      "path": "left/meshes/middle_proximal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/left/meshes/middle_proximal.STL",
+      "sha256": "770cee41da477a4b620b48fee2f968e769d38b88c6cc4ed9414c988a77855800",
+      "bytes": 602084
+    },
+    {
+      "path": "left/meshes/pinky_distal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/left/meshes/pinky_distal.STL",
+      "sha256": "3692199f1d48a399913a096a25943aba6953315074f82755110ae87eed8ec6c8",
+      "bytes": 787884
+    },
+    {
+      "path": "left/meshes/pinky_metacarpals.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/left/meshes/pinky_metacarpals.STL",
+      "sha256": "b76abfd1d01522aab8b4159fa66e65b9a9246b9a5d1f266e9cfd787b7c6cf319",
+      "bytes": 248984
+    },
+    {
+      "path": "left/meshes/pinky_middle.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/left/meshes/pinky_middle.STL",
+      "sha256": "10087f3b9192b6da3a423d6811ecff561522586068a57e5e226f7320759464f9",
+      "bytes": 340684
+    },
+    {
+      "path": "left/meshes/pinky_proximal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/left/meshes/pinky_proximal.STL",
+      "sha256": "14cb3972cc204456505fdb9149157a76f26e74341d224e92be34cfab059e759a",
+      "bytes": 415884
+    },
+    {
+      "path": "left/meshes/ring_distal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/left/meshes/ring_distal.STL",
+      "sha256": "95a24312e66eb40cfdc8857dc0aa136c3f9441ae2da07e6de7e7145c9df4d6cc",
+      "bytes": 787884
+    },
+    {
+      "path": "left/meshes/ring_metacarpals.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/left/meshes/ring_metacarpals.STL",
+      "sha256": "1495ba7d3d588cc016eaf278e729a867c40513f4cac2cad0df012ae05df891dd",
+      "bytes": 248984
+    },
+    {
+      "path": "left/meshes/ring_middle.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/left/meshes/ring_middle.STL",
+      "sha256": "51e1b824784c347b467ca27ea1654ce92985a9fd81a2f12911f0ed46dda2b7f9",
+      "bytes": 340684
+    },
+    {
+      "path": "left/meshes/ring_proximal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/left/meshes/ring_proximal.STL",
+      "sha256": "13f22105d1df987dc685259c756b7c04af6303b7e9ea6b752f2fdd55908fe12b",
+      "bytes": 602084
+    },
+    {
+      "path": "left/meshes/thumb_distal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/left/meshes/thumb_distal.STL",
+      "sha256": "004eb5f63d445e1fc23bc97efecd197c0820251ab9e190e5ecd1b770f192ec0e",
+      "bytes": 824184
+    },
+    {
+      "path": "left/meshes/thumb_metacarpals_base1.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/left/meshes/thumb_metacarpals_base1.STL",
+      "sha256": "e28e3d6f6f40fa257797f6feec6adbae725931229ec20f8616005b7cc3202df5",
+      "bytes": 196584
+    },
+    {
+      "path": "left/meshes/thumb_metacarpals_base2.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/left/meshes/thumb_metacarpals_base2.STL",
+      "sha256": "9f25a8ba4999c4a976b369058524599d87b9025fb6a273748172650d0acdd664",
+      "bytes": 255484
+    },
+    {
+      "path": "left/meshes/thumb_proximal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/left/meshes/thumb_proximal.STL",
+      "sha256": "4e479d3c081c07885fc02a0be92d3ceb113f114a58c5425d7f181c896d3235cf",
+      "bytes": 412284
+    },
+    {
+      "path": "left/meshes/wrist_carpal_link0.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/left/meshes/wrist_carpal_link0.STL",
+      "sha256": "5a55a7e11031bc04b7615b0d815318a3f321a7eb58de177d8544c42bac2b4836",
+      "bytes": 2235984
+    },
+    {
+      "path": "left/source.urdf",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/left/hand.urdf",
+      "sha256": "bf59acab7b77c7d1c68de05f58a4c08aa43727b97843a5e60465eb52bfaa7de6",
+      "bytes": 25734
+    },
+    {
+      "path": "left/hand.xml",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/left/hand.mjcf",
+      "sha256": "b75e72f4af0a3d3dc962c8beef761c8445f8d4c6100cb4614960eb5f8b5cccbf",
+      "bytes": 20199
+    },
+    {
+      "path": "right/meshes/base_link.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/right/meshes/base_link.STL",
+      "sha256": "8bdb9ed4b06dcac53d875a9e906a7c8b7368747b217093bfdfd44aaceaf7e345",
+      "bytes": 467484
+    },
+    {
+      "path": "right/meshes/index_distal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/right/meshes/index_distal.STL",
+      "sha256": "34876442d89bd442730ea6d381714626842dae9ebb918ead9707df8309d001b6",
+      "bytes": 787884
+    },
+    {
+      "path": "right/meshes/index_metacarpals.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/right/meshes/index_metacarpals.STL",
+      "sha256": "1e78459f3f67c5bfab478ae24873d06b146343189f8b7902e679ea2c5a45c0f9",
+      "bytes": 248984
+    },
+    {
+      "path": "right/meshes/index_middle.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/right/meshes/index_middle.STL",
+      "sha256": "425da04ea0334d58563f15d6c8f7f4b2029a2777fa0ab1aa83b396b3b076d316",
+      "bytes": 340684
+    },
+    {
+      "path": "right/meshes/index_proximal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/right/meshes/index_proximal.STL",
+      "sha256": "70d9a1e9f2dc8d6e1259412328224db296c69a7b5d33c704e08681cc7ef6aebb",
+      "bytes": 415884
+    },
+    {
+      "path": "right/meshes/middle_distal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/right/meshes/middle_distal.STL",
+      "sha256": "2727f6e3663aee8f36865234577bb81a1b5100f51291521adf59d00b388542ce",
+      "bytes": 787884
+    },
+    {
+      "path": "right/meshes/middle_metacarpals.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/right/meshes/middle_metacarpals.STL",
+      "sha256": "56decf4100fafa1b394d48abe30e949c06ae242b543436749f4a22c0872b2531",
+      "bytes": 248984
+    },
+    {
+      "path": "right/meshes/middle_middle.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/right/meshes/middle_middle.STL",
+      "sha256": "6703372829fda5ae987d98657bc2874086f97ebe622d2b1b96c84d71c83fde58",
+      "bytes": 340684
+    },
+    {
+      "path": "right/meshes/middle_proximal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/right/meshes/middle_proximal.STL",
+      "sha256": "106e3d169b81ac271f581c420604577351dbbe1f8aa49b7c06fce38c84c373ec",
+      "bytes": 415884
+    },
+    {
+      "path": "right/meshes/pinky_distal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/right/meshes/pinky_distal.STL",
+      "sha256": "0e99cbb1b7446fe9e670f44f73ea3da98e41a3c5eb358f929479ffdfba16fd24",
+      "bytes": 787884
+    },
+    {
+      "path": "right/meshes/pinky_metacarpals.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/right/meshes/pinky_metacarpals.STL",
+      "sha256": "803ae03e0fb2d8c58524fbee1e2f35898a47fb0d660aea01f3ac1fbdd0768cf0",
+      "bytes": 248984
+    },
+    {
+      "path": "right/meshes/pinky_middle.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/right/meshes/pinky_middle.STL",
+      "sha256": "d9af3a46b461e08d732a2ed9198122ab5163837394326065b888e55528205c6d",
+      "bytes": 340684
+    },
+    {
+      "path": "right/meshes/pinky_proximal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/right/meshes/pinky_proximal.STL",
+      "sha256": "b50b6fc1e7198a17a77435ddf7853ee2c217b4cf534e07c01a48448936c3bcbf",
+      "bytes": 415884
+    },
+    {
+      "path": "right/meshes/ring_distal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/right/meshes/ring_distal.STL",
+      "sha256": "a7590f8fb23f31061a51be345af19f28720d8f9cc19307e1a29c31523af81f00",
+      "bytes": 787884
+    },
+    {
+      "path": "right/meshes/ring_metacarpals.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/right/meshes/ring_metacarpals.STL",
+      "sha256": "fddeee9a5963c5bfb7c101d5570b32f3040cbcd71031ad25ca69cc4cf997bd1b",
+      "bytes": 248984
+    },
+    {
+      "path": "right/meshes/ring_middle.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/right/meshes/ring_middle.STL",
+      "sha256": "0f71254d478b6d8ec752ea3a6bc5ae1efcc9d98053056da174b7693472ec293f",
+      "bytes": 340684
+    },
+    {
+      "path": "right/meshes/ring_proximal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/right/meshes/ring_proximal.STL",
+      "sha256": "71e903b07d8ee655652e25a7fed3444208f9de270cee3e8e120b9fd685b55d83",
+      "bytes": 415884
+    },
+    {
+      "path": "right/meshes/thumb_distal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/right/meshes/thumb_distal.STL",
+      "sha256": "02bcf80d0b476024037f1cb34006a6b48dc2f0854ee0f72ce34ed7e723068810",
+      "bytes": 824184
+    },
+    {
+      "path": "right/meshes/thumb_metacarpals_base1.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/right/meshes/thumb_metacarpals_base1.STL",
+      "sha256": "19cf56f215e85884f3c319102c999e7ed98182b24a391c4d9edc009f72fe8b95",
+      "bytes": 196584
+    },
+    {
+      "path": "right/meshes/thumb_metacarpals_base2.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/right/meshes/thumb_metacarpals_base2.STL",
+      "sha256": "c61decb3e5b5ccd2b44b282d2d250c1cdefaa72de453bcfefa2e3f0bf50779f4",
+      "bytes": 255484
+    },
+    {
+      "path": "right/meshes/thumb_proximal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/right/meshes/thumb_proximal.STL",
+      "sha256": "6c3c6c5dc4946448325afc590ef73890e1f859b4689f35a8a6be6f2ecb1bf6fc",
+      "bytes": 412284
+    },
+    {
+      "path": "right/meshes/wrist_carpal_link0.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/right/meshes/wrist_carpal_link0.STL",
+      "sha256": "18ea9c0c191a06be6f97e71398e098cd011d35fba915ab98ee7e60f36f075d78",
+      "bytes": 1912734
+    },
+    {
+      "path": "right/source.urdf",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/right/hand.urdf",
+      "sha256": "3f8c41345a0557db25ef600f48d86eb30f81d1df69eaf84bed04de8db98056ea",
+      "bytes": 25750
+    },
+    {
+      "path": "right/hand.xml",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/right/hand.mjcf",
+      "sha256": "eb2af266577b47c0ece96465eafbfb82cfdb73ca6947ee96790b89d825490a14",
+      "bytes": 20059
+    },
+    {
+      "path": "decoder.yaml",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/decoder.yaml",
+      "sha256": "1af95afb55825da9a802a8a78adc33b6cbab4052628ceb2b90bd1366caaba19e",
+      "bytes": 714
+    },
+    {
+      "path": "meta.yaml",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/meta.yaml",
+      "source_sha256": "a47b037f325fd69843f61d8aadd749d82ee148bbc501d961582621b846e49781",
+      "sha256": "39f64bf7615e73efaba7238b5d5ff02c2f2cd86a431392d0ee298a1084ed3906",
+      "bytes": 1708
+    }
+  ]
+}

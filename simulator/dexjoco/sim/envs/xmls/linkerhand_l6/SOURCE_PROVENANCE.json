@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "source_repository": "https://github.com/linker-bot/linker-sim-assets",
+  "source_commit": "d0224b8da58802fe7cb2e35dcc9771693c4543b6",
+  "source_component": "src/linker_robot_assets/assets/components/hands/linkerhand_l6",
+  "scope": "Standalone hand source assets; not registered in task environments.",
+  "license": "No license file or explicit asset license declaration found in the source checkout; no license inferred from existing L20 assets.",
+  "changes": [
+    "URDF and MJCF renamed to source.urdf and hand.xml without content changes.",
+    "Variant paths in meta.yaml updated for the destination layout.",
+    "Meshes copied without content changes; O6 includes only files referenced by the selected side URDF and MJCF."
+  ],
+  "files": [
+    {
+      "path": "left/meshes/hand_base_link.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/left/meshes/hand_base_link.STL",
+      "sha256": "6b93e04aa8268e5838f5fb43448e67d5ed65ec4208fbf2a77efd85885aa51740",
+      "bytes": 2630134
+    },
+    {
+      "path": "left/meshes/index_distal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/left/meshes/index_distal.STL",
+      "sha256": "ee4c9d0d77785122d453d49facd649f76f009921af4518bc39948e9f3d97454f",
+      "bytes": 505784
+    },
+    {
+      "path": "left/meshes/index_proximal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/left/meshes/index_proximal.STL",
+      "sha256": "10e4ff31c84027e2f505f38da7adb5e343cdb6014929ba951815cb4b8dd588ab",
+      "bytes": 308284
+    },
+    {
+      "path": "left/meshes/middle_distal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/left/meshes/middle_distal.STL",
+      "sha256": "0557cb6666b32ee5beb8481e1b0d4561a9e8abb1671b0cbba1a9940c0d0564d4",
+      "bytes": 506384
+    },
+    {
+      "path": "left/meshes/middle_proximal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/left/meshes/middle_proximal.STL",
+      "sha256": "12cce0328157873b4e9ba6cf408bd50ebe07a0ea73b1f4ba146363f1ef974f05",
+      "bytes": 308334
+    },
+    {
+      "path": "left/meshes/pinky_distal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/left/meshes/pinky_distal.STL",
+      "sha256": "73b5abadea95b83063d22281170495c6b459412b0f61931b5920f6dff8a1e899",
+      "bytes": 505134
+    },
+    {
+      "path": "left/meshes/pinky_proximal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/left/meshes/pinky_proximal.STL",
+      "sha256": "e8761720d36e4d8ec4730a2ab0920d82ef0bf09b9d123a737951b698baf7d5e1",
+      "bytes": 301334
+    },
+    {
+      "path": "left/meshes/ring_distal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/left/meshes/ring_distal.STL",
+      "sha256": "49c229c7cc23bc104dcf2893055d729997120b5bdc34d38ac0cf7c87258f6c11",
+      "bytes": 516584
+    },
+    {
+      "path": "left/meshes/ring_proximal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/left/meshes/ring_proximal.STL",
+      "sha256": "0c1b492adb1a6bdba7595305f24a6d7cdaf120c65b5460d226705c71c35b1c98",
+      "bytes": 308434
+    },
+    {
+      "path": "left/meshes/thumb_distal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/left/meshes/thumb_distal.STL",
+      "sha256": "4c8ebb825395c98fb9ebf6ea8ec7bdf38ab1b701db1553b234278239ddcf70c2",
+      "bytes": 594884
+    },
+    {
+      "path": "left/meshes/thumb_metacarpals.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/left/meshes/thumb_metacarpals.STL",
+      "sha256": "c4f774f6142093d8ad3c7ac0749cd78c3f96674a2b530eb85086137ff3a91885",
+      "bytes": 537084
+    },
+    {
+      "path": "left/meshes/thumb_metacarpals_base1.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/left/meshes/thumb_metacarpals_base1.STL",
+      "sha256": "e241bbf484c87172f63c87eafc023f2534b923b17d4c1cff32f95778129fec90",
+      "bytes": 56134
+    },
+    {
+      "path": "left/meshes/wrist_ft_link.stl",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/left/meshes/wrist_ft_link.stl",
+      "sha256": "4221b8e8eb211a1c25901f134b39d291d2439bac7b38fc903a5b4cd1bf88bd66",
+      "bytes": 2089284
+    },
+    {
+      "path": "left/source.urdf",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/left/hand.urdf",
+      "sha256": "84b3afc4511f4da1d68077fd62319fe98839c7b45e8ddb386f10ea258b20e07d",
+      "bytes": 21044
+    },
+    {
+      "path": "left/hand.xml",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/left/hand.mjcf",
+      "sha256": "34ef6b6c5cc98de4d3ed5f7af1be9e9dffccaf660246abb0dfa18cd0ee87571a",
+      "bytes": 11152
+    },
+    {
+      "path": "right/meshes/hand_base_link.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/right/meshes/hand_base_link.STL",
+      "sha256": "a42d7100db050a8fdb12ae476120adf6dfc94eeabe0c3023d24d2050809cc5f9",
+      "bytes": 2633084
+    },
+    {
+      "path": "right/meshes/index_distal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/right/meshes/index_distal.STL",
+      "sha256": "47e7e153d4dc4b4783f258fbdca7bd3333953b954fff1c21382ac88d3e198cc1",
+      "bytes": 505784
+    },
+    {
+      "path": "right/meshes/index_proximal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/right/meshes/index_proximal.STL",
+      "sha256": "7289e4b7e2896b8a078031722c73246dcaa94b771dafbc85cb51710d2cf41efb",
+      "bytes": 308284
+    },
+    {
+      "path": "right/meshes/middle_distal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/right/meshes/middle_distal.STL",
+      "sha256": "74e6c0606cc7b14c6fd3b3ee7fe49422d27aeef42700383f4f9fb5a6f8d9c6dc",
+      "bytes": 505784
+    },
+    {
+      "path": "right/meshes/middle_proximal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/right/meshes/middle_proximal.STL",
+      "sha256": "27435f0dba77b8d5b56e87134f2832e86aa3c97831148cacca858f35b61ced38",
+      "bytes": 308334
+    },
+    {
+      "path": "right/meshes/pinky_distal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/right/meshes/pinky_distal.STL",
+      "sha256": "3f37ac2b41c9701ef99bd568a183514e1ef9023323065fc8c16df8cbaa6ac862",
+      "bytes": 505784
+    },
+    {
+      "path": "right/meshes/pinky_proximal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/right/meshes/pinky_proximal.STL",
+      "sha256": "22a201fa0db24b8baa1f727dde8015a513ca73c717daffe145b6efad17402a4b",
+      "bytes": 308334
+    },
+    {
+      "path": "right/meshes/ring_distal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/right/meshes/ring_distal.STL",
+      "sha256": "fad0ba5b4863f6b0d196b83cb10ae3042107dfe54868edc0f4b49d879c740320",
+      "bytes": 505784
+    },
+    {
+      "path": "right/meshes/ring_proximal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/right/meshes/ring_proximal.STL",
+      "sha256": "636bbb2007e2f176ca2663ce636a704992cb710989a238396bb452fdeab59402",
+      "bytes": 308334
+    },
+    {
+      "path": "right/meshes/thumb_distal.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/right/meshes/thumb_distal.STL",
+      "sha256": "73ae649bd9f0aa23e3d6e978d99c727c85592c1530ba02194703c5a43a1b6d8f",
+      "bytes": 594884
+    },
+    {
+      "path": "right/meshes/thumb_metacarpals.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/right/meshes/thumb_metacarpals.STL",
+      "sha256": "30723001c943cc0786920c3974af5a16c96efcb160a209ec2f3fcbe844a5c991",
+      "bytes": 537084
+    },
+    {
+      "path": "right/meshes/thumb_metacarpals_base1.STL",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/right/meshes/thumb_metacarpals_base1.STL",
+      "sha256": "c3deae0f63d23afe678178024eea12c054bb3f31124404ae7863193b5f920c03",
+      "bytes": 59334
+    },
+    {
+      "path": "right/meshes/wrist_ft_link.stl",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/right/meshes/wrist_ft_link.stl",
+      "sha256": "4221b8e8eb211a1c25901f134b39d291d2439bac7b38fc903a5b4cd1bf88bd66",
+      "bytes": 2089284
+    },
+    {
+      "path": "right/source.urdf",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/right/hand.urdf",
+      "sha256": "be303f31da2a9d405bf34a8bf5b1aff27ca4b0b3a8b6cc0dba2586b5214b78cf",
+      "bytes": 21034
+    },
+    {
+      "path": "right/hand.xml",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/variants/right/hand.mjcf",
+      "sha256": "b52730ee1ed285def246365bea66a7d175a749121e733098320c235c7bc06dd4",
+      "bytes": 11199
+    },
+    {
+      "path": "decoder.yaml",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/decoder.yaml",
+      "sha256": "3c98e5ab51f34e8e172909fe06709e7a6b6a68089ea9fe5e379a6a1e60130fec",
+      "bytes": 1502
+    },
+    {
+      "path": "meta.yaml",
+      "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l6/meta.yaml",
+      "source_sha256": "f3faeb4f40a1685a41830c1f6cb6f586e41a276baf29bd181a0ddad2511458fe",
+      "sha256": "22128360045f4ca798df419dfe3fca52fd94c4eb85eed781739a42141e642565",
+      "bytes": 1384
+    }
+  ]
+}
