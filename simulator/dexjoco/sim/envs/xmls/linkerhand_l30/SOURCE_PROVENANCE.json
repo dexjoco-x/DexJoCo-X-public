@@ -6,9 +6,12 @@
   "scope": "Standalone hand source assets; not registered in task environments.",
   "license": "No license file or explicit asset license declaration found in the source checkout; no license inferred from existing L20 assets.",
   "changes": [
-    "URDF and MJCF renamed to source.urdf and hand.xml without content changes.",
+    "URDF and MJCF renamed to source.urdf and hand.xml; local simulation and range corrections are listed below.",
     "Variant paths in meta.yaml updated for the destination layout.",
-    "Meshes copied without content changes; O6 includes only files referenced by the selected side URDF and MJCF."
+    "Meshes copied without content changes; O6 includes only files referenced by the selected side URDF and MJCF.",
+    "MJCF uses implicitfast at 0.002 s and explicit mimic-constraint solver parameters; meshes, body masses, body inertias, and coupling ratios are unchanged.",
+    "L30 PIP driver and actuator upper bounds reduced to 1.548 rad to respect the 1:1 distal limits; URDF limits match. MJCF joint armature is 0.0001 kg*m^2 for numerical conditioning, not a measured hardware parameter.",
+    "Regression checks: python -m unittest discover -s tests -p test_linkerhand_assets.py -v (MuJoCo 3.4.0). The standalone MJCF is tested; these assets are not registered in benchmark task environments."
   ],
   "files": [
     {
@@ -146,14 +149,18 @@
     {
       "path": "left/source.urdf",
       "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/left/hand.urdf",
-      "sha256": "bf59acab7b77c7d1c68de05f58a4c08aa43727b97843a5e60465eb52bfaa7de6",
-      "bytes": 25734
+      "sha256": "d683e87bc2015873a6bc366ab5afc7bdf42a61069ad9332b347f188cfb71f53b",
+      "bytes": 25734,
+      "source_sha256": "bf59acab7b77c7d1c68de05f58a4c08aa43727b97843a5e60465eb52bfaa7de6",
+      "source_bytes": 25734
     },
     {
       "path": "left/hand.xml",
       "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/left/hand.mjcf",
-      "sha256": "b75e72f4af0a3d3dc962c8beef761c8445f8d4c6100cb4614960eb5f8b5cccbf",
-      "bytes": 20199
+      "sha256": "02120e168ea7ea80a758b9c6c128c19313619a2a167d411701563c13a3393dcb",
+      "bytes": 20607,
+      "source_sha256": "b75e72f4af0a3d3dc962c8beef761c8445f8d4c6100cb4614960eb5f8b5cccbf",
+      "source_bytes": 20199
     },
     {
       "path": "right/meshes/base_link.STL",
@@ -290,14 +297,18 @@
     {
       "path": "right/source.urdf",
       "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/right/hand.urdf",
-      "sha256": "3f8c41345a0557db25ef600f48d86eb30f81d1df69eaf84bed04de8db98056ea",
-      "bytes": 25750
+      "sha256": "79cad81528271cc4727027fd0d46dcd977cd77df6ffa457fbc8ce2acb4640c9b",
+      "bytes": 25750,
+      "source_sha256": "3f8c41345a0557db25ef600f48d86eb30f81d1df69eaf84bed04de8db98056ea",
+      "source_bytes": 25750
     },
     {
       "path": "right/hand.xml",
       "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_l30/variants/right/hand.mjcf",
-      "sha256": "eb2af266577b47c0ece96465eafbfb82cfdb73ca6947ee96790b89d825490a14",
-      "bytes": 20059
+      "sha256": "a659e2e79293211737c55bc512c7264f8d7d405c5db05d657a043cd9ad4ca5e9",
+      "bytes": 20467,
+      "source_sha256": "eb2af266577b47c0ece96465eafbfb82cfdb73ca6947ee96790b89d825490a14",
+      "source_bytes": 20059
     },
     {
       "path": "decoder.yaml",

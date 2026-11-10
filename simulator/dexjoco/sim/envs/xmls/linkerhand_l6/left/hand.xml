@@ -1,6 +1,6 @@
 <mujoco model="linkerhand_l6_left">
   <compiler meshdir="meshes" discardvisual="false" autolimits="true" angle="radian" eulerseq="XYZ"/>
-  <option/>
+  <option timestep="0.002" integrator="implicitfast"/>
 
   <default>
     <default class="hand_linkerhand_l6_visual">
@@ -49,7 +49,7 @@
           <inertial pos="0.00769270907060086 0.0859662184722988 0.0235283086675235" mass="0.065"
                     fullinertia="8.407E-06 8.3899E-06 2.0091E-06 -1.1338E-09 1.1136E-08 3.1171E-07"/>
           <joint name="lh_thumb_cmc_pitch" class="hand_linkerhand_l6_joint" type="hinge" axis="-1 0 0"
-                 range="0 0.837758"/>
+                 range="0 0.78539768"/>
           <geom class="hand_linkerhand_l6_visual" mesh="thumb_metacarpals"/>
           <geom class="hand_linkerhand_l6_collision" mesh="thumb_metacarpals"/>
 
@@ -160,19 +160,20 @@
 
   <actuator>
     <position name="lh_thumb_cmc_roll_act"    joint="lh_thumb_cmc_roll"    kp="20" kv="2" ctrlrange="-0.087266 1.256637"/>
-    <position name="lh_thumb_cmc_pitch_act"   joint="lh_thumb_cmc_pitch"   kp="20" kv="2" ctrlrange="0 0.837758"/>
+    <position name="lh_thumb_cmc_pitch_act"   joint="lh_thumb_cmc_pitch"   kp="20" kv="2" ctrlrange="0 0.78539768"/>
     <position name="lh_index_mcp_pitch_act"   joint="lh_index_mcp_pitch"   kp="20" kv="2" ctrlrange="0 1.134464"/>
     <position name="lh_middle_mcp_pitch_act"  joint="lh_middle_mcp_pitch"  kp="20" kv="2" ctrlrange="0 1.134464"/>
     <position name="lh_ring_mcp_pitch_act"    joint="lh_ring_mcp_pitch"    kp="20" kv="2" ctrlrange="0 1.134464"/>
     <position name="lh_pinky_mcp_pitch_act"   joint="lh_pinky_mcp_pitch"   kp="20" kv="2" ctrlrange="0 1.134464"/>
   </actuator>
 
+  <!-- Explicit linkage stiffness and damping keep distal joints coupled at 2 ms. -->
   <equality>
-    <joint name="lh_couple_index"  joint1="lh_index_dip"  joint2="lh_index_mcp_pitch"  polycoef="0 1.125676 0 0 0"/>
-    <joint name="lh_couple_middle" joint1="lh_middle_dip" joint2="lh_middle_mcp_pitch" polycoef="0 1.125676 0 0 0"/>
-    <joint name="lh_couple_ring"   joint1="lh_ring_dip"   joint2="lh_ring_mcp_pitch"   polycoef="0 1.125676 0 0 0"/>
-    <joint name="lh_couple_pinky"  joint1="lh_pinky_dip"  joint2="lh_pinky_mcp_pitch"  polycoef="0 1.125676 0 0 0"/>
-    <joint name="lh_couple_thumb"  joint1="lh_thumb_dip"  joint2="lh_thumb_cmc_pitch"  polycoef="0 1.226495 0 0 0"/>
+    <joint name="lh_couple_index"  joint1="lh_index_dip"  joint2="lh_index_mcp_pitch"  polycoef="0 1.125676 0 0 0" solref="-1000000 -2000" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint name="lh_couple_middle" joint1="lh_middle_dip" joint2="lh_middle_mcp_pitch" polycoef="0 1.125676 0 0 0" solref="-1000000 -2000" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint name="lh_couple_ring"   joint1="lh_ring_dip"   joint2="lh_ring_mcp_pitch"   polycoef="0 1.125676 0 0 0" solref="-1000000 -2000" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint name="lh_couple_pinky"  joint1="lh_pinky_dip"  joint2="lh_pinky_mcp_pitch"  polycoef="0 1.125676 0 0 0" solref="-1000000 -2000" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint name="lh_couple_thumb"  joint1="lh_thumb_dip"  joint2="lh_thumb_cmc_pitch"  polycoef="0 1.226495 0 0 0" solref="-1000000 -2000" solimp="0.9999 0.9999 0.001 0.5 2"/>
   </equality>
 
   <contact>

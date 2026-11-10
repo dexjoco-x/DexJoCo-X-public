@@ -138,7 +138,7 @@
     <parent link="rh_pinky_proximal" />
     <child link="rh_pinky_middle" />
     <axis xyz="0 1 0" />
-    <limit lower="0" upper="1.562" effort="1" velocity="1" />
+    <limit lower="0" upper="1.548" effort="1" velocity="1" />
     <dynamics damping="0.05" friction="0.05" />
   </joint>
   <link name="rh_pinky_distal">
@@ -259,7 +259,7 @@
     <parent link="rh_ring_proximal" />
     <child link="rh_ring_middle" />
     <axis xyz="0 1 0" />
-    <limit lower="0" upper="1.562" effort="1" velocity="1" />
+    <limit lower="0" upper="1.548" effort="1" velocity="1" />
     <dynamics damping="0.05" friction="0.05" />
   </joint>
   <link name="rh_ring_distal">
@@ -380,7 +380,7 @@
     <parent link="rh_middle_proximal" />
     <child link="rh_middle_middle" />
     <axis xyz="0 1 0" />
-    <limit lower="0" upper="1.562" effort="1" velocity="1" />
+    <limit lower="0" upper="1.548" effort="1" velocity="1" />
     <dynamics damping="0.05" friction="0.05" />
   </joint>
   <link name="rh_middle_distal">
@@ -501,7 +501,7 @@
     <parent link="rh_index_proximal" />
     <child link="rh_index_middle" />
     <axis xyz="0 1 0" />
-    <limit lower="0" upper="1.562" effort="1" velocity="1" />
+    <limit lower="0" upper="1.548" effort="1" velocity="1" />
     <dynamics damping="0.05" friction="0.05" />
   </joint>
   <link name="rh_index_distal">

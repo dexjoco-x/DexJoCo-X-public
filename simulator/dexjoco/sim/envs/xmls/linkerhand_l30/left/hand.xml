@@ -1,6 +1,6 @@
 <mujoco model="linkerhand_l30_left">
   <compiler meshdir="meshes" discardvisual="false" autolimits="true" angle="radian" eulerseq="XYZ"/>
-  <option/>
+  <option timestep="0.002" integrator="implicitfast"/>
 
   <default>
     <default class="hand_linkerhand_l30_visual">
@@ -10,7 +10,8 @@
       <geom type="mesh" contype="1" conaffinity="1" group="3"/>
     </default>
     <default class="hand_linkerhand_l30_joint">
-      <joint armature="3.4707e-08" damping="4.0" frictionloss="0.5"/>
+      <!-- Numerical armature regularizes the small joint inertias; not a hardware fit. -->
+      <joint armature="0.0001" damping="4.0" frictionloss="0.5"/>
     </default>
   </default>
 
@@ -62,7 +63,7 @@
             <geom class="hand_linkerhand_l30_collision" mesh="pinky_proximal"/>
             <body name="lh_pinky_middle" pos="0.00071664 0 0.029369">
               <inertial pos="-0.000283539386438537 2.98669149307804E-05 0.00957766652686604" mass="0.00407729404040425" fullinertia="3.54089445910705E-07 3.43742750053837E-07 1.287711162457E-07 8.61615586407665E-11 9.21317038377901E-09 4.52466756311064E-10"/>
-              <joint name="lh_pinky_pip" class="hand_linkerhand_l30_joint" type="hinge" axis="0 1 0" range="0 1.562"/>
+              <joint name="lh_pinky_pip" class="hand_linkerhand_l30_joint" type="hinge" axis="0 1 0" range="0 1.548"/>
               <geom class="hand_linkerhand_l30_visual" mesh="pinky_middle"/>
               <geom class="hand_linkerhand_l30_collision" mesh="pinky_middle"/>
               <body name="lh_pinky_distal" pos="0.00059978 0 0.024225">
@@ -86,7 +87,7 @@
             <geom class="hand_linkerhand_l30_collision" mesh="ring_proximal"/>
             <body name="lh_ring_middle" pos="0.00017893 0 0.029377">
               <inertial pos="-0.000458822286093695 2.98667547311161E-05 0.00957075840836497" mass="0.00407737340093783" fullinertia="3.53679765410448E-07 3.43747612730459E-07 1.29185350845151E-07 7.73502945196261E-11 1.33307994919875E-08 4.53934306472773E-10"/>
-              <joint name="lh_ring_pip" class="hand_linkerhand_l30_joint" type="hinge" axis="0 1 0" range="0 1.562"/>
+              <joint name="lh_ring_pip" class="hand_linkerhand_l30_joint" type="hinge" axis="0 1 0" range="0 1.548"/>
               <geom class="hand_linkerhand_l30_visual" mesh="ring_middle"/>
               <geom class="hand_linkerhand_l30_collision" mesh="ring_middle"/>
               <body name="lh_ring_distal" pos="0.00015625 0 0.024232">
@@ -110,7 +111,7 @@
             <geom class="hand_linkerhand_l30_collision" mesh="middle_proximal"/>
             <body name="lh_middle_middle" pos="0 0 0.029378">
               <inertial pos="-0.000517169925120769 2.98754230450698E-05 0.00956757871693242" mass="0.00407751219344901" fullinertia="3.53514463915451E-07 3.43756499460918E-07 1.29358605983613E-07 7.3657024246158E-11 1.46982208772149E-08 4.54539305647681E-10"/>
-              <joint name="lh_middle_pip" class="hand_linkerhand_l30_joint" type="hinge" axis="0 1 0" range="0 1.562"/>
+              <joint name="lh_middle_pip" class="hand_linkerhand_l30_joint" type="hinge" axis="0 1 0" range="0 1.548"/>
               <geom class="hand_linkerhand_l30_visual" mesh="middle_middle"/>
               <geom class="hand_linkerhand_l30_collision" mesh="middle_middle"/>
               <body name="lh_middle_distal" pos="0 0 0.024233">
@@ -134,7 +135,7 @@
             <geom class="hand_linkerhand_l30_collision" mesh="index_proximal"/>
             <body name="lh_index_middle" pos="0.00017893 0 0.029377">
               <inertial pos="-0.000458856088148856 2.99376533807252E-05 0.00957042296933591" mass="0.00407756300118596" fullinertia="3.53688100089198E-07 3.43761530410638E-07 1.29187858400233E-07 7.57771272050888E-11 1.33306821751995E-08 4.5525604881153E-10"/>
-              <joint name="lh_index_pip" class="hand_linkerhand_l30_joint" type="hinge" axis="0 1 0" range="0 1.562"/>
+              <joint name="lh_index_pip" class="hand_linkerhand_l30_joint" type="hinge" axis="0 1 0" range="0 1.548"/>
               <geom class="hand_linkerhand_l30_visual" mesh="index_middle"/>
               <geom class="hand_linkerhand_l30_collision" mesh="index_middle"/>
               <body name="lh_index_distal" pos="0.00015625 0 0.024232">
@@ -182,23 +183,24 @@
     <position name="lh_thumb_dip_act" joint="lh_thumb_dip" kp="200" kv="0" ctrlrange="0 1.484"/>
     <position name="lh_index_mcp_roll_act" joint="lh_index_mcp_roll" kp="200" kv="0" ctrlrange="-0.2 0.2"/>
     <position name="lh_index_mcp_pitch_act" joint="lh_index_mcp_pitch" kp="200" kv="0" ctrlrange="0 1.57"/>
-    <position name="lh_index_pip_act" joint="lh_index_pip" kp="200" kv="0" ctrlrange="0 1.562"/>
+    <position name="lh_index_pip_act" joint="lh_index_pip" kp="200" kv="0" ctrlrange="0 1.548"/>
     <position name="lh_middle_mcp_roll_act" joint="lh_middle_mcp_roll" kp="200" kv="0" ctrlrange="-0.2 0.2"/>
     <position name="lh_middle_mcp_pitch_act" joint="lh_middle_mcp_pitch" kp="200" kv="0" ctrlrange="0 1.518"/>
-    <position name="lh_middle_pip_act" joint="lh_middle_pip" kp="200" kv="0" ctrlrange="0 1.562"/>
+    <position name="lh_middle_pip_act" joint="lh_middle_pip" kp="200" kv="0" ctrlrange="0 1.548"/>
     <position name="lh_ring_mcp_roll_act" joint="lh_ring_mcp_roll" kp="200" kv="0" ctrlrange="-0.2 0.2"/>
     <position name="lh_ring_mcp_pitch_act" joint="lh_ring_mcp_pitch" kp="200" kv="0" ctrlrange="0 1.518"/>
-    <position name="lh_ring_pip_act" joint="lh_ring_pip" kp="200" kv="0" ctrlrange="0 1.562"/>
+    <position name="lh_ring_pip_act" joint="lh_ring_pip" kp="200" kv="0" ctrlrange="0 1.548"/>
     <position name="lh_pinky_mcp_roll_act" joint="lh_pinky_mcp_roll" kp="200" kv="0" ctrlrange="-0.2 0.2"/>
     <position name="lh_pinky_mcp_pitch_act" joint="lh_pinky_mcp_pitch" kp="200" kv="0" ctrlrange="0 1.518"/>
-    <position name="lh_pinky_pip_act" joint="lh_pinky_pip" kp="200" kv="0" ctrlrange="0 1.562"/>
+    <position name="lh_pinky_pip_act" joint="lh_pinky_pip" kp="200" kv="0" ctrlrange="0 1.548"/>
   </actuator>
 
+  <!-- Linkage time constant is twice the 2 ms integration step. -->
   <equality>
-    <joint name="lh_couple_index" joint1="lh_index_dip" joint2="lh_index_pip" polycoef="0 1 0 0 0"/>
-    <joint name="lh_couple_middle" joint1="lh_middle_dip" joint2="lh_middle_pip" polycoef="0 1 0 0 0"/>
-    <joint name="lh_couple_ring" joint1="lh_ring_dip" joint2="lh_ring_pip" polycoef="0 1 0 0 0"/>
-    <joint name="lh_couple_pinky" joint1="lh_pinky_dip" joint2="lh_pinky_pip" polycoef="0 1 0 0 0"/>
+    <joint name="lh_couple_index" joint1="lh_index_dip" joint2="lh_index_pip" polycoef="0 1 0 0 0" solref="0.004 1" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint name="lh_couple_middle" joint1="lh_middle_dip" joint2="lh_middle_pip" polycoef="0 1 0 0 0" solref="0.004 1" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint name="lh_couple_ring" joint1="lh_ring_dip" joint2="lh_ring_pip" polycoef="0 1 0 0 0" solref="0.004 1" solimp="0.9999 0.9999 0.001 0.5 2"/>
+    <joint name="lh_couple_pinky" joint1="lh_pinky_dip" joint2="lh_pinky_pip" polycoef="0 1 0 0 0" solref="0.004 1" solimp="0.9999 0.9999 0.001 0.5 2"/>
   </equality>
 
   <contact>
