@@ -100,6 +100,10 @@ class Measurements:
         self.ipad = m.body('ipad_body').id
         self.screen = m.geom('ipad_screen').id
         self.initial_screen_z = float(d.geom_xpos[self.screen, 2])
+        # Optional morphology metadata identifies the palm after any shared
+        # wrist joint. Existing released models retain their original grouping.
+        palm_name = getattr(env, 'hand_metadata', {}).get('sides', {}).get('left', {}).get('palm_body_name')
+        palm_id = m.body(palm_name).id if palm_name else None
         self.branches = {}
         self.groups = []
         for g in range(m.ngeom):
@@ -115,7 +119,12 @@ class Measurements:
             else: group = 'environment'
             self.groups.append(group)
             if group == 'left' and 'adapter' not in m.geom(g).name:
-                joints = [b for b in ancestors if m.body_jntnum[b] and m.body(b).name.startswith('benchhand_left_')]
+                branch_ancestors = ancestors
+                if palm_id is not None:
+                    if palm_id not in ancestors:
+                        continue  # Forearm/wrist casing is not a grasp branch.
+                    branch_ancestors = ancestors[:ancestors.index(palm_id)]
+                joints = [b for b in branch_ancestors if m.body_jntnum[b] and m.body(b).name.startswith('benchhand_left_')]
                 # The highest native joint-bearing ancestor identifies a finger;
                 # the palm is another branch, while the wrist adapter is excluded.
                 self.branches[g] = joints[-1] if joints else -1

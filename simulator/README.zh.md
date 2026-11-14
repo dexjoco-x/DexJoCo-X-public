@@ -35,3 +35,5 @@ finally:
 - `dexjoco.autocollect`：已有示范的场景扩增。
 
 `teleoperation/` 保存环境引用的模型资产。第三方来源与条款见 [来源说明](../THIRD_PARTY_NOTICES.md)，兼容标识见 [版本说明](../docs/VERSIONING.zh.md)。
+
+LinkerHand O6、L6、L30 扩展模型使用相同的 `make_env` 入口，见[扩展手型说明](../docs/linkerhand_standalone.zh.md)。

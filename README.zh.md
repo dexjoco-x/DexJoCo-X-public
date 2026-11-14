@@ -8,6 +8,8 @@
 
 ## 更新动态
 
+- 🦾 **2026-11-14** — 新增 LinkerHand O6、L6、L30 扩展环境及 18 段可运行的交互检查示例。[使用说明](docs/linkerhand_standalone.zh.md)。
+
 - 🔧 **2026-10-30** — 修复控制器在不同 CPU 上运算结果不一致、导致示范回放失败的问题。**请更新代码；Training v1 数据和视频无需重新下载。**[回放说明](docs/REPLAY_REPAIR.zh-CN.md)。
 
 - 🔧 **2026-10-29** — 新增 [Training v1 → π₀.₅ 训练与评估示例](examples/pi05/README.zh.md)；正式评估要求完整执行三次、每次 50 回合。

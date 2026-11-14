@@ -24,6 +24,10 @@ HORIZONS = dict(hammer_nail=1000, pick_bucket=1200, bimanual_microwave_cook=1100
                 single_hand_hanoi=2000)
 TIP_SUFFIXES = {'allegro': ('th_tip', 'ff_tip', 'mf_tip', 'rf_tip'), 'leap': ('thumb_fingertip', 'fingertip', 'fingertip_2', 'fingertip_3'), 'xhand': tuple(('xhand_right_hand_' + s for s in ('thumb_rota_tip', 'index_rota_tip', 'mid_tip', 'ring_tip', 'pinky_tip'))), 'inspire': tuple(('inspire_' + s for s in ('thumb_distal', 'index_intermediate', 'middle_intermediate', 'ring_intermediate', 'pinky_intermediate'))), 'wuji': ('wuji_IP_thumb', 'wuji_tipmount_index', 'wuji_tipmount_middle', 'wuji_tipmount_ring', 'wuji_tipmount_pinky'), 'sharpa_wave': tuple(('right_' + s + '_DP' for s in ('thumb', 'index', 'middle', 'ring', 'pinky'))), 'linkerhand_l20': tuple(('l20_' + s + '_distal' for s in ('thumb', 'index', 'middle', 'ring', 'pinky')))}
 
+for _hand in ('linkerhand_o6', 'linkerhand_l6', 'linkerhand_l30'):
+    TIP_SUFFIXES[_hand] = tuple('rh_' + finger + '_distal'
+                                for finger in ('thumb', 'index', 'middle', 'ring', 'pinky'))
+
 
 class Common:
     def _apply_builtin_contact_tuning(self):
@@ -90,6 +94,9 @@ class Common:
         if self.task == "pick_bucket":
             self.contract['success_policy'] = success_policy(self.task)
         self.contract["reference"]=self.hand_metadata["reference"]
+        if self.hand_metadata.get('benchmark_track') == 'extension':
+            self.contract.update(benchmark_track='extension',
+                                 extension_version=self.hand_metadata['version'])
         self._full_hand_qpos = {side: np.asarray([int(self._model.joint(n).qposadr)
             for n in spec["state_joint_names"]]) for side, spec in sides.items()}
         self._native_ctrl_ids = {side: np.asarray([self._model.actuator(n).id

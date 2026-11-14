@@ -21,3 +21,6 @@ logs/
 
 # 本地检查输出
 /*_SMOKE.json
+
+# Small, verified LinkerHand diagnostic command sequences
+!examples/linkerhand/commands/**/*.npz
