@@ -95,7 +95,7 @@
     {
       "hand": "linkerhand_l6",
       "task": "single_hand_hanoi",
-      "seed": 83002,
+      "seed": 82001,
       "commands": "commands/linkerhand_l6/single_hand_hanoi.npz",
       "sha256": "b6f08f4f8d134d141222bdf1e32e4faa6606279c69c1ee97ce8bde7de85ebaa5",
       "steps": 624,
