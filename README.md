@@ -8,6 +8,8 @@ A multi-hand manipulation dataset and a unified simulation benchmark.
 
 ## News
 
+- 🦾 **2026-11-14** — Added optional LinkerHand O6, L6 and L30 environments with 18 runnable interaction examples. [Usage](docs/linkerhand_standalone.md).
+
 - 🔧 **2026-10-30** — Fixed demonstration replay failures caused by CPU-dependent controller math. **Update the code; Training v1 data and videos do not need to be downloaded again.** [Replay instructions](docs/REPLAY_REPAIR.md).
 
 - 🔧 **2026-10-29** — Added a [Training v1 → π₀.₅ training and evaluation example](examples/pi05/README.md); formal evaluation now requires all three 50-rollout repeats.

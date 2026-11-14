@@ -1,0 +1,168 @@
+{
+  "version": "linkerhand-diagnostic-v1",
+  "description": "One geometric diagnostic rollout per hand and task; not trained-policy evaluation or additional Training v1 data.",
+  "cases": [
+    {
+      "hand": "linkerhand_o6",
+      "task": "pick_bucket",
+      "seed": 154187,
+      "commands": "commands/linkerhand_o6/pick_bucket.npz",
+      "sha256": "3c89736cb60e85b4f6e6c8bff4091866da562e18d429c6ea83a12e2ff2e4fabe",
+      "steps": 338,
+      "control_dt": 0.05
+    },
+    {
+      "hand": "linkerhand_o6",
+      "task": "hammer_nail",
+      "seed": 154187,
+      "commands": "commands/linkerhand_o6/hammer_nail.npz",
+      "sha256": "4d443c550f788e256465aa3b2974c132bc8366342ffcc4ffb97a2b8cb921166c",
+      "steps": 346,
+      "control_dt": 0.05
+    },
+    {
+      "hand": "linkerhand_l6",
+      "task": "pick_bucket",
+      "seed": 154187,
+      "commands": "commands/linkerhand_l6/pick_bucket.npz",
+      "sha256": "277aa95f23627d1e9b5b39ee8f98dfff6c9ed9780645947a9172d0a47562e9ec",
+      "steps": 336,
+      "control_dt": 0.05
+    },
+    {
+      "hand": "linkerhand_l6",
+      "task": "hammer_nail",
+      "seed": 154187,
+      "commands": "commands/linkerhand_l6/hammer_nail.npz",
+      "sha256": "5588d7aa1b6320b70ee1185fed016c0715e94130d5d5c46bce0e42203a6ac30b",
+      "steps": 277,
+      "control_dt": 0.05
+    },
+    {
+      "hand": "linkerhand_o6",
+      "task": "single_hand_hanoi",
+      "seed": 82001,
+      "commands": "commands/linkerhand_o6/single_hand_hanoi.npz",
+      "sha256": "872a98ebea1701d815815a5a5083035512d7154e7448c8fcea6bf8cdda14e757",
+      "steps": 638,
+      "control_dt": 0.05
+    },
+    {
+      "hand": "linkerhand_o6",
+      "task": "bimanual_microwave_cook",
+      "seed": 154187,
+      "commands": "commands/linkerhand_o6/bimanual_microwave_cook.npz",
+      "sha256": "bac9636838b52a064ab85fa9fa270924ce50a24108680a393351f5502530eca4",
+      "steps": 461,
+      "control_dt": 0.05
+    },
+    {
+      "hand": "linkerhand_l6",
+      "task": "bimanual_microwave_cook",
+      "seed": 154187,
+      "commands": "commands/linkerhand_l6/bimanual_microwave_cook.npz",
+      "sha256": "d33d37a37ca3e83d6d6d7cacae90c87888ca5a6a5f64b209e48edc81a14cece5",
+      "steps": 953,
+      "control_dt": 0.05
+    },
+    {
+      "hand": "linkerhand_l30",
+      "task": "bimanual_microwave_cook",
+      "seed": 154187,
+      "commands": "commands/linkerhand_l30/bimanual_microwave_cook.npz",
+      "sha256": "9e0ae92b7013b7521e2c9cc7c6dcefa2d2e2211c530385331eb737d10707b5f7",
+      "steps": 461,
+      "control_dt": 0.05
+    },
+    {
+      "hand": "linkerhand_l30",
+      "task": "bimanual_unlock_ipad",
+      "seed": 154187,
+      "commands": "commands/linkerhand_l30/bimanual_unlock_ipad.npz",
+      "sha256": "d8d8ae274f3b479ba4b9f295148148e5e293ec8315b93be74a7856a5b472fc53",
+      "steps": 564,
+      "control_dt": 0.05
+    },
+    {
+      "hand": "linkerhand_l30",
+      "task": "single_hand_hanoi",
+      "seed": 82001,
+      "commands": "commands/linkerhand_l30/single_hand_hanoi.npz",
+      "sha256": "b37d0495396b6d5030f52a4cc6ac57d9c191dc51b788433c107f1373879ecaa4",
+      "steps": 1076,
+      "control_dt": 0.05
+    },
+    {
+      "hand": "linkerhand_l6",
+      "task": "single_hand_hanoi",
+      "seed": 83002,
+      "commands": "commands/linkerhand_l6/single_hand_hanoi.npz",
+      "sha256": "b6f08f4f8d134d141222bdf1e32e4faa6606279c69c1ee97ce8bde7de85ebaa5",
+      "steps": 624,
+      "control_dt": 0.05
+    },
+    {
+      "hand": "linkerhand_o6",
+      "task": "bimanual_photograph",
+      "seed": 154187,
+      "commands": "commands/linkerhand_o6/bimanual_photograph.npz",
+      "sha256": "abd7ca95de28b46ab0469ecb4c08ceefb7912336c7a8dd2edbff341b280a4b8f",
+      "steps": 803,
+      "control_dt": 0.05
+    },
+    {
+      "hand": "linkerhand_l6",
+      "task": "bimanual_photograph",
+      "seed": 154187,
+      "commands": "commands/linkerhand_l6/bimanual_photograph.npz",
+      "sha256": "b90fe0750117b71c989d3e032f5241dc46af408f68773b3746cbf27f1b7833ac",
+      "steps": 751,
+      "control_dt": 0.05
+    },
+    {
+      "hand": "linkerhand_o6",
+      "task": "bimanual_unlock_ipad",
+      "seed": 154187,
+      "commands": "commands/linkerhand_o6/bimanual_unlock_ipad.npz",
+      "sha256": "d3114a9847031c8e368d56a3c5a6fb9e34e6ccc253891724d00d36f3d7f338a0",
+      "steps": 701,
+      "control_dt": 0.05
+    },
+    {
+      "hand": "linkerhand_l6",
+      "task": "bimanual_unlock_ipad",
+      "seed": 154187,
+      "commands": "commands/linkerhand_l6/bimanual_unlock_ipad.npz",
+      "sha256": "0efb1a2575d0188d00c1fdc4569f32d4f800cfa252cefe44020e463d60018740",
+      "steps": 645,
+      "control_dt": 0.05
+    },
+    {
+      "hand": "linkerhand_l30",
+      "task": "hammer_nail",
+      "seed": 154187,
+      "commands": "commands/linkerhand_l30/hammer_nail.npz",
+      "sha256": "51e0b7a00ccf11f9b1d410650b8aed1fe9f6b4af9044e46e4580830792e3df32",
+      "steps": 407,
+      "control_dt": 0.05
+    },
+    {
+      "hand": "linkerhand_l30",
+      "task": "pick_bucket",
+      "seed": 154187,
+      "commands": "commands/linkerhand_l30/pick_bucket.npz",
+      "sha256": "1813d0525f8cd51daf1bd92d7be4eeb8ce7cd22e572154ef93e197d1f0cd958c",
+      "steps": 747,
+      "control_dt": 0.05
+    },
+    {
+      "hand": "linkerhand_l30",
+      "task": "bimanual_photograph",
+      "seed": 154187,
+      "commands": "commands/linkerhand_l30/bimanual_photograph.npz",
+      "sha256": "cb6023d6f33c53260130ac29410e86b3a5ef2d6c1c27b5ea39fc51de4e201dd1",
+      "steps": 866,
+      "control_dt": 0.05
+    }
+  ]
+}

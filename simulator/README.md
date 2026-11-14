@@ -35,3 +35,5 @@ The common policy interface uses images, states, masks, and task instructions. S
 - `dexjoco.autocollect`: scene expansion from existing demonstrations.
 
 `teleoperation/` contains model assets referenced by the environments. See [third-party notices](../THIRD_PARTY_NOTICES.md) for sources and terms, and [version compatibility](../docs/VERSIONING.md) for identifiers.
+
+Optional LinkerHand O6/L6/L30 models use the same `make_env` entry point. See the [extension guide](../docs/linkerhand_standalone.md).

@@ -106,7 +106,7 @@
     <parent link="lh_thumb_metacarpals_base1" />
     <child link="lh_thumb_metacarpals" />
     <axis xyz="-1 0 0" />
-    <limit lower="0" upper="0.837758" effort="1.008" velocity="3.47" />
+    <limit lower="0" upper="0.78539768" effort="1.008" velocity="3.47" />
     <dynamics damping="0.02" friction="0.0375" />
   </joint>
   <link name="lh_thumb_distal">
@@ -565,16 +565,17 @@
     </actuator>
   </transmission>
   <mujoco>
+    <option timestep="0.002" integrator="implicitfast" />
     <compiler meshdir="meshes/" balanceinertia="true" discardvisual="false" />
     <default>
-      <joint armature="3.4707e-08" damping="5.0" frictionloss="0.5" />
+      <joint armature="0.001" damping="0" frictionloss="0"  solreflimit="0.004 1" solimplimit="0.9999 0.9999 0.001 0.5 2"/>
     </default>
     <equality>
-      <joint name="lh_couple_index" joint1="lh_index_dip" joint2="lh_index_mcp_pitch" polycoef="0 1.125676 0 0 0 0" />
-      <joint name="lh_couple_middle" joint1="lh_middle_dip" joint2="lh_middle_mcp_pitch" polycoef="0 1.125676 0 0 0 0" />
-      <joint name="lh_couple_ring" joint1="lh_ring_dip" joint2="lh_ring_mcp_pitch" polycoef="0 1.125676 0 0 0 0" />
-      <joint name="lh_couple_pinky" joint1="lh_pinky_dip" joint2="lh_pinky_mcp_pitch" polycoef="0 1.125676 0 0 0 0" />
-      <joint name="lh_couple_thumb" joint1="lh_thumb_dip" joint2="lh_thumb_cmc_pitch" polycoef="0 1.226495 0 0 0 0" />
+      <joint name="lh_couple_index" joint1="lh_index_dip" joint2="lh_index_mcp_pitch" polycoef="0 1.125676 0 0 0" solref="0.004 1" solimp="0.9999 0.9999 0.001 0.5 2" />
+      <joint name="lh_couple_middle" joint1="lh_middle_dip" joint2="lh_middle_mcp_pitch" polycoef="0 1.125676 0 0 0" solref="0.004 1" solimp="0.9999 0.9999 0.001 0.5 2" />
+      <joint name="lh_couple_ring" joint1="lh_ring_dip" joint2="lh_ring_mcp_pitch" polycoef="0 1.125676 0 0 0" solref="0.004 1" solimp="0.9999 0.9999 0.001 0.5 2" />
+      <joint name="lh_couple_pinky" joint1="lh_pinky_dip" joint2="lh_pinky_mcp_pitch" polycoef="0 1.125676 0 0 0" solref="0.004 1" solimp="0.9999 0.9999 0.001 0.5 2" />
+      <joint name="lh_couple_thumb" joint1="lh_thumb_dip" joint2="lh_thumb_cmc_pitch" polycoef="0 1.226495 0 0 0" solref="0.004 1" solimp="0.9999 0.9999 0.001 0.5 2" />
     </equality>
   </mujoco>
 </robot>

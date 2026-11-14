@@ -3,12 +3,18 @@
   "source_repository": "https://github.com/linker-bot/linker-sim-assets",
   "source_commit": "d0224b8da58802fe7cb2e35dcc9771693c4543b6",
   "source_component": "src/linker_robot_assets/assets/components/hands/linkerhand_o6",
-  "scope": "Standalone hand source assets; not registered in task environments.",
+  "scope": "Standalone source assets and optional six-task environment extension; outside the fixed seven-hand benchmark.",
   "license": "No license file or explicit asset license declaration found in the source checkout; no license inferred from existing L20 assets.",
   "changes": [
     "URDF and MJCF renamed to source.urdf and hand.xml without content changes.",
     "Variant paths in meta.yaml updated for the destination layout.",
-    "Meshes copied without content changes; O6 includes only files referenced by the selected side URDF and MJCF."
+    "Meshes copied without content changes; O6 includes only files referenced by the selected side URDF and MJCF.",
+    "2026-11-13 contact repair: finite actuator force limits use URDF effort for L6/L30; stricter original O6 MJCF force limits are preserved.",
+    "Passive joint damping and friction are copied from source.urdf (zero where absent). Position servos use kp=5 Nm/rad and kv=1 Nm*s/rad; joint armature=0.001 kg*m^2 is numerical regularization, not a measured motor inertia.",
+    "Mimic constraints and contact response use solref=0.004 1 at the 0.002 s timestep; contact solimp=0.99 0.99 0.001 0.5 2 and margin=0 m. Hand collision priority=1 keeps these contact parameters against priority-0 scene objects. O6 uses the default native convex collision detector. Geometry, body inertias, mass, joint axes, mimic ratios, and contact exclusions are unchanged.",
+    "Source URDF effort values are source-model limits, not independently measured hardware specifications. Standalone model tests do not establish six-task benchmark support.",
+    "2026-11-13 task-contact correction: zero contact margin keeps force-bearing contacts on the geometric surface, consistent with shared task contact predicates. No object geometry or success threshold changes.",
+    "2026-11-14 integration: optional task environments add a rigid visible/collidable flange bracket while retaining native wrist transforms and hand inertias. Original seven-hand models and task thresholds are unchanged."
   ],
   "files": [
     {
@@ -236,8 +242,10 @@
     {
       "path": "left/hand.xml",
       "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_o6/linkerhand_o6_left.xml",
-      "sha256": "3d0ca932028277620c234b984d2dd570fc9d8d82311db988e53ab4618485b643",
-      "bytes": 14745
+      "sha256": "7a9ce4bc749940aade8340cb3661cb068e56a3daa497731f625cdd17098811b8",
+      "bytes": 15470,
+      "source_sha256": "3d0ca932028277620c234b984d2dd570fc9d8d82311db988e53ab4618485b643",
+      "source_bytes": 14745
     },
     {
       "path": "right/meshes/collision/rh_hand_base_link_col.obj",
@@ -464,8 +472,10 @@
     {
       "path": "right/hand.xml",
       "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_o6/linkerhand_o6_right.xml",
-      "sha256": "378c0e580a42fad32f4110bfbf39b6db5c8e05cb786b2a043191c8b9d5960010",
-      "bytes": 14649
+      "sha256": "fcede3c63c407d0b992c69cf198232a8ab59334e664a970537b9c996652fa3ac",
+      "bytes": 15374,
+      "source_sha256": "378c0e580a42fad32f4110bfbf39b6db5c8e05cb786b2a043191c8b9d5960010",
+      "source_bytes": 14649
     },
     {
       "path": "decoder.yaml",
@@ -477,8 +487,9 @@
       "path": "meta.yaml",
       "source_path": "src/linker_robot_assets/assets/components/hands/linkerhand_o6/meta.yaml",
       "source_sha256": "4860da82d02bc723d239f7247bf3e1eb7ea75ba479b67f2bd6644122b072ceb9",
-      "sha256": "48dcefd8875e75b324712e429b2d75a59aa2837c95769faeb9593e6415ef20e8",
-      "bytes": 1298
+      "sha256": "f0c92e02c66074c1f16cd201c952d04ef0138ccff2ecbbcdcffd66292c37db83",
+      "bytes": 1294,
+      "source_bytes": 1298
     }
   ]
 }

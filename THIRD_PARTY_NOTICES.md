@@ -9,7 +9,8 @@
 | Franka Panda | Apache-2.0；`simulator/dexjoco/sim/envs/xmls/franka_emika_panda/LICENSE` |
 | Wonik Allegro | BSD 条款；`simulator/dexjoco/sim/envs/xmls/wonik_allegro/LICENSE` |
 | Sharpa 官方资产 | Apache-2.0；`simulator/teleoperation/sharpa_wave/sharpa-urdf-usd-xml/` 内的 `LICENSE.txt`、`NOTICE.txt` 与 `SOURCE_PROVENANCE.md`；不自动覆盖其他模型副本 |
-| LinkerHand | Apache-2.0；`simulator/dexjoco/sim/envs/xmls/linkerhand_l20/SOURCE_LICENSE` 与 `SOURCE_PROVENANCE.md`；源几何来自官方 L25，内部历史键保留为 `linkerhand_l20` |
+| LinkerHand L20 | Apache-2.0；`simulator/dexjoco/sim/envs/xmls/linkerhand_l20/SOURCE_LICENSE` 与 `SOURCE_PROVENANCE.md`；源几何来自官方 L25，内部历史键保留为 `linkerhand_l20` |
+| LinkerHand O6 / L6 / L30 | 来源：`linker-bot/linker-sim-assets`，提交 `d0224b8da58802fe7cb2e35dcc9771693c4543b6`。该源版本未找到明确资产许可证；不套用 L20 的 Apache-2.0 或本项目代码的 MIT。各手目录的 `SOURCE_PROVENANCE.json` 保留来源、原始哈希与仿真修复记录。 |
 | LEAP 已匹配网格 | 官方 LEAP_Hand_Sim 的 MIT；[许可与 11 个随本版分发文件记录](licenses/third_party/leap/VERIFIED_FILES.json)，完整许可见同目录 `LICENSE.txt`；其余文件尚未核验完成 |
 | Inspire 网格 | Dex-URDF 的 CC BY-NC-SA 4.0；[8 个原网格及 68 个改编网格的记录](licenses/third_party/inspire/README.md)；非商业分享须遵守署名和相同方式共享要求，剩余 URDF 链仍单独核验 |
 | RoboSuite 已匹配场景资产 | RoboSuite v1.4.1 的 MIT 许可及其保留的第三方声明；[17 个随本版分发文件记录](licenses/third_party/robosuite/VERIFIED_FILES.json)，完整许可见同目录 `LICENSE`；不覆盖额外添加的纹理 |

@@ -15,9 +15,13 @@ TASK='single_hand_hanoi'
 class SingleHandHanoi(NativeHanoi):
     task=TASK
     def __init__(self,hand,seed=81000,pixels=False):
-        if hand not in HANDS:raise ValueError(hand)
+        extension = hand in ('linkerhand_o6', 'linkerhand_l6', 'linkerhand_l30')
+        if hand not in HANDS and not extension:raise ValueError(hand)
         self.hand=hand;self.scene_seed=seed;self.pixels=pixels;self.env=self
         path=XML/f'benchmark7_v3_single_hand_hanoi_inspire_scene_{hand}.xml'
+        if extension:
+            from ..extensions.linkerhand import build
+            path = build(TASK, hand)
         self.hand_metadata=json.loads(path.with_suffix('.json').read_text())
         assert hashlib.sha256(path.read_bytes()).hexdigest()==self.hand_metadata['xml_sha256']
         self._model=mujoco.MjModel.from_xml_path(str(path));self._data=mujoco.MjData(self._model)
@@ -124,6 +128,9 @@ class SingleHandHanoi(NativeHanoi):
             success_trigger_target=20,illegal_trigger_target=10,auto_reset=False,
             wrist_camera_rig=dict(RIG),model_mutations_during_rollout=False,
             arm_pos_gain=400.,arm_ori_gain=200.,arm_damping_ratio=4.)
+        if extension:
+            self.contract.update(benchmark_track='extension',
+                                 extension_version=self.hand_metadata['version'])
         ids=self._native_ctrl_ids['right'];limits=self._model.actuator_ctrlrange[ids]
         self.action_space=spaces.Box(np.r_[[-.08]*3,[-.30]*3,limits[:,0]],np.r_[[.08]*3,[.30]*3,limits[:,1]],dtype=np.float64)
         apply_wrist_rig(self)

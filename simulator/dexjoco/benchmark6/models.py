@@ -23,6 +23,9 @@ DONORS = {'allegro': (('panda_allegro_copy.xml', 'attachment'), ('panda_allegro_
 
 
 def path_for(task, hand):
+    if hand in ('linkerhand_o6', 'linkerhand_l6', 'linkerhand_l30'):
+        from ..extensions.linkerhand import build
+        return build(task, hand)
     if task == 'single_hand_hanoi' and hand in HANDS:
         return XML / f'{VERSION}_single_hand_hanoi_inspire_scene_{hand}.xml'
     if task not in CANDIDATE_TASKS or hand not in HANDS:

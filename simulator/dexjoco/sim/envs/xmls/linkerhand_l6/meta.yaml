@@ -48,10 +48,10 @@ mimic_joints:
   - "{S}h_pinky_dip"
 
 default_gains:
-  stiffness: 20.0
-  damping: 2.0
+  stiffness: 5.0
+  damping: 1.0
 
 gain_profiles:
   joint:
-    stiffness: 20.0
-    damping: 2.0
+    stiffness: 5.0
+    damping: 1.0

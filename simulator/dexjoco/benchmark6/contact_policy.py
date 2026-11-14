@@ -59,6 +59,13 @@ REVIEWS = {
 # Explicit, per-hand/per-side/native-geom records can preserve nondefault
 # calibrated values. No qualifying surface measurement is currently registered.
 # Changing this registry requires a new model version, never silent rebuilding.
+for _hand in ('linkerhand_o6', 'linkerhand_l6', 'linkerhand_l30'):
+    REVIEWS[_hand] = dict(
+        basis='source_model_simulator_default',
+        files=[XML_ROOT + _hand + '/SOURCE_PROVENANCE.json'],
+        urls=['https://github.com/linker-bot/linker-sim-assets'],
+        note='Bundled standalone contact defaults; no measured surface calibration.')
+
 VERIFIED_SURFACES = {}
 
 
